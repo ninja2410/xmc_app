@@ -1,5 +1,5 @@
 <?php
-require_once('..\PJ_XJMC\Conexion\conexion.php');
+require_once('..\..\Conexion\conexion.php');
 /**
  * BENEFICIOS DE MEMBRESÍA
  */
@@ -9,6 +9,9 @@ class Beneficio
   private $query;
   public function insert($desc, $estado, $nombre){
     $query="CALL SP_beneficio_INSERT('$desc', '$estado', '$nombre');";
+    $bd= new conexion();
+		$dt=$bd->execute_query($query);
+		return $dt;
   }
 
   public function update($desc, $estado, $nombre){
