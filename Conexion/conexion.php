@@ -9,12 +9,12 @@ class conexion
 
 	public function conectar()
 	{
-
-		$this->obgetoconexion= mysqli_connect($this->servidor,$this->usuario,$this->pass,$this->bd) or die ("error en conexion");
+		$this->objetoconexion= mysqli_connect($this->servidor,$this->usuario,$this->pass,$this->bd) or die ("error en conexion");
 	}
 	public function desconectar()
 	{
-		mysqli_close($this->obgetoconexion);
+		mysqli_close($this->objetoconexion);
 	}
 }
+
 ?>
