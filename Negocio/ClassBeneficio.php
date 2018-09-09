@@ -8,30 +8,38 @@ class Beneficio
 
   private $query;
   public function insert($desc, $estado, $nombre){
-    $query="CALL SP_beneficio_INSERT('$desc', '$estado', '$nombre');";
+    $query="CALL SP_beneficio_INSERT('$desc', $estado, '$nombre');";
     $bd= new conexion();
 		$dt=$bd->execute_query($query);
 		return $dt;
   }
 
-  public function update($desc, $estado, $nombre){
-    $query="CALL SP_beneficio_DELETE('$desc', '$estado', '$nombre');";
+  public function update($id, $desc, $estado, $nombre){
+    $query="CALL SP_beneficio_UPDATE($id,'$desc', $estado, '$nombre');";
+    $bd= new conexion();
+		$dt=$bd->execute_query($query);
+		return $dt;
   }
 
-  public function delete($desc, $estado, $nombre){
-    $query="CALL SP_beneficio_UPDATE('$desc', '$estado', '$nombre');";
+  public function delete($id){
+    $query="CALL SP_beneficio_DELETE($id);";
+    $bd= new conexion();
+		$dt=$bd->execute_query($query);
+		return $dt;
   }
 
   public function select($id){
     $conexion=new conexion();
     $conexion->conectar();
     if ($id==-1) {
-      $query="SELECT * FROM beneficio";
+      $query="SELECT * FROM beneficio WHERE estado=1";
+      $dt=mysqli_query($conexion->objetoconexion,$query);
     }
     else{
-      $query="SELECT * FROM beneficio WHERE idbeneficio='$id'";
+      $query="SELECT * FROM beneficio WHERE idbeneficio=$id AND estado=1";
+      $tmp=mysqli_query($conexion->objetoconexion,$query);
+      $dt=mysqli_fetch_assoc($tmp);
     }
-    $dt=mysqli_query($conexion->objetoconexion,$query);
     $conexion->desconectar();
     return $dt;
   }
