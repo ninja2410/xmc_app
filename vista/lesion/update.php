@@ -61,7 +61,7 @@ $data=$lesion->select($_GET['id']);
                   </div>
                 </div>
               </div>
-              <button type="submit" class="btn btn-primary pull-right">Actualizar</button>
+              <?php include '..\layoults\botones.php'; ?>
               <div class="clearfix"></div>
             </form>
           </div>

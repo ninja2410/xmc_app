@@ -50,7 +50,7 @@
                 </div>
 
               </div>
-              <button type="submit" class="btn btn-primary pull-right">Registrar</button>
+              <?php include '..\layoults\botones.php'; ?>
               <div class="clearfix"></div>
             </form>
           </div>
