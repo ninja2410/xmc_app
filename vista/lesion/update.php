@@ -1,14 +1,14 @@
 <?php
-require_once('..\..\Negocio/ClassBeneficio.php');
-$beneficio=new Beneficio();
-$data=$beneficio->select($_GET['id']);
+require_once('..\..\Negocio/ClassLesion.php');
+$lesion=new Lesion();
+$data=$lesion->select($_GET['id']);
 
  ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Beneficios - Actualizar</title>
+    <title>lesions - Actualizar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <body>
@@ -19,13 +19,13 @@ $data=$beneficio->select($_GET['id']);
       <div class="col-md-8">
         <div class="card">
           <div class="card-header card-header-primary">
-            <h4 class="card-title">Actualizar Beneficio</h4>
+            <h4 class="card-title">Actualizar lesion</h4>
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
-            <form method="post", action="..\beneficio\store.php">
+            <form method="post", action="..\lesion\store.php">
               <input type="hidden" name="operation" value="2">
-              <input type="hidden" name="id" value="<?php echo $data['idbeneficio'] ?>">
+              <input type="hidden" name="id" value="<?php echo $data['idlesion'] ?>">
               <div class="row">
                 <div class="col-md-5">
                   <div class="form-group">
@@ -37,9 +37,11 @@ $data=$beneficio->select($_GET['id']);
                   <div class="form-check">
                     <label class="form-check-label">
                       <label class="bmd-label-floating">Estado activo</label>
-                      <input class="form-check-input"  value="" name="status" type="checkbox" <?php if($data['estado']==1){
-                        echo "checked";
-                      } ?>>
+                      <input class="form-check-input" type="checkbox" name="status" <?php
+                       if ($data['estado']==1){
+                         echo "checked";
+                       }
+                      ?>>
                       <span class="form-check-sign">
                         <span class="check"></span>
                       </span>
@@ -53,7 +55,7 @@ $data=$beneficio->select($_GET['id']);
                   <div class="form-group">
                     <label>Descripcion</label>
                     <div class="form-group">
-                      <label class="bmd-label-floating"> Describa en qué consiste el beneficio a agregar.</label>
+                      <label class="bmd-label-floating"> Describa en qué consiste la lesion a agregar.</label>
                       <textarea class="form-control" rows="5" name="description" value=""><?php echo $data['descripcion'] ?></textarea>
                     </div>
                   </div>
