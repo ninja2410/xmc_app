@@ -1,33 +1,42 @@
+<?php
+require_once('..\..\Negocio/ClassUsuario.php');
+$usuario=new Usuario();
+$data=$usuario->select($_GET['id']);
+
+ ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Medico - Insertar</title>
+    <title>Usuario - Actualizar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <body>
-    <?php include '..\layoults\barnav.php'; ?>
+    <?php
+    include '..\layoults\barnav.php';
+    ?>
     <div class="content">
       <div class="col-md-8">
         <div class="card">
           <div class="card-header card-header-primary">
-            <h4 class="card-title">INGRESAR UN NUEVO USUARIO</h4>
+            <h4 class="card-title">Actualizar Usuario</h4>
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
             <form method="post", action="..\usuario\store.php">
-              <input type="hidden" name="operation" value="1">
+              <input type="hidden" name="operation" value="2">
+              <input type="hidden" name="id" value="<?php echo $data['idusuario']; ?>">
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
                     <label class="bmd-label-floating">Nombre de Usuario</label>
-                    <input type="text" class="form-control" name="usuario">
+                    <input type="text" class="form-control" name="usuario" value="<?php echo $data['nombreusuario']; ?>">
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label class="bmd-label-floating">Contraseña</label>
-                    <input type="password" class="form-control" name="pass">
+                    <label class="bmd-label-floating">Nueva contraseña</label>
+                    <input type="text" class="form-control" name="pass">
                   </div>
                 </div>
               </div>

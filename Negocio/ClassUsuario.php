@@ -26,14 +26,30 @@ class Usuario
         $conexion->desconectar();
         return $dt;
     }
-
-  public function insert($usuario, $pass)
+    public function insert($usuario, $pass)
     {
         $query="CALL SP_USUARIO_INSERT('$usuario','$pass');";
         $bd= new conexion();
 		$dt=$bd->execute_query($query);
 		return $dt;
     }
+
+    public function update($id, $usuario, $pass)
+    {
+        $query="CALL SP_USUARIO_UPDATE('$id','$usuario','$pass');";
+        $bd= new conexion();
+		$dt=$bd->execute_query($query);
+		return $dt;
+    }
+    public function delete($id)
+    {
+        $query="CALL SP_USUARIO_DELETE($id);";
+        $bd= new conexion();
+            $dt=$bd->execute_query($query);
+            return $dt;
+    }
+
+
 
 
 }  

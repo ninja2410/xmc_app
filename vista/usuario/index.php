@@ -1,6 +1,6 @@
 <?php
-require_once('..\..\Negocio/ClassMedico.php');
-$medico=new Medico();
+require_once('..\..\Negocio/ClassUsuario.php');
+$medico=new Usuario();
 $data=$medico->select(-1);
 
  ?>
@@ -8,7 +8,7 @@ $data=$medico->select(-1);
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Medicos - Listar</title>
+    <title>Usuarios - Listar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <body>
@@ -22,11 +22,11 @@ $data=$medico->select(-1);
             <div class="card">
               <div class="card-header card-header-primary">
                 <div class="col-lg-10" style="float:left;">
-                  <h2 class="card-title ">Medicos</h4>
-                  <p class="card-category"> Listado de médicos</p>
+                  <h2 class="card-title ">Usuarios</h4>
+                  <p class="card-category"> Listado de Usuarios</p>
                 </div>
                 <div class="col-lg-1" style="float:left">
-                  <a href="..\..\vista\medico/insert.php" title="Agregar nuevo Médico">
+                  <a href="..\..\vista\usuario/insert.php" title="Agregar nuevo usuario">
                     <div class="card-header card-header-success card-header-icon" style="float:left">
                       <div class="card-icon">
                         <i class="material-icons">add</i>
@@ -43,25 +43,7 @@ $data=$medico->select(-1);
                         ID
                       </th>
                       <th>
-                        Nombre
-                      </th>
-                      <th>
-                        Apellido
-                      </th>
-                      <th>
-                        Fecha Nacimiento
-                      </th>
-                      <th>
-                        Fecha Inicio
-                      </th>
-                      <th>
-                        Dirección
-                      </th>
-                      <th>
-                        Teléfono
-                      </th>
-                      <th>
-                        Acciones
+                        Usuario
                       </th>
                     </thead>
                     <tbody>
@@ -70,39 +52,24 @@ $data=$medico->select(-1);
                        ?>
                       <tr>
                         <td>
-                          <?php echo $row['idmedico']; ?>
+                          <?php echo $row['idusuario']; ?>
                         </td>
                         <td>
-                          <?php echo $row['nombre']; ?>
-                        </td>
-                        <td>
-                          <?php echo $row['apellido']; ?>
-                        </td>
-                        <td>
-                          <?php echo $row['fecha_nacimiento']; ?>
-                        </td>
-                        <td>
-                          <?php echo $row['fecha_inicio']; ?>
-                        </td>
-                        <td>
-                          <?php echo $row['direccion']; ?>
-                        </td>
-                        <td>
-                          <?php echo $row['telefono']; ?>
+                          <?php echo $row['nombreusuario']; ?>
                         </td>
                         <td class="td-actions text-lefht">
                             <div style="float:left">
-                              <a href="..\..\vista\medico/update.php?id=<?php echo $row['idmedico']; ?>">
-                                <button type="button" rel="tooltip" title="Editar Beneficio" class="btn btn-primary btn-link btn-sm">
+                              <a href="..\..\vista\usuario/update.php?id=<?php echo $row['idusuario']; ?>">
+                                <button type="button" rel="tooltip" title="Editar Usuario" class="btn btn-primary btn-link btn-sm">
                                   <i class="material-icons">edit</i>
                                 </button>
                               </a>
                             </div>
                             <div  style="float:left">
-                              <form class="" action="..\..\vista\medico/store.php" method="post">
+                              <form class="" action="..\..\vista\usuario/store.php" method="post">
                                 <input type="hidden" name="operation" value="3">
-                                <input type="hidden" name="id" value="<?php echo $row['idmedico']; ?>">
-                                <button type="submit" rel="tooltip" title="Eliminar Médico" class="btn btn-danger btn-link btn-sm">
+                                <input type="hidden" name="id" value="<?php echo $row['idusuario']; ?>">
+                                <button type="submit" rel="tooltip" title="Eliminar Usuario" class="btn btn-danger btn-link btn-sm">
                                   <i class="material-icons">close</i>
                                 </button>
                               </form>
