@@ -20,7 +20,7 @@ $data=$socio->select($_GET['id']);
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
-            <form method="post", action="..\socio\store.php">
+            <form method="post", action="..\socio\store.php" id="frm_socio">
               <input type="hidden" name="operation" value="2">
               <input type="hidden" name="id" value="<?php echo $data['idsocio']; ?>">
               <div class="row">
@@ -81,5 +81,89 @@ $data=$socio->select($_GET['id']);
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $('#frm_socio').bootstrapValidator({
+      feedbackIcons: {
+          valid: 'glyphicon glyphicon-ok',
+          invalid: 'glyphicon glyphicon-remove',
+          validating: 'glyphicon glyphicon-refresh'
+      },
+      message: 'Valor no valido',
+      fields: {
+          name:{
+              validators:{
+                  notEmpty:{
+                      message:'Ingrese un nombre'
+                  },
+                  regexp:{
+                    regexp: /^[a-zA-Z\s]*$/,
+                      message: 'Solo se aceptan letras'
+                    }
+                }
+            },
+            apellidos:{
+                validators:{
+                    notEmpty:{
+                        message:'Ingrese un apellido'
+                    },
+                    regexp:{
+                      regexp: /^[a-zA-Z\s]*$/,
+                        message: 'Solo se aceptan letras'
+                      }
+                  }
+              },
+              domicilio:{
+                  validators:{
+                      notEmpty:{
+                          message:'Ingrese una dirección'
+                      }
+                    }
+                },
+                telefono:{
+                    validators:{
+                        notEmpty:{
+                            message:'Ingrese un nombre'
+                        },
+                        regexp:{
+                          regexp: /^[0-9]*$/,
+                            message: 'Solo se aceptan letras'
+                          }
+                      }
+                  },
+                  dpi:{
+                      validators:{
+                          notEmpty:{
+                              message:'Ingrese DPI'
+                          },
+                          regexp:{
+                            regexp: /^[0-9]*$/,
+                              message: 'DPI inválido.'
+                            },
+                          stringLength:{
+                            min:13,
+                            max:13,
+                            message:'El DPI debe tener 13 dígitos.'
+                          }
+                        }
+                    },
+                    dir_cobro:{
+                        validators:{
+                            notEmpty:{
+                                message:'Ingrese una dirección.'
+                            }
+                          }
+                      },
+                      fecha_nacimiento:{
+                          validators:{
+                              notEmpty:{
+                                  message:'Seleccione una fecha'
+                              }
+                            }
+                        },
+        }
+      })
+    });
+    </script>
   </body>
 </html>
