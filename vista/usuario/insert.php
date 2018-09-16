@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Medico - Insertar</title>
+    <title>Usuario - Insertar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <body>
