@@ -15,7 +15,7 @@
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
-            <form method="post", action="..\lesion\store.php">
+            <form method="post", action="..\lesion\store.php" id="frm_lesion">
               <input type="hidden" name="operation" value="1">
               <div class="row">
                 <div class="col-md-5">
@@ -59,5 +59,30 @@
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('#frm_lesion').bootstrapValidator({
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        message: 'Valor no valido',
+        fields: {
+            name:{
+                validators:{
+                    notEmpty:{
+                        message:'Ingrese un nombre de lesión'
+                    },
+                    regexp:{
+                      regexp: /^[a-zA-Z\s]*$/,
+                        message: 'Solo se aceptan letras'
+                    }
+                }
+            },
+        }
+    })
+      });
+    </script>
   </body>
 </html>

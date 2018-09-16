@@ -13,3 +13,5 @@
 <script src="..\PJ_XJMC\vista/assets/js/material-dashboard.min.js?v=2.1.0" type="text/javascript"></script>
 <!-- Material Dashboard DEMO methods, don't include it in your project! -->
 <script src="..\PJ_XJMC\vista/assets/demo/demo.js"></script>
+<!--BOOTSTRAP VALIDATOR-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js"></script>

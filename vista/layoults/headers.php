@@ -6,3 +6,6 @@
 <link href="..\PJ_XJMC\vista/assets/css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
 <!-- CSS Just for demo purpose, don't include it in your project -->
 <link href="..\PJ_XJMC\vista/assets/demo/demo.css" rel="stylesheet" />
+<!--BOOTSTRAP VALIDATOR -->
+<!-- Validaciones -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css">
