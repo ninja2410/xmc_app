@@ -1,28 +1,28 @@
 <?php
 require_once('..\..\Conexion\conexion.php');
 /**
- * Categoria de Documentos
+ * Detalle de la ficha medica
  */
-class CatDocumentos
+class DetalleFM
 {
 
   private $query;
-  public function insert($estado, $nombre){
-    $query="CALL SP_CATEGORIA_DOCUMENTOS_INSERT($estado, '$nombre');";
+  public function insert($valor, $idcampo, $idficha){
+    $query="CALL SP_DETALLEFICHAMEDICA_INSERT('$valor', $idcampo, $idficha);";
     $bd= new conexion();
 		$dt=$bd->execute_query($query);
 		return $dt;
   }
 
-  public function update($id, $estado, $nombre){
-    $query="CALL SP_CATEGORIA_DOCUMENTOS_UPDATE($id, $estado, '$nombre');";
+  public function update($valor, $id, $idcampo, $idficha){
+    $query="CALL SP_DETALLEFICHAMEDICA_UPDATE('$valor', $id, $idcampo, $idficha);";
     $bd= new conexion();
 		$dt=$bd->execute_query($query);
 		return $dt;
   }
 
   public function delete($id){
-    $query="CALL SP_CATEGORIA_DOCUMENTOS_DELETE($id);";
+    $query="CALL SP_DETALLEFICHAMEDICA_DELETE($id);";
     $bd= new conexion();
 		$dt=$bd->execute_query($query);
 		return $dt;
@@ -32,11 +32,11 @@ class CatDocumentos
     $conexion=new conexion();
     $conexion->conectar();
     if ($id==-1) {
-      $query="SELECT * from categoria_documentos where estado =1;";
+      $query="SELECT DFM.valor, DFM.iddetalle, C.nombre, DFM.idficha from detallefichamedica DFM, campo C";
       $dt=mysqli_query($conexion->objetoconexion,$query);
     }
     else{
-      $query="SELECT * FROM categoria_documentos WHERE idcategoria_documentos=$id AND estado=1;";
+      $query="SELECT DFM.valor, DFM.iddetalle, DFM.idCampo,C.nombre, DFM.idficha from detallefichamedica DFM, campo C where DFM.iddetalle=$id AND DFM.idCampo=C.idCampo";
       $tmp=mysqli_query($conexion->objetoconexion,$query);
       $dt=mysqli_fetch_assoc($tmp);
     }

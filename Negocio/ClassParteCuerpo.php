@@ -1,7 +1,7 @@
 <?php
 require_once('..\..\Conexion\conexion.php');
 /**
- * Ficha Medica
+ * Parte del Cuerpo
  */
 class ParteCuerpo
 {
