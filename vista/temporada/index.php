@@ -1,14 +1,14 @@
 <?php
-require_once('..\..\Negocio/ClassUsuario.php');
-$usuario=new Usuario();
-$data=$usuario->select(-1);
+require_once('..\..\Negocio/ClassTemporada.php');
+$temporada=new Temporada();
+$data=$temporada->select(-1);
 
  ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Usuarios - Listar</title>
+    <title>Temporadas - Listar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <body>
@@ -22,11 +22,11 @@ $data=$usuario->select(-1);
             <div class="card">
               <div class="card-header card-header-primary">
                 <div class="col-lg-10" style="float:left;">
-                  <h2 class="card-title ">Usuarios</h4>
-                  <p class="card-category"> Listado de Usuarios</p>
+                  <h2 class="card-title ">Temporadas</h4>
+                  <p class="card-category"> Listado de temporadas</p>
                 </div>
                 <div class="col-lg-1" style="float:left">
-                  <a href="..\..\vista\usuario/insert.php" title="Agregar nuevo usuario">
+                  <a href="..\..\vista\temporada/insert.php" title="Agregar nuevo temporada">
                     <div class="card-header card-header-success card-header-icon" style="float:left">
                       <div class="card-icon">
                         <i class="material-icons">add</i>
@@ -43,7 +43,10 @@ $data=$usuario->select(-1);
                         ID
                       </th>
                       <th>
-                        Usuario
+                        Fecha de inicio
+                      </th>
+                      <th>
+                        Fecha que finaliza
                       </th>
                     </thead>
                     <tbody>
@@ -52,24 +55,27 @@ $data=$usuario->select(-1);
                        ?>
                       <tr>
                         <td>
-                          <?php echo $row['idusuario']; ?>
+                          <?php echo $row['idtemporada']; ?>
                         </td>
                         <td>
-                          <?php echo $row['nombreusuario']; ?>
+                          <?php echo $row['fecha_inicio']; ?>
+                        </td>
+                        <td>
+                          <?php echo $row['fecha_final']; ?>
                         </td>
                         <td class="td-actions text-lefht">
                             <div style="float:left">
-                              <a href="..\..\vista\usuario/update.php?id=<?php echo $row['idusuario']; ?>">
-                                <button type="button" rel="tooltip" title="Editar Usuario" class="btn btn-primary btn-link btn-sm">
+                              <a href="..\..\vista\temporada/update.php?id=<?php echo $row['idtemporada']; ?>">
+                                <button type="button" rel="tooltip" title="Editar temporada" class="btn btn-primary btn-link btn-sm">
                                   <i class="material-icons">edit</i>
                                 </button>
                               </a>
                             </div>
                             <div  style="float:left">
-                              <form class="" action="..\..\vista\usuario/store.php" method="post">
+                              <form class="" action="..\..\vista\temporada/store.php" method="post">
                                 <input type="hidden" name="operation" value="3">
-                                <input type="hidden" name="id" value="<?php echo $row['idusuario']; ?>">
-                                <button type="submit" rel="tooltip" title="Eliminar Usuario" class="btn btn-danger btn-link btn-sm">
+                                <input type="hidden" name="id" value="<?php echo $row['idtemporada']; ?>">
+                                <button type="submit" rel="tooltip" title="Eliminar temporada" class="btn btn-danger btn-link btn-sm">
                                   <i class="material-icons">close</i>
                                 </button>
                               </form>
