@@ -8,7 +8,7 @@ class Beneficio
 
   private $query;
   public function insert($desc, $estado, $nombre){
-    $query="CALL SP_beneficio_INSERT('$desc', $estado, '$nombre');";
+    $query="CALL SP_beneficio_INSERT('$desc', 1, '$nombre');";
     $bd= new conexion();
 		$dt=$bd->execute_query($query);
 		return $dt;
