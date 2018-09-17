@@ -3,6 +3,7 @@ require_once('..\..\Negocio/ClassCategoria.php');
 $categoria=new Categoria();
 $data=$categoria->select($_GET['id']);
  ?>
+ <!-- UPDATE ACTUALIZADO -->
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
