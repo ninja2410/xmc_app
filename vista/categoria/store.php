@@ -1,5 +1,6 @@
 <?php
 require_once('..\..\Negocio/ClassCategoria.php');
+
 if(isset($_POST['operation'])){
   $operacion=$_POST['operation'];
 }

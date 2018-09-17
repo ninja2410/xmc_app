@@ -1,7 +1,7 @@
 <?php
 require_once('..\..\Conexion\conexion.php');
 /**
- * MEDICO DE JUGADORES
+ * Entrenador
  */
 class Entrenador
 {
