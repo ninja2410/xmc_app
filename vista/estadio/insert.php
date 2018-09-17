@@ -15,19 +15,19 @@
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
-            <form method="post", action="..\estadio\store.php">
+            <form method="post", action="..\estadio\store.php" id="frm_estadio">
               <input type="hidden" name="operation" value="1">
               <div class="row">
                 <div class="col-md-5">
                   <div class="form-group">
                     <label class="bmd-label-floating">Nombre</label>
-                    <input type="nombre" class="form-control" name="nombre">
+                    <input type="text" class="form-control" name="nombre">
                   </div>
                 </div>
                 <div class="col-md-3">
                   <div class="form-group">
                     <label class="bmd-label-floating">Ciudad</label>
-                    <input type="text" class="form-control" name="cuidad">
+                    <input type="text" class="form-control" name="ciudad">
                   </div>
                 </div>
               </div>
@@ -38,6 +38,8 @@
                     <input type="text" class="form-control" name="direccion">
                   </div>
                 </div>
+                </div>
+                <div class="row">
                 <div class="col-md-4">
                   <div class="form-group">
                     <label class="bmd-label-floating">Teléfono</label>
@@ -54,5 +56,63 @@
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $('#frm_estadio').bootstrapValidator({
+      feedbackIcons: {
+          valid: 'glyphicon glyphicon-ok',
+          invalid: 'glyphicon glyphicon-remove',
+          validating: 'glyphicon glyphicon-refresh'
+      },
+      message: 'Valor no valido',
+      fields: {
+          nombre:{
+              validators:{
+                  notEmpty:{
+                      message:'Ingrese un nombre'
+                  },
+                  regexp:{
+                    regexp: /^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ\s]*$/,
+                      message: 'Solo se aceptan letras y números'
+                    }
+                }
+            },
+              ciudad:{
+                validators:{
+                    notEmpty:{
+                        message:'Ingrese el nombre de la ciudad'
+                    },
+                    regexp:{
+                      regexp: /^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ\s]*$/, 
+                        message: 'Solo se aceptan letras y números'
+                      }
+                  }
+              },
+            direccion:{
+                validators:{
+                    notEmpty:{
+                        message:'Ingrese una dirección'
+                    },
+                    regexp:{
+                      regexp: /^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ_-\s]*$/, 
+                        message: 'Solo se aceptan letras, números, espacios, guión y guión bajo'
+                      }
+                  }
+              },
+              telefono:{
+                validators:{
+                    notEmpty:{
+                        message:'Ingrese un número de teléfono'
+                    },
+                    regexp:{
+                      regexp: /^[0-9]*$/, 
+                        message: 'Solo se aceptan números'
+                      }
+                  }
+              },
+        }
+      })
+    });
+    </script>
   </body>
 </html>
