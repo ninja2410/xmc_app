@@ -14,8 +14,8 @@ class Estadio
 		return $dt;
   }
 
-  public function update($id, $nombre, $direccion, $telefono, $ciudad){
-    $query="CALL SP_ESTADIO_UPDATE($id,'$nombre', '$direccion', '$telefono', '$ciudad');";
+  public function update($id, $nombre, $direccion, $telefono, $estado, $cuidad){
+    $query="CALL SP_ESTADIO_UPDATE($id,'$nombre', '$direccion', '$telefono', $estado, '$cuidad');";
     $bd= new conexion();
 		$dt=$bd->execute_query($query);
 		return $dt;
