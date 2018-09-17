@@ -15,7 +15,7 @@
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
-            <form method="post", action="..\categoria\store.php">
+            <form method="post", action="..\categoria\store.php"  id="frm_categoria">
               <input type="hidden" name="operation" value="1">
               <div class="row">
                 <div class="col-md-6">
@@ -43,5 +43,41 @@
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $('#frm_categoria').bootstrapValidator({
+      feedbackIcons: {
+          valid: 'glyphicon glyphicon-ok',
+          invalid: 'glyphicon glyphicon-remove',
+          validating: 'glyphicon glyphicon-refresh'
+      },
+      message: 'Valor no valido',
+      fields: {
+          nombre:{
+              validators:{
+                  notEmpty:{
+                      message:'Ingrese un nombre'
+                  },
+                  regexp:{
+                    regexp: /^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ\s]*$/,
+                      message: 'Solo se aceptan letras y números'
+                    }
+                }
+            },
+            descripcion:{
+                validators:{
+                    notEmpty:{
+                        message:'Ingrese una descripcion'
+                    },
+                    regexp:{
+                      regexp: /^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ\s]*$/, 
+                      //  message: 'Solo se aceptan letras y números'
+                      }
+                  }
+              },
+        }
+      })
+    });
+    </script>
   </body>
 </html>
