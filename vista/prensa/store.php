@@ -21,7 +21,7 @@ if(isset($_POST['empresa'])){
   }
 
   if(isset($_POST['estado'])){
-    $empresa=$_POST['estado'];
+    $estado=$_POST['estado'];
   }
 
 if (isset($_POST['id'])) {

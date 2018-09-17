@@ -15,7 +15,7 @@
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
-            <form method="post", action="..\prensa\store.php">
+            <form method="post", action="..\prensa\store.php" id="frm_prensa">
               <input type="hidden" name="operation" value="1">
               <div class="row">
                 <div class="col-md-3">
@@ -26,7 +26,7 @@
                 </div>
                 <div class="col-md-4">
                   <div class="form-group">
-                    <label class="bmd-label-floating">Apellido</label>
+                    <label class="bmd-label-floating">Apellidos</label>
                     <input type="text" class="form-control" name="apellido">
                   </div>
                 </div>
@@ -54,5 +54,63 @@
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $('#frm_prensa').bootstrapValidator({
+      feedbackIcons: {
+          valid: 'glyphicon glyphicon-ok',
+          invalid: 'glyphicon glyphicon-remove',
+          validating: 'glyphicon glyphicon-refresh'
+      },
+      message: 'Valor no valido',
+      fields: {
+          nombre:{
+              validators:{
+                  notEmpty:{
+                      message:'Ingrese un nombre'
+                  },
+                  regexp:{
+                    regexp: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]*$/,
+                      message: 'Solo se aceptan letras'
+                    }
+                }
+            },
+              apellido:{
+                validators:{
+                    notEmpty:{
+                        message:'Ingrese los apellidos'
+                    },
+                    regexp:{
+                    regexp: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]*$/,
+                      message: 'Solo se aceptan letras'
+                    }
+                  }
+              },
+              telefono:{
+                validators:{
+                    notEmpty:{
+                        message:'Ingrese un número de teléfono'
+                    },
+                    regexp:{
+                      regexp: /^[0-9]*$/, 
+                        message: 'Solo se aceptan números'
+                      }
+                  }
+              },
+              empresa:{
+                validators:{
+                    notEmpty:{
+                        message:'Ingrese el nombre de la empresa'
+                    },
+                    regexp:{
+                    regexp: /^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ\s]*$/,
+                      message: 'Solo se aceptan letras y números'
+                    }
+                  }
+              },
+        }
+      })
+    });
+    </script>
   </body>
 </html>

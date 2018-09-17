@@ -8,7 +8,7 @@ $data=$prensa->select(-1);
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Medicos - Listar</title>
+    <title>Prensa - Listar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <body>
