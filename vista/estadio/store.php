@@ -31,7 +31,7 @@ if ($operacion=="1") {
   $accion->insert($nombre, $direccion, $telefono, $ciudad);
 }
 elseif($operacion=="2") {
-  $accion->update($id_estadio, $nombre, $direccion, $telefono, $ciudad);
+  $accion->update($id_estadio, $nombre, $direccion, $telefono, $estado,$ciudad);
 } elseif ($operacion=="3") {
   $accion->delete($id_estadio);
 }
