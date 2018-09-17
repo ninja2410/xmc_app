@@ -39,10 +39,23 @@
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="bmd-label-floating">Id Jugador</label>
-                            <input name="idJugador" type="number" class="form-control" >
-                        </div>
+                      <div class="form-group">
+                        <label for="exampleFormControlSelect1">Jugador</label>
+                        <select class="form-control" name="jugador">
+                          <?php
+                              include_once('..\..\Negocio/ClassJugador.php');
+                              $jugador=new Jugador();
+                              $data=$jugador->select(-1);	
+                              while ($row = mysqli_fetch_array($data))
+                              {
+                                  $valor = $row['idjugador'];
+                                  $texto2 = $row['nombre'];
+                                  $texto = $texto2.' '.$row['apellido'];
+                                  echo '<option value="'.$valor.'">'.$texto.'</option>';
+                              }
+                          ?>
+                        </select>
+                      </div>
                     </div>
 
                     <div class="col-md-6">
@@ -79,5 +92,52 @@
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('#frm_fichaMedica').bootstrapValidator({
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        message: 'Valor no valido',
+        fields: {
+          fecha:{
+              validators:{
+                  notEmpty:{
+                      message:'Seleccione una fecha'
+                  }
+                }
+            },
+
+            grasa:{
+                validators:{
+                    notEmpty:{
+                        message:'Ingrese la valor de grasa'
+                    }
+                }
+            },
+
+            peso:{
+                validators:{
+                    notEmpty:{
+                        message:'Ingrese la valor de peso'
+                    }
+                }
+            },
+
+            talla:{
+                validators:{
+                    notEmpty:{
+                        message:'Ingrese la valor de talla'
+                    }
+                }
+            },
+        }
+    })
+      });
+    </script>
+
   </body>
 </html>

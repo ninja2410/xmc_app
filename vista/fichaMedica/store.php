@@ -15,8 +15,8 @@ if(isset($_POST['status'])){
     $estado=0;
   }
 }
-if(isset($_POST['idJugador'])){
-  $idJugador=$_POST['idJugador'];
+if(isset($_POST['jugador'])){
+  $idJugador=$_POST['jugador'];
 }
 if(isset($_POST['grasa'])){
     $grasa=$_POST['grasa'];
