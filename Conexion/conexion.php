@@ -3,8 +3,8 @@ class conexion
 {
 	private $servidor='localhost';
 	private $usuario="root";
-	private $pass="database";
-	private $bd="db_xelajumc";
+	private $pass="kevinxela";
+	private $bd="proyectofinal";
 	public  $objetoconexion;
 	
 	public function conectar()

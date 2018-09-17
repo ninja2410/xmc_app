@@ -1,7 +1,7 @@
 <?php
 require_once('..\..\Conexion\conexion.php');
 /**
- * Categoria de Documentos
+ * Tipo de entrenador
  */
 class TipoEntrenador
 {
