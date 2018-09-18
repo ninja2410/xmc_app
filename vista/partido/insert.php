@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Usuario - Insertar</title>
+    <title>Partido - Insertar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <body>
@@ -11,23 +11,49 @@
       <div class="col-md-8">
         <div class="card">
           <div class="card-header card-header-primary">
-            <h4 class="card-title">INGRESAR UN NUEVO USUARIO</h4>
+            <h4 class="card-title">INGRESAR UN NUEVO PARTIDO</h4>
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
-            <form method="post", action="..\usuario\store.php" id="frm_usuario">
+            <form method="post", action="..\partido\store.php" id="frm_partido">
               <input type="hidden" name="operation" value="1">
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                   <div class="form-group">
-                    <label class="bmd-label-floating">Nombre de Usuario</label>
-                    <input type="text" class="form-control" name="usuario">
+                    <label class="">Fecha</label>
+                    <input type="date" class="form-control" name="partido">
                   </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                   <div class="form-group">
-                    <label class="bmd-label-floating">Contraseña</label>
-                    <input type="password" class="form-control" name="pass">
+                    <label class="">Hora 1</label>
+                    <input type="time" class="form-control" name="pass">
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label class="">Hora 2</label>
+                    <input type="time" class="form-control" name="pass">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label class="">Equipo</label>
+                    <input type="date" class="form-control" name="partido">
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label class="">Goles a favor</label>
+                    <input type="" class="form-control" name="pass">
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label class="">Goles en contra</label>
+                    <input type="time" class="form-control" name="pass">
                   </div>
                 </div>
               </div>
@@ -42,7 +68,7 @@
     <?php include '..\layoults\scripts2.php'; ?>
     <script type="text/javascript">
       $(document).ready(function(){
-        $('#frm_usuario').bootstrapValidator({
+        $('#frm_partido').bootstrapValidator({
         feedbackIcons: {
             valid: 'glyphicon glyphicon-ok',
             invalid: 'glyphicon glyphicon-remove',
@@ -51,13 +77,13 @@
         message: 'Valor no valido',
         fields: 
         {
-            usuario:
+            partido:
             {
                 validators:
                 {
                     notEmpty:
                     {
-                        message:'Ingrese un nombre de usuario'
+                        message:'Ingrese un nombre de partido'
                     },
                     regexp:
                     {
