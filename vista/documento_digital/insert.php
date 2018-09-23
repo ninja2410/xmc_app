@@ -1,6 +1,6 @@
 <?php
-require_once('..\..\Negocio/ClassCategoria.php');
-$categoria=new Categoria();
+require_once('..\..\Negocio/ClassCategoriaDocumentos.php');
+$categoria=new CatDocumentos();
 $data=$categoria->select(-1);
  ?>
 <!DOCTYPE html>
