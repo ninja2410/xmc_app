@@ -21,13 +21,13 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label class="">Fecha de inicio de la temporada</label>
-                    <input type="date" class="form-control" name="fecha_inicio">
+                    <input type="text" placeholder="YYYY/MM/DD" class="form-control" name="fecha_inicio">
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label class="">Fecha de finalizacion</label>
-                    <input type="date" class="form-control" name="fecha_final">
+                    <input type="text" placeholder="YYYY/MM/DD" class="form-control" name="fecha_final">
                   </div>
                 </div>
               </div>
@@ -41,6 +41,8 @@
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
     <script type="text/javascript">
+    var f = new Date();
+    var fi = new moment();
       $(document).ready(function(){
         $('#frm_temporada').bootstrapValidator({
         feedbackIcons: {
@@ -51,36 +53,65 @@
         message: 'Valor no valido',
         fields: 
         {
-            temporada:
-            {
-                validators:
+          fecha_inicio: 
+          {
+                validators: 
                 {
-                    notEmpty:
+                    notEmpty: 
                     {
-                        message:'Ingrese un nombre de temporada'
+                      message: 'La fecha del partido es necesario'
                     },
-                    regexp:
+                    date: 
                     {
-                      regexp: /^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ\s]*$/,
-                        message: 'Solo se aceptan letras'
+                        message: 'El formato de la fecha no es valida',
+                        format: 'YYYY/MM/DD'
+                    },
+                    callback: 
+                    {
+                        message: 'La fecha debe ser despues de la fecha actual',
+                        callback: function(value, validator) {
+                            var m = new moment(value, 'YYYY/MM/DD', true);
+                            fi = m;
+                            if (!m.isValid()) {
+                                return false;
+                            }
+                            return m.isAfter(f);
+                        }
                     }
                 }
-            },
-            pass:
-            {
-                validators:
+          },
+          fecha_final: 
+          {
+                validators: 
                 {
-                    notEmpty:
+                    notEmpty: 
                     {
-                        message:'Ingrese un contraseña valida'
+                      message: 'La fecha del partido es necesario'
                     },
-                    regexp:
+                    date: 
                     {
-                      regexp: /^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ\s]*$/,
-                        message: 'Solo se aceptan letras'
+                        message: 'El formato de la fecha no es valida',
+                        format: 'YYYY/MM/DD'
+                    },
+                    callback: 
+                    {
+                        message: 'La fecha debe ser despues de la fecha actual',
+                        callback: function(value, validator) 
+                        {
+                            var m = new moment(value, 'YYYY/MM/DD', true);
+                            if (!m.isValid())
+                            {
+                                return false;
+                            }else if (m<fi)
+                            {
+                              return false;
+                            }
+                            return m.isAfter(f);
+                        }
                     }
                 }
-            },
+          }
+            
         }
     })
       });
