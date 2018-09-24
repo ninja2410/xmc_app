@@ -58,7 +58,7 @@ $data=$beneficio->select(-1);
                        ?>
                       <tr>
                         <td>
-                          <?php echo $row['idlesion']; ?>
+                          <?php echo $row['id_lesion']; ?>
                         </td>
                         <td>
                           <?php echo $row['nombre']; ?>
@@ -68,7 +68,7 @@ $data=$beneficio->select(-1);
                         </td>
                         <td class="td-actions text-lefht">
                             <div style="float:left">
-                              <a href="..\..\vista\lesion/update.php?id=<?php echo $row['idlesion']; ?>">
+                              <a href="..\..\vista\lesion/update.php?id=<?php echo $row['id_lesion']; ?>">
                                 <button type="button" rel="tooltip" title="Editar Beneficio" class="btn btn-primary btn-link btn-sm">
                                   <i class="material-icons">edit</i>
                                 </button>
@@ -77,7 +77,7 @@ $data=$beneficio->select(-1);
                             <div  style="float:left">
                               <form class="" action="..\..\vista\lesion/store.php" method="post">
                                 <input type="hidden" name="operation" value="3">
-                                <input type="hidden" name="id" value="<?php echo $row['idlesion']; ?>">
+                                <input type="hidden" name="id" value="<?php echo $row['id_lesion']; ?>">
                                 <button type="submit" rel="tooltip" title="Eliminar Beneficio" class="btn btn-danger btn-link btn-sm">
                                   <i class="material-icons">close</i>
                                 </button>

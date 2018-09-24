@@ -22,7 +22,7 @@ $data=$socio->select($_GET['id']);
           <div class="card-body">
             <form method="post", action="..\socio\store.php" id="frm_socio">
               <input type="hidden" name="operation" value="2">
-              <input type="hidden" name="id" value="<?php echo $data['idsocio']; ?>">
+              <input type="hidden" name="id" value="<?php echo $data['id_socio']; ?>">
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">

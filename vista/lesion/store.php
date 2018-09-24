@@ -23,10 +23,10 @@ if (isset($_POST['id'])) {
 }
 $lesion=new Lesion();
 if ($operacion=="1") {
-  $lesion->insert($nombre, $descripcion, $estado);
+  $lesion->insert($nombre, $descripcion, 1);
 }
 elseif($operacion=="2") {
-  $lesion->update($id_lesion, $nombre, $descripcion, $estado);
+  $lesion->update($id_lesion, $nombre, $descripcion, 1);
 } elseif ($operacion=="3") {
   $lesion->delete($id_lesion);
 }

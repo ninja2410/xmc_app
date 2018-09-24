@@ -16,7 +16,7 @@ $data=$beneficio->select($_GET['id']);
     include '..\layoults\barnav.php';
     ?>
     <div class="content">
-      <div class="col-md-8">
+      <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-primary">
             <h4 class="card-title">Actualizar Beneficio</h4>
@@ -25,25 +25,12 @@ $data=$beneficio->select($_GET['id']);
           <div class="card-body">
             <form method="post", action="..\beneficio\store.php">
               <input type="hidden" name="operation" value="2">
-              <input type="hidden" name="id" value="<?php echo $data['idbeneficio'] ?>">
+              <input type="hidden" name="id" value="<?php echo $data['id_beneficio'] ?>">
               <div class="row">
-                <div class="col-md-5">
+                <div class="col-md-8">
                   <div class="form-group">
                     <label class="bmd-label-floating">Nombre</label>
                     <input name="name" type="text" class="form-control" value="<?php echo $data['nombre'] ?>">
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-check">
-                    <label class="form-check-label">
-                      <label class="bmd-label-floating">Estado activo</label>
-                      <input class="form-check-input"  value="" name="status" type="checkbox" <?php if($data['estado']==1){
-                        echo "checked";
-                      } ?>>
-                      <span class="form-check-sign">
-                        <span class="check"></span>
-                      </span>
-                    </label>
                   </div>
                 </div>
 
