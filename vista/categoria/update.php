@@ -56,6 +56,7 @@ $data=$categoria->select($_GET['id']);
         </div>
       </div>
     </div>
+    </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
     <script type="text/javascript">
@@ -94,6 +95,5 @@ $data=$categoria->select($_GET['id']);
       })
     });
     </script>
-    </div>
   </body>
 </html>

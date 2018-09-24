@@ -5,12 +5,13 @@
     <title>Prensa - Insertar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
-  <body>
+  <body class="profile-page sidebar-collapse">
     <?php include '..\layoults\barnav.php'; ?>
+    <div class="main main-raised"> 
     <div class="content">
-      <div class="col-md-8">
+      <div class="col-md-12">
         <div class="card">
-          <div class="card-header card-header-primary">
+          <div class="card-header card-header-danger">
             <h4 class="card-title">INSERTAR PRENSA</h4>
             <p class="card-category">Complete los campos siguientes</p>
           </div>
@@ -24,7 +25,7 @@
                     <input type="text" class="form-control" name="nombre">
                   </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                   <div class="form-group">
                     <label class="bmd-label-floating">Apellidos</label>
                     <input type="text" class="form-control" name="apellido">
@@ -32,13 +33,13 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-3">
                   <div class="form-group">
                     <label class="bmd-label-floating">Teléfono</label>
                     <input type="text" class="form-control" name="telefono">
                   </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-3">
                   <div class="form-group">
                     <label class="bmd-label-floating">Empresa</label>
                     <input type="text" class="form-control" name="empresa">
@@ -51,6 +52,7 @@
           </div>
         </div>
       </div>
+    </div>
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
@@ -112,5 +114,6 @@
       })
     });
     </script>
+   
   </body>
 </html>

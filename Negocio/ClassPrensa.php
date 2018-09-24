@@ -37,7 +37,7 @@ class Prensa
       $dt=mysqli_query($conexion->objetoconexion,$query);
     }
     else{
-      $query="SELECT * FROM prensa WHERE idprensa=$id AND estado=1";
+      $query="SELECT * FROM prensa WHERE id_prensa=$id AND estado=1";
       $tmp=mysqli_query($conexion->objetoconexion,$query);
       $dt=mysqli_fetch_assoc($tmp);
     }

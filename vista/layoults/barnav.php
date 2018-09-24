@@ -24,7 +24,7 @@
               <a class="nav-link" href="#"><i class="material-icons">supervisor_account</i> Socios</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"><i class="material-icons">phone_android</i> Prensa</a>
+              <a class="nav-link" href="..\..\vista\prensa/index.php"><i class="material-icons">phone_android</i> Prensa</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#"><i class="material-icons">accessibility_new</i> Jugadores</a>
