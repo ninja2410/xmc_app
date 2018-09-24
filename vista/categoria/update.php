@@ -11,19 +11,20 @@ $data=$categoria->select($_GET['id']);
     <title>Categoría - Actualizar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
-  <body>
+  <body class="profile-page sidebar-collapse">
     <?php include '..\layoults\barnav.php'; ?>
+    <div class="main main-raised">
     <div class="content">
       <div class="col-md-12">
         <div class="card">
-          <div class="card-header card-header-primary">
+          <div class="card-header card-header-danger">
             <h4 class="card-title">Actualizar Categoría</h4>
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
             <form method="post", action="..\categoria\store.php" id="frm_categoria">
               <input type="hidden" name="operation" value="2">
-              <input type="hidden" name="id" value="<?php echo $data['idcategoria']; ?>">
+              <input type="hidden" name="id" value="<?php echo $data['id_categoria']; ?>">
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
@@ -93,5 +94,6 @@ $data=$categoria->select($_GET['id']);
       })
     });
     </script>
+    </div>
   </body>
 </html>

@@ -37,7 +37,7 @@ class Categoria
       $dt=mysqli_query($conexion->objetoconexion,$query);
     }
     else{
-      $query="SELECT * FROM categoria WHERE idcategoria=$id AND estado=1";
+      $query="SELECT * FROM categoria WHERE id_categoria=$id AND estado=1";
       $tmp=mysqli_query($conexion->objetoconexion,$query);
       $dt=mysqli_fetch_assoc($tmp);
     }
