@@ -36,7 +36,7 @@ class ParteCuerpo
       $dt=mysqli_query($conexion->objetoconexion,$query);
     }
     else{
-      $query="SELECT * FROM parte_cuerpo WHERE idParte=$id AND estado=1";
+      $query="SELECT * FROM parte_cuerpo WHERE id_parte=$id AND estado=1";
       $tmp=mysqli_query($conexion->objetoconexion,$query);
       $dt=mysqli_fetch_assoc($tmp);
     }

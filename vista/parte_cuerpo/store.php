@@ -28,4 +28,4 @@ elseif($operacion=="2") {
   $parte->delete($id_parte);
 }
 header('Location:index.php');
-?>
+?> 
