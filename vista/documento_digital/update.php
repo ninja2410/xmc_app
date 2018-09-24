@@ -1,13 +1,17 @@
 <?php
 require_once('..\..\Negocio/ClassCategoriaDocumentos.php');
 $categoria=new CatDocumentos();
-$data=$categoria->select(-1);
+$cat=$categoria->select(-1);
+
+require_once('..\..\Negocio/ClassDocumento.php');
+$documento=new Documento();
+$data=$documento->select($_GET['id']);
  ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Documento - Insertar</title>
+    <title>Documento - Modificar</title>
     <?php include '..\layoults\headers2.php'; ?>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
   </head>
@@ -17,46 +21,53 @@ $data=$categoria->select(-1);
       <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-primary">
-            <h4 class="card-title">INGRESAR DOCUMENTOS</h4>
+            <h4 class="card-title">MODIFICAR DOCUMENTOS</h4>
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
             <form method="post", action="..\documento_digital\store.php" enctype="multipart/form-data" id="frm_document">
-              <input type="hidden" name="operation" value="1">
+              <input type="hidden" name="operation" value="2">
+              <input type="hidden" name="id" value="<?php echo $data['ID']; ?>">
+              <input type="hidden" name="path" value="<?php echo $data['path']; ?>">
               <div class="row">
                 <div class="col-md-4">
                   <div class="form-group">
                     <label class="bmd-label-floating">Fecha</label>
-                    <input type="text" class="form-control" name="fecha">
+                    <input readonly type="text" class="form-control" name="fecha" value="<?php echo $data['FECHA']; ?>">
                   </div>
                 </div>
                 <div class="col-md-8">
                   <div class="form-group">
                     <label class="bmd-label-floating">Descripcion</label>
-                    <input type="text" class="form-control" name="descripcion">
+                    <input type="text" class="form-control" name="descripcion" value="<?php echo $data['descripcion']; ?>">
                   </div>
                 </div>
                 </div>
               <div class="row">
-                <div class="col-md-2">
+                <div class="col-md-4">
+                  <img src="..\imagenes\<?php echo $data['path']; ?>" style="width: 200px; height: 150px;" alt="">
+                  <br>
+                  <label><b>Imagen actual.</b></label>
                 </div>
                 <div class="col-md-4">
                   <div class="fileinput fileinput-new" data-provides="fileinput">
                     <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
                     <div>
-                      <span class="btn btn-default btn-file"><span class="fileinput-new">Buscar Imagen</span><span class="fileinput-exists">Cambiar</span><input type="file" name="img"></span>
+                      <span class="btn btn-default btn-file"><span class="fileinput-new">Buscar Nueva</span><span class="fileinput-exists">Cambiar</span><input type="file" name="img"></span>
                       <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Eliminar</a>
                     </div>
                   </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                   <div class="form-group">
                     <label for="exampleFormControlSelect1">Categorias</label>
-                    <select class="form-control" name="categoria">
+                    <select class="form-control" name="categoria" >
                       <?php
-                      while ($row=mysqli_fetch_array($data)) {
+                      while ($row=mysqli_fetch_array($cat)) {
                        ?>
-                       <option value="<?php echo $row['idcategoria_documentos']; ?>"><?php echo $row['nombre']; ?></option>
+                       <option value="<?php echo $row['idcategoria_documentos'];?>" <?php if ($row['idcategoria_documentos']==$data['idcategoria_documentos']) {
+                         echo "selected";
+                       } ?>><?php echo $row['nombre']; ?></option>
                        <?php
                       }
                         ?>
@@ -94,16 +105,9 @@ $data=$categoria->select(-1);
             descripcion:{
                 validators:{
                     notEmpty:{
-                        message:'Ingrese una descripcion.'
+                        message:'Ingrese un apellido'
                     }
                   }
-              },
-              img:{
-                validators:{
-                  notEmpty:{
-                    message:'Seleccione una imagen.'
-                  }
-                }
               },
               categoria:{
                 validators:{

@@ -34,7 +34,7 @@
   </div>
 </nav>
 <!-- Fin de barra de navegacion -->
-<div class="page-header header-filter" data-parallax="true" style="background-image: url('../assets/img/logo.png')">
+<div class="page-header header-filter" data-parall  ax="true" style="background-image: url('../assets/img/logo.png')">
   <div class="container">
     <div class="row">
       <div class="col-md-8 ml-auto mr-auto">
