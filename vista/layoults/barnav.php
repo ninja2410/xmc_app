@@ -34,5 +34,5 @@
   </div>
 </nav>
 <!-- Fin de barra de navegacion -->
-<div class="page-header header-filter" data-parallax="true" style="background-image: url('../assets/img/logo.png')"></div>
+<div class="page-header header-filter" data-parallax="true" style="background-image: url('../assets/img/fondo.jpg')"></div>
 <div class="main main-raised"></div>
