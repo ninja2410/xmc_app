@@ -16,7 +16,7 @@ $data=$medico->select($_GET['id']);
     include '..\layoults\barnav.php';
     ?>
     <div class="content">
-      <div class="col-md-8">
+      <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-primary">
             <h4 class="card-title">Actualizar Medico</h4>
@@ -25,21 +25,15 @@ $data=$medico->select($_GET['id']);
           <div class="card-body">
             <form method="post", action="..\medico\store.php">
               <input type="hidden" name="operation" value="2">
-              <input type="hidden" name="id" value="<?php echo $data['idmedico']; ?>">
+              <input type="hidden" name="id" value="<?php echo $data['id_medico']; ?>">
               <div class="row">
-                <div class="col-md-5">
-                  <div class="form-group">
-                    <label class="bmd-label-floating">E-Mail</label>
-                    <input type="email" class="form-control" name="mail">
-                  </div>
-                </div>
-                <div class="col-md-3">
+                <div class="col-md-6">
                   <div class="form-group">
                     <label class="bmd-label-floating">Nombre</label>
                     <input type="text" class="form-control" name="nombre" value="<?php echo $data['nombre']; ?>">
                   </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                   <div class="form-group">
                     <label class="bmd-label-floating">Apellido</label>
                     <input type="text" class="form-control" name="apellido" value="<?php echo $data['apellido']; ?>">

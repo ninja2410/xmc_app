@@ -40,7 +40,7 @@ class Medico
       $dt=mysqli_query($conexion->objetoconexion,$query);
     }
     else{
-      $query="SELECT * FROM medico WHERE idmedico=$id AND estado=1";
+      $query="SELECT * FROM medico WHERE id_medico=$id AND estado=1";
       $tmp=mysqli_query($conexion->objetoconexion,$query);
       $dt=mysqli_fetch_assoc($tmp);
     }

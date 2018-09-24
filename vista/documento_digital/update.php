@@ -65,7 +65,7 @@ $data=$documento->select($_GET['id']);
                       <?php
                       while ($row=mysqli_fetch_array($cat)) {
                        ?>
-                       <option value="<?php echo $row['idcategoria_documentos'];?>" <?php if ($row['idcategoria_documentos']==$data['idcategoria_documentos']) {
+                       <option value="<?php echo $row['id_categoria_documentos'];?>" <?php if ($row['id_categoria_documentos']==$data['id_categoria_documentos']) {
                          echo "selected";
                        } ?>><?php echo $row['nombre']; ?></option>
                        <?php

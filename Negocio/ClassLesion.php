@@ -36,7 +36,7 @@ class Lesion
       $dt=mysqli_query($conexion->objetoconexion,$query);
     }
     else{
-      $query="SELECT * FROM lesion WHERE idlesion=$id AND estado=1";
+      $query="SELECT * FROM lesion WHERE id_lesion=$id AND estado=1";
       $tmp=mysqli_query($conexion->objetoconexion,$query);
       $dt=mysqli_fetch_assoc($tmp);
     }
