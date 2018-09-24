@@ -35,14 +35,4 @@
 </nav>
 <!-- Fin de barra de navegacion -->
 <div class="page-header header-filter" data-parallax="true" style="background-image: url('../assets/img/logo.png')"></div>
-  <div class="main main-raised">  
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8 ml-auto mr-auto">
-          <div class="brand text-center">
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<div class="main main-raised"></div>

@@ -7,6 +7,9 @@ echo json_encode($_POST);
 if(isset($_POST['fecha'])){
   $fecha = date("Y/m/d", strtotime($_POST['fecha']));
 }
+if(isset($_POST['jugador'])){
+  $id_jugador=$_POST['jugador'];
+}
 if(isset($_POST['status'])){
   if($_POST['status']=="on" || $_POST['status']=="1"){
     $estado=1;
@@ -14,9 +17,6 @@ if(isset($_POST['status'])){
   else{
     $estado=0;
   }
-}
-if(isset($_POST['jugador'])){
-  $idJugador=$_POST['jugador'];
 }
 if(isset($_POST['grasa'])){
     $grasa=$_POST['grasa'];
@@ -32,10 +32,10 @@ if (isset($_POST['id'])) {
 }
 $fichamedica=new FichaMedica();
 if ($operacion=="1") {
-  $fichamedica->insert($fecha, $estado, $idJugador, $grasa, $peso, $talla);
+  $fichamedica->insert($fecha, $estado, $id_jugador, $grasa, $peso, $talla);
 }
 elseif($operacion=="2") {
-  $fichamedica->update($id_ficha, $fecha, $estado, $idJugador, $grasa, $peso, $talla);
+  $fichamedica->update($id_ficha, $fecha, $estado, $id_jugador, $grasa, $peso, $talla);
 } elseif ($operacion=="3") {
   $fichamedica->delete($id_ficha);
 }
