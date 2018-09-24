@@ -1,5 +1,10 @@
 <!--   Core JS Files   -->
-<script src="../assets/js/core/jquery.min.js" type="text/javascript"></script>
+<!--Auto Complete-->
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="//oss.maxcdn.com/momentjs/2.8.2/moment.min.js"></script>
+
+<!-- <script src="../assets/js/core/jquery.min.js" type="text/javascript"></script> -->
 <script src="../assets/js/core/popper.min.js" type="text/javascript"></script>
 <script src="../assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
 <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
