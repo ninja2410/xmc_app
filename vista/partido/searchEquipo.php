@@ -11,16 +11,16 @@ if(isset($_GET['term']))
 {
     $searchTerm = $_GET['term'];
     
-    $query = $db->query("SELECT * FROM equipo WHERE nombreusuario LIKE '%".$searchTerm."%' ORDER BY nombreusuario ASC");
+    $query = $db->query("SELECT * FROM equipo WHERE nombre LIKE '%".$searchTerm."%' ORDER BY nombre ASC");
 }else 
 {
-    $query = $db->query("SELECT * FROM usuario ORDER BY nombreusuario ASC");
+    $query = $db->query("SELECT * FROM equipo ORDER BY nombre ASC");
 }
 
 //get matched data from skills table
 
 while ($row = $query->fetch_assoc()) {
-    $data[] = $row['nombreusuario'];
+    $data[] = $row['nombre'];
 }
 //return json data
 echo json_encode($data);
