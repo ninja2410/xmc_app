@@ -14,8 +14,8 @@ class Estadio
 		return $dt;
   }
 
-  public function update($id, $nombre, $direccion, $telefono, $estado, $cuidad){
-    $query="CALL SP_ESTADIO_UPDATE($id,'$nombre', '$direccion', '$telefono', $estado, '$cuidad');";
+  public function update($id, $nombre, $direccion, $telefono, $estado, $ciudad){
+    $query="CALL SP_ESTADIO_UPDATE($id,'$nombre', '$direccion', '$telefono', $estado, '$ciudad');";
     $bd= new conexion();
 		$dt=$bd->execute_query($query);
 		return $dt;
@@ -36,7 +36,7 @@ class Estadio
       $dt=mysqli_query($conexion->objetoconexion,$query);
     }
     else{
-      $query="SELECT * FROM estadio WHERE idestadio=$id AND estado=1";
+      $query="SELECT * FROM estadio WHERE id_estadio=$id AND estado=1";
       $tmp=mysqli_query($conexion->objetoconexion,$query);
       $dt=mysqli_fetch_assoc($tmp);
     }

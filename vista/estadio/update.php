@@ -3,6 +3,7 @@ require_once('..\..\Negocio/ClassEstadio.php');
 $estadio=new Estadio();
 $data=$estadio->select($_GET['id']);
  ?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -10,19 +11,20 @@ $data=$estadio->select($_GET['id']);
     <title>Estadio - Insertar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
-  <body>
+  <body class="profile-page sidebar-collapse">
     <?php include '..\layoults\barnav.php'; ?>
+    <div class="main main-raised" >
     <div class="content">
-      <div class="col-md-8">
+      <div class="col-md-12">
         <div class="card">
-          <div class="card-header card-header-primary">
+          <div class="card-header card-header-danger">
             <h4 class="card-title">ACTUALIZAR ESTADIO</h4>
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
             <form method="post", action="..\estadio\store.php" id="frm_estadio">
               <input type="hidden" name="operation" value="2">
-              <input type="hidden" name="id" value="<?php echo $data['idestadio']; ?>">
+              <input type="hidden" name="id" value="<?php echo $data['id_estadio']; ?>">
               <div class="row">
                 <div class="col-md-5">
                   <div class="form-group">
@@ -33,20 +35,19 @@ $data=$estadio->select($_GET['id']);
                 <div class="col-md-3">
                   <div class="form-group">
                     <label class="bmd-label-floating">Ciudad</label>
-                    <input type="text" class="form-control" name="ciudad" value="<?php echo $data['cuidad']; ?>">
+                    <input type="text" class="form-control" name="ciudad" value="<?php echo $data['ciudad']; ?>">
                   </div>
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-5">
                   <div class="form-group">
                     <label class="bmd-label-floating">Direccion</label>
                     <input type="text" class="form-control" name="direccion" value="<?php echo $data['direccion']; ?>">
                   </div>
                 </div>
-                </div>
-                <div class="row">
-                <div class="col-md-4">
+                
+                <div class="col-md-3">
                   <div class="form-group">
                     <label class="bmd-label-floating">Teléfono</label>
                     <input type="text" class="form-control" name="telefono" value="<?php echo $data['telefono']; ?>">
@@ -54,11 +55,10 @@ $data=$estadio->select($_GET['id']);
                 </div>
                 <div class="col-md-4">
                   <div class="form-group">
-                    <label class="bmd-label-floating">Teléfono</label>
                     <input type="hidden" class="form-control" name="estado" value="<?php echo $data['estado']; ?>">
                   </div>
                 </div>
-              </div>
+                </div>
               <?php include '..\layoults\botones.php'; ?>
               <div class="clearfix"></div>
             </form>
@@ -126,5 +126,6 @@ $data=$estadio->select($_GET['id']);
       })
     });
     </script>
+   </div>
   </body>
 </html>
