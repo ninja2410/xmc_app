@@ -56,7 +56,7 @@ $data=$categoria->select(-1);
                       <?php
                       while ($row=mysqli_fetch_array($data)) {
                        ?>
-                       <option value="<?php echo $row['idcategoria_documentos']; ?>"><?php echo $row['nombre']; ?></option>
+                       <option value="<?php echo $row['id_categoria_documentos']; ?>"><?php echo $row['nombre']; ?></option>
                        <?php
                       }
                         ?>

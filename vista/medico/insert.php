@@ -8,7 +8,7 @@
   <body>
     <?php include '..\layoults\barnav.php'; ?>
     <div class="content">
-      <div class="col-md-8">
+      <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-primary">
             <h4 class="card-title">INSERTAR MEDICO</h4>
@@ -18,19 +18,13 @@
             <form method="post", action="..\medico\store.php">
               <input type="hidden" name="operation" value="1">
               <div class="row">
-                <div class="col-md-5">
-                  <div class="form-group">
-                    <label class="bmd-label-floating">E-Mail</label>
-                    <input type="email" class="form-control" name="mail">
-                  </div>
-                </div>
-                <div class="col-md-3">
+                <div class="col-md-6">
                   <div class="form-group">
                     <label class="bmd-label-floating">Nombre</label>
                     <input type="text" class="form-control" name="nombre">
                   </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                   <div class="form-group">
                     <label class="bmd-label-floating">Apellido</label>
                     <input type="text" class="form-control" name="apellido">

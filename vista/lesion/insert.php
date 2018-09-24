@@ -8,7 +8,7 @@
   <body>
     <?php include '..\layoults\barnav.php'; ?>
     <div class="content">
-      <div class="col-md-8">
+      <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-primary">
             <h4 class="card-title">INSERTAR LESION</h4>
@@ -18,24 +18,12 @@
             <form method="post", action="..\lesion\store.php" id="frm_lesion">
               <input type="hidden" name="operation" value="1">
               <div class="row">
-                <div class="col-md-5">
+                <div class="col-md-8">
                   <div class="form-group">
                     <label class="bmd-label-floating">Nombre</label>
                     <input name="name" type="text" class="form-control" >
                   </div>
                 </div>
-                <div class="col-md-4">
-                  <div class="form-check">
-                    <label class="form-check-label">
-                      <label class="bmd-label-floating">Estado activo</label>
-                      <input class="form-check-input" type="checkbox" checked name="status">
-                      <span class="form-check-sign">
-                        <span class="check"></span>
-                      </span>
-                    </label>
-                  </div>
-                </div>
-
                 </div>
                 <div class="row">
 

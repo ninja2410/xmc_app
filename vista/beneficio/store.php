@@ -6,14 +6,7 @@ if(isset($_POST['operation'])){
 if(isset($_POST['name'])){
   $nombre=$_POST['name'];
 }
-if(isset($_POST['status'])){
-  if($_POST['status']=="on"){
-    $estado=1;
-  }
-  else{
-    $estado=0;
-  }
-}
+
 if(isset($_POST['description'])){
   $descripcion=$_POST['description'];
 }
@@ -22,10 +15,10 @@ if (isset($_POST['id'])) {
 }
 $beneficio=new Beneficio();
 if ($operacion=="1") {
-  $beneficio->insert($descripcion, $estado, $nombre);
+  $beneficio->insert($descripcion, 1, $nombre);
 }
 elseif($operacion=="2") {
-  $beneficio->update($id_beneficio, $descripcion, $estado, $nombre);
+  $beneficio->update($id_beneficio, $descripcion, 1, $nombre);
 } elseif ($operacion=="3") {
   $beneficio->delete($id_beneficio);
 }

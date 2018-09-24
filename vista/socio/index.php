@@ -22,7 +22,7 @@ $data=$socio->select(-1);
             <div class="card">
               <div class="card-header card-header-primary">
                 <div class="col-lg-10" style="float:left;">
-                  <h2 class="card-title ">socios</h4>
+                  <h2 class="card-title ">SOCIOS</h4>
                   <p class="card-category"> Listado de socios  club Xelaju MC</p>
                 </div>
                 <div class="col-lg-1" style="float:left">
@@ -58,7 +58,7 @@ $data=$socio->select(-1);
                        ?>
                       <tr>
                         <td>
-                          <?php echo $row['idsocio']; ?>
+                          <?php echo $row['id_socio']; ?>
                         </td>
                         <td>
                           <?php echo $row['nombre']; ?>
@@ -68,7 +68,7 @@ $data=$socio->select(-1);
                         </td>
                         <td class="td-actions text-lefht">
                             <div style="float:left">
-                              <a href="..\..\vista\socio/update.php?id=<?php echo $row['idsocio']; ?>">
+                              <a href="..\..\vista\socio/update.php?id=<?php echo $row['id_socio']; ?>">
                                 <button type="button" rel="tooltip" title="Editar socio" class="btn btn-primary btn-link btn-sm">
                                   <i class="material-icons">edit</i>
                                 </button>
@@ -77,7 +77,7 @@ $data=$socio->select(-1);
                             <div  style="float:left">
                               <form class="" action="..\..\vista\socio/store.php" method="post">
                                 <input type="hidden" name="operation" value="3">
-                                <input type="hidden" name="id" value="<?php echo $row['idsocio']; ?>">
+                                <input type="hidden" name="id" value="<?php echo $row['id_socio']; ?>">
                                 <button type="submit" rel="tooltip" title="Eliminar socio" class="btn btn-danger btn-link btn-sm">
                                   <i class="material-icons">close</i>
                                 </button>

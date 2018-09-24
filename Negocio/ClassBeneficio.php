@@ -36,7 +36,7 @@ class Beneficio
       $dt=mysqli_query($conexion->objetoconexion,$query);
     }
     else{
-      $query="SELECT * FROM beneficio WHERE idbeneficio=$id AND estado=1";
+      $query="SELECT * FROM beneficio WHERE id_beneficio=$id AND estado=1";
       $tmp=mysqli_query($conexion->objetoconexion,$query);
       $dt=mysqli_fetch_assoc($tmp);
     }

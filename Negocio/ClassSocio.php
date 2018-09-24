@@ -1,4 +1,4 @@
-SOCIO<?php
+<?php
 require_once('..\..\Conexion\conexion.php');
 /**
  *
@@ -36,7 +36,7 @@ class Socio
         $dt=mysqli_query($conexion->objetoconexion,$query);
       }
       else{
-        $query="SELECT * FROM socio WHERE idsocio=$id AND estado=1";
+        $query="SELECT * FROM socio WHERE id_socio=$id AND estado=1";
         $tmp=mysqli_query($conexion->objetoconexion,$query);
         $dt=mysqli_fetch_assoc($tmp);
       }
