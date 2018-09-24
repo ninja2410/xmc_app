@@ -36,7 +36,7 @@ class CatDocumentos
       $dt=mysqli_query($conexion->objetoconexion,$query);
     }
     else{
-      $query="SELECT * FROM categoria_documentos WHERE idcategoria_documentos=$id AND estado=1;";
+      $query="SELECT * FROM categoria_documentos WHERE id_categoria_documentos=$id AND estado=1;";
       $tmp=mysqli_query($conexion->objetoconexion,$query);
       $dt=mysqli_fetch_assoc($tmp);
     }
