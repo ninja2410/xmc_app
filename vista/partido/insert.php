@@ -16,7 +16,7 @@ $(function() {
       source: 'searchEquipo.php',
       minLength: 0,
       select: function(event, ui) { 
-        console.log(ui.item.id)
+        $("#buscador").val(ui.item.id);
     },
     }).focus(function () {
         $(this).autocomplete('search', $(this).val())
