@@ -25,7 +25,15 @@ $data=$temporada->select($_GET['id']);
           <div class="card-body">
             <form method="post", action="..\temporada\store.php">
               <input type="hidden" name="operation" value="2">
-              <input type="hidden" name="id" value="<?php echo $data['idtemporada']; ?>">
+              <input type="hidden" name="id" value="<?php echo $data['id_temporada']; ?>">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="">Descripcion</label>
+                    <input type="text" class="form-control" value="<?php echo $data['descripcion']; ?>" name="descripcion">
+                  </div>
+                </div>
+              </div>
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">

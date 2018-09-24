@@ -52,14 +52,14 @@ $data=$usuario->select(-1);
                        ?>
                       <tr>
                         <td>
-                          <?php echo $row['idusuario']; ?>
+                          <?php echo $row['id_usuario']; ?>
                         </td>
                         <td>
-                          <?php echo $row['nombreusuario']; ?>
+                          <?php echo $row['nombre_usuario']; ?>
                         </td>
                         <td class="td-actions text-lefht">
                             <div style="float:left">
-                              <a href="..\..\vista\usuario/update.php?id=<?php echo $row['idusuario']; ?>">
+                              <a href="..\..\vista\usuario/update.php?id=<?php echo $row['id_usuario']; ?>">
                                 <button type="button" rel="tooltip" title="Editar Usuario" class="btn btn-primary btn-link btn-sm">
                                   <i class="material-icons">edit</i>
                                 </button>
@@ -68,7 +68,7 @@ $data=$usuario->select(-1);
                             <div  style="float:left">
                               <form class="" action="..\..\vista\usuario/store.php" method="post">
                                 <input type="hidden" name="operation" value="3">
-                                <input type="hidden" name="id" value="<?php echo $row['idusuario']; ?>">
+                                <input type="hidden" name="id" value="<?php echo $row['id_usuario']; ?>">
                                 <button type="submit" rel="tooltip" title="Eliminar Usuario" class="btn btn-danger btn-link btn-sm">
                                   <i class="material-icons">close</i>
                                 </button>

@@ -43,6 +43,9 @@ $data=$temporada->select(-1);
                         ID
                       </th>
                       <th>
+                        Descripcion
+                      </th>
+                      <th>
                         Fecha de inicio
                       </th>
                       <th>
@@ -55,7 +58,10 @@ $data=$temporada->select(-1);
                        ?>
                       <tr>
                         <td>
-                          <?php echo $row['idtemporada']; ?>
+                          <?php echo $row['id_temporada']; ?>
+                        </td>
+                        <td>
+                          <?php echo $row['descripcion']; ?>
                         </td>
                         <td>
                           <?php echo $row['fecha_inicio']; ?>
@@ -65,7 +71,7 @@ $data=$temporada->select(-1);
                         </td>
                         <td class="td-actions text-lefht">
                             <div style="float:left">
-                              <a href="..\..\vista\temporada/update.php?id=<?php echo $row['idtemporada']; ?>">
+                              <a href="..\..\vista\temporada/update.php?id=<?php echo $row['id_temporada']; ?>">
                                 <button type="button" rel="tooltip" title="Editar temporada" class="btn btn-primary btn-link btn-sm">
                                   <i class="material-icons">edit</i>
                                 </button>
@@ -74,7 +80,7 @@ $data=$temporada->select(-1);
                             <div  style="float:left">
                               <form class="" action="..\..\vista\temporada/store.php" method="post">
                                 <input type="hidden" name="operation" value="3">
-                                <input type="hidden" name="id" value="<?php echo $row['idtemporada']; ?>">
+                                <input type="hidden" name="id" value="<?php echo $row['id_temporada']; ?>">
                                 <button type="submit" rel="tooltip" title="Eliminar temporada" class="btn btn-danger btn-link btn-sm">
                                   <i class="material-icons">close</i>
                                 </button>

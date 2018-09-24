@@ -19,24 +19,24 @@ class Temporada
         }
         else
         {
-            $query="SELECT * FROM temporada WHERE idtemporada=$id AND estado=1";
+            $query="SELECT * FROM temporada WHERE id_temporada=$id AND estado=1";
             $tmp=mysqli_query($conexion->objetoconexion,$query);
             $dt=mysqli_fetch_assoc($tmp);
         }
         $conexion->desconectar();
         return $dt;
     }
-    public function insert($fecha_inicio, $fecha_final)
+    public function insert($descripcion, $fecha_inicio, $fecha_final)
     {
-        $query="CALL SP_TEMPORADA_INSERT('$fecha_inicio','$fecha_final');";
+        $query="CALL SP_TEMPORADA_INSERT('$descripcion','$fecha_inicio','$fecha_final');";
         $bd= new conexion();
 		$dt=$bd->execute_query($query);
 		return $dt;
     }
 
-    public function update($id, $fecha_inicio, $fecha_final)
+    public function update($id,$descripcion, $fecha_inicio, $fecha_final)
     {
-        $query="CALL SP_TEMPORADA_UPDATE('$id','$fecha_inicio','$fecha_final');";
+        $query="CALL SP_TEMPORADA_UPDATE('$id','$descripcion','$fecha_inicio','$fecha_final');";
         $bd= new conexion();
 		$dt=$bd->execute_query($query);
 		return $dt;

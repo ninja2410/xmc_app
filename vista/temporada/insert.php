@@ -20,6 +20,14 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
+                    <label class="">Descripcion</label>
+                    <input type="text" class="form-control" name="descripcion">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
                     <label class="">Fecha de inicio de la temporada</label>
                     <input type="text" placeholder="YYYY/MM/DD" class="form-control" name="fecha_inicio">
                   </div>

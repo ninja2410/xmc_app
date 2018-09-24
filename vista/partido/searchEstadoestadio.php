@@ -12,11 +12,11 @@ $searchTerm = $_GET['term'];
 $return_arr=array();
 
 //get matched data from skills table
-$query = $db->query("SELECT * FROM estadio WHERE nombre LIKE '%".$searchTerm."%' ORDER BY nombre ASC");
+$query = $db->query("SELECT * FROM estado_estadio WHERE descripcion LIKE '%".$searchTerm."%' ORDER BY descripcion ASC");
 while ($fila = $query->fetch_assoc()) 
 {           $ca_producto=array(
-    "id"=> $fila['id_estadio'],
-    "value"=>$fila['nombre']
+    "id"=> $fila['id_estado_estadio'],
+    "value"=>$fila['descripcion']
 );
 array_push($return_arr, $ca_producto);
    

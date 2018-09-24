@@ -11,7 +11,7 @@ $data=$partido->select(-1);
     <title>Partidos - Listar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
-  <body>
+  <body class="profile-page sidebar-collapse">
     <?php
     include '..\layoults\barnav.php';
     ?>
@@ -79,7 +79,7 @@ $data=$partido->select(-1);
                        ?>
                       <tr>
                         <td>
-                          <?php echo $row['idpartido']; ?>
+                          <?php echo $row['id_partido']; ?>
                         </td>
                         <td>
                           <?php echo $row['fecha']; ?>
@@ -88,10 +88,10 @@ $data=$partido->select(-1);
                           <?php echo $row['hora_inicio1']; ?>
                         </td>
                         <td>
-                          <?php echo $row['idcategoria']; ?>
+                          <?php echo $row['id_categoria']; ?>
                         </td>
                         <td>
-                          <?php echo $row['idestadio']; ?>
+                          <?php echo $row['id_estadio']; ?>
                         </td>
                         <td>
                           <?php echo $row['goles_favor']; ?>
@@ -100,20 +100,20 @@ $data=$partido->select(-1);
                           <?php echo $row['goles_contra']; ?>
                         </td>
                         <td>
-                          <?php echo $row['idequipo']; ?>
+                          <?php echo $row['id_equipo']; ?>
                         </td>
                         <td>
-                          <?php echo $row['idtemporada']; ?>
+                          <?php echo $row['id_temporada']; ?>
                         </td>
                         <td>
                           <?php echo $row['hora_inicio2']; ?>
                         </td>
                         <td>
-                          <?php echo $row['idestadopartido']; ?>
+                          <?php echo $row['id_estado_partido']; ?>
                         </td>
                         <td class="td-actions text-lefht">
                             <div style="float:left">
-                              <a href="..\..\vista\partido/update.php?id=<?php echo $row['idpartido']; ?>">
+                              <a href="..\..\vista\partido/update.php?id=<?php echo $row['id_partido']; ?>">
                                 <button type="button" rel="tooltip" title="Editar partido" class="btn btn-primary btn-link btn-sm">
                                   <i class="material-icons">edit</i>
                                 </button>
@@ -122,7 +122,7 @@ $data=$partido->select(-1);
                             <div  style="float:left">
                               <form class="" action="..\..\vista\partido/store.php" method="post">
                                 <input type="hidden" name="operation" value="3">
-                                <input type="hidden" name="id" value="<?php echo $row['idpartido']; ?>">
+                                <input type="hidden" name="id" value="<?php echo $row['id_partido']; ?>">
                                 <button type="submit" rel="tooltip" title="Eliminar partido" class="btn btn-danger btn-link btn-sm">
                                   <i class="material-icons">close</i>
                                 </button>

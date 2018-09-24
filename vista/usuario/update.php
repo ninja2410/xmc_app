@@ -25,12 +25,12 @@ $data=$usuario->select($_GET['id']);
           <div class="card-body">
             <form method="post", action="..\usuario\store.php">
               <input type="hidden" name="operation" value="2">
-              <input type="hidden" name="id" value="<?php echo $data['idusuario']; ?>">
+              <input type="hidden" name="id" value="<?php echo $data['id_usuario']; ?>">
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
                     <label class="bmd-label-floating">Nombre de Usuario</label>
-                    <input type="text" class="form-control" name="usuario" value="<?php echo $data['nombreusuario']; ?>">
+                    <input type="text" class="form-control" name="usuario" value="<?php echo $data['nombre_usuario']; ?>">
                   </div>
                 </div>
                 <div class="col-md-6">

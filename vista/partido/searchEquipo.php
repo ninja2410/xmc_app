@@ -15,7 +15,7 @@ $return_arr=array();
 $query = $db->query("SELECT * FROM equipo WHERE nombre LIKE '%".$searchTerm."%' ORDER BY nombre ASC");
 while ($fila = $query->fetch_assoc()) 
 {           $ca_producto=array(
-    "id"=> $fila['idequipo'],
+    "id"=> $fila['id_equipo'],
     "value"=>$fila['nombre']
 );
 array_push($return_arr, $ca_producto);

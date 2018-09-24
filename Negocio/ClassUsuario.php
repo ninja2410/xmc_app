@@ -19,7 +19,7 @@ class Usuario
         }
         else
         {
-            $query="SELECT * FROM usuario WHERE idusuario=$id AND estado=1";
+            $query="SELECT * FROM usuario WHERE id_usuario=$id AND estado=1";
             $tmp=mysqli_query($conexion->objetoconexion,$query);
             $dt=mysqli_fetch_assoc($tmp);
         }
