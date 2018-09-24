@@ -4,7 +4,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
 <!-- Icono -->
-<link rel="shortcut icon" type="image/x-icon" href="zzassets/img/logo.ico">
+<link rel="shortcut icon" type="image/x-icon" href="assets/img/logo.ico">
 
 <!--     Fonts and icons     -->
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
