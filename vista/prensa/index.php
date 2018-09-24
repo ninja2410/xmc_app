@@ -11,23 +11,24 @@ $data=$prensa->select(-1);
     <title>Prensa - Listar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
-  <body>
+  <body class="profile-page sidebar-collapse">
     <?php
     include '..\layoults\barnav.php';
     ?>
+    <div class="main main-raised"> 
     <div class="content">
       <div class="container-fluid">
-        <div class="row">
+        
           <div class="col-md-12">
             <div class="card">
-              <div class="card-header card-header-primary">
+              <div class="card-header card-header-danger">
                 <div class="col-lg-10" style="float:left;">
                   <h2 class="card-title ">Prensa</h4>
                   <p class="card-category">Listado de Prensa</p>
                 </div>
                 <div class="col-lg-1" style="float:left">
                   <a href="..\..\vista\prensa/insert.php" title="Agregar prensa">
-                    <div class="card-header card-header-success card-header-icon" style="float:left">
+                    <div class="card-header card-header-success card-header-icon" style="float:right">
                       <div class="card-icon">
                         <i class="material-icons">add</i>
                       </div>
@@ -38,7 +39,7 @@ $data=$prensa->select(-1);
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table">
-                    <thead class=" text-primary">
+                    <thead class=" text-info">
                       <th>
                         ID
                       </th>
@@ -61,7 +62,7 @@ $data=$prensa->select(-1);
                        ?>
                       <tr>
                         <td>
-                          <?php echo $row['idprensa']; ?>
+                          <?php echo $row['id_prensa']; ?>
                         </td>
                         <td>
                           <?php echo $row['nombre']; ?>
@@ -77,7 +78,7 @@ $data=$prensa->select(-1);
                         </td>
                         <td class="td-actions text-lefht">
                             <div style="float:left">
-                              <a href="..\..\vista\prensa/update.php?id=<?php echo $row['idprensa']; ?>">
+                              <a href="..\..\vista\prensa/update.php?id=<?php echo $row['id_prensa']; ?>">
                                 <button type="button" rel="tooltip" title="Editar Prensa" class="btn btn-primary btn-link btn-sm">
                                   <i class="material-icons">edit</i>
                                 </button>
@@ -86,7 +87,7 @@ $data=$prensa->select(-1);
                             <div  style="float:left">
                               <form class="" action="..\..\vista\prensa/store.php" method="post">
                                 <input type="hidden" name="operation" value="3">
-                                <input type="hidden" name="id" value="<?php echo $row['idprensa']; ?>">
+                                <input type="hidden" name="id" value="<?php echo $row['id_prensa']; ?>">
                                 <button type="submit" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm">
                                   <i class="material-icons">close</i>
                                 </button>
@@ -102,8 +103,8 @@ $data=$prensa->select(-1);
               </div>
             </div>
           </div>
-        </div>
       </div>
+    </div>
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
