@@ -49,28 +49,5 @@ class Usuario
             return $dt;
     }
 
-    function opciones() {
-        $texto = '';
-        $conexion=new conexion();
-        $conexion->conectar();
-        
-        $query="SELECT * FROM usuario WHERE estado=1";
-        $dt=mysqli_query($conexion->objetoconexion,$query);
-        
-        if (mysqli_num_rows($dt) > 0){ 
-
-            while($fila = mysqli_fetch_assoc($dt)){ 
-                // se recoge la información según la vamos a pasar a la variable de javascript
-                $texto .= '"' . $fila['nombreusuario'] . '",';
-                }
-        
-        }else{
-                $texto = "NO HAY RESULTADOS EN LA BBDD";	
-        }
-        // Después de trabajar con la bbdd, cerramos la conexión (por seguridad, no hay que dejar conexiones abiertas)
-        $conexion->desconectar();
-        return $texto;
-       
-    }
 
 }  

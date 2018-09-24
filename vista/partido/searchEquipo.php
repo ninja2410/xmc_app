@@ -7,21 +7,20 @@ $dbName = 'db_xelajumc';
 //connect with the database
 $db = new mysqli($dbHost,$dbUsername,$dbPassword,$dbName);
 //get search term
-if(isset($_GET['term']))
-{
-    $searchTerm = $_GET['term'];
-    
-    $query = $db->query("SELECT * FROM equipo WHERE nombre LIKE '%".$searchTerm."%' ORDER BY nombre ASC");
-}else 
-{
-    $query = $db->query("SELECT * FROM equipo ORDER BY nombre ASC");
-}
+$searchTerm = $_GET['term'];
+
+$return_arr=array();
 
 //get matched data from skills table
-
-while ($row = $query->fetch_assoc()) {
-    $data[] = $row['nombre'];
+$query = $db->query("SELECT * FROM equipo WHERE nombre LIKE '%".$searchTerm."%' ORDER BY nombre ASC");
+while ($fila = $query->fetch_assoc()) 
+{           $ca_producto=array(
+    "id"=> $fila['idequipo'],
+    "value"=>$fila['nombre']
+);
+array_push($return_arr, $ca_producto);
+   
 }
 //return json data
-echo json_encode($data);
+echo json_encode($return_arr);
 ?>

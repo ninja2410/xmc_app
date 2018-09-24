@@ -11,13 +11,16 @@
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>  
   <body>
   <script type="text/javascript">
-  $(function() {
+$(function() {
     $( "#buscador" ).autocomplete({
       source: 'searchEquipo.php',
-      minLength: 0
+      minLength: 0,
+      select: function(event, ui) { 
+        console.log(ui.item.id)
+    },
     }).focus(function () {
         $(this).autocomplete('search', $(this).val())
-    });
+      });
   });
   </script>
     <?php include '..\layoults\barnav.php'; ?>
@@ -66,7 +69,7 @@
                 </div>
                 <div class="col-md-4">
                   <div class="form-group">
-                    <label class="">Goles en contra</label>
+                    <label  id="show" class="">Goles en contra</label>
                     <input type="text" class="form-control" name="pass">
                   </div>
                 </div>
@@ -82,8 +85,8 @@
     <?php include '..\layoults\scripts2.php'; ?>
     <script type="text/javascript">
       var f = new Date();
-
 $(document).ready(function() {
+  $( "#show" ).text('prueba');
     $('#frm_partido').bootstrapValidator({
         feedbackIcons: {
             valid: 'glyphicon glyphicon-ok',
