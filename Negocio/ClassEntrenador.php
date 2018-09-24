@@ -7,18 +7,18 @@ class Entrenador
 {
 
   private $query;
-  public function insert($nombre, $apellido, $fecha_nacimiento, $fecha_inicio, $fecha_fin, $telefono, $direccion, $idtipoentrenador){
+  public function insert($nombre, $apellido, $fecha_nacimiento, $fecha_inicio, $fecha_fin, $telefono, $direccion, $id_tipo_entrenador){
     $query="CALL SP_ENTRENADOR_INSERT('$nombre', '$apellido', '$fecha_nacimiento', '$fecha_inicio',
-    '$fecha_fin', $telefono, '$direccion', '$idtipoentrenador');";
+    '$fecha_fin', $telefono, '$direccion', $id_tipo_entrenador);";
     $bd= new conexion();
 		$dt=$bd->execute_query($query);
 		return $dt;
   }
 
   public function update($id, $nombre, $apellido, $f_nacimiento, $f_inicio, $f_fin,
-   $estado, $direccion, $telefono){
+   $estado, $telefono, $direccion, $id_tipo_entrenador){
     $query="CALL SP_ENTRENADOR_UPDATE($id,'$nombre', '$apellido', '$f_nacimiento', '$f_inicio',
-    '$f_fin','$direccion', '$telefono');";
+    '$f_fin',$estado,'$telefono', '$direccion',$id_tipo_entrenador);";
     $bd= new conexion();
 		$dt=$bd->execute_query($query);
 		return $dt;
@@ -35,11 +35,14 @@ class Entrenador
     $conexion=new conexion();
     $conexion->conectar();
     if ($id==-1) {
-      $query="SELECT * FROM entrenador WHERE estado=1";
+      $query = "SELECT id_entrenador,nombre,apellido,fecha_nacimiento,fecha_inicio,fecha_fin,telefono,direccion,
+      tipo_entrenador.descripcion FROM entrenador,tipo_entrenador WHERE entrenador.estado = 1 AND entrenador.id_tipo_entrenador =
+      tipo_entrenador.id_tipo_entrenador";
+      //$query="SELECT * FROM entrenador WHERE estado=1";
       $dt=mysqli_query($conexion->objetoconexion,$query);
     }
     else{
-      $query="SELECT * FROM entrenador WHERE identrenador=$id AND estado=1";
+      $query="SELECT * FROM entrenador WHERE id_entrenador=$id AND estado=1";
       $tmp=mysqli_query($conexion->objetoconexion,$query);
       $dt=mysqli_fetch_assoc($tmp);
     }

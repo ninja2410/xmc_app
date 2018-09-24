@@ -2,13 +2,13 @@
 require_once('..\..\Negocio/ClassEstadio.php');
 $estadio=new Estadio();
 $data=$estadio->select($_GET['id']);
- ?>
+?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Estadio - Insertar</title>
+    <title>Estadio - Actualizar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
