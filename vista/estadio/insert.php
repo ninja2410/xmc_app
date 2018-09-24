@@ -54,6 +54,7 @@
         </div>
       </div>
     </div>
+    </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
     <script type="text/javascript">
@@ -114,6 +115,6 @@
       })
     });
     </script>
-    </div>
+    
   </body>
 </html>
