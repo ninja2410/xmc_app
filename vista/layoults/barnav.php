@@ -3,7 +3,7 @@
   <div class="container">
       <div class="navbar-translate">
         <a class="navbar-brand" href="Index.php">
-          <img src="assets/img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+          <img src="../assets/img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
           Xelajú MC
         </a>
 
@@ -34,11 +34,13 @@
   </div>
 </nav>
 <!-- Fin de barra de navegacion -->
-<div class="page-header header-filter" data-parall  ax="true" style="background-image: url('../assets/img/logo.png')">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 ml-auto mr-auto">
-        <div class="brand text-center">
+<div class="page-header header-filter" data-parallax="true" style="background-image: url('../assets/img/logo.png')"></div>
+  <div class="main main-raised">  
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 ml-auto mr-auto">
+          <div class="brand text-center">
+          </div>
         </div>
       </div>
     </div>
