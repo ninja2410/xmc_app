@@ -31,6 +31,7 @@
       minLength: 0,
       select: function(event, ui) 
       { 
+        $("#autoCategoria").val(ui.item.value);
         $("#cat").val(ui.item.id);
       },
     }).focus(function () {
@@ -43,9 +44,10 @@
       select: function(event, ui) { 
         $("#estadio").val(ui.item.id);
     },
-    }).focus(function () {
+    }).focus(function () 
+    {
         $(this).autocomplete('search', $(this).val())
-      });
+    });
 
     $( "#autotemp" ).autocomplete({
       source: 'searchTemporada.php',
@@ -92,7 +94,7 @@
   </script>
     <?php include '..\layoults\barnav.php'; ?>
     <div class="content">
-      <div class="col-md-8">
+      <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-primary">
             <h4 class="card-title">INGRESAR UN NUEVO PARTIDO</h4>
@@ -118,7 +120,7 @@
                   <div class="form-group">
                     <label class="">Categoria</label>
                     <input type="hidden" name="cat" id="cat" >
-                    <input type="text" id="autoCategoria" class="form-control">
+                    <input type="text" id="autoCategoria" name="autoCategoria"  class="form-control">
                   </div>
                 </div>
               </div>
@@ -238,6 +240,39 @@ $(document).ready(function() {
                             return m.isAfter(f);
                         }
                     }
+                }
+          },
+          h1: 
+          {
+                validators: 
+                {
+                    notEmpty: 
+                    {
+                      message: 'Debe ingresar una hora valida'
+                    }
+            
+                }
+          },
+          autoestadio: 
+          {
+                validators: 
+                {
+                    notEmpty: 
+                    {
+                      message: 'Debe seleccionar un estadio'
+                    }
+            
+                }
+          },
+          autoCategoria: 
+          {
+                validators: 
+                {
+                    notEmpty: 
+                    {
+                      message: 'debe selecionar una categoria'
+                    }
+            
                 }
           },
         }

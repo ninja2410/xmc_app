@@ -63,6 +63,7 @@ if ($operacion=="1")
 
 }elseif ($operacion=="3") 
 {
-  $lesion->delete($id_usuario);
+  $lesion->delete($id_partido);
 }
+header('Location:index.php');
 ?>
