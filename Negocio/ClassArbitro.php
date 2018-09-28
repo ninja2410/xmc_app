@@ -7,15 +7,15 @@ class Arbitro
 {
 
   private $query;
-  public function insert($nombre,$apellidos, $id_tipo_arbitro){
-    $query="CALL SP_ARBITRO_INSERT('$nombre','$apellidos', $id_tipo_arbitro);";
+  public function insert($nombre, $id_tipo_arbitro){
+    $query="CALL SP_ARBITRO_INSERT('$nombre', $id_tipo_arbitro);";
     $bd= new conexion();
 		$dt=$bd->execute_query($query);
 		return $dt;
   }
 
-  public function update($id, $nombre,$apellidos, $id_tipo_arbitro){
-    $query="CALL SP_ARBITRO_UPDATE($id,'$nombre','$apellidos', $id_tipo_arbitro, $estado);";
+  public function update($id, $nombre, $id_tipo_arbitro){
+    $query="CALL SP_ARBITRO_UPDATE($id,'$nombre', $id_tipo_arbitro);";
     $bd= new conexion();
 		$dt=$bd->execute_query($query);
 		return $dt;

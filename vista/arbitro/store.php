@@ -24,12 +24,13 @@ if (isset($_POST['id'])) {
 
 $accion=new Arbitro();
 if ($operacion=="1") {
-  $accion->insert($nombre,$apellidos, $id_tipo_arbitro);
+  $accion->insert($nombre, $id_tipo_arbitro);
 }
 elseif($operacion=="2") {
-  $accion->update($id_arbitro, $nombre,$apellidos, $id_tipo_arbitro, $estado);
+  $accion->update($id_arbitro, $nombre, $id_tipo_arbitro);
+
 } elseif ($operacion=="3") {
   $accion->delete($id_arbitro);
 }
-header('Location:index.php');
+ header('Location:index.php');
 ?>
