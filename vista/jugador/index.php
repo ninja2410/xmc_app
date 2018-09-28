@@ -11,98 +11,54 @@ $data=$jugador->select(-1);
     <title>Jugadores - Listar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
-  <body>
+  <body class="profile-page sidebar-collapse">
     <?php
     include '..\layoults\barnav.php';
     ?>
     <div class="content">
-      <div class="container-fluid">
-        <div class="row">
+      <div class="container">
+      <div class="row">
           <div class="col-md-12">
             <div class="card">
-              <div class="card-header card-header-danger">
-                  <h4 class="card-title">Jugadores</h4>
+              <div class="card-header card-header-danger row">
+                <div class="col-md-11">
+                  <h3 class="card-title">Jugadores</h3>
                   <p class="category">Listado de jugadores.</p>
-              </div>
-              <div class="card-body">
-                <div class="table-responsive">
-                  <table class="table">
-                    <thead>
-                      <tr>
-                        <th>ID</th>
-                        <th>Nombre</th>
-                        <th>Direccion</th>
-                        <th>Fecha Nacimiento</th>
-                        <th>Padre</th>
-                        <th>Madre</th>
-                        <th>Telefono</th>
-                        <th>Procedencia</th>
-                        <th>Foto</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                    <?php
-                        while ($row=mysqli_fetch_array($data)) {
-                        ?>
-                        <tr>
-                          <td>
-                            <?php echo $row['id_jugador']; ?>
-                          </td>
-                          <td>
-                            <?php echo $row['nombre']." ".$row['apellido']; ?>
-                          </td>
-                          <td>
-                            <?php echo $row['direccion']; ?>
-                          </td>
-                          <td>
-                            <?php echo $row['fecha_nacimiento']; ?>
-                          </td>
-                          <td>
-                            <?php echo $row['padre']; ?>
-                          </td>
-                          <td>
-                            <?php echo $row['madre']; ?>
-                          </td>
-                          <td>
-                            <?php echo $row['telefono']; ?>
-                          </td>
-                          <td>
-                            <?php echo $row['procedencia']; ?>
-                          </td>
-                          <td>
-                            <?php echo $row['foto']; ?>
-                          </td>
-                          <td class="td-actions text-lefht">
-                              <div style="float:left">
-                                <a href="..\..\vista\jugador/insert.php">
-                                  <button type="button" rel="tooltip" title="Nueva Ficha" class="btn btn-primary btn-link btn-sm">
-                                    <i class="material-icons">add</i>
-                                  </button>
-                                </a>
-                              </div>
-                              <div style="float:left">
-                                <a href="..\..\vista\jugador/update.php?id=<?php echo $row['id_jugador']; ?>">
-                                  <button type="button" rel="tooltip" title="Editar Ficha" class="btn btn-primary btn-link btn-sm">
-                                    <i class="material-icons">edit</i>
-                                  </button>
-                                </a>
-                              </div>
-                              <div  style="float:left">
-                                <form class="" action="..\..\vista\jugador/store.php" method="post">
-                                  <input type="hidden" name="operation" value="3">
-                                  <input type="hidden" name="id" value="<?php echo $row['id_jugador']; ?>">
-                                  <button type="submit" rel="tooltip" title="Eliminar Ficha" class="btn btn-danger btn-link btn-sm">
-                                    <i class="material-icons">close</i>
-                                  </button>
-                                </form>
-                              </div>
-                          </td>
-                          <?php
-                        } ?>
-                        </tr>
-                    </tbody>
-                  </table>
                 </div>
+                <div class="col-md-1 text-right">
+                  <a href="..\..\vista\jugador/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true">
+                    <i class="material-icons">add</i>
+                  </a>
+                </div>
+              </div>
+              <div class="card-body text-center">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Nombre</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <?php
+                      while ($row=mysqli_fetch_array($data)) {
+                      ?>
+                      <tr>
+                        <td>
+                          <?php echo $row['id_jugador']; ?>
+                        </td>
+                        <td>
+                          <?php echo $row['nombre']." ".$row['apellido']; ?>
+                        </td>
+                        <td>
+                          <a href="..\..\vista\jugador/detalle.php?id=<?php echo $row['id_jugador']; ?>">
+                          <button class="btn btn-primary btn-round btn-sm">Ver detalles</button>
+                        </td>
+                        <?php
+                      } ?>
+                      </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
