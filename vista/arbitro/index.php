@@ -47,9 +47,6 @@ $data=$arbitro->select(-1);
                         Nombre
                       </th>
                       <th>
-                        Apellidos
-                      </th>
-                      <th>
                         Tipo árbitro
                       </th>
                     </thead>
@@ -63,9 +60,6 @@ $data=$arbitro->select(-1);
                         </td>
                         <td>
                           <?php echo $row['nombre']; ?>
-                        </td>
-                        <td>
-                          <?php echo $row['apellidos']; ?>
                         </td>
                         <td>
                           <?php echo $row['descripcion']; ?>

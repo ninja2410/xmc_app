@@ -8,10 +8,6 @@ if(isset($_POST['nombre'])){
   $nombre=$_POST['nombre'];
 }
 
-if (isset($_POST['apellidos'])) {
-  $apellidos=$_POST['apellidos'];
-}
-
 if(isset($_POST['id_tipo_arbitro'])){
   $id_tipo_arbitro=$_POST['id_tipo_arbitro'];
 }

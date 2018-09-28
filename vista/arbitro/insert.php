@@ -31,12 +31,6 @@ $data=$tipoarbitro->select(-1);
                     <input type="text" class="form-control" name="nombre">
                   </div>
                 </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label class="bmd-label-floating">Apellidos</label>
-                    <input type="text" class="form-control" name="apellidos">
-                  </div>
-                </div>
               </div>
               <div class="row">
               <div class="col-md-4">
@@ -78,17 +72,6 @@ $data=$tipoarbitro->select(-1);
               validators:{
                   notEmpty:{
                       message:'Ingrese un nombre'
-                  },
-                  regexp:{
-                    regexp: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]*$/,
-                      message: 'Solo se aceptan letras'
-                    }
-                }
-            },
-            apellidos:{
-              validators:{
-                  notEmpty:{
-                      message:'Ingrese los apellidos del árbitro'
                   },
                   regexp:{
                     regexp: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]*$/,
