@@ -8,11 +8,11 @@ $searchTerm = $_GET['term'];
 $return_arr=array();
 
 //get matched data from skills table
-$query = $conexion->objetoconexion->query("SELECT * FROM temporada WHERE descripcion LIKE '%".$searchTerm."%' ORDER BY descripcion ASC");
+$query = $conexion->objetoconexion->query("SELECT * FROM jugador WHERE nombre LIKE '%".$searchTerm."%' ORDER BY nombre ASC");
 while ($fila = $query->fetch_assoc()) 
 {           $ca_producto=array(
-    "id"=> $fila['id_temporada'],
-    "value"=>$fila['descripcion']
+    "id"=> $fila['id_jugador'],
+    "value"=>$fila['nombre']
 );
 array_push($return_arr, $ca_producto);
    

@@ -15,7 +15,6 @@ $data=$partido->select(-1);
     <?php
     include '..\layoults\barnav.php';
     ?>
-    <div class="main main-raised">
     <div class="content">
       <div class="container-fluid">
         <div class="row">
@@ -141,7 +140,6 @@ $data=$partido->select(-1);
           </div>
         </div>
       </div>
-    </div>
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>

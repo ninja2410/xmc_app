@@ -3,7 +3,7 @@ require_once('..\..\Conexion\conexion.php');
 /**
  * MEDICO DE JUGADORES
  */
-class Partido
+class Alineacion
 {
 
   private $query;
@@ -12,44 +12,42 @@ class Partido
     {
         $conexion=new conexion();
         $conexion->conectar();
-        if ($id==-1)
+        if ($id==-1) 
         {
-            $query="SELECT * FROM PARTIDO";
+            $query="SELECT * FROM alineacion WHERE estado=1";
             $dt=mysqli_query($conexion->objetoconexion,$query);
         }
         else
         {
-            $query="SELECT * FROM PARTIDO WHERE id_partido=$id AND id_estado_partido='2'";
+            $query="SELECT * FROM alineacion WHERE id_alineacion=$id AND estado=1";
             $tmp=mysqli_query($conexion->objetoconexion,$query);
             $dt=mysqli_fetch_assoc($tmp);
         }
         $conexion->desconectar();
         return $dt;
     }
-    public function insert($fecha, $h1, $cat, $estadio, $ga,$gc,$equi,$temp,$h2,$estado,$obs,$estado_estadio,$clima)
+    public function insert($gol,$mi,$mf,$pas,$idp,$idj,$ta,$tr)
     {
-        $query="CALL SP_PARTIDO_INSERT('$fecha','$h1','$cat','$estadio','$ga','$gc','$equi','$temp','$h2','$estado','$obs','$estado_estadio','$clima');";
+        $query="CALL SP_ALINEACION_INSERT('$gol','$mi','$mf','$pas','$idp','$idj','$ta','$tr');";
         $bd= new conexion();
 		$dt=$bd->execute_query($query);
 		return $dt;
     }
 
-    public function update($id, $fecha, $h1, $cat, $estadio, $ga,$gc,$equi,$temp,$h2,$estado,$obs,$estado_estadio,$clima)
+    public function update($id,$gol,$mi,$mf,$pas,$idp,$idj,$ta,$tr)
     {
-        $query="CALL SP_PARTIDO_UPDATE('$id','$fecha','$h1','$cat','$estadio','$ga','$gc','$equi','$temp','$h2','$estado','$obs','$estado_estadio','$clima');";
+        $query="CALL SP_ALINEACION_UPDATE('$id','$gol','$mi','$mf','$pas','$idp','$idj','$ta','$tr');";
         $bd= new conexion();
 		$dt=$bd->execute_query($query);
 		return $dt;
     }
     public function delete($id)
     {
-        $query="CALL SP_PARTIDO_DELETE($id);";
+        $query="CALL SP_ALINEACION_DELETE($id);";
         $bd= new conexion();
             $dt=$bd->execute_query($query);
             return $dt;
     }
 
 
-
-
-}
+}  

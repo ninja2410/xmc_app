@@ -1,18 +1,14 @@
 <?php
+require_once('..\..\Conexion\conexion.php');
+$conexion=new conexion();
+$conexion->conectar();
 
-$dbHost = 'localhost';
-$dbUsername = 'root';
-$dbPassword = 'database';
-$dbName = 'db_xelajumc';
-//connect with the database
-$db = new mysqli($dbHost,$dbUsername,$dbPassword,$dbName);
-//get search term
 $searchTerm = $_GET['term'];
 
 $return_arr=array();
 
 //get matched data from skills table
-$query = $db->query("SELECT * FROM estadio WHERE nombre LIKE '%".$searchTerm."%' ORDER BY nombre ASC");
+$query = $conexion->objetoconexion->query("SELECT * FROM ESTADIO WHERE nombre LIKE '%".$searchTerm."%' ORDER BY nombre ASC");
 while ($fila = $query->fetch_assoc()) 
 {           $ca_producto=array(
     "id"=> $fila['id_estadio'],

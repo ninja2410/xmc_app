@@ -1,21 +1,20 @@
 <?php
-require_once('..\..\Negocio/ClassPartido.php');
-$partido=new Partido();
-$data=$partido->select(-1);
+require_once('..\..\Negocio/ClassAlineacion.php');
+$alineacion=new Alineacion();
+$data=$alineacion->select(-1);
 
  ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Partidos - Listar</title>
+    <title>Alineacions - Listar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
     <?php
     include '..\layoults\barnav.php';
     ?>
-    <div class="main main-raised">
     <div class="content">
       <div class="container-fluid">
         <div class="row">
@@ -23,11 +22,11 @@ $data=$partido->select(-1);
             <div class="card">
               <div class="card-header card-header-primary">
                 <div class="col-lg-10" style="float:left;">
-                  <h2 class="card-title ">Partidos</h4>
-                  <p class="card-category"> Listado de partidos</p>
+                  <h2 class="card-title ">alineacions</h4>
+                  <p class="card-category"> Listado de alineaciones</p>
                 </div>
                 <div class="col-lg-1" style="float:left">
-                  <a href="..\..\vista\partido/insert.php" title="Agregar nuevo partido">
+                  <a href="..\..\vista\alineacion/insert.php" title="Agregar nuevo alineacion">
                     <div class="card-header card-header-success card-header-icon" style="float:left">
                       <div class="card-icon">
                         <i class="material-icons">add</i>
@@ -44,34 +43,28 @@ $data=$partido->select(-1);
                         ID
                       </th>
                       <th>
-                        Fecha
+                        Jugador
                       </th>
                       <th>
-                        Inicio 1
+                        Partido
                       </th>
                       <th>
-                        Categoria
+                        Minuto de incio
                       </th>
                       <th>
-                        Estadio
+                        Minuto final
                       </th>
                       <th>
-                        Goles a favor
+                        Goles
                       </th>
                       <th>
-                        Goles en contra
+                        Pases
                       </th>
                       <th>
-                        Equipo
+                        Tarjetas amarillas
                       </th>
                       <th>
-                        Temporada
-                      </th>
-                      <th>
-                        Inicio 2
-                      </th>
-                      <th>
-                        Estado
+                        Tarjetas rojas
                       </th>
                     </thead>
                     <tbody>
@@ -80,51 +73,45 @@ $data=$partido->select(-1);
                        ?>
                       <tr>
                         <td>
+                          <?php echo $row['id_alineacion']; ?>
+                        </td>
+                        <td>
+                          <?php echo $row['id_jugador']; ?>
+                        </td>
+                        <td>
                           <?php echo $row['id_partido']; ?>
                         </td>
                         <td>
-                          <?php echo $row['fecha']; ?>
+                          <?php echo $row['minuto_inicio']; ?>
                         </td>
                         <td>
-                          <?php echo $row['hora_inicio1']; ?>
+                          <?php echo $row['minuto_final']; ?>
                         </td>
                         <td>
-                          <?php echo $row['id_categoria']; ?>
+                          <?php echo $row['goles']; ?>
                         </td>
                         <td>
-                          <?php echo $row['id_estadio']; ?>
+                          <?php echo $row['pases']; ?>
                         </td>
                         <td>
-                          <?php echo $row['goles_favor']; ?>
+                          <?php echo $row['tarjeta_amarilla']; ?>
                         </td>
                         <td>
-                          <?php echo $row['goles_contra']; ?>
-                        </td>
-                        <td>
-                          <?php echo $row['id_equipo']; ?>
-                        </td>
-                        <td>
-                          <?php echo $row['id_temporada']; ?>
-                        </td>
-                        <td>
-                          <?php echo $row['hora_inicio2']; ?>
-                        </td>
-                        <td>
-                          <?php echo $row['id_estado_partido']; ?>
+                          <?php echo $row['tarjeta_roja']; ?>
                         </td>
                         <td class="td-actions text-lefht">
                             <div style="float:left">
-                              <a href="..\..\vista\partido/update.php?id=<?php echo $row['id_partido']; ?>">
-                                <button type="button" rel="tooltip" title="Editar partido" class="btn btn-primary btn-link btn-sm">
+                              <a href="..\..\vista\alineacion/update.php?id=<?php echo $row['id_alineacion']; ?>">
+                                <button type="button" rel="tooltip" title="Editar alineacion" class="btn btn-primary btn-link btn-sm">
                                   <i class="material-icons">edit</i>
                                 </button>
                               </a>
                             </div>
                             <div  style="float:left">
-                              <form class="" action="..\..\vista\partido/store.php" method="post">
+                              <form class="" action="..\..\vista\alineacion/store.php" method="post">
                                 <input type="hidden" name="operation" value="3">
-                                <input type="hidden" name="id" value="<?php echo $row['id_partido']; ?>">
-                                <button type="submit" rel="tooltip" title="Eliminar partido" class="btn btn-danger btn-link btn-sm">
+                                <input type="hidden" name="id" value="<?php echo $row['id_alineacion']; ?>">
+                                <button type="submit" rel="tooltip" title="Eliminar alineacion" class="btn btn-danger btn-link btn-sm">
                                   <i class="material-icons">close</i>
                                 </button>
                               </form>
@@ -141,7 +128,6 @@ $data=$partido->select(-1);
           </div>
         </div>
       </div>
-    </div>
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
