@@ -12,14 +12,14 @@ class Temporada
     {
         $conexion=new conexion();
         $conexion->conectar();
-        if ($id==-1) 
+        if ($id==-1)
         {
-            $query="SELECT * FROM temporada WHERE estado=1";
+            $query="SELECT * FROM TEMPORADA WHERE estado=1";
             $dt=mysqli_query($conexion->objetoconexion,$query);
         }
         else
         {
-            $query="SELECT * FROM temporada WHERE id_temporada=$id AND estado=1";
+            $query="SELECT * FROM TEMPORADA WHERE id_temporada=$id AND estado=1";
             $tmp=mysqli_query($conexion->objetoconexion,$query);
             $dt=mysqli_fetch_assoc($tmp);
         }
@@ -52,4 +52,4 @@ class Temporada
 
 
 
-}  
+}

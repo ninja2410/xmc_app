@@ -36,11 +36,11 @@ class Medico
     $conexion=new conexion();
     $conexion->conectar();
     if ($id==-1) {
-      $query="SELECT * FROM medico WHERE estado=1";
+      $query="SELECT * FROM MEDICO WHERE estado=1";
       $dt=mysqli_query($conexion->objetoconexion,$query);
     }
     else{
-      $query="SELECT * FROM medico WHERE id_medico=$id AND estado=1";
+      $query="SELECT * FROM MEDICO WHERE id_medico=$id AND estado=1";
       $tmp=mysqli_query($conexion->objetoconexion,$query);
       $dt=mysqli_fetch_assoc($tmp);
     }

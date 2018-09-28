@@ -32,11 +32,11 @@ class ParteCuerpo
     $conexion=new conexion();
     $conexion->conectar();
     if ($id==-1) {
-      $query="SELECT * FROM parte_cuerpo WHERE estado=1";
+      $query="SELECT * FROM PARTE_CUERPO WHERE estado=1";
       $dt=mysqli_query($conexion->objetoconexion,$query);
     }
     else{
-      $query="SELECT * FROM parte_cuerpo WHERE id_parte=$id AND estado=1";
+      $query="SELECT * FROM PARTE_CUERPO WHERE id_parte=$id AND estado=1";
       $tmp=mysqli_query($conexion->objetoconexion,$query);
       $dt=mysqli_fetch_assoc($tmp);
     }

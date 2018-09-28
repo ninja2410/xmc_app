@@ -32,11 +32,11 @@ class Lesion
     $conexion=new conexion();
     $conexion->conectar();
     if ($id==-1) {
-      $query="SELECT * FROM lesion WHERE estado=1";
+      $query="SELECT * FROM LESION WHERE estado=1";
       $dt=mysqli_query($conexion->objetoconexion,$query);
     }
     else{
-      $query="SELECT * FROM lesion WHERE id_lesion=$id AND estado=1";
+      $query="SELECT * FROM LESION WHERE id_lesion=$id AND estado=1";
       $tmp=mysqli_query($conexion->objetoconexion,$query);
       $dt=mysqli_fetch_assoc($tmp);
     }

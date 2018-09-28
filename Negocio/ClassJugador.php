@@ -31,11 +31,11 @@ class Jugador
     $conexion=new conexion();
     $conexion->conectar();
     if ($id==-1) {
-      $query="SELECT * FROM jugador WHERE estado=1";
+      $query="SELECT * FROM JUGADOR WHERE estado=1";
       $dt=mysqli_query($conexion->objetoconexion,$query);
     }
     else{
-      $query="SELECT * FROM jugador WHERE id_jugador=$id AND estado=1;";
+      $query="SELECT * FROM JUGADOR WHERE id_jugador=$id AND estado=1;";
       $tmp=mysqli_query($conexion->objetoconexion,$query);
       $dt=mysqli_fetch_assoc($tmp);
     }

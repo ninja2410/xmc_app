@@ -12,14 +12,14 @@ class Usuario
     {
         $conexion=new conexion();
         $conexion->conectar();
-        if ($id==-1) 
+        if ($id==-1)
         {
-            $query="SELECT * FROM usuario WHERE estado=1";
+            $query="SELECT * FROM USUARIO WHERE estado=1";
             $dt=mysqli_query($conexion->objetoconexion,$query);
         }
         else
         {
-            $query="SELECT * FROM usuario WHERE id_usuario=$id AND estado=1";
+            $query="SELECT * FROM USUARIO WHERE id_usuario=$id AND estado=1";
             $tmp=mysqli_query($conexion->objetoconexion,$query);
             $dt=mysqli_fetch_assoc($tmp);
         }
@@ -50,4 +50,4 @@ class Usuario
     }
 
 
-}  
+}

@@ -32,11 +32,11 @@ class DetalleFM
     $conexion=new conexion();
     $conexion->conectar();
     if ($id==-1) {
-      $query="SELECT DFM.valor, DFM.iddetalle, C.nombre, DFM.idficha from detallefichamedica DFM, campo C";
+      $query="SELECT DFM.valor, DFM.iddetalle, C.nombre, DFM.idficha from DETALLEFICHAMEDICA DFM, campo C";
       $dt=mysqli_query($conexion->objetoconexion,$query);
     }
     else{
-      $query="SELECT DFM.valor, DFM.iddetalle, DFM.idCampo,C.nombre, DFM.idficha from detallefichamedica DFM, campo C where DFM.iddetalle=$id AND DFM.idCampo=C.idCampo";
+      $query="SELECT DFM.valor, DFM.iddetalle, DFM.idCampo,C.nombre, DFM.idficha from DETALLEFICHAMEDICA DFM, campo C where DFM.iddetalle=$id AND DFM.idCampo=C.idCampo";
       $tmp=mysqli_query($conexion->objetoconexion,$query);
       $dt=mysqli_fetch_assoc($tmp);
     }

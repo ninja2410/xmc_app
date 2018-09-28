@@ -32,11 +32,11 @@ class TipoEntrenador
     $conexion=new conexion();
     $conexion->conectar();
     if ($id==-1) {
-      $query="SELECT * from tipo_entrenador where estado =1;";
+      $query="SELECT * from TIPO_ENTRENADOR where estado =1;";
       $dt=mysqli_query($conexion->objetoconexion,$query);
     }
     else{
-      $query="SELECT * from tipo_entrenador where estado =1 and idtipoentrenador=$id;";
+      $query="SELECT * from TIPO_ENTRENADOR where estado =1 and idtipoentrenador=$id;";
       $tmp=mysqli_query($conexion->objetoconexion,$query);
       $dt=mysqli_fetch_assoc($tmp);
     }

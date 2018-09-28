@@ -32,11 +32,11 @@ class Estadio
     $conexion=new conexion();
     $conexion->conectar();
     if ($id==-1) {
-      $query="SELECT * FROM estadio WHERE estado=1";
+      $query="SELECT * FROM ESTADIO WHERE estado=1";
       $dt=mysqli_query($conexion->objetoconexion,$query);
     }
     else{
-      $query="SELECT * FROM estadio WHERE id_estadio=$id AND estado=1";
+      $query="SELECT * FROM ESTADIO WHERE id_estadio=$id AND estado=1";
       $tmp=mysqli_query($conexion->objetoconexion,$query);
       $dt=mysqli_fetch_assoc($tmp);
     }

@@ -32,11 +32,11 @@ class CatDocumentos
     $conexion=new conexion();
     $conexion->conectar();
     if ($id==-1) {
-      $query="SELECT * from categoria_documentos where estado =1;";
+      $query="SELECT * from CATEGORIA_DOCUMENTOS where estado =1;";
       $dt=mysqli_query($conexion->objetoconexion,$query);
     }
     else{
-      $query="SELECT * FROM categoria_documentos WHERE id_categoria_documentos=$id AND estado=1;";
+      $query="SELECT * FROM CATEGORIA_DOCUMENTOS WHERE id_categoria_documentos=$id AND estado=1;";
       $tmp=mysqli_query($conexion->objetoconexion,$query);
       $dt=mysqli_fetch_assoc($tmp);
     }

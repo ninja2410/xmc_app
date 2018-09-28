@@ -32,11 +32,11 @@ class Campo
     $conexion=new conexion();
     $conexion->conectar();
     if ($id==-1) {
-      $query="SELECT C.idCampo, C.nombre, PC.Nombre from campo C, parte_cuerpo PC where C.estado =1 and C.idParte=PC.idParte;";
+      $query="SELECT C.idCampo, C.nombre, PC.Nombre from CAMPO C, parte_cuerpo PC where C.estado =1 and C.idParte=PC.idParte;";
       $dt=mysqli_query($conexion->objetoconexion,$query);
     }
     else{
-      $query="SELECT C.idCampo, C.nombre, C.estado, C.idParte, PC.Nombre as Parte_Cuerpo FROM campo C, parte_cuerpo PC WHERE idCampo=$id AND C.estado=1 and C.idParte=PC.idParte";
+      $query="SELECT C.idCampo, C.nombre, C.estado, C.idParte, PC.Nombre as Parte_Cuerpo FROM CAMPO C, parte_cuerpo PC WHERE idCampo=$id AND C.estado=1 and C.idParte=PC.idParte";
       $tmp=mysqli_query($conexion->objetoconexion,$query);
       $dt=mysqli_fetch_assoc($tmp);
     }

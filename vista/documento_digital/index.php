@@ -10,7 +10,7 @@ $data=$documento->select(-1);
     <title>Documentos - Listar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
-  <body>
+  <body class="profile-page sidebar-collapse">
     <?php
     include '..\layoults\barnav.php';
     ?>

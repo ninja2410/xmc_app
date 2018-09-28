@@ -36,13 +36,13 @@ class Entrenador
     $conexion->conectar();
     if ($id==-1) {
       $query = "SELECT id_entrenador,nombre,apellido,fecha_nacimiento,fecha_inicio,fecha_fin,telefono,direccion,
-      tipo_entrenador.descripcion FROM entrenador,tipo_entrenador WHERE entrenador.estado = 1 AND entrenador.id_tipo_entrenador =
-      tipo_entrenador.id_tipo_entrenador";
+      TIPO_ENTRENADOR.descripcion FROM ENTRENADOR,TIPO_ENTRENADOR WHERE ENTRENADOR.estado = 1 AND ENTRENADOR.id_tipo_entrenador =
+      TIPO_ENTRENADOR.id_tipo_entrenador";
       //$query="SELECT * FROM entrenador WHERE estado=1";
       $dt=mysqli_query($conexion->objetoconexion,$query);
     }
     else{
-      $query="SELECT * FROM entrenador WHERE id_entrenador=$id AND estado=1";
+      $query="SELECT * FROM ENTRENADOR WHERE id_entrenador=$id AND estado=1";
       $tmp=mysqli_query($conexion->objetoconexion,$query);
       $dt=mysqli_fetch_assoc($tmp);
     }

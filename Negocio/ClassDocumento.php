@@ -39,11 +39,11 @@ class Documento
     $conexion=new conexion();
     $conexion->conectar();
     if ($id==-1) {
-      $query="SELECT id_documento_digital ID, fecha_creacion FECHA, path, descripcion, nombre CATEGORIA from documento_digital inner join categoria_documentos cd on documento_digital.id_categoria_documentos = cd.id_categoria_documentos WHERE documento_digital.estado=1;";
+      $query="SELECT id_documento_digital ID, fecha_creacion FECHA, path, descripcion, nombre CATEGORIA from DOCUMENTO_DIGITAL inner join CATEGORIA_DOCUMENTOS cd on documento_digital.id_categoria_documentos = cd.id_categoria_documentos WHERE documento_digital.estado=1;";
       $dt=mysqli_query($conexion->objetoconexion,$query);
     }
     else{
-      $query="SELECT id_documento_digital ID, fecha_creacion FECHA, path, descripcion, nombre CATEGORIA, documento_digital.id_categoria_documentos from documento_digital inner join categoria_documentos cd on documento_digital.id_categoria_documentos = cd.id_categoria_documentos WHERE id_documento_digital=$id AND documento_digital.estado=1";
+      $query="SELECT id_documento_digital ID, fecha_creacion FECHA, path, descripcion, nombre CATEGORIA, documento_digital.id_categoria_documentos from DOCUMENTO_DIGITAL inner join CATEGORIA_DOCUMENTOS cd on documento_digital.id_categoria_documentos = cd.id_categoria_documentos WHERE id_documento_digital=$id AND documento_digital.estado=1";
       $tmp=mysqli_query($conexion->objetoconexion,$query);
       $dt=mysqli_fetch_assoc($tmp);
     }
