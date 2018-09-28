@@ -32,11 +32,11 @@ class FichaMedica
     $conexion=new conexion();
     $conexion->conectar();
     if ($id==-1) {
-      $query="SELECT FM.id_ficha, FM.fecha, FM.estado, CONCAT(J.nombre, ' ', J.apellido) as Nombre , FM.grasa, FM.peso, FM.talla FROM FICHA_MEDICA FM , jugador J WHERE FM.estado=1 and FM.id_jugador=J.id_jugador";
+      $query="SELECT FM.id_ficha, FM.fecha, FM.estado, CONCAT(J.nombre, ' ', J.apellido) as Nombre , FM.grasa, FM.peso, FM.talla FROM FICHA_MEDICA FM , JUGADOR J WHERE FM.estado=1 and FM.id_jugador=J.id_jugador";
       $dt=mysqli_query($conexion->objetoconexion,$query);
     }
     else{
-      $query="SELECT FM.id_ficha, FM.fecha, FM.estado, FM.id_jugador,CONCAT(J.nombre, ' ', J.apellido) as Nombre , FM.grasa, FM.peso, FM.talla FROM FICHA_MEDICA FM , jugador J WHERE FM.id_ficha=$id AND FM.estado=1 and FM.id_jugador=J.id_jugador";
+      $query="SELECT FM.id_ficha, FM.fecha, FM.estado, FM.id_jugador,CONCAT(J.nombre, ' ', J.apellido) as Nombre , FM.grasa, FM.peso, FM.talla FROM FICHA_MEDICA FM , JUGADOR J WHERE FM.id_ficha=$id AND FM.estado=1 and FM.id_jugador=J.id_jugador";
       $tmp=mysqli_query($conexion->objetoconexion,$query);
       $dt=mysqli_fetch_assoc($tmp);
     }
