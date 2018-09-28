@@ -1,3 +1,9 @@
+<?php
+// require_once('..\..\Negocio/ClassSocio.php');
+// $socio=new Socio();
+// $data=$socio->select(-1);
+// INSERTAR MEMBRESÍAS
+ ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -53,16 +59,24 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-5">
+                <div class="col-md-4">
                   <div class="form-group">
                     <label class="bmd-label-floating">DPI</label>
                     <input name="dpi" type="text" class="form-control" >
                   </div>
                 </div>
-                <div class="col-md-7">
+                <div class="col-md-4">
                   <div class="form-group">
                     <label class="bmd-label-floating">Dirección de cobro</label>
                     <input name="dir_cobro" type="text" class="form-control" >
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Membresía</label>
+                    <select class="form-control" name="">
+                      <option value=""></option>
+                    </select>
                   </div>
                 </div>
               </div>

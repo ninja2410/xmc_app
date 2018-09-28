@@ -6,31 +6,30 @@
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>  
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   <body class="profile-page sidebar-collapse">
   <script type="text/javascript">
-  $(function() 
+  $(function()
   {
     $( "#autoequipo" ).autocomplete(
     {
       source: 'searchEquipo.php',
       minLength: 0,
-      select: function(event, ui) 
-      { 
+      select: function(event, ui)
+      {
         $("#equipo").val(ui.item.id);
       },
     }).focus(function () {
         $(this).autocomplete('search', $(this).val())
       });
-    
+
       $( "#autoCategoria" ).autocomplete(
     {
       source: 'searchCategoria.php',
       minLength: 0,
-      select: function(event, ui) 
-      { 
+      select: function(event, ui)
+      {
         $("#autoCategoria").val(ui.item.value);
         $("#cat").val(ui.item.id);
       },
@@ -41,10 +40,10 @@
     $( "#autoestadio" ).autocomplete({
       source: 'searchEstadio.php',
       minLength: 0,
-      select: function(event, ui) { 
+      select: function(event, ui) {
         $("#estadio").val(ui.item.id);
     },
-    }).focus(function () 
+    }).focus(function ()
     {
         $(this).autocomplete('search', $(this).val())
     });
@@ -52,7 +51,7 @@
     $( "#autotemp" ).autocomplete({
       source: 'searchTemporada.php',
       minLength: 0,
-      select: function(event, ui) { 
+      select: function(event, ui) {
         $("#temp").val(ui.item.id);
     },
     }).focus(function () {
@@ -62,7 +61,7 @@
     $( "#autoestadoPartido" ).autocomplete({
       source: 'searchEstadopartido.php',
       minLength: 0,
-      select: function(event, ui) { 
+      select: function(event, ui) {
         $("#estadoPartido").val(ui.item.id);
     },
     }).focus(function () {
@@ -72,7 +71,7 @@
     $( "#autoestadoEstadio" ).autocomplete({
       source: 'searchEstadoestadio.php',
       minLength: 0,
-      select: function(event, ui) { 
+      select: function(event, ui) {
         $("#estado_es").val(ui.item.id);
     },
     }).focus(function () {
@@ -82,9 +81,9 @@
     $( "#autoclima" ).autocomplete({
       source: 'searchClima.php',
       minLength: 0,
-      select: function(event, ui) { 
+      select: function(event, ui) {
         $("#clima").val(ui.item.id);
-        
+
       },
     }).focus(function () {
         $(this).autocomplete('search', $(this).val())
@@ -215,20 +214,20 @@ $(document).ready(function() {
             validating: 'glyphicon glyphicon-refresh'
         },
         fields: {
-          fecha: 
+          fecha:
           {
-                validators: 
+                validators:
                 {
-                    notEmpty: 
+                    notEmpty:
                     {
                       message: 'La fecha del partido es necesario'
                     },
-                    date: 
+                    date:
                     {
                         message: 'El formato de la fecha no es valida',
                         format: 'YYYY/MM/DD'
                     },
-                    callback: 
+                    callback:
                     {
                         message: 'La fecha debe ser despues de la fecha actual',
                         callback: function(value, validator) {
@@ -242,37 +241,37 @@ $(document).ready(function() {
                     }
                 }
           },
-          h1: 
+          h1:
           {
-                validators: 
+                validators:
                 {
-                    notEmpty: 
+                    notEmpty:
                     {
                       message: 'Debe ingresar una hora valida'
                     }
-            
+
                 }
           },
-          autoestadio: 
+          autoestadio:
           {
-                validators: 
+                validators:
                 {
-                    notEmpty: 
+                    notEmpty:
                     {
                       message: 'Debe seleccionar un estadio'
                     }
-            
+
                 }
           },
-          autoCategoria: 
+          autoCategoria:
           {
-                validators: 
+                validators:
                 {
-                    notEmpty: 
+                    notEmpty:
                     {
                       message: 'debe selecionar una categoria'
                     }
-            
+
                 }
           },
         }
