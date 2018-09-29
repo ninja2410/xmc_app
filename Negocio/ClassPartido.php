@@ -14,12 +14,12 @@ class Partido
         $conexion->conectar();
         if ($id==-1)
         {
-            $query="SELECT * FROM PARTIDO";
+            $query="SELECT * FROM PARTIDO WHERE id_estado_partido='1'";
             $dt=mysqli_query($conexion->objetoconexion,$query);
         }
         else
         {
-            $query="SELECT * FROM PARTIDO WHERE id_partido=$id AND id_estado_partido='2'";
+            $query="SELECT * FROM PARTIDO WHERE id_partido=$id AND id_estado_partido='1'";
             $tmp=mysqli_query($conexion->objetoconexion,$query);
             $dt=mysqli_fetch_assoc($tmp);
         }
@@ -48,8 +48,5 @@ class Partido
             $dt=$bd->execute_query($query);
             return $dt;
     }
-
-
-
 
 }

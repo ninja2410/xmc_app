@@ -8,7 +8,7 @@ $searchTerm = $_GET['term'];
 $return_arr=array();
 
 //get matched data from skills table
-$query = $conexion->objetoconexion->query("SELECT * FROM estado_partido WHERE descripcion LIKE '%".$searchTerm."%' ORDER BY descripcion ASC");
+$query = $conexion->objetoconexion->query("SELECT * FROM ESTADO_PARTIDO WHERE descripcion LIKE '%".$searchTerm."%' ORDER BY descripcion ASC");
 while ($fila = $query->fetch_assoc()) 
 {           $ca_producto=array(
     "id"=> $fila['id_estado_partido'],

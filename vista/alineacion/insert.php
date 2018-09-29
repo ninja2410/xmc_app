@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Alienacion - Insertar</title>
+    <title>Alineacion - Insertar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
@@ -47,7 +47,7 @@
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
-            <form method="post", action="..\alienacion\store.php" id="frm_alienacion">
+            <form method="post", action="..\alineacion\store.php" id="frm_alineacion">
               <input type="hidden" name="operation" value="1">
               <div class="row">
                 <div class="col-md-4">
@@ -81,7 +81,7 @@
                 <div class="col-md-2">
                   <div class="form-group">
                     <label class="">Goles</label>
-                    <input type="text" class="form-control" name="gol">
+                    <input type="text" class="form-control" name="g">
                   </div>
                 </div>
                 <div class="col-md-2">
@@ -115,7 +115,7 @@
     <script type="text/javascript">
       var f = new Date();
 $(document).ready(function() {
-    $('#frm_alienacion').bootstrapValidator({
+    $('#frm_alineacion').bootstrapValidator({
         feedbackIcons: {
             valid: 'glyphicon glyphicon-ok',
             invalid: 'glyphicon glyphicon-remove',
@@ -128,7 +128,7 @@ $(document).ready(function() {
                 {
                     notEmpty: 
                     {
-                      message: 'La fecha del alienacion es necesario'
+                      message: 'La fecha del alineacion es necesario'
                     },
                     date: 
                     {

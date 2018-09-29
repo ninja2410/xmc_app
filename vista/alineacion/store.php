@@ -1,5 +1,5 @@
 <?php
-require_once('..\..\Negocio/ClassPartido.php');
+require_once('..\..\Negocio/ClassAlineacion.php');
 if(isset($_POST['operation'])){
   $operacion=$_POST['operation'];
 }
@@ -34,15 +34,15 @@ if (isset($_POST['id'])) {
   $id_alineacion=$_POST['id'];
 }
 
-$lesion=new Partido();
+$lesion=new Alineacion();
 if ($operacion=="1") 
 {
-  $lesion->insert($g,$mi,,$mf,$partido,$pas,$jugador,$ta,$tr);
+  $lesion->insert($g,$mi,$mf,$partido,$pas,$jugador,$ta,$tr);
   echo 'insertado';
 }elseif($operacion=="2") 
 {
   
-  $lesion->update($id_alineacion,$g,$mi,,$mf,$partido,$pas,$jugador,$ta,$tr);
+  $lesion->update($id_alineacion,$g,$mi,$mf,$partido,$pas,$jugador,$ta,$tr);
 
 }elseif ($operacion=="3") 
 {
