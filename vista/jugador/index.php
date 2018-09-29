@@ -15,8 +15,8 @@ $data=$jugador->select(-1);
     <?php
     include '..\layoults\barnav.php';
     ?>
-    <div class="content">
-      <div class="container">
+    <div class="content main main-raised">
+      <div class="container-fluid">
       <div class="row">
           <div class="col-md-12">
             <div class="card">

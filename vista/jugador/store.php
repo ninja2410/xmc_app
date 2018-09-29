@@ -45,9 +45,10 @@ if ($operacion=="1") {
   $jugador->insert($nombre, $direccion, $fecha_nacimiento, $estado, $padre, $madre, $telefono, $procedencia, $apellidos, $foto);
 }
 elseif($operacion=="2") {
-  $jugador->update($id_jugador, $nombre, $direccion, $fecha_nacimiento, $estado, $padre, $madre, $telefono, $procedencia, $apellido, $foto);
+  $jugador->update($id_jugador, $nombre, $direccion, $fecha_nacimiento, $estado, $padre, $madre, $telefono, $procedencia, $apellidos, $foto);
+  header('Location:detalle.php?id='.$id_jugador);
 } elseif ($operacion=="3") {
   $jugador->delete($id_jugador);
+  header('Location:index.php');
 }
-header('Location:index.php');
 ?>
