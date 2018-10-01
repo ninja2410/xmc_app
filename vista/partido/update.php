@@ -24,6 +24,7 @@ $data=$partido->select($_GET['id']);
      {
        source: 'searchEquipo.php',
        minLength: 0,
+       autoFocus: true,
        select: function(event, ui) 
        { 
          $("#equipo").val(ui.item.id);
@@ -87,7 +88,7 @@ $data=$partido->select($_GET['id']);
                    <div class="form-group">
                      <label class="">Categoria</label>
                      <input type="hidden" name="cat" id="cat" value="<?php echo $data['id_categoria']; ?>" >
-                     <input type="text" id="autoCategoria" name="autoCategoria"  class="form-control" value="<?php echo $data['id_categoria']; ?>">
+                     <input type="text" id="autoCategoria" name="autoCategoria"  class="form-control" value="<?php echo $data['categoria']; ?>">
                    </div>
                  </div>
                </div>
@@ -96,7 +97,7 @@ $data=$partido->select($_GET['id']);
                    <div class="form-group">
                      <label class="">Estadio</label>
                      <input type="hidden" name="estadio" id="estadio" value="<?php echo $data['id_estadio']; ?>" >
-                     <input type="text" id="autoestadio" class="form-control" value="<?php echo $data['id_estadio']; ?>">
+                     <input type="text" id="autoestadio" class="form-control" value="<?php echo $data['estadio']; ?>">
                    </div>
                  </div>
                </div>
@@ -105,14 +106,14 @@ $data=$partido->select($_GET['id']);
                    <div class="form-group">
                      <label class="">Equipo</label>
                      <input type="hidden" id="equi" name="equi" value="<?php echo $data['id_equipo']; ?>">
-                     <input type="text" id="autoequipo" class="form-control" value="<?php echo $data['id_equipo']; ?>">
+                     <input type="text" id="autoequipo" class="form-control" value="<?php echo $data['equipo']; ?>">
                    </div>
                  </div>
                  <div class="col-md-4">
                    <div class="form-group">
                      <label class="">Temporada</label>
                      <input type="hidden" id="temp" name="temp" value="<?php echo $data['id_temporada']; ?>">
-                     <input type="text" id="autotemp" class="form-control" value="<?php echo $data['id_temporada']; ?>" >
+                     <input type="text" id="autotemp" class="form-control" value="<?php echo $data['temporada']; ?>" >
                    </div>
                  </div>
                </div>

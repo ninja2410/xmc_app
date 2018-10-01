@@ -18,7 +18,7 @@ $data=$detalle_partido->selectXela($_GET['id']);
         <div class="container">
             <div class="row" style="padding:20px">
                 <div class="col-md-7">
-                    <h3 class="title"><?php echo $data['id_equipo']?></h3>
+                    <h3 class="title"><?php echo $data['equipo']?></h3>
                     <h4><b>Faltas: </b> <?php echo $data['faltas']?></h4>
                     <h4><b>Asistencias: </b>    <?php echo $data['asistencias']?></h4>
                     <h4><b>Tiros: </b><?php echo $data['tiros']?></h4>

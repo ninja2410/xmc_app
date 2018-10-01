@@ -13,7 +13,11 @@ class Detalle
         $conexion=new conexion();
         $conexion->conectar();
 
-            $query="SELECT * FROM DETALLE_PARTIDO WHERE id_partido=$id and id_equipo=1";
+            $query="SELECT esquinas, faltas,asistencias,fuera_juego,tiros,tiros_puerta,tarjeta_amarilla,
+            tarjeta_roja,cambios,goles,expulsados,DETALLE_PARTIDO.id_equipo,
+            EQUIPO.nombre as equipo,id_partido FROM DETALLE_PARTIDO 
+            INNER JOIN EQUIPO ON DETALLE_PARTIDO.id_equipo = EQUIPO.id_equipo
+            WHERE id_partido=$id and EQUIPO.id_equipo=1";
             $tmp=mysqli_query($conexion->objetoconexion,$query);
             $dt=mysqli_fetch_assoc($tmp);
         

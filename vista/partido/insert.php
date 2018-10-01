@@ -18,11 +18,14 @@
     {
       source: 'searchEquipo.php',
       minLength: 0,
+      
       select: function(event, ui)
       {
         $("#equipo").val(ui.item.id);
       },
-    }).focus(function () {
+    }).focus(function () 
+      {
+
         $(this).autocomplete('search', $(this).val())
       });
 
@@ -177,17 +180,6 @@ $(document).ready(function() {
 
                 }
           },
-          autoestadio:
-          {
-                validators:
-                {
-                    notEmpty:
-                    {
-                      message: 'Debe seleccionar un estadio'
-                    }
-
-                }
-          },
           autoCategoria:
           {
                 validators:
@@ -195,6 +187,14 @@ $(document).ready(function() {
                     notEmpty:
                     {
                       message: 'debe selecionar una categoria'
+                    },
+                    callback:
+                    {
+                        message: 'La fecha debe ser despues de la fecha actual',
+                        callback: function(value, validator) {
+                          $('#obs').val(value);
+                          return false;
+                        }
                     }
 
                 }

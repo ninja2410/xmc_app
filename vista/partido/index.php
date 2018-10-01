@@ -74,16 +74,16 @@ $data=$partido->select(-1);
                           <?php echo $row['fecha']; ?>
                         </td>
                         <td>
-                          <?php echo $row['id_categoria']; ?>
+                          <?php echo $row['categoria']; ?>
                         </td>
                         <td>
-                          <?php echo $row['id_estadio']; ?>
+                          <?php echo $row['estadio']; ?>
                         </td>
                         <td>
-                          <?php echo $row['id_equipo']; ?>
+                          <?php echo $row['equipo']; ?>
                         </td>
                         <td>
-                          <?php echo $row['id_temporada']; ?>
+                          <?php echo $row['temporada']; ?>
                         </td>
                         <td>
                           <?php echo $row['observaciones']; ?>
