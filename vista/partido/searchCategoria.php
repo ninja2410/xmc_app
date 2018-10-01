@@ -15,7 +15,7 @@ while ($fila = $query->fetch_assoc())  {
     "value"=>$fila['nombre']
 );
 array_push($return_arr, $ca_producto);
-   
+
 }
 //return json data
 echo json_encode($return_arr);

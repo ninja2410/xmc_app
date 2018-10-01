@@ -8,10 +8,10 @@ $searchTerm = $_GET['term'];
 $return_arr=array();
 
 //get matched data from skills table
-$query = $conexion->objetoconexion->query("SELECT * FROM LESION WHERE nombre LIKE '%".$searchTerm."%' ORDER BY nombre ASC");
+$query = $conexion->objetoconexion->query("SELECT id_jugador, concat(nombre,' ' , apellido) nombre FROM JUGADOR WHERE concat(nombre,' ' , apellido) LIKE '%".$searchTerm."%' ORDER BY nombre ASC");
 while ($fila = $query->fetch_assoc())  {
     $ca_producto=array(
-    "id"=> $fila['id_lesion'],
+    "id"=> $fila['id_jugador'],
     "value"=>$fila['nombre']
 );
 array_push($return_arr, $ca_producto);

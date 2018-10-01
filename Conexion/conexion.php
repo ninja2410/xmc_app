@@ -7,9 +7,9 @@ class conexion
 	// private $bd="db_xelajumc";
 
 	private $servidor='sql3.freemysqlhosting.net';
-	private $usuario="sql3258884";
-	private $pass="HHZi7qwKFs";
-	private $bd="sql3258884";
+	private $usuario="sql3259082";
+	private $pass="NDqrhKuxIn";
+	private $bd="sql3259082";
 	public  $objetoconexion;
 
 	public function conectar()

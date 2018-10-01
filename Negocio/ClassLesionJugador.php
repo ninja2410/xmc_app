@@ -1,4 +1,5 @@
 <?php
+require_once('..\..\Conexion\conexion.php');
 /**
  * LESIONES DE JUGADORES
  */
@@ -20,13 +21,30 @@ class LesionJugador
   		return $dt;
     }
 
+    public function detalle(){
+      $query="SELECT id_lesion_jugador ID, L.nombre LESION, concat(J.nombre, ' ', apellido) JUGADOR, fecha_inicio FECHA FROM LESION_JUGADOR
+      INNER JOIN JUGADOR J on LESION_JUGADOR.id_jugador = J.id_jugador
+      INNER JOIN LESION L on LESION_JUGADOR.id_lesion = L.id_lesion WHERE LESION_JUGADOR.estado=1;";
+      $bd= new conexion();
+  		$dt=$bd->execute_query($query);
+  		return $dt;
+    }
+
     public function delete($id){
       $query="CALL SP_LESIONJUGADOR_DELETE($id);";
       $bd= new conexion();
   		$dt=$bd->execute_query($query);
   		return $dt;
     }
-
+    public function id(){
+      $query="SELECT coalesce(MAX(id_lesion_jugador), 1) x FROM LESION_JUGADOR;";
+      $bd= new conexion();
+  		$dt=$bd->execute_query($query);
+      foreach ($dt as $key => $value) {
+        $rsp=$value['x'];
+      }
+  		return $rsp;
+    }
     public function select($id){
       $conexion=new conexion();
       $conexion->conectar();
