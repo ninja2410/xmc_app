@@ -15,18 +15,24 @@ $data=$fichamedica->select(-1);
     <?php
     include '..\layoults\barnav.php';
     ?>
-    <div class="content">
+    <div class="content main main-raised">
       <div class="container-fluid">
-        <div class="row">
+      <div class="row">
           <div class="col-md-12">
             <div class="card">
-              <div class="card-header card-header-danger">
-                  <h4 class="card-title">Fichas medicas</h4>
+              <div class="card-header card-header-danger row">
+                <div class="col-md-10">
+                  <h3 class="card-title">Fichas medicas</h3>
                   <p class="category">Listado de fichas medicas de los jugadores.</p>
+                </div>
+                <div class="col-md-2 text-right">
+                  <a href="..\..\vista\ficha_medica/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true">
+                    <i class="material-icons">add</i>
+                  </a>
+                </div>
               </div>
-              <div class="card-body">
-                <div class="table-responsive">
-                  <table class="table">
+              <div class="card-body text-center table-responsive">
+                <table class="table">
                     <thead>
                       <tr>
                         <th>ID</th>
@@ -62,13 +68,6 @@ $data=$fichamedica->select(-1);
                           </td>
                           <td class="td-actions text-lefht">
                               <div style="float:left">
-                                <a href="..\..\vista\ficha_medica/insert.php">
-                                  <button type="button" rel="tooltip" title="Nueva Ficha" class="btn btn-primary btn-link btn-sm">
-                                    <i class="material-icons">add</i>
-                                  </button>
-                                </a>
-                              </div>
-                              <div style="float:left">
                                 <a href="..\..\vista\ficha_medica/update.php?id=<?php echo $row['id_ficha']; ?>">
                                   <button type="button" rel="tooltip" title="Editar Ficha" class="btn btn-primary btn-link btn-sm">
                                     <i class="material-icons">edit</i>
@@ -90,7 +89,6 @@ $data=$fichamedica->select(-1);
                         </tr>
                     </tbody>
                   </table>
-                </div>
               </div>
             </div>
           </div>
