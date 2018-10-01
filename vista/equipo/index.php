@@ -21,18 +21,14 @@ $data=$equipo->select(-1);
         
           <div class="col-md-12">
             <div class="card">
-              <div class="card-header card-header-danger">
-                <div class="col-lg-10" style="float:left;">
-                  <h2 class="card-title ">Equipos</h4>
-                  <p class="card-category"> Listado de equipos</p>
+              <div class="card-header card-header-danger row">
+              <div class="col-md-11">
+                  <h3 class="card-title">Equipos</h3>
+                  <p class="category">Listado de equipos</p>
                 </div>
-                <div class="col-lg-1" style="float:left">
-                  <a href="..\..\vista\equipo/insert.php" title="Agregar nuevo equipo">
-                    <div class="card-header card-header-success card-header-icon" style="float:right">
-                      <div class="card-icon">
-                        <i class="material-icons">add</i>
-                      </div>
-                    </div>
+                <div class="col-md-1 text-right">
+                <a href="..\..\vista\equipo/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar equipo">
+                    <i class="material-icons">add</i>
                   </a>
                 </div>
               </div>
@@ -49,6 +45,9 @@ $data=$equipo->select(-1);
                       <th>
                         Procedencia
                       </th>
+                      <th>
+                        Escudo
+                      </th>
                     </thead>
                     <tbody>
                       <?php
@@ -63,6 +62,11 @@ $data=$equipo->select(-1);
                         </td>
                         <td>
                           <?php echo $row['procedencia']; ?>
+                        </td>
+                        <td > 
+                        <?php 
+                         echo '<img style="height:30px;width:30px"  src="../imagenes/'.$row['foto'].'" class="img-fluid">';
+                        ?>
                         </td>
                         <td class="td-actions text-lefht">
                             <div style="float:left">
