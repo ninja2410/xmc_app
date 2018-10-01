@@ -28,7 +28,8 @@ $data=$fichamedica->select($_GET['id']);
                 <form method="post", action="..\ficha_medica\store.php" id="frm_fichaMedica">
                 <input type="hidden" name="operation" value="2">
                 <input type="hidden" name="id" value="<?php echo $data['id_ficha'] ?>">
-                    <div class="form-row"> 
+                <input type="hidden" name="signosVitales" id="signosVitales" >
+                    <div class="form-row">
                         <div class="form-group col-md-4">
                             <label>Fecha</label>
                             <input name="fecha" type="date" class="form-control" value="<?php echo $data['fecha'] ?>">
@@ -41,7 +42,7 @@ $data=$fichamedica->select($_GET['id']);
                                 <?php
                                     include_once('..\..\Negocio/ClassJugador.php');
                                     $jugador=new Jugador();
-                                    $data2=$jugador->select(-1);	
+                                    $data2=$jugador->select(-1);
                                     while ($row = mysqli_fetch_array($data2))
                                     {
                                         $valor = $row['id_jugador'];
@@ -88,6 +89,9 @@ $data=$fichamedica->select($_GET['id']);
                     <?php include '..\layoults\botones.php'; ?>
                     <div class="clearfix"></div>
                 </form>
+                <div class="tab-pane" id="detalle">
+                    <?php include 'detalleUpdate.php'?>
+                </div>
               </div>
             </div>
           </div>
@@ -96,6 +100,17 @@ $data=$fichamedica->select($_GET['id']);
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
+    <script type="text/javascript">
+    var datos=[];
+      function registrarValor(id){
+        datos=[];
+        var inputs=document.getElementById('pill1').getElementsByTagName('input');
+        for (var i = 0; i < inputs.length; i++) {
+          datos.push({"campo": inputs[i].name, "valor":inputs[i].value, "ID":inputs[i].id});
+        }
+        $('#signosVitales').val(JSON.stringify(datos));
+      }
+    </script>
     <script type="text/javascript">
       $(document).ready(function(){
         $('#frm_fichaMedica').bootstrapValidator({

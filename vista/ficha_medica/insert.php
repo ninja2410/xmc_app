@@ -99,7 +99,6 @@
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
 <script type="text/javascript">
-var signosVitales={};
 var datos=[];
   function registrarValor(id){
     datos=[];

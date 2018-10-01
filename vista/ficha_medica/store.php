@@ -47,9 +47,14 @@ if ($operacion=="1") {
   }
 }
 elseif($operacion=="2") {
+  $detalle=new DetalleFM();
   $fichamedica->update($id_ficha, $fecha, $estado, $id_jugador, $grasa, $peso, $talla);
+  foreach ($signosVitales as $key => $value) {
+    echo $value->ID;
+    $detalle->update($value->valor, $value->ID ,$value->campo, $id_ficha);
+  }
 } elseif ($operacion=="3") {
   $fichamedica->delete($id_ficha);
 }
-//header('Location:index.php');
+header('Location:index.php');
 ?>
