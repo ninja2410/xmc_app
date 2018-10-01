@@ -35,18 +35,18 @@ if (isset($_POST['id'])) {
 }
 
 $lesion=new Alineacion();
-if ($operacion=="1") 
+if ($operacion=="1")
 {
   $lesion->insert($g,$mi,$mf,$partido,$pas,$jugador,$ta,$tr);
   echo 'insertado';
-}elseif($operacion=="2") 
+}elseif($operacion=="2")
 {
-  
+
   $lesion->update($id_alineacion,$g,$mi,$mf,$partido,$pas,$jugador,$ta,$tr);
 
-}elseif ($operacion=="3") 
+}elseif ($operacion=="3")
 {
   $lesion->delete($id_alineacion);
 }
-//header('Location:index.php');
+header('Location:index.php');
 ?>
