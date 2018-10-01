@@ -25,7 +25,7 @@ $data=$categoria->select(-1);
                   <p class="category">Listado de categorías</p>
                 </div>
                 <div class="col-md-1 text-right">
-                <a href="..\..\vista\jugador/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar categoría">
+                <a href="..\..\vista\categoria/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar categoría">
                     <i class="material-icons">add</i>
                   </a>
                 </div>
