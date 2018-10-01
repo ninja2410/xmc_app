@@ -23,7 +23,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Detalle 2</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="insert.php#signos">Signos Vitales</a>
+                            <a class="dropdown-item" href="#signos">Signos Vitales</a>
                             <a class="dropdown-item" href="#">Criometría/Antropometria</a>
                             <a class="dropdown-item" href="#">Evaluación Rodilla</a>
                         </div>
@@ -34,7 +34,8 @@
                     <div class="tab-pane active" id="encabezado">
                         <form method="post", action="..\ficha_medica\store.php" id="frm_fichaMedica">
                             <input type="hidden" name="operation" value="1">
-                            <div class="form-row"> 
+                            <input type="hidden" name="signosVitales" id="signosVitales" >
+                            <div class="form-row">
                                 <div class="form-group col-md-4">
                                     <label>Fecha</label>
                                     <input name="fecha" type="date" class="form-control" >
@@ -47,7 +48,7 @@
                                         <?php
                                             include_once('..\..\Negocio/ClassJugador.php');
                                             $jugador=new Jugador();
-                                            $data=$jugador->select(-1);	
+                                            $data=$jugador->select(-1);
                                             while ($row = mysqli_fetch_array($data))
                                             {
                                                 $valor = $row['id_jugador'];
@@ -97,7 +98,18 @@
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
-
+<script type="text/javascript">
+var signosVitales={};
+var datos=[];
+  function registrarValor(id){
+    datos=[];
+    var inputs=document.getElementById('pill1').getElementsByTagName('input');
+    for (var i = 0; i < inputs.length; i++) {
+      datos.push({"campo": inputs[i].name, "valor":inputs[i].value});
+    }
+    $('#signosVitales').val(JSON.stringify(datos));
+  }
+</script>
     <script type="text/javascript">
     $(document).ready(function(){
       $('#frm_fichaMedica').bootstrapValidator({
@@ -115,14 +127,14 @@
                   }
                 }
             },
-              
+
             grasa:{
             validators:{
                 notEmpty:{
                     message:'Ingrese el valor de la grasa del jugador'
                 },
                 regexp:{
-                    regexp: /^[0-9]*$/, 
+                    regexp: /^[0-9]*$/,
                     message: 'Solo se aceptan números'
                     }
                 }
@@ -133,7 +145,7 @@
                     message:'Ingrese el valor del peso del jugador'
                 },
                 regexp:{
-                    regexp: /^[0-9]*$/, 
+                    regexp: /^[0-9]*$/,
                     message: 'Solo se aceptan números'
                     }
                 }
@@ -144,7 +156,7 @@
                     message:'Ingrese el valor de la talla del jugador'
                 },
                 regexp:{
-                    regexp: /^[0-9]*$/, 
+                    regexp: /^[0-9]*$/,
                     message: 'Solo se aceptan números'
                     }
                 }

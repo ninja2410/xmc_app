@@ -9,6 +9,7 @@ class FichaMedica
   private $query;
   public function insert($fecha, $estado, $idjugador, $grasa, $peso, $talla){
     $query="CALL SP_FICHA_MEDICA_INSERT('$fecha', $estado, $idjugador,$grasa,$peso,$talla);";
+    echo $query;
     $bd= new conexion();
 		$dt=$bd->execute_query($query);
 		return $dt;
@@ -26,6 +27,16 @@ class FichaMedica
     $bd= new conexion();
 		$dt=$bd->execute_query($query);
 		return $dt;
+  }
+
+  public function id(){
+    $query="SELECT coalesce(MAX(id_ficha), 1) ID FROM FICHA_MEDICA;";
+    $bd= new conexion();
+		$dt=$bd->execute_query($query);
+    foreach ($dt as $key => $value) {
+      $rsp=$value['ID'];
+    }
+		return $rsp;
   }
 
   public function select($id){

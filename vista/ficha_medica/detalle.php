@@ -16,7 +16,18 @@
     </ul>
     <div class="tab-content tab-space">
         <div class="tab-pane active" id="pill1">
-            1
+            <?php include_once('..\..\Negocio/ClassCampo.php');
+            $campo=new Campo();
+            $data=$campo->listCampos(1);
+            while ($row = mysqli_fetch_array($data)){
+              ?>
+              <div class="form-group col-md-4">
+                  <label for="peso"><?php echo $row['NOMBRE'] ?></label>
+                  <input type="text" class="form-control" onblur="registrarValor(1)" name="<?php echo $row['CAMPO']; ?>">
+              </div>
+              <?php
+            }
+            ?>
         </div>
         <div class="tab-pane" id="pill2">
            2

@@ -28,6 +28,15 @@ class Campo
 		return $dt;
   }
 
+  public function listCampos($id_tab){
+    $query="select  CAMPO.id_campo CAMPO, nombre NOMBRE, D.valor VALOR, id_parte PAGINA from CAMPO
+    LEFT JOIN DETALLE_FICHA_MEDICA D on CAMPO.id_campo = D.id_campo
+    WHERE id_parte=$id_tab;";
+    $bd= new conexion();
+		$dt=$bd->execute_query($query);
+		return $dt;
+  }
+
   public function select($id){
     $conexion=new conexion();
     $conexion->conectar();
