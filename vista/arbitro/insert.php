@@ -32,12 +32,12 @@ $data=$tipoarbitro->select(-1);
                   </div>
                 </div>
               </div>
-              <div class="row">
+              <!-- <div class="row">
               <div class="col-md-4">
                   <div class="form-group">
                     <label for="exampleFormControlSelect1">Tipo de árbitro</label>
                     <select class="form-control" name="id_tipo_arbitro">
-                      <?php
+                      <php
                       while ($row=mysqli_fetch_array($data)) {
                           $valor = $row['id_tipo_arbitro'];
                           $texto = $row['descripcion'];
@@ -46,8 +46,8 @@ $data=$tipoarbitro->select(-1);
                         ?>
                     </select>
                   </div>
-                </div>
-                </div>
+                </div> -->
+                <!-- </div> -->
               <?php include '..\layoults\botones.php'; ?>
               <div class="clearfix"></div>
             </form>

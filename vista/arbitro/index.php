@@ -46,9 +46,9 @@ $data=$arbitro->select(-1);
                       <th>
                         Nombre
                       </th>
-                      <th>
+                      <!-- <th>
                         Tipo árbitro
-                      </th>
+                      </th> -->
                     </thead>
                     <tbody>
                       <?php
@@ -61,9 +61,7 @@ $data=$arbitro->select(-1);
                         <td>
                           <?php echo $row['nombre']; ?>
                         </td>
-                        <td>
-                          <?php echo $row['descripcion']; ?>
-                        </td>
+                        
                         <td class="td-actions text-lefht">
                             <div style="float:left">
                               <a href="..\..\vista\arbitro/update.php?id=<?php echo $row['id_arbitro']; ?>">
