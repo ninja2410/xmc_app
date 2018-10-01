@@ -34,11 +34,36 @@ $data=$estadio->select($_GET['id']);
                 </div>
                 <div class="col-md-3">
                   <div class="form-group">
-                    <label class="bmd-label-floating">Ciudad</label>
-                    <input type="text" class="form-control" name="ciudad" value="<?php echo $data['ciudad']; ?>">
+                    <label for="exampleFormControlSelect1">Ciudad</label>
+                    <select class="form-control" name="ciudad">
+                      <option value="Quetzaltenango">Quetzaltenango</option>
+                      <option value="Alta Verapaz">Alta Verapaz</option>
+                      <option value="Baja Verapaz">Baja Verapaz</option>
+                      <option value="Chimaltenango">Chimaltenango</option>
+                      <option value="Chiquimula">Chiquimula</option>
+                      <option value="Petén">Petén</option>
+                      <option value="El Progreso">El Progreso</option>
+                      <option value="Quiché">Quiché</option>
+                      <option value="Escuintla">Escuintla</option>
+                      <option value="Guatemala">Guatemala</option>
+                      <option value="Huehuetenango">Huehuetenango</option>
+                      <option value="Izabal">Izabal</option>
+                      <option value="Jalapa">Jalapa</option>
+                      <option value="Jutiapa">Jutiapa</option>
+                      <option value="Retalhuleu">Retalhuleu</option>
+                      <option value="Sacatepéquez">Sacatepéquez</option>
+                      <option value="San Marcos">San Marcos</option>
+                      <option value="Santa Rosa">Santa Rosa</option>
+                      <option value="Sololá">Sololá</option>
+                      <option value="Suchitepéquez">Suchitepéquez</option>
+                      <option value="Totonicapán">Totonicapán</option>
+                      <option value="Zacapa">Zacapa</option>
+                    </select>
                   </div>
                 </div>
               </div>
+
+              
               <div class="row">
                 <div class="col-md-5">
                   <div class="form-group">
@@ -51,11 +76,6 @@ $data=$estadio->select($_GET['id']);
                   <div class="form-group">
                     <label class="bmd-label-floating">Teléfono</label>
                     <input type="text" class="form-control" name="telefono" value="<?php echo $data['telefono']; ?>">
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <input type="hidden" class="form-control" name="estado" value="<?php echo $data['estado']; ?>">
                   </div>
                 </div>
                 </div>
