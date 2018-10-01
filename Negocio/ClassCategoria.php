@@ -14,9 +14,8 @@ class Categoria
 		return $dt;
   }
 
-  public function update($id, $nombre, $descripcion,
-   $estado){
-    $query="CALL SP_CATEGORIA_UPDATE($id,'$nombre', '$descripcion',$estado);";
+  public function update($id, $nombre, $descripcion){
+    $query="CALL SP_CATEGORIA_UPDATE($id,'$nombre', '$descripcion');";
     $bd= new conexion();
 		$dt=$bd->execute_query($query);
 		return $dt;

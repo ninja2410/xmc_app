@@ -19,18 +19,14 @@ $data=$categoria->select(-1);
        
           <div class="col-md-12">
             <div class="card">
-              <div class="card-header card-header-danger">
-                <div class="col-lg-10" style="float:left;">
-                  <h2 class="card-title ">Categoría</h4>
-                  <p class="card-category"> Listado de categorías</p>
+              <div class="card-header card-header-danger row">
+              <div class="col-md-11">
+                  <h3 class="card-title">Categoría</h3>
+                  <p class="category">Listado de categorías</p>
                 </div>
-                <div class="col-lg-1" style="float:left">
-                  <a href="..\..\vista\categoria/insert.php" title="Agregar nueva Categoría" >
-                    <div class="card-header card-header-success card-header-icon" style="float:right">
-                      <div class="card-icon" >
-                        <i class="material-icons" >add</i>
-                      </div>
-                    </div>
+                <div class="col-md-1 text-right">
+                <a href="..\..\vista\jugador/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar categoría">
+                    <i class="material-icons">add</i>
                   </a>
                 </div>
               </div>
