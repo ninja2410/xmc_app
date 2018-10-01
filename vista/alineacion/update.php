@@ -60,7 +60,7 @@ $data=$alineacion->select($_GET['id']);
                 <div class="col-md-4">
                   <div class="form-group">
                     <label class="">Jugador</label>
-                    <input type="hidden" id="jugador" name="jugador">
+                    <input type="hidden" id="jugador" value="<?php echo $data['id_jugador']; ?>" name="jugador">
                     <input type="text" id="autojugador" class="form-control" value="<?php echo $data['id_jugador']; ?>">
                   </div>
                 </div>

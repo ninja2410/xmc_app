@@ -63,38 +63,6 @@ $data=$partido->select($_GET['id']);
      }).focus(function () {
          $(this).autocomplete('search', $(this).val())
        });
- 
-     $( "#autoestadoPartido" ).autocomplete({
-       source: 'searchEstadopartido.php',
-       minLength: 0,
-       select: function(event, ui) { 
-         $("#estadoPartido").val(ui.item.id);
-     },
-     }).focus(function () {
-         $(this).autocomplete('search', $(this).val())
-       });
- 
-     $( "#autoestadoEstadio" ).autocomplete({
-       source: 'searchEstadoestadio.php',
-       minLength: 0,
-       select: function(event, ui) { 
-         $("#estado_es").val(ui.item.id);
-     },
-     }).focus(function () {
-         $(this).autocomplete('search', $(this).val())
-       });
- 
-     $( "#autoclima" ).autocomplete({
-       source: 'searchClima.php',
-       minLength: 0,
-       select: function(event, ui) { 
-         $("#clima").val(ui.item.id);
-         
-       },
-     }).focus(function () {
-         $(this).autocomplete('search', $(this).val())
-       });
- 
    });
    </script>
      <div class="content">
@@ -117,12 +85,6 @@ $data=$partido->select($_GET['id']);
                  </div>
                  <div class="col-md-4">
                    <div class="form-group">
-                     <label class="">Hora 1</label>
-                     <input type="time" class="form-control" name="h1" value="<?php echo $data['hora_inicio1']; ?>" >
-                   </div>
-                 </div>
-                 <div class="col-md-4">
-                   <div class="form-group">
                      <label class="">Categoria</label>
                      <input type="hidden" name="cat" id="cat" value="<?php echo $data['id_categoria']; ?>" >
                      <input type="text" id="autoCategoria" name="autoCategoria"  class="form-control" value="<?php echo $data['id_categoria']; ?>">
@@ -135,18 +97,6 @@ $data=$partido->select($_GET['id']);
                      <label class="">Estadio</label>
                      <input type="hidden" name="estadio" id="estadio" value="<?php echo $data['id_estadio']; ?>" >
                      <input type="text" id="autoestadio" class="form-control" value="<?php echo $data['id_estadio']; ?>">
-                   </div>
-                 </div>
-                 <div class="col-md-4">
-                   <div class="form-group">
-                     <label class="">Goles a favor</label>
-                     <input type="text" class="form-control" name="ga" value="<?php echo $data['goles_favor']; ?>">
-                   </div>
-                 </div>
-                 <div class="col-md-4">
-                   <div class="form-group">
-                     <label  id="show" class="">Goles en contra</label>
-                     <input type="text" class="form-control" name="gc" value="<?php echo $data['goles_contra']; ?>">
                    </div>
                  </div>
                </div>
@@ -165,39 +115,12 @@ $data=$partido->select($_GET['id']);
                      <input type="text" id="autotemp" class="form-control" value="<?php echo $data['id_temporada']; ?>" >
                    </div>
                  </div>
-                 <div class="col-md-4">
-                   <div class="form-group">
-                     <label  id="show" class="">Hora 2</label>
-                     <input type="time" class="form-control" name="h2" value="<?php echo $data['hora_inicio2']; ?>">
-                   </div>
-                 </div>
                </div>
                <div class="row">
                  <div class="col-md-3">
                    <div class="form-group">
-                     <label class="">Estado del partido</label>
-                     <input type="hidden" id="estadoPartido" name="estado" value="<?php echo $data['id_estado_partido']; ?>" >
-                     <input type="text" id="autoestadoPartido" class="form-control" value="<?php echo $data['id_estado_partido']; ?>">
-                   </div>
-                 </div>
-                 <div class="col-md-3">
-                   <div class="form-group">
                      <label class="">Observaciones</label>
                      <input type="text" class="form-control" name="obs" value="<?php echo $data['observaciones']; ?>">
-                   </div>
-                 </div>
-                 <div class="col-md-3">
-                   <div class="form-group">
-                     <label  id="show" class="">Estado del Estadio</label>
-                     <input type="hidden" id="estado_es" name="estado_es" value="<?php echo $data['id_estado_estadio']; ?>">
-                     <input type="text" id="autoestadoEstadio"  class="form-control" value="<?php echo $data['id_estado_estadio']; ?>" >
-                   </div>
-                 </div>
-                 <div class="col-md-3">
-                   <div class="form-group">
-                     <label  id="show" class="">Estado del Clima</label>
-                     <input type="hidden" id="clima" name="clima" value="<?php echo $data['id_clima']; ?>">
-                     <input type="text" id="autoclima" class="form-control" value="<?php echo $data['id_clima']; ?>">
                    </div>
                  </div>
                </div>

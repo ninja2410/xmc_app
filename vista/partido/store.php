@@ -54,12 +54,12 @@ if (isset($_POST['id'])) {
 $lesion=new Partido();
 if ($operacion=="1") 
 {
-  $lesion->insert($fecha, $h1, $cat, $estadio, $ga,$gc,$equi,$temp,$h2,$estado,$obs,$estado_estadio,$clima);
+  $lesion->insert($fecha, $cat, $estadio,$equi,$temp,$obs);
   echo 'insertado';
 }elseif($operacion=="2") 
 {
   
-  $lesion->update($id_partido, $fecha, $h1, $cat, $estadio, $ga,$gc,$equi,$temp,$h2,$estado,$obs,$estado_estadio,$clima);
+  $lesion->update($id_partido, $fecha, $cat, $estadio,$equi,$temp,$obs);
 
 }elseif ($operacion=="3") 
 {

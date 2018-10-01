@@ -14,29 +14,29 @@ class Partido
         $conexion->conectar();
         if ($id==-1)
         {
-            $query="SELECT * FROM PARTIDO WHERE id_estado_partido='1'";
+            $query="SELECT * FROM PARTIDO";
             $dt=mysqli_query($conexion->objetoconexion,$query);
         }
         else
         {
-            $query="SELECT * FROM PARTIDO WHERE id_partido=$id AND id_estado_partido='1'";
+            $query="SELECT * FROM PARTIDO WHERE id_partido=$id";
             $tmp=mysqli_query($conexion->objetoconexion,$query);
             $dt=mysqli_fetch_assoc($tmp);
         }
         $conexion->desconectar();
         return $dt;
     }
-    public function insert($fecha, $h1, $cat, $estadio, $ga,$gc,$equi,$temp,$h2,$estado,$obs,$estado_estadio,$clima)
+    public function insert($fecha,$cat, $estadio, $equi,$temp,$obs)
     {
-        $query="CALL SP_PARTIDO_INSERT('$fecha','$h1','$cat','$estadio','$ga','$gc','$equi','$temp','$h2','$estado','$obs','$estado_estadio','$clima');";
+        $query="CALL SP_PARTIDO_INSERT('$fecha','$cat','$estadio','$equi','$temp','$obs');";
         $bd= new conexion();
 		$dt=$bd->execute_query($query);
 		return $dt;
     }
 
-    public function update($id, $fecha, $h1, $cat, $estadio, $ga,$gc,$equi,$temp,$h2,$estado,$obs,$estado_estadio,$clima)
+    public function update($id, $fecha,$cat, $estadio, $equi,$temp,$obs)
     {
-        $query="CALL SP_PARTIDO_UPDATE('$id','$fecha','$h1','$cat','$estadio','$ga','$gc','$equi','$temp','$h2','$estado','$obs','$estado_estadio','$clima');";
+        $query="CALL SP_PARTIDO_UPDATE('$id','$fecha','$cat','$estadio','$equi','$temp','$obs');";
         $bd= new conexion();
 		$dt=$bd->execute_query($query);
 		return $dt;

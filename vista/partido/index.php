@@ -47,19 +47,10 @@ $data=$partido->select(-1);
                         Fecha
                       </th>
                       <th>
-                        Inicio 1
-                      </th>
-                      <th>
                         Categoria
                       </th>
                       <th>
                         Estadio
-                      </th>
-                      <th>
-                        Goles a favor
-                      </th>
-                      <th>
-                        Goles en contra
                       </th>
                       <th>
                         Equipo
@@ -68,10 +59,7 @@ $data=$partido->select(-1);
                         Temporada
                       </th>
                       <th>
-                        Inicio 2
-                      </th>
-                      <th>
-                        Estado
+                        Observaciones
                       </th>
                     </thead>
                     <tbody>
@@ -86,19 +74,10 @@ $data=$partido->select(-1);
                           <?php echo $row['fecha']; ?>
                         </td>
                         <td>
-                          <?php echo $row['hora_inicio1']; ?>
-                        </td>
-                        <td>
                           <?php echo $row['id_categoria']; ?>
                         </td>
                         <td>
                           <?php echo $row['id_estadio']; ?>
-                        </td>
-                        <td>
-                          <?php echo $row['goles_favor']; ?>
-                        </td>
-                        <td>
-                          <?php echo $row['goles_contra']; ?>
                         </td>
                         <td>
                           <?php echo $row['id_equipo']; ?>
@@ -107,10 +86,11 @@ $data=$partido->select(-1);
                           <?php echo $row['id_temporada']; ?>
                         </td>
                         <td>
-                          <?php echo $row['hora_inicio2']; ?>
+                          <?php echo $row['observaciones']; ?>
                         </td>
                         <td>
-                          <?php echo $row['id_estado_partido']; ?>
+                          <a href="..\..\vista\detalle_partido/index.php?id=<?php echo $row['id_partido']; ?>">
+                          <button class="btn btn-primary btn-round btn-sm">Ver detalles</button>
                         </td>
                         <td class="td-actions text-lefht">
                             <div style="float:left">
