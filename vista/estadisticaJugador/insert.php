@@ -9,6 +9,7 @@ $data=$estadistoca->selectCampos();
     <meta charset="utf-8">
     <title>Estadisticas - Insertar</title>
     <?php include '..\layoults\headers2.php'; ?>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
@@ -73,7 +74,7 @@ $data=$estadistoca->selectCampos();
                   <select class="form-control" name="campo" id="campo">
                     <?php foreach ($data as $key => $value): ?>
                       <option value="<?php echo $value['id_dato_partido']; ?>" class="dropdown-item"><?php echo $value['nombre']; ?></option>
-                    <?php endforeach; ?>
+                    <?php endforeach ?>
                   </select>
                 </div>
 
@@ -97,7 +98,6 @@ $data=$estadistoca->selectCampos();
                 </div>
               </div>
 
-              <?php include '..\layoults\botones.php'; ?>
               <div class="clearfix"></div>
             </form>
             <div class="row">
@@ -119,6 +119,7 @@ $data=$estadistoca->selectCampos();
                 </table>
               </div>
             </div>
+            <?php include '..\layoults\botones.php'; ?>
           </div>
         </div>
       </div>
@@ -145,6 +146,8 @@ $data=$estadistoca->selectCampos();
         cel2.appendChild(tmp);
         tmp=document.createTextNode(cantidad.value);
         cel3.appendChild(tmp);
+        cantidad.value='';
+        minuto.value='';
       }
     </script>
     <script type="text/javascript">

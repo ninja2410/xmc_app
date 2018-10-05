@@ -33,6 +33,16 @@ class EstadisticaJugador
     $dt=$bd->execute_query($query);
     return $dt;
   }
+  public function buscarDato($id_dato, $id_partido, $id_jugador){
+    $val=0;
+    $query="SELECT valor, minuto FROM ESTADISTICA_JUGADOR where id_jugador=$id_jugador AND id_dato_partido=$id_dato and id_partido=$id_partido;";
+    $bd= new conexion();
+    $dt=$bd->execute_query($query);
+    foreach ($dt as $key => $value) {
+      $val=$value;
+    }
+    return $val;
+  }
 }
 
  ?>
