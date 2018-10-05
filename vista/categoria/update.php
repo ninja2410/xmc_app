@@ -40,15 +40,6 @@ $data=$categoria->select($_GET['id']);
                   </div>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                   <!-- <-- <label class="bmd-label-floating">Estado</label> -->
-                    <input name="estado" type="hidden" class="form-control" value="<?php echo $data['estado']; ?>">
-                  </div>
-                </div>        
-              </div>
-
               <?php include '..\layoults\botones.php'; ?>
               <div class="clearfix"></div>
             </form>

@@ -54,13 +54,6 @@ $data=$prensa->select($_GET['id']);
                   </div>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-md-8">
-                  <div class="form-group">
-                    <input type="hidden" class="form-control" name="estado" value="<?php echo $data['estado']; ?>">
-                  </div>
-                </div>
-              </div>
               <?php include '..\layoults\botones.php'; ?>
               <div class="clearfix"></div>
             </form>

@@ -11,11 +11,11 @@ $data=$jugador->select($_GET['id']);
     <title>Jugador - Actualizar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
-  <body>
+  <body class="profile-page sidebar-collapse">
     <?php
     include '..\layoults\barnav.php';
     ?>
-   <div class="content">
+   <div class="content main main-raised">
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-12">
@@ -40,19 +40,8 @@ $data=$jugador->select($_GET['id']);
                         </div>
 
                         <div class="form-group col-md-4">
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                <input class="form-check-input" type="checkbox" name="status" <?php
-                                    if ($data['estado']==1){
-                                      echo "checked";
-                                    }
-                                    ?>>
-                                        Estado activo
-                                    <span class="form-check-sign">
-                                        <span class="check"></span>
-                                    </span>
-                                </label>
-                            </div>
+                            <label>Fecha de nacimiento</label>
+                            <input type="date" class="form-control" name="fecha_nacimiento" value="<?php echo $data['fecha_nacimiento'] ?>">
                         </div>
                     </div>
 
@@ -63,13 +52,13 @@ $data=$jugador->select($_GET['id']);
                         </div>
 
                         <div class="form-group col-md-4">
-                            <label>Fecha de nacimiento</label>
-                            <input type="date" class="form-control" name="fecha_nacimiento" value="<?php echo $data['fecha_nacimiento'] ?>">
+                            <label>Telefono</label>
+                            <input name="telefono" type="number" class="form-control" value="<?php echo $data['telefono'] ?>">
                         </div>
 
                          <div class="form-group col-md-4">
-                            <label>Telefono</label>
-                            <input name="telefono" type="number" class="form-control" value="<?php echo $data['telefono'] ?>">
+                            <label>Procedencia</label>
+                            <input name="procedencia" type="text" class="form-control" value="<?php echo $data['procedencia'] ?>">
                         </div>
                     </div>
 
@@ -84,12 +73,44 @@ $data=$jugador->select($_GET['id']);
                             <input type="text" class="form-control" name="madre" value="<?php echo $data['madre'] ?>">
                         </div>
 
-                         <div class="form-group col-md-4">
-                            <label>Procedencia</label>
-                            <input name="procedencia" type="text" class="form-control" value="<?php echo $data['procedencia'] ?>">
+                        <div class="form-group col-md-4">
+                            <label>Posicion</label>
+                            <select class="form-control" name="posicion">
+                                <?php
+                                    echo '<option selected value="'.$data['id_posicion'].'">'.$data['descripcion'].'</option>';
+                                
+                                    include_once('..\..\Negocio/classPosicion.php');
+                                    $posicion=new Posicion();
+                                    $data2=$posicion->select(-1);
+                                    while ($row = mysqli_fetch_array($data2))
+                                    {
+                                        $valor = $row['id_posicion'];
+                                        $texto = $row['descripcion'];
+                                        echo '<option value="'.$valor.'">'.$texto.'</option>';
+                                    }
+                                ?>
+                            </select>
                         </div>
                     </div>
-                    <?php include '..\layoults\botones.php'; ?>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label>Numero de camisola</label>
+                            <input type="text" class="form-control" name="camisola" value="<?php echo $data['camisola'] ?>">
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label>Contrato</label>
+                            <input type="text" class="form-control" name="contrato" value="<?php echo $data['id_contrato'] ?>">
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label>Foto</label>
+                            <input type="text" class="form-control" name="foto" value="<?php echo $data['foto'] ?>">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <?php include '..\layoults\botones.php'; ?>
+                    </div>
                     <div class="clearfix"></div>
                 </form>
               </div>

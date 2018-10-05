@@ -29,43 +29,46 @@ function calculaedad($fechanacimiento){
         <div class="container">
             <div class="row" style="padding:20px">
                 <div class="col-md-2">
-                    <img src="../assets/img/examples/mariya-georgieva.jpg" alt="Raised Image" class="img-raised rounded img-fluid">
+                    <img src="../assets/img/examples/mariya-georgieva.jpg" alt="Circle Image" class="img-circle rounded img-fluid">
+                    <!-- src="<?php echo $data['foto']?>" -->
                 </div>
                 <div class="col-md-7">
                     <h3 class="title"><?php echo $data['nombre']." ".$data["apellido"]?></h3>
                     <h4><b>Edad: </b><?php echo calculaedad ($data['fecha_nacimiento']);?></h4>
+                    <h4><b>Numero de camisola: </b><?php echo $data['camisola']?></h4>
                     <h4><b>Fecha de nacimiento: </b><?php echo date("d/m/Y", strtotime($data['fecha_nacimiento']));?></h4>
                     <h4><b>Direccion: </b><?php echo $data['direccion']?></h4>
                     <h4><b>Nombre del padre: </b><?php echo $data['padre']?></h4>
                     <h4><b>Nombre de la madre: </b><?php echo $data['madre']?></h4>
                     <h4><b>Numero de telefono: </b><?php echo $data['telefono']?></h4>
                     <h4><b>Procedencia: </b><?php echo $data['procedencia']?></h4>
+                    <h4><b>Posicion: </b><?php echo $data['descripcion']?></h4>
                 </div>
-                <div class="col-md-3">
-                    <div>
-                        <a href="..\..\vista\ficha_medica/index.php">
-                        <button class="btn btn-info btn-round"><i class="fas fa-notes-medical fa-lg"></i> Ver información medica</button>
-                    </div>
-                    <div>
-                        <a href="..\..\vista\jugador/index.php">
-                        <button class="btn btn-info btn-round"><i class="fas fa-portrait fa-lg"></i> Ver estadisticas del jugador</button>
-                    </div>
-                    <div>
-                        <a href="..\..\vista\jugador/update.php?id=<?php echo $data['id_jugador']; ?>">
-                        <button class="btn btn-warning btn-round"><i class="material-icons">edit</i> Actualizar información</button>
-                    </div>
-                    <div>
-                        <form class="" action="..\..\vista\jugador/store.php" method="post">
-                            <input type="hidden" name="operation" value="3">
-                            <input type="hidden" name="id" value="<?php echo $data['id_jugador']; ?>">
-                            <button class="btn btn-danger btn-round"><i class="material-icons">delete</i> Desactivar jugador</button>
-                        </form>
-                    </div>
-                    <div>
-                        <a href="..\..\vista\jugador/index.php?>">
-                        <button class="btn btn-default btn-round"><i class="fas fa-undo-alt fa-lg"></i> Regresar</button>
-                    </div>
+                <div class="col-md-3 text-center">
+                    <ul class="nav nav-pills flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="..\..\vista\jugador/index.php">
+                                <i class="fas fa-portrait"></i> Ver estadisticas del jugador
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="..\..\vista\ficha_medica/index.php">
+                                <i class="fas fa-notes-medical"></i> Ver información medica
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="..\..\vista\jugador/update.php?id=<?php echo $data['id_jugador']; ?>">
+                                <i class="material-icons">edit</i> Actualizar información
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="..\..\vista\jugador/index.php">
+                                <i class="fas fa-undo-alt fa-lg"></i> Regresar
+                            </a>
+                        </li>
+                    </ul>
                 </div>
+
             </div>
         </div>
     </div>

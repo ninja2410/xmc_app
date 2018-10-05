@@ -32,7 +32,7 @@ if ($operacion=="1") {
   $accion->insert($nombre, $apellido, $telefono, $empresa);
 }
 elseif($operacion=="2") {
-  $accion->update($id_prensa, $nombre, $apellido, $telefono, $empresa, $estado);
+  $accion->update($id_prensa, $nombre, $apellido, $telefono, $empresa);
 } elseif ($operacion=="3") {
   $accion->delete($id_prensa);
 }

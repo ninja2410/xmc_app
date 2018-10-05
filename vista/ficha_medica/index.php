@@ -11,7 +11,7 @@ $data=$fichamedica->select(-1);
     <title>Fichas Medicas - Listar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
-  <body>
+  <body class="profile-page sidebar-collapse">
     <?php
     include '..\layoults\barnav.php';
     ?>
@@ -68,8 +68,15 @@ $data=$fichamedica->select(-1);
                           </td>
                           <td class="td-actions text-lefht">
                               <div style="float:left">
+                                <a href="">
+                                  <button type="button" rel="tooltip" title="Ver detalles" class="btn btn-success btn-link btn-sm">
+                                    <i class="far fa-eye fa-lg"></i>
+                                  </button>
+                                </a>
+                              </div>
+                              <div style="float:left">
                                 <a href="..\..\vista\ficha_medica/update.php?id=<?php echo $row['id_ficha']; ?>">
-                                  <button type="button" rel="tooltip" title="Editar Ficha" class="btn btn-primary btn-link btn-sm">
+                                  <button type="button" rel="tooltip" title="Editar Ficha" class="btn btn-default btn-link btn-sm">
                                     <i class="material-icons">edit</i>
                                   </button>
                                 </a>

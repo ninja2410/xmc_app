@@ -15,8 +15,8 @@ class Prensa
   }
 
   public function update($id, $nombre, $apellido,
-  $telefono, $empresa,$estado){
-    $query="CALL SP_PRENSA_UPDATE($id,'$nombre','$apellido','$telefono', '$empresa', $estado);";
+  $telefono, $empresa){
+    $query="CALL SP_PRENSA_UPDATE($id,'$nombre','$apellido','$telefono', '$empresa');";
     $bd= new conexion();
 		$dt=$bd->execute_query($query);
 		return $dt;

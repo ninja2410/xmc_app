@@ -5,6 +5,42 @@ require_once('..\..\Negocio/ClassDetalleFichaMedica.php');
 if (isset($_POST['signosVitales'])) {
   $signosVitales = json_decode($_POST['signosVitales']);
 }
+if (isset($_POST['criometria'])) {
+  $criometria = json_decode($_POST['criometria']);
+}
+if (isset($_POST['rodilla'])) {
+  $rodilla = json_decode($_POST['rodilla']);
+}
+if (isset($_POST['tobillo'])) {
+  $tobillo = json_decode($_POST['tobillo']);
+}
+if (isset($_POST['meniscos'])) {
+  $meniscos = json_decode($_POST['meniscos']);
+}
+if (isset($_POST['musculos'])) {
+  $musculos = json_decode($_POST['musculos']);
+}
+if (isset($_POST['alineamiento'])) {
+  $alineamiento = json_decode($_POST['alineamiento']);
+}
+if (isset($_POST['cuello'])) {
+  $cuello = json_decode($_POST['cuello']);
+}
+if (isset($_POST['pecho'])) {
+  $pecho = json_decode($_POST['pecho']);
+}
+if (isset($_POST['subescapular'])) {
+  $subescapular = json_decode($_POST['subescapular']);
+}
+if (isset($_POST['supraespinal'])) {
+  $supraespinal = json_decode($_POST['supraespinal']);
+}
+if (isset($_POST['abdominal'])) {
+  $abdominal = json_decode($_POST['abdominal']);
+}
+if (isset($_POST['otra'])) {
+  $otra = json_decode($_POST['otra']);
+}
 
 if(isset($_POST['operation'])){
   $operacion=$_POST['operation'];
@@ -45,6 +81,43 @@ if ($operacion=="1") {
   foreach ($signosVitales as $key => $value) {
     $detalle->insert($value->valor, $value->campo, $id_tmp);
   }
+  foreach ($criometria as $key => $value) {
+    $detalle->insert($value->valor, $value->campo, $id_tmp);
+  }
+  foreach ($rodilla as $key => $value) {
+    $detalle->insert($value->valor, $value->campo, $id_tmp);
+  }
+  foreach ($tobillo as $key => $value) {
+    $detalle->insert($value->valor, $value->campo, $id_tmp);
+  }
+  foreach ($meniscos as $key => $value) {
+    $detalle->insert($value->valor, $value->campo, $id_tmp);
+  }
+  foreach ($musculos as $key => $value) {
+    $detalle->insert($value->valor, $value->campo, $id_tmp);
+  }
+  foreach ($alineamiento as $key => $value) {
+    $detalle->insert($value->valor, $value->campo, $id_tmp);
+  }
+  foreach ($cuello as $key => $value) {
+    $detalle->insert($value->valor, $value->campo, $id_tmp);
+  }
+  foreach ($pecho as $key => $value) {
+    $detalle->insert($value->valor, $value->campo, $id_tmp);
+  }
+  foreach ($subescapular as $key => $value) {
+    $detalle->insert($value->valor, $value->campo, $id_tmp);
+  }
+  foreach ($supraespinal as $key => $value) {
+    $detalle->insert($value->valor, $value->campo, $id_tmp);
+  }
+  foreach ($abdominal as $key => $value) {
+    $detalle->insert($value->valor, $value->campo, $id_tmp);
+  }
+  foreach ($otra as $key => $value) {
+    $detalle->insert($value->valor, $value->campo, $id_tmp);
+  }
+  header('Location:index.php');
 }
 elseif($operacion=="2") {
   $detalle=new DetalleFM();

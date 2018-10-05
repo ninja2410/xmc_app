@@ -21,17 +21,17 @@ $data=$jugador->select(-1);
           <div class="col-md-12">
             <div class="card">
               <div class="card-header card-header-danger row">
-                <div class="col-md-11">
+                <div class="col-md-10">
                   <h3 class="card-title">Jugadores</h3>
                   <p class="category">Listado de jugadores.</p>
                 </div>
-                <div class="col-md-1 text-right">
+                <div class="col-md-2 text-right">
                   <a href="..\..\vista\jugador/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true">
                     <i class="material-icons">add</i>
                   </a>
                 </div>
               </div>
-              <div class="card-body text-center">
+              <div class="card-body text-center table-responsive">
                 <table class="table">
                   <thead>
                     <tr>
@@ -52,7 +52,14 @@ $data=$jugador->select(-1);
                         </td>
                         <td>
                           <a href="..\..\vista\jugador/detalle.php?id=<?php echo $row['id_jugador']; ?>">
-                          <button class="btn btn-primary btn-round btn-sm">Ver detalles</button>
+                          <button class="btn btn-primary btn-round btn-sm"><i class="far fa-eye fa-lg"></i> Ver detalles</button>
+                        </td>
+                        <td>
+                          <form class="" action="..\..\vista\jugador/store.php" method="post">
+                              <input type="hidden" name="operation" value="3">
+                              <input type="hidden" name="id" value="<?php echo $row['id_jugador']; ?>">
+                              <button class="btn btn-danger btn-round btn-sm"><i class="material-icons">delete</i> Desactivar</button>
+                          </form>
                         </td>
                         <?php
                       } ?>

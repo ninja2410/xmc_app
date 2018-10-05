@@ -20,12 +20,29 @@ if(isset($_POST['estado'])){
 if (isset($_POST['id'])) {
   $id_equipo=$_POST['id'];
 }
+
 $accion=new Equipo();
 if ($operacion=="1") {
-  $accion->insert($nombre, $procedencia);
+  $name=$_FILES['img']['name'];
+  $foto='ESCUDO_'.$accion->correlativo().substr($name,-4);
+  move_uploaded_file($_FILES['img']['tmp_name'],'..\imagenes/'.$foto);
+  chmod('..\imagenes/'.$foto,0644);
+  $accion->insert($nombre, $procedencia,$foto);
 }
+
 elseif($operacion=="2") {
-  $accion->update($id_equipo, $nombre, $procedencia, $estado);
+  $name=$_FILES['img']['name'];
+  $tmp='DOC_'.$accion->correlativo().substr($name,-4);
+  move_uploaded_file($_FILES['img']['tmp_name'],'..\imagenes/'.$tmp);
+  chmod('..\imagenes/'.$tmp,0644);
+  $foto=$_FILES['img']['name'];
+  if ($foto=='') {
+    $foto=$_POST['foto'];
+  }
+  else{
+    $foto=$tmp;
+  }
+  $accion->update($id_equipo, $nombre, $procedencia, $foto);
 } elseif ($operacion=="3") {
   $accion->delete($id_equipo);
 }

@@ -29,9 +29,7 @@ class Campo
   }
 
   public function listCampos($id_tab){
-    $query="select  CAMPO.id_campo CAMPO, nombre NOMBRE, D.valor VALOR, id_parte PAGINA from CAMPO
-    LEFT JOIN DETALLE_FICHA_MEDICA D on CAMPO.id_campo = D.id_campo
-    WHERE id_parte=$id_tab;";
+    $query="SELECT id_campo CAMPO, nombre NOMBRE, id_parte FROM CAMPO WHERE id_parte=$id_tab;";
     $bd= new conexion();
 		$dt=$bd->execute_query($query);
 		return $dt;

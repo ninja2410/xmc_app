@@ -6,9 +6,9 @@
     <?php include '..\layoults\headers2.php'; ?>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
   </head>
-  <body>
+    <body class="profile-page sidebar-collapse">
     <?php include '..\layoults\barnav.php'; ?>
-    <div class="content">
+    <div class="content main main-raised">
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-12">
@@ -32,15 +32,8 @@
                         </div>
 
                         <div class="form-group col-md-4">
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" checked name="status">
-                                        Estado activo
-                                    <span class="form-check-sign">
-                                        <span class="check"></span>
-                                    </span>
-                                </label>
-                            </div>
+                            <label>Fecha de nacimiento</label>
+                            <input type="date" class="form-control" name="fecha_nacimiento">
                         </div>
                     </div>
 
@@ -51,13 +44,13 @@
                         </div>
 
                         <div class="form-group col-md-4">
-                            <label>Fecha de nacimiento</label>
-                            <input type="date" class="form-control" name="fecha_nacimiento">
+                            <label>Telefono</label>
+                            <input name="telefono" type="number" class="form-control" >
                         </div>
 
                          <div class="form-group col-md-4">
-                            <label>Telefono</label>
-                            <input name="telefono" type="number" class="form-control" >
+                            <label>Procedencia</label>
+                            <input name="procedencia" type="text" class="form-control" >
                         </div>
                     </div>
 
@@ -73,11 +66,42 @@
                         </div>
 
                          <div class="form-group col-md-4">
-                            <label>Procedencia</label>
-                            <input name="procedencia" type="text" class="form-control" >
+                            <label>Posicion</label>
+                            <select class="form-control" name="posicion">
+                                <option selected>Elija la posicion del jugador...</option>
+                                <?php
+                                    include_once('..\..\Negocio/classPosicion.php');
+                                    $posicion=new Posicion();
+                                    $data=$posicion->select(-1);
+                                    while ($row = mysqli_fetch_array($data))
+                                    {
+                                        $valor = $row['id_posicion'];
+                                        $texto = $row['descripcion'];
+                                        echo '<option value="'.$valor.'">'.$texto.'</option>';
+                                    }
+                                ?>
+                            </select>
                         </div>
                     </div>
-                    <?php include '..\layoults\botones.php'; ?>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label>Numero de camisola</label>
+                            <input name="camisola" type="number" class="form-control" >
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label>Contrato</label>
+                            <input type="text" class="form-control" name="contrato">
+                        </div>
+
+                         <div class="form-group col-md-4">
+                            <label>Foto</label>
+                            <input type="text" class="form-control" name="foto">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <?php include '..\layoults\botones.php'; ?>
+                    </div>
                     <div class="clearfix"></div>
                 </form>
               </div>

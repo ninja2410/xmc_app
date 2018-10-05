@@ -21,18 +21,14 @@ $data=$arbitro->select(-1);
         
           <div class="col-md-12">
             <div class="card">
-              <div class="card-header card-header-danger">
-                <div class="col-lg-10" style="float:left;">
-                  <h2 class="card-title ">Árbitros</h4>
-                  <p class="card-category"> Listado de árbitros</p>
+              <div class="card-header card-header-danger row">
+              <div class="col-md-11">
+                  <h3 class="card-title">Árbitros</h3>
+                  <p class="category">Listado de árbitros</p>
                 </div>
-                <div class="col-lg-1" style="float:left">
-                  <a href="..\..\vista\arbitro/insert.php" title="Agregar nuevo arbitro">
-                    <div class="card-header card-header-success card-header-icon" style="float:right">
-                      <div class="card-icon">
-                        <i class="material-icons">add</i>
-                      </div>
-                    </div>
+                <div class="col-md-1 text-right">
+                <a href="..\..\vista\arbitro/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar árbitro">
+                    <i class="material-icons">add</i>
                   </a>
                 </div>
               </div>
@@ -46,9 +42,9 @@ $data=$arbitro->select(-1);
                       <th>
                         Nombre
                       </th>
-                      <th>
+                      <!-- <th>
                         Tipo árbitro
-                      </th>
+                      </th> -->
                     </thead>
                     <tbody>
                       <?php
@@ -61,9 +57,7 @@ $data=$arbitro->select(-1);
                         <td>
                           <?php echo $row['nombre']; ?>
                         </td>
-                        <td>
-                          <?php echo $row['descripcion']; ?>
-                        </td>
+                        
                         <td class="td-actions text-lefht">
                             <div style="float:left">
                               <a href="..\..\vista\arbitro/update.php?id=<?php echo $row['id_arbitro']; ?>">

@@ -1,28 +1,28 @@
 <?php
 require_once('..\..\Conexion\conexion.php');
 /**
- * Estadio
+ * Posición
  */
-class Estadio
+class Posicion
 {
 
   private $query;
-  public function insert($nombre, $direccion, $telefono, $ciudad){
-    $query="CALL SP_ESTADIO_INSERT('$nombre', '$direccion', '$telefono', '$ciudad');";
+  public function insert($siglas,$descripcion){
+    $query="CALL SP_POSICION_INSERT('$siglas''$descripcion');";
     $bd= new conexion();
 		$dt=$bd->execute_query($query);
 		return $dt;
   }
 
-  public function update($id, $nombre, $direccion, $telefono, $ciudad){
-    $query="CALL SP_ESTADIO_UPDATE($id,'$nombre', '$direccion', '$telefono', '$ciudad');";
+  public function update($id,$siglas,$descripcion){
+    $query="CALL SP_POSICION_UPDATE($id, '$siglas', $descripcion);";
     $bd= new conexion();
 		$dt=$bd->execute_query($query);
 		return $dt;
   }
 
   public function delete($id){
-    $query="CALL SP_ESTADIO_DELETE($id);";
+    $query="CALL SP_POSICION_DELETE($id);";
     $bd= new conexion();
 		$dt=$bd->execute_query($query);
 		return $dt;
@@ -32,11 +32,11 @@ class Estadio
     $conexion=new conexion();
     $conexion->conectar();
     if ($id==-1) {
-      $query="SELECT * FROM ESTADIO WHERE estado=1";
+      $query="SELECT * from POSICION where estado =1;";
       $dt=mysqli_query($conexion->objetoconexion,$query);
     }
     else{
-      $query="SELECT * FROM ESTADIO WHERE id_estadio=$id AND estado=1";
+      $query="SELECT * from POSICION where estado =1 AND id_posicion=$id;";
       $tmp=mysqli_query($conexion->objetoconexion,$query);
       $dt=mysqli_fetch_assoc($tmp);
     }

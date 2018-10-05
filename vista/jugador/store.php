@@ -19,33 +19,34 @@ if(isset($_POST['fecha_nacimiento'])){
 if(isset($_POST['telefono'])){
   $telefono=$_POST['telefono'];
 }
-if(isset($_POST['status'])){
-  if($_POST['status']=="on" || $_POST['status']=="1"){
-    $estado=1;
-  }
-  else{
-    $estado=0;
-  }
-}
+$estado=1;
 if(isset($_POST['padre'])){
     $padre=$_POST['padre'];
-  }
-  if(isset($_POST['madre'])){
-    $madre=$_POST['madre'];
-  }
-  if(isset($_POST['procedencia'])){
-    $procedencia=$_POST['procedencia'];
-  }
+}
+if(isset($_POST['madre'])){
+  $madre=$_POST['madre'];
+}
+if(isset($_POST['procedencia'])){
+  $procedencia=$_POST['procedencia'];
+}
+if(isset($_POST['posicion'])){
+  $id_posicion=$_POST['posicion'];
+}
+if(isset($_POST['camisola'])){
+  $camisola=$_POST['camisola'];
+}
 if (isset($_POST['id'])) {
   $id_jugador=$_POST['id'];
 }
 $jugador=new Jugador();
 $foto='nada';
+$id_contrato=2;
 if ($operacion=="1") {
-  $jugador->insert($nombre, $direccion, $fecha_nacimiento, $estado, $padre, $madre, $telefono, $procedencia, $apellidos, $foto);
+  $jugador->insert($nombre, $direccion, $fecha_nacimiento, $estado, $padre, $madre, $telefono, $procedencia, $apellidos, $foto, $id_posicion, $camisola,$id_contrato);
+  header('Location:index.php');
 }
 elseif($operacion=="2") {
-  $jugador->update($id_jugador, $nombre, $direccion, $fecha_nacimiento, $estado, $padre, $madre, $telefono, $procedencia, $apellidos, $foto);
+  $jugador->update($id_jugador, $nombre, $direccion, $fecha_nacimiento, $estado, $padre, $madre, $telefono, $procedencia, $apellidos, $foto, $id_posicion, $camisola,$id_contrato);
   header('Location:detalle.php?id='.$id_jugador);
 } elseif ($operacion=="3") {
   $jugador->delete($id_jugador);

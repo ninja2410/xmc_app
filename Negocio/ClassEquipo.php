@@ -7,15 +7,23 @@ class Equipo
 {
 
   private $query;
-  public function insert($nombre, $procedencia){
-    $query="CALL SP_EQUIPO_INSERT('$nombre', '$procedencia');";
+  public function insert($nombre, $procedencia,$foto){
+    $query="CALL SP_EQUIPO_INSERT('$nombre', '$procedencia','$foto');";
     $bd= new conexion();
 		$dt=$bd->execute_query($query);
 		return $dt;
   }
 
-  public function update($id, $nombre, $procedencia,  $estado){
-    $query="CALL SP_EQUIPO_UPDATE($id,'$nombre', '$procedencia', $estado);";
+  public function correlativo(){
+    $query="SELECT coalesce(MAX(id_equipo)+1, 1) as x from EQUIPO;";
+    $bd= new conexion();
+		$dt=$bd->execute_query($query);
+    $id=mysqli_fetch_array($dt);
+    return $id[0][0];
+  }
+
+  public function update($id, $nombre, $procedencia,  $foto){
+    $query="CALL SP_EQUIPO_UPDATE($id,'$nombre', '$procedencia', '$foto');";
     $bd= new conexion();
 		$dt=$bd->execute_query($query);
 		return $dt;
