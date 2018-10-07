@@ -21,7 +21,7 @@
       
       select: function(event, ui)
       {
-        $("#equipo").val(ui.item.id);
+        $("#equi").val(ui.item.id);
       },
     }).focus(function () 
       {
@@ -75,6 +75,13 @@
             <form method="post", action="..\partido\store.php" id="frm_partido">
               <input type="hidden" name="operation" value="1">
               <div class="row">
+               <div class="col-md-4">
+                  <div class="form-group">
+                    <label class="">Equipo</label>
+                    <input type="hidden" id="equi" name="equi">
+                    <input type="text" id="autoequipo" class="form-control">
+                  </div>
+                </div>
                 <div class="col-md-4">
                   <div class="form-group">
                     <label class="">Fecha</label>
@@ -97,15 +104,6 @@
                     <input type="text" id="autoestadio" class="form-control">
                   </div>
                 </div>
-              </div>
-              <div class="row">
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label class="">Equipo</label>
-                    <input type="hidden" id="equi" name="equi" value="1">
-                    <input type="text" id="autoequipo" class="form-control">
-                  </div>
-                </div>
                 <div class="col-md-4">
                   <div class="form-group">
                     <label class="">Temporada</label>
@@ -118,7 +116,7 @@
                 <div class="col-md-3">
                   <div class="form-group">
                     <label class="">Observaciones</label>
-                    <input type="text" class="form-control" name="obs">
+                    <input  id="obs" type="textarea" class="form-control" name="obs">
                   </div>
                 </div>
               </div>
@@ -134,8 +132,9 @@
     <?php include '..\layoults\scripts2.php'; ?>
     <script type="text/javascript">
       var f = new Date();
+
 $(document).ready(function() {
-    $('#frm_partido').bootstrapValidator({
+          $('#frm_partido').bootstrapValidator({
         feedbackIcons: {
             valid: 'glyphicon glyphicon-ok',
             invalid: 'glyphicon glyphicon-remove',
@@ -187,14 +186,6 @@ $(document).ready(function() {
                     notEmpty:
                     {
                       message: 'debe selecionar una categoria'
-                    },
-                    callback:
-                    {
-                        message: 'La fecha debe ser despues de la fecha actual',
-                        callback: function(value, validator) {
-                          $('#obs').val(value);
-                          return false;
-                        }
                     }
 
                 }

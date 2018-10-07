@@ -5,6 +5,11 @@ if(isset($_POST['operation']))
   $operacion=$_POST['operation'];
 }
 
+if(isset($_POST['id']))
+{
+  $id=$_POST['id'];
+}
+
 $lesion=new PersonalTecnico();
 $cont=1;
 if ($operacion=="1") 
@@ -19,18 +24,31 @@ if ($operacion=="1")
       else
       {
         echo "POST parameter '$key' has '$value'";
-        $lesion->insert(1, $key, $value);
+        $lesion->insert($id, $key, $value);
       }
     }
 }
 elseif($operacion=="2") 
 {
   
-  $lesion->update($id_temporada,$descripcion, $fecha_inicio, $fecha_final);
+  foreach($_POST as $key => $value) 
+  {
+    if($cont==1)
+    {
+      $cont++;
+      echo "POST parameter '$key' has '$value'";
+    }
+    else
+    {
+      
+      echo "POST parameter '$key' has '$value'";
+      $lesion->update($id, $key, $value);
+    }
+  }
 
 }elseif ($operacion=="3") 
 {
   $lesion->delete($id_temporada);
 }
-//header('Location:index.php');
+header('Location:/PJ_XJMC/vista/partido/index.php');
 ?>

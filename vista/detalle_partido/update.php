@@ -1,300 +1,214 @@
 <?php
 require_once('..\..\Negocio/ClassDetallePartido.php');
-$partido=new Detalle();
-$data=$partido->selectXela($_GET['id']);
- ?>
+$detalle_partido=new Detalle();
+$data=$detalle_partido->selectXela($_GET['id']);
+$dataCn=$detalle_partido->selectContrario($_GET['id'],$_GET['id2']);
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Resultados - Insertar</title>
+    <title>INGRESAR RESULTADOS</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
-    <?php include '..\layoults\barnav.php'; ?>
-    <div class="main main-raised"> 
-    <div class="content">
-      <div class="col-md-12">
-        <div class="card">
-          <div class="card-header card-header-danger">
-            <h4 class="card-title">INGRESAR RESULTADOS</h4>
-            <p class="card-category">Complete los campos siguientes</p>
-          </div>
-          <div class="card-body">
-            <form method="post", action="..\detalle_partido\store.php" id="frm_detalle_partido">
-              <input type="hidden" name="operation" value="2">
-              <input type="hidden" name="id" value="<?php echo $data['id_detalle_partido']; ?>">
-              <input type="hidden" name="equi" value="1">
-              <input type="hidden" name="partido" value="<?php echo $data['id_partido']; ?>">
-              <div class="row">
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <label class="bmd-label-floating">Faltas</label>
-                    <input type="text" class="form-control" name="fal" value="<?php echo $data['faltas']; ?>">
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <label class="bmd-label-floating">Esquinas</label>
-                    <input type="text" class="form-control" name="esq" value="<?php echo $data['esquinas']; ?>">
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <label class="bmd-label-floating">Asistencias</label>
-                    <input type="text" class="form-control" name="asis" value="<?php echo $data['asistencias']; ?>">
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <label class="bmd-label-floating">Tiros</label>
-                    <input type="text" class="form-control" name="tiros" value="<?php echo $data['tiros'];?>">
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <label class="bmd-label-floating">Tiros a puerta</label>
-                    <input type="text" class="form-control" name="tiros_puerta" value="<?php echo $data['tiros_puerta']; ?>">
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <label class="bmd-label-floating">Tarjetas amarillas</label>
-                    <input type="text" class="form-control" name="ta" value="<?php echo $data['tarjeta_amarilla']; ?>">
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <label class="bmd-label-floating">Tarjetas rojas</label>
-                    <input type="text" class="form-control" name="tr" value="<?php echo $data['tarjeta_roja']; ?>">
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <label class="bmd-label-floating">Fuera de juego</label>
-                    <input type="text" class="form-control" name="fj" value="<?php echo $data['fuera_juego']; ?>">
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <label class="bmd-label-floating">Cambios</label>
-                    <input type="text" class="form-control" name="cam" value="<?php echo $data['cambios']; ?>">
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <label class="bmd-label-floating">Goles</label>
-                    <input type="text" class="form-control" name="gol" value="<?php echo $data['goles']; ?>">
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <label class="bmd-label-floating">Expulsados</label>
-                    <input type="text" class="form-control" name="exp" value="<?php echo $data['expulsados']; ?>">
-                  </div>
-                </div>
-              </div>
-              <?php include '..\layoults\botones.php'; ?>
-              <div class="clearfix"></div>
-            </form>
-          </div>
+    <?php
+    include '..\layoults\barnav.php';
+    ?>
+    <div class="main main-raised">
+    <form method="post", action="..\detalle_partido\store.php" id="frm_detalle_partido">
+    <input type="hidden" name="operation" value="2">
+    <input type="hidden" name="id" value="<?php echo $data['id_detalle_partido']; ?>">
+    <input type="hidden" name="id2" value="<?php echo $dataCn['id_detalle_partido']; ?>">
+    <input type="hidden" name="equi" value="<?php echo $dataCn['id_equipo']; ?>">
+    <input type="hidden" name="partido" value="<?php echo $data['id_partido']; ?>">
+    <div class="container">
+    <div class="table-responsive">
+            <table class="table table-sm text-center" cellspacing="0" width="100%" >
+                <thead class=" text-primary">
+                      <th>
+                        <h2 class="title">Xelajú</h2>
+                      </th>
+                      <th>
+                        <h3 class="title"></h3>
+                      </th>
+                      <th>
+                        <h2 class="title"><?php echo $dataCn['equipo']?></h2>
+                      </th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="falta">
+                                <input type="text"  id="infalta" class="form-control text-center" name="fal" value="<?php echo $data['faltas']; ?>">
+                        </td>
+                        <td>
+                        <h4><b>Faltas </b> </h4>
+                        </td>
+                        <td>
+                                <input type="text" class="form-control text-center" name="fal2" value="<?php echo $dataCn['faltas']; ?>">
+                        </td>
+                    </tr> 
+                    <tr>
+                        <td>
+                                <input type="text" class="form-control text-center" name="esq" value="<?php echo $data['esquinas']; ?>">
+                        </td>
+                        <td>
+                        <h4><b>Esquinas </b> </h4>
+                        </td>
+                        <td>
+                                <input type="text" class="form-control text-center" name="esq2" value="<?php echo $dataCn['esquinas']; ?>">
+                        </td>
+                    </tr>  
+                    <tr>
+                        <td>
+                                <input type="text" class="form-control text-center" name="asis" value="<?php echo $data['asistencias']; ?>">
+                        </td>
+                        <td>
+                        <h4><b>Asistencias </b> </h4>
+                        </td>
+                        <td>
+                                <input type="text" class="form-control text-center" name="asis2" value="<?php echo $dataCn['asistencias']; ?>">
+                        </td>
+                    </tr>  
+                    <tr>
+                        <td>
+                                <input type="text" class="form-control text-center" name="tiros" value="<?php echo $data['tiros']; ?>">
+                        </td>
+                        <td>
+                        <h4><b>Tiros </b> </h4>
+                        </td>
+                        <td>
+                                <input type="text" class="form-control text-center" name="tiros2" value="<?php echo $dataCn['tiros']; ?>">
+                        </td>
+                    </tr>  
+                    <tr>
+                        <td>
+                                <input type="text" class="form-control text-center" name="tiros_puerta" value="<?php echo $data['tiros_puerta']; ?>">
+                        </td>
+                        <td>
+                        <h4><b>Tiros a puertas</b> </h4>
+                        </td>
+                        <td>
+                                <input type="text" class="form-control text-center" name="tiros_puerta2" value="<?php echo $dataCn['tiros_puerta']; ?>">
+                        </td>
+                    </tr>  
+                    <tr>
+                        <td>
+                                <input type="text" class="form-control text-center" name="ta" value="<?php echo $data['tarjeta_amarilla']; ?>">
+                        </td>
+                        <td>
+                        <h4><b>Tarjetas amarillas </b> </h4>
+                        </td>
+                        <td>
+                                <input type="text" class="form-control text-center" name="ta2" value="<?php echo $dataCn['tarjeta_amarilla']; ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                                <input type="text" class="form-control text-center" name="tr" value="<?php echo $data['tarjeta_roja']; ?>">
+                        </td>
+                        <td>
+                        <h4><b>Tarjetas rojas </b> </h4>
+                        </td>
+                        <td>
+                                <input type="text" class="form-control text-center" name="tr2" value="<?php echo $dataCn['tarjeta_roja']; ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                                <input type="text" class="form-control text-center" name="fj" value="<?php echo $data['fuera_juego']; ?>">
+                        </td>
+                        <td>
+                        <h4><b>Fuera de juego </b> </h4>
+                        </td>
+                        <td>
+                                <input type="text" class="form-control text-center" name="fj2" value="<?php echo $dataCn['fuera_juego']; ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                                <input type="text" class="form-control text-center" name="cam" value="<?php echo $data['cambios']; ?>">
+                        </td>
+                        <td>
+                        <h4><b>Cambios </b> </h4>
+                        </td>
+                        <td>
+                                <input type="text" class="form-control text-center" name="cam2" value="<?php echo $dataCn['cambios']; ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                                <input type="text" class="form-control text-center" name="gol" value="<?php echo $data['goles']; ?>">
+                        </td>
+                        <td>
+                        <h4><b>Goles </b> </h4>
+                        </td>
+                        <td>
+                                <input type="text" class="form-control text-center" name="gol2" value="<?php echo $dataCn['goles']; ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                                <input type="text" class="form-control text-center" name="exp" value="<?php echo $data['expulsados']; ?>">
+                        </td>
+                        <td>
+                        <h4><b>Expulsados </b> </h4>
+                        </td>
+                        <td>
+                                <input type="text" class="form-control text-center" name="exp2" value="<?php echo $dataCn['expulsados']; ?>">
+                         </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-      </div>
+        <?php include '..\layoults\botones.php'; ?>
+        <div class="clearfix"></div>
+        </form>
+        <br>
     </div>
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
     <script type="text/javascript">
     $(document).ready(function(){
-      $('#frm_detalle_partido').bootstrapValidator({
-      feedbackIcons: {
-          valid: 'glyphicon glyphicon-ok',
-          invalid: 'glyphicon glyphicon-remove',
-          validating: 'glyphicon glyphicon-refresh'
-      },
-      message: 'Valor no valido',
-      fields: 
-      {
+        console.log( "ready!" )
+        $('#frm_detalle_partido').bootstrapValidator({
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
           fal:
           {
-              validators:
-              {
-                  notEmpty:
-                  {
-                      message:'Ingrese un nombre'
-                  },
-                  numeric:
-                  {
-                    
-                      message: 'Solo se aceptan numeros'
-                  }
-              }
-          },
-          esq:
-          {
-              validators:
-              {
-                  notEmpty:
-                  {
-                      message:'Ingrese un nombre'
-                  },
-                  numeric:
-                  {
-                    
-                      message: 'Solo se aceptan numeros'
-                  }
-              }
-          },
-          asis:
-          {
-              validators:
-              {
-                  notEmpty:
-                  {
-                      message:'Ingrese un nombre'
-                  },
-                  numeric:
-                  {
-                    
-                      message: 'Solo se aceptan numeros'
-                  }
-              }
-          },
-          tiros:
-          {
-              validators:
-              {
-                  notEmpty:
-                  {
-                      message:'Ingrese un nombre'
-                  },
-                  numeric:
-                  {
-                    
-                      message: 'Solo se aceptan numeros'
-                  }
-              }
-          },
-          tiros_puerta:
-          {
-              validators:
-              {
-                  notEmpty:
-                  {
-                      message:'Ingrese un nombre'
-                  },
-                  numeric:
-                  {
-                    
-                      message: 'Solo se aceptan numeros'
-                  }
-              }
-          },
-          ta:
-          {
-              validators:
-              {
-                  notEmpty:
-                  {
-                      message:'Ingrese un nombre'
-                  },
-                  numeric:
-                  {
-                    
-                      message: 'Solo se aceptan numeros'
-                  }
-              }
-          },
-          tr:
-          {
-              validators:
-              {
-                  notEmpty:
-                  {
-                      message:'Ingrese un nombre'
-                  },
-                  numeric:
-                  {
-                    
-                      message: 'Solo se aceptan numeros'
-                  }
-              }
-          },
-          fj:
-          {
-              validators:
-              {
-                  notEmpty:
-                  {
-                      message:'Ingrese un nombre'
-                  },
-                  numeric:
-                  {
-                    
-                      message: 'Solo se aceptan numeros'
-                  }
-              }
-          },
-          gol:
-          {
-              validators:
-              {
-                  notEmpty:
-                  {
-                      message:'Ingrese un nombre'
-                  },
-                  numeric:
-                  {
-                    
-                      message: 'Solo se aceptan numeros'
-                  }
-              }
-          },
-          cam:
-          {
-              validators:
-              {
-                  notEmpty:
-                  {
-                      message:'Ingrese un nombre'
-                  },
-                  numeric:
-                  {
-                    
-                      message: 'Solo se aceptan numeros'
-                  }
-              }
-          },
-          exp:
-          {
-              validators:
-              {
-                  notEmpty:
-                  {
-                      message:'Ingrese un nombre'
-                  },
-                  numeric:
-                  {
-                    
-                      message: 'Solo se aceptan numeros'
-                  }
-              }
-          },
-
-        }
-      })
-    });
+                validators:
+                {
+                    notEmpty:
+                    {
+                        
+                      message: 'La fecha del partido es necesario'
+                    },
+                    date:
+                    {
+                        message: 'El formato de la fecha no es valida',
+                        format: 'YYYY/MM/DD'
+                    },
+                    callback:
+                    {
+                        message: 'La fecha debe ser despues de la fecha actual',
+                        callback: function(value, validator) {
+                            var m = new moment(value, 'YYYY/MM/DD', true);
+                            fi = m;
+                            if (!m.isValid()) {
+                                return false;
+                            }
+                            return m.isAfter(f);
+                        }
+                    }
+                }
+          },}});
+            });
     </script>
-   
   </body>
 </html>
+

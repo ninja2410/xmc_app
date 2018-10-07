@@ -16,12 +16,14 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-primary">
-            <h4 class="card-title">INGRESAR UNA NUEVA TEMPORADA</h4>
+            <h4 class="card-title">INGRESAR EL PERSONAL TECNICO</h4>
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
             <form method="post", action="..\personaltecnico\store.php" id="frm_personaltecnico">
               <input type="hidden" name="operation" value="1">
+              <input type="hidden" name="id" value="<?php echo $_GET['id'] ?>">
+
               <div class="row">
               <?php
               while ($row=mysqli_fetch_array($data)) {

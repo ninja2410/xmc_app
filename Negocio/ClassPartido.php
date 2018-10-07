@@ -21,7 +21,7 @@ class Partido
             INNER JOIN CATEGORIA ON PARTIDO.id_categoria = CATEGORIA.id_categoria
             INNER JOIN TEMPORADA ON PARTIDO.id_temporada = TEMPORADA.id_temporada
             INNER JOIN ESTADIO ON PARTIDO.id_estadio = ESTADIO.id_estadio
-            INNER JOIN EQUIPO ON PARTIDO.id_equipo = EQUIPO.id_equipo;";
+            INNER JOIN EQUIPO ON PARTIDO.id_equipo = EQUIPO.id_equipo ORDER BY id_partido DESC;";
             $dt=mysqli_query($conexion->objetoconexion,$query);
         }
         else
