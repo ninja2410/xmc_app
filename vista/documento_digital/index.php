@@ -106,6 +106,50 @@ $data=$documento->select(-1);
     <script>
      // Write on keyup event of keyword input element
      $(document).ready(function(){
+
+       $(document).ready(function(){
+ $('#mytable').DataTable({
+     dom: 'Bfrtip',
+     buttons: [
+       {
+         extend:'copy',
+         title:'Listado de documentos',
+         exportOptions:{
+           columns:[0,1,2,3]
+         }
+       },
+       {
+         extend:'csv',
+         title:'Listado de documentos',
+         exportOptions:{
+           columns:[0,1,2,3]
+         }
+       },
+       {
+         extend:'excel',
+         title:'Listado de documentos',
+         exportOptions:{
+           columns:[0,1,2,3]
+         }
+       },
+       {
+         extend:'pdf',
+         title:'Listado de documentos',
+         exportOptions:{
+           columns:[0,1,2,3]
+         }
+       },
+       {
+         extend:'print',
+         title:'Listado de documentos',
+         exportOptions:{
+           columns:[0,1,2,3]
+         }
+       }
+     ],
+ }) ;
+});
+
      $("#search").keyup(function(){
      _this = this;
      // Show only matching TR, hide rest of them

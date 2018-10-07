@@ -37,11 +37,118 @@ $data=$personal->select($_GET['id']);
                         <a href="..\..\vista\partido/index.php">
                         <button class="btn btn-default btn-round"><i class="fas fa-undo-alt fa-lg"></i> Regresar</button>
                     </div>
+<<<<<<< HEAD
+=======
+                  </a>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table" id="table1">
+                    <thead class=" text-primary">
+                      <th>
+                        ID
+                      </th>
+                      <th>
+                        Descripcion
+                      </th>
+                      <th>
+                        Fecha de inicio
+                      </th>
+                      <th>
+                        Fecha que finaliza
+                      </th>
+                    </thead>
+                    <tbody>
+                      <?php
+                      while ($row=mysqli_fetch_array($data)) {
+                       ?>
+                      <tr>
+                        <td>
+                          <?php echo $row['id_temporada']; ?>
+                        </td>
+                        <td>
+                          <?php echo $row['descripcion']; ?>
+                        </td>
+                        <td>
+                          <?php echo $row['fecha_inicio']; ?>
+                        </td>
+                        <td>
+                          <?php echo $row['fecha_final']; ?>
+                        </td>
+                        <td class="td-actions text-lefht">
+                            <div style="float:left">
+                              <a href="..\..\vista\temporada/update.php?id=<?php echo $row['id_temporada']; ?>">
+                                <button type="button" rel="tooltip" title="Editar temporada" class="btn btn-primary btn-link btn-sm">
+                                  <i class="material-icons">edit</i>
+                                </button>
+                              </a>
+                            </div>
+                            <div  style="float:left">
+                              <form class="" action="..\..\vista\temporada/store.php" method="post">
+                                <input type="hidden" name="operation" value="3">
+                                <input type="hidden" name="id" value="<?php echo $row['id_temporada']; ?>">
+                                <button type="submit" rel="tooltip" title="Eliminar temporada" class="btn btn-danger btn-link btn-sm">
+                                  <i class="material-icons">close</i>
+                                </button>
+                              </form>
+                            </div>
+                        </td>
+                        <?php
+                      } ?>
+                      </tr>
+                    </tbody>
+                  </table>
+>>>>>>> aa35c89b15a7f855162516669cd69703f418455a
                 </div>
             </div>
         </div>
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
+    <script type="text/javascript">
+    $(document).ready(function(){
+   $('#table1').DataTable({
+       dom: 'Bfrtip',
+       buttons: [
+         {
+           extend:'copy',
+           title:'Listado de personal tecnico',
+           exportOptions:{
+             columns:[0,1,2,3]
+           }
+         },
+         {
+           extend:'csv',
+           title:'Listado de personal tecnico',
+           exportOptions:{
+             columns:[0,1,2,3]
+           }
+         },
+         {
+           extend:'excel',
+           title:'Listado de personal tecnico',
+           exportOptions:{
+             columns:[0,1,2,3]
+           }
+         },
+         {
+           extend:'pdf',
+           title:'Listado de personal tecnico',
+           exportOptions:{
+             columns:[0,1,2,3]
+           }
+         },
+         {
+           extend:'print',
+           title:'Listado de personal tecnico',
+           exportOptions:{
+             columns:[0,1,2,3]
+           }
+         }
+       ],
+   }) ;
+});
+    </script>
   </body>
 </html>

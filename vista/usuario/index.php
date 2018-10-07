@@ -37,7 +37,7 @@ $data=$usuario->select(-1);
               </div>
               <div class="card-body">
                 <div class="table-responsive">
-                  <table class="table">
+                  <table class="table" id="table1">
                     <thead class=" text-primary">
                       <th>
                         ID
@@ -89,5 +89,49 @@ $data=$usuario->select(-1);
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
+    <script type="text/javascript">
+    $(document).ready(function(){
+   $('#table1').DataTable({
+       dom: 'Bfrtip',
+       buttons: [
+         {
+           extend:'copy',
+           title:'Listado de usuarios',
+           exportOptions:{
+             columns:[0,1]
+           }
+         },
+         {
+           extend:'csv',
+           title:'Listado de usuarios',
+           exportOptions:{
+             columns:[0,1]
+           }
+         },
+         {
+           extend:'excel',
+           title:'Listado de usuarios',
+           exportOptions:{
+             columns:[0,1]
+           }
+         },
+         {
+           extend:'pdf',
+           title:'Listado de usuarios',
+           exportOptions:{
+             columns:[0,1]
+           }
+         },
+         {
+           extend:'print',
+           title:'Listado de usuarios',
+           exportOptions:{
+             columns:[0,1]
+           }
+         }
+       ],
+   }) ;
+});
+    </script>
   </body>
 </html>

@@ -44,7 +44,7 @@ $data=$partecuerpo->select(-1);
                           <td>
                             <?php echo $row['nombre']; ?>
                           </td>
-                          
+
                           <td class="td-actions text-lefht">
                               <div style="float:left">
                                 <a href="..\..\vista\parte_cuerpo/insert.php">

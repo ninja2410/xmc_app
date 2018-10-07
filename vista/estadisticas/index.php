@@ -37,7 +37,7 @@ $data=$partido->select(-1);
               </div>
               <div class="card-body">
                 <div class="table-responsive">
-                  <table class="table">
+                  <table class="table" id="table1">
                     <thead class=" text-primary">
                       <th>
                         ID
@@ -143,5 +143,49 @@ $data=$partido->select(-1);
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
+    <script type="text/javascript">
+    $(document).ready(function(){
+$('#table1').DataTable({
+   dom: 'Bfrtip',
+   buttons: [
+     {
+       extend:'copy',
+       title:'Listado de estadisticas',
+       exportOptions:{
+         columns:[0,1,2,3,4,5,6,7,8,9,10]
+       }
+     },
+     {
+       extend:'csv',
+       title:'Listado de estadisticas',
+       exportOptions:{
+         columns:[0,1,2,3,4,5,6,7,8,9,10]
+       }
+     },
+     {
+       extend:'excel',
+       title:'Listado de estadisticas',
+       exportOptions:{
+         columns:[0,1,2,3,4,5,6,7,8,9,10]
+       }
+     },
+     {
+       extend:'pdf',
+       title:'Listado de estadisticas',
+       exportOptions:{
+         columns:[0,1,2,3,4,5,6,7,8,9,10]
+       }
+     },
+     {
+       extend:'print',
+       title:'Listado de estadisticas',
+       exportOptions:{
+         columns:[0,1,2,3,4,5,6,7,8,9,10]
+       }
+     }
+   ],
+}) ;
+});
+    </script>
   </body>
 </html>

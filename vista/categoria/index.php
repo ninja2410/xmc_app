@@ -16,7 +16,7 @@ $data=$categoria->select(-1);
    <div class="main main-raised">
     <div class="content">
       <div class="container-fluid">
-       
+
           <div class="col-md-12">
             <div class="card">
               <div class="card-header card-header-danger row">
@@ -84,7 +84,7 @@ $data=$categoria->select(-1);
                 </div>
               </div>
             </div>
-            
+
         </div>
       </div>
     </div>

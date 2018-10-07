@@ -18,7 +18,7 @@ $data=$estadio->select(-1);
     <div class="main main-raised">
     <div class="content">
       <div class="container-fluid">
-        
+
           <div class="col-md-12">
             <div class="card">
               <div class="card-header card-header-danger row">
@@ -34,7 +34,7 @@ $data=$estadio->select(-1);
               </div>
               <div class="card-body">
                 <div class="table-responsive">
-                  <table class="table">
+                  <table class="table" id="table1">
                     <thead class=" text-info">
                       <th>
                         ID
@@ -50,6 +50,9 @@ $data=$estadio->select(-1);
                       </th>
                       <th>
                         Ciudad
+                      </th>
+                      <th>
+                        Acciones
                       </th>
                     </thead>
                     <tbody>
@@ -104,5 +107,49 @@ $data=$estadio->select(-1);
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
+    <script type="text/javascript">
+    $(document).ready(function(){
+$('#table1').DataTable({
+   dom: 'Bfrtip',
+   buttons: [
+     {
+       extend:'copy',
+       title:'Listado de estadios',
+       exportOptions:{
+         columns:[0,1,2,3,4]
+       }
+     },
+     {
+       extend:'csv',
+       title:'Listado de estadios',
+       exportOptions:{
+         columns:[0,1,2,3,4]
+       }
+     },
+     {
+       extend:'excel',
+       title:'Listado de estadios',
+       exportOptions:{
+         columns:[0,1,2,3,4]
+       }
+     },
+     {
+       extend:'pdf',
+       title:'Listado de estadios',
+       exportOptions:{
+         columns:[0,1,2,3,4]
+       }
+     },
+     {
+       extend:'print',
+       title:'Listado de estadios',
+       exportOptions:{
+         columns:[0,1,2,3,4]
+       }
+     }
+   ],
+}) ;
+});
+    </script>
   </body>
 </html>

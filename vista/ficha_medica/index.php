@@ -32,7 +32,7 @@ $data=$fichamedica->select(-1);
                 </div>
               </div>
               <div class="card-body text-center table-responsive">
-                <table class="table">
+                <table class="table" id="table1">
                     <thead>
                       <tr>
                         <th>ID</th>
@@ -104,5 +104,49 @@ $data=$fichamedica->select(-1);
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
+    <script type="text/javascript">
+    $(document).ready(function(){
+$('#table1').DataTable({
+   dom: 'Bfrtip',
+   buttons: [
+     {
+       extend:'copy',
+       title:'Listado de fichas medicas',
+       exportOptions:{
+         columns:[0,1,2,3,4,5]
+       }
+     },
+     {
+       extend:'csv',
+       title:'Listado de fichas medicas',
+       exportOptions:{
+         columns:[0,1,2,3,4,5]
+       }
+     },
+     {
+       extend:'excel',
+       title:'Listado de fichas medicas',
+       exportOptions:{
+         columns:[0,1,2,3,4,5]
+       }
+     },
+     {
+       extend:'pdf',
+       title:'Listado de fichas medicas',
+       exportOptions:{
+         columns:[0,1,2,3,4,5]
+       }
+     },
+     {
+       extend:'print',
+       title:'Listado de fichas medicas',
+       exportOptions:{
+         columns:[0,1,2,3,4,5]
+       }
+     }
+   ],
+}) ;
+});
+    </script>
   </body>
 </html>

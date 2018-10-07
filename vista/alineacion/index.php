@@ -36,7 +36,7 @@ $data=$alineacion->select(-1);
               </div>
               <div class="card-body">
                 <div class="table-responsive">
-                  <table class="table">
+                  <table class="table" id="table1">
                     <thead class=" text-primary">
                       <th>
                         ID
@@ -131,5 +131,49 @@ $data=$alineacion->select(-1);
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
+    <script type="text/javascript">
+    $(document).ready(function(){
+$('#table1').DataTable({
+   dom: 'Bfrtip',
+   buttons: [
+     {
+       extend:'copy',
+       title:'Listado de Alineacion',
+       exportOptions:{
+         columns:[0,1,2,3,4,5,6,7,8]
+       }
+     },
+     {
+       extend:'csv',
+       title:'Listado de Alineacion',
+       exportOptions:{
+         columns:[0,1,2,3,4,5,6,7,8]
+       }
+     },
+     {
+       extend:'excel',
+       title:'Listado de Alineacion',
+       exportOptions:{
+         columns:[0,1,2,3,4,5,6,7,8]
+       }
+     },
+     {
+       extend:'pdf',
+       title:'Listado de Alineacion',
+       exportOptions:{
+         columns:[0,1,2,3,4,5,6,7,8]
+       }
+     },
+     {
+       extend:'print',
+       title:'Listado de Alineacion',
+       exportOptions:{
+         columns:[0,1,2,3,4,5,6,7,8]
+       }
+     }
+   ],
+}) ;
+});
+    </script>
   </body>
 </html>
