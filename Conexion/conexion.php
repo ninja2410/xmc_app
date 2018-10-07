@@ -1,16 +1,16 @@
 <?php
 class conexion
 {
-	// private $servidor='localhost';
-	// private $usuario="root";
-	// private $pass="database";
-	// private $bd="db_xelajumc";
+	private $servidor='localhost';
+	private $usuario="root";
+	private $pass="database";
+	private $bd="db_xelajumc";
 
-	private $servidor='sql3.freemysqlhosting.net';
-	private $usuario="sql3259082";
-	private $pass="NDqrhKuxIn";
-	private $bd="sql3259082";
-	public  $objetoconexion;
+	// private $servidor='sql3.freemysqlhosting.net';
+	// private $usuario="sql3259082";
+	// private $pass="NDqrhKuxIn";
+	// private $bd="sql3259082";
+	// public  $objetoconexion;
 
 	public function conectar()
 	{

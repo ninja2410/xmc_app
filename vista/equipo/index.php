@@ -18,7 +18,7 @@ $data=$equipo->select(-1);
     <div class="main main-raised">
     <div class="content">
       <div class="container-fluid">
-        
+
           <div class="col-md-12">
             <div class="card">
               <div class="card-header card-header-danger row">
@@ -34,7 +34,7 @@ $data=$equipo->select(-1);
               </div>
               <div class="card-body">
                 <div class="table-responsive">
-                  <table class="table">
+                  <table class="table" id="table1">
                     <thead class=" text-info">
                       <th>
                         ID
@@ -63,8 +63,8 @@ $data=$equipo->select(-1);
                         <td>
                           <?php echo $row['procedencia']; ?>
                         </td>
-                        <td > 
-                        <?php 
+                        <td >
+                        <?php
                          echo '<img style="height:30px;width:30px"  src="../imagenes/'.$row['foto'].'" class="img-fluid">';
                         ?>
                         </td>
@@ -100,5 +100,49 @@ $data=$equipo->select(-1);
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
+    <script type="text/javascript">
+    $(document).ready(function(){
+$('#table1').DataTable({
+   dom: 'Bfrtip',
+   buttons: [
+     {
+       extend:'copy',
+       title:'Listado de equipos',
+       exportOptions:{
+         columns:[0,1,2,3]
+       }
+     },
+     {
+       extend:'csv',
+       title:'Listado de equipos',
+       exportOptions:{
+         columns:[0,1,2,3]
+       }
+     },
+     {
+       extend:'excel',
+       title:'Listado de equipos',
+       exportOptions:{
+         columns:[0,1,2,3]
+       }
+     },
+     {
+       extend:'pdf',
+       title:'Listado de equipos',
+       exportOptions:{
+         columns:[0,1,2,3]
+       }
+     },
+     {
+       extend:'print',
+       title:'Listado de equipos',
+       exportOptions:{
+         columns:[0,1,2,3]
+       }
+     }
+   ],
+}) ;
+});
+    </script>
   </body>
 </html>

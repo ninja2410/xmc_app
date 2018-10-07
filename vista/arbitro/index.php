@@ -18,7 +18,7 @@ $data=$arbitro->select(-1);
     <div class="main main-raised">
     <div class="content">
       <div class="container-fluid">
-        
+
           <div class="col-md-12">
             <div class="card">
               <div class="card-header card-header-danger row">
@@ -34,7 +34,7 @@ $data=$arbitro->select(-1);
               </div>
               <div class="card-body">
                 <div class="table-responsive">
-                  <table class="table">
+                  <table class="table" id="table1">
                     <thead class=" text-info">
                       <th>
                         ID
@@ -57,7 +57,7 @@ $data=$arbitro->select(-1);
                         <td>
                           <?php echo $row['nombre']; ?>
                         </td>
-                        
+
                         <td class="td-actions text-lefht">
                             <div style="float:left">
                               <a href="..\..\vista\arbitro/update.php?id=<?php echo $row['id_arbitro']; ?>">
@@ -90,5 +90,49 @@ $data=$arbitro->select(-1);
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
+    <script type="text/javascript">
+    $(document).ready(function(){
+$('#table1').DataTable({
+   dom: 'Bfrtip',
+   buttons: [
+     {
+       extend:'copy',
+       title:'Listado de arbitros',
+       exportOptions:{
+         columns:[0,1]
+       }
+     },
+     {
+       extend:'csv',
+       title:'Listado de arbitros',
+       exportOptions:{
+         columns:[0,1]
+       }
+     },
+     {
+       extend:'excel',
+       title:'Listado de arbitros',
+       exportOptions:{
+         columns:[0,1]
+       }
+     },
+     {
+       extend:'pdf',
+       title:'Listado de arbitros',
+       exportOptions:{
+         columns:[0,1]
+       }
+     },
+     {
+       extend:'print',
+       title:'Listado de arbitros',
+       exportOptions:{
+         columns:[0,1]
+       }
+     }
+   ],
+}) ;
+});
+    </script>
   </body>
 </html>

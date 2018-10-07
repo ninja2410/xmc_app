@@ -15,10 +15,10 @@ $data=$prensa->select(-1);
     <?php
     include '..\layoults\barnav.php';
     ?>
-    <div class="main main-raised"> 
+    <div class="main main-raised">
     <div class="content">
       <div class="container-fluid">
-        
+
           <div class="col-md-12">
             <div class="card">
               <div class="card-header card-header-danger row">
@@ -34,7 +34,7 @@ $data=$prensa->select(-1);
               </div>
               <div class="card-body">
                 <div class="table-responsive">
-                  <table class="table">
+                  <table class="table" id="table1">
                     <thead class=" text-info">
                       <th>
                         ID
@@ -50,6 +50,9 @@ $data=$prensa->select(-1);
                       </th>
                       <th>
                         Empresa
+                      </th>
+                      <th>
+                        Acciones
                       </th>
                     </thead>
                     <tbody>
@@ -104,5 +107,49 @@ $data=$prensa->select(-1);
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
+    <script type="text/javascript">
+    $(document).ready(function(){
+   $('#table1').DataTable({
+       dom: 'Bfrtip',
+       buttons: [
+         {
+           extend:'copy',
+           title:'Listado de prensa',
+           exportOptions:{
+             columns:[0,1,2,3,4]
+           }
+         },
+         {
+           extend:'csv',
+           title:'Listado de prensa',
+           exportOptions:{
+             columns:[0,1,2,3,4]
+           }
+         },
+         {
+           extend:'excel',
+           title:'Listado de prensa',
+           exportOptions:{
+             columns:[0,1,2,3,4]
+           }
+         },
+         {
+           extend:'pdf',
+           title:'Listado de prensa',
+           exportOptions:{
+             columns:[0,1,2,3,4]
+           }
+         },
+         {
+           extend:'print',
+           title:'Listado de prensa',
+           exportOptions:{
+             columns:[0,1,2,3,4]
+           }
+         }
+       ],
+   }) ;
+});
+    </script>
   </body>
 </html>

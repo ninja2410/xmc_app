@@ -37,7 +37,7 @@ $data=$lesion->detalle();
               </div>
               <div class="card-body">
                 <div class="table-responsive">
-                  <table class="table">
+                  <table class="table" id="table1">
                     <thead class=" text-primary">
                       <th>
                         ID
@@ -104,5 +104,49 @@ $data=$lesion->detalle();
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
+    <script type="text/javascript">
+    $(document).ready(function(){
+   $('#table1').DataTable({
+       dom: 'Bfrtip',
+       buttons: [
+         {
+           extend:'copy',
+           title:'Listado de lesiones de jugadores',
+           exportOptions:{
+             columns:[0,1,2,3]
+           }
+         },
+         {
+           extend:'csv',
+           title:'Listado de lesiones de jugadores',
+           exportOptions:{
+             columns:[0,1,2,3]
+           }
+         },
+         {
+           extend:'excel',
+           title:'Listado de lesiones de jugadores',
+           exportOptions:{
+             columns:[0,1,2,3]
+           }
+         },
+         {
+           extend:'pdf',
+           title:'Listado de lesiones de jugadores',
+           exportOptions:{
+             columns:[0,1,2,3]
+           }
+         },
+         {
+           extend:'print',
+           title:'Listado de lesiones de jugadores',
+           exportOptions:{
+             columns:[0,1,2,3]
+           }
+         }
+       ],
+   }) ;
+});
+    </script>
   </body>
 </html>

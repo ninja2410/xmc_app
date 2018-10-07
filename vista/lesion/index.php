@@ -8,7 +8,7 @@ $data=$beneficio->select(-1);
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Lesiones - Listar</title>
+    <title>jugadores - Listar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <body>
@@ -22,8 +22,8 @@ $data=$beneficio->select(-1);
             <div class="card">
               <div class="card-header card-header-primary">
                 <div class="col-lg-10" style="float:left;">
-                  <h2 class="card-title ">Lesiones</h4>
-                  <p class="card-category"> Listado de lesiones que afectan a jugadores</p>
+                  <h2 class="card-title ">jugadores</h4>
+                  <p class="card-category"> Listado de jugadores que afectan a jugadores</p>
                 </div>
                 <div class="col-lg-1" style="float:left">
                   <a href="..\..\vista\lesion/insert.php">
@@ -37,7 +37,7 @@ $data=$beneficio->select(-1);
               </div>
               <div class="card-body">
                 <div class="table-responsive">
-                  <table class="table">
+                  <table class="table" id="table1">
                     <thead class=" text-primary">
                       <th>
                         ID
@@ -98,5 +98,49 @@ $data=$beneficio->select(-1);
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
+    <script type="text/javascript">
+    $(document).ready(function(){
+   $('#table1').DataTable({
+       dom: 'Bfrtip',
+       buttons: [
+         {
+           extend:'copy',
+           title:'Listado de lesiones',
+           exportOptions:{
+             columns:[0,1,2]
+           }
+         },
+         {
+           extend:'csv',
+           title:'Listado de lesiones',
+           exportOptions:{
+             columns:[0,1,2]
+           }
+         },
+         {
+           extend:'excel',
+           title:'Listado de lesiones',
+           exportOptions:{
+             columns:[0,1,2]
+           }
+         },
+         {
+           extend:'pdf',
+           title:'Listado de lesiones',
+           exportOptions:{
+             columns:[0,1,2]
+           }
+         },
+         {
+           extend:'print',
+           title:'Listado de lesiones',
+           exportOptions:{
+             columns:[0,1,2]
+           }
+         }
+       ],
+   }) ;
+});
+    </script>
   </body>
 </html>
