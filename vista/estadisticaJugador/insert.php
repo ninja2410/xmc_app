@@ -99,27 +99,28 @@ $data=$estadistoca->selectCampos();
               </div>
 
               <div class="clearfix"></div>
-            </form>
-            <div class="row">
-              <div class="table-responsive">
-                <table class="table" id="agregados">
-                  <thead class=" text-muted">
-                    <th>
-                      ACCION
-                    </th>
-                    <th>
-                      MINUTO
-                    </th>
-                    <th>
-                      CANTIDAD
-                    </th>
-                  </thead>
-                  <tbody>
-                  </tbody>
-                </table>
+              <div class="row">
+                <div class="table-responsive">
+                  <table class="table" id="agregados">
+                    <thead class=" text-muted">
+                      <th>
+                        ACCION
+                      </th>
+                      <th>
+                        MINUTO
+                      </th>
+                      <th>
+                        CANTIDAD
+                      </th>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
+                </div>
               </div>
-            </div>
-            <?php include '..\layoults\botones.php'; ?>
+              <?php include '..\layoults\botones.php'; ?>
+            </form>
+
           </div>
         </div>
       </div>

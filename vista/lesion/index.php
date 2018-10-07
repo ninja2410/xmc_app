@@ -8,7 +8,7 @@ $data=$beneficio->select(-1);
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>jugadores - Listar</title>
+    <title>Lesiones - Listar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <body>
@@ -22,8 +22,8 @@ $data=$beneficio->select(-1);
             <div class="card">
               <div class="card-header card-header-primary">
                 <div class="col-lg-10" style="float:left;">
-                  <h2 class="card-title ">jugadores</h4>
-                  <p class="card-category"> Listado de jugadores que afectan a jugadores</p>
+                  <h2 class="card-title ">Lesiones</h4>
+                  <p class="card-category"> Listado de beneficios</p>
                 </div>
                 <div class="col-lg-1" style="float:left">
                   <a href="..\..\vista\lesion/insert.php">
@@ -69,7 +69,7 @@ $data=$beneficio->select(-1);
                         <td class="td-actions text-lefht">
                             <div style="float:left">
                               <a href="..\..\vista\lesion/update.php?id=<?php echo $row['id_lesion']; ?>">
-                                <button type="button" rel="tooltip" title="Editar Beneficio" class="btn btn-primary btn-link btn-sm">
+                                <button type="button" rel="tooltip" title="Editar Lesion" class="btn btn-primary btn-link btn-sm">
                                   <i class="material-icons">edit</i>
                                 </button>
                               </a>
@@ -78,7 +78,7 @@ $data=$beneficio->select(-1);
                               <form class="" action="..\..\vista\lesion/store.php" method="post">
                                 <input type="hidden" name="operation" value="3">
                                 <input type="hidden" name="id" value="<?php echo $row['id_lesion']; ?>">
-                                <button type="submit" rel="tooltip" title="Eliminar Beneficio" class="btn btn-danger btn-link btn-sm">
+                                <button type="submit" rel="tooltip" title="Eliminar Lesion" class="btn btn-danger btn-link btn-sm">
                                   <i class="material-icons">close</i>
                                 </button>
                               </form>
