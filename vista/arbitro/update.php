@@ -4,12 +4,6 @@ $arbitro=new Arbitro();
 $data=$arbitro->select($_GET['id']);
 ?>
 
-<?php
-require_once('..\..\Negocio/ClassTipoArbitro.php');
-$tipoarbitro=new TipoArbitro();
-$data2=$tipoarbitro->select(-1);
- ?>
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -36,6 +30,18 @@ $data2=$tipoarbitro->select(-1);
                   <div class="form-group">
                     <label class="bmd-label-floating">Nombre</label>
                     <input type="text" class="form-control" name="nombre" value="<?php echo $data['nombre']; ?>">
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect1">Tipo de árbitro</label>
+                    <select class="form-control" name="tipo">
+                      <option selected>Elija el tipo de árbitro</option>
+                      <option value="Árbitro">Árbitro</option>
+                      <option value="A. Asistente No.1">A. Asistente No.1</option>
+                      <option value="A. Asistente No.2">A. Asistente No.2</option>
+                      <option value="Cuarto oficial">Cuarto oficial</option>
+                    </select>
                   </div>
                 </div>
              </div>
@@ -88,6 +94,11 @@ $data2=$tipoarbitro->select(-1);
                     }
                 }
             },
+            tipo:{
+              validators:{
+                  notEmpty:{
+                      message:'Ingrese un tipo'
+                  },
         }
       })
     });

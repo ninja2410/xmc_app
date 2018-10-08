@@ -31,23 +31,19 @@ $data=$tipoarbitro->select(-1);
                     <input type="text" class="form-control" name="nombre">
                   </div>
                 </div>
-              </div>
-              <!-- <div class="row">
-              <div class="col-md-4">
+                <div class="col-md-3">
                   <div class="form-group">
                     <label for="exampleFormControlSelect1">Tipo de árbitro</label>
-                    <select class="form-control" name="id_tipo_arbitro">
-                      <php
-                      while ($row=mysqli_fetch_array($data)) {
-                          $valor = $row['id_tipo_arbitro'];
-                          $texto = $row['descripcion'];
-                          echo '<option value="'.$valor.'">'.$texto.'</option>';
-                      }
-                        ?>
+                    <select class="form-control" name="tipo">
+                      <option selected>Elija un tipo de árbitro</option>
+                      <option value="Árbitro">Árbitro</option>
+                      <option value="A. Asistente No.1">A. Asistente No.1</option>
+                      <option value="A. Asistente No.2">A. Asistente No.2</option>
+                      <option value="Cuarto oficial">Cuarto oficial</option>
                     </select>
                   </div>
-                </div> -->
-                <!-- </div> -->
+                </div>
+              </div>
               <?php include '..\layoults\botones.php'; ?>
               <div class="clearfix"></div>
             </form>
