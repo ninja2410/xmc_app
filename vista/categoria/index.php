@@ -33,7 +33,7 @@ $data=$categoria->select(-1);
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table">
-                    <thead class=" text-muted">
+                    <thead>
                       <th>
                         ID
                       </th>
