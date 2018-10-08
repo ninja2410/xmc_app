@@ -70,7 +70,7 @@
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="..\..\vista\documento_digital/index.php">Documentos Digitales</a>
                 <a class="dropdown-item" href="..\..\vista\categoria_documentos/index.php">Categoría Documentos</a>
-                <a class="dropdown-item" href="..\..\vista\contratos/index.php">Contratos</a>
+                <a class="dropdown-item" href="..\..\vista\contrato/index.php">Contratos</a>
               </div>
             </li>
             <li class="nav-item dropdown">
