@@ -56,7 +56,7 @@ $data=$equipo->select($_GET['id']);
                     </div>
                   </div>
                 </div>
-
+                </div>
 
               <?php include '..\layoults\botones.php'; ?>
               <div class="clearfix"></div>
