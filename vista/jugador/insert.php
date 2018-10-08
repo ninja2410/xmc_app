@@ -94,9 +94,14 @@
                             <input type="text" class="form-control" name="contrato">
                         </div>
 
-                         <div class="form-group col-md-4">
-                            <label>Foto</label>
-                            <input type="text" class="form-control" name="foto">
+                         <div class="form-group col-md-4 text-center">
+                            <div class="fileinput fileinput-new" data-provides="fileinput">
+                                <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
+                                <div>
+                                    <span class="btn btn-default btn-file"><span class="fileinput-new">Buscar Imagen</span><span class="fileinput-exists">Cambiar</span><input type="file" name="img"></span>
+                                    <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Eliminar</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="form-row">
@@ -112,7 +117,7 @@
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
-
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
     <script type="text/javascript">
     $(document).ready(function(){
       $('#frm_jugador').bootstrapValidator({
@@ -205,6 +210,17 @@
                 regexp:{
                     regexp: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]*$/,
                     message: 'Solo se aceptan letras'
+                    }
+                }
+            },
+            camisola:{
+            validators:{
+                notEmpty:{
+                    message:'Ingrese el numero de la camisola del jugador'
+                },
+                regexp:{
+                    regexp: /^[0-9]*$/, 
+                    message: 'Solo se aceptan números'
                     }
                 }
             },

@@ -13,6 +13,8 @@
     <!-- Material Kit CSS -->
     <link href="..\assets/css/material-kit.css?v=2.0.4" rel="stylesheet" />
 
+    <link href="..\assets/css/xelaju.css" rel="stylesheet" />
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css">
 
     <!-- Iconos de fontawesome -->

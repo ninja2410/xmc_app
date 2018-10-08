@@ -1,7 +1,7 @@
 <?php
 require_once('..\..\Conexion\conexion.php');
 /**
- * Ficha Medica
+ * Jugador
  */
 class Jugador
 {
@@ -25,6 +25,14 @@ class Jugador
     $bd= new conexion();
 		$dt=$bd->execute_query($query);
 		return $dt;
+  }
+
+  public function correlativo(){
+    $query="SELECT coalesce(MAX(id_jugador)+1, 1) as x from JUGADOR;";
+    $bd= new conexion();
+		$dt=$bd->execute_query($query);
+    $id=mysqli_fetch_array($dt);
+    return $id[0][0];
   }
 
   public function select($id){

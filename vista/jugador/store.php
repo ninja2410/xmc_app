@@ -39,11 +39,17 @@ if (isset($_POST['id'])) {
   $id_jugador=$_POST['id'];
 }
 $jugador=new Jugador();
-$foto='nada';
-$id_contrato=2;
+
+$id_contrato=1;
+
 if ($operacion=="1") {
+  $name=$_FILES['img']['name'];
+  $foto='JUGADOR_'.$jugador->correlativo().substr($name,-4);
+  move_uploaded_file($_FILES['img']['tmp_name'],'../imagenes/'.$foto);
+  chmod('../imagenes/'.$foto,0644);
   $jugador->insert($nombre, $direccion, $fecha_nacimiento, $estado, $padre, $madre, $telefono, $procedencia, $apellidos, $foto, $id_posicion, $camisola,$id_contrato);
-  header('Location:index.php');
+  echo('Se inserto correctamente');
+  // header('Location:index.php');
 }
 elseif($operacion=="2") {
   $jugador->update($id_jugador, $nombre, $direccion, $fecha_nacimiento, $estado, $padre, $madre, $telefono, $procedencia, $apellidos, $foto, $id_posicion, $camisola,$id_contrato);

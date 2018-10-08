@@ -52,7 +52,7 @@ $data=$jugador->select(-1);
                         </td>
                         <td>
                           <a href="..\..\vista\jugador/detalle.php?id=<?php echo $row['id_jugador']; ?>">
-                          <button class="btn btn-primary btn-round btn-sm"><i class="far fa-eye fa-lg"></i> Ver detalles</button>
+                          <button class="btn btn-success btn-round btn-sm"><i class="far fa-eye fa-lg"></i> Ver detalles</button>
                         </td>
                         <td>
                           <form class="" action="..\..\vista\jugador/store.php" method="post">

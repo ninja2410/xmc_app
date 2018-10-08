@@ -44,26 +44,26 @@ function calculaedad($fechanacimiento){
                     <h4><b>Procedencia: </b><?php echo $data['procedencia']?></h4>
                     <h4><b>Posicion: </b><?php echo $data['descripcion']?></h4>
                 </div>
-                <div class="col-md-3 text-center">
-                    <ul class="nav nav-pills flex-column">
+                <div class="col-md-3">
+                    <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link" href="..\..\vista\jugador/index.php">
-                                <i class="fas fa-portrait"></i> Ver estadisticas del jugador
+                            <a class="nav-link btnAzul" href="..\..\vista\jugador/index.php">
+                                <i class="fas fa-portrait fa-2x"></i><br> Ver estadisticas del jugador
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="..\..\vista\ficha_medica/index.php">
-                                <i class="fas fa-notes-medical"></i> Ver información medica
+                            <a class="nav-link btnAzul" href="..\..\vista\ficha_medica/index.php">
+                                <i class="fas fa-notes-medical fa-2x"></i><br> Ver información medica
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="..\..\vista\jugador/update.php?id=<?php echo $data['id_jugador']; ?>">
-                                <i class="material-icons">edit</i> Actualizar información
+                            <a class="nav-link btnAzul" href="..\..\vista\jugador/update.php?id=<?php echo $data['id_jugador']; ?>">
+                                <i class="material-icons fa-2x">edit</i><br> Actualizar información
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="..\..\vista\jugador/index.php">
-                                <i class="fas fa-undo-alt fa-lg"></i> Regresar
+                            <a class="nav-link btnAzul" href="..\..\vista\jugador/index.php">
+                                <i class="fas fa-undo-alt fa-2x"></i><br> Regresar
                             </a>
                         </li>
                     </ul>
