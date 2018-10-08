@@ -7,15 +7,15 @@ class Arbitro
 {
 
   private $query;
-  public function insert($nombre){
-    $query="CALL SP_ARBITRO_INSERT('$nombre');";
+  public function insert($nombre,$tipo){
+    $query="CALL SP_ARBITRO_INSERT('$nombre','$tipo');";
     $bd= new conexion();
 		$dt=$bd->execute_query($query);
 		return $dt;
   }
 
-  public function update($id, $nombre){
-    $query="CALL SP_ARBITRO_UPDATE($id,'$nombre');";
+  public function update($id, $nombre,$tipo){
+    $query="CALL SP_ARBITRO_UPDATE($id,'$nombre','$tipo');";
     $bd= new conexion();
 		$dt=$bd->execute_query($query);
 		return $dt;
@@ -32,7 +32,7 @@ class Arbitro
     $conexion=new conexion();
     $conexion->conectar();
     if ($id==-1) {
-      $query="SELECT A.id_arbitro, A.nombre FROM ARBITRO A WHERE A.estado = 1";
+      $query="SELECT * FROM ARBITRO  WHERE estado = 1";
       $dt=mysqli_query($conexion->objetoconexion,$query);
     }
     else{

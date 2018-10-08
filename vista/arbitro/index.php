@@ -35,12 +35,15 @@ $data=$arbitro->select(-1);
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table" id="table1">
-                    <thead class=" text-info">
+                    <thead>
                       <th>
                         ID
                       </th>
                       <th>
                         Nombre
+                      </th>
+                      <th>
+                        Tipo
                       </th>
                       <!-- <th>
                         Tipo árbitro
@@ -57,7 +60,9 @@ $data=$arbitro->select(-1);
                         <td>
                           <?php echo $row['nombre']; ?>
                         </td>
-
+                        <td>
+                          <?php echo $row['tipo']; ?>
+                        </td>
                         <td class="td-actions text-lefht">
                             <div style="float:left">
                               <a href="..\..\vista\arbitro/update.php?id=<?php echo $row['id_arbitro']; ?>">

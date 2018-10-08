@@ -17,6 +17,10 @@ if(isset($_POST['estado'])){
   $estado=$_POST['estado'];
 }
 
+if(isset($_POST['tipo'])){
+  $tipo=$_POST['tipo'];
+}
+
 if (isset($_POST['id'])) {
   $id_arbitro=$_POST['id'];
 }
@@ -24,10 +28,10 @@ if (isset($_POST['id'])) {
 
 $accion=new Arbitro();
 if ($operacion=="1") {
-  $accion->insert($nombre);
+  $accion->insert($nombre,$tipo);
 }
 elseif($operacion=="2") {
-  $accion->update($id_arbitro, $nombre);
+  $accion->update($id_arbitro, $nombre,$tipo);
 
 } elseif ($operacion=="3") {
   $accion->delete($id_arbitro);
