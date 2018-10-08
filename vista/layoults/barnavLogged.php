@@ -28,6 +28,11 @@ if(!isset($_SESSION['iniciado']))
   }
 }
 $jugadores=0;
+$partidos=0;
+$socios=0;
+$lesiones=0;
+$documentos=0;
+$personas=0;
 foreach($permisos as $key => $value) 
 {
   if($value==2)
@@ -36,11 +41,11 @@ foreach($permisos as $key => $value)
   }
   if($value==3)
   {
-    $jugadores=1;
+    $partidos=1;
   }
   if($value==4)
   {
-    $jugadores=1;
+    $socios=1;
   }
 }
 
@@ -84,6 +89,10 @@ foreach($permisos as $key => $value)
             <?php
             }
             ?>
+            <?php
+            if($partidos==1)
+            {
+            ?>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="material-icons">access_time</i> Partidos
@@ -98,6 +107,9 @@ foreach($permisos as $key => $value)
                 <a class="dropdown-item" href="..\..\vista\temporada/index.php">Temporadas</a>
               </div>
             </li>
+            <?php
+            }
+            ?>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="material-icons">supervisor_account</i> Socios
