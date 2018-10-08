@@ -61,6 +61,15 @@ $data=$partido->select(-1);
                       <th>
                         Observaciones
                       </th>
+                      <th>
+                        Personal técnico
+                      </th>
+                      <th>
+                        Detalles
+                      </th>
+                      <th>
+                        Acciones
+                      </th>
                     </thead>
                     <tbody>
                       <?php

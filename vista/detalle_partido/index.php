@@ -18,7 +18,7 @@ $dataCn=$detalle_partido->selectContrario($_GET['id'],$_GET['id2']);
     <div class="main main-raised">
     <div class="container">
     <div class="table-responsive">
-            <table id="tablapartido" class="table table-sm text-center" >
+            <table class="table table-sm text-center" >
                 <thead class=" text-primary">
                       <th>
                         <h2 class="title">Xelajú</h2>
@@ -41,7 +41,7 @@ $dataCn=$detalle_partido->selectContrario($_GET['id'],$_GET['id2']);
                         <td>
                         <h4><?php echo $dataCn['faltas']?></h4>
                         </td>
-                    </tr>  
+                    </tr>
                     <tr>
                         <td>
                         <h4><?php echo $data['asistencias']?></h4>
@@ -52,7 +52,7 @@ $dataCn=$detalle_partido->selectContrario($_GET['id'],$_GET['id2']);
                         <td>
                         <h4><?php echo $dataCn['asistencias']?></h4>
                         </td>
-                    </tr>  
+                    </tr>
                     <tr>
                         <td>
                         <h4><?php echo $data['tiros']?></h4>
@@ -63,7 +63,7 @@ $dataCn=$detalle_partido->selectContrario($_GET['id'],$_GET['id2']);
                         <td>
                         <h4><?php echo $dataCn['tiros']?></h4>
                         </td>
-                    </tr>  
+                    </tr>
                     <tr>
                         <td>
                         <h4><?php echo $data['tiros_puerta']?></h4>
@@ -74,7 +74,7 @@ $dataCn=$detalle_partido->selectContrario($_GET['id'],$_GET['id2']);
                         <td>
                         <h4><?php echo $dataCn['tiros_puerta']?></h4>
                         </td>
-                    </tr>  
+                    </tr>
                     <tr>
                         <td>
                         <h4><?php echo $data['tarjeta_amarilla']?></h4>
@@ -161,6 +161,10 @@ $dataCn=$detalle_partido->selectContrario($_GET['id'],$_GET['id2']);
                         <button class="btn btn-info btn-round"><i class="fas fa-notes-medical fa-lg"></i> Modificar resultados</button></a>
                     </div>
                     <div>
+                       <a href="<?php echo '..\..\vista\estadisticaJugador/index.php?partido='.$_GET['id'];?>">
+                       <button class="btn btn-success btn-round"><i class="fas fa-notes-medical fa-lg"></i>Estadisticas por Jugador</button></a>
+                   </div>
+                    <div>
                         <a href="..\..\vista\personaltecnico/insert.php?id=<?php echo $data['id_partido']?>">
                         <button class="btn btn-danger btn-round"><i class="fas fa-notes-medical fa-lg"></i> Asignar personal tecnico</button></a>
                     </div>
@@ -174,12 +178,5 @@ $dataCn=$detalle_partido->selectContrario($_GET['id'],$_GET['id2']);
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
-    <script type="text/javascript">
-$(document).ready(function() {
-    $('#tablapartido').DataTable( {
-        "pagingType": "full_numbers"
-    } );
-} );
-    </script>
   </body>
 </html>
