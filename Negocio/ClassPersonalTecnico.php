@@ -29,6 +29,20 @@ class PersonalTecnico
         $conexion->desconectar();
         return $dt;
     }
+
+    public function selectUpdate($id)
+    {
+        $conexion=new conexion();
+        $conexion->conectar();
+            $query="SELECT CARGO_TECNICO.CARGO, CARGO_TECNICO.ID_CARGO_TECNICO, PERSONAL_TECNICO.nombre, PERSONAL_TECNICO.id_partido FROM CARGO_TECNICO
+            LEFT JOIN PERSONAL_TECNICO ON CARGO_TECNICO.ID_CARGO_TECNICO = PERSONAL_TECNICO.ID_CARGO_TECNICO
+            WHERE PERSONAL_TECNICO.id_partido = $id";
+            $tmp=mysqli_query($conexion->objetoconexion,$query);
+            $dt=mysqli_fetch_assoc($tmp);
+        $conexion->desconectar();
+        return $dt;
+    }
+
     public function selectCargo($id)
     {
         $conexion=new conexion();
@@ -55,9 +69,9 @@ class PersonalTecnico
 		return $dt;
     }
 
-    public function update($partido, $cargo, $nombre)
+    public function update($id, $nombre)
     {
-        $query="CALL SP_PERSONAL_TECNICO_UPDATE('$partido','$cargo','$nombre');";
+        $query="CALL SP_PERSONAL_TECNICO_UPDATE('$id','$nombre');";
         $bd= new conexion();
 		$dt=$bd->execute_query($query);
 		return $dt;

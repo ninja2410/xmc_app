@@ -71,7 +71,7 @@
       <div class="row">
         <div class="col-lg-4 col-md-6 ml-auto mr-auto">
           <div class="card card-login">
-            <form class="form" method="" action="">
+            <form class="form" method="POST" action="..\login\acceso.php">
                 <br>
               <div class="card-header card-header-primary text-center">
                 <h3 class="card-title">Login</h3>
@@ -83,7 +83,7 @@
                         <i class="fas fa-user fa-lg"></i>
                     </span>
                   </div>
-                  <input type="email" class="form-control" placeholder="Nombre de usuario...">
+                  <input type="text" name="username" class="form-control" placeholder="Nombre de usuario...">
                 </div>
                 <div class="input-group">
                   <div class="input-group-prepend">
@@ -91,11 +91,12 @@
                         <i class="fas fa-lock fa-lg"></i>
                     </span>
                   </div>
-                  <input type="password" class="form-control" placeholder="Contraseña...">
+                  <input type="password" name="password" class="form-control" placeholder="Contraseña...">
                 </div>
               </div>
               <div class="footer text-center">
-                <a href="#pablo" class="btn azul btn-wd btn-lg">Ingresar</a>
+                <button type="submit" class="btn azul btn-wd btn-lg" placeholder="Contraseña...">
+                Ingresar</button>
               </div>
             </form>
           </div>

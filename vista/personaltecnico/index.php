@@ -2,104 +2,79 @@
 require_once('..\..\Negocio/ClassPersonalTecnico.php');
 $personal=new PersonalTecnico();
 $data=$personal->select($_GET['id']);
+$link='..\..\vista\personaltecnico/insert.php?id='.$_GET['id'];
+$btn='Asignar personal tecnico'
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title>Personal Tecnico - Xelaju </title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php 
+    include '..\layoults\headers2.php';    
+    ?>
   </head>
   <body class="profile-page sidebar-collapse">
     <?php
     include '..\layoults\barnav.php';
     ?>
     <div class="main main-raised">
-        <div class="container">
-            <div class="row" style="padding:20px">
-                <div class="col-md-7">
-                    <h3 class="title">Xelaju</h3>
-                    <?php
+      <div class="container">
+      <?php
+          $result = mysqli_num_rows($data);
+          if($result>0)
+          {
+            $link='..\..\vista\personaltecnico/update.php?id='.$_GET['id'];
+            $btn='Actualizar personal tecnico'
+      ?>
+       <div class="table-responsive">
+            <table id="tablapartido" class="table table-sm text-center" >
+                <thead class=" text-primary">
+                      <th>
+                        <h2 class="title">Cargo</h2>
+                      </th>
+                      <th>
+                        <h3 class="title"></h3>
+                      </th>
+                </thead>
+                <tbody>
+                <?php
                     while ($row=mysqli_fetch_array($data))
                     {
                     ?>
-                    <h4><b><?php echo $row['cargo']?>: </b> <?php echo $row['nombre']?></h4>
+                    <tr>
+                        <td>
+                        <h4><b><?php echo $row['cargo']?></b></h4>
+                        
+                        </td>
+                        <td>
+                        <h4><?php echo $row['nombre'] ?></h4>
+                        </td>
+                    </tr>  
                     <?php
                     }
                     ?>
-                </div>
+                </tbody>
+            </table>
+            <?php
+            }else
+            {
+            ?>
+            <h2>No se a asignado ningun personal</h2>
+            <?php
+            }
+            ?>
+            </div>    
+            <div class="row" style="padding:20px">
                 <div class="col-md-3">
                     <div>
-                        <a href="..\..\vista\personaltecnico/update.php?id=<?php echo $_GET['id']?>">
-                        <button class="btn btn-info btn-round"><i class="fas fa-notes-medical fa-lg"></i>Modificar resultados</button>
+                        <a href="<?php echo $link?>">
+                        <button class="btn btn-info btn-round"><i class="fas fa-notes-medical fa-lg"></i><?php echo $btn ?></button>
                     </div>
                     <div>
                         <a href="..\..\vista\partido/index.php">
                         <button class="btn btn-default btn-round"><i class="fas fa-undo-alt fa-lg"></i> Regresar</button>
                     </div>
-<<<<<<< HEAD
-=======
-                  </a>
-                </div>
-              </div>
-              <div class="card-body">
-                <div class="table-responsive">
-                  <table class="table" id="table1">
-                    <thead class=" text-primary">
-                      <th>
-                        ID
-                      </th>
-                      <th>
-                        Descripcion
-                      </th>
-                      <th>
-                        Fecha de inicio
-                      </th>
-                      <th>
-                        Fecha que finaliza
-                      </th>
-                    </thead>
-                    <tbody>
-                      <?php
-                      while ($row=mysqli_fetch_array($data)) {
-                       ?>
-                      <tr>
-                        <td>
-                          <?php echo $row['id_temporada']; ?>
-                        </td>
-                        <td>
-                          <?php echo $row['descripcion']; ?>
-                        </td>
-                        <td>
-                          <?php echo $row['fecha_inicio']; ?>
-                        </td>
-                        <td>
-                          <?php echo $row['fecha_final']; ?>
-                        </td>
-                        <td class="td-actions text-lefht">
-                            <div style="float:left">
-                              <a href="..\..\vista\temporada/update.php?id=<?php echo $row['id_temporada']; ?>">
-                                <button type="button" rel="tooltip" title="Editar temporada" class="btn btn-primary btn-link btn-sm">
-                                  <i class="material-icons">edit</i>
-                                </button>
-                              </a>
-                            </div>
-                            <div  style="float:left">
-                              <form class="" action="..\..\vista\temporada/store.php" method="post">
-                                <input type="hidden" name="operation" value="3">
-                                <input type="hidden" name="id" value="<?php echo $row['id_temporada']; ?>">
-                                <button type="submit" rel="tooltip" title="Eliminar temporada" class="btn btn-danger btn-link btn-sm">
-                                  <i class="material-icons">close</i>
-                                </button>
-                              </form>
-                            </div>
-                        </td>
-                        <?php
-                      } ?>
-                      </tr>
-                    </tbody>
-                  </table>
->>>>>>> aa35c89b15a7f855162516669cd69703f418455a
                 </div>
             </div>
         </div>

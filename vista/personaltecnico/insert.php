@@ -1,127 +1,104 @@
 <?php
-  require_once('..\..\Negocio/ClassPersonalTecnico.php');
-  $pt=new PersonalTecnico();
-  $data=$pt->selectCargo(-1);
+require_once('..\..\Negocio/ClassPersonalTecnico.php');
+$personal=new PersonalTecnico();
+$data=$personal->selectCargo(-1);
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Personal Tecnico - Asignacion</title>
+    <title>Personal Tecnico - Xelaju </title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
-  <body>
-    <?php include '..\layoults\barnav.php'; ?>
-    <div class="content">
-      <div class="col-md-12">
-        <div class="card">
-          <div class="card-header card-header-primary">
-            <h4 class="card-title">INGRESAR EL PERSONAL TECNICO</h4>
-            <p class="card-category">Complete los campos siguientes</p>
-          </div>
-          <div class="card-body">
-            <form method="post", action="..\personaltecnico\store.php" id="frm_personaltecnico">
-              <input type="hidden" name="operation" value="1">
-              <input type="hidden" name="id" value="<?php echo $_GET['id'] ?>">
-
-              <div class="row">
-              <?php
-              while ($row=mysqli_fetch_array($data)) {
-              ?>
-              <div class="col-md-6">
-                  <div class="form-group">
-                    <label class=""> <?php echo $row['cargo']; ?></label>
-                    <input type="text" class="form-control" name="<?php echo $row['id_cargo_tecnico']; ?>">
-                  </div>
-                </div>
-              <?php
-              } 
-              ?>
-              </div>
-              <?php include '..\layoults\botones.php'; ?>
-              <div class="clearfix"></div>
-            </form>
-          </div>
+  <body class="profile-page sidebar-collapse">
+    <?php
+    include '..\layoults\barnav.php';
+    ?>
+    <div class="main main-raised">
+    <form method="post", action="..\personaltecnico\store.php" id="frm_personaltecnico">
+      <input type="hidden" name="operation" value="1">
+      <input type="hidden" name="id" value="<?php echo $_GET['id'] ?>">
+      <div class="container">
+       <div class="table-responsive">
+            <table id="tablapartido" class="table table-sm text-center" >
+                <thead class=" text-primary">
+                      <th>
+                        <h2 class="title">Cargo</h2>
+                      </th>
+                      <th>
+                        <h3 class="title"></h3>
+                      </th>
+                </thead>
+                <tbody>
+                <?php
+                    while ($row=mysqli_fetch_array($data))
+                    {
+                    ?>
+                    <tr>
+                        <td>
+                        <h4><b><?php echo $row['cargo']?></b></h4>
+                        </td>
+                        <td>
+                        <h4><input type="text" class="form-control" name="<?php echo $row['id_cargo_tecnico']; ?>"  ></h4>
+                        </td>
+                    </tr>  
+                    <?php
+                    }
+                    ?>
+                </tbody>
+            </table>
+        </div>    
+        <?php include '..\layoults\botones.php'; ?>
+        <div class="clearfix"></div>
+        </form>
         </div>
-      </div>
+        <br>
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
     <script type="text/javascript">
-    var f = new Date();
-    var fi = new moment();
-      $(document).ready(function(){
-        $('#frm_temporada').bootstrapValidator({
-        feedbackIcons: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },
-        message: 'Valor no valido',
-        fields: 
-        {
-          fecha_inicio: 
-          {
-                validators: 
-                {
-                    notEmpty: 
-                    {
-                      message: 'La fecha del partido es necesario'
-                    },
-                    date: 
-                    {
-                        message: 'El formato de la fecha no es valida',
-                        format: 'YYYY/MM/DD'
-                    },
-                    callback: 
-                    {
-                        message: 'La fecha debe ser despues de la fecha actual',
-                        callback: function(value, validator) {
-                            var m = new moment(value, 'YYYY/MM/DD', true);
-                            fi = m;
-                            if (!m.isValid()) {
-                                return false;
-                            }
-                            return m.isAfter(f);
-                        }
-                    }
-                }
-          },
-          fecha_final: 
-          {
-                validators: 
-                {
-                    notEmpty: 
-                    {
-                      message: 'La fecha del partido es necesario'
-                    },
-                    date: 
-                    {
-                        message: 'El formato de la fecha no es valida',
-                        format: 'YYYY/MM/DD'
-                    },
-                    callback: 
-                    {
-                        message: 'La fecha debe ser despues de la fecha actual',
-                        callback: function(value, validator) 
-                        {
-                            var m = new moment(value, 'YYYY/MM/DD', true);
-                            if (!m.isValid())
-                            {
-                                return false;
-                            }else if (m<fi)
-                            {
-                              return false;
-                            }
-                            return m.isAfter(f);
-                        }
-                    }
-                }
-          }
-            
-        }
-    })
-      });
+    $(document).ready(function(){
+   $('#table1').DataTable({
+       dom: 'Bfrtip',
+       buttons: [
+         {
+           extend:'copy',
+           title:'Listado de personal tecnico',
+           exportOptions:{
+             columns:[0,1,2,3]
+           }
+         },
+         {
+           extend:'csv',
+           title:'Listado de personal tecnico',
+           exportOptions:{
+             columns:[0,1,2,3]
+           }
+         },
+         {
+           extend:'excel',
+           title:'Listado de personal tecnico',
+           exportOptions:{
+             columns:[0,1,2,3]
+           }
+         },
+         {
+           extend:'pdf',
+           title:'Listado de personal tecnico',
+           exportOptions:{
+             columns:[0,1,2,3]
+           }
+         },
+         {
+           extend:'print',
+           title:'Listado de personal tecnico',
+           exportOptions:{
+             columns:[0,1,2,3]
+           }
+         }
+       ],
+   }) ;
+});
     </script>
   </body>
 </html>

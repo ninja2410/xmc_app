@@ -1,3 +1,8 @@
+<?php
+require_once('..\..\Negocio/ClassUsuario.php');
+$personal=new Usuario();
+$data=$personal->selectPermiso(-1);
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -8,7 +13,7 @@
   <body>
     <?php include '..\layoults\barnav.php'; ?>
     <div class="content">
-      <div class="col-md-8">
+      <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-primary">
             <h4 class="card-title">INGRESAR UN NUEVO USUARIO</h4>
@@ -18,19 +23,39 @@
             <form method="post", action="..\usuario\store.php" id="frm_usuario">
               <input type="hidden" name="operation" value="1">
               <div class="row">
-                <div class="col-md-6">
+              <div class="col-md-6">
                   <div class="form-group">
                     <label class="bmd-label-floating">Nombre de Usuario</label>
                     <input type="text" class="form-control" name="usuario">
                   </div>
-                </div>
-                <div class="col-md-6">
                   <div class="form-group">
                     <label class="bmd-label-floating">Contraseña</label>
                     <input type="password" class="form-control" name="pass">
                   </div>
-                </div>
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Confirmar la Contraseña</label>
+                    <input type="password" class="form-control" name="pass">
+                  </div>
+                  <h3>Permisos</h3>
+                  <br>
+              <div class="col-md-6">
+              <?php
+                    while ($row=mysqli_fetch_array($data))
+                    {
+                    ?>
+                  
+                  <div class="checkbox col-md-6">
+                    <label>
+                      <input type="checkbox" name="<?php echo $row['id_permiso']; ?>"> <?php echo $row['descripcion']?>
+                    </label>
+                  </div>
+
+                    <?php
+                    }
+                    ?>
               </div>
+              </div>
+            </div>
               <?php include '..\layoults\botones.php'; ?>
               <div class="clearfix"></div>
             </form>

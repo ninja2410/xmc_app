@@ -85,7 +85,7 @@
                 <div class="col-md-4">
                   <div class="form-group">
                     <label class="">Fecha</label>
-                    <input type="text" placeholder="DD/MM/YYYY" class="form-control" name="fecha">
+                    <input type="Date" placeholder="DD/MM/YYYY" class="form-control" name="fecha">
                   </div>
                 </div>
                 <div class="col-md-4">

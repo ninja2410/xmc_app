@@ -23,23 +23,42 @@ $data=$usuario->select($_GET['id']);
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
-            <form method="post", action="..\usuario\store.php">
+          <form method="post", action="..\usuario\store.php" id="frm_usuario">
               <input type="hidden" name="operation" value="2">
-              <input type="hidden" name="id" value="<?php echo $data['id_usuario']; ?>">
               <div class="row">
-                <div class="col-md-6">
+              <div class="col-md-6">
                   <div class="form-group">
                     <label class="bmd-label-floating">Nombre de Usuario</label>
-                    <input type="text" class="form-control" name="usuario" value="<?php echo $data['nombre_usuario']; ?>">
+                    <input type="text" class="form-control" name="usuario">
                   </div>
-                </div>
-                <div class="col-md-6">
                   <div class="form-group">
-                    <label class="bmd-label-floating">Nueva contraseña</label>
-                    <input type="text" class="form-control" name="pass">
+                    <label class="bmd-label-floating">Contraseña</label>
+                    <input type="password" class="form-control" name="pass">
                   </div>
-                </div>
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Confirmar la Contraseña</label>
+                    <input type="password" class="form-control" name="pass">
+                  </div>
+                  <h3>Permisos</h3>
+                  <br>
+              <div class="col-md-6">
+              <?php
+                    while ($row=mysqli_fetch_array($data))
+                    {
+                    ?>
+                  
+                  <div class="checkbox col-md-6">
+                    <label>
+                      <input type="checkbox" name="<?php echo $row['id_permiso']; ?>"> <?php echo $row['descripcion']?>
+                    </label>
+                  </div>
+                  
+                    <?php
+                    }
+                    ?>
               </div>
+              </div>
+            </div>
               <?php include '..\layoults\botones.php'; ?>
               <div class="clearfix"></div>
             </form>

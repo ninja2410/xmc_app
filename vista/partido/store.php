@@ -59,7 +59,7 @@ $bit=new Bitacora();
 if ($operacion=="1") 
 {
   $lesion->insert($fecha, $cat, $estadio,$equi,$temp,$obs);
-  $bit->insert('Agrego un nuevo', '1');
+  $bit->insert('Agrego un nuevo partido', '1');
   
 }elseif($operacion=="2") 
 {
