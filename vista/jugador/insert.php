@@ -18,9 +18,9 @@
                   <p class="category">Complete los campos siguientes.</p>
               </div>
               <div class="card-body">
-                <form method="post", action="..\jugador\store.php" id="frm_jugador">
+                <form method="post", action="..\jugador\store.php" enctype="multipart/form-data" id="frm_jugador">
                 <input type="hidden" name="operation" value="1">
-                    <div class="form-row"> 
+                    <div class="form-row">
                         <div class="form-group col-md-4">
                             <label>Nombre</label>
                             <input name="nombre" type="text" class="form-control" >
@@ -94,14 +94,14 @@
                             <input type="text" class="form-control" name="contrato">
                         </div>
 
-                         <div class="form-group col-md-4 text-center">
-                            <div class="fileinput fileinput-new" data-provides="fileinput">
-                                <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
-                                <div>
-                                    <span class="btn btn-default btn-file"><span class="fileinput-new">Buscar Imagen</span><span class="fileinput-exists">Cambiar</span><input type="file" name="img"></span>
-                                    <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Eliminar</a>
-                                </div>
+                        <div class="col-md-4">
+                          <div class="fileinput fileinput-new" data-provides="fileinput">
+                            <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
+                            <div>
+                              <span class="btn btn-default btn-file"><span class="fileinput-new">Buscar Imagen</span><span class="fileinput-exists">Cambiar</span><input type="file" name="img"></span>
+                              <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Eliminar</a>
                             </div>
+                          </div>
                         </div>
                     </div>
                     <div class="form-row">
@@ -168,14 +168,14 @@
                   }
                 }
             },
-              
+
             telefono:{
             validators:{
                 notEmpty:{
                     message:'Ingrese el numero de telefono del jugador'
                 },
                 regexp:{
-                    regexp: /^[0-9]*$/, 
+                    regexp: /^[0-9]*$/,
                     message: 'Solo se aceptan números'
                     }
                 }
@@ -219,7 +219,7 @@
                     message:'Ingrese el numero de la camisola del jugador'
                 },
                 regexp:{
-                    regexp: /^[0-9]*$/, 
+                    regexp: /^[0-9]*$/,
                     message: 'Solo se aceptan números'
                     }
                 }

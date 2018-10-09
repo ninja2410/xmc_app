@@ -12,7 +12,6 @@ if(isset($_POST['apellidos'])){
 if(isset($_POST['direccion'])){
   $direccion=$_POST['direccion'];
 }
-echo json_encode($_POST);
 if(isset($_POST['fecha_nacimiento'])){
   $fecha_nacimiento = date("Y/m/d", strtotime($_POST['fecha_nacimiento']));
 }
