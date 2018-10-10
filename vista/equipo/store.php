@@ -32,7 +32,7 @@ if ($operacion=="1") {
 
 elseif($operacion=="2") {
   $name=$_FILES['img']['name'];
-  $tmp='DOC_'.$accion->correlativo().substr($name,-4);
+  $tmp='ESCUDO_'.$accion->correlativo().substr($name,-4);
   move_uploaded_file($_FILES['img']['tmp_name'],'..\imagenes/'.$tmp);
   chmod('..\imagenes/'.$tmp,0644);
   $foto=$_FILES['img']['name'];

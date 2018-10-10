@@ -23,7 +23,7 @@ $data=$equipo->select($_GET['id']);
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
-            <form method="post", action="..\equipo\store.php" id="frm_equipo">
+            <form method="post", action="..\equipo\store.php" id="frm_equipo" enctype="multipart/form-data">
               <input type="hidden" name="operation" value="2">
               <input type="hidden" name="id" value="<?php echo $data['id_equipo']; ?>">
               <div class="row">
