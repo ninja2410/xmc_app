@@ -48,7 +48,7 @@ class Entrenador
       $dt=mysqli_query($conexion->objetoconexion,$query);
     }
     else{
-      $query="SELECT E.nombre,E.apellido,E.fecha_nacimiento,E.fecha_inicio,E.fecha_fin,E.telefono,E.direccion,E.foto,E.nacionalidad,C.id_contrato,C.titulo FROM ENTRENADOR E, CONTRATO C WHERE E.id_entrenador=$id AND E.estado=1 AND E.id_contrato = C.id_contrato;";
+      $query="SELECT E.id_entrenador,E.nombre,E.apellido,E.fecha_nacimiento,E.fecha_inicio,E.fecha_fin,E.telefono,E.direccion,E.foto,E.nacionalidad,C.id_contrato,C.titulo FROM ENTRENADOR E, CONTRATO C WHERE E.id_entrenador=$id AND E.estado=1 AND E.id_contrato = C.id_contrato;";
       $tmp=mysqli_query($conexion->objetoconexion,$query);
       $dt=mysqli_fetch_assoc($tmp);
     }
