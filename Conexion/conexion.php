@@ -4,7 +4,7 @@ class conexion
 	private $servidor='localhost';
 	private $usuario="root";
 	private $pass="database";
-	private $bd="db_xelaju_mc";
+	private $bd="db_xelajumc";
 
 	// private $servidor='sql3.freemysqlhosting.net';
 	// private $usuario="sql3259082";
