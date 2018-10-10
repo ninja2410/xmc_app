@@ -1,10 +1,3 @@
-<?php
-require_once('..\..\Negocio/ClassDocumento.php');
-$documento_digital=new Documento();
-$data=$documento_digital->select(-1);
- ?>
-
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -23,7 +16,7 @@ $data=$documento_digital->select(-1);
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
-          <form method="post", action="..\contrato\store.php"  id="frm_contrato">
+          <form method="post", action="..\contrato\store.php"  id="frm_contrato" enctype="multipart/form-data">
               <input type="hidden" name="operation" value="1">
              
              <div class="row">
@@ -64,8 +57,11 @@ $data=$documento_digital->select(-1);
                     <label for="exampleFormControlSelect1">Tipo de documento digital</label>
                     <select class="form-control" name="id_documento_digital">
                       <?php
+                      include_once('..\..\Negocio/ClassDocumento.php');
+                      $documento_digital=new Documento();
+                      $data=$documento_digital->select(-1);
                       while ($row=mysqli_fetch_array($data)) {
-                          $valor = $row['id_documento_digital'];
+                          $valor = $row['ID'];
                           $texto = $row['descripcion'];
                           echo '<option value="'.$valor.'">'.$texto.'</option>';
                       }

@@ -36,7 +36,7 @@ class Contrato
       $dt=mysqli_query($conexion->objetoconexion,$query);
     }
     else{
-      $query="SELECT * FROM CONTRATO WHERE id_contrato=$id AND estado=1";
+      $query="SELECT C.id_contrato,C.titulo,C.fecha_inicio,C.fecha_final,C.salario,D.fecha_creacion,D.descripcion,D.path FROM CONTRATO C, DOCUMENTO_DIGITAL D WHERE C.id_contrato = $id AND C.estado = 1 AND C.id_documento_digital = D.id_documento_digital;";
       $tmp=mysqli_query($conexion->objetoconexion,$query);
       $dt=mysqli_fetch_assoc($tmp);
     }

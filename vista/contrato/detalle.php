@@ -29,8 +29,8 @@ $data2=$documento->select($_GET['id']);
         <div class="container">
             <div class="row" style="padding:20px">
             <div class="chocolat-parent" data-chocolat-title="Documento" id="print">
-                      <a class="chocolat-image" href="..\imagenes\<?php echo $data2['path']; ?>" title="<?php echo $data2['descripcion']; ?>">
-                        <img src="..\imagenes\<?php echo $data2['path']; ?>" style="width: 100; height: 150px;" alt="">
+                      <a class="chocolat-image" href="..\imagenes\<?php echo $data['path']; ?>" title="<?php echo $data['descripcion']; ?>">
+                        <img src="..\imagenes\<?php echo $data['path']; ?>" style="width: 100; height: 150px;" alt="">
                       </a>
                       <div class="col-md-4">
                     <input type="button" class="btn btn-danger pull-left btn-round" onclick="printDiv('print')" value="Imprimir" />
@@ -38,22 +38,23 @@ $data2=$documento->select($_GET['id']);
             </div>
             
                 <div class="col-md-7">
+                <h4><b>Título del contrato: </b><?php echo $data['titulo']?></h4>
                 <h4><b>Fecha de inicio: </b><?php echo date("d/m/Y", strtotime($data['fecha_inicio']));?></h4>
                 <h4><b>Fecha final: </b><?php echo date("d/m/Y", strtotime($data['fecha_final']));?></h4>
                 <h4><b>Salario: </b>Q<?php echo $data['salario']?></h4>
-                <h4><b>Fecha de creación:</b><?php echo date("d/m/Y", strtotime($data2['FECHA']));?></h4>
-                <h4><b>Descripción: </b><?php echo $data2['descripcion']?></h4>
+                <h4><b>Fecha de creación: </b><?php echo date("d/m/Y", strtotime($data['fecha_creacion']));?></h4>
+                <h4><b>Descripción: </b><?php echo $data['descripcion']?></h4>
                 </div>
 
                 <div class="col-md-3 text-center">
-                    <ul class="nav nav-pills flex-column">
+                    <ul class="nav  flex-column">
                         <li class="nav-item">
-                            <a class="nav-link" href="..\..\vista\contrato/update.php?id=<?php echo $data['id_contrato']; ?>">
+                            <a class="nav-link btnAzul" href="..\..\vista\contrato/update.php?id=<?php echo $data['id_contrato']; ?>">
                                 <i class="material-icons">edit</i> Actualizar información
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="..\..\vista\contrato/index.php">
+                            <a class="nav-link btnAzul" href="..\..\vista\contrato/index.php">
                                 <i class="fas fa-undo-alt fa-lg"></i> Regresar
                             </a>
                         </li>

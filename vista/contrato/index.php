@@ -55,10 +55,12 @@ $data=$contrato->select(-1);
                           <?php echo $row['titulo']; ?>
                         </td>
                         <td>
-                          <a href="..\..\vista\contrato/detalle.php?id=<?php echo $row['id_contrato']; ?>">
-                          <button class="btn btn-secondary btn-round btn-sm"><i class="far fa-eye fa-lg"></i> Ver detalles</button>
-                        </td>
-                        <td class="td-actions text-left">
+                          </td>
+                          <td class="td-actions text-left">
+                              <div style="float:left">
+                                <a href="..\..\vista\contrato/detalle.php?id=<?php echo $row['id_contrato']; ?>">
+                                <button class="btn btn-success btn-round btn-sm"><i class="far fa-eye fa-lg"></i> Ver detalles</button>
+                              </div>
                             <div style="float:left">
                               <a href="..\..\vista\contrato/update.php?id=<?php echo $row['id_contrato']; ?>">
                                 <button type="button" rel="tooltip" title="Editar contrato" class="btn btn-primary btn-link btn-sm">
