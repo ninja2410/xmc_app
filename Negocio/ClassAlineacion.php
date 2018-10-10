@@ -26,17 +26,28 @@ class Alineacion
         $conexion->desconectar();
         return $dt;
     }
-    public function insert($gol,$mi,$mf,$pas,$idp,$idj,$ta,$tr)
+
+    public function selectPartido($id)
     {
-        $query="CALL SP_ALINEACION_INSERT('$gol','$mi','$mf','$pas','$idp','$idj','$ta','$tr');";
+        $conexion=new conexion();
+        $conexion->conectar();
+            $query="SELECT * FROM ALINEACION WHERE id_partido=$id AND estado=1";
+            $dt=mysqli_query($conexion->objetoconexion,$query);
+        $conexion->desconectar();
+        return $dt;
+    }
+
+    public function insert($par,$jugador,$pos)
+    {
+        $query="CALL SP_ALINEACION_INSERT('$par','$jugador','$pos');";
         $bd= new conexion();
 		$dt=$bd->execute_query($query);
 		return $dt;
     }
 
-    public function update($id,$gol,$mi,$mf,$pas,$idp,$idj,$ta,$tr)
+    public function update($id,$par,$jugador,$pos)
     {
-        $query="CALL SP_ALINEACION_UPDATE('$id','$gol','$mi','$mf','$pas','$idp','$idj','$ta','$tr');";
+        $query="CALL SP_ALINEACION_UPDATE('$id','$par','$jugador','$pos');";
         $bd= new conexion();
 		$dt=$bd->execute_query($query);
 		return $dt;

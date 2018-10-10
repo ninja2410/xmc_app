@@ -3,13 +3,16 @@ session_start();
 
 $now = time();
 
-if($now > $_SESSION['expire']) 
+if(!isset($_SESSION['expire']))
 {
-  session_destroy();
-  echo "Su sesion a terminado,
-  <a href='../login/login.php'>Necesita Hacer Login</a>";
-  exit;
-  $jugadores=0;
+  if($now > $_SESSION['expire']) 
+  {
+    session_destroy();
+    echo "Su sesion a terminado,
+    <a href='../login/login.php'>Necesita Hacer Login</a>";
+    exit;
+    $jugadores=0;
+  }
 }
 
 if(!isset($_SESSION['iniciado']))
@@ -20,9 +23,9 @@ if(!isset($_SESSION['iniciado']))
 {
   require_once('..\..\Negocio/ClassUsuario.php');
   $partido=new Usuario();
-  $data=$partido->selectPermisoUsuario($_SESSION['id']);
+  $data2=$partido->selectPermisoUsuario($_SESSION['id']);
   $permisos = array();
-  while ($row=mysqli_fetch_array($data)) 
+  while ($row=mysqli_fetch_array($data2)) 
   {
     array_push($permisos,$row['id_permiso']);
   }
@@ -46,6 +49,18 @@ foreach($permisos as $key => $value)
   if($value==4)
   {
     $socios=1;
+  }
+  if($value==4)
+  {
+    $lesiones=1;
+  }
+  if($value==4)
+  {
+    $documentos=1;
+  }
+  if($value==4)
+  {
+    $personas=1;
   }
 }
 
@@ -150,6 +165,7 @@ foreach($permisos as $key => $value)
                 <a class="dropdown-item" href="..\..\vista\personaltecnico/index.php">Personal Técnico</a>
                 <a class="dropdown-item" href="..\..\vista\prensa/index.php">Prensa</a>
                 <a class="dropdown-item" href="..\..\vista\usuario/index.php">Usuarios</a>
+                <a class="dropdown-item" href="..\..\vista\login/salida.php">Salida</a>
               </div>
             </li>
           </ul>

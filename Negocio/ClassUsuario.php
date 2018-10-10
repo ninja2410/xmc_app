@@ -27,6 +27,16 @@ class Usuario
         return $dt;
     }
 
+    public function Loggin($username,$password)
+    {
+        $conexion=new conexion();
+        $conexion->conectar();
+            $query="CALL SP_USUARIO_LOGIN('$username','$password')";
+            $dt=mysqli_query($conexion->objetoconexion,$query);
+        $conexion->desconectar();
+        return $dt;
+    }
+
     public function selectPermiso($id)
     {
         $conexion=new conexion();
@@ -74,9 +84,25 @@ class Usuario
 		return $dt;
     }
 
+    public function deletePermisos($usuario)
+    {
+        $query="CALL SP_ASIGNACION_PERMISO_DELETE('$usuario');";
+        $bd= new conexion();
+		$dt=$bd->execute_query($query);
+		return $dt;
+    }
+
     public function insertPermiso($id_per)
     {
         $query="CALL SP_ASIGNACION_PERMISO_INSERT('$id_per');";
+        $bd= new conexion();
+		$dt=$bd->execute_query($query);
+		return $dt;
+    }
+
+    public function updatePermiso($id_per,$id_us)
+    {
+        $query="CALL SP_ASIGNACION_PERMISO_UPDATE('$id_per','$id_us');";
         $bd= new conexion();
 		$dt=$bd->execute_query($query);
 		return $dt;

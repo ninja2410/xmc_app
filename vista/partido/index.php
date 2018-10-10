@@ -98,6 +98,10 @@ $data=$partido->select(-1);
                           <?php echo $row['observaciones']; ?>
                         </td>
                         <td>
+                          <a href="..\..\vista\alineacion/alineacion.php?id=<?php echo $row['id_partido']; ?>">
+                          <button class="btn btn-primary btn-round btn-sm">Alineacion</button>
+                        </td>
+                        <td>
                           <a href="..\..\vista\personaltecnico/index.php?id=<?php echo $row['id_partido']; ?>">
                           <button class="btn btn-primary btn-round btn-sm">Personal Tecnico</button>
                         </td>

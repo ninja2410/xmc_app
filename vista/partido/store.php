@@ -10,6 +10,11 @@ if(isset($_POST['fecha'])){
   $fecha=$_POST['fecha'];
 }
 
+if(isset($_POST['hora'])){
+  $hora=$_POST['hora'];
+  $horayfecha = $fecha.' '.$hora;
+}
+
 if(isset($_POST['h1'])){
   $h1=$_POST['h1'];
 }
@@ -53,23 +58,25 @@ if (isset($_POST['id'])) {
   $id_partido=$_POST['id'];
 }
 
+
+echo $horayfecha;
 $lesion=new Partido();
 $bit=new Bitacora();
 
 if ($operacion=="1") 
 {
-  $lesion->insert($fecha, $cat, $estadio,$equi,$temp,$obs);
+  $lesion->insert($horayfecha, $cat, $estadio,$equi,$temp,$obs);
   $bit->insert('Agrego un nuevo partido', '1');
   
 }elseif($operacion=="2") 
 {
   
-  $lesion->update($id_partido, $fecha, $cat, $estadio,$equi,$temp,$obs);
+  $lesion->update($id_partido, $horayfecha, $cat, $estadio,$equi,$temp,$obs);
   $bit->insert('Actualizo el partido '.$id_partido, '1');
 
 }elseif ($operacion=="3") 
 {
   $lesion->delete($id_partido);
 }
-//header('Location:index.php');
+header('Location:index.php');
 ?>

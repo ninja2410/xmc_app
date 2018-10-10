@@ -73,18 +73,6 @@
                     {
                         message: 'El formato de la fecha no es valida',
                         format: 'YYYY/MM/DD'
-                    },
-                    callback: 
-                    {
-                        message: 'La fecha debe ser despues de la fecha actual',
-                        callback: function(value, validator) {
-                            var m = new moment(value, 'YYYY/MM/DD', true);
-                            fi = m;
-                            if (!m.isValid()) {
-                                return false;
-                            }
-                            return m.isAfter(f);
-                        }
                     }
                 }
           },

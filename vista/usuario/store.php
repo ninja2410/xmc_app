@@ -5,6 +5,13 @@ if(isset($_POST['operation'])){
   $operacion=$_POST['operation'];
 }
 echo json_encode($_POST);
+$return_arr=array();
+
+if(isset($_POST['id_us'])){
+  $_POST['id_us'];
+  
+}
+
 if(isset($_POST['usuario'])){
   $usuario=$_POST['usuario'];
 }
@@ -52,34 +59,35 @@ if ($operacion=="1")
 {
 
   $lesion->update($id_usuario, $usuario, $pass);
+  $lesion->deletePermisos($id_usuario);
   $bit->insert('Actualizo el usuario '.$id_usuario, '1');
 
   foreach($_POST as $key => $value) 
   {
-
-    
     if($cont<4)
     {
       $cont++;
-      echo "POST parameter '$key' has '$value'";
+      echo "POST parameter '$key' has '$value'".$cont;
     }
     else
     {
       echo "  '$key' = '$value'";
       
+      
       if($value=='on')
       {
-      $lesion->updatePermiso($key);
+      $lesion->updatePermiso($key,$id_usuario);
       }
 
     }
-  }
   
+  }
 
-
-}elseif ($operacion=="3") 
+}
+elseif ($operacion=="3") 
 {
   $lesion->delete($id_usuario);
 }
+
 //header('Location:index.php');
 ?>

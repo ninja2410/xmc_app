@@ -13,7 +13,7 @@ $data=$usuario->select(-1);
   </head>
   <body>
     <?php
-    include '..\layoults\barnav.php';
+    include '..\layoults\barnavLogged.php';
     ?>
     <div class="content">
       <div class="container-fluid">

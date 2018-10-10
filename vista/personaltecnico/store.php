@@ -52,5 +52,5 @@ elseif($operacion=="2")
 {
   $lesion->delete($id_temporada);
 }
-//header('Location:/PJ_XJMC/vista/partido/index.php');
+header('Location:/PJ_XJMC/vista/partido/index.php');
 ?>

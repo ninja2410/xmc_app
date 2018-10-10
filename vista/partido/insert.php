@@ -75,20 +75,26 @@
             <form method="post", action="..\partido\store.php" id="frm_partido">
               <input type="hidden" name="operation" value="1">
               <div class="row">
-               <div class="col-md-4">
+               <div class="col-md-3">
                   <div class="form-group">
                     <label class="">Equipo</label>
                     <input type="hidden" id="equi" name="equi">
                     <input type="text" id="autoequipo" class="form-control">
                   </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                   <div class="form-group">
                     <label class="">Fecha</label>
-                    <input type="Date" placeholder="DD/MM/YYYY" class="form-control" name="fecha">
+                    <input type="text" placeholder="DD/MM/YYYY" class="form-control" name="fecha">
                   </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label class="">Hora</label>
+                    <input type="time" placeholder="DD/MM/YYYY" class="form-control" name="hora">
+                  </div>
+                </div>
+                <div class="col-md-3">
                   <div class="form-group">
                     <label class="">Categoria</label>
                     <input type="hidden" name="cat" id="cat" >

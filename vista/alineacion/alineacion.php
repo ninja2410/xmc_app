@@ -1,7 +1,7 @@
 <?php
 require_once('..\..\Negocio/ClassAlineacion.php');
 $alineacion=new Alineacion();
-$data=$alineacion->select(-1);
+$data=$alineacion->selectPartido($_GET['id']);
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -24,7 +24,7 @@ $data=$alineacion->select(-1);
                   <p class="card-category"> Listado de alineaciones</p>
                 </div>
                 <div class="col-lg-1" style="float:left">
-                  <a href="..\..\vista\alineacion/insert.php" title="Agregar nuevo alineacion">
+                  <a href="..\..\vista\alineacion/insert_alineacion.php?id=<?php echo $_GET['id']; ?>" title="Agregar a la alineacion">
                     <div class="card-header card-header-success card-header-icon" style="float:left">
                       <div class="card-icon">
                         <i class="material-icons">add</i>

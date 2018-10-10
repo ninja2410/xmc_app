@@ -1,14 +1,11 @@
 <?php
-require_once('..\..\Negocio/ClassAlineacion.php');
-$alineacion=new Alineacion();
-$data=$alineacion->select($_GET['id']);
+$partido=$_GET['id'];
 ?>
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Alineacion - Update</title>
+    <title>Alineacion - Insertar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
@@ -65,28 +62,21 @@ $data=$alineacion->select($_GET['id']);
           </div>
           <div class="card-body">
             <form method="post", action="..\alineacion\store.php" id="frm_alineacion">
-              <input type="hidden" name="operation" value="2" >
-              <input type="hidden" name="id" value="<?php echo $data['id_alineacion']; ?>">
+              <input type="hidden" name="operation" value="1">
+              <input type="hidden" name="partido" id="partido"  value="<?php echo $partido; ?>">
               <div class="row">
                 <div class="col-md-4">
                   <div class="form-group">
                     <label class="">Jugador</label>
-                    <input type="hidden" id="jugador" name="jugador" value="<?php echo $data['id_jugador']; ?>">
-                    <input type="text" id="autoJugador" class="form-control" value="<?php echo $data['id_jugador']; ?>">
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label class="">Partido</label>
-                    <input type="hidden" name="partido" id="partido" value="<?php echo $data['id_partido']; ?>" >
-                    <input type="text" id="autoPartido" class="form-control" value="<?php echo $data['id_partido']; ?>">
+                    <input type="hidden" id="jugador" name="jugador">
+                    <input type="text" id="autoJugador" class="form-control">
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="form-group">
                     <label class="">Posicion</label>
-                    <input type="hidden" name="posicion" id="posicion" value="<?php echo $data['id_posicion']; ?>">
-                    <input type="text" id="autoPosicion" class="form-control" value="<?php echo $data['id_posicion']; ?>">
+                    <input type="hidden" name="posicion" id="posicion" >
+                    <input type="text" id="autoPosicion" class="form-control">
                   </div>
                 </div>
                 </div>

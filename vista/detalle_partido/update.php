@@ -39,7 +39,9 @@ $dataCn=$detalle_partido->selectContrario($_GET['id'],$_GET['id2']);
                 <tbody>
                     <tr>
                         <td id="falta">
+                        <div class="form-group">
                                 <input type="text"  id="infalta" class="form-control text-center" name="fal" value="<?php echo $data['faltas']; ?>">
+                        </div>
                         </td>
                         <td>
                         <h4><b>Faltas </b> </h4>
@@ -178,6 +180,7 @@ $dataCn=$detalle_partido->selectContrario($_GET['id'],$_GET['id2']);
             invalid: 'glyphicon glyphicon-remove',
             validating: 'glyphicon glyphicon-refresh'
         },
+        message: 'Valor no valido',
         fields: {
           fal:
           {
@@ -187,26 +190,9 @@ $dataCn=$detalle_partido->selectContrario($_GET['id'],$_GET['id2']);
                     {
                         
                       message: 'La fecha del partido es necesario'
-                    },
-                    date:
-                    {
-                        message: 'El formato de la fecha no es valida',
-                        format: 'YYYY/MM/DD'
-                    },
-                    callback:
-                    {
-                        message: 'La fecha debe ser despues de la fecha actual',
-                        callback: function(value, validator) {
-                            var m = new moment(value, 'YYYY/MM/DD', true);
-                            fi = m;
-                            if (!m.isValid()) {
-                                return false;
-                            }
-                            return m.isAfter(f);
-                        }
                     }
                 }
-          },}});
+          }}});
             });
     </script>
   </body>
