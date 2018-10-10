@@ -1,7 +1,7 @@
 <?php
-require_once('..\..\Negocio/ClassTipoEntrenador.php');
-$tipoentrenador=new TipoEntrenador();
-$data=$tipoentrenador->select(-1);
+require_once('..\..\Negocio/ClassContrato.php');
+$contrato=new Contrato();
+$data=$contrato->select(-1);
  ?>
 
 <!DOCTYPE html>
@@ -10,6 +10,7 @@ $data=$tipoentrenador->select(-1);
     <meta charset="utf-8">
     <title>Entrenador - Insertar</title>
     <?php include '..\layoults\headers2.php'; ?>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
   </head>
   <body class="profile-page sidebar-collapse">
     <?php include '..\layoults\barnav.php'; ?>
@@ -22,13 +23,13 @@ $data=$tipoentrenador->select(-1);
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
-            <form method="post", action="..\entrenador\store.php" id="frm_entrenador">
+            <form method="post", action="..\entrenador\store.php" id="frm_entrenador" enctype="multipart/form-data">
              <input type="hidden" name="operation" value="1"> 
               <div class="row">
                 <div class="col-md-4">
                   <div class="form-group">
                     <label class="bmd-label-floating">Nombre</label>
-                    <input type="text" class="form-control" name="nombre">
+                    <input type="text" class="form-control" name="nombre" >
                   </div>
                 </div>
                 <div class="col-md-4">
@@ -47,16 +48,26 @@ $data=$tipoentrenador->select(-1);
              <div class="row">
              <div class="col-md-4">
                   <div class="form-group">
+                    <label class="bmd-label-floating">País</label>
+                    <input type="text" class="form-control" name="nacionalidad">
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="form-group">
                     <label class="bmd-label-floating">Dirección</label>
                     <input type="text" class="form-control" name="direccion">
                   </div>
                 </div>
+
                 <div class="col-md-4">
                   <div class="form-group">
                     <label class="bmd-label-floating">Teléfono</label>
                     <input type="text" class="form-control" name="telefono">
                   </div>
                 </div>
+
+
              </div>
 
               <div class="row">
@@ -79,19 +90,33 @@ $data=$tipoentrenador->select(-1);
               <div class="row">
               <div class="col-md-4">
                   <div class="form-group">
-                    <label for="exampleFormControlSelect1">Tipo de entrenador</label>
-                    <select class="form-control" name="id_tipo_entrenador">
+                    <label for="exampleFormControlSelect1">Contrato</label>
+                    <select class="form-control" name="id_contrato">
                       <?php
                       while ($row=mysqli_fetch_array($data)) {
-                          $valor = $row['id_tipo_entrenador'];
-                          $texto = $row['descripcion'];
+                          $valor = $row['id_contrato'];
+                          $texto = $row['titulo'];
                           echo '<option value="'.$valor.'">'.$texto.'</option>';
-                      }
+                        }
                         ?>
                     </select>
                   </div>
                 </div>
+              </div>
+
+                <div class="row">
+                <div class="col-md-4">
+                  <div class="fileinput fileinput-new" data-provides="fileinput">
+                    <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
+                    <div>
+                      <span class="btn btn-default btn-file"><span class="fileinput-new">Buscar Imagen</span><span class="fileinput-exists">Cambiar</span><input type="file" name="img"></span>
+                      <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Eliminar</a>
+                    </div>
+                  </div>
                 </div>
+                </div>
+
+
               <?php include '..\layoults\botones.php'; ?>
               <div class="clearfix"></div>
             </form>
@@ -102,6 +127,7 @@ $data=$tipoentrenador->select(-1);
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
     <script type="text/javascript">
     $(document).ready(function(){
       $('#frm_entrenador').bootstrapValidator({
@@ -127,6 +153,17 @@ $data=$tipoentrenador->select(-1);
                 validators:{
                     notEmpty:{
                         message:'Ingrese un apellido'
+                    },
+                    regexp:{
+                      regexp: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]*$/,
+                        message: 'Solo se aceptan letras'
+                      }
+                  }
+              },
+              nacionalidad:{
+                validators:{
+                    notEmpty:{
+                        message:'Ingrese la nacionalidad'
                     },
                     regexp:{
                       regexp: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]*$/,

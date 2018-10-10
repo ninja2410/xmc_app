@@ -35,21 +35,42 @@ if(isset($_POST['telefono'])){
   $telefono=$_POST['telefono'];
 }
 
-if(isset($_POST['id_tipo_entrenador'])){
-  $id_tipo_entrenador=$_POST['id_tipo_entrenador'];
+if(isset($_POST['nacionalidad'])){
+  $nacionalidad=$_POST['nacionalidad'];
+}
+
+
+if (isset($_POST['id_contrato'])) {
+  $id_contrato=$_POST['id_contrato'];
 }
 
 if (isset($_POST['id'])) {
   $id_entrenador=$_POST['id'];
 }
+
 $accion=new Entrenador();
 if ($operacion=="1") {
+  $name=$_FILES['img']['name'];
+  $foto='ENTRENADOR_'.$accion->correlativo().substr($name,-4);
+  move_uploaded_file($_FILES['img']['tmp_name'],'..\imagenes/'.$foto);
+  chmod('..\imagenes/'.$foto,0644);
   $accion->insert($nombre, $apellido, $fecha_nacimiento, $fecha_inicio, $fecha_fin, $telefono,
-  $direccion, $id_tipo_entrenador);
+  $direccion,$foto,$nacionalidad, $id_contrato);
 }
 elseif($operacion=="2") {
-  $accion->update($id_entrenador, $nombre, $apellido, $fecha_nacimiento, $fecha_inicio, $fecha_fin, $estado, $telefono,
-  $direccion,$id_tipo_entrenador);
+  $name=$_FILES['img']['name'];
+  $tmp='ENTRENADOR_'.$accion->correlativo().substr($name,-4);
+  move_uploaded_file($_FILES['img']['tmp_name'],'..\imagenes/'.$tmp);
+  chmod('..\imagenes/'.$tmp,0644);
+  $foto=$_FILES['img']['name'];
+  if ($foto=='') {
+    $foto=$_POST['foto'];
+  }
+  else{
+    $foto=$tmp;
+  }
+  $accion->update($id_entrenador, $nombre, $apellido, $fecha_nacimiento, $fecha_inicio, $fecha_fin,$telefono,
+  $direccion,$foto,$nacionalidad, $id_contrato);
   
 } elseif ($operacion=="3") {
   $accion->delete($id_entrenador);

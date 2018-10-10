@@ -21,25 +21,21 @@ $data=$entrenador->select(-1);
 
           <div class="col-md-12">
             <div class="card">
-              <div class="card-header card-header-danger">
-                <div class="col-lg-10" style="float:left;">
-                  <h2 class="card-title ">Entrenador</h4>
-                  <p class="card-category"> Listado de entrenadores</p>
+              <div class="card-header card-header-danger row">
+              <div class="col-md-11">
+                  <h3 class="card-title">Entrenador</h3>
+                  <p class="category">Listado de entrenadores</p>
                 </div>
-                <div class="col-lg-1" style="float:left">
-                  <a href="..\..\vista\entrenador/insert.php" title="Agregar nuevo Entrenador">
-                    <div class="card-header card-header-success card-header-icon" style="float:right">
-                      <div class="card-icon">
-                        <i class="material-icons">add</i>
-                      </div>
-                    </div>
+                <div class="col-md-1 text-right">
+                <a href="..\..\vista\entrenador/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar entrenador">
+                    <i class="material-icons">add</i>
                   </a>
                 </div>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table" id="table1">
-                    <thead class=" text-info">
+                    <thead  >
                       <th>
                         ID
                       </th>
@@ -47,25 +43,7 @@ $data=$entrenador->select(-1);
                         Nombre
                       </th>
                       <th>
-                        Apellido
-                      </th>
-                      <th>
-                        Fecha Nacimiento
-                      </th>
-                      <th>
-                        Fecha Inicio
-                      </th>
-                      <th>
-                        Fecha Final
-                      </th>
-                      <th>
-                        Dirección
-                      </th>
-                      <th>
-                        Teléfono
-                      </th>
-                      <th>
-                        Tipo de Entrenador
+                        Foto
                       </th>
                     </thead>
                     <tbody>
@@ -77,31 +55,17 @@ $data=$entrenador->select(-1);
                           <?php echo $row['id_entrenador']; ?>
                         </td>
                         <td>
-                          <?php echo $row['nombre']; ?>
+                        <?php echo $row['nombre']." ".$row['apellido']; ?>
                         </td>
                         <td>
-                          <?php echo $row['apellido']; ?>
-                        </td>
-                        <td>
-                          <?php echo $row['fecha_nacimiento']; ?>
-                        </td>
-                        <td>
-                          <?php echo $row['fecha_inicio']; ?>
-                        </td>
-                        <td>
-                          <?php echo $row['fecha_fin']; ?>
-                        </td>
-                        <td>
-                          <?php echo $row['direccion']; ?>
-                        </td>
-                        <td>
-                          <?php echo $row['telefono']; ?>
-                        </td>
-                        <td>
-                          <?php echo $row['descripcion']; ?>
+                        <?php
+                         echo '<img style="height:40px;width:40px"  src="../imagenes/'.$row['foto'].'"  alt="Circle Image" class="img-raised rounded-circle img-fluid">';
+                        ?>
                         </td>
                         <td class="td-actions text-left">
                             <div style="float:left">
+                            <a href="..\..\vista\entrenador/detalle.php?id=<?php echo $row['id_entrenador']; ?>">
+                          <button class="btn btn-success btn-round btn-sm"><i class="far fa-eye fa-lg"></i> Ver detalles</button>
                               <a href="..\..\vista\entrenador/update.php?id=<?php echo $row['id_entrenador']; ?>">
                                 <button type="button" rel="tooltip" title="Editar Entrenador" class="btn btn-primary btn-link btn-sm">
                                   <i class="material-icons">edit</i>
@@ -133,49 +97,5 @@ $data=$entrenador->select(-1);
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
-    <script type="text/javascript">
-    $(document).ready(function(){
-$('#table1').DataTable({
-   dom: 'Bfrtip',
-   buttons: [
-     {
-       extend:'copy',
-       title:'Listado de entrenadores',
-       exportOptions:{
-         columns:[0,1,2,3,4,5,6,7,8]
-       }
-     },
-     {
-       extend:'csv',
-       title:'Listado de entrenadores',
-       exportOptions:{
-         columns:[0,1,2,3,4,5,6,7,8]
-       }
-     },
-     {
-       extend:'excel',
-       title:'Listado de entrenadores',
-       exportOptions:{
-         columns:[0,1,2,3,4,5,6,7,8]
-       }
-     },
-     {
-       extend:'pdf',
-       title:'Listado de entrenadores',
-       exportOptions:{
-         columns:[0,1,2,3,4,5,6,7,8]
-       }
-     },
-     {
-       extend:'print',
-       title:'Listado de entrenadores',
-       exportOptions:{
-         columns:[0,1,2,3,4,5,6,7,8]
-       }
-     }
-   ],
-}) ;
-});
-    </script>
   </body>
 </html>
