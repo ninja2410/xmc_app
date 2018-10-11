@@ -22,7 +22,7 @@ $data=$documento->select(-1);
               <div class="card">
                 <div class="card-header card-header-primary">
                   <div class="col-lg-10" style="float:left;">
-                    <h2 class="card-title ">Documentos digitales</h4>
+                    <h4 class="card-title ">Documentos digitales</h4>
                     <p class="card-category"> Listado de documentos almacenados en el sistema</p>
                   </div>
                   <div class="col-lg-1" style="float:left">

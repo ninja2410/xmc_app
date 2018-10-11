@@ -10,7 +10,7 @@ class Documento
     $query="CALL SP_DOCDIGITAL_INSERT('$fecha', $estado, '$path', '$descripcion', $categoria);";
     $bd= new conexion();
 		$dt=$bd->execute_query($query);
-		return $dt;
+	return $dt;
   }
 
   public function update($id, $fecha, $estado, $path, $descripcion, $categoria){
@@ -28,7 +28,7 @@ class Documento
   }
 
   public function correlativo(){
-    $query="SELECT coalesce(MAX(id_documento_digital)+1, 1) as x from documento_digital;";
+    $query="SELECT coalesce(MAX(id_documento_digital)+1, 1) as x from DOCUMENTO_DIGITAL;";
     $bd= new conexion();
 		$dt=$bd->execute_query($query);
     $id=mysqli_fetch_array($dt);
