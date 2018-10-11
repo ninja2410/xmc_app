@@ -68,8 +68,8 @@
                 <i class="material-icons">chrome_reader_mode</i> Documentos
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="..\..\vista\documento_digital/index.php">Documentos Digitales</a>
-                <a class="dropdown-item" href="..\..\vista\categoria_documentos/index.php">Categoría Documentos</a>
+                <a class="dropdown-item" href="..\..\vista\documento_digital/index.php">Documentos digitales</a>
+                <a class="dropdown-item" href="..\..\vista\categoria_documentos/index.php">Categoría documentos</a>
                 <a class="dropdown-item" href="..\..\vista\contrato/index.php">Contratos</a>
               </div>
             </li>
