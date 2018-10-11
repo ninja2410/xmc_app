@@ -219,13 +219,6 @@ $data2=$contrato->select(-1);
                               }
                             }
                         },
-                        fecha_fin:{
-                          validators:{
-                              notEmpty:{
-                                  message:'Seleccione una fecha'
-                              }
-                            }
-                        },
         }
       })
     });
