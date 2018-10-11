@@ -39,130 +39,39 @@
     color: white;
 }
 
-html {
-    -webkit-font-smoothing: antialiased;
-  }
-  
-  .banda {
-    width: 90%;
-    max-width: 1240px;
-    margin: 0 auto;
-    
-    display: grid;
-    
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    grid-gap: 20px;
-    
-  }
-  
-  @media only screen and (min-width: 500px) {
-    .banda {
-      grid-template-columns: 1fr 1fr;
-    }  
-    .item-1 {
-    grid-column: 1/ span 2;
-    }
-    .item-1 h1 {
-      font-size: 30px;
-    }
-  }
-  
-  @media only screen and (min-width: 850px) {
-    .banda {
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
-  }
-  
-  /* tarjetas */
-  
-  .tarjetas {
-    min-height: 100%;
-    background: white;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
-    text-decoration: none;
-    color: #444;
-    position: relative;
-    top: 0;
-    transition: all .1s ease-in;
-  }
-  
-  .tarjetas:hover {
-    top: -2px;
-    box-shadow: 0 4px 5px rgba(0,0,0,0.2);
-  }
-  
-  .tarjetas article {
-    padding: 20px;
-    display: flex;
-    
-    flex: 1;
-    justify-content: space-between;
-    flex-direction: column;
-    
-  }
-  .tarjetas .thumb {
-    padding-bottom: 60%;
-    background-size: cover;
-    background-position: center center;
-  }
-  
-  .tarjetas p { 
-    flex: 1; /* make p grow to fill available space*/
-    line-height: 1.4;
-  }
-  
-  /* typography */
-  h1 {
-    font-size: 20px;
-    margin: 0;
-    color: #333;
-  }
-  
-  .tarjetas span {
-    font-size: 12px;
-    font-weight: bold;
-    color: #999;
-    text-transform: uppercase;
-    letter-spacing: .05em;
-    margin: 2em 0 0 0;
-  }
-
-  .fondoP {
-    background-image:url(https://pbs.twimg.com/media/DomWsqBVsAER6LA.jpg);
-    max-width: 100%;
-    height: 100%;
-    position:relative;
-    color: white;
-    z-index:1;
+.fondoP {
+  background-image:url(https://pbs.twimg.com/media/DomWsqBVsAER6LA.jpg);
+  max-width: 100%;
+  height: 100%;
+  position:relative;
+  color: white;
+  z-index:1;
 }
- .fondoP::after {
-    content:"";
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.6);
-    z-index:-1;
+.fondoP::after {
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.6);
+  z-index:-1;
 }
- .fondo {
-    background-image:url(https://pbs.twimg.com/media/DomWsqBVsAER6LA.jpg);
-    max-width: 100%;
-    height: 90%;
-    position:relative;
-    color: white;
-    z-index:1;
+.fondo {
+  background-image:url(https://pbs.twimg.com/media/DomWsqBVsAER6LA.jpg);
+  max-width: 100%;
+  height: 90%;
+  position:relative;
+  color: white;
+  z-index:1;
 }
- .fondo::after {
-    content:"";
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.6);
-    z-index:-1;
+.fondo::after {
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.6);
+  z-index:-1;
 } 
