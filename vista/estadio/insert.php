@@ -25,41 +25,12 @@
                     <input type="text" class="form-control" name="nombre">
                   </div>
                 </div>
-                <div class="col-md-3">
-                  <div class="form-group">
-                    <label for="exampleFormControlSelect1">Ciudad</label>
-                    <select class="form-control" name="ciudad">
-                      <option value="Quetzaltenango">Quetzaltenango</option>
-                      <option value="Alta Verapaz">Alta Verapaz</option>
-                      <option value="Baja Verapaz">Baja Verapaz</option>
-                      <option value="Chimaltenango">Chimaltenango</option>
-                      <option value="Chiquimula">Chiquimula</option>
-                      <option value="Petén">Petén</option>
-                      <option value="El Progreso">El Progreso</option>
-                      <option value="Quiché">Quiché</option>
-                      <option value="Escuintla">Escuintla</option>
-                      <option value="Guatemala">Guatemala</option>
-                      <option value="Huehuetenango">Huehuetenango</option>
-                      <option value="Izabal">Izabal</option>
-                      <option value="Jalapa">Jalapa</option>
-                      <option value="Jutiapa">Jutiapa</option>
-                      <option value="Retalhuleu">Retalhuleu</option>
-                      <option value="Sacatepéquez">Sacatepéquez</option>
-                      <option value="San Marcos">San Marcos</option>
-                      <option value="Santa Rosa">Santa Rosa</option>
-                      <option value="Sololá">Sololá</option>
-                      <option value="Suchitepéquez">Suchitepéquez</option>
-                      <option value="Totonicapán">Totonicapán</option>
-                      <option value="Zacapa">Zacapa</option>
-                    </select>
-                  </div>
-                </div>
-                <!-- <div class="col-md-2">
+                <div class="col-md-2">
                   <div class="form-group">
                     <label class="bmd-label-floating">Ciudad</label>
                     <input type="text" class="form-control" name="ciudad">
                   </div>
-                </div> -->
+                </div>
               </div>
 
               <div class="row">
