@@ -32,10 +32,10 @@
                 <i class="material-icons">access_time</i> Partidos
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="..\..\vista\partido/index.php">Registro de Partidos</a>
+                <a class="dropdown-item" href="..\..\vista\partido/index.php">Registro de partidos</a>
                 <a class="dropdown-item" href="..\..\vista\alineacion/index.php">Alineaciones</a>
-                <a class="dropdown-item" href="..\..\vista\arbitro/index.php">Arbitro</a>
-                <a class="dropdown-item" href="..\..\vista\estadisticaJugador/index.php">Estadisticas</a>
+                <a class="dropdown-item" href="..\..\vista\arbitro/index.php">Árbitro</a>
+                <a class="dropdown-item" href="..\..\vista\estadisticaJugador/index.php">Estadísticas</a>
                 <a class="dropdown-item" href="..\..\vista\equipo/index.php">Equipos</a>
                 <a class="dropdown-item" href="..\..\vista\estadio/index.php">Estadios</a>
                 <a class="dropdown-item" href="..\..\vista\temporada/index.php">Temporadas</a>
@@ -46,7 +46,7 @@
                 <i class="material-icons">supervisor_account</i> Socios
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="..\..\vista\socio/index.php">Registro de Socios</a>
+                <a class="dropdown-item" href="..\..\vista\socio/index.php">Registro de socios</a>
                 <a class="dropdown-item" href="..\..\vista\pagos/index.php">Pagos</a>
                 <a class="dropdown-item" href="..\..\vista\membresia/index.php">Membresías</a>
                 <a class="dropdown-item" href="..\..\vista\beneficio/index.php">Beneficios</a>
@@ -58,8 +58,8 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="..\..\vista\lesion-jugador/index.php">Registro de lesiones por jugador</a>
-                <a class="dropdown-item" href="..\..\vista\ficha_medica/index.php">Ficha Médica</a>
-                <a class="dropdown-item" href="..\..\vista\parte_cuerpo/index.php">Detalles de Ficha Médica</a>
+                <a class="dropdown-item" href="..\..\vista\ficha_medica/index.php">Ficha médica</a>
+                <a class="dropdown-item" href="..\..\vista\parte_cuerpo/index.php">Detalles de ficha médica</a>
                 <a class="dropdown-item" href="..\..\vista\medico/index.php">Médicos</a>
               </div>
             </li>
@@ -68,8 +68,8 @@
                 <i class="material-icons">chrome_reader_mode</i> Documentos
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="..\..\vista\documento_digital/index.php">Documentos Digitales</a>
-                <a class="dropdown-item" href="..\..\vista\categoria_documentos/index.php">Categoría Documentos</a>
+                <a class="dropdown-item" href="..\..\vista\documento_digital/index.php">Documentos digitales</a>
+                <a class="dropdown-item" href="..\..\vista\categoria_documentos/index.php">Categoría documentos</a>
                 <a class="dropdown-item" href="..\..\vista\contrato/index.php">Contratos</a>
               </div>
             </li>
@@ -78,7 +78,7 @@
                 <i class="material-icons">person</i> Personas
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="..\..\vista\personaltecnico/index.php">Personal Técnico</a>
+                <a class="dropdown-item" href="..\..\vista\personaltecnico/index.php">Personal técnico</a>
                 <a class="dropdown-item" href="..\..\vista\prensa/index.php">Prensa</a>
                 <a class="dropdown-item" href="..\..\vista\usuario/index.php">Usuarios</a>
               </div>
