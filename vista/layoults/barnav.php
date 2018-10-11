@@ -83,6 +83,17 @@
                 <a class="dropdown-item" href="..\..\vista\usuario/index.php">Usuarios</a>
               </div>
             </li>
+            <li class="dropdown nav-item">
+              <a href="#pablo" class="profile-photo dropdown-toggle nav-link" data-toggle="dropdown">
+                <div class="profile-photo-small">
+                  <img src="../assets/img/faces/marc.jpg" alt="Circle Image" class="rounded-circle img-fluid">
+                </div>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right">
+                <h6 class="dropdown-header">Opciones de sesión</h6>
+                <a href="..\..\vista\login/salida.php" class="dropdown-item"><i class="fas fa-sign-out-alt"></i>  Cerrar sesión</a>
+              </div>
+            </li>
           </ul>
       </div>
   </div>
