@@ -72,21 +72,21 @@ $data=$alineacion->select($_GET['id']);
                   <div class="form-group">
                     <label class="">Jugador</label>
                     <input type="hidden" id="jugador" name="jugador" value="<?php echo $data['id_jugador']; ?>">
-                    <input type="text" id="autoJugador" class="form-control" value="<?php echo $data['id_jugador']; ?>">
+                    <input type="text" id="autoJugador" class="form-control" value="<?php echo $data['nombre']; ?>">
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="form-group">
                     <label class="">Partido</label>
                     <input type="hidden" name="partido" id="partido" value="<?php echo $data['id_partido']; ?>" >
-                    <input type="text" id="autoPartido" class="form-control" value="<?php echo $data['id_partido']; ?>">
+                    <input type="text" id="autoPartido" class="form-control" value="<?php echo $data['fecha']; ?>">
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="form-group">
                     <label class="">Posicion</label>
                     <input type="hidden" name="posicion" id="posicion" value="<?php echo $data['id_posicion']; ?>">
-                    <input type="text" id="autoPosicion" class="form-control" value="<?php echo $data['id_posicion']; ?>">
+                    <input type="text" id="autoPosicion" class="form-control" value="<?php echo $data['posicion']; ?>">
                   </div>
                 </div>
                 </div>

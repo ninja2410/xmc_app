@@ -89,5 +89,5 @@ elseif ($operacion=="3")
   $lesion->delete($id_usuario);
 }
 
-//header('Location:index.php');
+header('Location:index.php');
 ?>

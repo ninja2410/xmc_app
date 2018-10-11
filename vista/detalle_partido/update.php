@@ -163,7 +163,9 @@ $dataCn=$detalle_partido->selectContrario($_GET['id'],$_GET['id2']);
                 </tbody>
             </table>
         </div>
-        <?php include '..\layoults\botones.php'; ?>
+        <button type="submit" class="btn btn-success pull-right btn-round"><i class="fas fa-check fa-lg"></i> Aceptar</button>
+        <a href="../partido/index.php"> <button type="button" class="btn btn-info pull-right btn-round"><i class="fas fa-undo-alt fa-lg"></i> Regresar</button></a>
+
         <div class="clearfix"></div>
         </form>
         <br>

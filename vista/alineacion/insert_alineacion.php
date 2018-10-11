@@ -1,6 +1,4 @@
-<?php
-$partido=$_GET['id'];
-?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -52,7 +50,7 @@ $partido=$_GET['id'];
 
   });
   </script>
-    <?php include '..\layoults\barnav.php'; ?>
+    <?php include '..\layoults\barnav2.php'; ?>
     <div class="content">
       <div class="col-md-12">
         <div class="card">
@@ -63,7 +61,7 @@ $partido=$_GET['id'];
           <div class="card-body">
             <form method="post", action="..\alineacion\store.php" id="frm_alineacion">
               <input type="hidden" name="operation" value="1">
-              <input type="hidden" name="partido" id="partido"  value="<?php echo $partido; ?>">
+              <input type="hidden" name="partido" id="partido"  value="<?php echo $_GET['id'] ?>">
               <div class="row">
                 <div class="col-md-4">
                   <div class="form-group">
@@ -81,7 +79,7 @@ $partido=$_GET['id'];
                 </div>
                 </div>
               </div>
-<div>
+            <div>
               <?php include '..\layoults\botones.php'; ?>
               <div class="clearfix"></div>
               </div>

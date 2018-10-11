@@ -21,7 +21,7 @@ if($result>0)
         $_SESSION['id'] = $fila['id_usuario'];
         $_SESSION['usuario'] = $username;
         $_SESSION['start'] = time();
-        $_SESSION['expire'] = $_SESSION['start'] + (5 * 60);
+        $_SESSION['expire'] = $_SESSION['start'] + (15 * 60);
     
 
         header('Location:/PJ_XJMC/vista/usuario/index.php');
@@ -33,4 +33,4 @@ if($result>0)
     header('Location:/PJ_XJMC/vista/login/login.php');
 }
 
- ?>
+?>

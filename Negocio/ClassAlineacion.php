@@ -14,12 +14,18 @@ class Alineacion
         $conexion->conectar();
         if ($id==-1) 
         {
-            $query="SELECT * FROM ALINEACION WHERE estado=1";
+            $query="SELECT ALINEACION.id_alineacion, ALINEACION.id_partido, ALINEACION.id_posicion, ALINEACION.id_jugador,  PARTIDO.fecha,JUGADOR.nombre, POSICION.descripcion as posicion FROM ALINEACION 
+            INNER JOIN PARTIDO ON PARTIDO.id_partido=ALINEACION.id_partido
+            INNER JOIN JUGADOR ON JUGADOR.id_jugador = ALINEACION.id_jugador
+            INNER JOIN POSICION ON POSICION.id_posicion = ALINEACION.id_posicion WHERE estado=1";
             $dt=mysqli_query($conexion->objetoconexion,$query);
         }
         else
         {
-            $query="SELECT * FROM ALINEACION WHERE id_alineacion=$id AND estado=1";
+            $query="SELECT ALINEACION.id_alineacion, ALINEACION.id_partido, ALINEACION.id_posicion, ALINEACION.id_jugador,  PARTIDO.fecha ,JUGADOR.ombre, POSICION.descripcion as posicion FROM ALINEACION 
+            INNER JOIN PARTIDO ON PARTIDO.id_partido=ALINEACION.id_partidon
+            INNER JOIN JUGADOR ON JUGADOR.id_jugador = ALINEACION.id_jugador
+            INNER JOIN POSICION ON POSICION.id_posicion = ALINEACION.id_posicion WHERE ALINEACION.id_alineacion=$id AND ALINEACION.estado=1";
             $tmp=mysqli_query($conexion->objetoconexion,$query);
             $dt=mysqli_fetch_assoc($tmp);
         }
@@ -31,7 +37,10 @@ class Alineacion
     {
         $conexion=new conexion();
         $conexion->conectar();
-            $query="SELECT * FROM ALINEACION WHERE id_partido=$id AND estado=1";
+            $query="SELECT ALINEACION.id_alineacion, ALINEACION.id_partido, ALINEACION.id_posicion, ALINEACION.id_jugador,  PARTIDO.fecha,JUGADOR.nombre, POSICION.descripcion as posicion FROM ALINEACION 
+            INNER JOIN PARTIDO ON PARTIDO.id_partido=ALINEACION.id_partido
+            INNER JOIN JUGADOR ON JUGADOR.id_jugador = ALINEACION.id_jugador
+            INNER JOIN POSICION ON POSICION.id_posicion = ALINEACION.id_posicion WHERE ALINEACION.id_partido=$id AND ALINEACION.estado=1";
             $dt=mysqli_query($conexion->objetoconexion,$query);
         $conexion->desconectar();
         return $dt;

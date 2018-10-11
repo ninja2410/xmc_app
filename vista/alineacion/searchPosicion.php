@@ -12,10 +12,10 @@ $query = $conexion->objetoconexion->query("SELECT * FROM POSICION WHERE siglas L
 while ($fila = $query->fetch_assoc()) 
 {           $ca_producto=array(
     "id"=> $fila['id_posicion'],
-    "value"=>$fila['siglas']
+    "value"=>$fila['descripcion']
 );
 array_push($return_arr, $ca_producto);
-   
+
 }
 //return json data
 echo json_encode($return_arr);

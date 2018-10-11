@@ -3,7 +3,7 @@ session_start();
 
 $now = time();
 
-if(!isset($_SESSION['expire']))
+if(isset($_SESSION['expire']))
 {
   if($now > $_SESSION['expire']) 
   {
@@ -103,8 +103,6 @@ foreach($permisos as $key => $value)
             </li>
             <?php
             }
-            ?>
-            <?php
             if($partidos==1)
             {
             ?>
@@ -124,6 +122,8 @@ foreach($permisos as $key => $value)
             </li>
             <?php
             }
+            if($socios==1)
+            {
             ?>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -136,6 +136,11 @@ foreach($permisos as $key => $value)
                 <a class="dropdown-item" href="..\..\vista\beneficio/index.php">Beneficios</a>
               </div>
             </li>
+            <?php
+            }
+            if($lesiones==1)
+            {
+            ?>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="material-icons">control_point</i> Lesiones
@@ -147,6 +152,11 @@ foreach($permisos as $key => $value)
                 <a class="dropdown-item" href="..\..\vista\medico/index.php">Médicos</a>
               </div>
             </li>
+            <?php
+            }
+            if($documentos==1)
+            {
+            ?>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="material-icons">chrome_reader_mode</i> Documentos
@@ -157,6 +167,11 @@ foreach($permisos as $key => $value)
                 <a class="dropdown-item" href="..\..\vista\contrato/index.php">Contratos</a>
               </div>
             </li>
+            <?php
+            }
+            if($personas==1)
+            {
+            ?>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="material-icons">person</i> Personas
@@ -168,6 +183,9 @@ foreach($permisos as $key => $value)
                 <a class="dropdown-item" href="..\..\vista\login/salida.php">Salida</a>
               </div>
             </li>
+            <?php
+            }
+            ?>
           </ul>
       </div>
   </div>

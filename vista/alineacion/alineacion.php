@@ -38,10 +38,10 @@ $data=$alineacion->selectPartido($_GET['id']);
                   <table class="table" id="table1">
                     <thead class=" text-primary">
                       <th>
-                        Jugador
+                        Partido
                       </th>
                       <th>
-                        Partido
+                        Jugador
                       </th>
                       <th>
                         Posicion
@@ -53,13 +53,13 @@ $data=$alineacion->selectPartido($_GET['id']);
                        ?>
                       <tr>
                         <td>
-                          <?php echo $row['id_jugador']; ?>
+                          <?php echo $row['fecha']; ?>
                         </td>
                         <td>
-                          <?php echo $row['id_partido']; ?>
+                          <?php echo $row['nombre']; ?>
                         </td>
                         <td>
-                          <?php echo $row['id_posicion']; ?>
+                          <?php echo $row['posicion']; ?>
                         </td>
                         <td class="td-actions text-lefht">
                             <div style="float:left">
@@ -103,35 +103,35 @@ $('#table1').DataTable({
        extend:'copy',
        title:'Listado de Alineacion',
        exportOptions:{
-         columns:[0,1,2,3,4,5,6,7,8]
+         columns:[0,1,2,3,4]
        }
      },
      {
        extend:'csv',
        title:'Listado de Alineacion',
        exportOptions:{
-         columns:[0,1,2,3,4,5,6,7,8]
+         columns:[0,1,2,3,4]
        }
      },
      {
        extend:'excel',
        title:'Listado de Alineacion',
        exportOptions:{
-         columns:[0,1,2,3,4,5,6,7,8]
+         columns:[0,1,2,3,4]
        }
      },
      {
        extend:'pdf',
        title:'Listado de Alineacion',
        exportOptions:{
-         columns:[0,1,2,3,4,5,6,7,8]
+         columns:[0,1,2,3,4]
        }
      },
      {
        extend:'print',
        title:'Listado de Alineacion',
        exportOptions:{
-         columns:[0,1,2,3,4,5,6,7,8]
+         columns:[0,1,2,3,4]
        }
      }
    ],

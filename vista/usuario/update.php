@@ -53,7 +53,7 @@ $usuario = $_GET['id'];
                     </label>
                   </div>
 
-                    <?php
+                    <?php         
                     }
                     ?>
               </div>
