@@ -28,9 +28,9 @@
                 <div class="row">
                 <div class="col-md-12">
                   <div class="form-group">
-                    <label>Descripcion</label>
+                    <label>Descripción</label>
                     <div class="form-group">
-                      <label class="bmd-label-floating"> Describa en qué consiste el beneficio a agregar.</label>
+                      <label class="bmd-label-floating"> Describa en qué consiste el beneficio a agregar...</label>
                       <textarea class="form-control" rows="5" name="description"></textarea>
                     </div>
                   </div>

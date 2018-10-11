@@ -40,7 +40,7 @@ $data=$contrato->select(-1);
                 </div>
                 <div class="col-md-4">
                   <div class="form-group">
-                    <label >Fecha de Nacimiento</label>
+                    <label >Fecha de nacimiento</label>
                     <input type="date" class="form-control" name="fecha_nacimiento">
                   </div>
                 </div>

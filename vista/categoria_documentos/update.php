@@ -8,7 +8,7 @@ $data=$catDocumentos->select($_GET['id']);
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Categoria documentos - Actualizar</title>
+    <title>Categoría documentos - Actualizar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <body>
@@ -19,7 +19,7 @@ $data=$catDocumentos->select($_GET['id']);
           <div class="col-md-12">
             <div class="card">
               <div class="card-header card-header-danger">
-                  <h4 class="card-title">Actualizar categoria de documentos</h4>
+                  <h4 class="card-title">Actualizar categoría de documentos</h4>
                   <p class="category">Complete los campos siguientes.</p>
               </div>
               <div class="card-body">

@@ -3,7 +3,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Alineacion - Insertar</title>
+    <title>Alineación - Insertar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
@@ -55,7 +55,7 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-primary">
-            <h4 class="card-title">INGRESAR UN NUEVO ALINEACION</h4>
+            <h4 class="card-title">INGRESAR UNA NUEVA ALINEACIÓN</h4>
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
@@ -72,7 +72,7 @@
                 </div>
                 <div class="col-md-4">
                   <div class="form-group">
-                    <label class="">Posicion</label>
+                    <label class="">Posición</label>
                     <input type="hidden" name="posicion" id="posicion" >
                     <input type="text" id="autoPosicion" class="form-control">
                   </div>

@@ -8,7 +8,7 @@ $dataCn=$detalle_partido->selectContrario($_GET['id'],$_GET['id2']);
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Resultados - Xelaju - <?php echo $data['id_partido']?></title>
+    <title>Resultados - Xelajú - <?php echo $data['id_partido']?></title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
@@ -162,11 +162,11 @@ $dataCn=$detalle_partido->selectContrario($_GET['id'],$_GET['id2']);
                     </div>
                     <div>
                        <a href="<?php echo '..\..\vista\estadisticaJugador/index.php?partido='.$_GET['id'];?>">
-                       <button class="btn btn-success btn-round"><i class="fas fa-notes-medical fa-lg"></i>Estadisticas por Jugador</button></a>
+                       <button class="btn btn-success btn-round"><i class="fas fa-notes-medical fa-lg"></i>Estadísticas por jugador</button></a>
                    </div>
                     <div>
                         <a href="..\..\vista\personaltecnico/insert.php?id=<?php echo $data['id_partido']?>">
-                        <button class="btn btn-danger btn-round"><i class="fas fa-notes-medical fa-lg"></i> Asignar personal tecnico</button></a>
+                        <button class="btn btn-danger btn-round"><i class="fas fa-notes-medical fa-lg"></i> Asignar personal técnico</button></a>
                     </div>
                     <div >
                         <a href="..\..\vista\partido/index.php">

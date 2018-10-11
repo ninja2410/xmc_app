@@ -8,7 +8,7 @@ $data=$arbitro->select(-1);
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Arbitro - Listar</title>
+    <title>Árbitro - Listar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">

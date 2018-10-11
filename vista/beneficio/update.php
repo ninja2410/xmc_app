@@ -19,7 +19,7 @@ $data=$beneficio->select($_GET['id']);
       <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-primary">
-            <h4 class="card-title">Actualizar Beneficio</h4>
+            <h4 class="card-title">ACTUALIZAR BENEFICIOS</h4>
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
@@ -38,9 +38,9 @@ $data=$beneficio->select($_GET['id']);
                 <div class="row">
                 <div class="col-md-12">
                   <div class="form-group">
-                    <label>Descripcion</label>
+                    <label>Descripción</label>
                     <div class="form-group">
-                      <label class="bmd-label-floating"> Describa en qué consiste el beneficio a agregar.</label>
+                      <label class="bmd-label-floating"> Describa en qué consiste el beneficio a agregar...</label>
                       <textarea class="form-control" rows="5" name="description" value=""><?php echo $data['descripcion'] ?></textarea>
                     </div>
                   </div>

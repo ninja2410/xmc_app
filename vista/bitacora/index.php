@@ -8,7 +8,7 @@ $data=$usuario->select(-1);
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Bitacora - Listar</title>
+    <title>Bitácora - Listar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <body>
@@ -22,8 +22,8 @@ $data=$usuario->select(-1);
             <div class="card">
               <div class="card-header card-header-primary">
                 <div class="col-lg-10" style="float:left;">
-                  <h2 class="card-title ">Bitacora</h4>
-                  <p class="card-category"> Acciones realizadas por usuario</p>
+                  <h2 class="card-title ">Bitácora</h4>
+                  <p class="card-category"> Acciones realizadas por el usuario</p>
                 </div>
               </div>
               <div class="card-body">
@@ -43,7 +43,7 @@ $data=$usuario->select(-1);
                         Usuario
                       </th>
                       <th>
-                        Accion
+                        Acción
                       </th>
                     </thead>
                     <tbody>

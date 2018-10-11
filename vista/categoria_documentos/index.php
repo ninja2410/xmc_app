@@ -8,7 +8,7 @@ $data=$cat_documentos->select(-1);
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Categoria documentos - Listar</title>
+    <title>Categoría documentos - Listar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <body>
@@ -21,8 +21,8 @@ $data=$cat_documentos->select(-1);
           <div class="col-md-12">
             <div class="card">
               <div class="card-header card-header-danger">
-                  <h4 class="card-title">Categoria de los documentos</h4>
-                  <p class="category">Listado de las categorias de los documentos.</p>
+                  <h4 class="card-title">Categoría de los documentos</h4>
+                  <p class="category">Listado de las categorías de los documentos.</p>
               </div>
               <div class="card-body">
                 <div class="table-responsive">

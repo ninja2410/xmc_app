@@ -7,7 +7,7 @@ $data=$alineacion->select(-1);
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Alineacions - Listar</title>
+    <title>Alineaciones - Listar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
@@ -20,7 +20,7 @@ $data=$alineacion->select(-1);
             <div class="card">
               <div class="card-header card-header-primary">
                 <div class="col-lg-10" style="float:left;">
-                  <h2 class="card-title ">alineaciones</h4>
+                  <h2 class="card-title ">Alineaciones</h4>
                   <p class="card-category"> Listado de alineaciones</p>
                 </div>
                 <div class="col-lg-1" style="float:left">
@@ -44,7 +44,7 @@ $data=$alineacion->select(-1);
                         Partido
                       </th>
                       <th>
-                        Posicion
+                        Posición
                       </th>
                     </thead>
                     <tbody>

@@ -20,7 +20,7 @@ $data=$alineacion->selectPartido($_GET['id']);
             <div class="card">
               <div class="card-header card-header-primary">
                 <div class="col-lg-10" style="float:left;">
-                  <h2 class="card-title ">alineacions</h4>
+                  <h2 class="card-title ">Alineaciones</h4>
                   <p class="card-category"> Listado de alineaciones</p>
                 </div>
                 <div class="col-lg-1" style="float:left">
@@ -44,7 +44,7 @@ $data=$alineacion->selectPartido($_GET['id']);
                         Jugador
                       </th>
                       <th>
-                        Posicion
+                        Posición
                       </th>
                     </thead>
                     <tbody>
