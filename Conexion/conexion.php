@@ -1,10 +1,15 @@
 <?php
 class conexion
 {
-	private $servidor='localhost';
-	private $usuario="root";
+	// private $servidor='localhost';
+	// private $usuario="root";
+	// private $pass="database";
+	// private $bd="db_xelajumc";
+
+	private $servidor='sql174.main-hosting.eu';
+	private $usuario="u538043044_root";
 	private $pass="database";
-	private $bd="db_xelajumc";
+	private $bd="u538043044_xela";
 
 	// private $servidor='sql3.freemysqlhosting.net';
 	// private $usuario="sql3259082";
