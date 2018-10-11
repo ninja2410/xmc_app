@@ -1,8 +1,8 @@
 <?php
-require_once('..\..\Negocio/ClassDetallePartido.php');
-$detalle_partido=new Detalle();
-$data=$detalle_partido->selectXela($_GET['id']);
-$dataCn=$detalle_partido->selectContrario($_GET['id'],$_GET['id2']);
+// require_once('..\..\Negocio/ClassDetallePartido.php');
+// $detalle_partido=new Detalle();
+// $data=$detalle_partido->selectXela($_GET['id']);
+// $dataCn=$detalle_partido->selectContrario($_GET['id'],$_GET['id2']);
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -16,6 +16,7 @@ $dataCn=$detalle_partido->selectContrario($_GET['id'],$_GET['id2']);
     include '..\layoults\barnav.php';
     ?>
     <div class="main main-raised">
+<<<<<<< Updated upstream
     <form method="post", action="..\detalle_partido\store.php" id="frm_detalle_partido">
     <input type="hidden" name="operation" value="2">
     <input type="hidden" name="id" value="<?php echo $data['id_detalle_partido']; ?>">
@@ -166,6 +167,15 @@ $dataCn=$detalle_partido->selectContrario($_GET['id'],$_GET['id2']);
         <button type="submit" class="btn btn-success pull-right btn-round"><i class="fas fa-check fa-lg"></i> Aceptar</button>
         <a href="../partido/index.php"> <button type="button" class="btn btn-info pull-right btn-round"><i class="fas fa-undo-alt fa-lg"></i> Regresar</button></a>
 
+=======
+    <form method="post" action="..\detalle_partido\store.php" id="frm_detalle_partido">
+      <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" class="form-control" name="fal" value="">
+      </div>
+
+        <?php include '..\layoults\botones.php'; ?>
+>>>>>>> Stashed changes
         <div class="clearfix"></div>
         </form>
         <br>
@@ -175,7 +185,6 @@ $dataCn=$detalle_partido->selectContrario($_GET['id'],$_GET['id2']);
     <?php include '..\layoults\scripts2.php'; ?>
     <script type="text/javascript">
     $(document).ready(function(){
-        console.log( "ready!" )
         $('#frm_detalle_partido').bootstrapValidator({
         feedbackIcons: {
             valid: 'glyphicon glyphicon-ok',
@@ -186,8 +195,11 @@ $dataCn=$detalle_partido->selectContrario($_GET['id'],$_GET['id2']);
         fields: {
           fal:
           {
-                validators:
+            validators:
+            {
+                notEmpty:
                 {
+<<<<<<< Updated upstream
                     notEmpty:
                     {
                         
@@ -196,7 +208,15 @@ $dataCn=$detalle_partido->selectContrario($_GET['id'],$_GET['id2']);
                 }
           }}});
             });
+=======
+                  message: 'La fecha del partido es necesario'
+                }
+            }
+          }
+        }
+      });
+    });
+>>>>>>> Stashed changes
     </script>
   </body>
 </html>
-
