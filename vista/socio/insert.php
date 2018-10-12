@@ -53,7 +53,7 @@
                 </div>
                 <div class="col-md-3">
                   <div class="form-group">
-                    <label class="bmd-label-floating">Fecha de Nacimiento</label>
+                    <label class="bmd-label-floating">Fecha de nacimiento</label>
                     <input name="fecha_nacimiento" id="datetimepicker" type="text" class="form-control" >
                   </div>
                 </div>

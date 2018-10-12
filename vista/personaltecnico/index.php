@@ -9,7 +9,7 @@ $btn='Asignar personal tecnico'
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Personal Tecnico - Xelaju </title>
+    <title>Personal técnico - Xelajú </title>
     <?php 
     include '..\layoults\headers2.php';    
     ?>
@@ -60,7 +60,7 @@ $btn='Asignar personal tecnico'
             }else
             {
             ?>
-            <h2>No se a asignado ningun personal</h2>
+            <h2>No se asignó ningún personal</h2>
             <?php
             }
             ?>

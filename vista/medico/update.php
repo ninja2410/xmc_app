@@ -8,7 +8,7 @@ $data=$medico->select($_GET['id']);
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Medico - Actualizar</title>
+    <title>Médico - Actualizar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <body>
@@ -19,7 +19,7 @@ $data=$medico->select($_GET['id']);
       <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-primary">
-            <h4 class="card-title">Actualizar Medico</h4>
+            <h4 class="card-title">Actualizar médico</h4>
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
@@ -43,13 +43,13 @@ $data=$medico->select($_GET['id']);
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label class="bmd-label-floating">Fecha de Nacimiento</label>
+                    <label class="bmd-label-floating">Fecha de nacimiento</label>
                     <input type="text" class="form-control" name="f_nacimiento" value="<?php echo $data['fecha_nacimiento']; ?>">
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label class="bmd-label-floating">Fecha inicio de labores</label>
+                    <label class="bmd-label-floating">Fecha de inicio de labores</label>
                     <input type="text" class="form-control" name="f_inicio" value="<?php echo $data['fecha_inicio']; ?>">
                   </div>
                 </div>
@@ -57,7 +57,7 @@ $data=$medico->select($_GET['id']);
               <div class="row">
                 <div class="col-md-8">
                   <div class="form-group">
-                    <label class="bmd-label-floating">Direccion</label>
+                    <label class="bmd-label-floating">Dirección</label>
                     <input type="text" class="form-control" name="direccion" value="<?php echo $data['direccion']; ?>">
                   </div>
                 </div>

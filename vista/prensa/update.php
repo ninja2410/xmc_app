@@ -19,7 +19,7 @@ $data=$prensa->select($_GET['id']);
       <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-danger">
-            <h4 class="card-title">Actualizar Prensa</h4>
+            <h4 class="card-title">Actualizar prensa</h4>
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">

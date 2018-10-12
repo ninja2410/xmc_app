@@ -7,7 +7,7 @@ $data=$personal->select($_GET['id']);
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Personal Tecnico - Xelaju </title>
+    <title>Personal técnico - Xelajú </title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">

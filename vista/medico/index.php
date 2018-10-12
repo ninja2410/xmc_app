@@ -8,7 +8,7 @@ $data=$medico->select(-1);
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Medicos - Listar</title>
+    <title>Médicos - Listar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <body>
@@ -22,7 +22,7 @@ $data=$medico->select(-1);
             <div class="card">
               <div class="card-header card-header-primary">
                 <div class="col-lg-10" style="float:left;">
-                  <h2 class="card-title ">Medicos</h4>
+                  <h2 class="card-title ">Médicos</h4>
                   <p class="card-category"> Listado de médicos</p>
                 </div>
                 <div class="col-lg-1" style="float:left">

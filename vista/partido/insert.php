@@ -96,7 +96,7 @@
                 </div>
                 <div class="col-md-3">
                   <div class="form-group">
-                    <label class="">Categoria</label>
+                    <label class="">Categoría</label>
                     <input type="hidden" name="cat" id="cat" >
                     <input type="text" id="autoCategoria" name="autoCategoria"  class="form-control">
                   </div>

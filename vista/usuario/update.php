@@ -18,7 +18,7 @@ $usuario = $_GET['id'];
       <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-primary">
-            <h4 class="card-title">INGRESAR UN NUEVO USUARIO</h4>
+            <h4 class="card-title">ACTUALIZAR USUARIO</h4>
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
@@ -36,7 +36,7 @@ $usuario = $_GET['id'];
                     <input type="password" class="form-control" name="pass">
                   </div>
                   <div class="form-group">
-                    <label class="bmd-label-floating">Confirmar la Contraseña</label>
+                    <label class="bmd-label-floating">Confirmar la contraseña</label>
                     <input type="password" class="form-control" name="pass">
                   </div>
                   <h3>Permisos</h3>

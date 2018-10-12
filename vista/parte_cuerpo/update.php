@@ -8,7 +8,7 @@ $data=$parte->select($_GET['id']);
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Partes del Cuerpo - Actualizar</title>
+    <title>Partes del cuerpo - Actualizar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <body>

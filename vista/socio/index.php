@@ -23,7 +23,7 @@ $data=$socio->select(-1);
               <div class="card-header card-header-primary">
                 <div class="col-lg-10" style="float:left;">
                   <h2 class="card-title ">SOCIOS</h4>
-                  <p class="card-category"> Listado de socios  club Xelaju MC</p>
+                  <p class="card-category"> Listado de socios del club Xelajú MC</p>
                 </div>
                 <div class="col-lg-1" style="float:left">
                   <a href="..\..\vista\socio/insert.php">
@@ -46,7 +46,7 @@ $data=$socio->select(-1);
                         Nombre
                       </th>
                       <th>
-                        Descripcion
+                        Descripción
                       </th>
                       <th>
                         Acciones

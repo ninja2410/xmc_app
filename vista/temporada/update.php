@@ -29,7 +29,7 @@ $data=$temporada->select($_GET['id']);
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label class="">Descripcion</label>
+                    <label class="">Descripción</label>
                     <input type="text" class="form-control" value="<?php echo $data['descripcion']; ?>" name="descripcion">
                   </div>
                 </div>
@@ -43,7 +43,7 @@ $data=$temporada->select($_GET['id']);
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label class="bmd-label-floating">Fecha de finalizacion</label>
+                    <label class="bmd-label-floating">Fecha de finalización</label>
                     <input type="date" class="form-control" name="fecha_final" value="<?php echo $data['fecha_final']; ?>">
                   </div>
                 </div>

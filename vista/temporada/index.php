@@ -43,7 +43,7 @@ $data=$temporada->select(-1);
                         ID
                       </th>
                       <th>
-                        Descripcion
+                        Descripción
                       </th>
                       <th>
                         Fecha de inicio

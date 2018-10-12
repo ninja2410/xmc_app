@@ -53,7 +53,7 @@ $data=$socio->select($_GET['id']);
                 </div>
                 <div class="col-md-3">
                   <div class="form-group">
-                    <label class="bmd-label-floating">Fecha de Nacimiento</label>
+                    <label class="bmd-label-floating">Fecha de nacimiento</label>
                     <input name="fecha_nacimiento" type="text" class="form-control" value="<?php echo $data['fecha_nacimiento']; ?>">
                   </div>
                 </div>

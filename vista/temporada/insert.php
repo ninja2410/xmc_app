@@ -20,7 +20,7 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label class="">Descripcion</label>
+                    <label class="">Descripción</label>
                     <input type="text" class="form-control" name="descripcion">
                   </div>
                 </div>
@@ -34,7 +34,7 @@
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label class="">Fecha de finalizacion</label>
+                    <label class="">Fecha de finalización</label>
                     <input type="text" placeholder="YYYY/MM/DD" class="form-control" name="fecha_final">
                   </div>
                 </div>

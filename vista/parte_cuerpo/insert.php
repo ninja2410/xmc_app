@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Partes del Cuerpo - Insertar</title>
+    <title>Partes del cuerpo - Insertar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <body>
@@ -13,8 +13,8 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header card-header-danger">
-                  <h4 class="card-title">Ingresar Parte del Cuerpo</h4>
-                  <p class="category">Complete los campos siguientes.</p>
+                  <h4 class="card-title">Ingresar parte del cuerpo</h4>
+                  <p class="category">Complete los campos siguientes</p>
               </div>
               <div class="card-body">
                 <form method="post", action="..\parte_cuerpo\store.php" id="frm_parteCuerpo">

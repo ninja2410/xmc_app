@@ -25,7 +25,7 @@ $data=$personal->selectPermiso(-1);
               <div class="row">
               <div class="col-md-6">
                   <div class="form-group">
-                    <label class="bmd-label-floating">Nombre de Usuario</label>
+                    <label class="bmd-label-floating">Nombre de usuario</label>
                     <input type="text" class="form-control" name="usuario">
                   </div>
                   <div class="form-group">
@@ -33,7 +33,7 @@ $data=$personal->selectPermiso(-1);
                     <input type="password" class="form-control" name="pass">
                   </div>
                   <div class="form-group">
-                    <label class="bmd-label-floating">Confirmar la Contraseña</label>
+                    <label class="bmd-label-floating">Confirmar la contraseña</label>
                     <input type="password" class="form-control" name="pass">
                   </div>
                   <h3>Permisos</h3>

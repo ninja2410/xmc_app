@@ -7,7 +7,7 @@ $data=$partido->select($_GET['id']);
  <html lang="en" dir="ltr">
    <head>
      <meta charset="utf-8">
-     <title>Partido - Insertar</title>
+     <title>Partido - Actualizar</title>
      <?php include '..\layoults\headers2.php'; ?>
    </head>
    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
@@ -70,7 +70,7 @@ $data=$partido->select($_GET['id']);
        <div class="col-md-12">
          <div class="card">
            <div class="card-header card-header-primary">
-             <h4 class="card-title">INGRESAR UN NUEVO PARTIDO</h4>
+             <h4 class="card-title">ACTUALIZAR PARTIDO</h4>
              <p class="card-category">Complete los campos siguientes</p>
            </div>
            <div class="card-body">
@@ -86,7 +86,7 @@ $data=$partido->select($_GET['id']);
                  </div>
                  <div class="col-md-4">
                    <div class="form-group">
-                     <label class="">Categoria</label>
+                     <label class="">Categoría</label>
                      <input type="hidden" name="cat" id="cat" value="<?php echo $data['id_categoria']; ?>" >
                      <input type="text" id="autoCategoria" name="autoCategoria"  class="form-control" value="<?php echo $data['categoria']; ?>">
                    </div>

@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Medico - Insertar</title>
+    <title>Médico - Insertar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <body>
@@ -11,7 +11,7 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-primary">
-            <h4 class="card-title">INSERTAR MEDICO</h4>
+            <h4 class="card-title">INSERTAR MÉDICO</h4>
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
@@ -34,13 +34,13 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label class="bmd-label-floating">Fecha de Nacimiento</label>
+                    <label class="bmd-label-floating">Fecha de nacimiento</label>
                     <input type="text" class="form-control" name="f_nacimiento">
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label class="bmd-label-floating">Fecha inicio de labores</label>
+                    <label class="bmd-label-floating">Fecha de inicio de labores</label>
                     <input type="text" class="form-control" name="f_inicio">
                   </div>
                 </div>
@@ -48,7 +48,7 @@
               <div class="row">
                 <div class="col-md-8">
                   <div class="form-group">
-                    <label class="bmd-label-floating">Direccion</label>
+                    <label class="bmd-label-floating">Dirección</label>
                     <input type="text" class="form-control" name="direccion">
                   </div>
                 </div>
