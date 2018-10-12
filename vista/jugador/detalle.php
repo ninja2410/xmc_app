@@ -35,25 +35,25 @@ function calculaedad($fechanacimiento){
                 <div class="col-md-7">
                     <h3 class="title"><?php echo $data['nombre']." ".$data["apellido"]?></h3>
                     <h4><b>Edad: </b><?php echo calculaedad ($data['fecha_nacimiento']);?></h4>
-                    <h4><b>Numero de camisola: </b><?php echo $data['camisola']?></h4>
+                    <h4><b>Número de camisola: </b><?php echo $data['camisola']?></h4>
                     <h4><b>Fecha de nacimiento: </b><?php echo date("d/m/Y", strtotime($data['fecha_nacimiento']));?></h4>
-                    <h4><b>Direccion: </b><?php echo $data['direccion']?></h4>
+                    <h4><b>Dirección: </b><?php echo $data['direccion']?></h4>
                     <h4><b>Nombre del padre: </b><?php echo $data['padre']?></h4>
                     <h4><b>Nombre de la madre: </b><?php echo $data['madre']?></h4>
-                    <h4><b>Numero de telefono: </b><?php echo $data['telefono']?></h4>
+                    <h4><b>Número de teléfono: </b><?php echo $data['telefono']?></h4>
                     <h4><b>Procedencia: </b><?php echo $data['procedencia']?></h4>
-                    <h4><b>Posicion: </b><?php echo $data['descripcion']?></h4>
+                    <h4><b>Posición: </b><?php echo $data['descripcion']?></h4>
                 </div>
                 <div class="col-md-3">
                     <ul class="nav flex-column">
                         <li class="nav-item">
                             <a class="nav-link btnAzul" href="..\..\vista\jugador/index.php">
-                                <i class="fas fa-portrait fa-2x"></i><br> Ver estadisticas del jugador
+                                <i class="fas fa-portrait fa-2x"></i><br> Ver estadísticas del jugador
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link btnAzul" href="..\..\vista\ficha_medica/index.php">
-                                <i class="fas fa-notes-medical fa-2x"></i><br> Ver información medica
+                                <i class="fas fa-notes-medical fa-2x"></i><br> Ver información médica
                             </a>
                         </li>
                         <li class="nav-item">

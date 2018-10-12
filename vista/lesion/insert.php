@@ -11,7 +11,7 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-primary">
-            <h4 class="card-title">INSERTAR LESION</h4>
+            <h4 class="card-title">INSERTAR LESIÓN</h4>
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
@@ -29,7 +29,7 @@
 
                 <div class="col-md-12">
                   <div class="form-group">
-                    <label>Descripcion</label>
+                    <label>Descripción</label>
                     <div class="form-group">
                       <label class="bmd-label-floating"> Describa en qué consiste la lesion a agregar.</label>
                       <textarea class="form-control" rows="5" name="description"></textarea>

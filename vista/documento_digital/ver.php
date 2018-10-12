@@ -11,7 +11,7 @@ $data=$documento->select($_GET['id']);
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Documento - Modificar</title>
+    <title>Documento - Visualizar</title>
     <?php include '..\layoults\headers2.php'; ?>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chocolat/0.4.20/css/chocolat.css">
@@ -26,7 +26,7 @@ $data=$documento->select($_GET['id']);
         <div class="col-md-12">
           <div class="card">
             <div class="card-header card-header-primary">
-              <h4 class="card-title">MODIFICAR DOCUMENTOS</h4>
+              <h4 class="card-title">VISUALIZAR DOCUMENTO</h4>
               <p class="card-category">Complete los campos siguientes</p>
             </div>
             <div class="card-body">
@@ -39,7 +39,7 @@ $data=$documento->select($_GET['id']);
                   </div>
                   <div class="col-md-8">
                     <div class="form-group">
-                      <label class="bmd-label-floating">Descripcion</label>
+                      <label class="bmd-label-floating">Descripción</label>
                       <input type="text" class="form-control" readonly name="descripcion" value="<?php echo $data['descripcion']; ?>">
                     </div>
                   </div>
@@ -47,7 +47,7 @@ $data=$documento->select($_GET['id']);
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <label for="exampleFormControlSelect1">Categorias</label>
+                      <label for="exampleFormControlSelect1">Categorías</label>
                       <select disabled class="form-control" name="categoria" >
                         <?php
                         while ($row=mysqli_fetch_array($cat)) {

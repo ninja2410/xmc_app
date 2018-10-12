@@ -32,7 +32,7 @@ $data=$categoria->select(-1);
                 </div>
                 <div class="col-md-8">
                   <div class="form-group">
-                    <label class="bmd-label-floating">Descripcion</label>
+                    <label class="bmd-label-floating">Descripción</label>
                     <input type="text" class="form-control" name="descripcion">
                   </div>
                 </div>
@@ -44,14 +44,14 @@ $data=$categoria->select(-1);
                   <div class="fileinput fileinput-new" data-provides="fileinput">
                     <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
                     <div>
-                      <span class="btn btn-default btn-file"><span class="fileinput-new">Buscar Imagen</span><span class="fileinput-exists">Cambiar</span><input type="file" name="img"></span>
+                      <span class="btn btn-default btn-file"><span class="fileinput-new">Buscar imagen</span><span class="fileinput-exists">Cambiar</span><input type="file" name="img"></span>
                       <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Eliminar</a>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="exampleFormControlSelect1">Categorias</label>
+                    <label for="exampleFormControlSelect1">Categorías</label>
                     <select class="form-control" name="categoria">
                       <?php
                       while ($row=mysqli_fetch_array($data)) {

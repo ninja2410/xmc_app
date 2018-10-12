@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Lesion - Insertar</title>
+    <title>Lesión - Insertar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
@@ -56,7 +56,7 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-primary">
-            <h4 class="card-title">INGRESAR LESION DE JUGADOR</h4>
+            <h4 class="card-title">INGRESAR LESIÓN DE JUGADOR</h4>
             <p class="card-category">Registro de lesión por jugador. </p>
           </div>
           <div class="card-body">
@@ -74,13 +74,13 @@
                 </div>
                 <div class="col-md-4">
                   <div class="form-group">
-                    <label class="">Fecha Recuperación</label>
+                    <label class="">Fecha de recuperación</label>
                     <input type="date" placeholder="DD/MM/YYYY" class="form-control" name="fecha_recuperacion">
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="form-group">
-                    <label class="">Lesion</label>
+                    <label class="">Lesión</label>
                     <input type="hidden" name="les" id="les" >
                     <input type="text" id="lesion" name="lesion"  class="form-control">
                   </div>
@@ -89,7 +89,7 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label class="">Medico</label>
+                    <label class="">Médico</label>
                     <input type="hidden" name="med" id="med" >
                     <input type="text" name="medico" id="medico" class="form-control">
                   </div>
@@ -133,7 +133,7 @@
                     </div>
                     <div class="col-md-5">
                       <div class="form-group">
-                        <label class="">Pescripción</label>
+                        <label class="">Descripción</label>
                         <input type="text" class="form-control" name="prescripcion" id="prescripcion">
                       </div>
                     </div>
@@ -145,7 +145,7 @@
                     </div>
                 </div>
               <div class="row">
-                <h3>Tratamiento agregado. </h3>
+                <h3>Tratamiento agregado </h3>
               </div>
               <div class="row">
                 <div class="table-responsive">
@@ -158,7 +158,7 @@
                         MEDICAMENTO
                       </th>
                       <th>
-                        PRESCRIPCION
+                        PRESCRIPCIÓN
                       </th>
                     </thead>
                     <tbody>

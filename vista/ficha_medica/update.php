@@ -8,7 +8,7 @@ $data=$fichamedica->select($_GET['id']);
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Ficha Medica - Actualizar</title>
+    <title>Ficha médica - Actualizar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <body>
@@ -21,7 +21,7 @@ $data=$fichamedica->select($_GET['id']);
           <div class="col-md-12">
             <div class="card">
               <div class="card-header card-header-danger">
-                  <h4 class="card-title">Actualizar Ficha Medica</h4>
+                  <h4 class="card-title">Actualizar ficha médica</h4>
                   <p class="category">Complete los campos siguientes.</p>
               </div>
               <div class="card-body">

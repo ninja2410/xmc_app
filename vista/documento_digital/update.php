@@ -39,7 +39,7 @@ $data=$documento->select($_GET['id']);
                   </div>
                   <div class="col-md-8">
                     <div class="form-group">
-                      <label class="bmd-label-floating">Descripcion</label>
+                      <label class="bmd-label-floating">Descripción</label>
                       <input type="text" class="form-control" name="descripcion" value="<?php echo $data['descripcion']; ?>">
                     </div>
                   </div>
@@ -48,20 +48,20 @@ $data=$documento->select($_GET['id']);
                   <div class="col-md-4">
                     <img src="..\imagenes\<?php echo $data['path']; ?>" style="width: 200px; height: 150px;" alt="">
                     <br>
-                    <label><b>Imagen actual.</b></label>
+                    <label><b>Imagen actual</b></label>
                   </div>
                   <div class="col-md-4">
                     <div class="fileinput fileinput-new" data-provides="fileinput">
                       <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
                       <div>
-                        <span class="btn btn-default btn-file"><span class="fileinput-new">Buscar Nueva</span><span class="fileinput-exists">Cambiar</span><input type="file" name="img"></span>
+                        <span class="btn btn-default btn-file"><span class="fileinput-new">Buscar nueva</span><span class="fileinput-exists">Cambiar</span><input type="file" name="img"></span>
                         <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Eliminar</a>
                       </div>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <label for="exampleFormControlSelect1">Categorias</label>
+                      <label for="exampleFormControlSelect1">Categorías</label>
                       <select class="form-control" name="categoria" >
                         <?php
                         while ($row=mysqli_fetch_array($cat)) {

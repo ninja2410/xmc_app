@@ -36,7 +36,7 @@
               <div class="row">
                 <div class="col-md-5">
                   <div class="form-group">
-                    <label class="bmd-label-floating">Direccion</label>
+                    <label class="bmd-label-floating">Dirección</label>
                     <input type="text" class="form-control" name="direccion">
                   </div>
                 </div>

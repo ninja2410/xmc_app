@@ -1,12 +1,12 @@
 <div class="container">
     <ul class="nav nav-pills nav-pills-info justify-content-center">
         <li class="nav-item"><a class="nav-link active" href="#pill1" data-toggle="tab">Signos vitales</a></li>
-        <li class="nav-item"><a class="nav-link" href="#pill2" data-toggle="tab">Criometría/Antropometria</a></li>
-        <li class="nav-item"><a class="nav-link" href="#pill3" data-toggle="tab">Evaluación Rodilla</a></li>
-        <li class="nav-item"><a class="nav-link" href="#pill4" data-toggle="tab">Evaluación Tobillo</a></li>
+        <li class="nav-item"><a class="nav-link" href="#pill2" data-toggle="tab">Criometría/Antropometría</a></li>
+        <li class="nav-item"><a class="nav-link" href="#pill3" data-toggle="tab">Evaluación de rodilla</a></li>
+        <li class="nav-item"><a class="nav-link" href="#pill4" data-toggle="tab">Evaluación de tobillo</a></li>
         <li class="nav-item"><a class="nav-link" href="#pill5" data-toggle="tab">Meniscos</a></li>
         <li class="nav-item"><a class="nav-link" href="#pill6" data-toggle="tab">Músculos</a></li>
-        <li class="nav-item"><a class="nav-link" href="#pill7" data-toggle="tab">Alineamiento Postular</a></li>
+        <li class="nav-item"><a class="nav-link" href="#pill7" data-toggle="tab">Alineamiento postular</a></li>
         <li class="nav-item"><a class="nav-link" href="#pill8" data-toggle="tab">Cuello</a></li>
         <li class="nav-item"><a class="nav-link" href="#pill9" data-toggle="tab">Pecho</a></li>
         <li class="nav-item"><a class="nav-link" href="#pill10" data-toggle="tab">Subescapular</a></li>

@@ -7,7 +7,7 @@ $data=$estadistoca->selectCampos();
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Estadisticas - Insertar</title>
+    <title>Estadísticas - Insertar</title>
     <?php include '..\layoults\headers2.php'; ?>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
@@ -45,7 +45,7 @@ $data=$estadistoca->selectCampos();
       <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-primary">
-            <h4 class="card-title">INSERTAR ESTADISTICAS DE JUGADOR</h4>
+            <h4 class="card-title">INSERTAR ESTADÍSTICAS DE JUGADOR</h4>
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
@@ -70,7 +70,7 @@ $data=$estadistoca->selectCampos();
               </div>
               <div class="row">
                 <div class="col-lg-4">
-                  <label for="campo">Seleccione dato a agregar</label>
+                  <label for="campo">Seleccione el dato a agregar</label>
                   <select class="form-control" name="campo" id="campo">
                     <?php foreach ($data as $key => $value): ?>
                       <option value="<?php echo $value['id_dato_partido']; ?>" class="dropdown-item"><?php echo $value['nombre']; ?></option>
@@ -104,7 +104,7 @@ $data=$estadistoca->selectCampos();
                   <table class="table" id="agregados">
                     <thead class=" text-muted">
                       <th>
-                        ACCION
+                        ACCIÓN
                       </th>
                       <th>
                         MINUTO

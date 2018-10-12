@@ -25,7 +25,7 @@
   </style>
   <body>
       <div class="centrado-porcentual text-center text-white">
-        La pagina a la que intenta acceder no fue encontrada regrese a <a href="index.php">inicio</a>
+        La página a la que intenta acceder no fue encontrada, regrese a <a href="index.php">inicio</a>
       </div>
     <?php include '..\layoults\scripts.php'; ?>
   </body>

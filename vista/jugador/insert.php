@@ -15,7 +15,7 @@
             <div class="card">
               <div class="card-header card-header-danger">
                   <h4 class="card-title">Ingresar nuevo jugador</h4>
-                  <p class="category">Complete los campos siguientes.</p>
+                  <p class="category">Complete los campos siguientes</p>
               </div>
               <div class="card-body">
                 <form method="post", action="..\jugador\store.php" enctype="multipart/form-data" id="frm_jugador">
@@ -44,7 +44,7 @@
                         </div>
 
                         <div class="form-group col-md-4">
-                            <label>Telefono</label>
+                            <label>Teléfono</label>
                             <input name="telefono" type="number" class="form-control" >
                         </div>
 
@@ -66,7 +66,7 @@
                         </div>
 
                          <div class="form-group col-md-4">
-                            <label>Posicion</label>
+                            <label>Posición</label>
                             <select class="form-control" name="posicion">
                                 <option selected>Elija la posicion del jugador...</option>
                                 <?php
@@ -85,7 +85,7 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-4">
-                            <label>Numero de camisola</label>
+                            <label>Número de camisola</label>
                             <input name="camisola" type="number" class="form-control" >
                         </div>
 
@@ -98,7 +98,7 @@
                           <div class="fileinput fileinput-new" data-provides="fileinput">
                             <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
                             <div>
-                              <span class="btn btn-default btn-file"><span class="fileinput-new">Buscar Imagen</span><span class="fileinput-exists">Cambiar</span><input type="file" name="img"></span>
+                              <span class="btn btn-default btn-file"><span class="fileinput-new">Buscar imagen</span><span class="fileinput-exists">Cambiar</span><input type="file" name="img"></span>
                               <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Eliminar</a>
                             </div>
                           </div>

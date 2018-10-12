@@ -49,7 +49,7 @@ $data=$partido->select(-1);
                         Inicio 1
                       </th>
                       <th>
-                        Categoria
+                        Categoría
                       </th>
                       <th>
                         Estadio

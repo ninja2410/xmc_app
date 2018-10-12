@@ -118,7 +118,7 @@
                 </div>
                 <div class="col-md-4">
                   <div class="form-group">
-                    <label class="">Categoria</label>
+                    <label class="">Categoría</label>
                     <input type="hidden" name="cat" id="cat" >
                     <input type="text" id="autoCategoria" name="autoCategoria"  class="form-control">
                   </div>
@@ -183,14 +183,14 @@
                 </div>
                 <div class="col-md-3">
                   <div class="form-group">
-                    <label  id="show" class="">Estado del Estadio</label>
+                    <label  id="show" class="">Estado del estadio</label>
                     <input type="hidden" id="estado_es" name="estado_es">
                     <input type="text" id="autoestadoEstadio"  class="form-control" >
                   </div>
                 </div>
                 <div class="col-md-3">
                   <div class="form-group">
-                    <label  id="show" class="">Estado del Clima</label>
+                    <label  id="show" class="">Estado del clima</label>
                     <input type="hidden" id="clima" name="clima">
                     <input type="text" id="autoclima" class="form-control">
                   </div>

@@ -46,10 +46,10 @@ $data=$documento->select(-1);
                           Fecha
                         </th>
                         <th>
-                          Descripcion
+                          Descripción
                         </th>
                         <th>
-                          Categoria
+                          Categoría
                         </th>
                         <th>
                           Acciones

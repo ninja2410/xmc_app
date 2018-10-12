@@ -23,7 +23,7 @@ $data=$lesion->detalle();
               <div class="card-header card-header-primary">
                 <div class="col-lg-10" style="float:left;">
                   <h2 class="card-title ">Lesiones</h4>
-                  <p class="card-category"> Listado de lesiones a jugadores</p>
+                  <p class="card-category">Listado de lesiones a jugadores</p>
                 </div>
                 <div class="col-lg-1" style="float:left">
                   <a href="..\..\vista\lesion-jugador/insert.php">
@@ -43,7 +43,7 @@ $data=$lesion->detalle();
                         ID
                       </th>
                       <th>
-                        LESION
+                        LESIÓN
                       </th>
                       <th>
                         FECHA INICIO
@@ -52,7 +52,7 @@ $data=$lesion->detalle();
                         JUGADOR
                       </th>
                       <th>
-                        Acciones
+                        ACCIONES
                       </th>
                     </thead>
                     <tbody>

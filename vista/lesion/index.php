@@ -23,7 +23,7 @@ $data=$beneficio->select(-1);
               <div class="card-header card-header-primary">
                 <div class="col-lg-10" style="float:left;">
                   <h2 class="card-title ">Lesiones</h4>
-                  <p class="card-category"> Listado de beneficios</p>
+                  <p class="card-category"> Listado de lesiones</p>
                 </div>
                 <div class="col-lg-1" style="float:left">
                   <a href="..\..\vista\lesion/insert.php">
@@ -46,7 +46,7 @@ $data=$beneficio->select(-1);
                         Nombre
                       </th>
                       <th>
-                        Descripcion
+                        Descripción
                       </th>
                       <th>
                         Acciones

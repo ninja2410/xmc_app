@@ -44,7 +44,7 @@ $data=$estadio->select($_GET['id']);
               <div class="row">
                 <div class="col-md-5">
                   <div class="form-group">
-                    <label class="bmd-label-floating">Direccion</label>
+                    <label class="bmd-label-floating">Dirección</label>
                     <input type="text" class="form-control" name="direccion" value="<?php echo $data['direccion']; ?>">
                   </div>
                 </div>

@@ -52,7 +52,7 @@ $data=$jugador->select($_GET['id']);
                         </div>
 
                         <div class="form-group col-md-4">
-                            <label>Telefono</label>
+                            <label>Teléfono</label>
                             <input name="telefono" type="number" class="form-control" value="<?php echo $data['telefono'] ?>">
                         </div>
 
@@ -74,7 +74,7 @@ $data=$jugador->select($_GET['id']);
                         </div>
 
                         <div class="form-group col-md-4">
-                            <label>Posicion</label>
+                            <label>Posición</label>
                             <select class="form-control" name="posicion">
                                 <?php
                                     echo '<option selected value="'.$data['id_posicion'].'">'.$data['descripcion'].'</option>';
@@ -94,7 +94,7 @@ $data=$jugador->select($_GET['id']);
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-4">
-                            <label>Numero de camisola</label>
+                            <label>Número de camisola</label>
                             <input type="text" class="form-control" name="camisola" value="<?php echo $data['camisola'] ?>">
                         </div>
 

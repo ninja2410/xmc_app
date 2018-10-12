@@ -12,7 +12,7 @@ $estadistica=new EstadisticaJugador();
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Estadisticas por jugador - Listar</title>
+    <title>Estadísticas por jugador - Listar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
@@ -27,8 +27,8 @@ $estadistica=new EstadisticaJugador();
             <div class="card">
               <div class="card-header card-header-danger">
                 <div class="col-lg-10" style="float:left;">
-                  <h2 class="card-title ">ESTADISTICAS</h4>
-                  <p class="card-category"> Información de estadisticas de jugador</p>
+                  <h2 class="card-title ">ESTADÍSTICAS</h4>
+                  <p class="card-category"> Información de estadísticas de jugador</p>
                 </div>
                 <div class="col-lg-1" style="float:left">
                   <a href="..\..\vista\estadisticaJugador/insert.php" title="Agregar nueva estadistica">

@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Fichas Medicas - Insertar</title>
+    <title>Fichas médicas - Insertar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
@@ -13,8 +13,8 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header card-header-danger">
-                    <h3 class="card-title">Ficha Medica</h3>
-                    <p class="category">Nueva ficha medica.</p>
+                    <h3 class="card-title">Ficha médica</h3>
+                    <p class="category">Nueva ficha médica.</p>
               </div>
               <div class="card-body">
                 <ul class="nav nav-pills nav-pills-success justify-content-center">
