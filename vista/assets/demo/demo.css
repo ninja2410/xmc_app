@@ -521,10 +521,10 @@
 }
 
 .components-page .page-header:after {
-  background: rgba(132, 13, 121, 0.88);
-  background: linear-gradient(45deg, rgba(132, 13, 121, 0.88) 0%, rgba(208, 44, 180, 0.31) 100%);
-  background: -moz-linear-gradient(135deg, rgba(132, 13, 121, 0.88) 0%, rgba(208, 44, 180, 0.31) 100%);
-  background: -webkit-linear-gradient(135deg, rgba(132, 13, 121, 0.88) 0%, rgba(208, 44, 180, 0.31) 100%);
+  background: rgba(7, 0, 143, 0.88);
+  background: linear-gradient(45deg, rgba(7, 0, 143, 0.88) 0%, rgba(7, 0, 143, 0.88) 100%);
+  background: -moz-linear-gradient(135deg, rgba(7, 0, 143, 0.88) 0%, rgba(7, 0, 143, 0.88) 100%);
+  background: -webkit-linear-gradient(135deg, rgba(7, 0, 143, 0.88) 0%, rgba(7, 0, 143, 0.88) 100%);
 }
 
 .components-page .page-header.header-filter:before {
