@@ -17,17 +17,15 @@
     $( "#autoequipo" ).autocomplete(
     {
       source: 'searchEquipo.php',
-      minLength: 0,
-      
+      minLength: 2,
+      autoFocus:true,
       select: function(event, ui)
       {
         $("#equi").val(ui.item.id);
+        $("#autoequipo").val(ui.item.value);
+        
       },
-    }).focus(function () 
-      {
-
-        $(this).autocomplete('search', $(this).val())
-      });
+    });
 
       $( "#autoCategoria" ).autocomplete(
     {
@@ -74,12 +72,13 @@
           <div class="card-body">
             <form method="post", action="..\partido\store.php" id="frm_partido">
               <input type="hidden" name="operation" value="1">
+              <input type="hidden" name="validator" id="validator" value="No hay resultado">
               <div class="row">
                <div class="col-md-3">
                   <div class="form-group">
                     <label class="">Equipo</label>
                     <input type="hidden" id="equi" name="equi">
-                    <input type="text" id="autoequipo" class="form-control">
+                    <input type="text" id="autoequipo" name="autoequipo" class="form-control"  data-equals="foo" riquired>
                   </div>
                 </div>
                 <div class="col-md-3">
@@ -96,7 +95,7 @@
                 </div>
                 <div class="col-md-3">
                   <div class="form-group">
-                    <label class="">Categoría</label>
+                    <label class="">Categoria</label>
                     <input type="hidden" name="cat" id="cat" >
                     <input type="text" id="autoCategoria" name="autoCategoria"  class="form-control">
                   </div>
@@ -159,28 +158,18 @@ $(document).ready(function() {
                     {
                         message: 'El formato de la fecha no es valida',
                         format: 'YYYY/MM/DD'
-                    },
-                    callback:
-                    {
-                        message: 'La fecha debe ser despues de la fecha actual',
-                        callback: function(value, validator) {
-                            var m = new moment(value, 'YYYY/MM/DD', true);
-                            fi = m;
-                            if (!m.isValid()) {
-                                return false;
-                            }
-                            return m.isAfter(f);
-                        }
                     }
                 }
           },
-          h1:
+          autoequipo:
           {
                 validators:
                 {
-                    notEmpty:
-                    {
-                      message: 'Debe ingresar una hora valida'
+                  notEmpty: {
+                        message: 'The email address is required and can\'t be empty'
+                    },
+                    emailAddress: {
+                        message: 'The input is not a valid email address'
                     }
 
                 }
@@ -192,6 +181,17 @@ $(document).ready(function() {
                     notEmpty:
                     {
                       message: 'debe selecionar una categoria'
+                    },
+                    callback:
+                    {
+                        message: 'Debe seleccionar una equipo valido',
+                        callback: function(value, validator, $field)
+                        { console.log(value);
+                            if (value == 'No hay resultado')
+                            {
+                                return false;
+                            }
+                        }
                     }
 
                 }

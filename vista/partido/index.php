@@ -2,7 +2,6 @@
 require_once('..\..\Negocio/ClassPartido.php');
 $partido=new Partido();
 $data=$partido->select(-1);
-
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -20,23 +19,18 @@ $data=$partido->select(-1);
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-12">
-            <div class="card">
-              <div class="card-header card-header-primary">
-                <div class="col-lg-10" style="float:left;">
-                  <h2 class="card-title ">Partidos</h4>
-                  <p class="card-category"> Listado de partidos</p>
+          <div class="card">
+              <div class="card-header card-header-danger row">
+                <div class="col-md-10">
+                  <h3 class="card-title">Jugadores</h3>
+                  <p class="category">Listado de jugadores.</p>
                 </div>
-                <div class="col-lg-1" style="float:left">
-                  <a href="..\..\vista\partido/insert.php" title="Agregar nuevo partido">
-                    <div class="card-header card-header-success card-header-icon" style="float:left">
-                      <div class="card-icon">
-                        <i class="material-icons">add</i>
-                      </div>
-                    </div>
+                <div class="col-md-2 text-right">
+                  <a href="..\..\vista\partido/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true">
+                    <i class="material-icons">add</i>
                   </a>
                 </div>
               </div>
-              <div class="card-body">
                 <div class="table-responsive">
                   <table class="table" id="table1">
                     <thead class=" text-primary">
@@ -53,7 +47,7 @@ $data=$partido->select(-1);
                         Estadio
                       </th>
                       <th>
-                        Equipo
+                        Contrincante
                       </th>
                       <th>
                         Temporada
@@ -62,13 +56,13 @@ $data=$partido->select(-1);
                         Observaciones
                       </th>
                       <th>
-                        Personal técnico
+                        Alineación
                       </th>
                       <th>
-                        Detalles
+                        Personal Tecnico
                       </th>
                       <th>
-                        Acciones
+                        Resultados
                       </th>
                     </thead>
                     <tbody>
