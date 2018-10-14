@@ -44,6 +44,17 @@ class Socio
       return $dt;
     }
 
+    public function select_pagos(){
+      $conexion=new conexion();
+      $conexion->conectar();
+      $query="SELECT S.id_socio ID, CONCAT(SOCIO.nombre, ' ', apellido) SOCIO, M.nombre
+      MEMBRESIA, precio PRECIO FROM SOCIO INNER JOIN REGISTRO_SOCIO S on SOCIO.id_socio = S.id_socio
+      INNER JOIN MEMBRESIA M on S.id_membresia = M.id_membresia";
+      $dt=mysqli_query($conexion->objetoconexion,$query);
+      $conexion->desconectar();
+      return $dt;
+    }
+
 }
 
  ?>

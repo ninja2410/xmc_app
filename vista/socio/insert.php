@@ -1,7 +1,7 @@
 <?php
-// require_once('..\..\Negocio/ClassSocio.php');
-// $socio=new Socio();
-// $data=$socio->select(-1);
+require_once('..\..\Negocio/ClassMembresia.php');
+$membresia=new Membresia();
+$data=$membresia->select(-1);
 // INSERTAR MEMBRESÍAS
  ?>
 <!DOCTYPE html>
@@ -75,7 +75,9 @@
                   <div class="form-group">
                     <label class="bmd-label-floating">Membresía</label>
                     <select class="form-control" name="">
-                      <option value=""></option>
+                      <?php while ($row=mysqli_fetch_array($data)) { ?>
+                      <option value="<?php echo $row['id'] ?>"><?php $row['nombre']?></option>
+                    <?php } ?>
                     </select>
                   </div>
                 </div>
