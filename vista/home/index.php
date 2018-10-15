@@ -6,7 +6,7 @@
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <body>
-        <?php include '..\layoults/barnav2.php'; ?>
+        <?php include '..\layoults/barnavLogged.php'; ?>
         <?php include '..\layoults\scripts2.php'; ?>
-  </body>
+  </body> 
 </html>
