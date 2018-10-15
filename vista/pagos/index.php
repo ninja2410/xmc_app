@@ -21,18 +21,13 @@ $data=$socio->select_pagos();
           <div class="col-md-12">
             <div class="card">
               <div class="card-header card-header-primary">
-                <div class="col-lg-10" style="float:left;">
+                <div class="col-lg-9" style="float:left;">
                   <h2 class="card-title ">Pagos</h4>
                   <p class="card-category"> Registrar pagos de socios Xelaju MC</p>
                 </div>
-                <div class="col-lg-1" style="float:left">
-                  <a href="..\..\vista\socio/insert.php">
-                    <div class="card-header card-header-success card-header-icon" style="float:left">
-                      <div class="card-icon">
-                        <i class="material-icons">add</i>
-                      </div>
-                    </div>
-                  </a>
+                <div class="col-lg-3" style="float:right;">
+                  <a href="..\..\vista\pagos/rpt_socios.php">
+                  <button class="btn btn-info btn-round btn-sm"><i class="fa fa-eye"></i>  Estado de pagos.</button>
                 </div>
               </div>
               <div class="card-body">
@@ -73,8 +68,10 @@ $data=$socio->select_pagos();
                           <?php echo $row['PRECIO']; ?>
                         </td>
                         <td class="td-actions text-lefht">
-                          <a href="..\..\vista\pago/pagar.php?id=<?php echo $row['ID']; ?>&membresia=<?php echo $row['PRECIO']; ?>">
-                          <button class="btn btn-success btn-round btn-sm"><i class="fa fa-money"></i>  Pagos</button>
+                          <a href="..\..\vista\pagos/pagar.php?id=<?php echo $row['ID']; ?>&membresia=<?php echo $row['PRECIO']; ?>">
+                          <button class="btn btn-success btn-round btn-sm"><i class="fa fa-money"></i>  Realizar Pago</button>
+                          <a href="..\..\vista\pagos/pagos.php?id=<?php echo $row['ID']; ?>">
+                          <button class="btn btn-info btn-round btn-sm"><i class="fa fa-eye"></i>  Ver estado de pagos</button>
                         </td>
                         <?php
                       } ?>
