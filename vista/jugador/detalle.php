@@ -43,6 +43,16 @@ function calculaedad($fechanacimiento){
                     <h4><b>Número de teléfono: </b><?php echo $data['telefono']?></h4>
                     <h4><b>Procedencia: </b><?php echo $data['procedencia']?></h4>
                     <h4><b>Posición: </b><?php echo $data['descripcion']?></h4>
+                    <?php
+                        if ($data['id_contrato'] == null) {
+                            echo '<h4><b>Tiene contrato: </b>No</h4>';
+                        }
+                        else
+                        {
+                            echo '<h4><b>Tiene contrato: </b>Si</h4>';
+                        }
+                        
+                    ?>
                 </div>
                 <div class="col-md-3">
                     <ul class="nav flex-column">

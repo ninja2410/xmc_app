@@ -89,35 +89,35 @@ $('#table1').DataTable({
        extend:'copy',
        title:'Listado de jugadores',
        exportOptions:{
-         columns:[0,1]
+        columns:[0,1,2]
        }
      },
      {
        extend:'csv',
        title:'Listado de jugadores',
        exportOptions:{
-         columns:[0,1]
+        columns:[0,1,2]
        }
      },
      {
        extend:'excel',
        title:'Listado de jugadores',
        exportOptions:{
-         columns:[0,1]
+        columns:[0,1,2]
        }
      },
      {
        extend:'pdf',
        title:'Listado de jugadores',
        exportOptions:{
-         columns:[0,1]
+        columns:[0,1,2]
        }
      },
      {
        extend:'print',
        title:'Listado de jugadores',
        exportOptions:{
-         columns:[0,1]
+         columns:[0,1,2]
        }
      }
    ],
