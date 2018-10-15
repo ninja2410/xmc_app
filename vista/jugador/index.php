@@ -26,7 +26,7 @@ $data=$jugador->select(-1);
                   <p class="category">Listado de jugadores.</p>
                 </div>
                 <div class="col-md-2 text-right">
-                  <a href="..\..\vista\jugador/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true">
+                  <a href="..\..\vista\jugador/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar jugador">
                     <i class="material-icons">add</i>
                   </a>
                 </div>
@@ -37,6 +37,9 @@ $data=$jugador->select(-1);
                     <tr>
                       <th>ID</th>
                       <th>Nombre</th>
+                      <th>Categoria</th>
+                      <th>Detalles</th>
+                      <th>Desactivar</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -49,6 +52,9 @@ $data=$jugador->select(-1);
                         </td>
                         <td>
                           <?php echo $row['nombre']." ".$row['apellido']; ?>
+                        </td>
+                        <td>
+                          
                         </td>
                         <td>
                           <a href="..\..\vista\jugador/detalle.php?id=<?php echo $row['id_jugador']; ?>">
