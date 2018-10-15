@@ -37,7 +37,7 @@ $data=$socio->select(-1);
               </div>
               <div class="card-body">
                 <div class="table-responsive">
-                  <table class="table" id="table1">
+                  <table class="table table-striped table-bordered" id="table1">
                     <thead class=" text-primary">
                       <th>
                         ID

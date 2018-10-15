@@ -32,7 +32,7 @@ $data=$partido->select(-1);
                 </div>
               </div>
                 <div class="table-responsive">
-                  <table class="table" id="table1">
+                  <table class="table table-striped table-bordered" id="table1">
                     <thead class=" text-primary">
                       <th>
                         ID
