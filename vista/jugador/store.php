@@ -47,8 +47,7 @@ if ($operacion=="1") {
   move_uploaded_file($_FILES['img']['tmp_name'],'../imagenes/'.$foto);
   chmod('../imagenes/'.$foto,0644);
   $jugador->insert($nombre, $direccion, $fecha_nacimiento, $estado, $padre, $madre, $telefono, $procedencia, $apellidos, $foto, $id_posicion, $camisola,$id_contrato);
-  echo('Se inserto correctamente');
-  // header('Location:index.php');
+  header('Location:index.php');
 }
 elseif($operacion=="2") {
   $jugador->update($id_jugador, $nombre, $direccion, $fecha_nacimiento, $estado, $padre, $madre, $telefono, $procedencia, $apellidos, $foto, $id_posicion, $camisola,$id_contrato);

@@ -29,8 +29,7 @@ function calculaedad($fechanacimiento){
         <div class="container">
             <div class="row" style="padding:20px">
                 <div class="col-md-2">
-                    <img src="../assets/img/examples/mariya-georgieva.jpg" alt="Circle Image" class="img-circle rounded img-fluid">
-                    <!-- src="<?php echo $data['foto']?>" -->
+                    <img src="../imagenes/<?php echo $data['foto']?>" alt="Circle Image" class="img-circle rounded img-fluid">
                 </div>
                 <div class="col-md-7">
                     <h3 class="title"><?php echo $data['nombre']." ".$data["apellido"]?></h3>
