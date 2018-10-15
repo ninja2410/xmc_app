@@ -15,7 +15,7 @@
     <link href="..\assets/css/material-kit.css?v=2.0.4" rel="stylesheet" />
 
     <link href="..\assets/css/xelaju.css" rel="stylesheet" />
-    
+
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/css/bootstrapValidator.min.css"/>
 
     <!-- Iconos de fontawesome -->
@@ -23,3 +23,4 @@
     <!-- DATATABLES -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">

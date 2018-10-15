@@ -48,6 +48,7 @@
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="..\..\vista\socio/index.php">Registro de socios</a>
                 <a class="dropdown-item" href="..\..\vista\pagos/index.php">Pagos</a>
+                <a class="dropdown-item" href="..\..\vista\pagos/rpt_socios.php"> Reporte de pagos
                 <a class="dropdown-item" href="..\..\vista\membresia/index.php">Membresías</a>
                 <a class="dropdown-item" href="..\..\vista\beneficio/index.php">Beneficios</a>
               </div>

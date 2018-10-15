@@ -26,14 +26,10 @@ $data=$socio->select_pagos();
                   <h2 class="card-title ">Pagos</h4>
                   <p class="card-category"> Registrar pagos de socios Xelaju MC</p>
                 </div>
-                <div class="col-lg-3" style="float:right;">
-                  <a href="..\..\vista\pagos/rpt_socios.php">
-                  <button class="btn btn-info btn-round btn-sm"><i class="fa fa-eye"></i>  Estado de pagos.</button>
-                </div>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
-                  <table class="table" id="table1">
+                  <table class="table table-striped table-bordered" id="table1">
                     <thead class=" text-primary">
                       <th>
                         ID

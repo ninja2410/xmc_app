@@ -31,7 +31,7 @@ $data_socio=$socio->select($_GET['id']);
               </div>
               <div class="card-body">
                 <div class="table-responsive">
-                  <table class="table" id="table1">
+                  <table class="table table-striped table-bordered" id="table1">
                     <thead>
                       <th>
                         ID
@@ -74,9 +74,8 @@ $data_socio=$socio->select($_GET['id']);
     <?php include '..\layoults\scripts2.php'; ?>
     <script type="text/javascript">
     $(document).ready(function(){
-$('#table1').DataTable({
+    $('#table1').DataTable({
    dom: 'Bfrtip',
-   "order": [[ 3, "desc" ]],
    buttons: [
      {
        extend:'copy',
@@ -114,6 +113,7 @@ $('#table1').DataTable({
        }
      }
    ],
+   "order": [[ 1, "desc" ]],
 }) ;
 });
     </script>
