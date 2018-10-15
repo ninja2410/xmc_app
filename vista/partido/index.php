@@ -59,10 +59,10 @@ $data=$partido->select(-1);
                         Alineación
                       </th>
                       <th>
-                        Personal Tecnico
+                        Resultados
                       </th>
                       <th>
-                        Resultados
+                        
                       </th>
                     </thead>
                     <tbody>
@@ -94,10 +94,6 @@ $data=$partido->select(-1);
                         <td>
                           <a href="..\..\vista\alineacion/alineacion.php?id=<?php echo $row['id_partido']; ?>">
                           <button class="btn btn-primary btn-round btn-sm">Alineacion</button>
-                        </td>
-                        <td>
-                          <a href="..\..\vista\personaltecnico/index.php?id=<?php echo $row['id_partido']; ?>">
-                          <button class="btn btn-primary btn-round btn-sm">Personal Tecnico</button>
                         </td>
                         <td>
                           <a href="..\..\vista\detalle_partido/index.php?id=<?php echo $row['id_partido']; ?>&id2=<?php echo $row['id_equipo']; ?>">

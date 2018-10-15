@@ -46,6 +46,9 @@ $data=$alineacion->selectPartido($_GET['id']);
                       <th>
                         Posición
                       </th>
+                      <th>
+                        
+                      </th>
                     </thead>
                     <tbody>
                       <?php

@@ -27,6 +27,18 @@ $usuario = $_GET['id'];
               <input type="hidden" name="id" value="<?php echo $usuario; ?>">
               <div class="row">
               <div class="col-md-6">
+              <div class="form-group">
+                  <label class="bmd-label-floating">Nombre</label>
+                    <input type="text" class="form-control" value="<?php echo $dataUs['nombre']; ?>" name="nombre">
+                  </div>
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Apellido</label>
+                    <input type="text" class="form-control" value="<?php echo $dataUs['apellido']; ?>" name="apellido">
+                  </div>
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Correo</label>
+                    <input type="text" class="form-control" value="<?php echo $dataUs['email']; ?>" name="email">
+                  </div>
                   <div class="form-group">
                     <label class="bmd-label-floating">Nombre de Usuario</label>
                     <input type="text" class="form-control" value="<?php echo $dataUs['nombre_usuario']; ?>" name="usuario" >
@@ -37,7 +49,7 @@ $usuario = $_GET['id'];
                   </div>
                   <div class="form-group">
                     <label class="bmd-label-floating">Confirmar la contraseña</label>
-                    <input type="password" class="form-control" name="pass">
+                    <input type="password" class="form-control" name="pass2">
                   </div>
                   <h3>Permisos</h3>
                   <br>
@@ -87,7 +99,90 @@ $usuario = $_GET['id'];
              console.log(data);
            }
       });
+
+      $('#frm_usuario').bootstrapValidator({
+feedbackIcons: {
+    valid: 'glyphicon glyphicon-ok',
+    invalid: 'glyphicon glyphicon-remove',
+    validating: 'glyphicon glyphicon-refresh'
+},
+message: 'Valor no valido',
+fields: 
+{
+    usuario:
+    {
+      message: 'El nombre de usuario no esta disponible',
+        validators: {
+          notEmpty:
+            {
+                message:'Este campo no puede quedar vacio'
+            }
+        }
+    },
+    nombre:
+    {
+        validators:
+        {
+            notEmpty:
+            {
+                message:'Este campo no puede quedar vacio'
+            }
+        }
+    },
+    apellido:
+    {
+        validators:
+        {
+            notEmpty:
+            {
+                message:'Este campo no puede quedar vacio'
+            }
+        }
+    },
+    email:
+    {
+        validators:
+        {
+            notEmpty:
+            {
+                message:'Este campo no puede quedar vacio'
+            },
+            emailAddress: {
+                message: 'Ingrese una direccion de correo valida'
+            }
+        }
+    },
+    pass:
+    {
+        validators:
+        {
+            notEmpty:
+            {
+                message:'Este campo no puede quedar vacio'
+            }
+        }
+    },
+    pass2:
+    {
+        validators:
+        {
+            notEmpty:
+            {
+                message:'Este campo no puede quedar vacio'
+            },
+            identical:
+            {
+              field:'pass',
+              message:'Las contraseñas no coninciden'
+            }
+        }
+    },
+}
+});
       });
+
+
+
     </script>
   </body>
 </html>

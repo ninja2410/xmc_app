@@ -50,7 +50,7 @@
 
   });
   </script>
-    <?php include '..\layoults\barnav2.php'; ?>
+    <?php include '..\layoults\barnav.php'; ?>
     <div class="content">
       <div class="col-md-12">
         <div class="card">

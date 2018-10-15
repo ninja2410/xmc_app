@@ -18,8 +18,8 @@
 <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
 <script src="..\assets/js/material-kit.js?v=2.0.4" type="text/javascript"></script>
 <!--BOOTSTRAP VALIDATOR-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js"></script>
 
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
 <!--DATATABLES-->
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>

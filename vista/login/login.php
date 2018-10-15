@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -6,8 +9,42 @@
     <?php include '..\layoults\headers2.php'; ?>
 </head>
 <body class="login-page sidebar-collapse">
+
   <div class="page-header header-filter" style="background-image: url('../assets/img/login.jpg'); background-size: cover; background-position: top center;">
     <div class="container">
+    <?php
+    if(isset($_SESSION['error']) && $_SESSION['error'])
+    {
+    ?>
+    <div class="alert alert-danger">
+          <div class="alert-icon">
+            <i class="material-icons">error_outline</i>
+          </div>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true"><i class="material-icons">clear</i></span>
+          </button>
+          <b>ERROR AL INICIAR SESION:</b> Verifique el nombre de usuario y la contraseña, si sigue teniendo problemas 
+          contacte con el administrador.
+    </div>
+    <?php 
+    }
+    ?>
+    <?php
+    if(isset($_SESSION['expired']) && $_SESSION['expired'])
+    {
+    ?>
+    <div class="alert alert-danger">
+          <div class="alert-icon">
+            <i class="material-icons">error_outline</i>
+          </div>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true"><i class="material-icons">clear</i></span>
+          </button>
+          <b>SESION EXPIRADA:</b> El tiempo de la sesion a expirado porfavor ingrese de nuevo
+    </div>
+    <?php 
+    }
+    ?>
       <div class="row">
         <div class="col-lg-4 col-md-6 ml-auto mr-auto">
           <div class="card card-login">

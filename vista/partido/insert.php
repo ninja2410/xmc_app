@@ -167,10 +167,8 @@ $(document).ready(function() {
                 {
                   notEmpty: {
                         message: 'The email address is required and can\'t be empty'
-                    },
-                    emailAddress: {
-                        message: 'The input is not a valid email address'
                     }
+                    
 
                 }
           },
@@ -181,17 +179,6 @@ $(document).ready(function() {
                     notEmpty:
                     {
                       message: 'debe selecionar una categoria'
-                    },
-                    callback:
-                    {
-                        message: 'Debe seleccionar una equipo valido',
-                        callback: function(value, validator, $field)
-                        { console.log(value);
-                            if (value == 'No hay resultado')
-                            {
-                                return false;
-                            }
-                        }
                     }
 
                 }
