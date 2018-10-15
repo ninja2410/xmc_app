@@ -200,5 +200,14 @@ foreach($permisos as $key => $value)
   </div>
 </nav>
 <!-- Fin de barra de navegacion -->
-<div class="page-header header-filter" data-parallax="true" style="background-image: url('../assets/img/fondo2.jpg')"></div>
-<div class="main main-raised"></div>
+<div class="page-header header-filter" data-parallax="true" style="background-image: url('../assets/img/home.png')">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 ml-auto mr-auto">
+        <div class="brand text-center">
+          <h2 class="title">Bienvenido <?php echo $_SESSION['usuario']?></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
