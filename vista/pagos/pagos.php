@@ -76,6 +76,7 @@ $data_socio=$socio->select($_GET['id']);
     $(document).ready(function(){
 $('#table1').DataTable({
    dom: 'Bfrtip',
+   "order": [[ 3, "desc" ]],
    buttons: [
      {
        extend:'copy',
