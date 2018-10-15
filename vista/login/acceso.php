@@ -19,10 +19,11 @@ if($result>0)
     {
         $_SESSION['iniciado'] = true;
         $_SESSION['id'] = $fila['id_usuario'];
+        $_SESSION['foto'] = $fila['foto'];
         $_SESSION['usuario'] = $username;
         $_SESSION['start'] = time();
         $_SESSION['expire'] = $_SESSION['start'] + (15 * 60);
-    
+        $_SESSION['error'] = false;
 
         header('Location:/PJ_XJMC/vista/usuario/index.php');
 
@@ -30,6 +31,7 @@ if($result>0)
     }
 }else
 {
+    $_SESSION['error'] = true;
     header('Location:/PJ_XJMC/vista/login/login.php');
 }
 

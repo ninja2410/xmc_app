@@ -19,7 +19,7 @@ $btn='Asignar personal tecnico'
     include '..\layoults\barnav.php';
     ?>
     <div class="main main-raised">
-      <div class="container">
+    <div class="container">
       <?php
           $result = mysqli_num_rows($data);
           if($result>0)

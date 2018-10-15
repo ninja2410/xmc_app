@@ -37,6 +37,16 @@ class Usuario
         return $dt;
     }
 
+    public function nusuario($username)
+    {
+        $conexion=new conexion();
+        $conexion->conectar();
+            $query="CALL SP_NUSUARIO('$username')";
+            $dt=mysqli_query($conexion->objetoconexion,$query);
+        $conexion->desconectar();
+        return $dt;
+    }
+
     public function selectPermiso($id)
     {
         $conexion=new conexion();
@@ -76,9 +86,9 @@ class Usuario
 
     
 
-    public function insert($usuario, $pass)
+    public function insert($usuario, $pass,$nombre,$apellido,$foto,$email)
     {
-        $query="CALL SP_USUARIO_INSERT('$usuario','$pass');";
+        $query="CALL SP_USUARIO_INSERT('$usuario','$pass','$nombre','$apellido','$foto','$email');";
         $bd= new conexion();
 		$dt=$bd->execute_query($query);
 		return $dt;
@@ -108,9 +118,9 @@ class Usuario
 		return $dt;
     }
 
-    public function update($id, $usuario, $pass)
+    public function update($id, $usuario, $pass,$nombre,$apellido,$foto,$email)
     {
-        $query="CALL SP_USUARIO_UPDATE('$id','$usuario','$pass');";
+        $query="CALL SP_USUARIO_UPDATE('$id','$usuario','$pass','$nombre','$apellido','$foto','$email');";
         $bd= new conexion();
 		$dt=$bd->execute_query($query);
 		return $dt;

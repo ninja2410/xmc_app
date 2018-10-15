@@ -8,9 +8,8 @@ if(isset($_SESSION['expire']))
   if($now > $_SESSION['expire']) 
   {
     session_destroy();
-    echo "Su sesion a terminado,
-    <a href='../login/login.php'>Necesita Hacer Login</a>";
-    exit;
+    $_SESSION['expired']=true;
+    header("Location: ../login/login.php");
     $jugadores=0;
   }
 }
@@ -188,7 +187,7 @@ foreach($permisos as $key => $value)
             <li class="dropdown nav-item">
               <a href="#pablo" class="profile-photo dropdown-toggle nav-link" data-toggle="dropdown">
                 <div class="profile-photo-small">
-                  <img src="../assets/img/faces/marc.jpg" alt="Circle Image" class="rounded-circle img-fluid">
+                  <img src="../imagenes/<?php echo $_SESSION['foto'] ?>" alt="Circle Image" class="rounded-circle img-fluid">
                 </div>
               </a>
               <div class="dropdown-menu dropdown-menu-right">
