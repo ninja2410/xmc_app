@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once('..\..\Negocio/ClassPago.php');
 require_once('..\..\Negocio/ClassSocio.php');
 $pago=new Pago();
@@ -10,7 +11,10 @@ $monto=$_POST['amount'];
 $meses=$_POST['mounts'];
 $membresia=$_POST['member'];
 if ($operation==1) {
-  $pago->insert($monto, $socio, $meses, $membresia);
+  if($pago->insert($monto, $socio, $meses, $membresia)){
+    $_SESSION['mensaje']="Se ha almacenado el pago con éxito";
+  }
+
 }
 
 
