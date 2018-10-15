@@ -14,97 +14,149 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header card-header-danger">
-                  <h4 class="card-title">Ingresar nuevo jugador</h4>
+                  <h3 class="card-title">Ingresar nuevo jugador</h3>
                   <p class="category">Complete los campos siguientes</p>
               </div>
               <div class="card-body">
                 <form method="post", action="..\jugador\store.php" enctype="multipart/form-data" id="frm_jugador">
                 <input type="hidden" name="operation" value="1">
-                    <div class="form-row">
-                        <div class="form-group col-md-4">
-                            <label>Nombre</label>
-                            <input name="nombre" type="text" class="form-control" >
-                        </div>
-
-                        <div class="form-group col-md-4">
-                            <label>Apellidos</label>
-                            <input name="apellidos" type="text" class="form-control" >
-                        </div>
-
-                        <div class="form-group col-md-4">
-                            <label>Fecha de nacimiento</label>
-                            <input type="date" class="form-control" name="fecha_nacimiento">
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group col-md-4">
-                            <label>Dirección</label>
-                            <input name="direccion" type="text" class="form-control" >
-                        </div>
-
-                        <div class="form-group col-md-4">
-                            <label>Teléfono</label>
-                            <input name="telefono" type="number" class="form-control" >
-                        </div>
-
-                         <div class="form-group col-md-4">
-                            <label>Procedencia</label>
-                            <input name="procedencia" type="text" class="form-control" >
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group col-md-4">
-                            <label>Nombre del padre</label>
-                            <input name="padre" type="text" class="form-control" >
-                        </div>
-
-                        <div class="form-group col-md-4">
-                            <label>Nombre de la madre</label>
-                            <input type="text" class="form-control" name="madre">
-                        </div>
-
-                         <div class="form-group col-md-4">
-                            <label>Posición</label>
-                            <select class="form-control" name="posicion">
-                                <option selected>Elija la posicion del jugador...</option>
-                                <?php
-                                    include_once('..\..\Negocio/classPosicion.php');
-                                    $posicion=new Posicion();
-                                    $data=$posicion->select(-1);
-                                    while ($row = mysqli_fetch_array($data))
-                                    {
-                                        $valor = $row['id_posicion'];
-                                        $texto = $row['descripcion'];
-                                        echo '<option value="'.$valor.'">'.$texto.'</option>';
-                                    }
-                                ?>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-4">
-                            <label>Número de camisola</label>
-                            <input name="camisola" type="number" class="form-control" >
-                        </div>
-
-                        <div class="form-group col-md-4">
-                            <label>Contrato</label>
-                            <input type="text" class="form-control" name="contrato">
-                        </div>
-
-                        <div class="col-md-4">
-                          <div class="fileinput fileinput-new" data-provides="fileinput">
-                            <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
-                            <div>
-                              <span class="btn btn-default btn-file"><span class="fileinput-new">Buscar imagen</span><span class="fileinput-exists">Cambiar</span><input type="file" name="img"></span>
-                              <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Eliminar</a>
+                    <div>
+                        <h3>Datos personales</h3>
+                        <hr>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label>Nombre</label>
+                                <input name="nombre" type="text" class="form-control" autofocus="autofocus">
                             </div>
-                          </div>
+
+                            <div class="form-group col-md-4">
+                                <label>Apellidos</label>
+                                <input name="apellidos" type="text" class="form-control" >
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label>Fecha de nacimiento</label>
+                                <input type="date" class="form-control" name="fecha_nacimiento" max="<?php echo date("Y-m-d");?>">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label>Dirección</label>
+                                <input name="direccion" type="text" class="form-control" >
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label>Teléfono</label>
+                                <input name="telefono" type="number" class="form-control">
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label>Procedencia</label>
+                                <input name="procedencia" type="text" class="form-control" >
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label>Nombre del padre</label>
+                                <input name="padre" type="text" class="form-control" >
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label>Nombre de la madre</label>
+                                <input type="text" class="form-control" name="madre">
+                            </div>
                         </div>
                     </div>
-                    <div class="form-row">
+
+                    <div>
+                        <h3>Datos tecnicos</h3>
+                        <hr>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label>Posición</label>
+                                <select class="form-control" name="posicion">
+                                    <option selected value="0">Elija la posicion del jugador...</option>
+                                    <?php
+                                        include_once('..\..\Negocio/classPosicion.php');
+                                        $posicion=new Posicion();
+                                        $data=$posicion->select(-1);
+                                        while ($row = mysqli_fetch_array($data))
+                                        {
+                                            $valor = $row['id_posicion'];
+                                            $texto = $row['descripcion'];
+                                            echo '<option value="'.$valor.'">'.$texto.'</option>';
+                                        }
+                                    ?>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label>Número de camisola</label>
+                                <input name="camisola" type="number" class="form-control" >
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label>Contrato</label>
+                                <select class="form-control" name="contrato">
+                                    <option selected value="null">Elija el contrato del jugador...</option>
+                                    <?php
+                                        include_once('..\..\Negocio/ClassContrato.php');
+                                        $contrato=new Contrato();
+                                        $data=$contrato->select(-1);
+                                        while ($row=mysqli_fetch_array($data)) {
+                                            $valor = $row['id_contrato'];
+                                            $texto = $row['titulo'];
+                                            echo '<option value="'.$valor.'">'.$texto.'</option>';
+                                        }
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label>Categoria</label>
+                                <select class="form-control" name="categoria">
+                                    <option selected value="0">Elija la categoria del jugador...</option>
+                                    <?php
+                                        include_once('..\..\Negocio/classCategoria.php');
+                                        $categoria=new Categoria();
+                                        $data=$categoria->select(-1);
+                                        while ($row = mysqli_fetch_array($data))
+                                        {
+                                            $valor = $row['id_categoria'];
+                                            $texto = $row['nombre'];
+                                            echo '<option value="'.$valor.'">'.$texto.'</option>';
+                                        }
+                                    ?>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label>Fecha de inicio</label>
+                                <input type="date" class="form-control" name="fecha_inicio" value="<?php echo date("Y-m-d");?>">
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label>Fecha de final</label>
+                                <input type="date" class="form-control" name="fecha_final" min="<?php echo date("Y-m-d");?>">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                    <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
+                                    <div>
+                                    <span class="btn btn-default btn-file"><span class="fileinput-new">Buscar fotografia del jugador</span><span class="fileinput-exists">Cambiar</span><input type="file" name="img"></span>
+                                    <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Eliminar</a>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="text-right">
                         <?php include '..\layoults\botones.php'; ?>
                     </div>
                     <div class="clearfix"></div>
@@ -139,6 +191,7 @@
                     }
                 }
             },
+
             apellidos:{
             validators:{
                 notEmpty:{
@@ -150,17 +203,19 @@
                     }
                 }
             },
+
             direccion:{
             validators:{
                 notEmpty:{
                     message:'Ingrese la dirección del jugador'
                 },
                 regexp:{
-                    regexp: /^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ\s]*$/,
+                    regexp: /^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ\s\-]*$/,
                     message: 'Solo se aceptan numeros y letras'
                     }
                 }
             },
+
             fecha_nacimiento:{
               validators:{
                   notEmpty:{
@@ -180,6 +235,7 @@
                     }
                 }
             },
+
             padre:{
             validators:{
                 notEmpty:{
@@ -191,6 +247,7 @@
                     }
                 }
             },
+
             madre:{
             validators:{
                 notEmpty:{
@@ -202,6 +259,7 @@
                     }
                 }
             },
+
             procedencia:{
             validators:{
                 notEmpty:{
@@ -213,6 +271,7 @@
                     }
                 }
             },
+
             camisola:{
             validators:{
                 notEmpty:{
@@ -222,6 +281,22 @@
                     regexp: /^[0-9]*$/,
                     message: 'Solo se aceptan números'
                     }
+                }
+            },
+
+            fecha_inicio:{
+              validators:{
+                  notEmpty:{
+                      message:'Ingrese una fecha valida'
+                  }
+                }
+            },
+
+            fecha_final:{
+              validators:{
+                  notEmpty:{
+                      message:'Ingrese una fecha valida'
+                  }
                 }
             },
         }

@@ -51,10 +51,10 @@ $data=$jugador->select(-1);
                           <?php echo $row['id_jugador']; ?>
                         </td>
                         <td>
-                          <?php echo $row['nombre']." ".$row['apellido']; ?>
+                          <?php echo $row['Nombre'];?>
                         </td>
                         <td>
-                          
+                          <?php echo $row['nombre'];?>
                         </td>
                         <td>
                           <a href="..\..\vista\jugador/detalle.php?id=<?php echo $row['id_jugador']; ?>">
