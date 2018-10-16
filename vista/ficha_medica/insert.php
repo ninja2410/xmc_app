@@ -43,7 +43,7 @@
                         <div class="form-row">
                             <div class="form-group col-md-4">
                                 <label>Fecha</label>
-                                <input name="fecha" type="date" class="form-control"  value="<?php echo date("d/m/Y"); ?>">
+                                <input name="fecha" type="date" class="form-control"  value="<?php echo date("Y-m-d");?>" min="<?php echo date("Y-m-d");?>">
                             </div>
 
                             <div class="form-group col-md-4">
@@ -57,7 +57,7 @@
                                         while ($row = mysqli_fetch_array($data))
                                         {
                                             $valor = $row['id_jugador'];
-                                            $texto2 = $row['nombre'];
+                                            $texto2 = $row['Nombre'];
                                             $texto = $texto2.' '.$row['apellido'];
                                             echo '<option value="'.$valor.'">'.$texto.'</option>';
                                         }
