@@ -157,7 +157,12 @@ $data=$personal->selectPermiso(-1);
                     notEmpty:
                     {
                         message:'Este campo no puede quedar vacio'
-                    }
+                    },
+                    regexp:
+                    {
+                            regexp: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/,
+                              message: 'Contraseña no valida, debe contener almenos 1 letra mayúscula, 1 letra minúscula, 1 número, 1 caracter especial y debe ser mayor a 8 dígitos'        
+                    },
                 }
             },
             pass2:

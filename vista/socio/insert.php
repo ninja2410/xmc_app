@@ -74,7 +74,7 @@ $data=$membresia->select(-1);
                 <div class="col-md-4">
                   <div class="form-group">
                     <label class="bmd-label-floating">Membresía</label>
-                    <select class="form-control" name="membresia">
+                    <select class="form-control" name="">
                       <?php while ($row=mysqli_fetch_array($data)) { ?>
                       <option value="<?php echo $row['id_membresia'] ?>"><?php echo $row['nombre']?></option>
                     <?php } ?>
@@ -154,7 +154,11 @@ $data=$membresia->select(-1);
                             min:13,
                             max:13,
                             message:'El DPI debe tener 13 dígitos.'
-                          }
+                          },
+                          remote: {
+                        message: 'Este numero de dpi ya esta asociado, verifique el numero',
+                        url: 'dpi.php'
+                        }
                         }
                     },
                     dir_cobro:{

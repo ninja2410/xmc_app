@@ -22,6 +22,14 @@ $usuario = $_GET['id'];
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
+          <div class="row">
+          <div class="col-md-4">
+            <div class="col-md-8">
+                <a href="<?php echo '..\..\vista\usuario/permisos.php?id='.$_GET['id'];?>">
+                <button class="btn btn-success btn-round"><i class="fas fa-notes-medical fa-lg"></i>Agregar o Quitar permisos</button></a>
+            </div>
+          </div>
+            <div class="col-md-8">
             <form method="post", action="..\usuario\store.php" id="frm_usuario">
               <input type="hidden" name="operation" value="2">
               <input type="hidden" name="id" value="<?php echo $usuario; ?>">
@@ -50,30 +58,14 @@ $usuario = $_GET['id'];
                   <div class="form-group">
                     <label class="bmd-label-floating">Confirmar la contraseña</label>
                     <input type="password" class="form-control" name="pass2">
-                  </div>
-                  <h3>Permisos</h3>
-                  <br>
-              <div class="col-md-6">
-              <?php
-                    while ($row=mysqli_fetch_array($data))
-                    {
-                    ?>
-                  
-                  <div class="checkbox col-md-6">
-                    <label>
-                      <input type="checkbox" id="<?php echo $row['id_permiso']; ?>" name="<?php echo $row['id_permiso']; ?>"> <?php echo $row['descripcion']?>
-                    </label>
-                  </div>
-
-                    <?php         
-                    }
-                    ?>
-              </div>
+                  </div>              
               </div>
             </div>
               <?php include '..\layoults\botones.php'; ?>
               <div class="clearfix"></div>
             </form>
+          </div>
+          </div>
           </div>
         </div>
       </div>
@@ -81,25 +73,7 @@ $usuario = $_GET['id'];
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
     <script type="text/javascript">
-     var us=<?php echo $_GET['id']; ?>;
       $(document).ready(function(){
-        var url = "searchPermiso.php";
-        $.ajax({
-           type: "POST",
-           url: url,
-           dataType: "json",
-           data: {"id_us":us},
-           success: function(data)
-           {
-             for(var i = 0; i < data.length; i++)
-             {
-              $("#"+data[i].id).attr('checked','checked');
-             };
-             
-             console.log(data);
-           }
-      });
-
       $('#frm_usuario').bootstrapValidator({
 feedbackIcons: {
     valid: 'glyphicon glyphicon-ok',

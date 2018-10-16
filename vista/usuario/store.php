@@ -68,8 +68,23 @@ if ($operacion=="1")
 {
 
   $lesion->update($id_usuario, $usuario, $pass,$nombre,$apellido,'',$email);
-  $lesion->deletePermisos($id_usuario);
   $bit->insert('Actualizo el usuario '.$id_usuario, '1');
+
+  foreach($_POST as $key => $value) 
+  {
+
+      if($value=='on')
+      {
+      $lesion->updatePermiso($key,$id_usuario);
+      }
+
+  }
+
+}elseif($operacion=="4") 
+{
+
+  $lesion->deletePermisos($id_usuario);
+  $bit->insert('Modificaron los permisos al usuario '.$id_usuario, '1');
 
   foreach($_POST as $key => $value) 
   {

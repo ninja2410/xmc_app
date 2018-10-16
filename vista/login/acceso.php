@@ -25,7 +25,7 @@ if($result>0)
         $_SESSION['expire'] = $_SESSION['start'] + (15 * 60);
         $_SESSION['error'] = false;
 
-        header('Location:/PJ_XJMC/vista/home/index.php');
+        header('Location:../home/index.php');
 
         
     }
