@@ -46,7 +46,8 @@ elseif($operacion=="2") {
     $estadistica->update($estadistica_id, $campo, $minuto, $valor, 1, $id_jugador, $id_partido);
   }
 }elseif($operacion=="5"){
-  echo $estadistica->insert($campo, $minuto, $valor, 1, $id_jugador, $id_partido);
+  $estadistica->insert($campo, $minuto, $valor, 1, $id_jugador, $id_partido);
+  header('Location:edit.php?partido='.$id_partido);
 }
 //header('Location:index.php');
  ?>

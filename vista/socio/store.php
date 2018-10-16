@@ -28,12 +28,15 @@ if(isset($_POST['dir_cobro'])){
 if (isset($_POST['id'])) {
   $id_socio=$_POST['id'];
 }
+if (isset($_POST['membresia'])) {
+  $id_membresia=$_POST['membresia'];
+}
 $beneficio=new Socio();
 if ($operacion=="1") {
-  $beneficio->insert($nombre, $apellido, $dir_dom, $telefono, $fnac, date('Y-m-d'), $dpi, $dir_cob);
+  $beneficio->insert($nombre, $apellido, $dir_dom, $telefono, $fnac, date('Y-m-d'), $dpi, $dir_cob, $id_membresia);
 }
 elseif($operacion=="2") {
-  $beneficio->update($id_socio, $nombre, $apellido, $dir_dom, $telefono, $fnac, date('Y-m-d'), $dpi, $dir_cob);
+  $beneficio->update($id_socio, $nombre, $apellido, $dir_dom, $telefono, $fnac, date('Y-m-d'), $dpi, $dir_cob, $id_membresia);
 } elseif ($operacion=="3") {
   $beneficio->delete($id_socio);
 }

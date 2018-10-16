@@ -36,6 +36,16 @@ class Jugador
     return $id[0][0];
   }
 
+  public function selectPartido($partido){
+    $query="SELECT A.id_jugador, nombre, descripcion FROM JUGADOR
+      INNER JOIN ALINEACION A on JUGADOR.id_jugador = A.id_jugador
+      INNER JOIN POSICION P on A.id_posicion = P.id_posicion
+      WHERE id_partido=$partido;";
+    $bd= new conexion();
+		$dt=$bd->execute_query($query);
+    return $dt;
+  }
+
   public function select($id){
     $conexion=new conexion();
     $conexion->conectar();

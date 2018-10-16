@@ -74,7 +74,7 @@ $data=$membresia->select(-1);
                 <div class="col-md-4">
                   <div class="form-group">
                     <label class="bmd-label-floating">Membresía</label>
-                    <select class="form-control" name="">
+                    <select class="form-control" name="membresia">
                       <?php while ($row=mysqli_fetch_array($data)) { ?>
                       <option value="<?php echo $row['id_membresia'] ?>"><?php echo $row['nombre']?></option>
                     <?php } ?>

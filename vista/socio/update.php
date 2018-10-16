@@ -2,6 +2,9 @@
 require_once('..\..\Negocio/ClassSocio.php');
 $socio=new Socio();
 $data=$socio->select($_GET['id']);
+require_once('..\..\Negocio/ClassMembresia.php');
+$membresia=new Membresia();
+$dato=$membresia->select(-1);
  ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -74,15 +77,14 @@ $data=$socio->select($_GET['id']);
                 <div class="col-md-4">
                   <div class="form-group">
                     <label class="bmd-label-floating">Membresía</label>
-                    <select class="form-control" name="">
-                      <?php while ($row=mysqli_fetch_array($data)) { ?>
+                    <select class="form-control" name="membresia">
+                      <?php while ($row=mysqli_fetch_array($dato)) { ?>
                       <option value="<?php echo $row['id_membresia'] ?>"><?php echo $row['nombre']?></option>
                     <?php } ?>
                     </select>
                   </div>
                 </div>
               </div>
-
               <?php include '..\layoults\botones.php'; ?>
               <div class="clearfix"></div>
             </form>

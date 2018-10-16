@@ -46,8 +46,8 @@ $data=$socio->select(-1);
                         Nombre
                       </th>
                       <th>
-                        Descripción
-                      </th>
+                        Apellido
+                      </th> 
                       <th>
                         Acciones
                       </th>

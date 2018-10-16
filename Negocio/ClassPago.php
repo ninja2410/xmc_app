@@ -135,12 +135,12 @@ class Pago
   public function est_Socios(){
     $conexion=new conexion();
     $conexion->conectar();
-    $query="SELECT R.id_socio ID, CONCAT(S.nombre, ' ', apellido) SOCIO,M.nombre MEMBRESIA, count(id_pago) PAGOS ,
+    $query="SELECT S.id_socio ID, CONCAT(S.nombre, ' ', apellido) SOCIO,M.nombre MEMBRESIA, count(id_pago) PAGOS ,
       TIMESTAMPDIFF(MONTH, (SELECT fecha FROM PAGO WHERE PAGO.id_socio=S.id_socio ORDER BY id_pago desc limit 1), CURDATE()) PENDIENTES
     FROM PAGO
-    INNER JOIN SOCIO S on PAGO.id_socio = S.id_socio
-    INNER JOIN REGISTRO_SOCIO R on S.id_socio = R.id_socio
-    INNER JOIN MEMBRESIA M on R.id_membresia = M.id_membresia
+    LEFT JOIN SOCIO S on PAGO.id_socio = S.id_socio
+    LEFT JOIN REGISTRO_SOCIO R on S.id_socio = R.id_socio
+    LEFT JOIN MEMBRESIA M on R.id_membresia = M.id_membresia
     GROUP BY SOCIO;";
     $dt=mysqli_query($conexion->objetoconexion,$query);
     $conexion->desconectar();

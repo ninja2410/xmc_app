@@ -5,7 +5,7 @@ require_once('..\..\Negocio/ClassEstadisticaJugador.php');
 $datoPartido=new DatoPartido();
 $dato=$datoPartido->select(-1);
 $jugador=new Jugador();
-$jugadores=$jugador->select(-1);
+$jugadores=$jugador->selectPartido($_GET['partido']);
 $estadistica=new EstadisticaJugador();
  ?>
 <!DOCTYPE html>
@@ -65,7 +65,7 @@ $estadistica=new EstadisticaJugador();
                         ?>
                         <tr>
                           <td><?php echo $val['id_jugador']; ?></td>
-                          <td><?php echo $val['Nombre']; ?></td>
+                          <td><?php echo $val['nombre']; ?></td>
                           <?php
                           foreach ($dato as $key => $dt) {
                             $row=$estadistica->buscarDato($dt['id_dato_partido'], $_GET['partido'], $val['id_jugador']);
@@ -94,6 +94,8 @@ $estadistica=new EstadisticaJugador();
                        ?>
                     </tbody>
                   </table>
+                  <a href="edit.php?partido=<?php echo $_GET['partido']; ?>"> <button type="button" class="btn btn-info pull-right btn-round"><i class="material-icons">edit</i> Editar</button></a>
+                  <a href="javascript:history.back(-1);"> <button type="button" class="btn btn-danger pull-right btn-round"><i class="fas fa-undo-alt fa-lg"></i> Regresar</button></a>
                 </div>
               </div>
             </div>

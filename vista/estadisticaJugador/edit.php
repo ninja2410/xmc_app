@@ -5,7 +5,7 @@ require_once('..\..\Negocio/ClassEstadisticaJugador.php');
 $datoPartido=new DatoPartido();
 $dato=$datoPartido->select(-1);
 $jugador=new Jugador();
-$jugadores=$jugador->select(-1);
+$jugadores=$jugador->selectPartido($_GET['partido']);
 $estadistica=new EstadisticaJugador();
  ?>
 <!DOCTYPE html>
@@ -65,7 +65,7 @@ $estadistica=new EstadisticaJugador();
                         ?>
                         <tr>
                           <td><?php echo $value['id_jugador']; ?></td>
-                          <td><?php echo $value['nombre'].' '.$value['apellido']; ?></td>
+                          <td><?php echo $value['nombre'] ?></td>
                           <?php
                           foreach ($dato as $key => $dt) {
                             $row=$estadistica->buscarDato($dt['id_dato_partido'], $_GET['partido'], $value['id_jugador']);
@@ -73,7 +73,7 @@ $estadistica=new EstadisticaJugador();
                             ?>
                             <!-- MODAL DE EDICIÓN -->
                             <!-- Modal -->
-                            <div class="modal fade" id="<?php echo "loginModal".$row['id_estadistica_jugador']; ?>" tabindex="-1" role="">
+                            <div class="modal fade" id="<?php echo "loginModal".$key.$row['id_dato_partido'].$value['id_jugador']; ?>" tabindex="-1" role="">
                               <div class="modal-dialog modal-login" role="document">
                                   <div class="modal-content">
                                       <div class="card card-signup card-plain">
@@ -84,7 +84,7 @@ $estadistica=new EstadisticaJugador();
                                               </div>
                                           </div>
                                           <div class="modal-body">
-                                              <form class="form" method="POST" action="store.php" id="<?php echo "frm".$row['id_estadistica_jugador']; ?>">
+                                              <form class="form" method="POST" action="store.php" id="<?php echo "frm".$key.$row['id_dato_partido'].$value['id_jugador']; ?>">
                                                 <input type="hidden" name="estadistica" value="<?php echo $row['id_estadistica_jugador']; ?>">
                                                 <input type="hidden" name="dato" value="<?php echo $dt['id_dato_partido']; ?>">
                                                 <input type="hidden" name="jugador" value="<?php echo $value['id_jugador']; ?>">
@@ -111,17 +111,18 @@ $estadistica=new EstadisticaJugador();
                                                           </div>
                                                       </div>
                                                   </div>
-                                              </form>
+
                                           </div>
                                           <div class="modal-footer justify-content-center">
-                                            <button onclick="enviarDatos('<?php echo "frm".$row['id_estadistica_jugador'];?>', '<?php echo "loginModal".$row['id_estadistica_jugador']; ?>')" type="button" class="btn btn-success pull-right btn-round"><i class="fas fa-check fa-lg"></i> Aceptar</button>
+                                            <button onclick="enviarDatos('<?php echo "frm".$row['id_estadistica_jugador'];?>', '<?php echo "loginModal".$key.$row['id_dato_partido'].$value['id_jugador']; ?>')" type="submit" class="btn btn-success pull-right btn-round"><i class="fas fa-check fa-lg"></i> Aceptar</button>
                                           </div>
+                                          </form>
                                       </div>
                                   </div>
                               </div>
                           </div>
                           <!--Fin del modal-->
-                            <td style="text-align:center;" data-toggle="modal" data-target="<?php echo "#loginModal".$row['id_estadistica_jugador']; ?>" data-backdrop="false"
+                            <td style="text-align:center;" data-toggle="modal" data-target="<?php echo "#loginModal".$key.$row['id_dato_partido'].$value['id_jugador']; ?>" data-backdrop="false"
                               <?php
                             ?>
                             <?php if ($result!=''): ?>
@@ -147,6 +148,7 @@ $estadistica=new EstadisticaJugador();
                        ?>
                     </tbody>
                   </table>
+                  <a href="index.php?partido=<?php echo $_GET['partido']; ?>"> <button type="button" class="btn btn-danger pull-right btn-round"><i class="fas fa-undo-alt fa-lg"></i> Regresar</button></a>
                 </div>
               </div>
             </div>
@@ -157,19 +159,19 @@ $estadistica=new EstadisticaJugador();
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
     <script type="text/javascript">
-      function enviarDatos(id_formulario, id_modal){
-        var url = "store.php";
-        $.ajax({
-           type: "POST",
-           url: url,
-           data: $("#"+id_formulario).serialize(),
-           success: function(data)
-           {
-             alert(data);
-           }
-      });
-      $('#'+id_modal).hide();
-      location.reload();
+      // function enviarDatos(id_formulario, id_modal){
+      //
+      //   var url = "store.php";
+      //   $.ajax({
+      //      type: "POST",
+      //      url: url,
+      //      data: $("#"+id_formulario).serialize(),
+      //      success: function(data)
+      //      {
+      //      }
+      // });
+      // $('#'+id_modal).hide();
+      // location.reload();
     }
     </script>
   </body>
