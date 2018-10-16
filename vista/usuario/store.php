@@ -50,13 +50,7 @@ if ($operacion=="1")
 
   foreach($_POST as $key => $value) 
   {
-    if($cont<4)
-    {
-      $cont++;
-      echo "POST parameter '$key' has '$value'".$cont;
-    }
-    else
-    {
+
       echo "  '$key' = '$value'";
       
       
@@ -65,7 +59,7 @@ if ($operacion=="1")
       $lesion->insertPermiso($key);
       }
 
-    }
+    
   }
 
 
@@ -79,23 +73,12 @@ if ($operacion=="1")
 
   foreach($_POST as $key => $value) 
   {
-    if($cont<4)
-    {
-      $cont++;
-      echo "POST parameter '$key' has '$value'".$cont;
-    }
-    else
-    {
-      echo "  '$key' = '$value'";
-      
-      
+
       if($value=='on')
       {
       $lesion->updatePermiso($key,$id_usuario);
       }
 
-    }
-  
   }
 
 }

@@ -11,10 +11,11 @@ $data=$temporada->select(-1);
     <title>Temporadas - Listar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
-  <body>
+  <body class="profile-page sidebar-collapse">
     <?php
     include '..\layoults\barnav.php';
     ?>
+    <div class="main main-raised">
     <div class="content">
       <div class="container-fluid">
         <div class="row">
@@ -97,6 +98,7 @@ $data=$temporada->select(-1);
             </div>
           </div>
         </div>
+      </div>
       </div>
     </div>
     <?php include '..\layoults\footer.php'; ?>
