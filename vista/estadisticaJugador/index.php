@@ -61,14 +61,14 @@ $estadistica=new EstadisticaJugador();
                     </thead>
                     <tbody>
                       <?php
-                      foreach ($jugadores as $key => $value) {
+                      foreach ($jugadores as $key => $val) {
                         ?>
                         <tr>
-                          <td><?php echo $value['id_jugador']; ?></td>
-                          <td><?php echo $value['nombre'].' '.$value['apellido']; ?></td>
+                          <td><?php echo $val['id_jugador']; ?></td>
+                          <td><?php echo $val['Nombre']; ?></td>
                           <?php
                           foreach ($dato as $key => $dt) {
-                            $row=$estadistica->buscarDato($dt['id_dato_partido'], $_GET['partido'], $value['id_jugador']);
+                            $row=$estadistica->buscarDato($dt['id_dato_partido'], $_GET['partido'], $val['id_jugador']);
                             $result=$row['valor'];
                             ?>
                             <td style="text-align:center;"  <?php

@@ -59,19 +59,30 @@ $data=$socio->select($_GET['id']);
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-5">
+                <div class="col-md-4">
                   <div class="form-group">
                     <label class="bmd-label-floating">DPI</label>
                     <input name="dpi" type="text" class="form-control" value="<?php  echo $data['DPI']; ?>">
                   </div>
                 </div>
-                <div class="col-md-7">
+                <div class="col-md-4">
                   <div class="form-group">
                     <label class="bmd-label-floating">Dirección de cobro</label>
                     <input name="dir_cobro" type="text" class="form-control" value="<?php echo $data['direccion_cobro']; ?>">
                   </div>
                 </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Membresía</label>
+                    <select class="form-control" name="">
+                      <?php while ($row=mysqli_fetch_array($data)) { ?>
+                      <option value="<?php echo $row['id_membresia'] ?>"><?php echo $row['nombre']?></option>
+                    <?php } ?>
+                    </select>
+                  </div>
+                </div>
               </div>
+
               <?php include '..\layoults\botones.php'; ?>
               <div class="clearfix"></div>
             </form>

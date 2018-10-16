@@ -44,10 +44,10 @@ class Jugador
       $dt=mysqli_query($conexion->objetoconexion,$query);
     }
     else{
-      $query="SELECT J.id_jugador, J.nombre, J.direccion, J.fecha_nacimiento, J.estado, J.padre, J.madre, J.telefono, J.procedencia, J.apellido, 
+      $query="SELECT J.id_jugador, J.nombre jnombre, J.direccion, J.fecha_nacimiento, J.estado, J.padre, J.madre, J.telefono, J.procedencia, J.apellido japellido, 
       J.foto, J.id_posicion, P.descripcion, J.camisola, J.id_contrato,C.nombre as categoria, AC.fecha_inicio, AC.fecha_final, AC.id_asignacion_categoria, CT.titulo
       FROM ASIGNACION_CATEGORIA AC, CATEGORIA C,JUGADOR J, POSICION P, CONTRATO CT
-      WHERE J.id_jugador=$id AND AC.estado=1 and C.estado=1 and J.estado=1 and P.estado=1 and CT.estado=1 AND J.id_posicion=P.id_posicion 
+      WHERE J.id_jugador=$id AND AC.estado=1 and C.estado=1 and J.estado=1 and P.estado=1 and CT.estado=1 AND J.id_posicion=P.id_posicion
       and AC.id_categoria = C.id_categoria and AC.id_jugador = J.id_jugador;";
       $tmp=mysqli_query($conexion->objetoconexion,$query);
       $dt=mysqli_fetch_assoc($tmp);

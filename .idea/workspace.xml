@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9d76d6cf-883d-442f-aa01-af974d4f3341" name="Default Changelist" comment="Corrección inserción documentos digitales">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vista/imagenes/DOC_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vista/imagenes/DOC_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vista/imagenes/DOC_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vista/imagenes/ESCUDO_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vista/imagenes/ESCUDO_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vista/imagenes/ESCUDO_6.png" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/vista/composer.json</pharConfigPath>
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1560312433">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="php" value="9" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="PHP" value="9" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="php" value="40" />
+          <entry key="txt" value="51" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="PHP" value="40" />
+          <entry key="PLAIN_TEXT" value="51" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Negocio/ClassDocumento.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="96">
+              <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/vista/documento_digital/index.php" />
+        <option value="$PROJECT_DIR$/Negocio/ClassDocumento.php" />
+        <option value="$PROJECT_DIR$/vista/documento_digital/store.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/vista/package.json" />
+    </packageJsonPaths>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="10" />
+    <option name="y" value="20" />
+    <option name="width" value="1346" />
+    <option name="height" value="688" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="xmc_app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmc_app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmc_app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmc_app" type="462c0819:PsiDirectoryNode" />
+              <item name="Conexion" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmc_app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmc_app" type="462c0819:PsiDirectoryNode" />
+              <item name="Negocio" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmc_app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmc_app" type="462c0819:PsiDirectoryNode" />
+              <item name="vista" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xmc_app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xmc_app" type="462c0819:PsiDirectoryNode" />
+              <item name="vista" type="462c0819:PsiDirectoryNode" />
+              <item name="documento_digital" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Conexion/conexion.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Negocio/ClassAlineacion.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Negocio/ClassContrato.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Negocio/ClassEntrenador.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Negocio/ClassPartido.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/Negocio/ClassUsuario.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/alineacion/index.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/alineacion/insert.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/alineacion/store.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/alineacion/update.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/assets/css/xelaju.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/contrato/detalle.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/contrato/index.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/contrato/insert.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/contrato/store.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/contrato/update.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/detalle_partido/update.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/entrenador/index.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/entrenador/insert.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/entrenador/store.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/entrenador/update.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/equipo/index.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/equipo/store.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/equipo/update.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/estadio/insert.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/estadio/update.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/inicio/index.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/layoults/barnav.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/layoults/barnav2.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/layoults/barnavLogged.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/layoults/headers2.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/login/acceso.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/login/login.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/partido/index.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/partido/insert.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/partido/store.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/personaltecnico/insert.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/personaltecnico/store.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/personaltecnico/update.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/temporada/insert.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/usuario/index.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/usuario/store.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/usuario/update.php</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/alineacion/alineacion.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/alineacion/insert_alineacion.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/alineacion/searchPosicion.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/assets/img/Pagina_404.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/assets/img/home.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/entrenador/detalle.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/home/index.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/imagenes/ESCUDO_2.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/inicio/error.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/inicio/index2.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vista/usuario/searchPermiso.php</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9d76d6cf-883d-442f-aa01-af974d4f3341" name="Default Changelist" comment="" />
+      <created>1537229839450</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1537229839450</updated>
+      <workItem from="1537229843981" duration="1489000" />
+      <workItem from="1539299288589" duration="2761000" />
+    </task>
+    <task id="LOCAL-00001" summary="Merge">
+      <created>1539299586912</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1539299586912</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Corrección inserción documentos digitales">
+      <created>1539300843085</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1539300843085</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="4250000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24659607" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" visible="true" weight="0.3295082" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="Merge" />
+    <MESSAGE value="Corrección inserción documentos digitales" />
+    <option name="LAST_COMMIT_MESSAGE" value="Corrección inserción documentos digitales" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/vista/lesion/store.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="25" lean-forward="true" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Negocio/ClassEntrenador.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Conexion/conexion.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="27" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vista/documento_digital/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vista/documento_digital/store.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="633">
+          <caret line="47" column="29" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Negocio/ClassDocumento.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
