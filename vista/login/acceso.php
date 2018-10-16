@@ -22,12 +22,13 @@ if($result>0)
         $_SESSION['foto'] = $fila['foto'];
         $_SESSION['usuario'] = $username;
         $_SESSION['start'] = time();
-        $_SESSION['expire'] = $_SESSION['start'] + (15 * 60);
+        $_SESSION['expire'] = $_SESSION['start'] + (120 * 60);
         $_SESSION['error'] = false;
 
         header('Location:../home/index.php');
 
         
+
     }
 }else
 {

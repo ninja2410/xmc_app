@@ -178,12 +178,20 @@ foreach($permisos as $key => $value)
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="..\..\vista\personaltecnico/index.php">Personal Técnico</a>
                 <a class="dropdown-item" href="..\..\vista\prensa/index.php">Prensa</a>
-                <a class="dropdown-item" href="..\..\vista\usuario/index.php">Usuarios</a>
               </div>
             </li>
             <?php
             }
             ?>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="material-icons">accessibility_new</i> Administrador
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="..\..\vista\usuario/index.php">Usuarios</a>
+                <a class="dropdown-item" href="..\..\vista\bitacora/index.php">Bitacora</a>
+              </div>
+            </li>
             <li class="dropdown nav-item">
               <a href="#pablo" class="profile-photo dropdown-toggle nav-link" data-toggle="dropdown">
                 <div class="profile-photo-small">
