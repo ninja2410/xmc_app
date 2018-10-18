@@ -102,6 +102,19 @@
                       }
                   }
               },
+              
+              ciudad:{
+              validators:{
+                  notEmpty:{
+                      message:'Ingrese el nombre de la ciudad'
+                  },
+                  regexp:{
+                    regexp: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]*$/,
+                      message: 'Solo se aceptan letras'
+                    }
+                }
+            },
+
         }
       })
     });
