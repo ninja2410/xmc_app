@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9d76d6cf-883d-442f-aa01-af974d4f3341" name="Default Changelist" comment="Corrección inserción documentos digitales">
+    <list default="true" id="9d76d6cf-883d-442f-aa01-af974d4f3341" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Negocio/ClassDocumento.php" beforeDir="false" afterPath="$PROJECT_DIR$/Negocio/ClassDocumento.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vista/documento_digital/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/vista/documento_digital/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vista/documento_digital/insert.php" beforeDir="false" afterPath="$PROJECT_DIR$/vista/documento_digital/insert.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vista/partido/insert.php" beforeDir="false" afterPath="$PROJECT_DIR$/vista/partido/insert.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,23 +29,23 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="php" value="11" />
+          <entry key="php" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PHP" value="11" />
+          <entry key="PHP" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="76" />
+          <entry key="php" value="219" />
           <entry key="txt" value="51" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="76" />
+          <entry key="PHP" value="219" />
           <entry key="PLAIN_TEXT" value="51" />
         </counts>
       </usages-collector>
@@ -62,11 +62,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vista/documento_digital/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="25" column="97" selection-start-line="25" selection-start-column="97" selection-end-line="25" selection-end-column="97" />
+            <state relative-caret-position="-1356">
+              <caret line="30" column="32" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vista/documento_digital/insert.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-659">
+              <caret line="27" column="34" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/vista/partido/insert.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="205">
+              <caret line="190" column="22" selection-start-line="190" selection-start-column="22" selection-end-line="190" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -82,6 +100,8 @@
         <option value="$PROJECT_DIR$/vista/documento_digital/store.php" />
         <option value="$PROJECT_DIR$/Negocio/ClassDocumento.php" />
         <option value="$PROJECT_DIR$/vista/documento_digital/index.php" />
+        <option value="$PROJECT_DIR$/vista/documento_digital/insert.php" />
+        <option value="$PROJECT_DIR$/vista/partido/insert.php" />
       </list>
     </option>
   </component>
@@ -125,7 +145,7 @@
               <item name="xmc_app" type="b2602c69:ProjectViewProjectNode" />
               <item name="xmc_app" type="462c0819:PsiDirectoryNode" />
               <item name="vista" type="462c0819:PsiDirectoryNode" />
-              <item name="documento_digital" type="462c0819:PsiDirectoryNode" />
+              <item name="partido" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -163,7 +183,7 @@
       <workItem from="1537229843981" duration="1489000" />
       <workItem from="1539299288589" duration="2761000" />
       <workItem from="1539706684341" duration="465000" />
-      <workItem from="1539914582302" duration="669000" />
+      <workItem from="1539914582302" duration="3967000" />
     </task>
     <task id="LOCAL-00001" summary="Merge">
       <created>1539299586912</created>
@@ -179,11 +199,18 @@
       <option name="project" value="LOCAL" />
       <updated>1539300843085</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Corrección inserción documentos digitales">
+      <created>1539915317352</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1539915317353</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5384000" />
+    <option name="totallyTimeSpent" value="8682000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -257,8 +284,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vista/documento_digital/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="25" column="97" selection-start-line="25" selection-start-column="97" selection-end-line="25" selection-end-column="97" />
+        <state relative-caret-position="-1356">
+          <caret line="30" column="32" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vista/documento_digital/insert.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-659">
+          <caret line="27" column="34" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vista/partido/insert.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="190" column="22" selection-start-line="190" selection-start-column="22" selection-end-line="190" selection-end-column="22" />
         </state>
       </provider>
     </entry>

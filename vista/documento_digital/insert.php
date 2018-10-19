@@ -25,9 +25,9 @@ $data=$categoria->select(-1);
               <input type="hidden" name="operation" value="1">
               <div class="row">
                 <div class="col-md-4">
-                  <div class="form-group">
-                    <label class="bmd-label-floating">Fecha</label>
-                    <input type="text" class="form-control" name="fecha">
+                    <label class="">Fecha</label>
+                    <div class="form-group">
+                    <input type="text" class="form-control datetimepicker" name="fecha">
                   </div>
                 </div>
                 <div class="col-md-8">
@@ -75,6 +75,20 @@ $data=$categoria->select(-1);
     <?php include '..\layoults\scripts2.php'; ?>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
     <script type="text/javascript">
+        $('.datetimepicker').datetimepicker({
+            format:'DD/MM/YYYY',
+            icons: {
+                time: "fa fa-clock-o",
+                date: "fa fa-calendar",
+                up: "fa fa-chevron-up",
+                down: "fa fa-chevron-down",
+                previous: 'fa fa-chevron-left',
+                next: 'fa fa-chevron-right',
+                today: 'fa fa-screenshot',
+                clear: 'fa fa-trash',
+                close: 'fa fa-remove'
+            }
+        });
     $(document).ready(function(){
       $('#frm_document').bootstrapValidator({
       feedbackIcons: {

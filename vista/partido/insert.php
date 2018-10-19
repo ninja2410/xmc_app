@@ -90,14 +90,14 @@
                 <div class="col-md-3">
                   <div class="form-group">
                     <label class="">Hora</label>
-                    <input type="time" placeholder="DD/MM/YYYY" class="form-control" name="hora">
+                    <input type="text" placeholder="" class="form-control datetimepicker" id='datetimepicker3' name="hora">
                   </div>
                 </div>
                 <div class="col-md-3">
                   <div class="form-group">
                     <label class="">Categoria</label>
                     <input type="hidden" name="cat" id="cat" >
-                    <input type="text" id="autoCategoria" name="autoCategoria"  class="form-control">
+                    <input type="text" name="autoCategoria"  class="form-control">
                   </div>
                 </div>
               </div>
@@ -186,7 +186,21 @@ $(document).ready(function() {
         }
     });
 });
-
+      <!-- javascript for init -->
+      $('.datetimepicker').datetimepicker({
+          format:'LT',
+          icons: {
+              time: "fa fa-clock-o",
+              date: "fa fa-calendar",
+              up: "fa fa-chevron-up",
+              down: "fa fa-chevron-down",
+              previous: 'fa fa-chevron-left',
+              next: 'fa fa-chevron-right',
+              today: 'fa fa-screenshot',
+              clear: 'fa fa-trash',
+              close: 'fa fa-remove'
+          }
+      });
 
     </script>
   </body>
