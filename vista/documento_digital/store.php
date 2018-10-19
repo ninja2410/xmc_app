@@ -6,7 +6,9 @@ if(isset($_POST['operation'])){
   $operacion=$_POST['operation'];
 }
 if(isset($_POST['fecha'])){
-  $fecha=$_POST['fecha'];
+  $dt_=$_POST['fecha'];
+    $arr_=explode("/", $dt_);
+    $fecha=$arr_[2].'-'. $arr_[1].'-'. $arr_[0];
 }
 
 if(isset($_POST['descripcion'])){
