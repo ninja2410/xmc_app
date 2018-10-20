@@ -4,8 +4,8 @@ require_once('..\..\Negocio/ClassJugador.php');
 require_once('..\..\Negocio/ClassEstadisticaJugador.php');
 $datoPartido=new DatoPartido();
 $dato=$datoPartido->select(-1);
-$jugador=new Jugador();
-$jugadores=$jugador->selectPartido($_GET['partido']);
+$jugadorC=new Jugador();
+$jugadoresL=$jugadorC->selectPartido($_GET['partido']);
 $estadistica=new EstadisticaJugador();
  ?>
 <!DOCTYPE html>
@@ -61,7 +61,7 @@ $estadistica=new EstadisticaJugador();
                     </thead>
                     <tbody>
                       <?php
-                      foreach ($jugadores as $key => $value) {
+                      foreach ($jugadoresL as $key => $value) {
                         ?>
                         <tr>
                           <td><?php echo $value['id_jugador']; ?></td>

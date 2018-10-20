@@ -14,7 +14,7 @@ class DatoPartido
         $conexion->conectar();
         if ($id==-1)
         {
-            $query="SELECT * FROM DATO_PARTIDO";
+            $query="SELECT * FROM DATO_PARTIDO;";
             $dt=mysqli_query($conexion->objetoconexion,$query);
         }
         $conexion->desconectar();
