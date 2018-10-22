@@ -120,7 +120,7 @@ $estadistica=new EstadisticaJugador();
                                       </div>
                                   </div>
                               </div>
-                          </div>
+                            </div>
                           <!--Fin del modal-->
                             <td style="text-align:center;" data-toggle="modal" data-target="<?php echo "#loginModal".$key.$row['id_dato_partido'].$value['id_jugador']; ?>" data-backdrop="false"
                               <?php
@@ -172,7 +172,6 @@ $estadistica=new EstadisticaJugador();
       // });
       // $('#'+id_modal).hide();
       // location.reload();
-    }
     </script>
   </body>
 </html>

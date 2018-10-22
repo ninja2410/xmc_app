@@ -7,17 +7,47 @@ class Socio
 {
 
     private $query;
-    public function insert($nombre, $apellido, $dir_dom, $telefono, $fnac, $freg, $dpi, $dir_cob){
-      $query="CALL SP_SOCIO_INSERT('$nombre', '$apellido', '$dir_dom', '$telefono', '$fnac', '$freg',1, '$dpi', '$dir_cob');";
-      $bd= new conexion();
-  		$dt=$bd->execute_query($query);
+    public function insert($nombre, $apellido, $dir_dom, $telefono, $fnac, $freg, $dpi, $dir_cob, $membresia, $email, $foto){
+      try {
+        $query="CALL SP_SOCIO_INSERT('$nombre', '$apellido', '$dir_dom', '$telefono', '$fnac', '$freg',1, '$dpi', '$dir_cob', '$email', '$foto');";
+        $bd= new conexion();
+        $dt=$bd->execute_query($query);
+        $tmp=$this->ultimo();
+        $id_socio=$tmp['x'];
+        $query="INSERT INTO REGISTRO_SOCIO(estado, id_membresia, id_socio) VALUES (1, $membresia, $id_socio );";
+    		$dt=$bd->execute_query($query);
+      } catch (\Exception $e) {
+        die("No se pudo conectar: " . $e->getMessage());
+      }
   		return $dt;
     }
-
-    public function update($id, $nombre, $apellido, $dir_dom, $telefono, $fnac, $freg, $dpi, $dir_cob){
-      $query="CALL SP_SOCIO_UPDATE($id,'$nombre', '$apellido', '$dir_dom', '$telefono', '$fnac', '$freg',1, '$dpi', '$dir_cob');";
+    public function correlativo(){
+      $query="SELECT coalesce(MAX(id_socio)+1, 1) as x from SOCIO;";
       $bd= new conexion();
   		$dt=$bd->execute_query($query);
+      $id=mysqli_fetch_array($dt);
+      return $id[0];
+    }
+    public function ultimo(){
+      $query="SELECT MAX(id_socio) x FROM SOCIO";
+      $bd= new conexion();
+      $dt=$bd->execute_query($query);
+  		return mysqli_fetch_assoc($dt);
+    }
+
+    public function update($id, $nombre, $apellido, $dir_dom, $telefono, $fnac, $freg, $dpi, $dir_cob, $membresia, $email, $foto){
+      $query="CALL SP_SOCIO_UPDATE($id,'$nombre', '$apellido', '$dir_dom', '$telefono', '$fnac', '$freg',1, '$dpi', '$dir_cob', '$email', '$foto');";
+      $bd= new conexion();
+  		$dt=$bd->execute_query($query);
+      $query="SELECT COUNT(id_socio) x FROM REGISTRO_SOCIO WHERE id_socio=$id AND id_membresia=$membresia;";
+      $tmp=$bd->execute_query($query);
+      $tmp=mysqli_fetch_assoc($tmp);
+      if ($tmp['x']==0) {
+        $query="UPDATE REGISTRO_SOCIO SET fecha_cancelacion=date('Y-m-d'), SET estado=0 WHERE id_socio=$id;";
+        $dt=$bd->execute_query($query);
+        $query="INSERT INTO REGISTRO_SOCIO(estado, id_membresia, id_socio) VALUES (1, $membresia, $id );";
+    		$dt=$bd->execute_query($query);
+      }
   		return $dt;
     }
 
@@ -32,11 +62,11 @@ class Socio
       $conexion=new conexion();
       $conexion->conectar();
       if ($id==-1) {
-        $query="SELECT * FROM SOCIO WHERE estado=1";
+        $query="SELECT * FROM SOCIO WHERE estado=1 ORDER BY fecha_registro DESC";
         $dt=mysqli_query($conexion->objetoconexion,$query);
       }
       else{
-        $query="SELECT * FROM SOCIO WHERE id_socio=$id AND estado=1";
+        $query="SELECT * FROM SOCIO WHERE id_socio=$id AND estado=1 ORDER BY fecha_registro DESC";
         $tmp=mysqli_query($conexion->objetoconexion,$query);
         $dt=mysqli_fetch_assoc($tmp);
       }

@@ -5,7 +5,7 @@ $now = time();
 
 if(isset($_SESSION['expire']))
 {
-  if($now > $_SESSION['expire']) 
+  if($now > $_SESSION['expire'])
   {
     session_destroy();
     $_SESSION['expired']=true;
@@ -24,7 +24,7 @@ if(!isset($_SESSION['iniciado']))
   $partido=new Usuario();
   $data2=$partido->selectPermisoUsuario($_SESSION['id']);
   $permisos = array();
-  while ($row=mysqli_fetch_array($data2)) 
+  while ($row=mysqli_fetch_array($data2))
   {
     array_push($permisos,$row['id_permiso']);
   }
@@ -35,7 +35,7 @@ $socios=0;
 $lesiones=0;
 $documentos=0;
 $personas=0;
-foreach($permisos as $key => $value) 
+foreach($permisos as $key => $value)
 {
   if($value==2)
   {
@@ -131,6 +131,7 @@ foreach($permisos as $key => $value)
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="..\..\vista\socio/index.php">Registro de Socios</a>
                 <a class="dropdown-item" href="..\..\vista\pagos/index.php">Pagos</a>
+                <a class="dropdown-item" href="..\..\vista\pagos/rpt_socios.php">Estado de pagos.</a>
                 <a class="dropdown-item" href="..\..\vista\membresia/index.php">Membresías</a>
                 <a class="dropdown-item" href="..\..\vista\beneficio/index.php">Beneficios</a>
               </div>

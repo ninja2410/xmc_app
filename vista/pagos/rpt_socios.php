@@ -65,7 +65,15 @@ $data_pagos=$pago->est_Socios();
                           <?php echo $row['PAGOS']; ?>
                         </td>
                         <td style="text-align:center;">
-                          <?php echo $row['PENDIENTES']; ?>
+                          <?php
+                          if ($row['PENDIENTES']<=0) {
+                            echo "Al día";
+                          }
+
+                          if ($row['PENDIENTES']>0) {
+                            echo $row['PENDIENTES'];
+                          }
+                           ?>
                         </td>
                         <?php
                       } ?>

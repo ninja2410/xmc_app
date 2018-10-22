@@ -12,6 +12,7 @@ $dato=$membresia->select(-1);
     <meta charset="utf-8">
     <title>Socios - Registro</title>
     <?php include '..\layoults\headers2.php'; ?>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
   </head>
   <body>
     <?php include '..\layoults\barnav.php'; ?>
@@ -23,7 +24,7 @@ $dato=$membresia->select(-1);
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
-            <form method="post", action="..\socio\store.php" id="frm_socio">
+            <form method="post", action="..\socio\store.php" id="frm_socio" enctype="multipart/form-data">
               <input type="hidden" name="operation" value="2">
               <input type="hidden" name="id" value="<?php echo $data['id_socio']; ?>">
               <div class="row">
@@ -57,24 +58,32 @@ $dato=$membresia->select(-1);
                 <div class="col-md-3">
                   <div class="form-group">
                     <label class="bmd-label-floating">Fecha de nacimiento</label>
-                    <input name="fecha_nacimiento" type="text" class="form-control" value="<?php echo $data['fecha_nacimiento']; ?>">
+                    <input name="fecha_nacimiento" type="text" class="form-control datetimepicker" value="<?php echo date('d/m/Y',strtotime($data['fecha_nacimiento'])); ?>">
                   </div>
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-6">
                   <div class="form-group">
                     <label class="bmd-label-floating">DPI</label>
                     <input name="dpi" type="text" class="form-control" value="<?php  echo $data['DPI']; ?>">
                   </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                   <div class="form-group">
                     <label class="bmd-label-floating">Dirección de cobro</label>
                     <input name="dir_cobro" type="text" class="form-control" value="<?php echo $data['direccion_cobro']; ?>">
                   </div>
                 </div>
-                <div class="col-md-4">
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Correo electrónico</label>
+                    <input name="email" type="email" class="form-control" value="<?php echo $data['email']; ?>">
+                  </div>
+                </div>
+                <div class="col-md-6">
                   <div class="form-group">
                     <label class="bmd-label-floating">Membresía</label>
                     <select class="form-control" name="membresia">
@@ -82,6 +91,22 @@ $dato=$membresia->select(-1);
                       <option value="<?php echo $row['id_membresia'] ?>"><?php echo $row['nombre']?></option>
                     <?php } ?>
                     </select>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <img src="..\imagenes\sc\<?php echo $data['foto']; ?>" style="width: 200px; height: 150px;" alt="">
+                  <br>
+                  <label><b>Imagen actual</b></label>
+                </div>
+                <div class="col-lg-5">
+                  <div class="fileinput fileinput-new" data-provides="fileinput">
+                    <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
+                    <div>
+                      <span class="btn btn-default btn-file"><span class="fileinput-new">Buscar imagen</span><span class="fileinput-exists">Cambiar</span><input type="file" name="img"></span>
+                      <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Eliminar</a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -94,7 +119,22 @@ $dato=$membresia->select(-1);
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
     <script type="text/javascript">
+    $('.datetimepicker').datetimepicker({
+        format:'DD/MM/YYYY',
+        icons: {
+            time: "fa fa-clock-o",
+            date: "fa fa-calendar",
+            up: "fa fa-chevron-up",
+            down: "fa fa-chevron-down",
+            previous: 'fa fa-chevron-left',
+            next: 'fa fa-chevron-right',
+            today: 'fa fa-screenshot',
+            clear: 'fa fa-trash',
+            close: 'fa fa-remove'
+        }
+    });
     $(document).ready(function(){
       $('#frm_socio').bootstrapValidator({
       feedbackIcons: {

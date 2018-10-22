@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once('..\..\Negocio/ClassSocio.php');
 $socio=new Socio();
 $data=$socio->select_pagos();

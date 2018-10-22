@@ -40,7 +40,7 @@ class Pago
   function mesSolvente($socio){
     $soc=new Socio();
     $dataSocio=$soc->select($socio);
-    $query="SELECT fecha FROM PAGO WHERE id_socio=1 order by fecha desc LIMIT 1;";
+    $query="SELECT fecha FROM PAGO WHERE id_socio=$socio order by fecha desc LIMIT 1;";
     $conexion=new conexion();
     $conexion->conectar();
     $at=mysqli_query($conexion->objetoconexion,$query);
@@ -104,8 +104,14 @@ class Pago
       $pg=mysqli_fetch_assoc($at);
       $reg=date_create($pg['fecha']);
       $today=date_create(date('Y-m-d'));
-      $dif=date_diff($today, $reg);
-      return $dif->m;
+      $dif=date_diff($reg, $today);
+      //VERIFICAR SI ES ADELANTADO O ATRASADO
+      if ($dif->invert==0) {
+        return $dif->m;
+      }
+      else{
+        return $dif->m.' Adelantados';
+      }
     }
   }
   public function select($id){
