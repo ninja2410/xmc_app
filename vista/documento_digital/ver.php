@@ -14,9 +14,6 @@ $data=$documento->select($_GET['id']);
     <title>Documento - Visualizar</title>
     <?php include '..\layoults\headers2.php'; ?>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chocolat/0.4.20/css/chocolat.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chocolat/0.4.20/css/chocolat.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chocolat/0.4.20/css/chocolat.min.css.map">
   </head>
   <body>
     <?php include '..\layoults\barnav.php'; ?>
@@ -61,18 +58,15 @@ $data=$documento->select($_GET['id']);
                       </select>
                     </div>
                   </div>
-                  <div class="col-md-4">
-                    <div class="chocolat-parent" data-chocolat-title="Documento" id="print">
-                      <a class="chocolat-image" href="..\imagenes\<?php echo $data['path']; ?>" title="<?php echo $data['descripcion']; ?>">
-                        <img src="..\imagenes\<?php echo $data['path']; ?>" style="width: 100; height: 150px;" alt="">
-                      </a>
-                    </div>
+                  <div class="col-md-6">
+                    <a class="media" href="..\imagenes\<?php echo $data['path']; ?>"></a>
                   </div>
-                  <div class="col-md-4">
-                    <input type="button" class="btn btn-danger pull-left btn-round" onclick="printDiv('print')" value="Imprimir" />
-                  </div>
+                  <div class="col-md-2">
+                    <a href="..\imagenes\<?php echo $data['path']; ?>" target="blank">
+                    <button class="btn btn-success btn-round btn-sm"><i class="fa fa-eye"></i>Abrir en pestaña</button>
                   </div>
                 </div>
+              </div>
                 <a href="index.php"> <button type="button" class="btn btn-info pull-right btn-round"><i class="fas fa-undo-alt fa-lg"></i> Regresar</button></a>
                 <div class="clearfix"></div>
             </div>
@@ -83,12 +77,8 @@ $data=$documento->select($_GET['id']);
 
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/chocolat/0.4.20/js/jquery.chocolat.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/chocolat/0.4.20/js/jquery.chocolat.min.js"></script>
     <script type="text/javascript">
-    $(document).ready(function(){
-      $('.chocolat-parent').Chocolat();
-    });
+    $('a.media').media({width:500, height:400});
     function printDiv(nombreDiv) {
      var contenido= document.getElementById(nombreDiv).innerHTML;
      var contenidoOriginal= document.body.innerHTML;

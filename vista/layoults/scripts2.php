@@ -18,6 +18,9 @@
 <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
 <script src="..\assets/js/material-kit.js?v=2.0.4" type="text/javascript"></script>
 <!--BOOTSTRAP VALIDATOR-->
+<!-- PLUGIN MEDIA DATA -->
+<script src="..\assets/js/plugins/media.js" type="text/javascript"></script>
+
 
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
 <!--DATATABLES-->
