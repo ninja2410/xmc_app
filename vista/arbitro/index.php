@@ -71,6 +71,38 @@ $data=$arbitro->select(-1);
                                 </button>
                               </a>
                             </div>
+
+                            <!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button> -->
+
+<button class="btn btn-primary" type="button" rel="tooltip" title="Editar árbitro" class="btn btn-primary btn-link btn-sm" data-toggle="modal" data-target="#exampleModal">
+<i class="material-icons">edit</i>
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
                             <div  style="float:left">
                               <form class="" action="..\..\vista\arbitro/store.php" method="post">
                                 <input type="hidden" name="operation" value="3">
