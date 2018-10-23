@@ -92,8 +92,6 @@ $data=$personal->selectPermiso(-1);
     <script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
-
-
         $('#frm_usuario').bootstrapValidator({
         feedbackIcons: {
             valid: 'glyphicon glyphicon-ok',

@@ -17,7 +17,7 @@
     $( "#autoequipo" ).autocomplete(
     {
       source: 'searchEquipo.php',
-      minLength: 2,
+      minLength: 0,
       autoFocus:true,
       select: function(event, ui)
       {
@@ -25,20 +25,22 @@
         $("#autoequipo").val(ui.item.value);
         
       },
+    }).focus(function ()
+    {
+        $(this).autocomplete('search', $(this).val())
     });
 
-      $( "#autoCategoria" ).autocomplete(
-    {
+    $( "#autoCategoria" ).autocomplete({
       source: 'searchCategoria.php',
       minLength: 0,
-      select: function(event, ui)
+      select: function(event, ui) 
       {
-        $("#autoCategoria").val(ui.item.value);
         $("#cat").val(ui.item.id);
       },
-    }).focus(function () {
+    }).focus(function ()
+    {
         $(this).autocomplete('search', $(this).val())
-      });
+    });
 
     $( "#autoestadio" ).autocomplete({
       source: 'searchEstadio.php',
@@ -74,42 +76,42 @@
               <input type="hidden" name="operation" value="1">
               <input type="hidden" name="validator" id="validator" value="No hay resultado">
               <div class="row">
-               <div class="col-md-3">
+               <div class="col-md-5">
                   <div class="form-group">
                     <label class="">Equipo</label>
                     <input type="hidden" id="equi" name="equi">
                     <input type="text" id="autoequipo" name="autoequipo" class="form-control"  data-equals="foo" riquired>
                   </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-5">
                   <div class="form-group">
                     <label class="">Fecha</label>
                     <input type="text" placeholder="DD/MM/YYYY" class="form-control" name="fecha">
                   </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-5">
                   <div class="form-group">
                     <label class="">Hora</label>
                     <input type="text" placeholder="" class="form-control datetimepicker" id='datetimepicker3' name="hora">
                   </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-5">
                   <div class="form-group">
                     <label class="">Categoria</label>
                     <input type="hidden" name="cat" id="cat" >
-                    <input type="text" name="autoCategoria"  class="form-control">
+                    <input type="text" id="autoCategoria"  class="form-control">
                   </div>
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-5">
                   <div class="form-group">
                     <label class="">Estadio</label>
                     <input type="hidden" name="estadio" id="estadio" >
                     <input type="text" id="autoestadio" class="form-control">
                   </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-5">
                   <div class="form-group">
                     <label class="">Temporada</label>
                     <input type="hidden" id="temp" name="temp">
@@ -118,7 +120,7 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-10">
                   <div class="form-group">
                     <label class="">Observaciones</label>
                     <input  id="obs" type="textarea" class="form-control" name="obs">

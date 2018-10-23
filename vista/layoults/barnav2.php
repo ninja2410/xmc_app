@@ -37,15 +37,15 @@ $documentos=0;
 $personas=0;
 foreach($permisos as $key => $value) 
 {
-  if($value==2)
+  if($value==1)
   {
     $jugadores=1;
   }
-  if($value==3)
+  if($value==2)
   {
     $partidos=1;
   }
-  if($value==4)
+  if($value==3)
   {
     $socios=1;
   }
@@ -53,11 +53,11 @@ foreach($permisos as $key => $value)
   {
     $lesiones=1;
   }
-  if($value==4)
+  if($value==5)
   {
     $documentos=1;
   }
-  if($value==4)
+  if($value==6)
   {
     $personas=1;
   }

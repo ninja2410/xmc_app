@@ -35,17 +35,18 @@ $socios=0;
 $lesiones=0;
 $documentos=0;
 $personas=0;
+$admin=0;
 foreach($permisos as $key => $value) 
 {
-  if($value==2)
+  if($value==1)
   {
     $jugadores=1;
   }
-  if($value==3)
+  if($value==2)
   {
     $partidos=1;
   }
-  if($value==4)
+  if($value==3)
   {
     $socios=1;
   }
@@ -53,13 +54,17 @@ foreach($permisos as $key => $value)
   {
     $lesiones=1;
   }
-  if($value==4)
+  if($value==5)
   {
     $documentos=1;
   }
-  if($value==4)
+  if($value==6)
   {
     $personas=1;
+  }
+  if($value==8)
+  {
+    $admin=1;
   }
 }
 
@@ -182,6 +187,8 @@ foreach($permisos as $key => $value)
             </li>
             <?php
             }
+            if($admin==1)
+            {
             ?>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -192,6 +199,9 @@ foreach($permisos as $key => $value)
                 <a class="dropdown-item" href="..\..\vista\bitacora/index.php">Bitacora</a>
               </div>
             </li>
+            <?php
+            }
+            ?>
             <li class="dropdown nav-item">
               <a href="#pablo" class="profile-photo dropdown-toggle nav-link" data-toggle="dropdown">
                 <div class="profile-photo-small">
@@ -199,7 +209,7 @@ foreach($permisos as $key => $value)
                 </div>
               </a>
               <div class="dropdown-menu dropdown-menu-right">
-                <h6 class="dropdown-header">Opciones de sesión</h6>
+                <h6 class="dropdown-header"><?php echo $_SESSION['foto'] ?></h6>
                 <a href="..\..\vista\login/salida.php" class="dropdown-item"><i class="fas fa-sign-out-alt"></i>  Cerrar sesión</a>
               </div>
             </li>

@@ -44,9 +44,9 @@ $cont=1;
 if ($operacion=="1")
 {
   $name=$_FILES['img']['name'];
-  move_uploaded_file($_FILES['img']['tmp_name'],'../imagenes/'.$usuario);
-  chmod('../imagenes/'.$usuario,0644);
-  $lesion->insert($usuario, $pass,$nombre,$apellido,$usuario,$email);
+  move_uploaded_file($_FILES['img']['tmp_name'],'../imagenes/'.$usuario.'.png');
+  chmod('../imagenes/'.$usuario.'.png',0644);
+  $lesion->insert($usuario, $pass,$nombre,$apellido,$usuario.'.png',$email);
   $bit->insert('Agrego un nuevo usuario', $_SESSION['id']);
 
   foreach($_POST as $key => $value)
