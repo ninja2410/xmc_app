@@ -7,7 +7,8 @@ session_start();
 
 $username = $_POST['username'];
 $password = $_POST['password'];
- 
+
+$_SESSION['mensaje']="";
 
 $data=$usuario->Loggin($username,$password);
 
@@ -27,7 +28,7 @@ if($result>0)
 
         header('Location:../home/index.php');
 
-        
+
 
     }
 }else
