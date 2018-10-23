@@ -1,6 +1,8 @@
 <?php
 require_once('..\..\Negocio/ClassTemporada.php');
 require_once('..\..\Negocio/ClassBitacora.php');
+session_start();
+
 if(isset($_POST['operation']))
 {
   $operacion=$_POST['operation'];
@@ -29,13 +31,13 @@ $bit=new Bitacora();
 if ($operacion=="1") 
 {
   $lesion->insert($descripcion, $fecha_inicio, $fecha_final);
-  $bit->insert('Agrego una nueva temporada ', '1');
+  $bit->insert('Agrego una nueva temporada ', $_SESSION['id']);
 
 }elseif($operacion=="2") 
 {
   
   $lesion->update($id_temporada,$descripcion, $fecha_inicio, $fecha_final);
-  $bit->insert('Actualizo la temporada '.$descripcion, '1');
+  $bit->insert('Actualizo la temporada '.$descripcion, $_SESSION['id']);
 
 }elseif ($operacion=="3") 
 {

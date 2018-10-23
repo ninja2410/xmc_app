@@ -1,5 +1,9 @@
 <?php
 require_once('..\..\Negocio/ClassEquipo.php');
+require_once('..\..\Negocio/ClassBitacora.php');
+session_start();
+$bit=new Bitacora();
+
 if(isset($_POST['operation'])){
   $operacion=$_POST['operation'];
 }

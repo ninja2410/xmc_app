@@ -1,5 +1,7 @@
 <?php
 require_once('..\..\Negocio/ClassUsuario.php');
+
+
 if(isset($_POST['operation'])){
   $operacion=$_POST['operation'];
 }
@@ -19,6 +21,7 @@ if (isset($_POST['id'])) {
 $lesion=new Usuario();
 if ($operacion=="1") 
 {
+  
   $lesion->insert($usuario, $pass);
 
 }elseif($operacion=="2") 

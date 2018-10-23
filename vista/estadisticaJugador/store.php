@@ -1,6 +1,10 @@
 <?php
 
 require_once('..\..\Negocio/ClassEstadisticaJugador.php');
+require_once('..\..\Negocio/ClassBitacora.php');
+session_start();
+$bit=new Bitacora();
+
 if (isset($_POST['estadisticas'])) {
   $estadisticas = json_decode($_POST['estadisticas']);
 }
@@ -28,11 +32,13 @@ if(isset($_POST['minuto'])){
 $estado=1;
 $estadistica=new EstadisticaJugador();
 if ($operacion=="1") {
+  $bit->insert('Actualizo las estadisticas del jugador'.$id_jugador, $_SESSION['id']);
   foreach ($estadisticas as $key => $value) {
     $estadistica->insert($value->campo, $value->minuto, $value->valor, 1, $id_jugador, $id_partido);
   }
 }
 elseif($operacion=="2") {
+  $bit->insert('Actualizo las estadisticas del jugador '.$id_jugador, $_SESSION['id']);
   $detalle=new DetalleFM();
   $fichamedica->update($id_ficha, $fecha, $estado, $id_jugador, $grasa, $peso, $talla);
   foreach ($signosVitales as $key => $value) {

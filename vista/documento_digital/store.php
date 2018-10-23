@@ -1,5 +1,9 @@
 <?php
 require_once('..\..\Negocio/ClassDocumento.php');
+require_once('..\..\Negocio/ClassBitacora.php');
+session_start();
+$bit=new Bitacora();
+
 $accion=new Documento();
 
 if(isset($_POST['operation'])){
@@ -24,6 +28,7 @@ if (isset($_POST['id'])) {
 
 
 if ($operacion=="1") {
+  $bit->insert('Se subio un nuevo documento digital', $_SESSION['id']);
   $name=$_FILES['img']['name'];
   $path='DOC_'.$accion->correlativo().substr($name,-4);
   move_uploaded_file($_FILES['img']['tmp_name'],'..\imagenes/'.$path);
@@ -31,6 +36,7 @@ if ($operacion=="1") {
   $accion->insert($fecha, 1, $path, $descripcion, $categoria);
 }
 elseif($operacion=="2") {
+  $bit->insert('Se modifico el documento digital'.$id_Documento, $_SESSION['id']);
   $name=$_FILES['img']['name'];
   $tmp='DOC_'.$accion->correlativo().substr($name,-4);
   move_uploaded_file($_FILES['img']['tmp_name'],'..\imagenes/'.$tmp);
@@ -45,6 +51,7 @@ elseif($operacion=="2") {
   $accion->update($id_Documento, $fecha, 1, $path, $descripcion, $categoria);
 }
 elseif ($operacion=="3") {
+  $bit->insert('Se elimino un documento digital', $_SESSION['id']);
   $accion->delete($id_Documento);
 }
 header('Location:index.php');

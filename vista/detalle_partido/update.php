@@ -47,118 +47,164 @@
                         <h4><b>Faltas </b> </h4>
                         </td>
                         <td>
-                                <input type="text" class="form-control text-center" name="fal2" value="<?php echo $dataCn['faltas']; ?>">
+                                <div class="form-group">
+                                        <input type="text" class="form-control text-center" name="fal2" value="<?php echo $dataCn['faltas']; ?>">
+                                </div>
                         </td>
                     </tr> 
                     <tr>
                         <td>
-                                <input type="text" class="form-control text-center" name="esq" value="<?php echo $data['esquinas']; ?>">
+                                <div class="form-group">
+                                   <input type="text" class="form-control text-center" name="esq" value="<?php echo $data['esquinas']; ?>">
+                                </div>
                         </td>
                         <td>
                         <h4><b>Esquinas </b> </h4>
                         </td>
                         <td>
+                        <div class="form-group">
                                 <input type="text" class="form-control text-center" name="esq2" value="<?php echo $dataCn['esquinas']; ?>">
+                        </div>                    
                         </td>
                     </tr>  
                     <tr>
                         <td>
+                        <div class="form-group">
                                 <input type="text" class="form-control text-center" name="asis" value="<?php echo $data['asistencias']; ?>">
+                        </div>
                         </td>
                         <td>
                         <h4><b>Asistencias </b> </h4>
                         </td>
                         <td>
+                        <div class="form-group">
                                 <input type="text" class="form-control text-center" name="asis2" value="<?php echo $dataCn['asistencias']; ?>">
+                        </div>
                         </td>
                     </tr>  
                     <tr>
                         <td>
+                        <div class="form-group">
                                 <input type="text" class="form-control text-center" name="tiros" value="<?php echo $data['tiros']; ?>">
+                        </div>
                         </td>
                         <td>
                         <h4><b>Tiros </b> </h4>
                         </td>
                         <td>
+                        <div class="form-group">
                                 <input type="text" class="form-control text-center" name="tiros2" value="<?php echo $dataCn['tiros']; ?>">
+                        </div>
                         </td>
                     </tr>  
                     <tr>
                         <td>
+                        <div class="form-group">
                                 <input type="text" class="form-control text-center" name="tiros_puerta" value="<?php echo $data['tiros_puerta']; ?>">
+                        </div>
                         </td>
                         <td>
                         <h4><b>Tiros a puertas</b> </h4>
                         </td>
                         <td>
+                        <div class="form-group">
                                 <input type="text" class="form-control text-center" name="tiros_puerta2" value="<?php echo $dataCn['tiros_puerta']; ?>">
+                        </div>
                         </td>
                     </tr>  
                     <tr>
                         <td>
+                        <div class="form-group">
                                 <input type="text" class="form-control text-center" name="ta" value="<?php echo $data['tarjeta_amarilla']; ?>">
+                        </div>
                         </td>
                         <td>
                         <h4><b>Tarjetas amarillas </b> </h4>
                         </td>
                         <td>
+                        <div class="form-group">
                                 <input type="text" class="form-control text-center" name="ta2" value="<?php echo $dataCn['tarjeta_amarilla']; ?>">
+                        </div>
                         </td>
                     </tr>
                     <tr>
                         <td>
+                        <div class="form-group">
                                 <input type="text" class="form-control text-center" name="tr" value="<?php echo $data['tarjeta_roja']; ?>">
+                        </div>
                         </td>
                         <td>
                         <h4><b>Tarjetas rojas </b> </h4>
                         </td>
                         <td>
+                        <div class="form-group">
                                 <input type="text" class="form-control text-center" name="tr2" value="<?php echo $dataCn['tarjeta_roja']; ?>">
+                        </div>
                         </td>
                     </tr>
                     <tr>
                         <td>
+                        <div class="form-group">
                                 <input type="text" class="form-control text-center" name="fj" value="<?php echo $data['fuera_juego']; ?>">
+                        </div>
                         </td>
                         <td>
                         <h4><b>Fuera de juego </b> </h4>
                         </td>
                         <td>
+                        <div class="form-group">
                                 <input type="text" class="form-control text-center" name="fj2" value="<?php echo $dataCn['fuera_juego']; ?>">
+                        </div>
                         </td>
                     </tr>
                     <tr>
                         <td>
+                        <div class="form-group">
                                 <input type="text" class="form-control text-center" name="cam" value="<?php echo $data['cambios']; ?>">
+                        </div>
                         </td>
                         <td>
                         <h4><b>Cambios </b> </h4>
                         </td>
                         <td>
+                        <div class="form-group">
                                 <input type="text" class="form-control text-center" name="cam2" value="<?php echo $dataCn['cambios']; ?>">
+                        </div>
                         </td>
                     </tr>
                     <tr>
                         <td>
+                        <div class="form-group">
+
                                 <input type="text" class="form-control text-center" name="gol" value="<?php echo $data['goles']; ?>">
+                        </div>
                         </td>
                         <td>
                         <h4><b>Goles </b> </h4>
                         </td>
                         <td>
+                        <div class="form-group">
+
                                 <input type="text" class="form-control text-center" name="gol2" value="<?php echo $dataCn['goles']; ?>">
+                        </div>
                         </td>
                     </tr>
                     <tr>
                         <td>
+                        <div class="form-group">
+
                                 <input type="text" class="form-control text-center" name="exp" value="<?php echo $data['expulsados']; ?>">
+                        </div>
                         </td>
                         <td>
                         <h4><b>Expulsados </b> </h4>
                         </td>
                         <td>
+                        <div class="form-group">
+                              
                                 <input type="text" class="form-control text-center" name="exp2" value="<?php echo $dataCn['expulsados']; ?>">
-                         </td>
+                        </div>
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -189,24 +235,311 @@
             {
                 notEmpty:
                 {
-<<<<<<< Updated upstream
-                    notEmpty:
-                    {
-                        
-                      message: 'La fecha del partido es necesario'
-                    }
-                }
-          }}});
-            });
-=======
-                  message: 'La fecha del partido es necesario'
+                  message: 'Este campo no puede quedar vacio'
+                },
+                numeric:
+                {
+                        message:'Solo se aceptan numeros'
                 }
             }
-          }
+          },
+          fal2:
+          {
+            validators:
+            {
+                notEmpty:
+                {
+                  message: 'Este campo no puede quedar vacio'
+                },
+                numeric:
+                {
+                        message:'Solo se aceptan numeros'
+                }
+            }
+          },
+          esq:
+          {
+            validators:
+            {
+                notEmpty:
+                {
+                  message: 'Este campo no puede quedar vacio'
+                },
+                numeric:
+                {
+                        message:'Solo se aceptan numeros'
+                }
+            }
+          },
+          esq2:
+          {
+            validators:
+            {
+                notEmpty:
+                {
+                  message: 'Este campo no puede quedar vacio'
+                },
+                numeric:
+                {
+                        message:'Solo se aceptan numeros'
+                }
+            }
+          },
+          asis:
+          {
+            validators:
+            {
+                notEmpty:
+                {
+                  message: 'Este campo no puede quedar vacio'
+                },
+                numeric:
+                {
+                        message:'Solo se aceptan numeros'
+                }
+            }
+          },
+          asis2:
+          {
+            validators:
+            {
+                notEmpty:
+                {
+                  message: 'Este campo no puede quedar vacio'
+                },
+                numeric:
+                {
+                        message:'Solo se aceptan numeros'
+                }
+            }
+          },
+          tiros:
+          {
+            validators:
+            {
+                notEmpty:
+                {
+                  message: 'Este campo no puede quedar vacio'
+                },
+                numeric:
+                {
+                        message:'Solo se aceptan numeros'
+                }
+            }
+          },
+          tiros2:
+          {
+            validators:
+            {
+                notEmpty:
+                {
+                  message: 'Este campo no puede quedar vacio'
+                },
+                numeric:
+                {
+                        message:'Solo se aceptan numeros'
+                }
+            }
+          },
+          tiros_puerta:
+          {
+            validators:
+            {
+                notEmpty:
+                {
+                  message: 'Este campo no puede quedar vacio'
+                },
+                numeric:
+                {
+                        message:'Solo se aceptan numeros'
+                }
+            }
+          },
+          tiros_puerta2:
+          {
+            validators:
+            {
+                notEmpty:
+                {
+                  message: 'Este campo no puede quedar vacio'
+                },
+                numeric:
+                {
+                        message:'Solo se aceptan numeros'
+                }
+            }
+          },
+          ta:
+          {
+            validators:
+            {
+                notEmpty:
+                {
+                  message: 'Este campo no puede quedar vacio'
+                },
+                numeric:
+                {
+                        message:'Solo se aceptan numeros'
+                }
+            }
+          },
+          ta2:
+          {
+            validators:
+            {
+                notEmpty:
+                {
+                  message: 'Este campo no puede quedar vacio'
+                },
+                numeric:
+                {
+                        message:'Solo se aceptan numeros'
+                }
+            }
+          },
+          tr:
+          {
+            validators:
+            {
+                notEmpty:
+                {
+                  message: 'Este campo no puede quedar vacio'
+                },
+                numeric:
+                {
+                        message:'Solo se aceptan numeros'
+                }
+            }
+          },
+          tr2:
+          {
+            validators:
+            {
+                notEmpty:
+                {
+                  message: 'Este campo no puede quedar vacio'
+                },
+                numeric:
+                {
+                        message:'Solo se aceptan numeros'
+                }
+            }
+          },
+          fj:
+          {
+            validators:
+            {
+                notEmpty:
+                {
+                  message: 'Este campo no puede quedar vacio'
+                },
+                numeric:
+                {
+                        message:'Solo se aceptan numeros'
+                }
+            }
+          },
+          fj2:
+          {
+            validators:
+            {
+                notEmpty:
+                {
+                  message: 'Este campo no puede quedar vacio'
+                },
+                numeric:
+                {
+                        message:'Solo se aceptan numeros'
+                }
+            }
+          },
+          cam:
+          {
+            validators:
+            {
+                notEmpty:
+                {
+                  message: 'Este campo no puede quedar vacio'
+                },
+                numeric:
+                {
+                        message:'Solo se aceptan numeros'
+                }
+            }
+          },
+          cam2:
+          {
+            validators:
+            {
+                notEmpty:
+                {
+                  message: 'Este campo no puede quedar vacio'
+                },
+                numeric:
+                {
+                        message:'Solo se aceptan numeros'
+                }
+            }
+          },
+          gol:
+          {
+            validators:
+            {
+                notEmpty:
+                {
+                  message: 'Este campo no puede quedar vacio'
+                },
+                numeric:
+                {
+                        message:'Solo se aceptan numeros'
+                }
+            }
+          },
+          gol2:
+          {
+            validators:
+            {
+                notEmpty:
+                {
+                  message: 'Este campo no puede quedar vacio'
+                },
+                numeric:
+                {
+                        message:'Solo se aceptan numeros'
+                }
+            }
+          },
+          exp:
+          {
+            validators:
+            {
+                notEmpty:
+                {
+                  message: 'Este campo no puede quedar vacio'
+                },
+                numeric:
+                {
+                        message:'Solo se aceptan numeros'
+                }
+            }
+          },
+          exp2:
+          {
+            validators:
+            {
+                notEmpty:
+                {
+                  message: 'Este campo no puede quedar vacio'
+                },
+                numeric:
+                {
+                        message:'Solo se aceptan numeros'
+                }
+            }
+          },
         }
       });
     });
->>>>>>> Stashed changes
     </script>
   </body>
 </html>

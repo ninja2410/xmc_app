@@ -2,6 +2,10 @@
 session_start();
 require_once('..\..\Negocio/ClassPago.php');
 require_once('..\..\Negocio/ClassSocio.php');
+require_once('..\..\Negocio/ClassBitacora.php');
+session_start();
+$bit=new Bitacora();
+
 $pago=new Pago();
 $soc=new Socio();
 $soc->select($_POST['socio']);
@@ -11,7 +15,9 @@ $monto=$_POST['amount'];
 $meses=$_POST['mounts'];
 $membresia=$_POST['member'];
 if ($operation==1) {
+  
   if($pago->insert($monto, $socio, $meses, $membresia)){
+    $bit->insert('Realizo cobro', $_SESSION['id']);
     $_SESSION['mensaje']="Se ha almacenado el pago con éxito";
   }
 

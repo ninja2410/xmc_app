@@ -9,6 +9,8 @@ $usuario = $_GET['id'];
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
+
     <title>Usuario - Actualizar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
@@ -30,7 +32,7 @@ $usuario = $_GET['id'];
             </div>
           </div>
             <div class="col-md-8">
-            <form method="post", action="..\usuario\store.php" id="frm_usuario">
+            <form method="post" enctype="multipart/form-data" action="..\usuario\store.php" id="frm_usuario">
               <input type="hidden" name="operation" value="2">
               <input type="hidden" name="id" value="<?php echo $usuario; ?>">
               <div class="row">
@@ -61,6 +63,23 @@ $usuario = $_GET['id'];
                   </div>              
               </div>
             </div>
+            
+                <div class="col-md-4">
+                  <img src="..\imagenes\<?php echo $dataUs['foto']; ?>" style="width: 200px; height: 150px;" alt="">
+                  <br>
+                  <label><b>Imagen actual</b></label>
+                </div>
+                <div class="col-md-4">
+                  <div class="fileinput fileinput-new" data-provides="fileinput">
+                    <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
+                    <div>
+                      <span class="btn btn-default btn-file"><span class="fileinput-new">Buscar Nueva</span><span class="fileinput-exists">Cambiar</span><input type="file" name="img"></span>
+                      <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Eliminar</a>
+                    </div>
+                  </div>
+                </div>
+        
+            
               <?php include '..\layoults\botones.php'; ?>
               <div class="clearfix"></div>
             </form>
@@ -70,8 +89,11 @@ $usuario = $_GET['id'];
         </div>
       </div>
     </div>
+
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
+
     <script type="text/javascript">
       $(document).ready(function(){
       $('#frm_usuario').bootstrapValidator({

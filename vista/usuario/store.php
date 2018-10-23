@@ -1,6 +1,7 @@
 <?php
 require_once('..\..\Negocio/ClassUsuario.php');
 require_once('..\..\Negocio/ClassBitacora.php');
+session_start();
 if(isset($_POST['operation'])){
   $operacion=$_POST['operation'];
 }
@@ -43,10 +44,10 @@ $cont=1;
 if ($operacion=="1") 
 {
   $name=$_FILES['img']['name'];
-  move_uploaded_file($_FILES['img']['tmp_name'],'../imagenes/'.$name);
-  chmod('../imagenes/'.$name,0644);
-  $lesion->insert($usuario, $pass,$nombre,$apellido,$name,$email);
-  $bit->insert('Agrego un nuevo usuario', '1');
+  move_uploaded_file($_FILES['img']['tmp_name'],'../imagenes/'.$usuario);
+  chmod('../imagenes/'.$usuario,0644);
+  $lesion->insert($usuario, $pass,$nombre,$apellido,$usuario,$email);
+  $bit->insert('Agrego un nuevo usuario', $_SESSION['id']);
 
   foreach($_POST as $key => $value) 
   {
@@ -66,9 +67,12 @@ if ($operacion=="1")
 
 }elseif($operacion=="2") 
 {
+  $name=$_FILES['img']['name'];
+  move_uploaded_file($_FILES['img']['tmp_name'],'../imagenes/'.$usuario);
+  chmod('../imagenes/'.$usuario,0644);
 
-  $lesion->update($id_usuario, $usuario, $pass,$nombre,$apellido,'',$email);
-  $bit->insert('Actualizo el usuario '.$id_usuario, '1');
+  $lesion->update($id_usuario, $usuario, $pass,$nombre,$apellido,$usuario,$email);
+  $bit->insert('Actualizo el usuario '.$id_usuario, $_SESSION['id']);
 
   foreach($_POST as $key => $value) 
   {

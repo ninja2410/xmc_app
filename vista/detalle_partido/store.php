@@ -1,5 +1,9 @@
 <?php
 require_once('..\..\Negocio/ClassDetallePartido.php');
+require_once('..\..\Negocio/ClassBitacora.php');
+session_start();
+$bit=new Bitacora();
+
 if(isset($_POST['operation'])){
   $operacion=$_POST['operation'];
 }
@@ -105,11 +109,13 @@ if ($operacion=="1")
 }
 elseif($operacion=="2") 
 {
+  $bit->insert('Se modificaron los resultados del partido'.$partido, $_SESSION['id']);
   $accion->update($id_detalle_partido, $esq,$fal, $asis, $tiros,$tiros_puerta,$ta,$tr,$fj,$cam,$gol,$exp,1,$partido);
   $accion->update($id_detalle_partido2, $esq2,$fal2, $asis2, $tiros2,$tiros_puerta2,$ta2,$tr2,$fj2,$cam2,$gol2,$exp2,$equi,$partido);
 
 } elseif ($operacion=="3") 
 {
+  $bit->insert('Se elimino los resultados del partido', $_SESSION['id']);
   $accion->delete($id_prensa);
 }
 header('Location:index.php?id='.$partido.'&id2='.$equi);

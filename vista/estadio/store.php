@@ -1,5 +1,9 @@
 <?php
 require_once('..\..\Negocio/ClassEstadio.php');
+require_once('..\..\Negocio/ClassBitacora.php');
+session_start();
+$bit=new Bitacora();
+
 if(isset($_POST['operation'])){
   $operacion=$_POST['operation'];
 }
@@ -28,9 +32,11 @@ if (isset($_POST['id'])) {
 }
 $accion=new Estadio();
 if ($operacion=="1") {
+  $bit->insert('Agrego una nuevo estadio ', $_SESSION['id']);
   $accion->insert($nombre, $direccion, $telefono, $ciudad);
 }
 elseif($operacion=="2") {
+  $bit->insert('Actualizo el estadio '.$id_estadio, $_SESSION['id']);
   $accion->update($id_estadio, $nombre, $direccion, $telefono,$ciudad);
 } elseif ($operacion=="3") {
   $accion->delete($id_estadio);

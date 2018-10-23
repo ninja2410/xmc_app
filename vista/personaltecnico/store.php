@@ -1,5 +1,9 @@
 <?php
 require_once('..\..\Negocio/ClassPersonalTecnico.php');
+require_once('..\..\Negocio/ClassBitacora.php');
+session_start();
+$bit=new Bitacora();
+
 if(isset($_POST['operation']))
 {
   $operacion=$_POST['operation'];
@@ -15,6 +19,7 @@ $cont=1;
 
 if ($operacion=="1") 
 {
+  $bit->insert('Edito el personal tecnico del partido'.$id,$_SESSION['id']);
     foreach($_POST as $key => $value) 
     {
       if($cont==1)
@@ -31,7 +36,7 @@ if ($operacion=="1")
 }
 elseif($operacion=="2") 
 {
-  
+  $bit->insert('Edito el personal tecnico del partido'.$id,$_SESSION['id']);
   foreach($_POST as $key => $value) 
   {
     if($cont==1)
@@ -52,5 +57,5 @@ elseif($operacion=="2")
 {
   $lesion->delete($id_temporada);
 }
-header('Location:/PJ_XJMC/vista/partido/index.php');
+header('Location:../../partido/index.php');
 ?>

@@ -1,6 +1,10 @@
 <?php
 require_once('..\..\Negocio/ClassFichaMedica.php');
 require_once('..\..\Negocio/ClassDetalleFichaMedica.php');
+require_once('..\..\Negocio/ClassBitacora.php');
+session_start();
+$bit=new Bitacora();
+
 
 if (isset($_POST['signosVitales'])) {
   $signosVitales = json_decode($_POST['signosVitales']);
@@ -75,6 +79,7 @@ if (isset($_POST['id'])) {
 $estado=1;
 $fichamedica=new FichaMedica();
 if ($operacion=="1") {
+  $bit->insert('Agrego una nueva ficha medica al jugador'.$id_jugador, $_SESSION['id']);
   $detalle=new DetalleFM();
   $fichamedica->insert($fecha, $estado, $id_jugador, $grasa, $peso, $talla);
   $id_tmp=$fichamedica->id();
@@ -120,6 +125,7 @@ if ($operacion=="1") {
   header('Location:index.php');
 }
 elseif($operacion=="2") {
+  $bit->insert('Actualizo la ficha medica del jugador '.$id_jugador, $_SESSION['id']);
   $detalle=new DetalleFM();
   $fichamedica->update($id_ficha, $fecha, $estado, $id_jugador, $grasa, $peso, $talla);
   foreach ($signosVitales as $key => $value) {

@@ -1,6 +1,8 @@
 <?php
 require_once('..\..\Negocio/ClassPartido.php');
 require_once('..\..\Negocio/ClassBitacora.php');
+session_start();
+$bit=new Bitacora();
 
 if(isset($_POST['operation'])){
   $operacion=$_POST['operation'];
@@ -61,18 +63,18 @@ if (isset($_POST['id'])) {
 
 echo $horayfecha;
 $lesion=new Partido();
-$bit=new Bitacora();
+
 
 if ($operacion=="1") 
 {
   $lesion->insert($horayfecha, $cat, $estadio,$equi,$temp,$obs);
-  $bit->insert('Agrego un nuevo partido', '1');
+  $bit->insert('Agrego un nuevo partido',$_SESSION['id']);
   
 }elseif($operacion=="2") 
 {
   
   $lesion->update($id_partido, $horayfecha, $cat, $estadio,$equi,$temp,$obs);
-  $bit->insert('Actualizo el partido '.$id_partido, '1');
+  $bit->insert('Actualizo el partido '.$id_partido, $_SESSION['id']);
 
 }elseif ($operacion=="3") 
 {

@@ -1,6 +1,10 @@
 <?php
 require_once('..\..\Negocio/ClassJugador.php');
 require_once('..\..\Negocio/ClassAsignacionCategoria.php');
+require_once('..\..\Negocio/ClassBitacora.php');
+session_start();
+$bit=new Bitacora();
+
 if(isset($_POST['operation'])){
   $operacion=$_POST['operation'];
 }
@@ -58,6 +62,7 @@ if(isset($_POST['fecha_final'])){
 $jugador=new Jugador();
 $asignacion_cat = new AsignacionCategoria();
 if ($operacion=="1") {
+  $bit->insert('Agrego un nuevo jugador', $_SESSION['id']);
   $id_jugador2=$jugador->correlativo();
   $id_equipo=1;
   $name=$_FILES['img']['name'];
@@ -69,6 +74,7 @@ if ($operacion=="1") {
   header('Location:index.php');
 }
 elseif($operacion=="2") {
+  $bit->insert('Actualizo la informacion del jugador'.$id_jugador, $_SESSION['id']);
   $name=$_FILES['img']['name'];
   $tmp='JUGADOR_'.$jugador->correlativo().substr($name,-4);
   move_uploaded_file($_FILES['img']['tmp_name'],'../imagenes/'.$tmp);

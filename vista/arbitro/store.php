@@ -1,5 +1,9 @@
 <?php
 require_once('..\..\Negocio/ClassArbitro.php');
+require_once('..\..\Negocio/ClassBitacora.php');
+session_start();
+$bit=new Bitacora();
+
 if(isset($_POST['operation'])){
   $operacion=$_POST['operation'];
 }
@@ -28,12 +32,15 @@ if (isset($_POST['id'])) {
 
 $accion=new Arbitro();
 if ($operacion=="1") {
+  $bit->insert('Agrego un arbitro', $_SESSION['id']);
   $accion->insert($nombre,$tipo);
 }
 elseif($operacion=="2") {
+  $bit->insert('Actualizo la informacion del arbitro '.$id_arbitro, $_SESSION['id']);
   $accion->update($id_arbitro, $nombre,$tipo);
 
 } elseif ($operacion=="3") {
+  $bit->insert('Elimino a un arbitro', $_SESSION['id']);
   $accion->delete($id_arbitro);
 }
  header('Location:index.php');

@@ -1,5 +1,9 @@
 <?php
 require_once('..\..\Negocio/ClassEntrenador.php');
+require_once('..\..\Negocio/ClassBitacora.php');
+session_start();
+$bit=new Bitacora();
+
 if(isset($_POST['operation'])){
   $operacion=$_POST['operation'];
 }
@@ -50,6 +54,7 @@ if (isset($_POST['id'])) {
 
 $accion=new Entrenador();
 if ($operacion=="1") {
+$bit->insert('Se agrego un nuevo entredador', $_SESSION['id']);
   $name=$_FILES['img']['name'];
   $foto='ENTRENADOR_'.$accion->correlativo().substr($name,-4);
   move_uploaded_file($_FILES['img']['tmp_name'],'..\imagenes/'.$foto);
@@ -58,6 +63,7 @@ if ($operacion=="1") {
   $direccion,$foto,$nacionalidad, $id_contrato);
 }
 elseif($operacion=="2") {
+  $bit->insert('Modifico un entrenador', $_SESSION['id']);
   $name=$_FILES['img']['name'];
   $tmp='ENTRENADOR_'.$accion->correlativo().substr($name,-4);
   move_uploaded_file($_FILES['img']['tmp_name'],'..\imagenes/'.$tmp);
@@ -73,6 +79,7 @@ elseif($operacion=="2") {
   $direccion,$foto,$nacionalidad, $id_contrato);
   
 } elseif ($operacion=="3") {
+  $bit->insert('Elimino un entrenador', $_SESSION['id']);
   $accion->delete($id_entrenador);
 }
 header('Location:index.php');

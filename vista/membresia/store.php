@@ -1,5 +1,8 @@
 <?php
 require_once('..\..\Negocio/ClassMembresia.php');
+require_once('..\..\Negocio/ClassBitacora.php');
+session_start();
+$bit=new Bitacora();
 
 if(isset($_POST['operation'])){
   $operacion=$_POST['operation'];
@@ -24,7 +27,7 @@ if (isset($_POST['id'])) {
 $accion=new Membresia();
 if ($operacion=="1") {
   $accion->insert($nombre, $descripcion, $precio);
-
+  $bit->insert('Agrego una nueva membresia ', $_SESSION['id']);
   foreach($_POST as $key => $value) 
   {
       
@@ -41,6 +44,7 @@ if ($operacion=="1") {
 }
 elseif($operacion=="2") 
 {
+  $bit->insert('Actualizo la membresia'.$id_membresia, $_SESSION['id']);
   $accion->update($id_membresia, $nombre, $descripcion, $precio);
   $accion->deleteBeneficio($id_membresia);
 

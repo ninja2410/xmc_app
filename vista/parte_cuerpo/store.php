@@ -1,5 +1,9 @@
 <?php
 require_once('..\..\Negocio/ClassParteCuerpo.php');
+require_once('..\..\Negocio/ClassBitacora.php');
+session_start();
+$bit=new Bitacora();
+
 if(isset($_POST['operation'])){
   $operacion=$_POST['operation'];
 }
@@ -20,9 +24,11 @@ if (isset($_POST['id'])) {
 }
 $parte=new ParteCuerpo();
 if ($operacion=="1") {
+  $bit->insert('Se agrego una parte del cuerpo', $_SESSION['id']);
   $parte->insert($nombre, $estado);
 }
 elseif($operacion=="2") {
+  $bit->insert('Se acutalizo la parte del cuerpo '.$id_parte, $_SESSION['id']);
   $parte->update($id_parte, $nombre, $estado);
 } elseif ($operacion=="3") {
   $parte->delete($id_parte);

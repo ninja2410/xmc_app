@@ -1,5 +1,9 @@
 <?php
 require_once('..\..\Negocio/ClassCategoriaDocumentos.php');
+require_once('..\..\Negocio/ClassBitacora.php');
+session_start();
+$bit=new Bitacora();
+
 if(isset($_POST['operation'])){
   $operacion=$_POST['operation'];
 }
@@ -20,11 +24,14 @@ if (isset($_POST['id'])) {
 }
 $catDocumentos=new CatDocumentos();
 if ($operacion=="1") {
+  $bit->insert('Agrego una nueva categoria de documentos', $_SESSION['id']);
   $catDocumentos->insert($estado, $nombre);
 }
 elseif($operacion=="2") {
+  $bit->insert('Se modifico una categoria de documentos', $_SESSION['id']);
   $catDocumentos->update($id_cat_documentos, $estado, $nombre);
 } elseif ($operacion=="3") {
+  $bit->insert('Elimino una categoria de documentos', $_SESSION['id']);
   $catDocumentos->delete($id_cat_documentos);
 }
 header('Location:index.php');

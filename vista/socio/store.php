@@ -1,5 +1,9 @@
 <?php
 require_once('..\..\Negocio/ClassSocio.php');
+require_once('..\..\Negocio/ClassBitacora.php');
+session_start();
+$bit=new Bitacora();
+
 if(isset($_POST['operation'])){
   $operacion=$_POST['operation'];
 }
@@ -38,6 +42,8 @@ if (isset($_POST['email'])) {
 }
 $beneficio=new Socio();
 if ($operacion=="1") {
+
+  $bit->insert('Agrego una nuevo socio ', $_SESSION['id']);
   $name=$_FILES['img']['name'];
   $path='SOC_'.$beneficio->correlativo().substr($name,-4);
   move_uploaded_file($_FILES['img']['tmp_name'],'..\imagenes\sc/'.$path);
@@ -46,6 +52,7 @@ if ($operacion=="1") {
                       $email, $path);
 }
 elseif($operacion=="2") {
+  $bit->insert('Actualizo la infromacion del socio'.$id_socio, $_SESSION['id']);
   $name=$_FILES['img']['name'];
   $tmp='SOC_'.$beneficio->correlativo().substr($name,-4);
   move_uploaded_file($_FILES['img']['tmp_name'],'..\imagenes\sc/'.$tmp);

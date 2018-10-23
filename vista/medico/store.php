@@ -1,5 +1,9 @@
 <?php
 require_once('..\..\Negocio/ClassMedico.php');
+require_once('..\..\Negocio/ClassBitacora.php');
+session_start();
+$bit=new Bitacora();
+
 if(isset($_POST['operation'])){
   $operacion=$_POST['operation'];
 }
@@ -36,10 +40,12 @@ if (isset($_POST['id'])) {
 }
 $lesion=new Medico();
 if ($operacion=="1") {
+  $bit->insert('Agrego una nuevo medico ', $_SESSION['id']);
   $lesion->insert($nombre, $apellido, $f_nacimiento, $f_inicio, $f_inicio, 1, $direccion,
   $telefono);
 }
 elseif($operacion=="2") {
+  $bit->insert('Edito al medico con codigo'.$id_medico, $_SESSION['id']);
   $lesion->update($id_medico, $nombre, $apellido, $f_nacimiento, $f_inicio, $f_inicio, 1, $direccion,
   $telefono);
 } elseif ($operacion=="3") {

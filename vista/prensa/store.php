@@ -1,5 +1,9 @@
 <?php
 require_once('..\..\Negocio/ClassPrensa.php');
+require_once('..\..\Negocio/ClassBitacora.php');
+session_start();
+$bit=new Bitacora();
+
 if(isset($_POST['operation'])){
   $operacion=$_POST['operation'];
 }
@@ -29,9 +33,11 @@ if (isset($_POST['id'])) {
 }
 $accion=new Prensa();
 if ($operacion=="1") {
+  $bit->insert('Se agrego no personal de comunicacion'.$id,$_SESSION['id']);
   $accion->insert($nombre, $apellido, $telefono, $empresa);
 }
 elseif($operacion=="2") {
+  $bit->insert('Se actualizo el personal de comunicacion'.$id,$_SESSION['id']);
   $accion->update($id_prensa, $nombre, $apellido, $telefono, $empresa);
 } elseif ($operacion=="3") {
   $accion->delete($id_prensa);
