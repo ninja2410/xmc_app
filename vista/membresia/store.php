@@ -28,27 +28,27 @@ $accion=new Membresia();
 if ($operacion=="1") {
   $accion->insert($nombre, $descripcion, $precio);
   $bit->insert('Agrego una nueva membresia ', $_SESSION['id']);
-  foreach($_POST as $key => $value) 
+  foreach($_POST as $key => $value)
   {
-      
+
       if($value=='on')
       {
-      
+
        echo $key;
        $accion->insertBeneficio($key);
       }
 
-    
-  }
 
+  }
+  $_SESSION['mensaje']="La membresía se ha almacenado con éxito!";
 }
-elseif($operacion=="2") 
+elseif($operacion=="2")
 {
   $bit->insert('Actualizo la membresia'.$id_membresia, $_SESSION['id']);
   $accion->update($id_membresia, $nombre, $descripcion, $precio);
   $accion->deleteBeneficio($id_membresia);
 
-  foreach($_POST as $key => $value) 
+  foreach($_POST as $key => $value)
   {
 
       if($value=='on')
@@ -57,9 +57,11 @@ elseif($operacion=="2")
       }
 
   }
+  $_SESSION['mensaje']="La membresía se ha modificado con éxito!";
 }
 elseif ($operacion=="3") {
   $accion->delete($id_membresia);
+  $_SESSION['mensaje']="La membresía se ha eliminado con éxito!";
 }
 header('Location:index.php');
 ?>

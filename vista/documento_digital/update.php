@@ -31,13 +31,19 @@ $data=$documento->select($_GET['id']);
                 <input type="hidden" name="id" value="<?php echo $data['ID']; ?>">
                 <input type="hidden" name="path" value="<?php echo $data['path']; ?>">
                 <div class="row">
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <div class="form-group">
                       <label class="bmd-label-floating">Fecha</label>
                       <input readonly type="text" class="form-control" name="fecha" value="<?php echo $data['FECHA']; ?>">
                     </div>
                   </div>
-                  <div class="col-md-8">
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label class="bmd-label-floating">Titulo</label>
+                      <input type="text" class="form-control" name="title" value="<?php echo $data['titulo']; ?>">
+                    </div>
+                  </div>
+                  <div class="col-md-5">
                     <div class="form-group">
                       <label class="bmd-label-floating">Descripción</label>
                       <input type="text" class="form-control" name="descripcion" value="<?php echo $data['descripcion']; ?>">

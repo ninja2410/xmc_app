@@ -14,3 +14,5 @@
 <script src="assets/js/material-kit.js?v=2.0.4" type="text/javascript"></script>
 <!--BOOTSTRAP VALIDATOR-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js"></script>
+<!-- JavaScript -->
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.11.1/build/alertify.min.js"></script>

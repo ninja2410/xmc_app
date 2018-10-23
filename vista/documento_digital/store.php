@@ -14,6 +14,9 @@ if(isset($_POST['fecha'])){
     $arr_=explode("/", $dt_);
     $fecha=$arr_[2].'-'. $arr_[1].'-'. $arr_[0];
 }
+if(isset($_POST['title'])){
+  $titulo=$_POST['title'];
+}
 
 if(isset($_POST['descripcion'])){
   $descripcion=$_POST['descripcion'];
@@ -33,7 +36,8 @@ if ($operacion=="1") {
   $path='DOC_'.$accion->correlativo().substr($name,-4);
   move_uploaded_file($_FILES['img']['tmp_name'],'..\imagenes/'.$path);
   chmod('..\imagenes/'.$path,0644);
-  $accion->insert($fecha, 1, $path, $descripcion, $categoria);
+  $accion->insert($fecha, 1, $path, $descripcion, $categoria, $titulo);
+  $_SESSION['mensaje']="El documento se ha almacenado con éxito!";
 }
 elseif($operacion=="2") {
   $bit->insert('Se modifico el documento digital'.$id_Documento, $_SESSION['id']);
@@ -48,10 +52,12 @@ elseif($operacion=="2") {
   else{
     $path=$tmp;
   }
-  $accion->update($id_Documento, $fecha, 1, $path, $descripcion, $categoria);
+  $accion->update($id_Documento, $fecha, 1, $path, $descripcion, $categoria, $titulo);
+  $_SESSION['mensaje']="El documento se ha actualizado con éxito!";
 }
 elseif ($operacion=="3") {
   $bit->insert('Se elimino un documento digital', $_SESSION['id']);
+  $_SESSION['mensaje']="El documento se ha eliminado con éxito!";
   $accion->delete($id_Documento);
 }
 header('Location:index.php');

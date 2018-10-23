@@ -26,13 +26,16 @@ $accion=new Categoria();
 if ($operacion=="1") {
   $bit->insert('Agrego una nueva categoria', $_SESSION['id']);
   $accion->insert($nombre, $descripcion);
+  $_SESSION['mensaje']="La categoria se ha almacenado con éxito!";
 }
 elseif($operacion=="2") {
   $bit->insert('Se actualizo una categoria', $_SESSION['id']);
   $accion->update($id_categoria, $nombre, $descripcion, $estado);
+  $_SESSION['mensaje']="La categoria se ha actualizado con éxito!";
 }
 elseif ($operacion=="3") {
   $bit->insert('Se elimino una categoria', $_SESSION['id']);
+  $_SESSION['mensaje']="La categoria se ha eliminado con éxito!";
   $accion->delete($id_categoria);
 }
 header('Location:index.php');

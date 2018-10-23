@@ -26,13 +26,16 @@ $catDocumentos=new CatDocumentos();
 if ($operacion=="1") {
   $bit->insert('Agrego una nueva categoria de documentos', $_SESSION['id']);
   $catDocumentos->insert($estado, $nombre);
+  $_SESSION['mensaje']="La categoría se ha almacenado con éxito!";
 }
 elseif($operacion=="2") {
   $bit->insert('Se modifico una categoria de documentos', $_SESSION['id']);
   $catDocumentos->update($id_cat_documentos, $estado, $nombre);
+  $_SESSION['mensaje']="La categoría se ha modificado con éxito!";
 } elseif ($operacion=="3") {
   $bit->insert('Elimino una categoria de documentos', $_SESSION['id']);
   $catDocumentos->delete($id_cat_documentos);
+  $_SESSION['mensaje']="La categoría se ha eliminado con éxito!";
 }
 header('Location:index.php');
-?> 
+?>

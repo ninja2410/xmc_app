@@ -10,14 +10,18 @@ $btn='Asignar personal tecnico'
   <head>
     <meta charset="utf-8">
     <title>Personal técnico - Xelajú </title>
-    <?php 
-    include '..\layoults\headers2.php';    
+    <?php
+    include '..\layoults\headers2.php';
     ?>
   </head>
   <body class="profile-page sidebar-collapse">
     <?php
     include '..\layoults\barnav.php';
     ?>
+    <input type="hidden" id="mensaje" name="secret" value="<?php if ($_SESSION['mensaje']!="") {
+      echo $_SESSION['mensaje'];
+      $_SESSION['mensaje']="";
+    } ?>">
     <div class="main main-raised">
     <div class="container">
       <?php
@@ -45,12 +49,12 @@ $btn='Asignar personal tecnico'
                     <tr>
                         <td>
                         <h4><b><?php echo $row['cargo']?></b></h4>
-                        
+
                         </td>
                         <td>
                         <h4><?php echo $row['nombre'] ?></h4>
                         </td>
-                    </tr>  
+                    </tr>
                     <?php
                     }
                     ?>
@@ -64,7 +68,7 @@ $btn='Asignar personal tecnico'
             <?php
             }
             ?>
-            </div>    
+            </div>
             <div class="row" style="padding:20px">
                 <div class="col-md-3">
                     <div>
@@ -83,6 +87,9 @@ $btn='Asignar personal tecnico'
     <?php include '..\layoults\scripts2.php'; ?>
     <script type="text/javascript">
     $(document).ready(function(){
+      if ($('#mensaje').val()!="") {
+        alertify.success($('#mensaje').val());
+      }
    $('#table1').DataTable({
        dom: 'Bfrtip',
        buttons: [

@@ -52,18 +52,19 @@ if (isset($_POST['id'])) {
 }
 
 $lesion=new Partido();
-if ($operacion=="1") 
+if ($operacion=="1")
 {
   $lesion->insert($fecha, $h1, $cat, $estadio, $ga,$gc,$equi,$temp,$h2,$estado,$obs,$estado_estadio,$clima);
-  echo 'insertado';
-}elseif($operacion=="2") 
+  $_SESSION['mensaje']="La estadística se ha almacenado con éxito!";
+}elseif($operacion=="2")
 {
-  
-  $lesion->update($id_partido, $fecha, $h1, $cat, $estadio, $ga,$gc,$equi,$temp,$h2,$estado,$obs,$estado_estadio,$clima);
 
-}elseif ($operacion=="3") 
+  $lesion->update($id_partido, $fecha, $h1, $cat, $estadio, $ga,$gc,$equi,$temp,$h2,$estado,$obs,$estado_estadio,$clima);
+  $_SESSION['mensaje']="La estadística se ha modificado con éxito!";
+}elseif ($operacion=="3")
 {
   $lesion->delete($id_partido);
+  $_SESSION['mensaje']="La estadística se ha eliminado con éxito!";
 }
 header('Location:index.php');
 ?>

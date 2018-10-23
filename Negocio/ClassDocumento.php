@@ -6,15 +6,15 @@ require_once('..\..\Conexion\conexion.php');
 class Documento
 {
   private $query;
-  public function insert($fecha, $estado, $path, $descripcion, $categoria){
-    $query="CALL SP_DOCDIGITAL_INSERT('$fecha', $estado, '$path', '$descripcion', $categoria);";
+  public function insert($fecha, $estado, $path, $descripcion, $categoria, $titulo){
+    $query="CALL SP_DOCDIGITAL_INSERT('$fecha', $estado, '$path', '$descripcion', $categoria, $titulo);";
     $bd= new conexion();
 		$dt=$bd->execute_query($query);
 	return $dt;
   }
 
-  public function update($id, $fecha, $estado, $path, $descripcion, $categoria){
-    $query="CALL SP_DOCDIGITAL_UPDATE($id, $estado, '$path', '$descripcion', $categoria);";
+  public function update($id, $fecha, $estado, $path, $descripcion, $categoria, $titulo){
+    $query="CALL SP_DOCDIGITAL_UPDATE($id, $estado, '$path', '$descripcion', $categoria, $titulo);";
     $bd= new conexion();
 		$dt=$bd->execute_query($query);
 		return $dt;

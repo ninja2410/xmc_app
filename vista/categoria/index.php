@@ -16,7 +16,10 @@ $data=$categoria->select(-1);
    <div class="main main-raised">
     <div class="content">
       <div class="container-fluid">
-
+        <input type="hidden" id="mensaje" name="secret" value="<?php if ($_SESSION['mensaje']!="") {
+      echo $_SESSION['mensaje'];
+      $_SESSION['mensaje']="";
+    } ?>">
           <div class="col-md-12">
             <div class="card">
               <div class="card-header card-header-danger row">
@@ -91,5 +94,12 @@ $data=$categoria->select(-1);
    </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        if ($('#mensaje').val()!="") {
+          alertify.success($('#mensaje').val());
+        }
+      });
+    </script>
 </body>
 </html>

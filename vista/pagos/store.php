@@ -15,10 +15,10 @@ $monto=$_POST['amount'];
 $meses=$_POST['mounts'];
 $membresia=$_POST['member'];
 if ($operation==1) {
-  
+
   if($pago->insert($monto, $socio, $meses, $membresia)){
     $bit->insert('Realizo cobro', $_SESSION['id']);
-    $_SESSION['mensaje']="Se ha almacenado el pago con éxito";
+    $_SESSION['mensaje']="El pago se ha almacenado con éxito!";
   }
 
 }

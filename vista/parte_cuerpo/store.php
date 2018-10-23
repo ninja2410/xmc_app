@@ -26,12 +26,15 @@ $parte=new ParteCuerpo();
 if ($operacion=="1") {
   $bit->insert('Se agrego una parte del cuerpo', $_SESSION['id']);
   $parte->insert($nombre, $estado);
+  $_SESSION['mensaje']="El apartado se ha almacenado con éxito!";
 }
 elseif($operacion=="2") {
   $bit->insert('Se acutalizo la parte del cuerpo '.$id_parte, $_SESSION['id']);
   $parte->update($id_parte, $nombre, $estado);
+  $_SESSION['mensaje']="El apartado se ha modificado con éxito!";
 } elseif ($operacion=="3") {
   $parte->delete($id_parte);
+  $_SESSION['mensaje']="El apartado se ha eliminado con éxito!";
 }
 header('Location:index.php');
-?> 
+?>

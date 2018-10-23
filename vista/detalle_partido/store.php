@@ -52,7 +52,7 @@ if(isset($_POST['tiros'])){
   if(isset($_POST['partido'])){
     $partido=$_POST['partido'];
   }
-  
+
 if (isset($_POST['id'])) {
   $id_detalle_partido=$_POST['id'];
 }
@@ -96,27 +96,28 @@ if(isset($_POST['tiros2'])){
   if(isset($_POST['exp2'])){
     $exp2=$_POST['exp2'];
   }
-  
+
 if (isset($_POST['id2'])) {
   $id_detalle_partido2=$_POST['id2'];
 }
 //-------------------------------------------------
 $accion=new Detalle();
-if ($operacion=="1") 
+if ($operacion=="1")
 {
   $accion->insert($esq,$fal, $asis, $tiros,$tiros_puerta,$ta,$tr,$fj,$cam,$gol,$exp,$equi,$partido);
-
+  $_SESSION['mensaje']="Las información se ha almacenado con éxito!";
 }
-elseif($operacion=="2") 
+elseif($operacion=="2")
 {
   $bit->insert('Se modificaron los resultados del partido'.$partido, $_SESSION['id']);
   $accion->update($id_detalle_partido, $esq,$fal, $asis, $tiros,$tiros_puerta,$ta,$tr,$fj,$cam,$gol,$exp,1,$partido);
   $accion->update($id_detalle_partido2, $esq2,$fal2, $asis2, $tiros2,$tiros_puerta2,$ta2,$tr2,$fj2,$cam2,$gol2,$exp2,$equi,$partido);
-
-} elseif ($operacion=="3") 
+$_SESSION['mensaje']="Las información se ha modificado con éxito!";
+} elseif ($operacion=="3")
 {
   $bit->insert('Se elimino los resultados del partido', $_SESSION['id']);
   $accion->delete($id_prensa);
+  $_SESSION['mensaje']="Las información se ha eliminado con éxito!";
 }
 header('Location:index.php?id='.$partido.'&id2='.$equi);
 ?>

@@ -16,6 +16,10 @@ $data=$cat_documentos->select(-1);
     include '..\layoults\barnav.php';
     ?>
     <div class="content">
+      <input type="hidden" id="mensaje" name="secret" value="<?php if ($_SESSION['mensaje']!="") {
+      echo $_SESSION['mensaje'];
+      $_SESSION['mensaje']="";
+    } ?>">
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-12">
@@ -44,7 +48,7 @@ $data=$cat_documentos->select(-1);
                           <td>
                             <?php echo $row['nombre']; ?>
                           </td>
-                          
+
                           <td class="td-actions text-lefht">
                               <div style="float:left">
                                 <a href="..\..\vista\categoria_documentos/insert.php">
@@ -84,5 +88,12 @@ $data=$cat_documentos->select(-1);
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        if ($('#mensaje').val()!="") {
+        alertify.success($('#mensaje').val());
+      }
+      });
+    </script>
   </body>
 </html>

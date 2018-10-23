@@ -25,9 +25,9 @@ $data=$categoria->select(-1);
               <input type="hidden" name="operation" value="1">
               <div class="row">
                 <div class="col-md-4">
-                    <label class="">Fecha</label>
-                    <div class="form-group">
-                    <input type="text" class="form-control datetimepicker" name="fecha">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Titulo</label>
+                    <input type="text" class="form-control" name="title">
                   </div>
                 </div>
                 <div class="col-md-8">
@@ -36,9 +36,9 @@ $data=$categoria->select(-1);
                     <input type="text" class="form-control" name="descripcion">
                   </div>
                 </div>
-                </div>
+              </div>
               <div class="row">
-                <div class="col-md-2">
+                <div class="col-md-1">
                 </div>
                 <div class="col-md-4">
                   <div class="fileinput fileinput-new" data-provides="fileinput">
@@ -49,7 +49,7 @@ $data=$categoria->select(-1);
                     </div>
                   </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-3">
                   <div class="form-group">
                     <label for="exampleFormControlSelect1">Categorías</label>
                     <select class="form-control" name="categoria">
@@ -61,6 +61,12 @@ $data=$categoria->select(-1);
                       }
                         ?>
                     </select>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                    <label class="">Fecha</label>
+                    <div class="form-group">
+                    <input type="text" class="form-control datetimepicker" name="fecha">
                   </div>
                 </div>
               </div>

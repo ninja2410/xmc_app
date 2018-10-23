@@ -57,12 +57,15 @@ if ($operacion=="1") {
   for ($i=0; $i < count($cantidades); $i++) {
     $tra->insert($cantidades[$i], $medicamentos[$i], $prescriociones[$i], $id);
   }
+  $_SESSION['mensaje']="La lesión se ha almacenado con éxito!";
 }
 elseif($operacion=="2") {
   $bit->insert('Agrego una nueva lesion', $_SESSION['id']);
   $lesion->update($id_lesion, $f_inicio, $f_final, 1, $motivo, $jugador, $lesion_j, $medico, $observaciones);
+  $_SESSION['mensaje']="La lesión se ha modificado con éxito!";
 } elseif ($operacion=="3") {
   $lesion->delete($id_lesion);
+  $_SESSION['mensaje']="La lesión se ha eliminado con éxito!";
 }
 header('Location:index.php');
 ?>

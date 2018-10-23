@@ -14,6 +14,10 @@ $data=$documento->select(-1);
     <?php
     include '..\layoults\barnav.php';
     ?>
+    <input type="hidden" id="mensaje" name="secret" value="<?php if ($_SESSION['mensaje']!="") {
+      echo $_SESSION['mensaje'];
+      $_SESSION['mensaje']="";
+    } ?>">
     <div class="main main-raised">
       <div class="content">
         <div class="container-fluid">
@@ -46,6 +50,9 @@ $data=$documento->select(-1);
                           Fecha
                         </th>
                         <th>
+                          Título
+                        </th>
+                        <th>
                           Descripción
                         </th>
                         <th>
@@ -65,6 +72,9 @@ $data=$documento->select(-1);
                           </td>
                           <td>
                             <?php echo $row['FECHA']; ?>
+                          </td>
+                          <td>
+                            <?php echo $row['titulo']; ?>
                           </td>
                           <td>
                             <?php echo $row['descripcion']; ?>
@@ -116,6 +126,10 @@ $data=$documento->select(-1);
     <script>
 
        $(document).ready(function(){
+
+if ($('#mensaje').val()!="") {
+        alertify.success($('#mensaje').val());
+      }
          $('#mytable').DataTable({
              dom: 'Bfrtip',
              buttons: [

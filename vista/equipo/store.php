@@ -32,6 +32,7 @@ if ($operacion=="1") {
   move_uploaded_file($_FILES['img']['tmp_name'],'..\imagenes/'.$foto);
   chmod('..\imagenes/'.$foto,0644);
   $accion->insert($nombre, $procedencia,$foto);
+  $_SESSION['mensaje']="El equipo se ha almacenado con éxito!";
 }
 
 elseif($operacion=="2") {
@@ -47,8 +48,10 @@ elseif($operacion=="2") {
     $foto=$tmp;
   }
   $accion->update($id_equipo, $nombre, $procedencia, $foto);
+  $_SESSION['mensaje']="El equipo se ha actualizado con éxito!";
 } elseif ($operacion=="3") {
   $accion->delete($id_equipo);
+  $_SESSION['mensaje']="El equipo se ha eliminado con éxito!";
 }
 header('Location:index.php');
 ?>

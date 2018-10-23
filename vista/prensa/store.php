@@ -35,12 +35,15 @@ $accion=new Prensa();
 if ($operacion=="1") {
   $bit->insert('Se agrego no personal de comunicacion'.$id,$_SESSION['id']);
   $accion->insert($nombre, $apellido, $telefono, $empresa);
+  $_SESSION['mensaje']="El reportero se ha almacenado con éxito!";
 }
 elseif($operacion=="2") {
   $bit->insert('Se actualizo el personal de comunicacion'.$id,$_SESSION['id']);
   $accion->update($id_prensa, $nombre, $apellido, $telefono, $empresa);
+  $_SESSION['mensaje']="El reportero se ha modificado con éxito!";
 } elseif ($operacion=="3") {
   $accion->delete($id_prensa);
+  $_SESSION['mensaje']="El reportero se ha eliminado con éxito!";
 }
 header('Location:index.php');
 ?>

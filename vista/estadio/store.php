@@ -34,12 +34,15 @@ $accion=new Estadio();
 if ($operacion=="1") {
   $bit->insert('Agrego una nuevo estadio ', $_SESSION['id']);
   $accion->insert($nombre, $direccion, $telefono, $ciudad);
+  $_SESSION['mensaje']="El estadio se ha almacenado con éxito!";
 }
 elseif($operacion=="2") {
   $bit->insert('Actualizo el estadio '.$id_estadio, $_SESSION['id']);
   $accion->update($id_estadio, $nombre, $direccion, $telefono,$ciudad);
+  $_SESSION['mensaje']="El estadio se ha actualizado con éxito!";
 } elseif ($operacion=="3") {
   $accion->delete($id_estadio);
+  $_SESSION['mensaje']="El estadio se ha eliminado con éxito!";
 }
 header('Location:index.php');
 ?>

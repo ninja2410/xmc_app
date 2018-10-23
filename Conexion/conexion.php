@@ -6,16 +6,15 @@ class conexion
 	// private $pass="database";
 	// private $bd="db_xelajumc";
 
-	private $servidor='sql174.main-hosting.eu';
-	private $usuario="u538043044_root";
+	private $servidor='198.71.241.28';
+	private $usuario="dev_xelaju";
 	private $pass="database";
-	private $bd="u538043044_xela";
+	private $bd="dev_xela";
 
-	// private $servidor='sql3.freemysqlhosting.net';
-	// private $usuario="sql3259082";
-	// private $pass="NDqrhKuxIn";
-	// private $bd="sql3259082";
-	// public  $objetoconexion;
+	// private $servidor='sql174.main-hosting.eu';
+	// private $usuario="u538043044_root";
+	// private $pass="database";
+	// private $bd="u538043044_xela";
 
 	public function conectar()
 	{

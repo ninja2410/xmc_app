@@ -50,6 +50,7 @@ if ($operacion=="1") {
   chmod('..\imagenes\sc/'.$path,0644);
   $beneficio->insert($nombre, $apellido, $dir_dom, $telefono, $fnac, date('Y-m-d'), $dpi, $dir_cob, $id_membresia,
                       $email, $path);
+                      $_SESSION['mensaje']="El socio se ha almacenado con éxito!";
 }
 elseif($operacion=="2") {
   $bit->insert('Actualizo la infromacion del socio'.$id_socio, $_SESSION['id']);
@@ -66,8 +67,10 @@ elseif($operacion=="2") {
   }
   $beneficio->update($id_socio, $nombre, $apellido, $dir_dom, $telefono, $fnac, date('Y-m-d'),
   $dpi, $dir_cob, $id_membresia, $email, $path);
+  $_SESSION['mensaje']="El socio se ha modificado con éxito!";
 } elseif ($operacion=="3") {
   $beneficio->delete($id_socio);
+  $_SESSION['mensaje']="El socio se ha eliminado con éxito!";
 }
 header('Location:index.php');
 ?>

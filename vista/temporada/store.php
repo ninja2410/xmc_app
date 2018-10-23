@@ -28,20 +28,21 @@ if (isset($_POST['id'])) {
 $lesion=new Temporada();
 $bit=new Bitacora();
 
-if ($operacion=="1") 
+if ($operacion=="1")
 {
   $lesion->insert($descripcion, $fecha_inicio, $fecha_final);
   $bit->insert('Agrego una nueva temporada ', $_SESSION['id']);
-
-}elseif($operacion=="2") 
+  $_SESSION['mensaje']="La temporada se ha almacenado con éxito!";
+}elseif($operacion=="2")
 {
-  
+
   $lesion->update($id_temporada,$descripcion, $fecha_inicio, $fecha_final);
   $bit->insert('Actualizo la temporada '.$descripcion, $_SESSION['id']);
-
-}elseif ($operacion=="3") 
+  $_SESSION['mensaje']="La temporada se ha modificado con éxito!";
+}elseif ($operacion=="3")
 {
   $lesion->delete($id_temporada);
+  $_SESSION['mensaje']="La temporada se ha eliminado con éxito!";
 }
 header('Location:index.php');
 ?>

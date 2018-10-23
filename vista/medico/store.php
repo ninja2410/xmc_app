@@ -43,13 +43,16 @@ if ($operacion=="1") {
   $bit->insert('Agrego una nuevo medico ', $_SESSION['id']);
   $lesion->insert($nombre, $apellido, $f_nacimiento, $f_inicio, $f_inicio, 1, $direccion,
   $telefono);
+  $_SESSION['mensaje']="El médico se ha almacenado con éxito!";
 }
 elseif($operacion=="2") {
   $bit->insert('Edito al medico con codigo'.$id_medico, $_SESSION['id']);
   $lesion->update($id_medico, $nombre, $apellido, $f_nacimiento, $f_inicio, $f_inicio, 1, $direccion,
   $telefono);
+  $_SESSION['mensaje']="El médico se ha modificado con éxito!";
 } elseif ($operacion=="3") {
   $lesion->delete($id_medico);
+  $_SESSION['mensaje']="El médico se ha eliminado con éxito!";
 }
 header('Location:index.php');
 ?>

@@ -61,6 +61,7 @@ $bit->insert('Se agrego un nuevo entredador', $_SESSION['id']);
   chmod('..\imagenes/'.$foto,0644);
   $accion->insert($nombre, $apellido, $fecha_nacimiento, $fecha_inicio, $fecha_fin, $telefono,
   $direccion,$foto,$nacionalidad, $id_contrato);
+  $_SESSION['mensaje']="El entrenador se ha almacenado con éxito!";
 }
 elseif($operacion=="2") {
   $bit->insert('Modifico un entrenador', $_SESSION['id']);
@@ -77,10 +78,12 @@ elseif($operacion=="2") {
   }
   $accion->update($id_entrenador, $nombre, $apellido, $fecha_nacimiento, $fecha_inicio, $fecha_fin,$telefono,
   $direccion,$foto,$nacionalidad, $id_contrato);
-  
+  $_SESSION['mensaje']="El entrenador se ha actualizado con éxito!";
+
 } elseif ($operacion=="3") {
   $bit->insert('Elimino un entrenador', $_SESSION['id']);
   $accion->delete($id_entrenador);
+  $_SESSION['mensaje']="El entrenador se ha eliminado con éxito!";
 }
 header('Location:index.php');
 ?>

@@ -15,6 +15,10 @@ $data=$temporada->select(-1);
     <?php
     include '..\layoults\barnav.php';
     ?>
+    <input type="hidden" id="mensaje" name="secret" value="<?php if ($_SESSION['mensaje']!="") {
+      echo $_SESSION['mensaje'];
+      $_SESSION['mensaje']="";
+    } ?>">
     <div class="main main-raised">
     <div class="content">
       <div class="container-fluid">
@@ -105,6 +109,9 @@ $data=$temporada->select(-1);
     <?php include '..\layoults\scripts2.php'; ?>
     <script type="text/javascript">
     $(document).ready(function(){
+      if ($('#mensaje').val()!="") {
+        alertify.success($('#mensaje').val());
+      }
    $('#table1').DataTable({
        dom: 'Bfrtip',
        buttons: [

@@ -17,10 +17,11 @@ if(isset($_POST['id']))
 $lesion=new PersonalTecnico();
 $cont=1;
 
-if ($operacion=="1") 
+if ($operacion=="1")
 {
   $bit->insert('Edito el personal tecnico del partido'.$id,$_SESSION['id']);
-    foreach($_POST as $key => $value) 
+  $_SESSION['mensaje']="El personal técnico se ha almacenado con éxito!";
+    foreach($_POST as $key => $value)
     {
       if($cont==1)
       {
@@ -34,10 +35,10 @@ if ($operacion=="1")
       }
     }
 }
-elseif($operacion=="2") 
+elseif($operacion=="2")
 {
   $bit->insert('Edito el personal tecnico del partido'.$id,$_SESSION['id']);
-  foreach($_POST as $key => $value) 
+  foreach($_POST as $key => $value)
   {
     if($cont==1)
     {
@@ -46,16 +47,18 @@ elseif($operacion=="2")
     }
     else
     {
-      
+
       echo "'$key' = '$value'";
       $lesion->update($key, $value);
     }
 
   }
+  $_SESSION['mensaje']="El personal técnico se ha modificado con éxito!";
 
-}elseif ($operacion=="3") 
+}elseif ($operacion=="3")
 {
   $lesion->delete($id_temporada);
+  $_SESSION['mensaje']="El personal técnico se ha eliminado con éxito!";
 }
 header('Location:../../partido/index.php');
 ?>

@@ -29,12 +29,15 @@ $lesion=new Lesion();
 if ($operacion=="1") {
   $bit->insert('Agrego una nueva lesion ', $_SESSION['id']);
   $lesion->insert($nombre, $descripcion, 1);
+  $_SESSION['mensaje']=" se ha almacenado con éxito!";
 }
 elseif($operacion=="2") {
   $bit->insert('Acutalizo la lesion '.$id_lesion, $_SESSION['id']);
   $lesion->update($id_lesion, $nombre, $descripcion, 1);
+  $_SESSION['mensaje']="La lesion se ha actualizado con éxito!";
 } elseif ($operacion=="3") {
   $lesion->delete($id_lesion);
+  $_SESSION['mensaje']="La lesion se ha eliminado con éxito!";
 }
 header('Location:index.php');
 ?>

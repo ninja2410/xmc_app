@@ -65,20 +65,23 @@ echo $horayfecha;
 $lesion=new Partido();
 
 
-if ($operacion=="1") 
+if ($operacion=="1")
 {
   $lesion->insert($horayfecha, $cat, $estadio,$equi,$temp,$obs);
   $bit->insert('Agrego un nuevo partido',$_SESSION['id']);
-  
-}elseif($operacion=="2") 
+  $_SESSION['mensaje']="El partido se ha almacenado con éxito!";
+
+}elseif($operacion=="2")
 {
-  
+
   $lesion->update($id_partido, $horayfecha, $cat, $estadio,$equi,$temp,$obs);
   $bit->insert('Actualizo el partido '.$id_partido, $_SESSION['id']);
+  $_SESSION['mensaje']="El partido se ha modificado con éxito!";
 
-}elseif ($operacion=="3") 
+}elseif ($operacion=="3")
 {
   $lesion->delete($id_partido);
+  $_SESSION['mensaje']="El partido se ha eliminado con éxito!";
 }
 header('Location:index.php');
 ?>

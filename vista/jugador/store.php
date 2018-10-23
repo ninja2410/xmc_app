@@ -71,6 +71,7 @@ if ($operacion=="1") {
   chmod('../imagenes/'.$foto,0644);
   $jugador->insert($nombre, $direccion, $fecha_nacimiento, $estado, $padre, $madre, $telefono, $procedencia, $apellidos, $foto, $id_posicion, $camisola,$id_contrato);
   $asignacion_cat->insert($fecha_inicio,$fecha_final,$id_categoria,$id_jugador2,$id_equipo);
+  $_SESSION['mensaje']="El jugador se ha almacenado con éxito!";
   header('Location:index.php');
 }
 elseif($operacion=="2") {
@@ -89,9 +90,11 @@ elseif($operacion=="2") {
   $id_equipo=1;
   $jugador->update($id_jugador, $nombre, $direccion, $fecha_nacimiento, $estado, $padre, $madre, $telefono, $procedencia, $apellidos, $foto, $id_posicion, $camisola,$id_contrato);
   $asignacion_cat->update($id_AC,$fecha_inicio,$fecha_final,$id_categoria,$id_jugador,$id_equipo);
+  $_SESSION['mensaje']="El jugador se ha modificado con éxito!";
   header('Location:detalle.php?id='.$id_jugador);
 } elseif ($operacion=="3") {
   $jugador->delete($id_jugador);
+  $_SESSION['mensaje']="El jugador se ha eliminado con éxito!";
   header('Location:index.php');
 }
 ?>

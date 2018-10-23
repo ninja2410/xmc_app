@@ -82,6 +82,7 @@ if ($operacion=="1") {
   $bit->insert('Agrego una nueva ficha medica al jugador'.$id_jugador, $_SESSION['id']);
   $detalle=new DetalleFM();
   $fichamedica->insert($fecha, $estado, $id_jugador, $grasa, $peso, $talla);
+  $_SESSION['mensaje']="La ficha médica se ha almacenado con éxito!";
   $id_tmp=$fichamedica->id();
   foreach ($signosVitales as $key => $value) {
     $detalle->insert($value->valor, $value->campo, $id_tmp);
@@ -132,8 +133,10 @@ elseif($operacion=="2") {
     echo $value->ID;
     $detalle->update($value->valor, $value->ID ,$value->campo, $id_ficha);
   }
+  $_SESSION['mensaje']="La ficha médica se ha actualizado con éxito!";
 } elseif ($operacion=="3") {
   $fichamedica->delete($id_ficha);
+  $_SESSION['mensaje']="La ficha médica se ha eliminado con éxito!";
 }
 header('Location:index.php');
 ?>

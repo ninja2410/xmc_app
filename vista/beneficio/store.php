@@ -21,13 +21,16 @@ $beneficio=new Beneficio();
 if ($operacion=="1") {
   $bit->insert('Agrego un nuevo beneficio', $_SESSION['id']);
   $beneficio->insert($descripcion, 1, $nombre);
+  $_SESSION['mensaje']="La lesion se ha almacenado con éxito!";
 }
 elseif($operacion=="2") {
   $bit->insert('Actualizo un beneficio', $_SESSION['id']);
   $beneficio->update($id_beneficio, $descripcion, 1, $nombre);
+  $_SESSION['mensaje']="La lesion se ha actualizado con éxito!";
 } elseif ($operacion=="3") {
   $bit->insert('Elimino un beneficio', $_SESSION['id']);
   $beneficio->delete($id_beneficio);
+  $_SESSION['mensaje']="La lesion se ha eliminado con éxito!";
 }
 header('Location:index.php');
 ?>

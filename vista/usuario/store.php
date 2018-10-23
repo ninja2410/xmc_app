@@ -10,7 +10,7 @@ $return_arr=array();
 
 if(isset($_POST['id_us'])){
   $_POST['id_us'];
-  
+
 }
 
 if(isset($_POST['usuario'])){
@@ -41,7 +41,7 @@ $lesion=new Usuario();
 $bit=new Bitacora();
 $cont=1;
 
-if ($operacion=="1") 
+if ($operacion=="1")
 {
   $name=$_FILES['img']['name'];
   move_uploaded_file($_FILES['img']['tmp_name'],'../imagenes/'.$usuario);
@@ -49,23 +49,23 @@ if ($operacion=="1")
   $lesion->insert($usuario, $pass,$nombre,$apellido,$usuario,$email);
   $bit->insert('Agrego un nuevo usuario', $_SESSION['id']);
 
-  foreach($_POST as $key => $value) 
+  foreach($_POST as $key => $value)
   {
 
       echo "  '$key' = '$value'";
-      
-      
+
+
       if($value=='on')
       {
       $lesion->insertPermiso($key);
       }
 
-    
+
   }
 
+$_SESSION['mensaje']="El usuario se ha almacenado con éxito!";
 
-
-}elseif($operacion=="2") 
+}elseif($operacion=="2")
 {
   $name=$_FILES['img']['name'];
   move_uploaded_file($_FILES['img']['tmp_name'],'../imagenes/'.$usuario);
@@ -74,7 +74,7 @@ if ($operacion=="1")
   $lesion->update($id_usuario, $usuario, $pass,$nombre,$apellido,$usuario,$email);
   $bit->insert('Actualizo el usuario '.$id_usuario, $_SESSION['id']);
 
-  foreach($_POST as $key => $value) 
+  foreach($_POST as $key => $value)
   {
 
       if($value=='on')
@@ -83,14 +83,14 @@ if ($operacion=="1")
       }
 
   }
-
-}elseif($operacion=="4") 
+$_SESSION['mensaje']="El usuario se ha modificado con éxito!";
+}elseif($operacion=="4")
 {
 
   $lesion->deletePermisos($id_usuario);
   $bit->insert('Modificaron los permisos al usuario '.$id_usuario, '1');
 
-  foreach($_POST as $key => $value) 
+  foreach($_POST as $key => $value)
   {
 
       if($value=='on')
@@ -99,11 +99,12 @@ if ($operacion=="1")
       }
 
   }
-
+$_SESSION['mensaje']="El usuario se ha modificado con éxito!";
 }
-elseif ($operacion=="3") 
+elseif ($operacion=="3")
 {
   $lesion->delete($id_usuario);
+  $_SESSION['mensaje']="El usuario se ha eliminado con éxito!";
 }
 
 header('Location:index.php');

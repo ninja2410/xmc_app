@@ -21,6 +21,10 @@ $btn='Asignar personal tecnico'
     <?php
     include '..\layoults\barnav.php';
     ?>
+    <input type="hidden" id="mensaje" name="secret" value="<?php if ($_SESSION['mensaje']!="") {
+      echo $_SESSION['mensaje'];
+      $_SESSION['mensaje']="";
+    } ?>">
 
     <div class="main main-raised">
     <br>
@@ -217,12 +221,12 @@ $btn='Asignar personal tecnico'
                     <tr>
                         <td>
                         <h4><b><?php echo $row['cargo']?></b></h4>
-                        
+
                         </td>
                         <td>
                         <h4><?php echo $row['nombre'] ?></h4>
                         </td>
-                    </tr>  
+                    </tr>
                     <?php
                     }
                     ?>
@@ -236,13 +240,13 @@ $btn='Asignar personal tecnico'
             ?>
             <h2>No se asignó ningún personal</h2>
             </div>
-            
+
             <?php
-            
+
             }
             ?>
-        
-        <div class="col-md-4">  
+
+        <div class="col-md-4">
             <div class="row" style="padding:20px">
                 <div class="col-md-3">
                     <div>
@@ -262,5 +266,12 @@ $btn='Asignar personal tecnico'
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        if ($('#mensaje').val()!="") {
+        alertify.success($('#mensaje').val());
+      }
+      });
+    </script>
   </body>
 </html>
