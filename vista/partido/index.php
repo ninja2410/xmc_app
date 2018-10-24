@@ -127,7 +127,7 @@ $data=$partido->select(-1);
                     </tbody>
                   </table>
                 </div>
-                <a href="vistas/partidos/temporada.php"> <button type="button" class="btn btn-info pull-right"><i class="fas fa-undo-alt fa-lg"></i>Resumen de Temporadas</button></a>
+                <a href="temporada.php"> <button type="button" class="btn btn-info pull-right">Resumen de Temporadas</button></a>
               </div>
             </div>
           </div>
