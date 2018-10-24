@@ -11,16 +11,17 @@ $data=$usuario->select(-1);
     <title>Bitácora - Listar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
-  <body>
+  <body class="profile-page sidebar-collapse">
     <?php
     include '..\layoults\barnav.php';
     ?>
+    <div class="main main-raised">
     <div class="content">
       <div class="container-fluid">
-        <div class="row">
+        
           <div class="col-md-12">
             <div class="card">
-              <div class="card-header card-header-primary">
+              <div class="card-header card-header-danger">
                 <div class="col-lg-10" style="float:left;">
                   <h2 class="card-title ">Bitácora</h4>
                   <p class="card-category">Acciones realizadas por el usuario</p>
@@ -28,8 +29,8 @@ $data=$usuario->select(-1);
               </div>
               <div class="card-body">
                 <div class="table-responsive">
-                  <table class="table">
-                    <thead class=" text-primary">
+                  <table class="table table-hover table-bordered" id="table1">
+                    <thead>
                       <th>
                         ID
                       </th>
@@ -43,7 +44,7 @@ $data=$usuario->select(-1);
                         Usuario
                       </th>
                       <th>
-                        Acción
+                        Acción realizada
                       </th>
                     </thead>
                     <tbody>
@@ -75,10 +76,53 @@ $data=$usuario->select(-1);
               </div>
             </div>
           </div>
-        </div>
+        
       </div>
+    </div>
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
+    <script type="text/javascript">
+$('#table1').DataTable({
+   dom: 'Bfrtip',
+   buttons: [
+     {
+       extend:'copy',
+       title:'Bitácora',
+       exportOptions:{
+         columns:[0,1,2,3,4]
+       }
+     },
+     {
+       extend:'csv',
+       title:'Bitácora',
+       exportOptions:{
+         columns:[0,1,2,3,4]
+       }
+     },
+     {
+       extend:'excel',
+       title:'Bitácora',
+       exportOptions:{
+         columns:[0,1,2,3,4]
+       }
+     },
+     {
+       extend:'pdf',
+       title:'Bitácora',
+       exportOptions:{
+         columns:[0,1,2,3,4]
+       }
+     },
+     {
+       extend:'print',
+       title:'Bitácora',
+       exportOptions:{
+         columns:[0,1,2,3,4]
+       }
+     }
+   ],
+}) ;
+    </script>
   </body>
 </html>
