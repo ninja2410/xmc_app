@@ -57,7 +57,7 @@ $data=$equipo->select(-1);
                       Escudo
                     </th>
                     <th>
-                      <!-- Campo vacío -->
+                      Acciones
                     </th>
                   </thead>
                   <tbody>
