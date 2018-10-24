@@ -4,6 +4,12 @@ $entrenador=new Entrenador();
 $data=$entrenador->select(-1);
  ?>
 
+ <?php
+require_once('..\..\Negocio/ClassAsignacionEntrenador.php');
+$asignacion=new AsignacionEntrenador();
+$data2=$asignacion->select(-1);
+ ?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -47,6 +53,9 @@ $data=$entrenador->select(-1);
                         Nombre
                       </th>
                       <th>
+                        Categoría
+                      </th>
+                      <th>
                         Foto
                       </th>
                       <th>
@@ -63,6 +72,9 @@ $data=$entrenador->select(-1);
                         </td>
                         <td>
                         <?php echo $row['nombre']." ".$row['apellido']; ?>
+                        </td>
+                        <td>
+                        <?php echo $row['CATEGORIA']; ?>
                         </td>
                         <td>
                         <?php
@@ -84,7 +96,7 @@ $data=$entrenador->select(-1);
                                 <input type="hidden" name="operation" value="3">
                                 <input type="hidden" name="id" value="<?php echo $row['id_entrenador']; ?>">
                                 <!-- Inicio de modal -->
-                                <button type="button" data-toggle="modal" data-target="<?php echo '#Confirmacion'.$row['id_entrenador']; ?>" rel="tooltip" title="Eliminar categoría" class="btn btn-danger btn-link btn-sm">
+                                <button type="button" data-toggle="modal" data-target="<?php echo '#Confirmacion'.$row['id_entrenador']; ?>" rel="tooltip" title="Eliminar entrenador" class="btn btn-danger btn-link btn-sm">
                                   <i class="material-icons">close</i>
                                 </button>
                                 <!-- Modal -->
@@ -134,35 +146,35 @@ if ($('#mensaje').val()!="") {
              buttons: [
                {
                  extend:'copy',
-                 title:'Listado de categorías',
+                 title:'Listado de entrenadores',
                  exportOptions:{
                    columns:[0,1,2]
                  }
                },
                {
                  extend:'csv',
-                 title:'Listado de categorías',
+                 title:'Listado de entrenadores',
                  exportOptions:{
                    columns:[0,1,2]
                  }
                },
                {
                  extend:'excel',
-                 title:'Listado de categorías',
+                 title:'Listado de entrenadores',
                  exportOptions:{
                    columns:[0,1,2]
                  }
                },
                {
                  extend:'pdf',
-                 title:'Listado de categorías',
+                 title:'Listado de entrenadores',
                  exportOptions:{
                    columns:[0,1,2]
                  }
                },
                {
                  extend:'print',
-                 title:'Listado de categorías',
+                 title:'Listado de entrenadores',
                  exportOptions:{
                    columns:[0,1,2]
                  }

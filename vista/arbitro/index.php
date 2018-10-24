@@ -49,9 +49,9 @@ $data=$arbitro->select(-1);
                       <th>
                         Tipo de árbitro
                       </th>
-                      <!-- <th>
-                        Tipo árbitro
-                      </th> -->
+                      <th>
+                        Acciones
+                      </th>
                     </thead>
                     <tbody>
                       <?php
@@ -132,35 +132,35 @@ $('#table1').DataTable({
        extend:'copy',
        title:'Listado de arbitros',
        exportOptions:{
-         columns:[0,1]
+         columns:[0,1,2]
        }
      },
      {
        extend:'csv',
        title:'Listado de arbitros',
        exportOptions:{
-         columns:[0,1]
+         columns:[0,1,2]
        }
      },
      {
        extend:'excel',
        title:'Listado de arbitros',
        exportOptions:{
-         columns:[0,1]
+         columns:[0,1,2]
        }
      },
      {
        extend:'pdf',
        title:'Listado de arbitros',
        exportOptions:{
-         columns:[0,1]
+         columns:[0,1,2]
        }
      },
      {
        extend:'print',
        title:'Listado de arbitros',
        exportOptions:{
-         columns:[0,1]
+         columns:[0,1,2]
        }
      }
    ],
