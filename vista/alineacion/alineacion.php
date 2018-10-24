@@ -7,7 +7,7 @@ $data=$alineacion->selectPartido($_GET['id']);
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Alineacions - Listar</title>
+    <title>Alineaciones - Listar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
@@ -21,7 +21,7 @@ $data=$alineacion->selectPartido($_GET['id']);
               <div class="card-header card-header-primary">
                 <div class="col-lg-10" style="float:left;">
                   <h2 class="card-title ">Alineaciones</h4>
-                  <p class="card-category"> Listado de alineaciones</p>
+                  <p class="card-category">Listado de alineaciones</p>
                 </div>
                 <div class="col-lg-1" style="float:left">
                   <a href="..\..\vista\alineacion/insert_alineacion.php?id=<?php echo $_GET['id']; ?>" title="Agregar a la alineacion">
@@ -47,10 +47,10 @@ $data=$alineacion->selectPartido($_GET['id']);
                         Posición
                       </th>
                       <th>
-                        Estadisticas
+                        Estadísticas
                       </th>
                       <th>
-                        
+                       Acciones
                       </th>
                     </thead>
                     <tbody>
@@ -70,7 +70,7 @@ $data=$alineacion->selectPartido($_GET['id']);
                         <td class="td-actions text-lefht">
                             <div style="float:left">
                               <a href="..\..\vista\alineacion/update.php?id=<?php echo $row['id_alineacion']; ?>">
-                                <button type="button" rel="tooltip" title="Editar alineacion" class="btn btn-primary btn-link btn-sm">
+                                <button type="button" rel="tooltip" title="Editar alineación" class="btn btn-primary btn-link btn-sm">
                                   <i class="material-icons">edit</i>
                                 </button>
                               </a>
@@ -79,7 +79,7 @@ $data=$alineacion->selectPartido($_GET['id']);
                               <form class="" action="..\..\vista\alineacion/store.php" method="post">
                                 <input type="hidden" name="operation" value="3">
                                 <input type="hidden" name="id" value="<?php echo $row['id_alineacion']; ?>">
-                                <button type="submit" rel="tooltip" title="Eliminar alineacion" class="btn btn-danger btn-link btn-sm">
+                                <button type="submit" rel="tooltip" title="Eliminar alineación" class="btn btn-danger btn-link btn-sm">
                                   <i class="material-icons">close</i>
                                 </button>
                               </form>
@@ -107,35 +107,35 @@ $('#table1').DataTable({
    buttons: [
      {
        extend:'copy',
-       title:'Listado de Alineacion',
+       title:'Listado de alineación',
        exportOptions:{
          columns:[0,1,2,3,4]
        }
      },
      {
        extend:'csv',
-       title:'Listado de Alineacion',
+       title:'Listado de alineación',
        exportOptions:{
          columns:[0,1,2,3,4]
        }
      },
      {
        extend:'excel',
-       title:'Listado de Alineacion',
+       title:'Listado de alineación',
        exportOptions:{
          columns:[0,1,2,3,4]
        }
      },
      {
        extend:'pdf',
-       title:'Listado de Alineacion',
+       title:'Listado de alineación',
        exportOptions:{
          columns:[0,1,2,3,4]
        }
      },
      {
        extend:'print',
-       title:'Listado de Alineacion',
+       title:'Listado de alineación',
        exportOptions:{
          columns:[0,1,2,3,4]
        }
