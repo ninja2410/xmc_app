@@ -55,14 +55,8 @@ if(isset($_POST['fecha'])){
 if(isset($_POST['jugador'])){
   $id_jugador=$_POST['jugador'];
 }
-if(isset($_POST['status'])){
-  if($_POST['status']=="on" || $_POST['status']=="1"){
-    $estado=1;
-  }
-  else{
-    $estado=0;
-  }
-}
+
+$estado=1;
 
 if(isset($_POST['grasa'])){
     $grasa=$_POST['grasa'];
@@ -130,6 +124,54 @@ elseif($operacion=="2") {
   $detalle=new DetalleFM();
   $fichamedica->update($id_ficha, $fecha, $estado, $id_jugador, $grasa, $peso, $talla);
   foreach ($signosVitales as $key => $value) {
+    echo $value->ID;
+    $detalle->update($value->valor, $value->ID ,$value->campo, $id_ficha);
+  }
+  foreach ($criometria as $key => $value) {
+    echo $value->ID;
+    $detalle->update($value->valor, $value->ID ,$value->campo, $id_ficha);
+  }
+  foreach ($rodilla as $key => $value) {
+    echo $value->ID;
+    $detalle->update($value->valor, $value->ID ,$value->campo, $id_ficha);
+  }
+  foreach ($tobillo as $key => $value) {
+    echo $value->ID;
+    $detalle->update($value->valor, $value->ID ,$value->campo, $id_ficha);
+  }
+  foreach ($meniscos as $key => $value) {
+    echo $value->ID;
+    $detalle->update($value->valor, $value->ID ,$value->campo, $id_ficha);
+  }
+  foreach ($musculos as $key => $value) {
+    echo $value->ID;
+    $detalle->update($value->valor, $value->ID ,$value->campo, $id_ficha);
+  }
+  foreach ($alineamiento as $key => $value) {
+    echo $value->ID;
+    $detalle->update($value->valor, $value->ID ,$value->campo, $id_ficha);
+  }
+  foreach ($cuello as $key => $value) {
+    echo $value->ID;
+    $detalle->update($value->valor, $value->ID ,$value->campo, $id_ficha);
+  }
+  foreach ($pecho as $key => $value) {
+    echo $value->ID;
+    $detalle->update($value->valor, $value->ID ,$value->campo, $id_ficha);
+  }
+  foreach ($subescapular as $key => $value) {
+    echo $value->ID;
+    $detalle->update($value->valor, $value->ID ,$value->campo, $id_ficha);
+  }
+  foreach ($supraespinal as $key => $value) {
+    echo $value->ID;
+    $detalle->update($value->valor, $value->ID ,$value->campo, $id_ficha);
+  }
+  foreach ($abdominal as $key => $value) {
+    echo $value->ID;
+    $detalle->update($value->valor, $value->ID ,$value->campo, $id_ficha);
+  }
+  foreach ($otra as $key => $value) {
     echo $value->ID;
     $detalle->update($value->valor, $value->ID ,$value->campo, $id_ficha);
   }
