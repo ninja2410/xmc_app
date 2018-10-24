@@ -80,6 +80,7 @@ $data=$arbitro->select(-1);
                               <form class="" action="..\..\vista\arbitro/store.php" method="post">
                                 <input type="hidden" name="operation" value="3">
                                 <input type="hidden" name="id" value="<?php echo $row['id_arbitro']; ?>">
+                                <!-- Inicio de modal -->
                                 <button type="button" data-toggle="modal" data-target="<?php echo '#Confirmacion'.$row['id_arbitro']; ?>" rel="tooltip" title="Eliminar árbitro" class="btn btn-danger btn-link btn-sm">
                                   <i class="material-icons">close</i>
                                 </button>
@@ -88,10 +89,10 @@ $data=$arbitro->select(-1);
                                   <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                       <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Confirmación de elimiinar.</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Confirmación</h5>
                                       </div>
                                       <div class="modal-body">
-                                      Esta seguro que desea eliminar este arbitro?
+                                      ¿Está seguro que desea eliminar este árbitro?
                                       </div>
                                       <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -100,6 +101,7 @@ $data=$arbitro->select(-1);
                                     </div>
                                   </div>
                                 </div>
+                                <!--  -->
                               </form>
                             </div>
                         </td>
