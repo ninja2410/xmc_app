@@ -8,7 +8,7 @@ class AsignacionEntrenador
 
   private $query;
   public function insert($id_categoria, $id_entrenador){
-    $query="CALL SP_ASIGNACION_ENTRENADOR_INSERT( $id_categoria,$id_entrenador);";
+    $query="CALL SP_ASIGNACION_ENTRENADOR_INSERT($id_categoria,$id_entrenador);";
     $bd= new conexion();
 		$dt=$bd->execute_query($query);
 		return $dt;

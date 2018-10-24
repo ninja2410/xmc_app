@@ -49,7 +49,7 @@ $data2=$contrato->select(-1);
                     <h4><b>Dirección: </b><?php echo $data['direccion']?></h4>
                     <h4><b>País natal: </b><?php echo $data['nacionalidad']?></h4>
                     <input type="hidden" value="<?php echo $data['id_entrenador']; ?>">
-                    <h4><b >Contrato: </b><a href="..\..\vista\documento_digital/index.php"><?php echo $data['titulo']?></a></h4>
+                    <!-- <h4><b >Contrato: </b><a href="..\..\vista\documento_digital/index.php">< ?php echo $data['titulo']?></a></h4> -->
                 </div>
                 
                 <div class="col-md-3">

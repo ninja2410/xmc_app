@@ -83,9 +83,28 @@ $data=$entrenador->select(-1);
                               <form class="" action="..\..\vista\entrenador/store.php" method="post">
                                 <input type="hidden" name="operation" value="3">
                                 <input type="hidden" name="id" value="<?php echo $row['id_entrenador']; ?>">
-                                <button type="submit" rel="tooltip" title="Eliminar entrenador" class="btn btn-danger btn-link btn-sm">
+                                <!-- Inicio de modal -->
+                                <button type="button" data-toggle="modal" data-target="<?php echo '#Confirmacion'.$row['id_entrenador']; ?>" rel="tooltip" title="Eliminar categoría" class="btn btn-danger btn-link btn-sm">
                                   <i class="material-icons">close</i>
                                 </button>
+                                <!-- Modal -->
+                                <div class="modal fade" id="<?php echo 'Confirmacion'.$row['id_entrenador']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"  data-backdrop="false">
+                                  <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h4 class="modal-title" id="exampleModalLabel">Confirmación</h5>
+                                      </div>
+                                      <div class="modal-body">
+                                      ¿Está seguro que desea eliminar este entrenador?
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                        <button type="submit" class="btn btn-primary">Eliminar</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!--  -->
                               </form>
                             </div>
                         </td>

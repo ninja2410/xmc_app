@@ -7,17 +7,17 @@ class Entrenador
 {
 
   private $query;
-  public function insert($nombre, $apellido, $fecha_nacimiento, $fecha_inicio, $fecha_fin, $telefono, $direccion,$foto,$nacionalidad, $id_contrato){
+  public function insert($nombre, $apellido, $fecha_nacimiento, $fecha_inicio, $fecha_fin, $telefono, $direccion,$foto,$nacionalidad){
     $query="CALL SP_ENTRENADOR_INSERT('$nombre', '$apellido', '$fecha_nacimiento', '$fecha_inicio',
-    '$fecha_fin', '$telefono', '$direccion','$foto','$nacionalidad', $id_contrato);";
+    '$fecha_fin', '$telefono', '$direccion','$foto','$nacionalidad');";
     $bd= new conexion();
 		$dt=$bd->execute_query($query);
 		return $dt;
   }
 
-  public function update($id, $nombre, $apellido, $fecha_nacimiento, $fecha_inicio, $fecha_fin, $telefono, $direccion,$foto,$nacionalidad, $id_contrato){
+  public function update($id, $nombre, $apellido, $fecha_nacimiento, $fecha_inicio, $fecha_fin, $telefono, $direccion,$foto,$nacionalidad){
     $query="CALL SP_ENTRENADOR_UPDATE($id,'$nombre', '$apellido', '$fecha_nacimiento', '$fecha_inicio',
-    '$fecha_fin', '$telefono', '$direccion','$foto','$nacionalidad', $id_contrato);";
+    '$fecha_fin', '$telefono', '$direccion','$foto','$nacionalidad');";
     $bd= new conexion();
 		$dt=$bd->execute_query($query);
 		return $dt;
