@@ -41,9 +41,7 @@ $data=$fichamedica->select(-1);
                         <th>ID</th>
                         <th>Fecha</th>
                         <th>Jugador</th>
-                        <th>Grasa</th>
-                        <th>Peso</th>
-                        <th>Talla</th>
+                        <th>Acciones</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -55,26 +53,15 @@ $data=$fichamedica->select(-1);
                             <?php echo $row['id_ficha']; ?>
                           </td>
                           <td>
-                            <?php echo $row['fecha']; ?>
+                            <?php echo date("d/m/Y", strtotime($row['fecha']));?>
                           </td>
                           <td>
                             <?php echo $row['Nombre']; ?>
                           </td>
-                          <td>
-                            <?php echo $row['grasa']; ?>
-                          </td>
-                          <td>
-                            <?php echo $row['peso']; ?>
-                          </td>
-                          <td>
-                            <?php echo $row['talla']; ?>
-                          </td>
                           <td class="td-actions text-lefht">
                               <div style="float:left">
-                                <a href="">
-                                  <button type="button" rel="tooltip" title="Ver detalles" class="btn btn-success btn-link btn-sm">
-                                    <i class="far fa-eye fa-lg"></i>
-                                  </button>
+                                  <a href="..\..\vista\ficha_medica/verDetalle.php?id=<?php echo $row['id_ficha']; ?>">
+                                  <button class="btn btn-success btn-round btn-sm"><i class="far fa-eye fa-lg"></i> Ver detalles</button>
                                 </a>
                               </div>
                               <div style="float:left">

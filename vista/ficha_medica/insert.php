@@ -81,14 +81,13 @@
                             </div>
                         </div>
                     </div>
-                    
+                    <div class="tab-pane" id="detalle">
+                        <?php include 'detalle.php'?>
+                    </div>
                 </div>
                 <?php include '..\layoults\botones.php'; ?>
                 <div class="clearfix"></div>
                 </form>
-                <div class="tab-pane" id="detalle">
-                        <?php include 'detalle.php'?>
-                    </div>
               </div>
             </div>
           </div>
