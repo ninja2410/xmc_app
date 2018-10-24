@@ -11,7 +11,7 @@ $data=$beneficio->select(-1);
     <title>Beneficios - Listar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
-  <body>
+  <body class="profile-page sidebar-collapse">
     <?php
     include '..\layoults\barnav.php';
     ?>
@@ -20,29 +20,26 @@ $data=$beneficio->select(-1);
       echo $_SESSION['mensaje'];
       $_SESSION['mensaje']="";
     } ?>">
+    <div class="main main-raised">
       <div class="container-fluid">
-        <div class="row">
+        
           <div class="col-md-12">
             <div class="card">
-              <div class="card-header card-header-primary">
-                <div class="col-lg-10" style="float:left;">
+              <div class="card-header card-header-danger row">
+                <div class="col-md-11">
                   <h2 class="card-title ">Beneficios</h4>
                   <p class="card-category">Listado de beneficios a socios del club Xelajú MC</p>
                 </div>
-                <div class="col-lg-1" style="float:left">
-                  <a href="..\..\vista\beneficio/insert.php">
-                    <div class="card-header card-header-success card-header-icon" style="float:left">
-                      <div class="card-icon">
-                        <i class="material-icons">add</i>
-                      </div>
-                    </div>
+                <div class="col-md-1 text-right">
+                <a href="..\..\vista\beneficio/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar beneficio">
+                    <i class="material-icons">add</i>
                   </a>
                 </div>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table table-striped table-bordered" id="table1">
-                    <thead class=" text-primary">
+                    <thead>
                       <th>
                         ID
                       </th>
@@ -82,9 +79,28 @@ $data=$beneficio->select(-1);
                               <form class="" action="..\..\vista\beneficio/store.php" method="post">
                                 <input type="hidden" name="operation" value="3">
                                 <input type="hidden" name="id" value="<?php echo $row['id_beneficio']; ?>">
-                                <button type="submit" rel="tooltip" title="Eliminar beneficio" class="btn btn-danger btn-link btn-sm">
+                                <!-- Inicio de modal -->
+                                <button type="button" data-toggle="modal" data-target="<?php echo '#Confirmacion'.$row['id_beneficio']; ?>" rel="tooltip" title="Eliminar beneficio" class="btn btn-danger btn-link btn-sm">
                                   <i class="material-icons">close</i>
                                 </button>
+                                <!-- Modal -->
+                                <div class="modal fade" id="<?php echo 'Confirmacion'.$row['id_beneficio']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"  data-backdrop="false">
+                                  <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Confirmación</h5>
+                                      </div>
+                                      <div class="modal-body">
+                                      ¿Está seguro que desea eliminar este beneficio?
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                        <button type="submit" class="btn btn-primary">Eliminar</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!--  -->
                               </form>
                             </div>
                         </td>
@@ -98,7 +114,8 @@ $data=$beneficio->select(-1);
             </div>
           </div>
         </div>
-      </div>
+     
+    </div>
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
