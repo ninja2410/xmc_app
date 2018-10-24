@@ -39,8 +39,8 @@ if(isset($_POST['posicion'])){
 if(isset($_POST['camisola'])){
   $camisola=$_POST['camisola'];
 }
-if(isset($_POST['contrato'])){
-  $id_contrato=$_POST['contrato'];
+if(isset($_POST['sangre'])){
+  $sangre=$_POST['sangre'];
 }
 if (isset($_POST['id'])) {
   $id_jugador=$_POST['id'];
@@ -68,8 +68,8 @@ if ($operacion=="1") {
   $name=$_FILES['img']['name'];
   $foto='JUGADOR_'.$jugador->correlativo().substr($name,-4);
   move_uploaded_file($_FILES['img']['tmp_name'],'../imagenes/'.$foto);
-  chmod('../imagenes/'.$foto,0644);
-  $jugador->insert($nombre, $direccion, $fecha_nacimiento, $estado, $padre, $madre, $telefono, $procedencia, $apellidos, $foto, $id_posicion, $camisola,$id_contrato);
+  chmod('../imagenes/jugadores/'.$foto,0644);
+  $jugador->insert($nombre, $direccion, $fecha_nacimiento, $estado, $padre, $madre, $telefono, $procedencia, $apellidos, $foto, $id_posicion, $camisola,$sangre);
   $asignacion_cat->insert($fecha_inicio,$fecha_final,$id_categoria,$id_jugador2,$id_equipo);
   $_SESSION['mensaje']="El jugador se ha almacenado con éxito!";
   header('Location:index.php');
@@ -79,7 +79,7 @@ elseif($operacion=="2") {
   $name=$_FILES['img']['name'];
   $tmp='JUGADOR_'.$jugador->correlativo().substr($name,-4);
   move_uploaded_file($_FILES['img']['tmp_name'],'../imagenes/'.$tmp);
-  chmod('..\imagenes/'.$tmp,0644);
+  chmod('..\imagenes/jugadores/'.$tmp,0644);
   $foto=$_FILES['img']['name'];
   if ($foto=='') {
     $foto=$_POST['foto'];
@@ -88,7 +88,7 @@ elseif($operacion=="2") {
     $foto=$tmp;
   }
   $id_equipo=1;
-  $jugador->update($id_jugador, $nombre, $direccion, $fecha_nacimiento, $estado, $padre, $madre, $telefono, $procedencia, $apellidos, $foto, $id_posicion, $camisola,$id_contrato);
+  $jugador->update($id_jugador, $nombre, $direccion, $fecha_nacimiento, $estado, $padre, $madre, $telefono, $procedencia, $apellidos, $foto, $id_posicion, $camisola,$sangre);
   $asignacion_cat->update($id_AC,$fecha_inicio,$fecha_final,$id_categoria,$id_jugador,$id_equipo);
   $_SESSION['mensaje']="El jugador se ha modificado con éxito!";
   header('Location:detalle.php?id='.$id_jugador);

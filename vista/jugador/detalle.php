@@ -29,12 +29,13 @@ function calculaedad($fechanacimiento){
         <div class="container">
             <div class="row" style="padding:20px">
                 <div class="col-md-2">
-                    <img src="../imagenes/<?php echo $data['foto']?>" alt="Circle Image" class="img-circle rounded img-fluid">
+                    <img src="../imagenes/jugadores/<?php echo $data['foto']?>" alt="Circle Image" class="img-circle rounded img-fluid">
                 </div>
                 <div class="col-md-7">
                     <h3 class="title"><?php echo $data['nombre']." ".$data["apellido"]?></h3>
                     <h4><b>Categoría: </b><?php echo $data['categoria']?></h4>
                     <h4><b>Edad: </b><?php echo calculaedad ($data['fecha_nacimiento']);?></h4>
+                    <h4><b>Tipo de sangre: </b><?php echo $data['sangre']?></h4>
                     <h4><b>Número de camisola: </b><?php echo $data['camisola']?></h4>
                     <h4><b>Fecha de nacimiento: </b><?php echo date("d/m/Y", strtotime($data['fecha_nacimiento']));?></h4>
                     <h4><b>Dirección: </b><?php echo $data['direccion']?></h4>
@@ -44,13 +45,13 @@ function calculaedad($fechanacimiento){
                     <h4><b>Procedencia: </b><?php echo $data['procedencia']?></h4>
                     <h4><b>Posición: </b><?php echo $data['descripcion']?></h4>
                     <?php
-                        if ($data['id_contrato'] == null) {
-                            echo '<h4><b>Tiene contrato: </b>No</h4>';
-                        }
-                        else
-                        {
-                            echo '<h4><b>Tiene contrato: </b>Si</h4>';
-                        }
+                        // if ($data['id_contrato'] == null) {
+                        //     echo '<h4><b>Tiene contrato: </b>No</h4>';
+                        // }
+                        // else
+                        // {
+                        //     echo '<h4><b>Tiene contrato: </b>Si</h4>';
+                        // }
                         
                     ?>
                 </div>

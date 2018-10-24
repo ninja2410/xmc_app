@@ -6,16 +6,16 @@ require_once('..\..\Conexion\conexion.php');
 class Jugador
 {
   private $query;
-  public function insert($nombre, $direccion, $fecha_nacimiento, $estado, $padre, $madre, $telefono, $procedencia, $apellido, $foto, $id_posicion, $camisola,$id_contrato){
-    $query="CALL SP_JUGADOR_INSERT('$nombre', '$direccion', '$fecha_nacimiento', $estado, '$padre', '$madre', $telefono, '$procedencia', '$apellido', '$foto', $id_posicion, $camisola, $id_contrato);";
+  public function insert($nombre, $direccion, $fecha_nacimiento, $estado, $padre, $madre, $telefono, $procedencia, $apellido, $foto, $id_posicion, $camisola,$sangre){
+    $query="CALL SP_JUGADOR_INSERT('$nombre', '$direccion', '$fecha_nacimiento', $estado, '$padre', '$madre', $telefono, '$procedencia', '$apellido', '$foto', $id_posicion, $camisola, '$sangre');";
     $bd= new conexion();
     $dt=$bd->execute_query($query);
     echo $query;
 		return $dt;
   }
 
-  public function update($id, $nombre, $direccion, $fecha_nacimiento, $estado, $padre, $madre, $telefono, $procedencia, $apellido, $foto, $id_posicion, $camisola,$id_contrato){
-    $query="CALL SP_JUGADOR_UPDATE($id,'$nombre', '$direccion', '$fecha_nacimiento', $estado, '$padre', '$madre', $telefono, '$procedencia', '$apellido', '$foto', $id_posicion, $camisola, $id_contrato);";
+  public function update($id, $nombre, $direccion, $fecha_nacimiento, $estado, $padre, $madre, $telefono, $procedencia, $apellido, $foto, $id_posicion, $camisola,$sangre){
+    $query="CALL SP_JUGADOR_UPDATE($id,'$nombre', '$direccion', '$fecha_nacimiento', $estado, '$padre', '$madre', $telefono, '$procedencia', '$apellido', '$foto', $id_posicion, $camisola, '$sangre');";
     $bd= new conexion();
 		$dt=$bd->execute_query($query);
 		return $dt;
@@ -33,7 +33,7 @@ class Jugador
     $bd= new conexion();
 		$dt=$bd->execute_query($query);
     $id=mysqli_fetch_array($dt);
-    return $id[0][0];
+    return $id[0];
   }
 
   public function selectPartido($partido){

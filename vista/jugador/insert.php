@@ -10,8 +10,7 @@
     <?php include '..\layoults\barnav.php'; ?>
     <div class="content main main-raised">
       <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-12">
+        <div class="col-md-12">
             <div class="card">
               <div class="card-header card-header-danger">
                   <h3 class="card-title">Ingresar nuevo jugador</h3>
@@ -67,6 +66,11 @@
                                 <label>Nombre de la madre</label>
                                 <input type="text" class="form-control" name="madre">
                             </div>
+
+                            <div class="form-group col-md-4">
+                                <label>Tipo de sangre</label>
+                                <input type="text" class="form-control" name="sangre">
+                            </div>
                         </div>
                     </div>
 
@@ -98,25 +102,6 @@
                             </div>
 
                             <div class="form-group col-md-4">
-                                <label>Contrato</label>
-                                <select class="form-control" name="contrato">
-                                    <option selected value="null">Elija el contrato del jugador...</option>
-                                    <?php
-                                        include_once('..\..\Negocio/ClassContrato.php');
-                                        $contrato=new Contrato();
-                                        $data=$contrato->select(-1);
-                                        while ($row=mysqli_fetch_array($data)) {
-                                            $valor = $row['id_contrato'];
-                                            $texto = $row['titulo'];
-                                            echo '<option value="'.$valor.'">'.$texto.'</option>';
-                                        }
-                                    ?>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group col-md-4">
                                 <label>Categoría</label>
                                 <select class="form-control" name="categoria">
                                     <option selected value="0">Elija la categoria del jugador...</option>
@@ -133,7 +118,9 @@
                                     ?>
                                 </select>
                             </div>
+                        </div>
 
+                        <div class="form-row">
                             <div class="form-group col-md-4">
                                 <label>Fecha de inicio</label>
                                 <input type="date" class="form-control" name="fecha_inicio" value="<?php echo date("Y-m-d");?>">
@@ -165,7 +152,6 @@
             </div>
           </div>
         </div>
-      </div>
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
@@ -212,6 +198,18 @@
                 regexp:{
                     regexp: /^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ\s\-]*$/,
                     message: 'Solo se aceptan numeros y letras'
+                    }
+                }
+            },
+
+            sangre:{
+            validators:{
+                notEmpty:{
+                    message:'Ingrese el tipo de sangre del jugador'
+                },
+                regexp:{
+                    regexp: /^[aAbBoO\-\+]*$/,
+                    message: 'Solo se aceptan tipos validos de sangre, por ejemplo O+'
                     }
                 }
             },

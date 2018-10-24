@@ -20,9 +20,9 @@ $data=$jugador->select(-1);
       $_SESSION['mensaje']="";
     } ?>">
 
-    <div class="content main main-raised">
-      <div class="container-fluid">
-      <div class="row">
+    <div class="main main-raised">
+      <div class="content">
+        <div class="container-fluid">
           <div class="col-md-12">
             <div class="card">
               <div class="card-header card-header-danger row">
@@ -31,7 +31,7 @@ $data=$jugador->select(-1);
                   <p class="category">Listado de jugadores</p>
                 </div>
                 <div class="col-md-2 text-right">
-                  <a href="..\..\vista\jugador/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar jugador">
+                    <a href="..\..\vista\jugador/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar jugador">
                     <i class="material-icons">add</i>
                   </a>
                 </div>
@@ -81,7 +81,7 @@ $data=$jugador->select(-1);
             </div>
           </div>
         </div>
-      </div>
+      </div> 
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
