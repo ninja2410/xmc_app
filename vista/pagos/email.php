@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-<title>Confirmación de Pago</title>
+<title>Confirmación de pago</title>
 <meta charset="utf-8">
 </head>
 
@@ -25,14 +25,14 @@
 <tr>
 <tr>
 <td style="padding: 20px 0 10px 0; color: #153643; font-family: Arial, sans-serif; font-size: 16px; line-height: 10px;">
-    <p style="font-weight: bold;">Nombre de Socio:</p>
+    <p style="font-weight: bold;">Nombre de socio:</p>
     <p> '.$_POST['variable'] .'</p>
 
 </td>
 </tr>
 <tr>
   <td style="padding: 20px 0 10px 0; color: #153643; font-family: Arial, sans-serif; font-size: 16px; line-height: 5px;">
-    <p style="font-weight: bold;">Monto Pago:</p>
+    <p style="font-weight: bold;">Monto pago:</p>
     <p>Q'$amount'</p>
   </td>
   <td style="padding: 10px 0 10px 0; color: #153643; font-family: Arial, sans-serif; font-size: 16px; line-height: 10px;">
@@ -65,7 +65,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
 <tr>
 <td style="color: #ffffff; font-family: Arial, sans-serif; font-size: 18px; text-align: center;" width="75%" >
-        <strong>Gracias por colaborar con los Super Chivos.<br /> <br /></strong><br />
+        <strong>Gracias por colaborar con los Super Chivos<br /> <br /></strong><br />
         <a href="#" style="color: #ffffff;"><font color="#ffffff">XELAJU MC</font></a><br />
         <br /><a href="http://104.131.190.54/arquisa/"></a>
     </td>

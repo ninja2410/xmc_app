@@ -29,22 +29,22 @@ $data_socio=$socio->select($_GET['id']);
             <div class="card">
               <div class="card-header card-header-danger row">
               <div class="col-md-11">
-                  <h3 class="card-title">Pagos</h3>
-                  <p class="category">Listado de pagos socio: <h2><?php echo $data_socio['nombre'].' '.$data_socio['apellido']; ?></h2> </p>
+                  <h3 class="card-title">Listado de pagos</h3>
+                  <h2><?php echo $data_socio['nombre'].' '.$data_socio['apellido']; ?></h2>
                 </div>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
-                  <table class="table table-striped table-bordered" id="table1">
+                  <table class="table table-hover table-bordered" id="table1">
                     <thead>
                       <th>
                         ID
                       </th>
                       <th>
-                        FECHA
+                        Fecha
                       </th>
                       <th>
-                        MONTO
+                        Monto
                       </th>
                     </thead>
                     <tbody>

@@ -11,25 +11,26 @@ $data=$socio->select_pagos();
     <title>Socios - Pagos</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
-  <body>
+  <body class="profile-page sidebar-collapse">
     <?php
     include '..\layoults\barnav.php';
     ?>
+    <div class="main main-raised">
     <div class="content">
       <div class="container-fluid">
-        <div class="row">
+       
           <div class="col-md-12">
             <div class="card">
-              <div class="card-header card-header-primary">
+              <div class="card-header card-header-danger row">
                 <div class="col-lg-9" style="float:left;">
                   <h2 class="card-title ">Pagos</h4>
-                  <p class="card-category"> Registrar pagos de socios Xelaju MC</p>
+                  <p class="card-category">Registrar pagos de socios Xelajú MC</p>
                 </div>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table table-striped table-bordered" id="table1">
-                    <thead class=" text-primary">
+                    <thead>
                       <th>
                         ID
                       </th>
@@ -42,7 +43,7 @@ $data=$socio->select_pagos();
                       <th>
                         Precio
                       </th>
-                      <th>
+                      <th class="text-center">
                         Acciones
                       </th>
                     </thead>
@@ -63,9 +64,9 @@ $data=$socio->select_pagos();
                         <td>Q
                           <?php echo $row['PRECIO']; ?>
                         </td>
-                        <td class="td-actions text-lefht">
+                        <td class="td-actions text-center">
                           <a href="..\..\vista\pagos/pagar.php?id=<?php echo $row['ID']; ?>&membresia=<?php echo $row['PRECIO']; ?>">
-                          <button class="btn btn-success btn-round btn-sm"><i class="fa fa-money"></i>  Realizar Pago</button>
+                          <button class="btn btn-success btn-round btn-sm"><i class="fa fa-money"></i>      Realizar pago</button>
                           <a href="..\..\vista\pagos/pagos.php?id=<?php echo $row['ID']; ?>">
                           <button class="btn btn-info btn-round btn-sm"><i class="fa fa-eye"></i>  Ver estado de pagos</button>
                         </td>
@@ -78,8 +79,9 @@ $data=$socio->select_pagos();
               </div>
             </div>
           </div>
-        </div>
+        
       </div>
+    </div>
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
