@@ -51,7 +51,7 @@ function calculaedad($fechanacimiento){
                         {
                             echo '<h4><b>Tiene contrato: </b>Si</h4>';
                         }
-                        
+
                     ?>
                 </div>
                 <div class="col-md-3">
@@ -69,6 +69,11 @@ function calculaedad($fechanacimiento){
                         <li class="nav-item">
                             <a class="nav-link btnAzul" href="..\..\vista\jugador/update.php?id=<?php echo $data['id_jugador']; ?>">
                                 <i class="material-icons fa-2x">edit</i><br> Actualizar información
+                            </a>
+                        </li>
+												<li class="nav-item">
+                            <a class="nav-link btnAzul" href="..\..\vista\jugador/documentos.php?id=<?php echo $data['id_jugador']; ?>">
+                                <i class="material-icons fa-2x">book</i><br> Documentos
                             </a>
                         </li>
                         <li class="nav-item">
