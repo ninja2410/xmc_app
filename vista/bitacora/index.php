@@ -23,7 +23,7 @@ $data=$usuario->select(-1);
             <div class="card">
               <div class="card-header card-header-danger">
                 <div class="col-lg-10" style="float:left;">
-                  <h2 class="card-title ">Bitácora</h4>
+                  <h2 class="card-title ">Bitácora</h2>
                   <p class="card-category">Acciones realizadas por el usuario</p>
                 </div>
               </div>

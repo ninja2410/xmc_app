@@ -28,7 +28,7 @@ $data=$usuario->select(-1);
             <div class="card">
             <div class="card-header card-header-danger row">
                 <div class="col-md-10">
-                  <h3 class="card-title">Usuarios</h3>
+                  <h2 class="card-title">Usuarios</h2>
                   <p class="category">Usuarios registrados</p>
                 </div>
                 <div class="col-md-2 text-right">
@@ -41,13 +41,13 @@ $data=$usuario->select(-1);
                 <div class="table-responsive">
                   <table class="table table-hover table-bordered" id="table1">
                     <thead>
-                      <th>
+                      <th style="text-align:center">
                         ID
                       </th>
-                      <th>
+                      <th style="text-align:center">
                         Usuario
                       </th>
-                      <th>
+                      <th >
                         Acciones
                       </th>
                     </thead>
@@ -56,13 +56,13 @@ $data=$usuario->select(-1);
                       while ($row=mysqli_fetch_array($data)) {
                        ?>
                       <tr>
-                        <td>
+                        <td style="text-align:center">
                           <?php echo $row['id_usuario']; ?>
                         </td>
-                        <td>
+                        <td style="text-align:center">
                           <?php echo $row['nombre_usuario']; ?>
                         </td>
-                        <td class="td-actions text-lefht">
+                        <td class="td-actions">
                             <div style="float:left">
                               <a href="..\..\vista\usuario/update.php?id=<?php echo $row['id_usuario']; ?>">
                                 <button type="button" rel="tooltip" title="Editar Usuario" class="btn btn-primary btn-link btn-sm">
