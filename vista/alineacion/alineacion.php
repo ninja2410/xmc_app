@@ -67,10 +67,6 @@ $data=$alineacion->selectPartido($_GET['id']);
                         <td>
                           <?php echo $row['posicion']; ?>
                         </td>
-                        <td>
-                          <a href="..\..\vista\estadisticasJugador/jugador.php?id=<?php echo $row['id_jugador']; ?>&id2=<?php echo $row['id_partido']; ?>">
-                          <button class="btn btn-primary btn-round btn-sm">Estadisticas</button>
-                        </td>
                         <td class="td-actions text-lefht">
                             <div style="float:left">
                               <a href="..\..\vista\alineacion/update.php?id=<?php echo $row['id_alineacion']; ?>">

@@ -19,6 +19,7 @@ $data=$usuario->select(-1);
       echo $_SESSION['mensaje'];
       $_SESSION['mensaje']="";
     } ?>">
+    
     <div class="main main-raised">
     <div class="content">
       <div class="container-fluid">
@@ -90,6 +91,7 @@ $data=$usuario->select(-1);
           </div>
         </div>
       </div>
+    </div>
     </div>
     </div>
     <?php include '..\layoults\footer.php'; ?>
