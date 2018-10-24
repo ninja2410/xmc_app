@@ -19,7 +19,7 @@ class Equipo
     $bd= new conexion();
 		$dt=$bd->execute_query($query);
     $id=mysqli_fetch_array($dt);
-    return $id[0][0];
+    return $id[0];
   }
 
   public function update($id, $nombre, $procedencia,  $foto){
