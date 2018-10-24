@@ -7,7 +7,7 @@ $data=$be->selectBeneficio(-1);
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Membresia - Insertar</title>
+    <title>Membresía - Insertar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
@@ -17,7 +17,7 @@ $data=$be->selectBeneficio(-1);
       <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-danger">
-            <h4 class="card-title">INSERTAR MEMBRESIA</h4>
+            <h3 class="card-title">Insertar membresía</h3>
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
