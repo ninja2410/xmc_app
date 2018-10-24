@@ -49,6 +49,9 @@ $data=$entrenador->select(-1);
                       <th>
                         Foto
                       </th>
+                      <th>
+                        Acciones
+                      </th>
                     </thead>
                     <tbody>
                       <?php
@@ -71,7 +74,7 @@ $data=$entrenador->select(-1);
                             <a href="..\..\vista\entrenador/detalle.php?id=<?php echo $row['id_entrenador']; ?>">
                           <button class="btn btn-success btn-round btn-sm"><i class="far fa-eye fa-lg"></i> Ver detalles</button>
                               <a href="..\..\vista\entrenador/update.php?id=<?php echo $row['id_entrenador']; ?>">
-                                <button type="button" rel="tooltip" title="Editar Entrenador" class="btn btn-primary btn-link btn-sm">
+                                <button type="button" rel="tooltip" title="Editar entrenador" class="btn btn-primary btn-link btn-sm">
                                   <i class="material-icons">edit</i>
                                 </button>
                               </a>
@@ -80,7 +83,7 @@ $data=$entrenador->select(-1);
                               <form class="" action="..\..\vista\entrenador/store.php" method="post">
                                 <input type="hidden" name="operation" value="3">
                                 <input type="hidden" name="id" value="<?php echo $row['id_entrenador']; ?>">
-                                <button type="submit" rel="tooltip" title="Eliminar Entrenador" class="btn btn-danger btn-link btn-sm">
+                                <button type="submit" rel="tooltip" title="Eliminar entrenador" class="btn btn-danger btn-link btn-sm">
                                   <i class="material-icons">close</i>
                                 </button>
                               </form>
@@ -107,6 +110,46 @@ $data=$entrenador->select(-1);
 if ($('#mensaje').val()!="") {
         alertify.success($('#mensaje').val());
       }
+      $('#table1').DataTable({
+             dom: 'Bfrtip',
+             buttons: [
+               {
+                 extend:'copy',
+                 title:'Listado de categorías',
+                 exportOptions:{
+                   columns:[0,1,2]
+                 }
+               },
+               {
+                 extend:'csv',
+                 title:'Listado de categorías',
+                 exportOptions:{
+                   columns:[0,1,2]
+                 }
+               },
+               {
+                 extend:'excel',
+                 title:'Listado de categorías',
+                 exportOptions:{
+                   columns:[0,1,2]
+                 }
+               },
+               {
+                 extend:'pdf',
+                 title:'Listado de categorías',
+                 exportOptions:{
+                   columns:[0,1,2]
+                 }
+               },
+               {
+                 extend:'print',
+                 title:'Listado de categorías',
+                 exportOptions:{
+                   columns:[0,1,2]
+                 }
+               }
+             ],
+         }) ;
       });
     </script>
   </body>

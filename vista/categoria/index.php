@@ -128,35 +128,35 @@ $data=$categoria->select(-1);
                  extend:'copy',
                  title:'Listado de categorías',
                  exportOptions:{
-                   columns:[0,1,2,3]
+                   columns:[0,1,2]
                  }
                },
                {
                  extend:'csv',
                  title:'Listado de categorías',
                  exportOptions:{
-                   columns:[0,1,2,3]
+                   columns:[0,1,2]
                  }
                },
                {
                  extend:'excel',
                  title:'Listado de categorías',
                  exportOptions:{
-                   columns:[0,1,2,3]
+                   columns:[0,1,2]
                  }
                },
                {
                  extend:'pdf',
                  title:'Listado de categorías',
                  exportOptions:{
-                   columns:[0,1,2,3]
+                   columns:[0,1,2]
                  }
                },
                {
                  extend:'print',
                  title:'Listado de categorías',
                  exportOptions:{
-                   columns:[0,1,2,3]
+                   columns:[0,1,2]
                  }
                }
              ],
