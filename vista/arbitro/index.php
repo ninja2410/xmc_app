@@ -47,7 +47,7 @@ $data=$arbitro->select(-1);
                         Nombre
                       </th>
                       <th>
-                        Tipo
+                        Tipo de árbitro
                       </th>
                       <!-- <th>
                         Tipo árbitro

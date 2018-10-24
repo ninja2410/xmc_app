@@ -29,7 +29,7 @@ $data=$usuario->select($_GET['id']);
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label class="bmd-label-floating">Nombre de Usuario</label>
+                    <label class="bmd-label-floating">Nombre de usuario</label>
                     <input type="text" class="form-control" name="usuario" value="<?php echo $data['nombre_usuario']; ?>">
                   </div>
                 </div>

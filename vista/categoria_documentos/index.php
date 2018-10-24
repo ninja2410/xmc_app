@@ -26,7 +26,7 @@ $data=$cat_documentos->select(-1);
             <div class="card">
               <div class="card-header card-header-danger">
                   <h4 class="card-title">Categoría de los documentos</h4>
-                  <p class="category">Listado de las categorías de los documentos.</p>
+                  <p class="category">Listado de las categorías de los documentos</p>
               </div>
               <div class="card-body">
                 <div class="table-responsive">

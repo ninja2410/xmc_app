@@ -26,7 +26,7 @@ $data=$categoria->select(-1);
               <div class="row">
                 <div class="col-md-4">
                   <div class="form-group">
-                    <label class="bmd-label-floating">Titulo</label>
+                    <label class="bmd-label-floating">Título</label>
                     <input type="text" class="form-control" name="title">
                   </div>
                 </div>

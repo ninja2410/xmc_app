@@ -27,7 +27,7 @@ $data=$beneficio->select(-1);
               <div class="card-header card-header-primary">
                 <div class="col-lg-10" style="float:left;">
                   <h2 class="card-title ">Beneficios</h4>
-                  <p class="card-category"> Listado de beneficios a socios de club Xelajú MC</p>
+                  <p class="card-category">Listado de beneficios a socios del club Xelajú MC</p>
                 </div>
                 <div class="col-lg-1" style="float:left">
                   <a href="..\..\vista\beneficio/insert.php">
@@ -73,7 +73,7 @@ $data=$beneficio->select(-1);
                         <td class="td-actions text-lefht">
                             <div style="float:left">
                               <a href="..\..\vista\beneficio/update.php?id=<?php echo $row['id_beneficio']; ?>">
-                                <button type="button" rel="tooltip" title="Editar Beneficio" class="btn btn-primary btn-link btn-sm">
+                                <button type="button" rel="tooltip" title="Editar beneficio" class="btn btn-primary btn-link btn-sm">
                                   <i class="material-icons">edit</i>
                                 </button>
                               </a>
@@ -82,7 +82,7 @@ $data=$beneficio->select(-1);
                               <form class="" action="..\..\vista\beneficio/store.php" method="post">
                                 <input type="hidden" name="operation" value="3">
                                 <input type="hidden" name="id" value="<?php echo $row['id_beneficio']; ?>">
-                                <button type="submit" rel="tooltip" title="Eliminar Beneficio" class="btn btn-danger btn-link btn-sm">
+                                <button type="submit" rel="tooltip" title="Eliminar beneficio" class="btn btn-danger btn-link btn-sm">
                                   <i class="material-icons">close</i>
                                 </button>
                               </form>

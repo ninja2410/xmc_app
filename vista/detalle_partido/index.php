@@ -14,7 +14,7 @@ $btn='Asignar personal tecnico'
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Resultados - Xelajú - <?php echo $datadp['id_partido']?></title>
+    <title>Resultados - Xelajú MC - <?php echo $datadp['id_partido']?></title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
@@ -39,7 +39,7 @@ $btn='Asignar personal tecnico'
                 <table class="table table-sm text-center" >
                     <thead class=" text-primary">
                         <th>
-                            <h2 class="title">Xelajú</h2>
+                            <h2 class="title">Xelajú MC</h2>
                         </th>
                         <th>
                             <h3 class="title"></h3>
@@ -87,7 +87,7 @@ $btn='Asignar personal tecnico'
                             <h4><?php echo $datadp['tiros_puerta']?></h4>
                             </td>
                             <td>
-                            <h4><b>Tiros a puertas</b> </h4>
+                            <h4><b>Tiros a puerta</b> </h4>
                             </td>
                             <td>
                             <h4><?php echo $datadpCn['tiros_puerta']?></h4>
