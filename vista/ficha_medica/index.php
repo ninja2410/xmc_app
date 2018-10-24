@@ -29,7 +29,7 @@ $data=$fichamedica->select(-1);
                   <p class="category">Listado de fichas médicas de los jugadores.</p>
                 </div>
                 <div class="col-md-2 text-right">
-                  <a href="..\..\vista\ficha_medica/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true">
+                    <a href="..\..\vista\ficha_medica/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar ficha medica">
                     <i class="material-icons">add</i>
                   </a>
                 </div>
