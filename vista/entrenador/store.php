@@ -82,7 +82,7 @@ if (isset($_POST['id_AE'])) {
 $accion=new Entrenador();
 $asignacion = new AsignacionEntrenador();
 if ($operacion=="1") {
-$bit->insert('Se agrego un nuevo entredador', $_SESSION['id']);
+$bit->insert('Se agrego un nuevo entrenador', $_SESSION['id']);
 $id_entrenador2=$accion->correlativo();
   $name=$_FILES['img']['name'];
   $foto='ENTRENADOR_'.$accion->correlativo().substr($name,-4);
