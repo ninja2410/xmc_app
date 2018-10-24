@@ -71,7 +71,7 @@
                     </div>
 
                     <div>
-                        <h3>Datos tecnicos</h3>
+                        <h3>Datos técnicos</h3>
                         <hr>
                         <div class="form-row">
                             <div class="form-group col-md-4">
@@ -117,7 +117,7 @@
 
                         <div class="form-row">
                             <div class="form-group col-md-4">
-                                <label>Categoria</label>
+                                <label>Categoría</label>
                                 <select class="form-control" name="categoria">
                                     <option selected value="0">Elija la categoria del jugador...</option>
                                     <?php

@@ -33,7 +33,7 @@ function calculaedad($fechanacimiento){
                 </div>
                 <div class="col-md-7">
                     <h3 class="title"><?php echo $data['nombre']." ".$data["apellido"]?></h3>
-                    <h4><b>Categoria: </b><?php echo $data['categoria']?></h4>
+                    <h4><b>Categoría: </b><?php echo $data['categoria']?></h4>
                     <h4><b>Edad: </b><?php echo calculaedad ($data['fecha_nacimiento']);?></h4>
                     <h4><b>Número de camisola: </b><?php echo $data['camisola']?></h4>
                     <h4><b>Fecha de nacimiento: </b><?php echo date("d/m/Y", strtotime($data['fecha_nacimiento']));?></h4>

@@ -22,7 +22,7 @@ $data=$jugador->select($_GET['id']);
             <div class="card">
               <div class="card-header card-header-danger">
                   <h3 class="card-title">Actualizar jugador</h3>
-                  <p class="category">Complete los campos siguientes.</p>
+                  <p class="category">Complete los campos siguientes</p>
               </div>
               <div class="card-body">
                 <form method="post", action="..\jugador\store.php" enctype="multipart/form-data" id="frm_jugador">
@@ -80,7 +80,7 @@ $data=$jugador->select($_GET['id']);
                     </div>
 
                     <div>
-                        <h3>Datos tecnicos</h3>
+                        <h3>Datos técnicos</h3>
                         <hr>
                         <div class="form-row">
                             <div class="form-group col-md-4">
@@ -126,7 +126,7 @@ $data=$jugador->select($_GET['id']);
 
                         <div class="form-row">
                             <div class="form-group col-md-4">
-                                <label>Categoria</label>
+                                <label>Categoría</label>
                                 <select class="form-control" name="categoria">
                                     <?php
                                         echo '<option selected value="'.$data['id_categoria'].'">'.$data['categoria'].'</option>';

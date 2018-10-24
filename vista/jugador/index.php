@@ -28,7 +28,7 @@ $data=$jugador->select(-1);
               <div class="card-header card-header-danger row">
                 <div class="col-md-10">
                   <h3 class="card-title">Jugadores</h3>
-                  <p class="category">Listado de jugadores.</p>
+                  <p class="category">Listado de jugadores</p>
                 </div>
                 <div class="col-md-2 text-right">
                   <a href="..\..\vista\jugador/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar jugador">
@@ -42,7 +42,7 @@ $data=$jugador->select(-1);
                     <tr>
                       <th>ID</th>
                       <th>Nombre</th>
-                      <th>Categoria</th>
+                      <th>Categoría</th>
                       <th>Detalles</th>
                       <th>Desactivar</th>
                     </tr>
