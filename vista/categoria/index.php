@@ -35,7 +35,7 @@ $data=$categoria->select(-1);
               </div>
               <div class="card-body">
                 <div class="table-responsive">
-                  <table class="table">
+                  <table class="table" id="mytable">
                     <thead>
                       <th>
                         ID
@@ -45,6 +45,9 @@ $data=$categoria->select(-1);
                       </th>
                       <th>
                         Descripción
+                      </th>
+                      <th>
+                        <!-- Campo vacío -->
                       </th>
                     </thead>
                     <tbody>
@@ -73,9 +76,28 @@ $data=$categoria->select(-1);
                               <form class="" action="..\..\vista\categoria/store.php" method="post">
                                 <input type="hidden" name="operation" value="3">
                                 <input type="hidden" name="id" value="<?php echo $row['id_categoria']; ?>">
-                                <button type="submit" rel="tooltip" title="Eliminar Categoria" class="btn btn-danger btn-link btn-sm">
+                                <!-- Inicio de modal -->
+                                <button type="button" data-toggle="modal" data-target="<?php echo '#Confirmacion'.$row['id_categoria']; ?>" rel="tooltip" title="Eliminar categoría" class="btn btn-danger btn-link btn-sm">
                                   <i class="material-icons">close</i>
                                 </button>
+                                <!-- Modal -->
+                                <div class="modal fade" id="<?php echo 'Confirmacion'.$row['id_categoria']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"  data-backdrop="false">
+                                  <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h4 class="modal-title" id="exampleModalLabel">Confirmación</h5>
+                                      </div>
+                                      <div class="modal-body">
+                                      ¿Está seguro que desea eliminar esta categoría?
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                        <button type="submit" class="btn btn-primary">Eliminar</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!--  -->
                               </form>
                             </div>
                         </td>
@@ -99,6 +121,46 @@ $data=$categoria->select(-1);
         if ($('#mensaje').val()!="") {
           alertify.success($('#mensaje').val());
         }
+        $('#mytable').DataTable({
+             dom: 'Bfrtip',
+             buttons: [
+               {
+                 extend:'copy',
+                 title:'Listado de categorías',
+                 exportOptions:{
+                   columns:[0,1,2,3]
+                 }
+               },
+               {
+                 extend:'csv',
+                 title:'Listado de categorías',
+                 exportOptions:{
+                   columns:[0,1,2,3]
+                 }
+               },
+               {
+                 extend:'excel',
+                 title:'Listado de categorías',
+                 exportOptions:{
+                   columns:[0,1,2,3]
+                 }
+               },
+               {
+                 extend:'pdf',
+                 title:'Listado de categorías',
+                 exportOptions:{
+                   columns:[0,1,2,3]
+                 }
+               },
+               {
+                 extend:'print',
+                 title:'Listado de categorías',
+                 exportOptions:{
+                   columns:[0,1,2,3]
+                 }
+               }
+             ],
+         }) ;
       });
     </script>
 </body>
