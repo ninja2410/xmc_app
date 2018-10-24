@@ -8,7 +8,7 @@
   <body>
     <?php include '..\layoults\barnav.php'; ?>
     <div class="content">
-      <div class="col-md-8">
+      <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-primary">
             <h4 class="card-title">INGRESAR UNA NUEVA TEMPORADA</h4>
@@ -18,7 +18,7 @@
             <form method="post", action="..\temporada\store.php" id="frm_temporada">
               <input type="hidden" name="operation" value="1">
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-12">
                   <div class="form-group">
                     <label class="">Descripción</label>
                     <input type="text" class="form-control" name="descripcion">

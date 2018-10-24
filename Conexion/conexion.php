@@ -6,15 +6,15 @@ class conexion
 	// private $pass="database";
 	// private $bd="db_xelajumc";
 
-	private $servidor='198.71.241.28';
-	private $usuario="dev_xelaju";
-	private $pass="database";
-	private $bd="dev_xela";
+	//private $servidor='198.71.241.28';
+	//private $usuario="dev_xelaju";
+	//private $pass="database";
+	//private $bd="dev_xela";
 
-	// private $servidor='sql174.main-hosting.eu';
-	// private $usuario="u538043044_root";
-	// private $pass="database";
-	// private $bd="u538043044_xela";
+	private $servidor='sql174.main-hosting.eu';
+	private $usuario="u538043044_root";
+	private $pass="database";
+	private $bd="u538043044_xela";
 
 	public function conectar()
 	{

@@ -74,6 +74,10 @@ $data=$temporada->select(-1);
                         <td>
                           <?php echo $row['fecha_final']; ?>
                         </td>
+                        <td>
+                          <a href="..\..\vista\temporada/partidos.php?id=<?php echo $row['id_temporada']; ?>">
+                          <button class="btn btn-primary btn-round btn-sm">Partidos</button>
+                        </td>
                         <td class="td-actions text-lefht">
                             <div style="float:left">
                               <a href="..\..\vista\temporada/update.php?id=<?php echo $row['id_temporada']; ?>">
