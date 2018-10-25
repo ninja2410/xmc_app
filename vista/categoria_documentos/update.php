@@ -20,7 +20,7 @@ $data=$catDocumentos->select($_GET['id']);
             <div class="card">
               <div class="card-header card-header-danger">
                   <h4 class="card-title">Actualizar categoría de documentos</h4>
-                  <p class="category">Complete los campos siguientes.</p>
+                  <p class="category">Complete los campos siguientes</p>
               </div>
               <div class="card-body">
                 <form method="post", action="..\categoria_documentos\store.php" id="frm_catDocumentos">

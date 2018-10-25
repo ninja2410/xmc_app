@@ -92,7 +92,7 @@ foreach($permisos as $key => $value)
             ?>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="material-icons">accessibility_new</i> Jugadores
+                <i class="material-icons">accessibility_new</i>Jugadores
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="..\..\vista\jugador/index.php">Jugadores</a>
@@ -107,16 +107,16 @@ foreach($permisos as $key => $value)
             ?>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="material-icons">access_time</i> Partidos
+                <i class="material-icons">access_time</i>Partidos
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="..\..\vista\partido/index.php">Registro de Partidos</a>
-                <a class="dropdown-item" href="..\..\vista\alineacion/index.php">Alineaciones</a>
-                <a class="dropdown-item" href="..\..\vista\arbitro/index.php">Arbitro</a>
-                <a class="dropdown-item" href="..\..\vista\estadisticaJugador/index.php">Estadisticas</a>
                 <a class="dropdown-item" href="..\..\vista\equipo/index.php">Equipos</a>
                 <a class="dropdown-item" href="..\..\vista\estadio/index.php">Estadios</a>
+                <a class="dropdown-item" href="..\..\vista\arbitro/index.php">Árbitros</a>
                 <a class="dropdown-item" href="..\..\vista\temporada/index.php">Temporadas</a>
+                <a class="dropdown-item" href="..\..\vista\estadisticaJugador/index.php">Estadísticas</a>
+                <a class="dropdown-item" href="..\..\vista\alineacion/index.php">Alineaciones</a>
+                <a class="dropdown-item" href="..\..\vista\partido/index.php">Registro de partidos</a>
               </div>
             </li>
             <?php
@@ -126,14 +126,14 @@ foreach($permisos as $key => $value)
             ?>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="material-icons">supervisor_account</i> Socios
+                <i class="material-icons">supervisor_account</i>Socios
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="..\..\vista\socio/index.php">Registro de Socios</a>
                 <a class="dropdown-item" href="..\..\vista\pagos/index.php">Pagos</a>
-                <a class="dropdown-item" href="..\..\vista\pagos/rpt_socios.php">Estado de pagos.</a>
-                <a class="dropdown-item" href="..\..\vista\membresia/index.php">Membresías</a>
                 <a class="dropdown-item" href="..\..\vista\beneficio/index.php">Beneficios</a>
+                <a class="dropdown-item" href="..\..\vista\membresia/index.php">Membresías</a>
+                <a class="dropdown-item" href="..\..\vista\pagos/rpt_socios.php">Estado de pagos</a>
+                <a class="dropdown-item" href="..\..\vista\socio/index.php">Registro de socios</a>
               </div>
             </li>
             <?php
@@ -143,13 +143,13 @@ foreach($permisos as $key => $value)
             ?>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="material-icons">control_point</i> Lesiones
+                <i class="material-icons">control_point</i>Lesiones
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="..\..\vista\lesion-jugador/index.php">Registro de lesiones por jugador</a>
-                <a class="dropdown-item" href="..\..\vista\ficha_medica/index.php">Ficha Médica</a>
-                <a class="dropdown-item" href="..\..\vista\parte_cuerpo/index.php">Detalles de Ficha Médica</a>
                 <a class="dropdown-item" href="..\..\vista\medico/index.php">Médicos</a>
+                <a class="dropdown-item" href="..\..\vista\ficha_medica/index.php">Ficha médica</a>
+                <a class="dropdown-item" href="..\..\vista\parte_cuerpo/index.php">Detalles de ficha médica</a>
+                <a class="dropdown-item" href="..\..\vista\lesion-jugador/index.php">Registro de lesiones por jugador</a>
               </div>
             </li>
             <?php
@@ -159,12 +159,12 @@ foreach($permisos as $key => $value)
             ?>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="material-icons">chrome_reader_mode</i> Documentos
+                <i class="material-icons">chrome_reader_mode</i>Documentos
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="..\..\vista\documento_digital/index.php">Documentos Digitales</a>
-                <a class="dropdown-item" href="..\..\vista\categoria_documentos/index.php">Categoría Documentos</a>
                 <a class="dropdown-item" href="..\..\vista\contrato/index.php">Contratos</a>
+                <a class="dropdown-item" href="..\..\vista\documento_digital/index.php">Documentos digitales</a>
+                <a class="dropdown-item" href="..\..\vista\categoria_documentos/index.php">Categorías de documentos</a>
               </div>
             </li>
             <?php
@@ -174,11 +174,11 @@ foreach($permisos as $key => $value)
             ?>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="material-icons">person</i> Personas
+                <i class="material-icons">person</i>Personas
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="..\..\vista\personaltecnico/index.php">Personal Técnico</a>
                 <a class="dropdown-item" href="..\..\vista\prensa/index.php">Prensa</a>
+                <a class="dropdown-item" href="..\..\vista\personaltecnico/index.php">Personal técnico</a>
               </div>
             </li>
             <?php
@@ -186,11 +186,11 @@ foreach($permisos as $key => $value)
             ?>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="material-icons">accessibility_new</i> Administrador
+                <i class="material-icons">accessibility_new</i>Administrador
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="..\..\vista\bitacora/index.php">Bitácora</a>
                 <a class="dropdown-item" href="..\..\vista\usuario/index.php">Usuarios</a>
-                <a class="dropdown-item" href="..\..\vista\bitacora/index.php">Bitacora</a>
               </div>
             </li>
             <li class="dropdown nav-item">

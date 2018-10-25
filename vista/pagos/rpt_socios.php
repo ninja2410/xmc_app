@@ -23,28 +23,28 @@ $data_pagos=$pago->est_Socios();
             <div class="card">
               <div class="card-header card-header-danger row">
               <div class="col-md-11">
-                  <h3 class="card-title">Estado de pagos por socio.</h3>
-                  <p class="category">Información de estados de pago por socio. </p>
+                  <h3 class="card-title">Estado de pagos por socio</h3>
+                  <p class="category">Información de estados de pago por socio</p>
                 </div>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
-                  <table class="table table-striped table-bordered" id="table1">
+                  <table class="table table-hover table-bordered" id="table1">
                     <thead>
                       <th style="text-align:center;">
                         ID
                       </th>
-                      <th>
-                        SOCIO
-                      </th>
-                      <th>
-                        MEMBRESIA
+                      <th style="text-align:center;">
+                        Socio
                       </th>
                       <th style="text-align:center;">
-                        PAGOS REALIZADOS
+                        Membresía
                       </th>
                       <th style="text-align:center;">
-                        PAGOS RETRASADOS
+                        Pagos realizados
+                      </th>
+                      <th style="text-align:center;">
+                        Pagos retrasados
                       </th>
                     </thead>
                     <tbody>
@@ -52,13 +52,13 @@ $data_pagos=$pago->est_Socios();
                       while ($row=mysqli_fetch_array($data_pagos)) {
                        ?>
                       <tr>
-                        <td>
+                        <td style="text-align:center">
                           <?php echo $row['ID']; ?>
                         </td>
-                        <td>
+                        <td style="text-align:center;">
                           <?php echo $row['SOCIO']; ?>
                         </td>
-                        <td>
+                        <td style="text-align:center;">
                           <?php echo $row['MEMBRESIA']; ?>
                         </td>
                         <td style="text-align:center;">
@@ -97,37 +97,37 @@ $data_pagos=$pago->est_Socios();
    buttons: [
      {
        extend:'copy',
-       title:'Reporte estado de pagos por socio.',
+       title:'Reporte estado de pagos por socio',
        exportOptions:{
-         columns:[0,1,2]
+         columns:[0,1,2,3,4]
        }
      },
      {
        extend:'csv',
-       title:'Reporte estado de pagos por socio.',
+       title:'Reporte estado de pagos por socio',
        exportOptions:{
-         columns:[0,1,2]
+         columns:[0,1,2,3,4]
        }
      },
      {
        extend:'excel',
-       title:'Reporte estado de pagos por socio.',
+       title:'Reporte estado de pagos por socio',
        exportOptions:{
-         columns:[0,1,2]
+         columns:[0,1,2,3,4]
        }
      },
      {
        extend:'pdf',
-       title:'Reporte estado de pagos por socio.',
+       title:'Reporte estado de pagos por socio',
        exportOptions:{
-         columns:[0,1,2]
+         columns:[0,1,2,3,4]
        }
      },
      {
        extend:'print',
-       title:'Reporte estado de pagos por socio.',
+       title:'Reporte estado de pagos por socio',
        exportOptions:{
-         columns:[0,1,2]
+         columns:[0,1,2,3,4]
        }
      }
    ],

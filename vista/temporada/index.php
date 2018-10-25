@@ -22,28 +22,25 @@ $data=$temporada->select(-1);
     <div class="main main-raised">
     <div class="content">
       <div class="container-fluid">
-        <div class="row">
+
+        
           <div class="col-md-12">
             <div class="card">
-              <div class="card-header card-header-primary">
-                <div class="col-lg-10" style="float:left;">
-                  <h2 class="card-title ">Temporadas</h4>
-                  <p class="card-category"> Listado de temporadas</p>
+              <div class="card-header card-header-danger row">
+                <div class="col-md-11">
+                  <h3 class="card-title ">Temporadas</h4>
+                  <p class="category">Listado de temporadas</p>
                 </div>
-                <div class="col-lg-1" style="float:left">
-                  <a href="..\..\vista\temporada/insert.php" title="Agregar nuevo temporada">
-                    <div class="card-header card-header-success card-header-icon" style="float:left">
-                      <div class="card-icon">
-                        <i class="material-icons">add</i>
-                      </div>
-                    </div>
+                <div class="col-md-1 text-right">
+                <a href="..\..\vista\temporada/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar temporada">
+                    <i class="material-icons">add</i>
                   </a>
                 </div>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table table-striped table-bordered" id="table1">
-                    <thead class=" text-primary">
+                    <thead>
                       <th>
                         ID
                       </th>
@@ -54,7 +51,13 @@ $data=$temporada->select(-1);
                         Fecha de inicio
                       </th>
                       <th>
-                        Fecha que finaliza
+                        Finalización
+                      </th>
+                      <th >
+                        Estadísticas
+                      </th>
+                      <th>
+                        Acciones
                       </th>
                     </thead>
                     <tbody>
@@ -74,11 +77,11 @@ $data=$temporada->select(-1);
                         <td>
                           <?php echo $row['fecha_final']; ?>
                         </td>
-                        <td>
+                        <td class="text-center">
                           <a href="..\..\vista\temporada/partidos.php?id=<?php echo $row['id_temporada']; ?>">
-                          <button class="btn btn-primary btn-round btn-sm">Partidos</button>
+                          <button class="btn btn-success btn-round btn-sm"><i class="fas fa-futbol fa-lg"> </i>  Partidos</button>
                         </td>
-                        <td class="td-actions text-lefht">
+                        <td class="td-actions text-left">
                             <div style="float:left">
                               <a href="..\..\vista\temporada/update.php?id=<?php echo $row['id_temporada']; ?>">
                                 <button type="button" rel="tooltip" title="Editar temporada" class="btn btn-primary btn-link btn-sm">
@@ -90,9 +93,28 @@ $data=$temporada->select(-1);
                               <form class="" action="..\..\vista\temporada/store.php" method="post">
                                 <input type="hidden" name="operation" value="3">
                                 <input type="hidden" name="id" value="<?php echo $row['id_temporada']; ?>">
-                                <button type="submit" rel="tooltip" title="Eliminar temporada" class="btn btn-danger btn-link btn-sm">
+                                <!-- Inicio de modal -->
+                                <button type="button" data-toggle="modal" data-target="<?php echo '#Confirmacion'.$row['id_temporada']; ?>" rel="tooltip" title="Eliminar temporada" class="btn btn-danger btn-link btn-sm">
                                   <i class="material-icons">close</i>
                                 </button>
+                                <!-- Modal -->
+                                <div class="modal fade" id="<?php echo 'Confirmacion'.$row['id_temporada']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"  data-backdrop="false">
+                                  <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Confirmación</h5>
+                                      </div>
+                                      <div class="modal-body">
+                                      ¿Está seguro que desea eliminar esta temporada?
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                        <button type="submit" class="btn btn-primary">Eliminar</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!--  -->
                               </form>
                             </div>
                         </td>
@@ -105,7 +127,7 @@ $data=$temporada->select(-1);
               </div>
             </div>
           </div>
-        </div>
+        
       </div>
       </div>
     </div>

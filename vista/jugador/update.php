@@ -17,12 +17,11 @@ $data=$jugador->select($_GET['id']);
     ?>
    <div class="content main main-raised">
       <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-12">
+        <div class="col-md-12">
             <div class="card">
               <div class="card-header card-header-danger">
                   <h3 class="card-title">Actualizar jugador</h3>
-                  <p class="category">Complete los campos siguientes.</p>
+                  <p class="category">Complete los campos siguientes</p>
               </div>
               <div class="card-body">
                 <form method="post", action="..\jugador\store.php" enctype="multipart/form-data" id="frm_jugador">
@@ -76,11 +75,16 @@ $data=$jugador->select($_GET['id']);
                                 <label>Nombre de la madre</label>
                                 <input type="text" class="form-control" name="madre" value="<?php echo $data['madre'] ?>">
                             </div>
+
+                            <div class="form-group col-md-4">
+                                <label>Tipo de sangre</label>
+                                <input type="text" class="form-control" name="sangre" value="<?php echo $data['sangre'] ?>">
+                            </div>
                         </div>
                     </div>
 
                     <div>
-                        <h3>Datos tecnicos</h3>
+                        <h3>Datos técnicos</h3>
                         <hr>
                         <div class="form-row">
                             <div class="form-group col-md-4">
@@ -107,26 +111,7 @@ $data=$jugador->select($_GET['id']);
                             </div>
 
                             <div class="form-group col-md-4">
-                                <label>Contrato</label>
-                                <select class="form-control" name="contrato">
-                                    <?php
-                                        echo '<option selected value="'.$data['id_contrato'].'">'.$data['titulo'].'</option>';
-                                        include_once('..\..\Negocio/ClassContrato.php');
-                                        $contrato=new Contrato();
-                                        $data3=$contrato->select(-1);
-                                        while ($row=mysqli_fetch_array($data3)) {
-                                            $valor = $row['id_contrato'];
-                                            $texto = $row['titulo'];
-                                            echo '<option value="'.$valor.'">'.$texto.'</option>';
-                                        }
-                                    ?>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group col-md-4">
-                                <label>Categoria</label>
+                                <label>Categoría</label>
                                 <select class="form-control" name="categoria">
                                     <?php
                                         echo '<option selected value="'.$data['id_categoria'].'">'.$data['categoria'].'</option>';
@@ -142,7 +127,9 @@ $data=$jugador->select($_GET['id']);
                                     ?>
                                 </select>
                             </div>
+                        </div>
 
+                        <div class="form-row">
                             <div class="form-group col-md-4">
                                 <label>Fecha de inicio</label>
                                 <input type="date" class="form-control" name="fecha_inicio" value="<?php echo $data['fecha_inicio'] ?>">
@@ -182,7 +169,6 @@ $data=$jugador->select($_GET['id']);
             </div>
           </div>
         </div>
-      </div>
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
@@ -229,6 +215,18 @@ $data=$jugador->select($_GET['id']);
                 regexp:{
                     regexp: /^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ\s\-]*$/,
                     message: 'Solo se aceptan numeros y letras'
+                    }
+                }
+            },
+
+            sangre:{
+            validators:{
+                notEmpty:{
+                    message:'Ingrese el tipo de sangre del jugador'
+                },
+                regexp:{
+                    regexp: /^[aAbBoO\-\+]*$/,
+                    message: 'Solo se aceptan tipos validos de sangre, por ejemplo O+'
                     }
                 }
             },

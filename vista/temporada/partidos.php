@@ -17,25 +17,26 @@ $datadpCn=$detalle_partido->selectTemporada($_GET['id']);
     ?>
     <div class="main main-raised">
     <br>
-    <div class="container">
+    <div class="container text-center">
         <h1><?php echo $datadpCn['descripcion']?></h1>
     </div>
     <br>
     <div class="container">
-    <div class="row">
+    <div class="row" >
         <div class="col-md-8">
-            <div class="table-responsive">
-                <table class="table table-sm text-left" >
+            <div class="table-responsive ">
+                <table class="table table-sm text-center" >
                     <thead class=" text-primary">
-                        <th>
-                            <h2 class="title">Xelajú</h2>
+                        <th >
+                            <h2 class="title">Xelajú MC</h2>
+                            
                         </th>
-                        <th>
+                        <th >
                             <h3 class="title">Resultados</h3>
                         </th>
                     </thead>
-                    <tbody>
-                        <tr>
+                    <tbody >
+                        <tr >
                             <td>
                             <h4><b>Esquinas </b> </h4>
                             </td>
@@ -69,7 +70,7 @@ $datadpCn=$detalle_partido->selectTemporada($_GET['id']);
                         </tr>
                         <tr>
                             <td>
-                            <h4><b>Tiros a puertas</b> </h4>
+                            <h4><b>Tiros a puerta</b> </h4>
                             </td>
                             <td>
                             <h4><?php echo $datadpCn['tiros_puerta']?></h4>
@@ -93,7 +94,7 @@ $datadpCn=$detalle_partido->selectTemporada($_GET['id']);
                         </tr>
                         <tr>
                             <td>
-                            <h4><b>Fuera de juego </b> </h4>
+                            <h4><b>Fueras de juego </b> </h4>
                             </td>
                             <td>
                             <h4><?php echo $datadpCn['fj']?></h4>

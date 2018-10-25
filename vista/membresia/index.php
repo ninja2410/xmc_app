@@ -7,7 +7,7 @@ $data=$membresia->select(-1);
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Membresias - Listar</title>
+    <title>Membresías - Listar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
@@ -24,8 +24,8 @@ $data=$membresia->select(-1);
             <div class="card">
               <div class="card-header card-header-danger row">
               <div class="col-md-11">
-                  <h3 class="card-title">Membresias</h3>
-                  <p class="category">Listado de Membresiass</p>
+                  <h3 class="card-title">Membresías</h3>
+                  <p class="category">Listado de membresías</p>
                 </div>
                 <div class="col-md-1 text-right">
                 <a href="..\..\vista\membresia/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar Membresias">
@@ -35,7 +35,7 @@ $data=$membresia->select(-1);
               </div>
               <div class="card-body">
                 <div class="table-responsive">
-                  <table class="table">
+                  <table  class=" table table-hover table-bordered">
                     <thead>
                       <th>
                         ID
@@ -45,6 +45,9 @@ $data=$membresia->select(-1);
                       </th>
                       <th>
                         Descripción
+                      </th>
+                      <th>
+                        Acciones
                       </th>
                     </thead>
                     <tbody>
@@ -64,7 +67,7 @@ $data=$membresia->select(-1);
                         <td class="td-actions text-left">
                             <div style="float:left">
                               <a href="..\..\vista\membresia/update.php?id=<?php echo $row['id_membresia']; ?>">
-                                <button type="button" rel="tooltip" title="Editar membresia" class="btn btn-primary btn-link btn-sm">
+                                <button type="button" rel="tooltip" title="Editar membresía" class="btn btn-primary btn-link btn-sm">
                                   <i class="material-icons">edit</i>
                                 </button>
                               </a>
@@ -73,9 +76,28 @@ $data=$membresia->select(-1);
                               <form class="" action="..\..\vista\membresia/store.php" method="post">
                                 <input type="hidden" name="operation" value="3">
                                 <input type="hidden" name="id" value="<?php echo $row['id_membresia']; ?>">
-                                <button type="submit" rel="tooltip" title="Eliminar membresia" class="btn btn-danger btn-link btn-sm">
+                                <!-- Inicio de modal -->
+                                <button type="button" data-toggle="modal" data-target="<?php echo '#Confirmacion'.$row['id_membresia']; ?>" rel="tooltip" title="Eliminar membresía" class="btn btn-danger btn-link btn-sm">
                                   <i class="material-icons">close</i>
                                 </button>
+                                <!-- Modal -->
+                                <div class="modal fade" id="<?php echo 'Confirmacion'.$row['id_membresia']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"  data-backdrop="false">
+                                  <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Confirmación</h5>
+                                      </div>
+                                      <div class="modal-body">
+                                      ¿Está seguro que desea eliminar esta membresía?
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                        <button type="submit" class="btn btn-primary">Eliminar</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!--  -->
                               </form>
                             </div>
                         </td>

@@ -57,7 +57,7 @@ $data=$equipo->select(-1);
                       Escudo
                     </th>
                     <th>
-                      <!-- Campo vacío -->
+                      Acciones
                     </th>
                   </thead>
                   <tbody>
@@ -75,7 +75,7 @@ $data=$equipo->select(-1);
                         <?php echo $row['procedencia']; ?>
                       </td>
                       <td>
-                        <?php
+                      <?php
                          echo '<img style="height:30px;width:30px"  src="../imagenes/'.$row['foto'].'"  alt="Circle Image" class="img-raised rounded-circle img-fluid">';
                         ?>
                       </td>

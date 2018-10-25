@@ -5,13 +5,14 @@
     <title>Temporada - Insertar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
-  <body>
+  <body class="profile-page sidebar-collapse">
     <?php include '..\layoults\barnav.php'; ?>
+    <div class="main main-raised"> 
     <div class="content">
       <div class="col-md-12">
         <div class="card">
-          <div class="card-header card-header-primary">
-            <h4 class="card-title">INGRESAR UNA NUEVA TEMPORADA</h4>
+          <div class="card-header card-header-danger">
+            <h4 class="card-title">Ingresar una nueva temporada</h4>
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
@@ -45,6 +46,7 @@
           </div>
         </div>
       </div>
+    </div>
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>

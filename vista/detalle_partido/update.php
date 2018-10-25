@@ -8,7 +8,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>INGRESAR RESULTADOS</title>
+    <title>Ingresar resultados</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
@@ -27,7 +27,7 @@
             <table class="table table-sm text-center" cellspacing="0" width="100%" >
                 <thead class=" text-primary">
                       <th>
-                        <h2 class="title">Xelajú</h2>
+                        <h2 class="title">Xelajú MC</h2>
                       </th>
                       <th>
                         <h3 class="title"></h3>
@@ -104,7 +104,7 @@
                         </div>
                         </td>
                         <td>
-                        <h4><b>Tiros a puertas</b> </h4>
+                        <h4><b>Tiros a puerta</b> </h4>
                         </td>
                         <td>
                         <div class="form-group">
@@ -149,7 +149,7 @@
                         </div>
                         </td>
                         <td>
-                        <h4><b>Fuera de juego </b> </h4>
+                        <h4><b>Fueras de juego </b> </h4>
                         </td>
                         <td>
                         <div class="form-group">

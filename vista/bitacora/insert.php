@@ -20,7 +20,7 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label class="bmd-label-floating">Nombre de Usuario</label>
+                    <label class="bmd-label-floating">Nombre de usuario</label>
                     <input type="text" class="form-control" name="usuario">
                   </div>
                 </div>

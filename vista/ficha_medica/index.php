@@ -21,8 +21,7 @@ $data=$fichamedica->select(-1);
     } ?>">
     <div class="content main main-raised">
       <div class="container-fluid">
-      <div class="row">
-          <div class="col-md-12">
+        <div class="col-md-12">
             <div class="card">
               <div class="card-header card-header-danger row">
                 <div class="col-md-10">
@@ -30,7 +29,7 @@ $data=$fichamedica->select(-1);
                   <p class="category">Listado de fichas médicas de los jugadores.</p>
                 </div>
                 <div class="col-md-2 text-right">
-                  <a href="..\..\vista\ficha_medica/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true">
+                    <a href="..\..\vista\ficha_medica/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar ficha medica">
                     <i class="material-icons">add</i>
                   </a>
                 </div>
@@ -42,9 +41,7 @@ $data=$fichamedica->select(-1);
                         <th>ID</th>
                         <th>Fecha</th>
                         <th>Jugador</th>
-                        <th>Grasa</th>
-                        <th>Peso</th>
-                        <th>Talla</th>
+                        <th>Acciones</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -56,26 +53,15 @@ $data=$fichamedica->select(-1);
                             <?php echo $row['id_ficha']; ?>
                           </td>
                           <td>
-                            <?php echo $row['fecha']; ?>
+                            <?php echo date("d/m/Y", strtotime($row['fecha']));?>
                           </td>
                           <td>
                             <?php echo $row['Nombre']; ?>
                           </td>
-                          <td>
-                            <?php echo $row['grasa']; ?>
-                          </td>
-                          <td>
-                            <?php echo $row['peso']; ?>
-                          </td>
-                          <td>
-                            <?php echo $row['talla']; ?>
-                          </td>
                           <td class="td-actions text-lefht">
                               <div style="float:left">
-                                <a href="">
-                                  <button type="button" rel="tooltip" title="Ver detalles" class="btn btn-success btn-link btn-sm">
-                                    <i class="far fa-eye fa-lg"></i>
-                                  </button>
+                                  <a href="..\..\vista\ficha_medica/verDetalle.php?id=<?php echo $row['id_ficha']; ?>">
+                                  <button class="btn btn-success btn-round btn-sm"><i class="far fa-eye fa-lg"></i> Ver detalles</button>
                                 </a>
                               </div>
                               <div style="float:left">
@@ -103,7 +89,6 @@ $data=$fichamedica->select(-1);
               </div>
             </div>
           </div>
-        </div>
       </div>
     </div>
     <?php include '..\layoults\footer.php'; ?>

@@ -39,15 +39,12 @@ $data=$prensa->select(-1);
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table table-striped table-bordered" id="table1">
-                    <thead class=" text-info">
+                    <thead>
                       <th>
                         ID
                       </th>
                       <th>
                         Nombre
-                      </th>
-                      <th>
-                        Apellido
                       </th>
                       <th>
                         Teléfono
@@ -68,10 +65,7 @@ $data=$prensa->select(-1);
                           <?php echo $row['id_prensa']; ?>
                         </td>
                         <td>
-                          <?php echo $row['nombre']; ?>
-                        </td>
-                        <td>
-                          <?php echo $row['apellido']; ?>
+                        <?php echo $row['nombre']." ".$row['apellido']; ?>
                         </td>
                         <td>
                           <?php echo $row['telefono']; ?>
@@ -91,9 +85,28 @@ $data=$prensa->select(-1);
                               <form class="" action="..\..\vista\prensa/store.php" method="post">
                                 <input type="hidden" name="operation" value="3">
                                 <input type="hidden" name="id" value="<?php echo $row['id_prensa']; ?>">
-                                <button type="submit" rel="tooltip" title="Eliminar" class="btn btn-danger btn-link btn-sm">
+                                <!-- Inicio de modal -->
+                            <button type="button" data-toggle="modal" data-target="<?php echo '#Confirmacion'.$row['id_prensa']; ?>" rel="tooltip" title="Eliminar categoría" class="btn btn-danger btn-link btn-sm">
                                   <i class="material-icons">close</i>
                                 </button>
+                                <!-- Modal -->
+                                <div class="modal fade" id="<?php echo 'Confirmacion'.$row['id_prensa']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"  data-backdrop="false">
+                                  <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h4 class="modal-title" id="exampleModalLabel">Confirmación</h5>
+                                      </div>
+                                      <div class="modal-body">
+                                      ¿Está seguro que desea eliminar a este reportero?
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                        <button type="submit" class="btn btn-primary">Eliminar</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!--  -->
                               </form>
                             </div>
                         </td>

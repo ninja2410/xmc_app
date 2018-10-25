@@ -35,7 +35,7 @@ $data=$categoria->select(-1);
               </div>
               <div class="card-body">
                 <div class="table-responsive">
-                  <table class="table" id="mytable">
+                  <table class="table table-striped table-bordered" id="mytable">
                     <thead>
                       <th>
                         ID
@@ -47,7 +47,7 @@ $data=$categoria->select(-1);
                         Descripción
                       </th>
                       <th>
-                        <!-- Campo vacío -->
+                        Acciones
                       </th>
                     </thead>
                     <tbody>
@@ -128,35 +128,35 @@ $data=$categoria->select(-1);
                  extend:'copy',
                  title:'Listado de categorías',
                  exportOptions:{
-                   columns:[0,1,2,3]
+                   columns:[0,1,2]
                  }
                },
                {
                  extend:'csv',
                  title:'Listado de categorías',
                  exportOptions:{
-                   columns:[0,1,2,3]
+                   columns:[0,1,2]
                  }
                },
                {
                  extend:'excel',
                  title:'Listado de categorías',
                  exportOptions:{
-                   columns:[0,1,2,3]
+                   columns:[0,1,2]
                  }
                },
                {
                  extend:'pdf',
                  title:'Listado de categorías',
                  exportOptions:{
-                   columns:[0,1,2,3]
+                   columns:[0,1,2]
                  }
                },
                {
                  extend:'print',
                  title:'Listado de categorías',
                  exportOptions:{
-                   columns:[0,1,2,3]
+                   columns:[0,1,2]
                  }
                }
              ],

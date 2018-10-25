@@ -24,7 +24,7 @@ $data2=$contrato->select(-1);
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Entrenador - <?php echo $data['nombre']." ".$data['apellido'] ?></title>
+    <title>Entrenador - Detalles <?php echo $data['nombre']." ".$data['apellido'] ?></title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
@@ -40,16 +40,21 @@ $data2=$contrato->select(-1);
                     ?>
                 </div>
                 <div class="col-md-7">
-                    <h3 class="title"><?php echo $data['nombre']." ".$data["apellido"]?></h3>
+                    <h2 class="title"><?php echo $data['nombre']." ".$data["apellido"]?></h2>
+                    <h3>Datos personales</h3>
+                    <hr>
                     <h4><b>Edad: </b><?php echo calculaedad ($data['fecha_nacimiento']);?> años</h4>
                     <h4><b>Fecha de nacimiento: </b><?php echo date("d/m/Y", strtotime($data['fecha_nacimiento']));?></h4>
-                    <h4><b>Fecha de inicio de labores: </b><?php echo date("d/m/Y", strtotime($data['fecha_inicio']));?></h4>
-                    <h4><b>Fecha final de labores: </b><?php echo date("d/m/Y", strtotime($data['fecha_fin']));?></h4>
                     <h4><b>Teléfono: </b><?php echo $data['telefono']?></h4>
                     <h4><b>Dirección: </b><?php echo $data['direccion']?></h4>
                     <h4><b>País natal: </b><?php echo $data['nacionalidad']?></h4>
+                    <h3>Datos técnicos</h3>
+                    <hr>
+                    <h4><b>Categoría: </b><?php echo $data['CATEGORIA']?></h4>
+                    <h4><b>Fecha de inicio de labores: </b><?php echo date("d/m/Y", strtotime($data['fecha_inicio']));?></h4>
+                    <h4><b>Fecha final de labores: </b><?php echo date("d/m/Y", strtotime($data['fecha_fin']));?></h4>
                     <input type="hidden" value="<?php echo $data['id_entrenador']; ?>">
-                    <h4><b >Contrato: </b><a href="..\..\vista\documento_digital/index.php"><?php echo $data['titulo']?></a></h4>
+                    <!-- <h4><b >Contrato: </b><a href="..\..\vista\documento_digital/index.php">< ?php echo $data['titulo']?></a></h4> -->
                 </div>
                 
                 <div class="col-md-3">

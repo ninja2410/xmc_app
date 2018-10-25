@@ -1,8 +1,8 @@
-<?php
+<!-- < ?php
 require_once('..\..\Negocio/ClassContrato.php');
 $contrato=new Contrato();
 $data=$contrato->select(-1);
- ?>
+ ?> -->
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -24,23 +24,26 @@ $data=$contrato->select(-1);
           </div>
           <div class="card-body">
             <form method="post", action="..\entrenador\store.php" id="frm_entrenador" enctype="multipart/form-data">
-             <input type="hidden" name="operation" value="1"> 
+             <input type="hidden" name="operation" value="1">
+             <div>
+              <h3>Datos personales</h3>
+              <hr>
               <div class="row">
                 <div class="col-md-4">
                   <div class="form-group">
-                    <label class="bmd-label-floating">Nombre</label>
+                    <label >Nombre</label>
                     <input type="text" class="form-control" name="nombre" >
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="form-group">
-                    <label class="bmd-label-floating">Apellidos</label>
+                    <label >Apellidos</label>
                     <input type="text" class="form-control" name="apellido">
                   </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                   <div class="form-group">
-                    <label >Fecha de nacimiento</label>
+                    <label>Fecha de nacimiento</label>
                     <input type="date" class="form-control" name="fecha_nacimiento">
                   </div>
                 </div>
@@ -48,28 +51,30 @@ $data=$contrato->select(-1);
              <div class="row">
              <div class="col-md-4">
                   <div class="form-group">
-                    <label class="bmd-label-floating">País</label>
+                    <label>País de origen</label>
                     <input type="text" class="form-control" name="nacionalidad">
                   </div>
                 </div>
 
                 <div class="col-md-4">
                   <div class="form-group">
-                    <label class="bmd-label-floating">Dirección</label>
+                    <label>Dirección</label>
                     <input type="text" class="form-control" name="direccion">
                   </div>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-3">
                   <div class="form-group">
-                    <label class="bmd-label-floating">Teléfono</label>
+                    <label>Teléfono</label>
                     <input type="text" class="form-control" name="telefono">
                   </div>
                 </div>
-
-
+             </div>
              </div>
 
+              <div>
+              <h3>Datos técnicos</h3>
+              <hr>
               <div class="row">
               <div class="col-md-4">
                   <div class="form-group">
@@ -83,16 +88,36 @@ $data=$contrato->select(-1);
                     <input type="date" class="form-control" name="fecha_fin">
                  </div>
             </div>  
+            <div class="col-md-3">
+                <div class="form-group">
+                <label>Categoría</label>
+                    <select class="form-control" name="categoria">
+                          <option selected value="0">Elija la categoría del entrenador...</option>
+                           <?php
+                                include_once('..\..\Negocio/classCategoria.php');
+                                $categoria=new Categoria();
+                                $data=$categoria->select(-1);
+                                while ($row = mysqli_fetch_array($data))
+                                {
+                                  $valor = $row['id_categoria'];
+                                  $texto = $row['nombre'];
+                                  echo '<option value="'.$valor.'">'.$texto.'</option>';
+                                }
+                                ?>
+                    </select>
+                 </div>
+            </div>  
             </div>
+          </div>
                 
               
 
-              <div class="row">
+              <!-- <div class="row">
               <div class="col-md-4">
                   <div class="form-group">
                     <label for="exampleFormControlSelect1">Contrato</label>
                     <select class="form-control" name="id_contrato">
-                      <?php
+                      < ?php
                       while ($row=mysqli_fetch_array($data)) {
                           $valor = $row['id_contrato'];
                           $texto = $row['titulo'];
@@ -102,8 +127,11 @@ $data=$contrato->select(-1);
                     </select>
                   </div>
                 </div>
-              </div>
-
+              </div> -->
+              <div>
+              <h3>Fotografía</h3>
+              <hr>
+              
                 <div class="row">
                 <div class="col-md-4">
                   <div class="fileinput fileinput-new" data-provides="fileinput">
@@ -115,7 +143,7 @@ $data=$contrato->select(-1);
                   </div>
                 </div>
                 </div>
-
+                </div>
 
               <?php include '..\layoults\botones.php'; ?>
               <div class="clearfix"></div>
@@ -129,6 +157,7 @@ $data=$contrato->select(-1);
     <?php include '..\layoults\scripts2.php'; ?>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
     <script type="text/javascript">
+  
     $(document).ready(function(){
       $('#frm_entrenador').bootstrapValidator({
       feedbackIcons: {

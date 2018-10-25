@@ -39,7 +39,7 @@ $data=$documento->select($_GET['id']);
                   </div>
                   <div class="col-md-3">
                     <div class="form-group">
-                      <label class="bmd-label-floating">Titulo</label>
+                      <label class="bmd-label-floating">Título</label>
                       <input type="text" class="form-control" name="title" value="<?php echo $data['titulo']; ?>">
                     </div>
                   </div>

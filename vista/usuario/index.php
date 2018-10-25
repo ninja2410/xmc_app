@@ -23,12 +23,12 @@ $data=$usuario->select(-1);
     <div class="main main-raised">
     <div class="content">
       <div class="container-fluid">
-        <div class="row">
+        
           <div class="col-md-12">
             <div class="card">
             <div class="card-header card-header-danger row">
                 <div class="col-md-10">
-                  <h3 class="card-title">Usuarios</h3>
+                  <h2 class="card-title">Usuarios</h2>
                   <p class="category">Usuarios registrados</p>
                 </div>
                 <div class="col-md-2 text-right">
@@ -39,16 +39,16 @@ $data=$usuario->select(-1);
               </div>
               <div class="card-body">
                 <div class="table-responsive">
-                  <table class="table " id="table1">
-                    <thead class=" text-primary">
-                      <th>
+                  <table class="table table-hover table-bordered" id="table1">
+                    <thead>
+                      <th style="text-align:center">
                         ID
                       </th>
-                      <th>
+                      <th style="text-align:center">
                         Usuario
                       </th>
-                      <th>
-
+                      <th >
+                        Acciones
                       </th>
                     </thead>
                     <tbody>
@@ -56,13 +56,13 @@ $data=$usuario->select(-1);
                       while ($row=mysqli_fetch_array($data)) {
                        ?>
                       <tr>
-                        <td>
+                        <td style="text-align:center">
                           <?php echo $row['id_usuario']; ?>
                         </td>
-                        <td>
+                        <td style="text-align:center">
                           <?php echo $row['nombre_usuario']; ?>
                         </td>
-                        <td class="td-actions text-lefht">
+                        <td class="td-actions">
                             <div style="float:left">
                               <a href="..\..\vista\usuario/update.php?id=<?php echo $row['id_usuario']; ?>">
                                 <button type="button" rel="tooltip" title="Editar Usuario" class="btn btn-primary btn-link btn-sm">
@@ -74,9 +74,28 @@ $data=$usuario->select(-1);
                               <form class="" action="..\..\vista\usuario/store.php" method="post">
                                 <input type="hidden" name="operation" value="3">
                                 <input type="hidden" name="id" value="<?php echo $row['id_usuario']; ?>">
-                                <button type="submit" rel="tooltip" title="Eliminar Usuario" class="btn btn-danger btn-link btn-sm">
+                                <!-- Inicio de modal -->
+                                <button type="button" data-toggle="modal" data-target="<?php echo '#Confirmacion'.$row['id_usuario']; ?>" rel="tooltip" title="Eliminar usuario" class="btn btn-danger btn-link btn-sm">
                                   <i class="material-icons">close</i>
                                 </button>
+                                <!-- Modal -->
+                                <div class="modal fade" id="<?php echo 'Confirmacion'.$row['id_usuario']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"  data-backdrop="false">
+                                  <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Confirmación</h5>
+                                      </div>
+                                      <div class="modal-body">
+                                      ¿Está seguro que desea eliminar este usuario?
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                        <button type="submit" class="btn btn-primary">Eliminar</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!--  -->
                               </form>
                             </div>
                         </td>
@@ -90,7 +109,7 @@ $data=$usuario->select(-1);
             </div>
           </div>
         </div>
-      </div>
+      
     </div>
     </div>
     </div>

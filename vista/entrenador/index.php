@@ -4,6 +4,12 @@ $entrenador=new Entrenador();
 $data=$entrenador->select(-1);
  ?>
 
+ <?php
+require_once('..\..\Negocio/ClassAsignacionEntrenador.php');
+$asignacion=new AsignacionEntrenador();
+$data2=$asignacion->select(-1);
+ ?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -47,7 +53,13 @@ $data=$entrenador->select(-1);
                         Nombre
                       </th>
                       <th>
+                        Categoría
+                      </th>
+                      <th>
                         Foto
+                      </th>
+                      <th>
+                        Acciones
                       </th>
                     </thead>
                     <tbody>
@@ -62,6 +74,9 @@ $data=$entrenador->select(-1);
                         <?php echo $row['nombre']." ".$row['apellido']; ?>
                         </td>
                         <td>
+                        <?php echo $row['CATEGORIA']; ?>
+                        </td>
+                        <td>
                         <?php
                          echo '<img style="height:40px;width:40px"  src="../imagenes/'.$row['foto'].'"  alt="Circle Image" class="img-raised rounded-circle img-fluid">';
                         ?>
@@ -71,7 +86,7 @@ $data=$entrenador->select(-1);
                             <a href="..\..\vista\entrenador/detalle.php?id=<?php echo $row['id_entrenador']; ?>">
                           <button class="btn btn-success btn-round btn-sm"><i class="far fa-eye fa-lg"></i> Ver detalles</button>
                               <a href="..\..\vista\entrenador/update.php?id=<?php echo $row['id_entrenador']; ?>">
-                                <button type="button" rel="tooltip" title="Editar Entrenador" class="btn btn-primary btn-link btn-sm">
+                                <button type="button" rel="tooltip" title="Editar entrenador" class="btn btn-primary btn-link btn-sm">
                                   <i class="material-icons">edit</i>
                                 </button>
                               </a>
@@ -80,9 +95,28 @@ $data=$entrenador->select(-1);
                               <form class="" action="..\..\vista\entrenador/store.php" method="post">
                                 <input type="hidden" name="operation" value="3">
                                 <input type="hidden" name="id" value="<?php echo $row['id_entrenador']; ?>">
-                                <button type="submit" rel="tooltip" title="Eliminar Entrenador" class="btn btn-danger btn-link btn-sm">
+                                <!-- Inicio de modal -->
+                                <button type="button" data-toggle="modal" data-target="<?php echo '#Confirmacion'.$row['id_entrenador']; ?>" rel="tooltip" title="Eliminar entrenador" class="btn btn-danger btn-link btn-sm">
                                   <i class="material-icons">close</i>
                                 </button>
+                                <!-- Modal -->
+                                <div class="modal fade" id="<?php echo 'Confirmacion'.$row['id_entrenador']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"  data-backdrop="false">
+                                  <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h4 class="modal-title" id="exampleModalLabel">Confirmación</h5>
+                                      </div>
+                                      <div class="modal-body">
+                                      ¿Está seguro que desea eliminar este entrenador?
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                        <button type="submit" class="btn btn-primary">Eliminar</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!--  -->
                               </form>
                             </div>
                         </td>
@@ -107,6 +141,46 @@ $data=$entrenador->select(-1);
 if ($('#mensaje').val()!="") {
         alertify.success($('#mensaje').val());
       }
+      $('#table1').DataTable({
+             dom: 'Bfrtip',
+             buttons: [
+               {
+                 extend:'copy',
+                 title:'Listado de entrenadores',
+                 exportOptions:{
+                   columns:[0,1,2]
+                 }
+               },
+               {
+                 extend:'csv',
+                 title:'Listado de entrenadores',
+                 exportOptions:{
+                   columns:[0,1,2]
+                 }
+               },
+               {
+                 extend:'excel',
+                 title:'Listado de entrenadores',
+                 exportOptions:{
+                   columns:[0,1,2]
+                 }
+               },
+               {
+                 extend:'pdf',
+                 title:'Listado de entrenadores',
+                 exportOptions:{
+                   columns:[0,1,2]
+                 }
+               },
+               {
+                 extend:'print',
+                 title:'Listado de entrenadores',
+                 exportOptions:{
+                   columns:[0,1,2]
+                 }
+               }
+             ],
+         }) ;
       });
     </script>
   </body>
