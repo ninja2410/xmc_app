@@ -48,21 +48,8 @@ function calculaedad($fechanacimiento){
                     <h4><b>Categoría: </b><?php echo $data['categoria']?></h4>
                     <h4><b>Número de camisola: </b><?php echo $data['camisola']?></h4>
                     <h4><b>Posición: </b><?php echo $data['descripcion']?></h4>
-<<<<<<< HEAD
-                    <?php
-                        if ($data['id_contrato'] == null) {
-                            echo '<h4><b>Tiene contrato: </b>No</h4>';
-                        }
-                        else
-                        {
-                            echo '<h4><b>Tiene contrato: </b>Si</h4>';
-                        }
-
-                    ?>
-=======
                     <h4><b>Fecha de inicio: </b><?php echo date("d/m/Y", strtotime($data['fecha_inicio']));?></h4>
                     <h4><b>Fecha final: </b><?php echo date("d/m/Y", strtotime($data['fecha_final']));?></h4>
->>>>>>> 3dc7ef3675c171a444141c622fb3bba10adb7277
                 </div>
                 <div class="col-md-3">
                     <ul class="nav flex-column">

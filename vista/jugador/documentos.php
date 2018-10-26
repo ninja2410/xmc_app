@@ -24,21 +24,16 @@ $player=$jugador->select($_GET['id']);
     <div class="main main-raised">
       <div class="content">
         <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="card">
-                <div class="card-header card-header-primary">
-                  <div class="col-lg-10" style="float:left;">
+          <div class="col-md-12">
+            <div class="card">
+                <div class="card-header card-header-danger row">
+                  <div class="col-md-10">
                     <h4 class="card-title ">Documentos digitales</h4>
                     <p class="card-category"> Listado de documentos almacenados en el sistema asignados al jugador: <?php echo $player['nombre'].' '.$player['apellido']; ?></p>
                   </div>
-                  <div class="col-lg-1" style="float:left">
-                    <a href="..\..\vista\documento_digital/insert.php">
-                      <div class="card-header card-header-success card-header-icon" style="float:left">
-                        <div class="card-icon">
-                          <i class="material-icons">add</i>
-                        </div>
-                      </div>
+                  <div class="col-md-2 text-right">
+                    <a href="..\..\vista\documento_digital/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar documento">
+                    <i class="material-icons">add</i>
                     </a>
                   </div>
                 </div>
