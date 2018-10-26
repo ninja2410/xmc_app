@@ -21,23 +21,24 @@ $data=$partido->select(-1);
     <div class="main main-raised">
     <div class="content">
       <div class="container-fluid">
-        <div class="row">
+        
           <div class="col-md-12">
             <div class="card">
               <div class="card-header card-header-danger row">
-                <div class="col-md-10">
+                <div class="col-md-11">
                   <h3 class="card-title">Partidos</h3>
                   <p class="category">Listado de partidos</p>
                 </div>
-                <div class="col-md-2 text-right">
+                <div class="col-md-1 text-right">
                   <a href="..\..\vista\partido/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true">
                     <i class="material-icons">add</i>
                   </a>
                 </div>
               </div>
+              <div class="card-body">
                 <div class="table-responsive">
                   <table class="table table-striped table-bordered" id="table1">
-                    <thead class=" text-primary">
+                    <thead>
                       <th>
                         ID
                       </th>
@@ -45,7 +46,7 @@ $data=$partido->select(-1);
                         Fecha
                       </th>
                       <th>
-                        Categoria
+                        Categoría
                       </th>
                       <th>
                         Estadio
@@ -66,7 +67,7 @@ $data=$partido->select(-1);
                         Resultados
                       </th>
                       <th>
-
+                        Acciones
                       </th>
                     </thead>
                     <tbody>
@@ -97,13 +98,13 @@ $data=$partido->select(-1);
                         </td>
                         <td>
                           <a href="..\..\vista\alineacion/alineacion.php?id=<?php echo $row['id_partido']; ?>">
-                          <button class="btn btn-primary btn-round btn-sm">Alineacion</button>
+                          <button class="btn btn-info btn-round btn-sm"> <i class="fas fa-sitemap"></i> Alineación</button>
                         </td>
                         <td>
                           <a href="..\..\vista\detalle_partido/index.php?id=<?php echo $row['id_partido']; ?>&id2=<?php echo $row['id_equipo']; ?>">
-                          <button class="btn btn-primary btn-round btn-sm">Ver detalles</button>
+                          <button class="btn btn-success btn-round btn-sm"> <i class="far fa-eye"></i> Ver detalles</button>
                         </td>
-                        <td class="td-actions text-lefht">
+                        <td class="td-actions text-left">
                             <div style="float:left">
                               <a href="..\..\vista\partido/update.php?id=<?php echo $row['id_partido']; ?>">
                                 <button type="button" rel="tooltip" title="Editar partido" class="btn btn-primary btn-link btn-sm">
@@ -127,9 +128,9 @@ $data=$partido->select(-1);
                     </tbody>
                   </table>
                 </div>
-                <a href="temporada.php"> <button type="button" class="btn btn-info pull-right">Resumen de Temporadas</button></a>
+                <a href="temporada.php"> <button type="button" class="btn btn-warning pull-right"> <i class="fas fa-chart-bar"></i> Resumen de Temporadas</button></a>
               </div>
-            </div>
+              </div>
           </div>
         </div>
         </div>
