@@ -56,11 +56,12 @@ $data=$alineacion->select($_GET['id']);
   });
   </script>
     <?php include '..\layoults\barnav.php'; ?>
+    <div class="main main-raised">
     <div class="content">
-      <div class="col-md-12">
-        <div class="card">
-          <div class="card-header card-header-primary">
-            <h4 class="card-title">ACTUALIZAR ALINEACIÓN</h4>
+      
+        <div class="card col-md-12">
+          <div class="card-header card-header-danger">
+            <h3 class="card-title">Actualizar alineación</h3>
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
@@ -98,7 +99,8 @@ $data=$alineacion->select($_GET['id']);
             </form>
           </div>
         </div>
-      </div>
+      
+    </div>
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>

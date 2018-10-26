@@ -50,11 +50,12 @@
   });
   </script>
     <?php include '..\layoults\barnav.php'; ?>
-    <div class="content">
-      <div class="col-md-12">
-        <div class="card">
-          <div class="card-header card-header-primary">
-            <h4 class="card-title">INGRESAR UNA NUEVA ALINEACIÓN</h4>
+    <div class="main main-raised">
+    <div class="content-fluid">
+      
+        <div class="card col-md-12">
+          <div class="card-header card-header-danger">
+            <h3 class="card-title">Ingresar una nueva alineación</h3>
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
@@ -91,7 +92,8 @@
             </form>
           </div>
         </div>
-      </div>
+      
+    </div>
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
