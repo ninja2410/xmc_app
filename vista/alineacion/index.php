@@ -21,7 +21,7 @@ $data=$alineacion->select(-1);
       <div class="container-fluid">
             <div class="card col-md-12">
               <div class="card-header card-header-danger row">
-                <div class="col-lg-10" style="float:left;">
+                <div class="col-md-11">
                   <h2 class="card-title ">Alineaciones</h4>
                   <p class="card-category">Listado de alineaciones</p>
                 </div>
