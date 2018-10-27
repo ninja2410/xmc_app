@@ -26,7 +26,7 @@ $player=$jugador->select($_GET['id']);
           <div class="card-body">
             <form method="post", action="..\jugador\store_document.php" enctype="multipart/form-data" id="frm_document">
               <input type="hidden" name="operation" value="1">
-              <input type="hidden" name="id_jugador" value="<?php echo $player['id']; ?>">
+              <input type="hidden" name="id_jugador" value="<?php echo $player['id_jugador']; ?>">
               <div class="row">
                 <div class="col-md-4">
                   <div class="form-group">

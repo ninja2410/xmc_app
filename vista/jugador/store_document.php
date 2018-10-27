@@ -34,34 +34,47 @@ if (isset($_POST['id_jugador'])) {
 
 
 if ($operacion=="1") {
-  $bit->insert('Se subio un nuevo documento digital', $_SESSION['id']);
-  $name=$_FILES['img']['name'];
-  $path='DOC_'.$accion->correlativo().substr($name,-4);
-  move_uploaded_file($_FILES['img']['tmp_name'],'..\imagenes/'.$path);
-  chmod('..\imagenes/'.$path,0644);
-  $accion->insert_jugador($fecha, 1, $path, $descripcion, $categoria, $titulo);
-  $_SESSION['mensaje']="El documento se ha almacenado con éxito!";
+  try {
+    $bit->insert('Se subio un nuevo documento digital', $_SESSION['id']);
+    $name=$_FILES['img']['name'];
+    $path='DOC_J'.$accion->correlativo().substr($name,-4);
+    move_uploaded_file($_FILES['img']['tmp_name'],'..\imagenes\doc_jug/'.$path);
+    chmod('..\imagenes\doc_jug/'.$path,0644);
+    $accion->insert_jugador($fecha, 1, $path, $descripcion, $categoria, $titulo, $id_jugador);
+    $_SESSION['mensaje']="El documento se ha almacenado con éxito!";
+  } catch (\Exception $e) {
+    echo "Fallo: ".$e->getMessage();
+  }
+
+
 }
 elseif($operacion=="2") {
-  $bit->insert('Se modifico el documento digital'.$id_Documento, $_SESSION['id']);
-  $name=$_FILES['img']['name'];
-  $tmp='DOC_'.$accion->correlativo().substr($name,-4);
-  move_uploaded_file($_FILES['img']['tmp_name'],'..\imagenes/'.$tmp);
-  chmod('..\imagenes/'.$tmp,0644);
-  $path=$_FILES['img']['name'];
-  if ($path=='') {
-    $path=$_POST['path'];
+  try {
+    $bit->insert('Se modifico el documento digital'.$id_Documento, $_SESSION['id']);
+    $name=$_FILES['img']['name'];
+    if ($name=='') {
+      $path=$_POST['path'];
+    }
+    else{
+      $tmp='DOC_J'.$accion->correlativo().substr($name,-4);
+      move_uploaded_file($_FILES['img']['tmp_name'],'..\imagenes\doc_jug/'.$tmp);
+      chmod('..\imagenes\doc_jug/'.$tmp,0644);
+      $path=$tmp;
+    }
+    $accion->update_jugador($id_Documento, $fecha, 1, $path, $descripcion, $categoria, $titulo, $id_jugador);
+    $_SESSION['mensaje']="El documento se ha actualizado con éxito!";
+  } catch (\Exception $e) {
+    echo "Fallo: ".$e->getMessage();
   }
-  else{
-    $path=$tmp;
-  }
-  $accion->update($id_Documento, $fecha, 1, $path, $descripcion, $categoria, $titulo);
-  $_SESSION['mensaje']="El documento se ha actualizado con éxito!";
 }
 elseif ($operacion=="3") {
-  $bit->insert('Se elimino un documento digital', $_SESSION['id']);
-  $_SESSION['mensaje']="El documento se ha eliminado con éxito!";
-  $accion->delete($id_Documento);
+  try {
+    $bit->insert('Se elimino un documento digital', $_SESSION['id']);
+    $_SESSION['mensaje']="El documento se ha eliminado con éxito!";
+    $accion->delete($id_Documento);
+  } catch (\Exception $e) {
+    echo "Error: ".$e->getMessage();
+  }
 }
-//header('Location:index.php');
+header('Location:documentos.php?id='.$id_jugador);
  ?>

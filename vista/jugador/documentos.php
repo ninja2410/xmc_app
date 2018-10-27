@@ -33,7 +33,7 @@ $player=$jugador->select($_GET['id']);
                     <p class="card-category"> Listado de documentos almacenados en el sistema asignados al jugador: <?php echo $player['nombre'].' '.$player['apellido']; ?></p>
                   </div>
                   <div class="col-lg-1" style="float:left">
-                    <a href="..\..\vista\documento_digital/insert.php">
+                    <a href="..\..\vista\jugador/create.php?id=<?php echo $_GET['id']; ?>">
                       <div class="card-header card-header-success card-header-icon" style="float:left">
                         <div class="card-icon">
                           <i class="material-icons">add</i>
@@ -87,23 +87,24 @@ $player=$jugador->select($_GET['id']);
                           </td>
                           <td class="td-actions text-lefht">
                               <div style="float:left">
-                                <a href="..\..\vista\documento_digital/ver.php?id=<?php echo $row['ID']; ?>">
+                                <a href="..\..\vista\jugador/ver_doc_jugador.php?id=<?php echo $row['ID']; ?>">
                                   <button type="button" rel="tooltip" title="Ver Documento" class="btn btn-success btn-link btn-sm">
                                     <i class="material-icons">pageview</i>
                                   </button>
                                 </a>
                               </div>
                               <div style="float:left">
-                                <a href="..\..\vista\documento_digital/update.php?id=<?php echo $row['ID']; ?>">
+                                <a href="..\..\vista\jugador/update_doc_jugador.php?id=<?php echo $row['ID']; ?>">
                                   <button type="button" rel="tooltip" title="Editar Documento" class="btn btn-primary btn-link btn-sm">
                                     <i class="material-icons">edit</i>
                                   </button>
                                 </a>
                               </div>
                               <div  style="float:left">
-                                <form class="" action="..\..\vista\documento_digital/store.php" method="post">
+                                <form class="" action="..\..\vista\jugador/store_document.php" method="post">
                                   <input type="hidden" name="operation" value="3">
                                   <input type="hidden" name="id" value="<?php echo $row['ID']; ?>">
+                                  <input type="hidden" name="id_jugador" value="<?php echo $row['id_jugador']; ?>">
                                   <button type="submit" rel="tooltip" title="Eliminar Documento" class="btn btn-danger btn-link btn-sm">
                                     <i class="material-icons">close</i>
                                   </button>

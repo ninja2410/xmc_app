@@ -10,8 +10,7 @@ class Jugador
     $query="CALL SP_JUGADOR_INSERT('$nombre', '$direccion', '$fecha_nacimiento', $estado, '$padre', '$madre', $telefono, '$procedencia', '$apellido', '$foto', $id_posicion, $camisola, '$sangre');";
     $bd= new conexion();
     $dt=$bd->execute_query($query);
-    echo $query;
-		return $dt;
+  	return $dt;
   }
 
   public function update($id, $nombre, $direccion, $fecha_nacimiento, $estado, $padre, $madre, $telefono, $procedencia, $apellido, $foto, $id_posicion, $camisola,$sangre){
@@ -52,7 +51,6 @@ class Jugador
     if ($id==-1) {
       $query="SELECT J.id_jugador, CONCAT(J.nombre,' ',J.apellido) as Nombre, C.nombre FROM ASIGNACION_CATEGORIA AC, CATEGORIA C, JUGADOR J WHERE AC.estado=1 and C.estado=1 and J.estado=1 and AC.id_categoria = C.id_categoria and AC.id_jugador = J.id_jugador;";
       $dt=mysqli_query($conexion->objetoconexion,$query);
-      echo $query;
     }
     else{
       $query="SELECT J.id_jugador, J.nombre, J.direccion, J.fecha_nacimiento, J.estado, J.padre, J.madre, J.telefono, J.procedencia, J.apellido, J.sangre,
