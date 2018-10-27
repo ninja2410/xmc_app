@@ -12,6 +12,13 @@ class Documento
 		$dt=$bd->execute_query($query);
 	return $dt;
   }
+  public function insert_jugador($fecha, $estado, $path, $descripcion, $categoria, $titulo, $jugador){
+    $query="INSERT INTO DOCUMENTO_DIGITAL(fecha_creacion, estado, path, descripcion, id_categoria_documentos, id_jugador, titulo)
+    VALUES($fecha, 1, $path, $descripcion, $categoria, $jugador, $titulo);";
+    $bd= new conexion();
+		$dt=$bd->execute_query($query);
+	return $dt;
+  }
 
   public function update($id, $fecha, $estado, $path, $descripcion, $categoria, $titulo){
     $query="CALL SP_DOCDIGITAL_UPDATE($id, $estado, '$path', '$descripcion', $categoria, $titulo);";
@@ -35,15 +42,24 @@ class Documento
     return $id[0];
   }
 
+  public function select_jugador($jugador){
+    $conexion=new conexion();
+    $conexion->conectar();
+    $query="SELECT * from DOCUMENTO_DIGITAL WHERE id_jugador=$jugador;";
+    $dt=mysqli_query($conexion->objetoconexion,$query);
+    $conexion->desconectar();
+    return $dt;
+  }
+
   public function select($id){
     $conexion=new conexion();
     $conexion->conectar();
     if ($id==-1) {
-      $query="SELECT id_documento_digital ID, fecha_creacion FECHA, path, descripcion, nombre CATEGORIA from DOCUMENTO_DIGITAL inner join CATEGORIA_DOCUMENTOS cd on DOCUMENTO_DIGITAL.id_categoria_documentos = cd.id_categoria_documentos WHERE DOCUMENTO_DIGITAL.estado=1;";
+      $query="SELECT id_documento_digital ID, fecha_creacion FECHA, path, descripcion, nombre CATEGORIA, titulo from DOCUMENTO_DIGITAL inner join CATEGORIA_DOCUMENTOS cd on DOCUMENTO_DIGITAL.id_categoria_documentos = cd.id_categoria_documentos WHERE DOCUMENTO_DIGITAL.estado=1;";
       $dt=mysqli_query($conexion->objetoconexion,$query);
     }
     else{
-      $query="SELECT id_documento_digital ID, fecha_creacion FECHA, path, descripcion, nombre CATEGORIA, DOCUMENTO_DIGITAL.id_categoria_documentos from DOCUMENTO_DIGITAL inner join CATEGORIA_DOCUMENTOS cd on DOCUMENTO_DIGITAL.id_categoria_documentos = cd.id_categoria_documentos WHERE id_documento_digital=$id AND DOCUMENTO_DIGITAL.estado=1";
+      $query="SELECT id_documento_digital ID, fecha_creacion FECHA, path, titulo,  descripcion, nombre CATEGORIA, DOCUMENTO_DIGITAL.id_categoria_documentos from DOCUMENTO_DIGITAL inner join CATEGORIA_DOCUMENTOS cd on DOCUMENTO_DIGITAL.id_categoria_documentos = cd.id_categoria_documentos WHERE id_documento_digital=$id AND DOCUMENTO_DIGITAL.estado=1";
       $tmp=mysqli_query($conexion->objetoconexion,$query);
       $dt=mysqli_fetch_assoc($tmp);
     }

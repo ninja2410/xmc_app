@@ -33,27 +33,36 @@ function calculaedad($fechanacimiento){
                 </div>
                 <div class="col-md-7">
                     <h3 class="title"><?php echo $data['nombre']." ".$data["apellido"]?></h3>
-                    <h4><b>Categoría: </b><?php echo $data['categoria']?></h4>
+                    <h3>Datos personales</h3>
+                    <hr>
                     <h4><b>Edad: </b><?php echo calculaedad ($data['fecha_nacimiento']);?></h4>
                     <h4><b>Tipo de sangre: </b><?php echo $data['sangre']?></h4>
-                    <h4><b>Número de camisola: </b><?php echo $data['camisola']?></h4>
                     <h4><b>Fecha de nacimiento: </b><?php echo date("d/m/Y", strtotime($data['fecha_nacimiento']));?></h4>
                     <h4><b>Dirección: </b><?php echo $data['direccion']?></h4>
                     <h4><b>Nombre del padre: </b><?php echo $data['padre']?></h4>
                     <h4><b>Nombre de la madre: </b><?php echo $data['madre']?></h4>
                     <h4><b>Número de teléfono: </b><?php echo $data['telefono']?></h4>
                     <h4><b>Procedencia: </b><?php echo $data['procedencia']?></h4>
+                    <h3>Datos técnicos</h3>
+                    <hr>
+                    <h4><b>Categoría: </b><?php echo $data['categoria']?></h4>
+                    <h4><b>Número de camisola: </b><?php echo $data['camisola']?></h4>
                     <h4><b>Posición: </b><?php echo $data['descripcion']?></h4>
+<<<<<<< HEAD
                     <?php
-                        // if ($data['id_contrato'] == null) {
-                        //     echo '<h4><b>Tiene contrato: </b>No</h4>';
-                        // }
-                        // else
-                        // {
-                        //     echo '<h4><b>Tiene contrato: </b>Si</h4>';
-                        // }
-                        
+                        if ($data['id_contrato'] == null) {
+                            echo '<h4><b>Tiene contrato: </b>No</h4>';
+                        }
+                        else
+                        {
+                            echo '<h4><b>Tiene contrato: </b>Si</h4>';
+                        }
+
                     ?>
+=======
+                    <h4><b>Fecha de inicio: </b><?php echo date("d/m/Y", strtotime($data['fecha_inicio']));?></h4>
+                    <h4><b>Fecha final: </b><?php echo date("d/m/Y", strtotime($data['fecha_final']));?></h4>
+>>>>>>> 3dc7ef3675c171a444141c622fb3bba10adb7277
                 </div>
                 <div class="col-md-3">
                     <ul class="nav flex-column">
@@ -70,6 +79,11 @@ function calculaedad($fechanacimiento){
                         <li class="nav-item">
                             <a class="nav-link btnAzul" href="..\..\vista\jugador/update.php?id=<?php echo $data['id_jugador']; ?>">
                                 <i class="material-icons fa-2x">edit</i><br> Actualizar información
+                            </a>
+                        </li>
+												<li class="nav-item">
+                            <a class="nav-link btnAzul" href="..\..\vista\jugador/documentos.php?id=<?php echo $data['id_jugador']; ?>">
+                                <i class="material-icons fa-2x">book</i><br> Documentos
                             </a>
                         </li>
                         <li class="nav-item">

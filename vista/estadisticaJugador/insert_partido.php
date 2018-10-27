@@ -14,7 +14,7 @@ $data=$estadistoca->selectCampos();
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
   </head>
-  <body>
+  <body class="profile-page sidebar-collapse">
     <script type="text/javascript">
       $(function(){
         $( "#autojugador" ).autocomplete(
@@ -41,11 +41,12 @@ $data=$estadistoca->selectCampos();
       });
     </script>
     <?php include '..\layoults\barnav.php'; ?>
+    <div class="main main-raised">
     <div class="content">
       <div class="col-md-12">
         <div class="card">
-          <div class="card-header card-header-primary">
-            <h4 class="card-title">INSERTAR ESTADÍSTICAS DE JUGADOR</h4>
+          <div class="card-header card-header-danger">
+            <h3 class="card-title">Insertar estadísticas de jugador</h3>
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
@@ -91,7 +92,7 @@ $data=$estadistoca->selectCampos();
                   </div>
                 </div>
                 <div class="col-lg-1">
-                  <button class="btn btn-success btn-fab btn-round" id="add" onclick="registrarValor()" type="button" data-toggle="tooltip" data-original-title="Agregar estadistica">
+                  <button class="btn btn-success btn-fab btn-round" id="add" onclick="registrarValor()" type="button" data-toggle="tooltip" data-original-title="Agregar estadística">
                     <i class="material-icons">add</i>
                     <div class="ripple-container"></div>
                   </button>
@@ -104,13 +105,13 @@ $data=$estadistoca->selectCampos();
                   <table class="table" id="agregados">
                     <thead class=" text-muted">
                       <th>
-                        ACCIÓN
+                        Acción
                       </th>
                       <th>
-                        MINUTO
+                        Minuto
                       </th>
                       <th>
-                        CANTIDAD
+                        Cantidad
                       </th>
                     </thead>
                     <tbody>
@@ -124,6 +125,7 @@ $data=$estadistoca->selectCampos();
           </div>
         </div>
       </div>
+    </div>
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>

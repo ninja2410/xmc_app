@@ -15,28 +15,25 @@ $data=$alineacion->selectPartido($_GET['id']);
     <div class="main main-raised">
     <div class="content">
       <div class="container-fluid">
-        <div class="row">
+        
           <div class="col-md-12">
             <div class="card">
-              <div class="card-header card-header-primary">
-                <div class="col-lg-10" style="float:left;">
+              <div class="card-header card-header-danger row">
+                <div class="col-md-11">
                   <h2 class="card-title ">Alineaciones</h4>
                   <p class="card-category">Listado de alineaciones</p>
                 </div>
-                <div class="col-lg-1" style="float:left">
-                  <a href="..\..\vista\alineacion/insert_alineacion.php?id=<?php echo $_GET['id']; ?>" title="Agregar a la alineacion">
-                    <div class="card-header card-header-success card-header-icon" style="float:left">
-                      <div class="card-icon">
-                        <i class="material-icons">add</i>
-                      </div>
-                    </div>
+                <div class="col-md-1 text-right">
+                <a href="..\..\vista\alineacion/insert_alineacion.php?id=<?php echo $_GET['id']; ?>" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar a la alineación">
+                    <i class="material-icons">add</i>
                   </a>
                 </div>
               </div>
+              
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table table-striped table-bordered" id="table1">
-                    <thead class=" text-primary">
+                    <thead>
                       <th>
                         Partido
                       </th>
@@ -94,7 +91,7 @@ $data=$alineacion->selectPartido($_GET['id']);
               </div>
             </div>
           </div>
-        </div>
+        
       </div>
     </div>
     </div>

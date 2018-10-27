@@ -21,18 +21,19 @@ $data=$partido->selectResultados(-1);
     <div class="main main-raised">
     <div class="content">
       <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-12">
-          <div class="card">
+        
+          <div>
+          <div class="card col-md-12">
               <div class="card-header card-header-danger row">
-                <div class="col-md-10">
-                  <h3 class="card-title">Resultados de xelaju por temporada</h3>
+                <div class="col-md-11">
+                  <h3 class="card-title">Resultados de Xelajú MC por temporada</h3>
                   <p class="category">Resultados</p>
                 </div>
               </div>
+              <div class="card-body">
                 <div class="table-responsive">
                   <table class="table table-striped table-bordered" id="table1">
-                    <thead class=" text-primary">
+                    <thead>
                       <th>
                         Temporada
                       </th>
@@ -58,7 +59,7 @@ $data=$partido->selectResultados(-1);
                         Tarjetas rojas
                       </th>
                       <th>
-                        Fuera de juego
+                        Fueras de juego
                       </th>
                       <th>
                         Cambios
@@ -68,6 +69,9 @@ $data=$partido->selectResultados(-1);
                       </th>
                       <th>
                         Expulsiones
+                      </th>
+                      <th>
+                        Faltas
                       </th>
                     </thead>
                     <tbody>
@@ -123,7 +127,7 @@ $data=$partido->selectResultados(-1);
               </div>
             </div>
           </div>
-        </div>
+          </div>
       </div>
     </div>
     </div>

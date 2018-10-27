@@ -17,6 +17,11 @@ class conexion
 	//private $bd="u538043044_xela";
 
 
+	// private $servidor='sql174.main-hosting.eu';
+	// private $usuario="u538043044_root";
+	// private $pass="database";
+	// private $bd="u538043044_xela";
+	//
 	public function conectar()
 	{
 		$this->objetoconexion= mysqli_connect($this->servidor,$this->usuario,$this->pass,$this->bd) or die ("error en conexion");

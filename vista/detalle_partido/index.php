@@ -8,7 +8,7 @@ require_once('..\..\Negocio/ClassPersonalTecnico.php');
 $personal=new PersonalTecnico();
 $data=$personal->select($_GET['id']);
 $link='..\..\vista\personaltecnico/insert.php?id='.$_GET['id'];
-$btn='Asignar personal tecnico'
+$btn='Asignar personal técnico'
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -29,7 +29,7 @@ $btn='Asignar personal tecnico'
     <div class="main main-raised">
     <br>
     <div class="container">
-        <h1>Resultados</h1>
+        <h1 class="text-center">Resultados</h1>
     </div>
     <br>
     <div class="container">
@@ -131,7 +131,7 @@ $btn='Asignar personal tecnico'
                             <h4><?php echo $datadp['fuera_juego']?></h4>
                             </td>
                             <td>
-                            <h4><b>Fuera de juego </b> </h4>
+                            <h4><b>Fueras de juego </b> </h4>
                             </td>
                             <td>
                             <h4><?php echo $datadpCn['fuera_juego']?></h4>
@@ -182,7 +182,7 @@ $btn='Asignar personal tecnico'
             <div class="row text-center">
                         <div class="col-md-8">
                             <a href="<?php echo '..\..\vista\estadisticaJugador/index.php?partido='.$_GET['id'];?>">
-                            <button class="btn btn-success btn-round"><i class="fas fa-notes-medical fa-lg"></i>Estadísticas por jugador</button></a>
+                            <button class="btn btn-success btn-round"><i class="fas fa-notes-medical fa-lg"></i> Estadísticas por jugador</button></a>
                         </div>
                         <div class="col-md-8">
                             <a href="..\..\vista\detalle_partido/update.php?id=<?php echo $datadp['id_partido']?>&id2=<?php echo $datadpCn['id_equipo']?>">
@@ -197,7 +197,7 @@ $btn='Asignar personal tecnico'
     </div>
     </div>
     <div class="container">
-        <h1>Personal Tecnico</h1>
+        <h1>Personal técnico</h1>
     </div>
     <br>
     <div class="container">
@@ -208,7 +208,7 @@ $btn='Asignar personal tecnico'
           if($result>0)
           {
             $link='..\..\vista\personaltecnico/update.php?id='.$_GET['id'];
-            $btn='Actualizar personal tecnico'
+            $btn='Actualizar personal técnico'
          ?>
 
         <div class="table-responsive">
@@ -251,7 +251,7 @@ $btn='Asignar personal tecnico'
                 <div class="col-md-3">
                     <div>
                         <a href="<?php echo $link?>">
-                        <button class="btn btn-info btn-round"><i class="fas fa-notes-medical fa-lg"></i><?php echo $btn ?></button>
+                        <button class="btn btn-info btn-round"><i class="fas fa-notes-medical fa-lg"></i>  <?php echo $btn ?></button>
                     </div>
                     <div>
                         <a href="..\..\vista\partido/index.php">
