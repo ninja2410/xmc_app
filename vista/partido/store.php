@@ -14,7 +14,8 @@ if(isset($_POST['fecha'])){
 
 if(isset($_POST['hora'])){
   $hora=$_POST['hora'];
-  $horayfecha = $fecha.' '.$hora;
+
+  $horayfecha = $fecha.' '.date("H:i:s",strtotime($hora));
 }
 
 if(isset($_POST['h1'])){
@@ -61,12 +62,14 @@ if (isset($_POST['id'])) {
 }
 
 
+
 echo $horayfecha;
 $lesion=new Partido();
 
 
 if ($operacion=="1")
 {
+  
   $lesion->insert($horayfecha, $cat, $estadio,$equi,$temp,$obs);
   $bit->insert('Agrego un nuevo partido',$_SESSION['id']);
   $_SESSION['mensaje']="El partido se ha almacenado con éxito!";

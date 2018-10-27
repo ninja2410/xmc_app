@@ -62,6 +62,17 @@ $btn='Asignar personal tecnico'
                         </tr>
                         <tr>
                             <td>
+                            <h4><?php echo $datadp['esquinas']?></h4>
+                            </td>
+                            <td>
+                            <h4><b> Esquinas </b> </h4>
+                            </td>
+                            <td>
+                            <h4><?php echo $datadpCn['esquinas']?></h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
                             <h4><?php echo $datadp['asistencias']?></h4>
                             </td>
                             <td>
@@ -110,17 +121,6 @@ $btn='Asignar personal tecnico'
                             </td>
                             <td>
                             <h4><b>Tarjetas rojas </b> </h4>
-                            </td>
-                            <td>
-                            <h4><?php echo $datadpCn['tarjeta_roja']?></h4>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                            <h4><?php echo $datadp['tarjeta_roja']?></h4>
-                            </td>
-                            <td>
-                            <h4><b>Tarjeta amarilla </b> </h4>
                             </td>
                             <td>
                             <h4><?php echo $datadpCn['tarjeta_roja']?></h4>

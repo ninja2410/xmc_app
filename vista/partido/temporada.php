@@ -37,6 +37,9 @@ $data=$partido->selectResultados(-1);
                         Temporada
                       </th>
                       <th>
+                        Faltas
+                      </th>
+                      <th>
                         Esquinas
                       </th>
                       <th>
@@ -76,10 +79,10 @@ $data=$partido->selectResultados(-1);
                           <?php echo $row['descripcion']; ?>
                         </td>
                         <td>
-                          <?php echo $row['esquinas']; ?>
+                          <?php echo $row['faltas']; ?>
                         </td>
                         <td>
-                          <?php echo $row['faltas']; ?>
+                          <?php echo $row['esquinas']; ?>
                         </td>
                         <td>
                           <?php echo $row['asistencias']; ?>

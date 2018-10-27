@@ -8,7 +8,10 @@ $searchTerm = $_GET['term'];
 $return_arr=array();
 
 //get matched data from skills table
-$query = $conexion->objetoconexion->query("SELECT * FROM TEMPORADA WHERE descripcion LIKE '%".$searchTerm."%' ORDER BY descripcion ASC");
+$query = $conexion->objetoconexion->query("SELECT * FROM TEMPORADA WHERE descripcion LIKE '%".$searchTerm."%' AND estado=1 ORDER BY descripcion ASC");
+$result = mysqli_num_rows($query);
+if($result>0)
+{
 while ($fila = $query->fetch_assoc()) 
 {           $ca_producto=array(
     "id"=> $fila['id_temporada'],
@@ -17,6 +20,13 @@ while ($fila = $query->fetch_assoc())
 array_push($return_arr, $ca_producto);
    
 }
-//return json data
 echo json_encode($return_arr);
+}else
+{         
+    $ca_producto=array(
+    "id"=>'0',
+    "value"=>'No hay resultado');
+    array_push($return_arr, $ca_producto);
+echo json_encode($return_arr);
+}
 ?>
