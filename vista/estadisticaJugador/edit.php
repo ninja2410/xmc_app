@@ -30,8 +30,8 @@ $estadistica=new EstadisticaJugador();
             <div class="card">
               <div class="card-header card-header-danger">
                 <div class="col-lg-10" style="float:left;">
-                  <h2 class="card-title ">ESTADÍSTICAS</h4>
-                  <p class="card-category"> Información de estadísticas de jugador</p>
+                  <h3 class="card-title ">Estadísticas</h3>
+                  <p class="card-category"> Información de estadísticas por jugador</p>
                 </div>
                 <div class="col-lg-1" style="float:left">
                   <a href="..\..\vista\estadisticaJugador/insert.php" title="Agregar nueva estadistica">

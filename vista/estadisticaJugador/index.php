@@ -25,25 +25,21 @@ $estadistica=new EstadisticaJugador();
 
            <div class="col-md-12">
              <div class="card">
-               <div class="card-header card-header-danger">
+               <div class="card-header card-header-danger row">
                  <div class="col-lg-10" style="float:left;">
-                   <h2 class="card-title ">ESTADÍSTICAS</h4>
-                   <p class="card-category"> Información de estadísticas de jugador</p>
+                   <h3 class="card-title ">Estadísticas</h3>
+                   <p class="card-category"> Información de estadísticas por jugador</p>
                  </div>
-                 <div class="col-lg-1" style="float:left">
-                   <a href="..\..\vista\estadisticaJugador/insert.php" title="Agregar nueva estadistica">
-                     <div class="card-header card-header-success card-header-icon" style="float:right">
-                       <div class="card-icon">
-                         <i class="material-icons">add</i>
-                       </div>
-                     </div>
-                   </a>
-                 </div>
+                 <div class="col-md-1 text-right">
+                <a href="..\..\vista\estadisticaJugador/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar estadísticas">
+                    <i class="material-icons">add</i>
+                  </a>
+                </div>
                </div>
                <div class="card-body">
                  <div class="table-responsive">
                    <table class="table">
-                     <thead class=" text-info">
+                     <thead>
                        <th>
                          ID
                        </th>

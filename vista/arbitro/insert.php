@@ -18,7 +18,7 @@ $data=$tipoarbitro->select(-1);
       <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-danger">
-            <h4 class="card-title">INSERTAR ÁRBITRO</h4>
+            <h3 class="card-title">Insertar árbitro</h3>
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">

@@ -19,7 +19,7 @@ $data=$contrato->select(-1);
       <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-danger">
-            <h4 class="card-title">INSERTAR ENTRENADOR</h4>
+            <h3 class="card-title">Insertar entrenador</h3>
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
@@ -202,9 +202,6 @@ $data=$contrato->select(-1);
               },
               direccion:{
                 validators:{
-                    notEmpty:{
-                        message:'Ingrese una dirección'
-                    },
                     regexp:{
                       regexp: /^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ_-\s]*$/, 
                         message: 'Solo se aceptan letras, números, espacios, guión y guión bajo'

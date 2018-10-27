@@ -27,7 +27,7 @@ $data2=$contrato->select(-1);
       <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-danger">
-            <h4 class="card-title">ACTUALIZAR ENTRENADOR</h4>
+            <h3 class="card-title">Actualizar entrenador</h3>
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
