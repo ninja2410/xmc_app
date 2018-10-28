@@ -132,6 +132,9 @@ if ($('#mensaje').val()!="") {
       }
          $('#mytable').DataTable({
              dom: 'Bfrtip',
+"language": {
+  "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"
+ },
              buttons: [
                {
                  extend:'copy',

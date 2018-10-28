@@ -69,13 +69,13 @@
                 <div class="col-md-4">
                   <div class="form-group">
                     <label class="">Fecha Inicio</label>
-                    <input type="date" placeholder="DD/MM/YYYY" class="form-control" name="fecha_inicio">
+                    <input type="text" placeholder="DD/MM/YYYY" id="f_inicio" class="form-control datetimepicker" name="fecha_inicio">
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="form-group">
                     <label class="">Fecha de recuperación</label>
-                    <input type="date" placeholder="DD/MM/YYYY" class="form-control" name="fecha_recuperacion">
+                    <input type="text" id="f_final" placeholder="DD/MM/YYYY" class="form-control datetimepicker" name="fecha_recuperacion">
                   </div>
                 </div>
                 <div class="col-md-4">
@@ -178,7 +178,20 @@
     <?php include '..\layoults\scripts2.php'; ?>
     <script type="text/javascript">
       var f = new Date();
-
+      $('.datetimepicker').datetimepicker({
+          format:'DD/MM/YYYY',
+          icons: {
+              time: "fa fa-clock-o",
+              date: "fa fa-calendar",
+              up: "fa fa-chevron-up",
+              down: "fa fa-chevron-down",
+              previous: 'fa fa-chevron-left',
+              next: 'fa fa-chevron-right',
+              today: 'fa fa-screenshot',
+              clear: 'fa fa-trash',
+              close: 'fa fa-remove'
+          }
+      });
 
 $(document).ready(function() {
   var cantidades=[];

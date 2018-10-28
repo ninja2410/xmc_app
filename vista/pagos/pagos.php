@@ -83,6 +83,9 @@ $data_socio=$socio->select($_GET['id']);
       }
     $('#table1').DataTable({
    dom: 'Bfrtip',
+"language": {
+  "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"
+ },
    buttons: [
      {
        extend:'copy',
