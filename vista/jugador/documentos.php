@@ -31,19 +31,9 @@ $player=$jugador->select($_GET['id']);
                     <h4 class="card-title ">Documentos digitales</h4>
                     <p class="card-category"> Listado de documentos almacenados en el sistema asignados al jugador: <?php echo $player['nombre'].' '.$player['apellido']; ?></p>
                   </div>
-<<<<<<< HEAD
-                  <div class="col-lg-1" style="float:left">
-                    <a href="..\..\vista\jugador/create.php?id=<?php echo $_GET['id']; ?>">
-                      <div class="card-header card-header-success card-header-icon" style="float:left">
-                        <div class="card-icon">
-                          <i class="material-icons">add</i>
-                        </div>
-                      </div>
-=======
                   <div class="col-md-2 text-right">
-                    <a href="..\..\vista\documento_digital/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar documento">
+                    <a href="..\..\vista\jugador/create.php?id=<?php echo $_GET['id']; ?>" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar documento">
                     <i class="material-icons">add</i>
->>>>>>> d1b68a1ca2f7b067fa81734d15762a2eaad761ba
                     </a>
                   </div>
                 </div>
