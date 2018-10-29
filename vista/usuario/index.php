@@ -22,17 +22,17 @@ $data=$usuario->select(-1);
     
     <div class="main main-raised">
     <div class="content">
+            <div class="card col-md-12">
       <div class="container-fluid">
         
-          <div class="col-md-12">
-            <div class="card">
+          
             <div class="card-header card-header-danger row">
                 <div class="col-md-10">
                   <h2 class="card-title">Usuarios</h2>
                   <p class="category">Usuarios registrados</p>
                 </div>
                 <div class="col-md-2 text-right">
-                  <a href="..\..\vista\usuario/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true">
+                  <a href="..\..\vista\usuario/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" rel="tooltip" title="Agregar usuario" aria-disabled="true">
                     <i class="material-icons">add</i>
                   </a>
                 </div>
@@ -46,6 +46,9 @@ $data=$usuario->select(-1);
                       </th>
                       <th style="text-align:center">
                         Usuario
+                      </th>
+                      <th style="text-align:center">
+                        Nombre
                       </th>
                       <th >
                         Acciones
@@ -61,6 +64,9 @@ $data=$usuario->select(-1);
                         </td>
                         <td style="text-align:center">
                           <?php echo $row['nombre_usuario']; ?>
+                        </td>
+                        <td style="text-align:center">
+                        <?php echo $row['nombre']." ".$row['apellido']; ?>
                         </td>
                         <td class="td-actions">
                             <div style="float:left">
@@ -108,7 +114,7 @@ $data=$usuario->select(-1);
               </div>
             </div>
           </div>
-        </div>
+       
       
     </div>
     </div>

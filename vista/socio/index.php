@@ -11,7 +11,7 @@ $data=$socio->select(-1);
     <title>Socios - Listar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
-  <body>
+  <body class="profile-page sidebar-collapse">
     <?php
     include '..\layoults\barnav.php';
     ?>
@@ -19,30 +19,26 @@ $data=$socio->select(-1);
       echo $_SESSION['mensaje'];
       $_SESSION['mensaje']="";
     } ?>">
+    <div class="main main-raised">
     <div class="content">
+            <div class="card col-md-12">
       <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="card">
-              <div class="card-header card-header-primary">
-                <div class="col-lg-10" style="float:left;">
-                  <h2 class="card-title ">SOCIOS</h4>
-                  <p class="card-category"> Listado de socios del club Xelajú MC</p>
+       
+              <div class="card-header card-header-danger row">
+              <div class="col-md-11">
+                  <h3 class="card-title ">Socios</h3>
+                  <p class="card-category">Listado de socios del club Xelajú MC</p>
                 </div>
-                <div class="col-lg-1" style="float:left">
-                  <a href="..\..\vista\socio/insert.php">
-                    <div class="card-header card-header-success card-header-icon" style="float:left">
-                      <div class="card-icon">
-                        <i class="material-icons">add</i>
-                      </div>
-                    </div>
+                <div class="col-md-1 text-right">
+                <a href="..\..\vista\socio/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar socio">
+                    <i class="material-icons">add</i>
                   </a>
                 </div>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table table-striped table-bordered" id="table1">
-                    <thead class=" text-primary">
+                    <thead>
                       <th>
                         ID
                       </th>
@@ -98,9 +94,9 @@ $data=$socio->select(-1);
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+         
       </div>
+    </div>
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>

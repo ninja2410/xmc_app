@@ -17,11 +17,11 @@ $data=$usuario->select(-1);
     ?>
     <div class="main main-raised">
     <div class="content">
+      <div class="card col-md-12">
       <div class="container-fluid">
         
-          <div class="col-md-12">
-            <div class="card">
-              <div class="card-header card-header-danger">
+         
+              <div class="card-header card-header-danger row">
                 <div class="col-lg-10" style="float:left;">
                   <h2 class="card-title ">Bitácora</h2>
                   <p class="card-category">Acciones realizadas por el usuario</p>
@@ -75,7 +75,7 @@ $data=$usuario->select(-1);
                 </div>
               </div>
             </div>
-          </div>
+         
         
       </div>
     </div>
