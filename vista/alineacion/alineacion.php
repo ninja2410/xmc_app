@@ -44,9 +44,6 @@ $data=$alineacion->selectPartido($_GET['id']);
                         Posición
                       </th>
                       <th>
-                        Estadísticas
-                      </th>
-                      <th>
                        Acciones
                       </th>
                     </thead>
@@ -76,6 +73,7 @@ $data=$alineacion->selectPartido($_GET['id']);
                               <form class="" action="..\..\vista\alineacion/store.php" method="post">
                                 <input type="hidden" name="operation" value="3">
                                 <input type="hidden" name="id" value="<?php echo $row['id_alineacion']; ?>">
+                                <input type="hidden" name="partido" value="<?php echo $_GET['id'] ?>">
                                 <button type="submit" rel="tooltip" title="Eliminar alineación" class="btn btn-danger btn-link btn-sm">
                                   <i class="material-icons">close</i>
                                 </button>

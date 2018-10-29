@@ -25,22 +25,12 @@
     }).focus(function () {
         $(this).autocomplete('search', $(this).val())
       });
-    
-    $( "#autoPartido" ).autocomplete({
-      source: 'searchPartido.php',
-      minLength: 0,
-      select: function(event, ui) { 
-        $("#partido").val(ui.item.id);
-    },
-    }).focus(function () {
-        $(this).autocomplete('search', $(this).val())
-      });
+  
 
       $( "#autoPosicion" ).autocomplete({
       source: 'searchPosicion.php',
       minLength: 0,
       select: function(event, ui) { 
-        console.log(ui.item.id);
         $("#posicion").val(ui.item.id);
     },
     }).focus(function () {
@@ -59,7 +49,7 @@
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
-            <form method="post", action="..\alineacion\store.php" id="frm_alineacion">
+            <form method="post"  id="frm_alineacion">
               <input type="hidden" name="operation" value="1">
               <input type="hidden" name="partido" id="partido"  value="<?php echo $_GET['id'] ?>">
               <div class="row">
@@ -77,21 +67,144 @@
                     <input type="text" id="autoPosicion" class="form-control">
                   </div>
                 </div>
+                <div class="col-md-2">
+                  <div class="form-group">
+                    <button onclick="submitForm()" type="button" class="btn btn-success pull-right btn-round"><i class="fas fa-check fa-lg"></i>Agregar</button>
+                    <a href="../alineacion?id=<?php echo $_GET['id']; ?>"> <button type="button" class="btn btn-info pull-right btn-round"><i class="fas fa-undo-alt fa-lg"></i> Regresar</button></a>
+
+                  </div>
+                </div>
                 </div>
               </div>
             <div>
-              <?php include '..\layoults\botones.php'; ?>
               <div class="clearfix"></div>
               </div>
             </form>
-          </div>
-        </div>
+            <div class="container" id="guardar">
+            <h1>Jugadores</h1>
+            <div class="content">
+                <div id="myDynamicTable">
+                </div>
+            </div>
+            <button onclick="Guardar()"  type="button" class="btn btn-success pull-right btn-round"><i class="fas fa-check fa-lg"></i> Guardar</button>
+
+            <br>
+         </div>
+         </div>
+         </div>
+
+
       </div>
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
     <script type="text/javascript">
-      
+
+
+var alineacion = [ ];
+document.getElementById('guardar').style.visibility = 'hidden';
+function submitForm(){
+
+  var jugador = document.getElementById('jugador').value;
+    var posicion = document.getElementById('posicion').value;
+    var partido = document.getElementById('partido').value;
+    
+    var njugador = document.getElementById('autoJugador').value;
+    var nposicion = document.getElementById('autoPosicion').value;
+    
+    
+    var jug =[{id_jug:jugador,id_pos:posicion,id_par:partido,name:njugador,posicion:nposicion}]
+    
+    alineacion.push(jug);
+    
+
+    console.log(alineacion);
+
+    mostrarDatos();
+
+}
+
+function mostrarDatos()
+{
+    document.getElementById('guardar').style.visibility = 'visible';
+   
+    var myTableDiv = document.getElementById("myDynamicTable");
+    myTableDiv.innerHTML=''; 
+    var table = document.createElement('TABLE');
+    table.classList.add("table-striped");
+    table.classList.add("table-bordered");
+    table.classList.add("table");
+
+    var tableBody = document.createElement('TBODY');
+    table.appendChild(tableBody);
+
+for (var i = 0; i < alineacion.length; i++) {
+  var tr = document.createElement('TR');
+  tableBody.appendChild(tr);
+
+    var td = document.createElement('TD');
+    td.appendChild(document.createTextNode(alineacion[i][0]['name']));
+    tr.appendChild(td);
+
+    var td = document.createElement('TD');
+    td.appendChild(document.createTextNode(alineacion[i][0]['posicion']));
+    tr.appendChild(td);
+
+    var td = document.createElement('TD');
+    
+
+    var button = document.createElement('input');
+    button.setAttribute('type', 'button');
+    button.setAttribute('value', 'Retirar');
+    button.setAttribute('onclick', 'eliminar('+i+')');
+    button.className += 'btn btn-primary btn-link btn-sm';
+
+
+    td.appendChild(button);
+    
+    tr.appendChild(td);
+  
+}
+
+myTableDiv.appendChild(table);
+
+ 
+}
+
+function eliminar(i) 
+{
+  document.getElementById('guardar').style.visibility = 'hidden';
+    this.alineacion.splice(i,1);
+
+    mostrarDatos();
+    
+}
+
+function Guardar()
+{
+  if(alineacion.length>0)
+  {
+  var pa=<?php echo $_GET['id']; ?>;
+  var url = "guardar.php";
+        $.ajax({
+           type: "POST",
+           url: url,
+           dataType: "json",
+           data: {"alineacion":alineacion},
+           success: function(data)
+           {             
+             console.log(data);
+             window.location.replace("http://localhost/PJ_XJMC/vista/alineacion/alineacion.php?id="+pa);
+           },
+           error: function(data) {
+            console.log(data);
+            }
+      });
+  }else
+  {
+    alert("No se a asignado a ningun jugador");
+  }
+}
 
     </script>
   </body>
