@@ -32,11 +32,7 @@ foreach ($array as $value)
 
     }
 }
-<<<<<<< HEAD
 $bit->insert('Asigno prensa al partido '.$partido, $_SESSION['id']);
-=======
-$bit->insert('Asignó árbitros al partido '.$partido, $_SESSION['id']);
->>>>>>> fad31fac34ead906a206ead4fb94a66fcb47c8f1
 
 echo json_encode($return_arr);
 
