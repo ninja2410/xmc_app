@@ -16,9 +16,9 @@ $data=$jugador->select($_GET['id']);
     include '..\layoults\barnav.php';
     ?>
    <div class="content main main-raised">
+            <div class="card col-md-12">
       <div class="container-fluid">
-        <div class="col-md-12">
-            <div class="card">
+      
               <div class="card-header card-header-danger">
                   <h3 class="card-title">Actualizar jugador</h3>
                   <p class="category">Complete los campos siguientes</p>
@@ -167,7 +167,7 @@ $data=$jugador->select($_GET['id']);
                 </form>
               </div>
             </div>
-          </div>
+          
         </div>
     </div>
     <?php include '..\layoults\footer.php'; ?>

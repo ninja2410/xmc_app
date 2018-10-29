@@ -23,12 +23,11 @@ $player=$jugador->select($_GET['id']);
     } ?>">
     <div class="main main-raised">
       <div class="content">
+            <div class="card col-md-12">
         <div class="container-fluid">
-          <div class="col-md-12">
-            <div class="card">
                 <div class="card-header card-header-danger row">
                   <div class="col-md-10">
-                    <h4 class="card-title ">Documentos digitales</h4>
+                    <h3 class="card-title ">Documentos digitales</h3>
                     <p class="card-category"> Listado de documentos almacenados en el sistema asignados al jugador: <?php echo $player['nombre'].' '.$player['apellido']; ?></p>
                   </div>
                   <div class="col-md-2 text-right">
@@ -39,8 +38,8 @@ $player=$jugador->select($_GET['id']);
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
-                    <table class="table" id="mytable">
-                      <thead class=" text-primary">
+                    <table class="table table-bordered table-hover" id="mytable">
+                      <thead>
                         <th>
                           ID
                         </th>
@@ -84,7 +83,7 @@ $player=$jugador->select($_GET['id']);
                               <div style="float:left">
                                 <a href="..\..\vista\jugador/ver_doc_jugador.php?id=<?php echo $row['ID']; ?>">
                                   <button type="button" rel="tooltip" title="Ver Documento" class="btn btn-success btn-link btn-sm">
-                                    <i class="material-icons">pageview</i>
+                                  <i class="fa fa-eye"></i>
                                   </button>
                                 </a>
                               </div>
@@ -116,7 +115,7 @@ $player=$jugador->select($_GET['id']);
               </div>
             </div>
           </div>
-        </div>
+        
       </div>
     </div>
 

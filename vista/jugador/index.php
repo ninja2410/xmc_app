@@ -22,9 +22,9 @@ $data=$jugador->select(-1);
 
     <div class="main main-raised">
       <div class="content">
+            <div class="card">
         <div class="container-fluid">
           <div class="col-md-12">
-            <div class="card">
               <div class="card-header card-header-danger row">
                 <div class="col-md-10">
                   <h3 class="card-title">Jugadores</h3>
