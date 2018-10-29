@@ -1,8 +1,16 @@
+<?php
+require_once('..\..\Negocio/ClassLesionJugador.php');
+require_once('..\..\Negocio/ClassTratamiento.php');
+$tratamiento=new Tratamiento();
+$lesion=new LesionJugador();
+$data_lesion=$lesion->select($_GET['id']);
+$data_tratamiento=$tratamiento->select($_GET['id']);
+ ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Lesión - Insertar</title>
+    <title>Lesión - Actualizar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
@@ -10,6 +18,8 @@
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   <body class="profile-page sidebar-collapse">
   <script type="text/javascript">
+
+
   $(function()
   {
     $( "#lesion" ).autocomplete(
@@ -54,33 +64,42 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-primary">
-            <h4 class="card-title">INGRESAR LESIÓN DE JUGADOR</h4>
+            <h4 class="card-title">EDITAR LESIÓN DE JUGADOR</h4>
             <p class="card-category">Registro de lesión por jugador. </p>
           </div>
           <div class="card-body">
             <form method="post", action="..\lesion-jugador\store.php" id="frm_lesion">
-              <input type="hidden" name="operation" value="1">
-              <input type="hidden" name="cantidades" value="" id="cantidades">
-              <input type="hidden" name="medicamentos" value="" id="medicamentos">
-              <input type="hidden" name="prescripciones" value="" id="prescripciones">
+              <input type="hidden" name="operation" value="2">
+              <input type="hidden" name="id" id="lesion_id" value="<?php echo $data_lesion['id_lesion_jugador']; ?>">
               <div class="row">
                 <div class="col-md-4">
                   <div class="form-group">
                     <label class="">Fecha Inicio</label>
-                    <input type="text" placeholder="DD/MM/YYYY" id="f_inicio" class="form-control datetimepicker" name="fecha_inicio">
+                    <input type="text" placeholder="DD/MM/YYYY" id="f_inicio" class="form-control datetimepicker" name="fecha_inicio" value="<?php echo date('d/m/Y', strtotime($data_lesion['fecha_inicio'])); ?>">
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="form-group">
                     <label class="">Fecha de recuperación</label>
-                    <input type="text" id="f_final" placeholder="DD/MM/YYYY" class="form-control datetimepicker" name="fecha_recuperacion">
+                    <input type="text" id="f_final" placeholder="DD/MM/YYYY" class="form-control datetimepicker" name="fecha_recuperacion" <?php
+                    if ($data_lesion['fecha_final']==$data_lesion['fecha_inicio']) {
+                      ?>
+                      value="Lesión activa"
+                      <?php
+                    }
+                    else{
+                      ?>
+                      value="<?php echo $data_lesion['fecha_final']; ?>"
+                      <?php
+                    }
+                     ?>>
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="form-group">
                     <label class="">Lesión</label>
-                    <input type="hidden" name="les" id="les" >
-                    <input type="text" id="lesion" name="lesion"  class="form-control">
+                    <input type="hidden" name="les" id="les" value="<?php echo $data_lesion['id_lesion']; ?>">
+                    <input type="text" id="lesion" name="lesion"  class="form-control" value="<?php echo $data_lesion['nombre']; ?>">
                   </div>
                 </div>
               </div>
@@ -88,21 +107,21 @@
                 <div class="col-md-4">
                   <div class="form-group">
                     <label class="">Médico</label>
-                    <input type="hidden" name="med" id="med" >
-                    <input type="text" name="medico" id="medico" class="form-control">
+                    <input type="hidden" name="med" id="med" value="<?php echo $data_lesion['id_medico']; ?>">
+                    <input type="text" name="medico" id="medico" class="form-control" value="<?php echo $data_lesion['medico']; ?>">
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="form-group">
                     <label class="">Jugador</label>
-                    <input type="hidden" name="jug" id="jug" >
-                    <input type="text" name="jugador" id="jugador" class="form-control">
+                    <input type="hidden" name="jug" id="jug" value="<?php echo $data_lesion['id_jugador']; ?>">
+                    <input type="text" name="jugador" id="jugador" class="form-control" value="<?php echo $data_lesion['JUGADOR']; ?>">
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="form-group">
                     <label class="">Costo</label>
-                    <input type="number" step="0.01" name="costo" class="form-control">
+                    <input type="number" step="0.01" name="costo" class="form-control" value="<?php echo $data_lesion['costo']; ?>">
                   </div>
                 </div>
               </div>
@@ -110,45 +129,47 @@
                 <div class="col-md-4">
                   <div class="form-group">
                     <label class="">Motivo</label>
-                    <input type="text" class="form-control" name="mot">
+                    <input type="text" class="form-control" name="mot" value="<?php echo $data_lesion['motivo']; ?>">
                   </div>
                 </div>
                 <div class="col-md-8">
                   <div class="form-group">
                     <label class="">Observaciones</label>
-                    <input type="text" class="form-control" name="obs">
+                    <input type="text" class="form-control" name="obs" value="<?php echo $data_lesion['observacion']; ?>">
                   </div>
                 </div>
               </div>
               <hr>
               <h3>Agregar tratamiento</h3>
-              <form class="" id="frm_tratamiento" method="post">
                 <div class="row">
-                  <div class="col-md-1">
-                    <div class="form-group">
-                      <label class="">Cantidad</label>
-                      <input type="text" class="form-control" name="cantidad" id="cantidad">
-                    </div>
-                  </div>
-                    <div class="col-md-5">
-                      <div class="form-group">
-                        <label class="">Medicamento</label>
-                        <input type="text" class="form-control" name="medicamento" id="medicamento">
-                      </div>
-                    </div>
-                    <div class="col-md-5">
-                      <div class="form-group">
-                        <label class="">Descripción</label>
-                        <input type="text" class="form-control" name="prescripcion" id="prescripcion">
-                      </div>
-                    </div>
+                  <form  id="frm_tratamiento">
+                    <input type="hidden" name="operation" value="4">
+                    <input type="hidden" name="id" value="<?php echo $data_lesion['id_lesion_jugador']; ?>">
                     <div class="col-md-1">
-                      <button class="btn btn-success btn-fab btn-round" id="add" type="button" data-toggle="tooltip" data-original-title="Agregar tratamiento">
-                        <i class="material-icons">add</i>
-                        <div class="ripple-container"></div>
-                      </button>
+                      <div class="form-group">
+                        <label class="">Cantidad</label>
+                        <input type="text" class="form-control" name="cantidad" id="cantidad">
+                      </div>
                     </div>
-                  </form>
+                      <div class="col-md-5">
+                        <div class="form-group">
+                          <label class="">Medicamento</label>
+                          <input type="text" class="form-control" name="medicamento" id="medicamento">
+                        </div>
+                      </div>
+                      <div class="col-md-5">
+                        <div class="form-group">
+                          <label class="">Descripción</label>
+                          <input type="text" class="form-control" name="prescripcion" id="prescripcion">
+                        </div>
+                      </div>
+                      <div class="col-md-1">
+                        <button class="btn btn-success btn-fab btn-round" id="add" type="button" data-toggle="tooltip" data-original-title="Agregar tratamiento">
+                          <i class="material-icons">add</i>
+                          <div class="ripple-container"></div>
+                        </button>
+                      </div>
+                    </form>
                 </div>
               <div class="row">
                 <h3>Tratamiento agregado </h3>
@@ -172,7 +193,18 @@
                         </th>
                       </thead>
                       <tbody>
-
+                        <?php
+                        foreach ($data_tratamiento as $key => $val) {
+                          ?>
+                          <tr>
+                            <td><?php echo $val['cantidad']; ?></td>
+                            <td><?php echo $val['medicamento']; ?></td>
+                            <td><?php echo $val['prescripcion']; ?></td>
+                            <td> <button id="<?php echo $val['id_tratamiento']; ?>" type="button" class="btn btn-danger pull-right btn-round" onclick="delet(this)" name="button">Eliminar</button> </td>
+                          </tr>
+                          <?php
+                        }
+                         ?>
                       </tbody>
                     </table>
                   </div>
@@ -191,49 +223,60 @@
     <script type="text/javascript">
       var f = new Date();
       function eliminar(control){
-        var index=ordenes.indexOf(parseInt(control.id));
-        cantidades.splice(index,1);
-        medicamentos.splice(index, 1);
-        prescripciones.splice(index,1);
-        ordenes.splice(index, 1);
-        control.closest('tr').remove();
+        alert(control.id);
       }
-      $('.datetimepicker').datetimepicker({
-          format:'DD/MM/YYYY',
-          icons: {
-              time: "fa fa-clock-o",
-              date: "fa fa-calendar",
-              up: "fa fa-chevron-up",
-              down: "fa fa-chevron-down",
-              previous: 'fa fa-chevron-left',
-              next: 'fa fa-chevron-right',
-              today: 'fa fa-screenshot',
-              clear: 'fa fa-trash',
-              close: 'fa fa-remove'
-          }
-      });
+      function delet(control){
+        $.ajax({
+             type: "POST",
+             url: 'store.php',
+             data: {
+               operation:"5",
+               id:control.id,
+             },
+             success: function(data)
+             {
+               alertify.success("Eliminado con éxito");
+             }
+        });
+        location.reload();
+      }
+
 var orden=0;
-var cantidades=[];
-var medicamentos=[];
-var prescripciones=[];
-var ordenes=[];
 $(document).ready(function() {
+  var cantidades=[];
+  var medicamentos=[];
+  var prescripciones=[];
+
 $('#add').click(function(){
   var cant=document.getElementById('cantidad').value;
   var med=document.getElementById('medicamento').value;
   var pres=document.getElementById('prescripcion').value;
   if (cant!="" && med!="" && pres!="") {
-    cantidades.push(cant);
-    medicamentos.push(med);
-    prescripciones.push(pres);
-    ordenes.push(orden);
+
+    $.ajax({
+         type: "POST",
+         url: 'store.php',
+         data: {
+           operation:"4",
+           cantidad:cant,
+           medicamento:med,
+           prescripcione:pres,
+           id_lesion:$('#lesion_id').val(),
+         },
+         success: function(data)
+         {
+           alertify.alert("Agregado con éxito");
+         }
+    });
+
     var tabla=document.getElementById('agregados');
     var row=tabla.insertRow(1);
-    row.setAttribute("id", "r"+orden);
+    row.setAttribute("id", orden);
     var cel=row.insertCell(0);
     var cel2=row.insertCell(1);
     var cel3=row.insertCell(2);
     var cel4=row.insertCell(3);
+    var button = '<input type="submit" id="'+orden+'" name="Numero Parrafos"/>';
     var tmp=document.createTextNode(cant);
     cel.appendChild(tmp);
     tmp=document.createTextNode(med);
@@ -244,16 +287,12 @@ $('#add').click(function(){
     tmp.setAttribute("class", "btn btn-danger pull-right btn-round");
     tmp.setAttribute("id", orden);
     tmp.innerText="Eliminar";
-    tmp.setAttribute("onclick", "eliminar(this)");
+    tmp.setAttribute("onclick", "delet(this)");
     tmp.setAttribute("type", "button");
     cel4.appendChild(tmp);
     document.getElementById('cantidad').value='';
     document.getElementById('medicamento').value='';
     document.getElementById('prescripcion').value='';
-    document.getElementById('cantidades').value=cantidades;
-    document.getElementById('medicamentos').value=medicamentos;
-    document.getElementById('prescripciones').value=prescripciones;
-    orden++;
   }
   else{
     alertify.error('Debe llenar todos los campos.')

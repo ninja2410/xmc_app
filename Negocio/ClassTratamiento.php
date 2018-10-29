@@ -17,7 +17,7 @@ class Tratamiento
     $dt=$bd->execute_query($query);
   }
   public function delete($id){
-    $query="CALL SP_TRATAMIENTO_DELETE($id)";
+    $query="DELETE FROM TRATAMIENTO WHERE id_tratamiento=$id";
     $bd=new conexion();
     $dt=$bd->execute_query($query);
   }
@@ -26,7 +26,7 @@ class Tratamiento
       $query="SELECT * FROM TRATAMIENTO;";
     }
     else{
-      $query="SELECT * FROM TRATAMIENTO WHERE id_tratamiento=$id;";
+      $query="SELECT * FROM TRATAMIENTO WHERE id_lesion_jugador=$id;";
     }
     $bd=new conexion();
     $dt=$bd->execute_query($query);

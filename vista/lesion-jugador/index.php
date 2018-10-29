@@ -50,10 +50,13 @@ $data=$lesion->detalle();
                         LESIÓN
                       </th>
                       <th>
+                        JUGADOR
+                      </th>
+                      <th>
                         FECHA INICIO
                       </th>
                       <th>
-                        JUGADOR
+                        COSTO
                       </th>
                       <th>
                         ACCIONES
@@ -75,6 +78,9 @@ $data=$lesion->detalle();
                         </td>
                         <td>
                           <?php echo $row['FECHA']; ?>
+                        </td>
+                        <td>
+                          Q<?php echo number_format($row['COSTO'], 2); ?>
                         </td>
                         <td class="td-actions text-lefht">
                             <div style="float:left">

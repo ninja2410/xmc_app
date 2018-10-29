@@ -71,6 +71,8 @@ $data=$socio->select(-1);
                           <?php echo $row['apellido']; ?>
                         </td>
                         <td class="td-actions text-lefht">
+                          <a href="..\..\vista\socio/documentos.php?id=<?php echo $row['id_socio']; ?>">
+                          <button class="btn btn-info btn-round btn-sm"><i class="far fa-file-text fa-lg"></i> Documentos</button>
                             <div style="float:left">
                               <a href="..\..\vista\socio/update.php?id=<?php echo $row['id_socio']; ?>">
                                 <button type="button" rel="tooltip" title="Editar socio" class="btn btn-primary btn-link btn-sm">
