@@ -67,7 +67,29 @@ $data=$jugador->select(-1);
                           <form class="" action="..\..\vista\jugador/store.php" method="post">
                               <input type="hidden" name="operation" value="3">
                               <input type="hidden" name="id" value="<?php echo $row['id_jugador']; ?>">
-                              <button class="btn btn-danger btn-round btn-sm"><i class="material-icons">delete</i> Desactivar</button>
+                          
+                              <!-- Inicio de modal -->
+                              <button type="button" data-toggle="modal" data-target="<?php echo '#Confirmacion'.$row['id_jugador']; ?>"  class="btn btn-danger btn-round btn-sm">
+                              <i class="material-icons">delete</i> Desactivar</button>
+                                </button>
+                                <!-- Modal -->
+                                <div class="modal fade" id="<?php echo 'Confirmacion'.$row['id_jugador']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"  data-backdrop="false">
+                                  <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Confirmación</h5>
+                                      </div>
+                                      <div class="modal-body">
+                                      ¿Está seguro que desea desactivar a este jugador?
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                        <button type="submit" class="btn btn-primary">Eliminar</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!--  -->
                           </form>
                         </td>
                         <?php
