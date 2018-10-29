@@ -67,7 +67,7 @@ $data=$fichamedica->select(-1);
                               </div>
                               <div style="float:left">
                                 <a href="..\..\vista\ficha_medica/update.php?id=<?php echo $row['id_ficha']; ?>">
-                                  <button type="button" rel="tooltip" title="Editar Ficha" class="btn btn-default btn-link btn-sm">
+                                  <button type="button" rel="tooltip" title="Editar ficha" class="btn btn-danger btn-link btn-sm">
                                     <i class="material-icons">edit</i>
                                   </button>
                                 </a>
@@ -76,9 +76,28 @@ $data=$fichamedica->select(-1);
                                 <form class="" action="..\..\vista\ficha_medica/store.php" method="post">
                                   <input type="hidden" name="operation" value="3">
                                   <input type="hidden" name="id" value="<?php echo $row['id_ficha']; ?>">
-                                  <button type="submit" rel="tooltip" title="Eliminar Ficha" class="btn btn-danger btn-link btn-sm">
-                                    <i class="material-icons">close</i>
-                                  </button>
+                                  <!-- Inicio de modal -->
+                                <button type="button" data-toggle="modal" data-target="<?php echo '#Confirmacion'.$row['id_ficha']; ?>" rel="tooltip" title="Eliminar ficha" class="btn btn-danger btn-link btn-sm">
+                                  <i class="material-icons">close</i>
+                                </button>
+                                <!-- Modal -->
+                                <div class="modal fade" id="<?php echo 'Confirmacion'.$row['id_ficha']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"  data-backdrop="false">
+                                  <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Confirmación</h5>
+                                      </div>
+                                      <div class="modal-body">
+                                      ¿Está seguro que desea eliminar esta ficha médica?
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                        <button type="submit" class="btn btn-primary">Eliminar</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!--  -->
                                 </form>
                               </div>
                           </td>

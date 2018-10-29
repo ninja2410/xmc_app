@@ -8,7 +8,7 @@ $data=$fichamedica->select($_GET['id']);
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Detalle de ficha medica</title>
+    <title>Detalle de ficha médica</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
@@ -19,7 +19,7 @@ $data=$fichamedica->select($_GET['id']);
         <div class="container">
             <div class="row" style="padding:20px">
                 <div class="col-md-9">
-                    <h3 class="title">Revision de: <?php echo $data['Nombre']?></h3>
+                    <h3 class="title">Revisión de: <?php echo $data['Nombre']?></h3>
                     <h4><b>Fecha de la revisión: </b><?php echo date("d/m/Y", strtotime($data['fecha']));?></h4>
                     <div class="row">
                         <div class="col-md-4">
@@ -29,7 +29,7 @@ $data=$fichamedica->select($_GET['id']);
                             <h4><b>Peso: </b><?php echo $data['peso']?> libras</h4>
                         </div>
                         <div class="col-md-4">
-                            <h4><b>Talla: </b><?php echo $data['talla']?> centimetros</h4>
+                            <h4><b>Talla: </b><?php echo $data['talla']?> centímetros</h4>
                         </div>
                     </div>
                 </div>

@@ -20,7 +20,7 @@ $data=$fichamedica->select($_GET['id']);
             
               <div class="card-header card-header-danger">
                   <h3 class="card-title">Actualizar ficha médica</h3>
-                  <p class="category">Complete los siguientes campos.</p>
+                  <p class="category">Complete los siguientes campos</p>
               </div>
               <div class="card-body">
                 <ul class="nav nav-pills nav-pills-success justify-content-center">
