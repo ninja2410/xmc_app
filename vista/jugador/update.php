@@ -13,7 +13,7 @@ $data=$jugador->select($_GET['id']);
   </head>
   <body class="profile-page sidebar-collapse">
     <?php
-    include '..\layoults\barnav.php';
+    include '..\layoults\barnavLogged.php';
     ?>
    <div class="content main main-raised">
             <div class="card col-md-12">

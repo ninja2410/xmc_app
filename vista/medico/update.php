@@ -13,7 +13,7 @@ $data=$medico->select($_GET['id']);
   </head>
   <body>
     <?php
-    include '..\layoults\barnav.php';
+    include '..\layoults\barnavLogged.php';
     ?>
     <div class="content">
       <div class="col-md-12">

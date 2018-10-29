@@ -23,7 +23,7 @@ session_start();
           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true"><i class="material-icons">clear</i></span>
           </button>
-          <b>ERROR AL INICIAR SESION:</b> Verifique el nombre de usuario y la contraseña, si sigue teniendo problemas 
+          <b>ERROR AL INICIAR SESIÓN:</b> Verifique el nombre de usuario y la contraseña, si sigue teniendo problemas 
           contacte con el administrador.
     </div>
     <?php 

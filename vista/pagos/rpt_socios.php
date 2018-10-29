@@ -13,7 +13,7 @@ $data_pagos=$pago->est_Socios();
   </head>
   <body class="profile-page sidebar-collapse">
     <?php
-    include '..\layoults\barnav.php';
+    include '..\layoults\barnavLogged.php';
     ?>
     <div class="main main-raised">
     <div class="content">

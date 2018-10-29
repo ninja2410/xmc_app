@@ -32,7 +32,7 @@ foreach ($array as $value)
 
     }
 }
-$bit->insert('Asigno arbitros al partido '.$partido, $_SESSION['id']);
+$bit->insert('Asignó árbitros al partido '.$partido, $_SESSION['id']);
 
 echo json_encode($return_arr);
 
