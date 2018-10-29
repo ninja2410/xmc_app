@@ -61,7 +61,7 @@ $data=$partido->select(-1);
                         Observaciones
                       </th>
                       <th>
-                        Alineación
+                        Listados
                       </th>
                       <th>
                         Resultados
@@ -97,6 +97,12 @@ $data=$partido->select(-1);
                           <?php echo $row['observaciones']; ?>
                         </td>
                         <td>
+                          <a href="..\..\vista\arbitro/arbitros.php?id=<?php echo $row['id_partido']; ?>">
+                          <button class="btn btn-info btn-round btn-sm"> <i class="fas fa-sitemap"></i> Arbitro</button>
+                       
+                          <a href="..\..\vista\prensa/prensa.php?id=<?php echo $row['id_partido']; ?>">
+                          <button class="btn btn-info btn-round btn-sm"> <i class="fas fa-sitemap"></i> Prensa</button>
+                       
                           <a href="..\..\vista\alineacion/alineacion.php?id=<?php echo $row['id_partido']; ?>">
                           <button class="btn btn-info btn-round btn-sm"> <i class="fas fa-sitemap"></i> Alineación</button>
                         </td>

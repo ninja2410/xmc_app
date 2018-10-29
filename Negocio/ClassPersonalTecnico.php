@@ -14,7 +14,9 @@ class PersonalTecnico
         $conexion->conectar();
         if ($id==-1)
         {
-            $query="SELECT * FROM PERSONAL_TECNICO";
+            $query="SELECT CT.cargo, P.fecha ,PT.id_personal_tecnico,PT.id_partido,PT.id_cargo_tecnico,PT.nombre FROM PERSONAL_TECNICO PT
+            INNER JOIN CARGO_TECNICO  CT ON PT.id_cargo_tecnico = CT.id_cargo_tecnico 
+            INNER JOIN PARTIDO  P ON P.id_partido = PT.id_partido";
             $dt=mysqli_query($conexion->objetoconexion,$query);
         }
         else
