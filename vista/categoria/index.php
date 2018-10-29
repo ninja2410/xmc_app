@@ -15,13 +15,13 @@ $data=$categoria->select(-1);
 
    <div class="main main-raised">
     <div class="content">
+      <div class="card">
       <div class="container-fluid">
         <input type="hidden" id="mensaje" name="secret" value="<?php if ($_SESSION['mensaje']!="") {
       echo $_SESSION['mensaje'];
       $_SESSION['mensaje']="";
     } ?>">
-          <div class="col-md-12">
-            <div class="card">
+          <div class="col-md-13">
               <div class="card-header card-header-danger row">
               <div class="col-md-11">
                   <h3 class="card-title">Categoría</h3>
