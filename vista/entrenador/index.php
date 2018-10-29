@@ -27,10 +27,10 @@ $data2=$asignacion->select(-1);
     } ?>">
     <div class="main main-raised">
     <div class="content">
+            <div class="card">
       <div class="container-fluid">
 
-          <div class="col-md-12">
-            <div class="card">
+          <div class="col-md-13">
               <div class="card-header card-header-danger row">
               <div class="col-md-11">
                   <h3 class="card-title">Entrenador</h3>
@@ -82,6 +82,10 @@ $data2=$asignacion->select(-1);
                         ?>
                         </td>
                         <td class="td-actions text-left">
+                        <div style="float:left"> 
+                        <a href="..\..\vista\entrenador/documentos.php?id=<?php echo $row['id_entrenador']; ?>">
+                          <button class="btn btn-info btn-round btn-sm"><i class="far fa-file-text fa-lg"></i> Documentos</button>
+                          </div>
                             <div style="float:left">
                             <a href="..\..\vista\entrenador/detalle.php?id=<?php echo $row['id_entrenador']; ?>">
                           <button class="btn btn-success btn-round btn-sm"><i class="far fa-eye fa-lg"></i> Ver detalles</button>

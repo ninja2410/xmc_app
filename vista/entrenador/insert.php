@@ -16,8 +16,8 @@ $data=$contrato->select(-1);
     <?php include '..\layoults\barnav.php'; ?>
     <div class="main main-raised"> 
     <div class="content">
-      <div class="col-md-12">
-        <div class="card">
+      
+        <div class="card col-md-13">
           <div class="card-header card-header-danger">
             <h3 class="card-title">Insertar entrenador</h3>
             <p class="card-category">Complete los campos siguientes</p>
@@ -109,25 +109,6 @@ $data=$contrato->select(-1);
             </div>  
             </div>
           </div>
-                
-              
-
-              <!-- <div class="row">
-              <div class="col-md-4">
-                  <div class="form-group">
-                    <label for="exampleFormControlSelect1">Contrato</label>
-                    <select class="form-control" name="id_contrato">
-                      < ?php
-                      while ($row=mysqli_fetch_array($data)) {
-                          $valor = $row['id_contrato'];
-                          $texto = $row['titulo'];
-                          echo '<option value="'.$valor.'">'.$texto.'</option>';
-                        }
-                        ?>
-                    </select>
-                  </div>
-                </div>
-              </div> -->
               <div>
               <h3>Fotografía</h3>
               <hr>
@@ -150,7 +131,7 @@ $data=$contrato->select(-1);
             </form>
           </div>
         </div>
-      </div>
+     
     </div>
     </div>
     <?php include '..\layoults\footer.php'; ?>

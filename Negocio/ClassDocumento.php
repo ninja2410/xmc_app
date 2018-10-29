@@ -20,6 +20,14 @@ class Documento
     $dt=$bd->execute_query($query);
 	  return $dt;
   }
+  public function insert_entrenador($fecha, $estado, $path, $descripcion, $categoria, $titulo, $entrenador){
+    $query="INSERT INTO DOCUMENTO_DIGITAL(fecha_creacion, estado, path, descripcion, id_categoria_documentos, id_entrenador, titulo)
+    VALUES('$fecha', 1, '$path', '$descripcion', $categoria, $entrenador, '$titulo');";
+    echo $query;
+    $bd= new conexion();
+    $dt=$bd->execute_query($query);
+	  return $dt;
+  }
   public function insert_socio($fecha, $estado, $path, $descripcion, $categoria, $titulo, $socio){
     $query="INSERT INTO DOCUMENTO_DIGITAL(fecha_creacion, estado, path, descripcion, id_categoria_documentos, id_socio, titulo)
     VALUES('$fecha', 1, '$path', '$descripcion', $categoria, $socio, '$titulo');";
@@ -32,6 +40,14 @@ class Documento
   public function update_jugador($id, $fecha, $estado, $path, $descripcion, $categoria, $titulo, $jugador){
     $query="UPDATE DOCUMENTO_DIGITAL SET path='$path', descripcion='$descripcion', id_categoria_documentos=$categoria,
       titulo='$titulo', id_jugador=$jugador WHERE id_documento_digital=$id;";
+    echo $query;
+    $bd= new conexion();
+    $dt=$bd->execute_query($query);
+	  return $dt;
+  }
+  public function update_entrenador($id, $fecha, $estado, $path, $descripcion, $categoria, $titulo, $entrenador){
+    $query="UPDATE DOCUMENTO_DIGITAL SET path='$path', descripcion='$descripcion', id_categoria_documentos=$categoria,
+      titulo='$titulo', id_entrenador=$entrenador WHERE id_documento_digital=$id;";
     echo $query;
     $bd= new conexion();
     $dt=$bd->execute_query($query);
@@ -72,6 +88,14 @@ class Documento
     $conexion=new conexion();
     $conexion->conectar();
     $query="SELECT id_documento_digital ID, fecha_creacion FECHA, path, descripcion, nombre CATEGORIA, titulo, id_jugador from DOCUMENTO_DIGITAL inner join CATEGORIA_DOCUMENTOS cd on DOCUMENTO_DIGITAL.id_categoria_documentos = cd.id_categoria_documentos WHERE DOCUMENTO_DIGITAL.estado=1 AND DOCUMENTO_DIGITAL.id_jugador=$jugador;";
+    $dt=mysqli_query($conexion->objetoconexion,$query);
+    $conexion->desconectar();
+    return $dt;
+  }
+  public function select_entrenador($entrenador){
+    $conexion=new conexion();
+    $conexion->conectar();
+    $query="SELECT id_documento_digital ID, fecha_creacion FECHA, path, descripcion, nombre CATEGORIA, titulo, id_entrenador from DOCUMENTO_DIGITAL inner join CATEGORIA_DOCUMENTOS cd on DOCUMENTO_DIGITAL.id_categoria_documentos = cd.id_categoria_documentos WHERE DOCUMENTO_DIGITAL.estado=1 AND DOCUMENTO_DIGITAL.id_entrenador=$entrenador;";
     $dt=mysqli_query($conexion->objetoconexion,$query);
     $conexion->desconectar();
     return $dt;
