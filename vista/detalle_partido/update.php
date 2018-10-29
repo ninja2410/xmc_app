@@ -13,7 +13,7 @@
   </head>
   <body class="profile-page sidebar-collapse">
     <?php
-    include '..\layoults\barnav.php';
+    include '..\layoults\barnavLogged.php';
     ?>
     <div class="main main-raised">
     <form method="post", action="..\detalle_partido\store.php" id="frm_detalle_partido">

@@ -29,7 +29,7 @@ $data2=$contrato->select(-1);
   </head>
   <body class="profile-page sidebar-collapse">
     <?php
-    include '..\layoults\barnav.php';
+    include '..\layoults\barnavLogged.php';
     ?>
     <div class="main main-raised">
         <div class="container">
@@ -59,6 +59,11 @@ $data2=$contrato->select(-1);
                 
                 <div class="col-md-3">
                     <ul class="nav flex-column">
+                    <li class="nav-item">
+                            <a class="nav-link btnAzul" href="..\..\vista\entrenador/documentos.php?id=<?php echo $data['id_entrenador']; ?>">
+                                <i class="material-icons fa-2x">book</i><br> Documentos
+                            </a>
+                        </li>
                         <li class="nav-item">
                         <a class="nav-link btnAzul" href="..\..\vista\entrenador/update.php?id=<?php echo $data['id_entrenador']; ?>">
                                 <i class="material-icons fa-2x">edit</i><br> Actualizar información

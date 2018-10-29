@@ -28,12 +28,12 @@
   
   });
   </script>
-    <?php include '..\layoults\barnav.php'; ?>
+    <?php include '..\layoults\barnavLogged.php'; ?>
     <div class="content">
       <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-primary">
-            <h4 class="card-title">INGRESAR UNA NUEVA ALINEACIÓN</h4>
+            <h3 class="card-title">Ingresar una nueva alineación</h3>
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
@@ -43,14 +43,14 @@
               <div class="row">
                 <div class="col-md-4">
                   <div class="form-group">
-                    <label class="">Arbitro</label>
+                    <label class="">Árbitro</label>
                     <input type="hidden" id="arbitro" name="arbitro">
                     <input type="text" id="autoArbitro" class="form-control">
                   </div>
                 </div>
                 <div class="col-md-2">
                   <div class="form-group">
-                    <button onclick="submitForm()" type="button" class="btn btn-success pull-right btn-round"><i class="fas fa-check fa-lg"></i>Agregar</button>
+                    <button onclick="submitForm()" type="button" class="btn btn-success pull-right btn-round"><i class="fas fa-check fa-lg"></i> Agregar</button>
                     <a href="../arbitro?id=<?php echo $_GET['id']; ?>"> <button type="button" class="btn btn-info pull-right btn-round"><i class="fas fa-undo-alt fa-lg"></i> Regresar</button></a>
 
                   </div>
@@ -62,7 +62,7 @@
               </div>
             </form>
             <div class="container" id="guardar">
-            <h1>Arbitros</h1>
+            <h1>Árbitros</h1>
             <div class="content">
                 <div id="myDynamicTable">
                 </div>

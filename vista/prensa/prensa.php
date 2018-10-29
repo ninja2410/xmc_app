@@ -12,6 +12,7 @@ $data=$prensa->selectPrensa($_GET['id']);
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
+<<<<<<< HEAD
     <?php
     include '..\layoults\barnavLogged.php';
     ?>
@@ -19,6 +20,9 @@ $data=$prensa->selectPrensa($_GET['id']);
       echo $_SESSION['mensaje'];
       $_SESSION['mensaje']="";
     } ?>">
+=======
+  <?php include '..\layoults\barnavLogged.php'; ?>
+>>>>>>> fad31fac34ead906a206ead4fb94a66fcb47c8f1
     <div class="main main-raised">
     <div class="content">
       <div class="container-fluid">
