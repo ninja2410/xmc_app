@@ -59,6 +59,12 @@ $data2=$asignacion->select(-1);
                         Foto
                       </th>
                       <th>
+                        Documentos
+                      </th>
+                      <th>
+                        Detalles
+                      </th>
+                      <th>
                         Acciones
                       </th>
                     </thead>
@@ -86,9 +92,15 @@ $data2=$asignacion->select(-1);
                         <a href="..\..\vista\entrenador/documentos.php?id=<?php echo $row['id_entrenador']; ?>">
                           <button class="btn btn-info btn-round btn-sm"><i class="far fa-file-text fa-lg"></i> Documentos</button>
                           </div>
+                            </td>
+                            <td class="td-actions text-left">
                             <div style="float:left">
                             <a href="..\..\vista\entrenador/detalle.php?id=<?php echo $row['id_entrenador']; ?>">
                           <button class="btn btn-success btn-round btn-sm"><i class="far fa-eye fa-lg"></i> Ver detalles</button>
+                          </div>
+                            </td>
+                            <td class="td-actions text-left">
+                            <div style="float:left">
                               <a href="..\..\vista\entrenador/update.php?id=<?php echo $row['id_entrenador']; ?>">
                                 <button type="button" rel="tooltip" title="Editar entrenador" class="btn btn-primary btn-link btn-sm">
                                   <i class="material-icons">edit</i>

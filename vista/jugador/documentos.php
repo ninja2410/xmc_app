@@ -99,9 +99,28 @@ $player=$jugador->select($_GET['id']);
                                   <input type="hidden" name="operation" value="3">
                                   <input type="hidden" name="id" value="<?php echo $row['ID']; ?>">
                                   <input type="hidden" name="id_jugador" value="<?php echo $row['id_jugador']; ?>">
-                                  <button type="submit" rel="tooltip" title="Eliminar Documento" class="btn btn-danger btn-link btn-sm">
-                                    <i class="material-icons">close</i>
-                                  </button>
+                                   <!-- Inicio de modal -->
+                                <button type="button" data-toggle="modal" data-target="<?php echo '#Confirmacion'.$row['id_jugador']; ?>" rel="tooltip" title="Eliminar documento" class="btn btn-danger btn-link btn-sm">
+                                  <i class="material-icons">close</i>
+                                </button>
+                                <!-- Modal -->
+                                <div class="modal fade" id="<?php echo 'Confirmacion'.$row['id_jugador']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"  data-backdrop="false">
+                                  <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Confirmación</h5>
+                                      </div>
+                                      <div class="modal-body">
+                                      ¿Está seguro que desea eliminar este documento?
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                        <button type="submit" class="btn btn-primary">Eliminar</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!--  -->
                                 </form>
                               </div>
                           </td>
