@@ -30,7 +30,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://www.instagram.com/csdxelajumc/" target="_blank" data-original-title="Siguenos en Instagram">
+              <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://www.instagram.com/clubxelajumc/" target="_blank" data-original-title="Siguenos en Instagram">
                 <i class="fab fa-instagram fa-lg"></i>
               </a>
             </li>
