@@ -40,7 +40,7 @@ $data=$estadistoca->selectCampos();
             });
       });
     </script>
-    <?php include '..\layoults\barnav.php'; ?>
+    <?php include '..\layoults\barnavLogged.php'; ?>
     <div class="main main-raised">
     <div class="content">
       <div class="col-md-12">

@@ -33,7 +33,7 @@ foreach ($array as $value)
 
     }
 }
-$bit->insert('Agrego a la aliniazion del partido '.$partido, $_SESSION['id']);
+$bit->insert('Agregó a la alineación del partido '.$partido, $_SESSION['id']);
 
 echo json_encode($return_arr);
 

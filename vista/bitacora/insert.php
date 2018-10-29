@@ -6,7 +6,7 @@
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <body>
-    <?php include '..\layoults\barnav.php'; ?>
+    <?php include '..\layoults\barnavLogged.php'; ?>
     <div class="content">
       <div class="col-md-8">
         <div class="card">

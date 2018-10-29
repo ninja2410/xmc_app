@@ -13,7 +13,7 @@ $data=$membresia->select(-1);
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
   </head>
   <body>
-    <?php include '..\layoults\barnav.php'; ?>
+    <?php include '..\layoults\barnavLogged.php'; ?>
     <div class="content">
       <div class="col-md-12">
         <div class="card">

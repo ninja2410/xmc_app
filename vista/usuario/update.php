@@ -15,7 +15,7 @@ $usuario = $_GET['id'];
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
-    <?php include '..\layoults\barnav.php'; ?>
+    <?php include '..\layoults\barnavLogged.php'; ?>
     <div class="main main-raised">
     <div class="content">
       <div class="container-fluid">
