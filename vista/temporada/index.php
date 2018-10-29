@@ -13,7 +13,7 @@ $data=$temporada->select(-1);
   </head>
   <body class="profile-page sidebar-collapse">
     <?php
-    include '..\layoults\barnav.php';
+    include '..\layoults\barnavLogged.php';
     ?>
     <input type="hidden" id="mensaje" name="secret" value="<?php if ($_SESSION['mensaje']!="") {
       echo $_SESSION['mensaje'];

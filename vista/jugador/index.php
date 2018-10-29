@@ -12,9 +12,7 @@ $data=$jugador->select(-1);
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
-    <?php
-    include '..\layoults\barnav.php';
-    ?>
+    <?php include '..\layoults\barnavLogged.php'; ?>
     <input type="hidden" id="mensaje" name="secret" value="<?php if ($_SESSION['mensaje']!="") {
       echo $_SESSION['mensaje'];
       $_SESSION['mensaje']="";
