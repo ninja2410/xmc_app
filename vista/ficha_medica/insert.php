@@ -8,9 +8,10 @@
   <body class="profile-page sidebar-collapse">
     <?php include '..\layoults\barnav.php'; ?>
     <div class="content main main-raised">
+    <div class="card">
       <div class="container-fluid">
       <div class="col-md-12">
-            <div class="card">
+            
               <div class="card-header card-header-danger">
                     <h3 class="card-title">Ficha médica</h3>
                     <p class="category">Nueva ficha médica.</p>

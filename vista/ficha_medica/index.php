@@ -20,9 +20,10 @@ $data=$fichamedica->select(-1);
       $_SESSION['mensaje']="";
     } ?>">
     <div class="content main main-raised">
+    <div class="card">
       <div class="container-fluid">
         <div class="col-md-12">
-            <div class="card">
+            
               <div class="card-header card-header-danger row">
                 <div class="col-md-10">
                   <h3 class="card-title">Fichas médicas</h3>
