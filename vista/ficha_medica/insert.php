@@ -6,7 +6,7 @@
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
-    <?php include '..\layoults\barnav.php'; ?>
+    <?php include '..\layoults\barnavLogged.php'; ?>
     <div class="content main main-raised">
     <div class="card">
       <div class="container-fluid">
