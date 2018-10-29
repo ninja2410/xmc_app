@@ -67,7 +67,7 @@ if ($operacion=="1") {
   $id_equipo=1;
   $name=$_FILES['img']['name'];
   $foto='JUGADOR_'.$jugador->correlativo().substr($name,-4);
-  move_uploaded_file($_FILES['img']['tmp_name'],'../imagenes/'.$foto);
+  move_uploaded_file($_FILES['img']['tmp_name'],'../imagenes/jugadores/'.$foto);
   chmod('../imagenes/jugadores/'.$foto,0644);
   $jugador->insert($nombre, $direccion, $fecha_nacimiento, $estado, $padre, $madre, $telefono, $procedencia, $apellidos, $foto, $id_posicion, $camisola,$sangre);
   $asignacion_cat->insert($fecha_inicio,$fecha_final,$id_categoria,$id_jugador2,$id_equipo);
@@ -77,12 +77,12 @@ if ($operacion=="1") {
 elseif($operacion=="2") {
   $bit->insert('Actualizo la informacion del jugador'.$id_jugador, $_SESSION['id']);
   $name=$_FILES['img']['name'];
-  $tmp='JUGADOR_'.$jugador->correlativo().substr($name,-4);
-  move_uploaded_file($_FILES['img']['tmp_name'],'../imagenes/'.$tmp);
-  chmod('..\imagenes/jugadores/'.$tmp,0644);
+  $tmp='JUGADOR_'.$id_jugador.substr($name,-4);
+  move_uploaded_file($_FILES['img']['tmp_name'],'../imagenes/jugadores/'.$tmp);
+  chmod('../imagenes/jugadores/'.$tmp,0644);
   $foto=$_FILES['img']['name'];
   if ($foto=='') {
-    $foto=$_POST['foto'];
+    $foto=$_POST['IMG'];
   }
   else{
     $foto=$tmp;

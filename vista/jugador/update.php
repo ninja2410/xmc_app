@@ -28,6 +28,7 @@ $data=$jugador->select($_GET['id']);
                 <input type="hidden" name="operation" value="2">
                 <input type="hidden" name="id" value="<?php echo $data['id_jugador'] ?>">
                 <input type="hidden" name="id_AC" value="<?php echo $data['id_asignacion_categoria'] ?>">
+                <input type="hidden" name="IMG" value="<?php echo $data['foto'] ?>">
                 <div>
                         <h3>Datos personales</h3>
                         <hr>
@@ -146,7 +147,7 @@ $data=$jugador->select($_GET['id']);
                                     <label>Imagen actual</label>
                                 </div>
                                 <div>
-                                    <img src="..\imagenes\<?php echo $data['foto']; ?>" style="width: 200px; height: 150px;" alt="">
+                                    <img src="../imagenes/jugadores/<?php echo $data['foto']; ?>" style="width: 200px; height: 150px;" alt="">
                                 </div>
                             </div>
                             <div class="form-group col-md-4">

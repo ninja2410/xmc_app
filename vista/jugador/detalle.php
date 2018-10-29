@@ -29,12 +29,14 @@ function calculaedad($fechanacimiento){
         <div class="container">
             <div class="row" style="padding:20px">
                 <div class="col-md-2">
-                    <img src="../imagenes/<?php echo $data['foto']?>" alt="Circle Image" class="img-circle rounded img-fluid">
+                    <img src="../imagenes/jugadores/<?php echo $data['foto']?>" alt="Circle Image" class="img-circle rounded img-fluid">
                 </div>
                 <div class="col-md-7">
                     <h3 class="title"><?php echo $data['nombre']." ".$data["apellido"]?></h3>
-                    <h4><b>Categoria: </b><?php echo $data['categoria']?></h4>
+                    <h3>Datos personales</h3>
+                    <hr>
                     <h4><b>Edad: </b><?php echo calculaedad ($data['fecha_nacimiento']);?></h4>
+                    <h4><b>Tipo de sangre: </b><?php echo $data['sangre']?></h4>
                     <h4><b>Número de camisola: </b><?php echo $data['camisola']?></h4>
                     <h4><b>Fecha de nacimiento: </b><?php echo date("d/m/Y", strtotime($data['fecha_nacimiento']));?></h4>
                     <h4><b>Dirección: </b><?php echo $data['direccion']?></h4>
@@ -42,22 +44,13 @@ function calculaedad($fechanacimiento){
                     <h4><b>Nombre de la madre: </b><?php echo $data['madre']?></h4>
                     <h4><b>Número de teléfono: </b><?php echo $data['telefono']?></h4>
                     <h4><b>Procedencia: </b><?php echo $data['procedencia']?></h4>
+                    <h3>Datos técnicos</h3>
+                    <hr>
+                    <h4><b>Categoría: </b><?php echo $data['categoria']?></h4>
+                    <h4><b>Número de camisola: </b><?php echo $data['camisola']?></h4>
                     <h4><b>Posición: </b><?php echo $data['descripcion']?></h4>
-<<<<<<< HEAD
-                    <?php
-                        if ($data['id_contrato'] == null) {
-                            echo '<h4><b>Tiene contrato: </b>No</h4>';
-                        }
-                        else
-                        {
-                            echo '<h4><b>Tiene contrato: </b>Si</h4>';
-                        }
-
-                    ?>
-=======
                     <h4><b>Fecha de inicio: </b><?php echo date("d/m/Y", strtotime($data['fecha_inicio']));?></h4>
                     <h4><b>Fecha final: </b><?php echo date("d/m/Y", strtotime($data['fecha_final']));?></h4>
->>>>>>> d1b68a1ca2f7b067fa81734d15762a2eaad761ba
                 </div>
                 <div class="col-md-3">
                     <ul class="nav flex-column">
