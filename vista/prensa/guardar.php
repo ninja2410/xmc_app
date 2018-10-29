@@ -1,14 +1,14 @@
 <?php
 
-require_once('..\..\Negocio/ClassArbitro.php');
+require_once('..\..\Negocio/ClassPrensa.php');
 require_once('..\..\Negocio/ClassBitacora.php');
 session_start();
 $bit=new Bitacora();
-$lesion=new Arbitro();
+$lesion=new Prensa();
 
-$arbitros = $_POST['arbitros'];
+$prensa = $_POST['prensas'];
 
-$array = $arbitros;
+$array = $prensa;
 
 $return_arr=array();
 
@@ -21,10 +21,10 @@ foreach ($array as $value)
     {
 
     $ca_producto=array(
-        "id_arb"=> $v['id_arb'],
+        "id_pre"=> $v['id_pre'],
         "id_par"=> $v['id_par']);
 
-       $lesion->asignar($v['id_arb'],$v['id_par']);
+       $lesion->asignar($v['id_par'],$v['id_pre']);
        $_SESSION['mensaje']="El registro se ha almacenado con éxito!";
 
         array_push($return_arr, $ca_producto);
@@ -32,7 +32,7 @@ foreach ($array as $value)
 
     }
 }
-$bit->insert('Asigno arbitros al partido '.$partido, $_SESSION['id']);
+$bit->insert('Asigno prensa al partido '.$partido, $_SESSION['id']);
 
 echo json_encode($return_arr);
 

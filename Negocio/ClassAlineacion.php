@@ -54,13 +54,6 @@ class Alineacion
 		return $dt;
     }
 
-    public function update($id,$par,$jugador,$pos)
-    {
-        $query="CALL SP_ALINEACION_UPDATE('$id','$par','$jugador','$pos');";
-        $bd= new conexion();
-		$dt=$bd->execute_query($query);
-		return $dt;
-    }
     public function delete($id)
     {
         $query="CALL SP_ALINEACION_DELETE($id);";

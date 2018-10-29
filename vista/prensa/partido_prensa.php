@@ -3,7 +3,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Aritro - Insertar</title>
+    <title>Prensa - Insertar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
@@ -14,13 +14,13 @@
   <script type="text/javascript">
   $(function() 
   {
-    $( "#autoArbitro" ).autocomplete(
+    $( "#autoprensa" ).autocomplete(
     {
-      source: 'searchArbitro.php',
+      source: 'searchprensa.php',
       minLength: 0,
       select: function(event, ui) 
       { 
-        $("#arbitro").val(ui.item.id);
+        $("#prensa").val(ui.item.id);
       },
     }).focus(function () {
         $(this).autocomplete('search', $(this).val())
@@ -28,30 +28,30 @@
   
   });
   </script>
-    <?php include '..\layoults\barnav.php'; ?>
+    <?php include '..\layoults\barnavLogged.php'; ?>
     <div class="content">
       <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-primary">
-            <h4 class="card-title">INGRESAR UNA NUEVA ALINEACIÓN</h4>
+            <h4 class="card-title">INGRESAR UNA NUEVA PRENSA</h4>
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
-            <form method="post"  id="frm_arbitros">
+            <form method="post"  id="frm_prensas">
               <input type="hidden" name="operation" value="1">
               <input type="hidden" name="partido" id="partido"  value="<?php echo $_GET['id'] ?>">
               <div class="row">
                 <div class="col-md-4">
                   <div class="form-group">
-                    <label class="">Arbitro</label>
-                    <input type="hidden" id="arbitro" name="arbitro">
-                    <input type="text" id="autoArbitro" class="form-control">
+                    <label class="">prensa</label>
+                    <input type="hidden" id="prensa" name="prensa">
+                    <input type="text" id="autoprensa" class="form-control">
                   </div>
                 </div>
                 <div class="col-md-2">
                   <div class="form-group">
                     <button onclick="submitForm()" type="button" class="btn btn-success pull-right btn-round"><i class="fas fa-check fa-lg"></i>Agregar</button>
-                    <a href="../arbitro?id=<?php echo $_GET['id']; ?>"> <button type="button" class="btn btn-info pull-right btn-round"><i class="fas fa-undo-alt fa-lg"></i> Regresar</button></a>
+                    <a href="../prensa?id=<?php echo $_GET['id']; ?>"> <button type="button" class="btn btn-info pull-right btn-round"><i class="fas fa-undo-alt fa-lg"></i> Regresar</button></a>
 
                   </div>
                 </div>
@@ -62,7 +62,7 @@
               </div>
             </form>
             <div class="container" id="guardar">
-            <h1>Arbitros</h1>
+            <h1>prensas</h1>
             <div class="content">
                 <div id="myDynamicTable">
                 </div>
@@ -82,22 +82,22 @@
     <script type="text/javascript">
 
 
-var arbitros = [ ];
+var prensas = [ ];
 document.getElementById('guardar').style.visibility = 'hidden';
 function submitForm(){
 
-    var arbitro = document.getElementById('arbitro').value;
+    var prensa = document.getElementById('prensa').value;
     var partido = document.getElementById('partido').value;   
-    var narbitro = document.getElementById('autoArbitro').value;
+    var nprensa = document.getElementById('autoprensa').value;
   
     
     
-    var arb =[{id_arb:arbitro,id_par:partido,name:narbitro}]
+    var arb =[{id_pre:prensa,id_par:partido,name:nprensa}]
     
-    arbitros.push(arb);
+    prensas.push(arb);
     
 
-    console.log(arbitros);
+    console.log(prensas);
 
     mostrarDatos();
 
@@ -117,12 +117,12 @@ function mostrarDatos()
     var tableBody = document.createElement('TBODY');
     table.appendChild(tableBody);
 
-for (var i = 0; i < arbitros.length; i++) {
+for (var i = 0; i < prensas.length; i++) {
   var tr = document.createElement('TR');
   tableBody.appendChild(tr);
 
     var td = document.createElement('TD');
-    td.appendChild(document.createTextNode(arbitros[i][0]['name']));
+    td.appendChild(document.createTextNode(prensas[i][0]['name']));
     tr.appendChild(td);
 
 
@@ -150,7 +150,7 @@ myTableDiv.appendChild(table);
 function eliminar(i) 
 {
   document.getElementById('guardar').style.visibility = 'hidden';
-    this.arbitros.splice(i,1);
+    this.prensas.splice(i,1);
 
     mostrarDatos();
     
@@ -158,7 +158,7 @@ function eliminar(i)
 
 function Guardar()
 {
-  if(arbitros.length>0)
+  if(prensas.length>0)
   {
   var pa=<?php echo $_GET['id']; ?>;
   var url = "guardar.php";
@@ -166,11 +166,11 @@ function Guardar()
            type: "POST",
            url: url,
            dataType: "json",
-           data: {"arbitros":arbitros},
+           data: {"prensas":prensas},
            success: function(data)
            {             
              console.log(data);
-             window.location.replace("http://localhost/PJ_XJMC/vista/arbitro/arbitros.php?id="+pa);
+             window.location.replace("http://localhost/PJ_XJMC/vista/prensa/prensa.php?id="+pa);
            },
            error: function(data) {
             console.log(data);
@@ -178,7 +178,7 @@ function Guardar()
       });
   }else
   {
-    alert("No se a asignado a ningun arbitro");
+    alert("No se a asignado a ningun prensa");
   }
 }
 

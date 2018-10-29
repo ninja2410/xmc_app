@@ -42,5 +42,24 @@ class Prensa
     $conexion->desconectar();
     return $dt;
   }
+
+  public function selectPrensa($id){
+    $conexion=new conexion();
+    $conexion->conectar();
+      $query="SELECT PP.id_partido,PP.id_prensa,CONCAT(PR.nombre,CONCAT(' ',PR.apellido )) as nombre, PR.telefono,PR.id_prensa,PR.empresa FROM ASIGNACION_PRENSA PP
+      INNER JOIN PRENSA PR ON PP.id_prensa = PR.id_prensa where PP.id_partido=$id";
+      $dt=mysqli_query($conexion->objetoconexion,$query);
+    $conexion->desconectar();
+    return $dt;
+  }
+
+  public function asignar($par,$pre)
+  {
+      $query="CALL SP_ASIGNACION_PRENSA_INSERT('$par','$pre');";
+      $bd= new conexion();
+      $dt=$bd->execute_query($query);
+  return $dt;
+  }
+
 }
  ?>
