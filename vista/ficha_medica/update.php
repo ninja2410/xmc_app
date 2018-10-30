@@ -56,8 +56,8 @@ $data=$fichamedica->select($_GET['id']);
                             <div class="form-group col-md-4">
                                 <label for="inputState">Jugador</label>
                                 <select class="form-control" name="jugador">
-                                    <option selected>Elija un jugador...</option>
                                     <?php
+                                        echo '<option selected value="'.$data['id_jugador'].'">'.$data['Nombre'].'</option>';
                                         include_once('..\..\Negocio/ClassJugador.php');
                                         $jugador=new Jugador();
                                         $data2=$jugador->select(-1);
@@ -74,18 +74,18 @@ $data=$fichamedica->select($_GET['id']);
 
                             <div class="form-group col-md-4">
                                 <label for="grasa">Grasa</label>
-                                <input type="number" class="form-control" name="grasa" value="<?php echo $data['grasa'] ?>">
+                                <input type="text" class="form-control" name="grasa" value="<?php echo $data['grasa'] ?>">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-4">
                                 <label for="peso">Peso</label>
-                                <input type="number" class="form-control" name="peso" value="<?php echo $data['peso'] ?>">
+                                <input type="text" class="form-control" name="peso" value="<?php echo $data['peso'] ?>">
                             </div>
 
                             <div class="form-group col-md-4">
                                 <label for="talla">Talla</label>
-                                <input type="number" class="form-control" name="talla" value="<?php echo $data['talla'] ?>">
+                                <input type="text" class="form-control" name="talla" value="<?php echo $data['talla'] ?>">
                             </div>
                         </div>
                     </div>
@@ -243,25 +243,35 @@ $data=$fichamedica->select($_GET['id']);
             },
 
             grasa:{
-                validators:{
-                    notEmpty:{
-                        message:'Ingrese la valor de grasa'
+            validators:{
+                notEmpty:{
+                    message:'Ingrese el valor de la grasa del jugador'
+                },
+                regexp:{
+                    regexp: /^[0-9\.]*$/,
+                    message: 'Solo se aceptan números'
                     }
                 }
             },
-
             peso:{
-                validators:{
-                    notEmpty:{
-                        message:'Ingrese la valor de peso'
+            validators:{
+                notEmpty:{
+                    message:'Ingrese el valor del peso del jugador'
+                },
+                regexp:{
+                    regexp: /^[0-9\.]*$/,
+                    message: 'Solo se aceptan números'
                     }
                 }
             },
-
             talla:{
-                validators:{
-                    notEmpty:{
-                        message:'Ingrese la valor de talla'
+            validators:{
+                notEmpty:{
+                    message:'Ingrese el valor de la talla del jugador'
+                },
+                regexp:{
+                    regexp: /^[0-9\.]*$/,
+                    message: 'Solo se aceptan números'
                     }
                 }
             },

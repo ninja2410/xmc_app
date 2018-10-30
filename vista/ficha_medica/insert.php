@@ -67,18 +67,18 @@
 
                             <div class="form-group col-md-4">
                                 <label for="grasa">Grasa</label>
-                                <input type="number" class="form-control" name="grasa" placeholder="Ingrese el porcentaje de grasa total">
+                                <input type="text" class="form-control" name="grasa" placeholder="Ingrese el porcentaje de grasa total">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-4">
                                 <label for="peso">Peso</label>
-                                <input type="number" class="form-control" name="peso" placeholder="Ingrese el peso en libras">
+                                <input type="text" class="form-control" name="peso" placeholder="Ingrese el peso en libras">
                             </div>
 
                             <div class="form-group col-md-4">
                                 <label for="talla">Talla</label>
-                                <input type="number" class="form-control" name="talla" placeholder="Ingrese la talla en centrimetros">
+                                <input type="text" class="form-control" name="talla" placeholder="Ingrese la talla en centimetros">
                             </div>
                         </div>
                     </div>
@@ -242,7 +242,7 @@ $(document).ready(function(){
                 message:'Ingrese el valor de la grasa del jugador'
             },
             regexp:{
-                regexp: /^[0-9]*$/,
+                regexp: /^[0-9\.]*$/,
                 message: 'Solo se aceptan números'
                 }
             }
@@ -253,7 +253,7 @@ $(document).ready(function(){
                 message:'Ingrese el valor del peso del jugador'
             },
             regexp:{
-                regexp: /^[0-9]*$/,
+                regexp: /^[0-9\.]*$/,
                 message: 'Solo se aceptan números'
                 }
             }
@@ -264,7 +264,7 @@ $(document).ready(function(){
                 message:'Ingrese el valor de la talla del jugador'
             },
             regexp:{
-                regexp: /^[0-9]*$/,
+                regexp: /^[0-9\.]*$/,
                 message: 'Solo se aceptan números'
                 }
             }
