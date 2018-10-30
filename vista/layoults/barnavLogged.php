@@ -102,7 +102,6 @@ foreach($permisos as $key => $value)
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="..\..\vista\jugador/index.php">Jugadores</a>
                 <a class="dropdown-item" href="..\..\vista\categoria/index.php">Categorías</a>
-                <a class="dropdown-item" href="..\..\vista\entrenador/index.php">Entrenadores</a>
               </div>
             </li>
             <?php
@@ -116,7 +115,7 @@ foreach($permisos as $key => $value)
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="..\..\vista\equipo/index.php">Equipos</a>
-                <a class="dropdown-item" href="..\..\vista\arbitro/index.php">Árbitros</a>
+                
                 <a class="dropdown-item" href="..\..\vista\estadio/index.php">Estadios</a>
                 <a class="dropdown-item" href="..\..\vista\estadisticaJugador/index.php">Estadísticas</a>
                 <a class="dropdown-item" href="..\..\vista\temporada/index.php">Temporadas</a>
@@ -137,6 +136,7 @@ foreach($permisos as $key => $value)
                 <a class="dropdown-item" href="..\..\vista\pagos/index.php">Pagos</a>
                 <a class="dropdown-item" href="..\..\vista\beneficio/index.php">Beneficios</a>
                 <a class="dropdown-item" href="..\..\vista\membresia/index.php">Membresías</a>
+                <a class="dropdown-item" href="..\..\vista\pagos/rpt_socios.php">Estado de pagos</a>
                 <a class="dropdown-item" href="..\..\vista\socio/index.php">Registro de socios</a>
               </div>
             </li>
@@ -182,6 +182,8 @@ foreach($permisos as $key => $value)
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="..\..\vista\prensa/index.php">Prensa</a>
+                <a class="dropdown-item" href="..\..\vista\arbitro/index.php">Árbitros</a>
+                <a class="dropdown-item" href="..\..\vista\entrenador/index.php">Entrenadores</a>
                 <a class="dropdown-item" href="..\..\vista\personaltecnico/index.php">Personal técnico</a>
               </div>
             </li>
