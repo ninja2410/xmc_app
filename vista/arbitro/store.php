@@ -38,16 +38,19 @@ if ($operacion=="1") {
   $bit->insert('Agrego un arbitro', $_SESSION['id']);
   $accion->insert($nombre,$tipo);
   $_SESSION['mensaje']="El arbitro se ha almacenado con éxito!";
+  header('Location:index.php');
 }
 elseif($operacion=="2") {
   $bit->insert('Actualizo la informacion del arbitro '.$id_arbitro, $_SESSION['id']);
   $_SESSION['mensaje']="El arbitro se ha actualizado con éxito!";
   $accion->update($id_arbitro, $nombre,$tipo);
+  header('Location:index.php');
 
 } elseif ($operacion=="3") {
   $bit->insert('Elimino a un arbitro', $_SESSION['id']);
   $_SESSION['mensaje']="El arbitro se ha eliminado con éxito!";
   $accion->delete($id_arbitro);
+  header('Location:index.php');
 }elseif ($operacion=="4") {
   $bit->insert('Elimino a un arbitro', $_SESSION['id']);
   $_SESSION['mensaje']="El arbitro se ha eliminado con éxito!";

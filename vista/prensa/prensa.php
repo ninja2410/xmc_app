@@ -83,8 +83,9 @@ $data=$prensa->selectPrensa($_GET['id']);
                             </div>
                             <div  style="float:left">
                               <form class="" action="..\..\vista\prensa/store.php" method="post">
-                                <input type="hidden" name="operation" value="3">
-                                <input type="hidden" name="id" value="<?php echo $row['id_prensa']; ?>">
+                                <input type="hidden" name="operation" value="5">
+                                <input type="hidden" name="partido" value="<?php echo $_GET['id'] ?>">
+                                <input type="hidden" name="id" value="<?php echo $row['id_asignacion_prensa']; ?>">
                                 <!-- Inicio de modal -->
                             <button type="button" data-toggle="modal" data-target="<?php echo '#Confirmacion'.$row['id_prensa']; ?>" rel="tooltip" title="Eliminar categoría" class="btn btn-danger btn-link btn-sm">
                                   <i class="material-icons">close</i>

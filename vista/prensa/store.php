@@ -24,6 +24,10 @@ if(isset($_POST['empresa'])){
     $empresa=$_POST['empresa'];
   }
 
+  if(isset($_POST['partido'])){
+    $partido=$_POST['partido'];
+  }
+
   if(isset($_POST['estado'])){
     $estado=$_POST['estado'];
   }
@@ -44,6 +48,11 @@ elseif($operacion=="2") {
 } elseif ($operacion=="3") {
   $accion->delete($id_prensa);
   $_SESSION['mensaje']="El reportero se ha eliminado con éxito!";
+}elseif ($operacion=="5") 
+{
+  $accion->desasignar($id_prensa);
+  $_SESSION['mensaje']="El reportero se ha eliminado con éxito!";
+  header('Location:prensa.php?id='.$partido);
 }
-header('Location:index.php');
+
 ?>
