@@ -17,10 +17,10 @@ $data=$temporada->select($_GET['id']);
     ?>
     <div class="main main-raised"> 
     <div class="content">
-      <div class="col-md-12">
-        <div class="card">
+      
+        <div class="card col-md-12">
           <div class="card-header card-header-danger">
-            <h4 class="card-title">Actualizar temporada</h4>
+            <h3 class="card-title">Actualizar temporada</h3>
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
@@ -54,7 +54,7 @@ $data=$temporada->select($_GET['id']);
             </form>
           </div>
         </div>
-      </div>
+      
     </div>
     </div>
     <?php include '..\layoults\footer.php'; ?>
