@@ -47,7 +47,7 @@ $data2=$contrato->select(-1);
                     <h4><b>Fecha de nacimiento: </b><?php echo date("d/m/Y", strtotime($data['fecha_nacimiento']));?></h4>
                     <h4><b>Teléfono: </b><?php echo $data['telefono']?></h4>
                     <h4><b>Dirección: </b><?php echo $data['direccion']?></h4>
-                    <h4><b>País natal: </b><?php echo $data['nacionalidad']?></h4>
+                    <h4><b>Nacionalidad: </b><?php echo $data['nacionalidad']?></h4>
                     <h3>Datos técnicos</h3>
                     <hr>
                     <h4><b>Categoría: </b><?php echo $data['CATEGORIA']?></h4>
