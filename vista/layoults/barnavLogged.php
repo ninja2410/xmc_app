@@ -117,7 +117,6 @@ foreach($permisos as $key => $value)
                 <a class="dropdown-item" href="..\..\vista\equipo/index.php">Equipos</a>
                 
                 <a class="dropdown-item" href="..\..\vista\estadio/index.php">Estadios</a>
-                <a class="dropdown-item" href="..\..\vista\estadisticaJugador/index.php">Estadísticas</a>
                 <a class="dropdown-item" href="..\..\vista\temporada/index.php">Temporadas</a>
                 <a class="dropdown-item" href="..\..\vista\alineacion/index.php">Alineaciones</a>
                 <a class="dropdown-item" href="..\..\vista\partido/index.php">Registro de Partidos</a>
