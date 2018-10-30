@@ -68,7 +68,7 @@ class Noticia
     $conexion=new conexion();
     $conexion->conectar();
     $query="SELECT N.id_noticia, N.titulo, N.contenido, N.fecha, N.id_usuario, CONCAT(U.nombre,' ',U.apellido) as Autor, IMG.path, IMG.nombre
-    FROM NOTICIA N, IMAGENES_NOTICIAS IMG, USUARIO U WHERE N.id_noticia=IMG.id_noticia AND N.id_usuario=U.id_usuario AND N.estado=1 AND N.id_noticia != (SELECT MAX(id_noticia) FROM NOTICIA);";
+    FROM NOTICIA N, IMAGENES_NOTICIAS IMG, USUARIO U WHERE N.id_noticia=IMG.id_noticia AND N.id_usuario=U.id_usuario AND N.estado=1 AND N.id_noticia != (SELECT MAX(id_noticia) FROM NOTICIA) ORDER BY N.id_noticia DESC;";
     $dt=mysqli_query($conexion->objetoconexion,$query);
     $conexion->desconectar();
     return $dt;

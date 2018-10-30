@@ -44,6 +44,7 @@ $data=$noticia->select(-1);
                       <th>Titulo</th>
                       <th>Fecha</th>
                       <th>Acciones</th>
+                      <th>Desactivar</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -62,22 +63,44 @@ $data=$noticia->select(-1);
                         </td>
                         <td>
                             <div class="row">
-                                <div class="col-md-4 text-center">
+                                <div class="col-md-6 text-center">
                                     <a href="..\..\vista\noticia/vernoticia.php?id=<?php echo $row['id_noticia']; ?>">
                                     <button class="btn btn-success btn-round btn-sm"><i class="far fa-eye fa-lg"></i> Ver noticia</button>
                                 </div>
-                                <div class="col-md-4 text-center">
+                                <div class="col-md-6 text-center">
                                     <a href="..\..\vista\noticia/updateNoticia.php?id=<?php echo $row['id_noticia']; ?>">
                                     <button class="btn btn-info btn-round btn-sm"><i class="far fa-edit fa-lg"></i> Editar noticia</button>
                                 </div>
-                                <div class="col-md-4 text-center">
-                                    <form class="" action="..\..\vista\jugador/store.php" method="post">
-                                        <input type="hidden" name="operation" value="3">
-                                        <input type="hidden" name="id" value="<?php echo $row['id_noticia']; ?>">
-                                        <button class="btn btn-danger btn-round btn-sm"><i class="material-icons">delete</i> Desactivar</button>
-                                    </form>
-                                </div>
                             </div>
+                        </td>
+                        <td>
+                          <form class="" action="..\..\vista\jugador/store.php" method="post">
+                              <input type="hidden" name="operation" value="3">
+                              <input type="hidden" name="id" value="<?php echo $row['id_noticia']; ?>">
+                              
+                              <!-- Inicio de modal -->
+                            <button type="button" data-toggle="modal" data-target="<?php echo '#Confirmacion'.$row['id_noticia']; ?>"  class="btn btn-danger btn-round btn-sm">
+                            <i class="material-icons">delete</i> Desactivar</button>
+                              </button>
+                              <!-- Modal -->
+                              <div class="modal fade" id="<?php echo 'Confirmacion'.$row['id_noticia']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"  data-backdrop="false">
+                                <div class="modal-dialog" role="document">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title" id="exampleModalLabel">Confirmación</h5>
+                                    </div>
+                                    <div class="modal-body">
+                                    ¿Está seguro que desea desactivar a este jugador?
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                      <button type="submit" class="btn btn-primary">Eliminar</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <!--  -->
+                          </form>  
                         </td>
                         <?php
                       } ?>

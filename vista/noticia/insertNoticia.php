@@ -18,7 +18,7 @@
                     <p class="category">Complete los campos siguientes</p>
                 </div>
                 <div class="card-body">
-                    <form method="post", action="..\noticia\store.php" enctype="multipart/form-data"> id="frm_noticia">
+                    <form method="post", action="..\noticia\store.php" enctype="multipart/form-data" id="frm_noticia">
                         <input type="hidden" name="operation" value="1">
                         <div>
                             <div class="form-row">

@@ -97,7 +97,7 @@ foreach($permisos as $key => $value)
             ?>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fas fa-users fa-2x"></i> Jugadores
+              <i class="fas fa-users fa-lg"></i> Jugadores
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="..\..\vista\jugador/index.php">Jugadores</a>
@@ -112,7 +112,7 @@ foreach($permisos as $key => $value)
             ?>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fas fa-futbol fa-2x"></i> Partidos
+              <i class="fas fa-futbol fa-lg"></i> Partidos
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="..\..\vista\equipo/index.php">Equipos</a>
@@ -131,7 +131,7 @@ foreach($permisos as $key => $value)
             ?>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fas fa-user-lock fa-2x"></i> Socios
+              <i class="fas fa-user-lock fa-lg"></i> Socios
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="..\..\vista\pagos/index.php">Pagos</a>
@@ -147,7 +147,7 @@ foreach($permisos as $key => $value)
             ?>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fas fa-briefcase-medical fa-2x"></i> Lesiones
+              <i class="fas fa-briefcase-medical fa-lg"></i> Lesiones
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="..\..\vista\medico/index.php">Médicos</a>
@@ -163,7 +163,7 @@ foreach($permisos as $key => $value)
             ?>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fas fa-file-alt fa-2x"></i> Documentos
+              <i class="fas fa-file-alt fa-lg"></i> Documentos
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="..\..\vista\contrato/index.php">Contratos</a>
@@ -178,7 +178,7 @@ foreach($permisos as $key => $value)
             ?>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fas fa-address-card fa-2x"></i> Personas
+              <i class="fas fa-address-card fa-lg"></i> Personas
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="..\..\vista\prensa/index.php">Prensa</a>
@@ -192,7 +192,7 @@ foreach($permisos as $key => $value)
             ?>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fas fa-user-circle fa-2x"></i> Administrador
+              <i class="fas fa-user-circle fa-lg"></i> Administrador
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="..\..\vista\bitacora/index.php">Bitácora</a>
