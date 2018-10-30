@@ -9,10 +9,10 @@
     <?php include '..\layoults\barnavLogged.php'; ?>
     <div class="main main-raised">
     <div class="content">
-      <div class="col-md-12">
-        <div class="card">
+      
+        <div class="card col-md-12">
           <div class="card-header card-header-danger">
-            <h4 class="card-title">INSERTAR ESTADIO</h4>
+            <h3 class="card-title">Insertar estadio</h3>
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
@@ -53,7 +53,7 @@
             </form>
           </div>
         </div>
-      </div>
+     
     </div>
     </div>
     <?php include '..\layoults\footer.php'; ?>
@@ -86,7 +86,7 @@
                         message:'Ingrese la dirección del estadio'
                     },
                     regexp:{
-                      regexp: /^[-a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ_\s]*$/, 
+                      regexp: /^[-a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ-_.\s]*$/, 
                         message: 'Solo se aceptan letras, números, espacios, guión y guión bajo'
                       }
                   }
@@ -109,7 +109,7 @@
                       message:'Ingrese el nombre de la ciudad'
                   },
                   regexp:{
-                    regexp: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]*$/,
+                    regexp: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ,\s]*$/,
                       message: 'Solo se aceptan letras'
                     }
                 }

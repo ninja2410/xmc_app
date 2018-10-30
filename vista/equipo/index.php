@@ -92,7 +92,7 @@ $data=$equipo->select(-1);
                             <input type="hidden" name="operation" value="3">
                             <input type="hidden" name="id" value="<?php echo $row['id_equipo']; ?>">
                             <!-- Inicio de modal -->
-                            <button type="button" data-toggle="modal" data-target="<?php echo '#Confirmacion'.$row['id_equipo']; ?>" rel="tooltip" title="Eliminar categoría" class="btn btn-danger btn-link btn-sm">
+                            <button type="button" data-toggle="modal" data-target="<?php echo '#Confirmacion'.$row['id_equipo']; ?>" rel="tooltip" title="Eliminar equipo" class="btn btn-danger btn-link btn-sm">
                                   <i class="material-icons">close</i>
                                 </button>
                                 <!-- Modal -->

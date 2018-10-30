@@ -85,7 +85,7 @@
                         message:'Ingrese el nombre de procedencia del equipo'
                     },
                     regexp:{
-                      regexp: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]*$/, 
+                      regexp: /^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ,\s]*$/, 
                         message: 'Solo se aceptan letras'
                       }
                   }

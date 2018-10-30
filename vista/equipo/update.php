@@ -43,7 +43,7 @@ $data=$equipo->select($_GET['id']);
 
               <div class="row">
                 <div class="col-md-4">
-                  <img src="..\imagenes\<?php echo $data['foto']; ?>" style="width: 200px; height: 150px;" alt="">
+                  <img src="..\imagenes\equipos\<?php echo $data['foto']; ?>" style="width: 200px; height: 150px;" alt="">
                   <br>
                   <label><b>Imagen actual</b></label>
                 </div>
@@ -96,7 +96,7 @@ $data=$equipo->select($_GET['id']);
                         message:'Ingrese el nombre de procedencia del equipo'
                     },
                     regexp:{
-                      regexp: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]*$/, 
+                      regexp: /^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ,\s]*$/, 
                         message: 'Solo se aceptan letras'
                       }
                   }

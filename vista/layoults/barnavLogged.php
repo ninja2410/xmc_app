@@ -166,7 +166,6 @@ foreach($permisos as $key => $value)
               <i class="fas fa-file-alt fa-lg"></i> Documentos
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="..\..\vista\contrato/index.php">Contratos</a>
                 <a class="dropdown-item" href="..\..\vista\documento_digital/index.php">Documentos digitales</a>
                 <a class="dropdown-item" href="..\..\vista\categoria_documentos/index.php">Categoría documentos</a>
               </div>

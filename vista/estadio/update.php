@@ -15,10 +15,10 @@ $data=$estadio->select($_GET['id']);
     <?php include '..\layoults\barnavLogged.php'; ?>
     <div class="main main-raised" >
     <div class="content">
-      <div class="col-md-12">
-        <div class="card">
+      
+        <div class="card col-md-12">
           <div class="card-header card-header-danger">
-            <h4 class="card-title">ACTUALIZAR ESTADIO</h4>
+            <h3 class="card-title">Actualizar estadio</h3>
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
@@ -61,7 +61,7 @@ $data=$estadio->select($_GET['id']);
             </form>
           </div>
         </div>
-      </div>
+    
     </div>
     </div>
     <?php include '..\layoults\footer.php'; ?>
@@ -104,7 +104,7 @@ $data=$estadio->select($_GET['id']);
                         message:'Ingrese una dirección'
                     },
                     regexp:{
-                      regexp: /^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ_-\s]*$/, 
+                      regexp: /^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ-_.\s]*$/, 
                         message: 'Solo se aceptan letras, números, espacios, guión y guión bajo'
                       }
                   }
