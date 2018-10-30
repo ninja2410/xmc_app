@@ -65,7 +65,7 @@
                         message:'Ingrese el nombre de la parte del cuerpo'
                     },
                     regexp:{
-                      regexp: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]*$/,
+                      regexp: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s\/]*$/,
                         message: 'Solo se aceptan letras'
                     }
                 }

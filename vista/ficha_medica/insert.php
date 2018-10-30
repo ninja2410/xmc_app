@@ -67,18 +67,18 @@
 
                             <div class="form-group col-md-4">
                                 <label for="grasa">Grasa</label>
-                                <input type="number" class="form-control" name="grasa">
+                                <input type="number" class="form-control" name="grasa" placeholder="Ingrese el porcentaje de grasa total">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-4">
                                 <label for="peso">Peso</label>
-                                <input type="number" class="form-control" name="peso">
+                                <input type="number" class="form-control" name="peso" placeholder="Ingrese el peso en libras">
                             </div>
 
                             <div class="form-group col-md-4">
                                 <label for="talla">Talla</label>
-                                <input type="number" class="form-control" name="talla">
+                                <input type="number" class="form-control" name="talla" placeholder="Ingrese la talla en centrimetros">
                             </div>
                         </div>
                     </div>
@@ -190,7 +190,7 @@
         for (var i = 0; i < inputs.length; i++) {
         datos10.push({"campo": inputs[i].name, "valor":inputs[i].value});
         }
-        $('#otra').val(JSON.stringify(datos10));
+        $('#subescapular').val(JSON.stringify(datos10));
     }
     function registrarValorPill11(id){
         datos11=[];
@@ -198,7 +198,7 @@
         for (var i = 0; i < inputs.length; i++) {
         datos11.push({"campo": inputs[i].name, "valor":inputs[i].value});
         }
-        $('#subescapular').val(JSON.stringify(datos11));
+        $('#supraespinal').val(JSON.stringify(datos11));
     }
     function registrarValorPill12(id){
         datos12=[];
@@ -206,7 +206,7 @@
         for (var i = 0; i < inputs.length; i++) {
         datos12.push({"campo": inputs[i].name, "valor":inputs[i].value});
         }
-        $('#supraespinal').val(JSON.stringify(datos12));
+        $('#abdominal').val(JSON.stringify(datos12));
     }
     function registrarValorPill13(id){
         datos13=[];
@@ -214,7 +214,7 @@
         for (var i = 0; i < inputs.length; i++) {
         datos13.push({"campo": inputs[i].name, "valor":inputs[i].value});
         }
-        $('#abdominal').val(JSON.stringify(datos13));
+        $('#otra').val(JSON.stringify(datos13));
     }
 </script>
     <!-- Fin script con funciones -->

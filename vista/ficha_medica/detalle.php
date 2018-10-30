@@ -163,6 +163,22 @@
             <div class="row text-left">
                 <?php include_once('..\..\Negocio/ClassCampo.php');
                 $campo=new Campo();
+                $data=$campo->listCampos(10);
+                while ($row = mysqli_fetch_array($data)){
+                ?>
+                <div class="col-md-4">
+                    <label for="peso"><?php echo $row['NOMBRE'] ?></label>
+                    <input type="text" class="form-control" onblur="registrarValorPill10(10)" name="<?php echo $row['CAMPO']; ?>">
+                </div>
+                <?php
+                }
+                ?>
+            </div>
+        </div>
+        <div class="tab-pane" id="pill11">
+            <div class="row text-left">
+                <?php include_once('..\..\Negocio/ClassCampo.php');
+                $campo=new Campo();
                 $data=$campo->listCampos(11);
                 while ($row = mysqli_fetch_array($data)){
                 ?>
@@ -175,7 +191,7 @@
                 ?>
             </div>
         </div>
-        <div class="tab-pane" id="pill11">
+        <div class="tab-pane" id="pill12">
             <div class="row text-left">
                 <?php include_once('..\..\Negocio/ClassCampo.php');
                 $campo=new Campo();
@@ -191,7 +207,7 @@
                 ?>
             </div>
         </div>
-        <div class="tab-pane" id="pill12">
+        <div class="tab-pane" id="pill13">
             <div class="row text-left">
                 <?php include_once('..\..\Negocio/ClassCampo.php');
                 $campo=new Campo();
@@ -201,22 +217,6 @@
                 <div class="col-md-4">
                     <label for="peso"><?php echo $row['NOMBRE'] ?></label>
                     <input type="text" class="form-control" onblur="registrarValorPill13(13)" name="<?php echo $row['CAMPO']; ?>">
-                </div>
-                <?php
-                }
-                ?>
-            </div>
-        </div>
-        <div class="tab-pane" id="pill13">
-            <div class="row text-left">
-                <?php include_once('..\..\Negocio/ClassCampo.php');
-                $campo=new Campo();
-                $data=$campo->listCampos(10);
-                while ($row = mysqli_fetch_array($data)){
-                ?>
-                <div class="col-md-4">
-                    <label for="peso"><?php echo $row['NOMBRE'] ?></label>
-                    <input type="text" class="form-control" onblur="registrarValorPill10(10)" name="<?php echo $row['CAMPO']; ?>">
                 </div>
                 <?php
                 }

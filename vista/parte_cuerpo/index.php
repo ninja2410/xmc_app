@@ -16,13 +16,19 @@ $data=$partecuerpo->select(-1);
     include '..\layoults\barnavLogged.php';
     ?>
     <div class="main main-raised">
-    <div class="content">
-            <div class="card col-md-12">
-      <div class="container-fluid">
-     
-              <div class="card-header card-header-danger">
-                  <h4 class="card-title">Partes del cuerpo</h4>
-                  <p class="category">Listado de partes del cuerpo</p>
+      <div class="content">
+        <div class="card col-md-12">
+          <div class="container-fluid">
+              <div class="card-header card-header-danger row">
+                <div class="col-md-10">
+                  <h3 class="card-title">Detalles de ficha medica</h3>
+                  <p class="category">Listado de examenes que se pueden incluir en ficha medica</p>
+                </div>
+                <div class="col-md-2 text-right">
+                    <a href="..\..\vista\parte_cuerpo/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar detalle">
+                    <i class="material-icons">add</i>
+                  </a>
+                </div>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
@@ -31,6 +37,7 @@ $data=$partecuerpo->select(-1);
                       <tr>
                         <th>ID</th>
                         <th>Nombre</th>
+                        <th>Acciones</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -44,15 +51,7 @@ $data=$partecuerpo->select(-1);
                           <td>
                             <?php echo $row['nombre']; ?>
                           </td>
-
                           <td class="td-actions text-lefht">
-                              <div style="float:left">
-                                <a href="..\..\vista\parte_cuerpo/insert.php">
-                                  <button type="button" rel="tooltip" title="Nueva parte" class="btn btn-primary btn-link btn-sm">
-                                    <i class="material-icons">add</i>
-                                  </button>
-                                </a>
-                              </div>
                               <div style="float:left">
                                 <a href="..\..\vista\parte_cuerpo/update.php?id=<?php echo $row['id_parte']; ?>">
                                   <button type="button" rel="tooltip" title="Editar parte" class="btn btn-primary btn-link btn-sm">

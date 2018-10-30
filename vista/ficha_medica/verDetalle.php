@@ -26,7 +26,7 @@ $data=$fichamedica->select($_GET['id']);
                             <h4><b>Porcentaje de grasa: </b><?php echo $data['grasa']?>%</h4>
                         </div>
                         <div class="col-md-4">
-                            <h4><b>Peso: </b><?php echo $data['peso']?> libras</h4>
+                            <h4><b>Peso: </b><?php echo $data['peso']?> libras / <?php echo number_format($data['peso']/2.205, 2, '.', ',')?> kilogramos</h4>
                         </div>
                         <div class="col-md-4">
                             <h4><b>Talla: </b><?php echo $data['talla']?> centímetros</h4>
@@ -53,198 +53,276 @@ $data=$fichamedica->select($_GET['id']);
             <hr>
             <div class="row">
                 <div class="col-md-6 text-center">
-                    <h4 class="title">Signos vitales</h4>
-                    <?php include_once('..\..\Negocio/ClassCampo.php');
-                        $campo=new Campo();
-                        $data2=$campo->listCamposEdit(1,$data['id_ficha']);
-                        while ($row = mysqli_fetch_array($data2)){
-                        ?>
-                        <div class="form-group col-md-4">
-                            <h5><b><?php echo $row['NOMBRE'] ?>: </b><?php echo $row['VALOR'];?></h5>
+                    <div class="card">
+                        <div class="card-header card-header-danger">
+                            <h4 class="card-title">Signos vitales</h4>
                         </div>
-                    <?php
-                        }
-                    ?>
+                        <div class="row">
+                        <?php include_once('..\..\Negocio/ClassCampo.php');
+                            $campo=new Campo();
+                            $data2=$campo->listCamposEdit(1,$data['id_ficha']);
+                            while ($row = mysqli_fetch_array($data2)){
+                            ?>
+                            <div class="form-group col-md-4">
+                                <h5><b><?php echo $row['NOMBRE'] ?>: </b><?php echo $row['VALOR'];?></h5>
+                            </div>
+                        <?php
+                            }
+                        ?>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-6 text-center">
-                    <h4 class="title">Criometría/Antropometría</h4>
-                    <?php include_once('..\..\Negocio/ClassCampo.php');
-                        $campo=new Campo();
-                        $data2=$campo->listCamposEdit(2,$data['id_ficha']);
-                        while ($row = mysqli_fetch_array($data2)){
-                        ?>
-                        <div class="form-group col-md-4">
-                            <h5><b><?php echo $row['NOMBRE'] ?>: </b><?php echo $row['VALOR'];?></h5>
+                    <div class="card">
+                        <div class="card-header card-header-danger">
+                            <h4 class="card-title">Criometría/Antropometría</h4>
                         </div>
-                    <?php
-                        }
-                    ?>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 text-center">
-                    <h4 class="title">Evaluación de rodilla</h4>
-                    <?php include_once('..\..\Negocio/ClassCampo.php');
-                        $campo=new Campo();
-                        $data2=$campo->listCamposEdit(3,$data['id_ficha']);
-                        while ($row = mysqli_fetch_array($data2)){
+                        <div class="row">
+                        <?php include_once('..\..\Negocio/ClassCampo.php');
+                            $campo=new Campo();
+                            $data2=$campo->listCamposEdit(2,$data['id_ficha']);
+                            while ($row = mysqli_fetch_array($data2)){
+                            ?>
+                            <div class="form-group col-md-4">
+                                <h5><b><?php echo $row['NOMBRE'] ?>: </b><?php echo $row['VALOR'];?></h5>
+                            </div>
+                        <?php
+                            }
                         ?>
-                        <div class="form-group col-md-4">
-                            <h5><b><?php echo $row['NOMBRE'] ?>: </b><?php echo $row['VALOR'];?></h5>
                         </div>
-                    <?php
-                        }
-                    ?>
-                </div>
-                <div class="col-md-6 text-center">
-                    <h4 class="title">Evaluación de tobillo</h4>
-                    <?php include_once('..\..\Negocio/ClassCampo.php');
-                        $campo=new Campo();
-                        $data2=$campo->listCamposEdit(4,$data['id_ficha']);
-                        while ($row = mysqli_fetch_array($data2)){
-                        ?>
-                        <div class="form-group col-md-4">
-                            <h5><b><?php echo $row['NOMBRE'] ?>: </b><?php echo $row['VALOR'];?></h5>
-                        </div>
-                    <?php
-                        }
-                    ?>
+                    </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6 text-center">
-                    <h4 class="title">Meniscos</h4>
-                    <?php include_once('..\..\Negocio/ClassCampo.php');
-                        $campo=new Campo();
-                        $data2=$campo->listCamposEdit(5,$data['id_ficha']);
-                        while ($row = mysqli_fetch_array($data2)){
-                        ?>
-                        <div class="form-group col-md-4">
-                            <h5><b><?php echo $row['NOMBRE'] ?>: </b><?php echo $row['VALOR'];?></h5>
+                    <div class="card">
+                        <div class="card-header card-header-danger">
+                            <h4 class="card-title">Evaluación de rodilla</h4>
                         </div>
-                    <?php
-                        }
-                    ?>
+                        <div class="row">
+                        <?php include_once('..\..\Negocio/ClassCampo.php');
+                            $campo=new Campo();
+                            $data2=$campo->listCamposEdit(3,$data['id_ficha']);
+                            while ($row = mysqli_fetch_array($data2)){
+                            ?>
+                            <div class="form-group col-md-4">
+                                <h5><b><?php echo $row['NOMBRE'] ?>: </b><?php echo $row['VALOR'];?></h5>
+                            </div>
+                        <?php
+                            }
+                        ?>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-6 text-center">
-                    <h4 class="title">Músculos</h4>
-                    <?php include_once('..\..\Negocio/ClassCampo.php');
-                        $campo=new Campo();
-                        $data2=$campo->listCamposEdit(6,$data['id_ficha']);
-                        while ($row = mysqli_fetch_array($data2)){
-                        ?>
-                        <div class="form-group col-md-4">
-                            <h5><b><?php echo $row['NOMBRE'] ?>: </b><?php echo $row['VALOR'];?></h5>
+                    <div class="card">
+                        <div class="card-header card-header-danger">
+                            <h4 class="card-title">Evaluación de tobillo</h4>
                         </div>
-                    <?php
-                        }
-                    ?>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 text-center">
-                    <h4 class="title">Alineamiento postular</h4>
-                    <?php include_once('..\..\Negocio/ClassCampo.php');
-                        $campo=new Campo();
-                        $data2=$campo->listCamposEdit(7,$data['id_ficha']);
-                        while ($row = mysqli_fetch_array($data2)){
+                        <div class="row">
+                        <?php include_once('..\..\Negocio/ClassCampo.php');
+                            $campo=new Campo();
+                            $data2=$campo->listCamposEdit(4,$data['id_ficha']);
+                            while ($row = mysqli_fetch_array($data2)){
+                            ?>
+                            <div class="form-group col-md-4">
+                                <h5><b><?php echo $row['NOMBRE'] ?>: </b><?php echo $row['VALOR'];?></h5>
+                            </div>
+                        <?php
+                            }
                         ?>
-                        <div class="form-group col-md-4">
-                            <h5><b><?php echo $row['NOMBRE'] ?>: </b><?php echo $row['VALOR'];?></h5>
                         </div>
-                    <?php
-                        }
-                    ?>
-                </div>
-                <div class="col-md-6 text-center">
-                    <h4 class="title">Cuello</h4>
-                    <?php include_once('..\..\Negocio/ClassCampo.php');
-                        $campo=new Campo();
-                        $data2=$campo->listCamposEdit(8,$data['id_ficha']);
-                        while ($row = mysqli_fetch_array($data2)){
-                        ?>
-                        <div class="form-group col-md-4">
-                            <h5><b><?php echo $row['NOMBRE'] ?>: </b><?php echo $row['VALOR'];?></h5>
-                        </div>
-                    <?php
-                        }
-                    ?>
+                    </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6 text-center">
-                    <h4 class="title">Pecho</h4>
-                    <?php include_once('..\..\Negocio/ClassCampo.php');
-                        $campo=new Campo();
-                        $data2=$campo->listCamposEdit(9,$data['id_ficha']);
-                        while ($row = mysqli_fetch_array($data2)){
-                        ?>
-                        <div class="form-group col-md-4">
-                            <h5><b><?php echo $row['NOMBRE'] ?>: </b><?php echo $row['VALOR'];?></h5>
+                    <div class="card">
+                        <div class="card-header card-header-danger">
+                            <h4 class="card-title">Meniscos</h4>
                         </div>
-                    <?php
-                        }
-                    ?>
+                        <div class="row">
+                        <?php include_once('..\..\Negocio/ClassCampo.php');
+                            $campo=new Campo();
+                            $data2=$campo->listCamposEdit(5,$data['id_ficha']);
+                            while ($row = mysqli_fetch_array($data2)){
+                            ?>
+                            <div class="form-group col-md-4">
+                                <h5><b><?php echo $row['NOMBRE'] ?>: </b><?php echo $row['VALOR'];?></h5>
+                            </div>
+                        <?php
+                            }
+                        ?>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-6 text-center">
-                    <h4 class="title">Subescapular</h4>
-                    <?php include_once('..\..\Negocio/ClassCampo.php');
-                        $campo=new Campo();
-                        $data2=$campo->listCamposEdit(11,$data['id_ficha']);
-                        while ($row = mysqli_fetch_array($data2)){
-                        ?>
-                        <div class="form-group col-md-4">
-                            <h5><b><?php echo $row['NOMBRE'] ?>: </b><?php echo $row['VALOR'];?></h5>
+                    <div class="card">
+                        <div class="card-header card-header-danger">
+                            <h4 class="card-title">Músculos</h4>
                         </div>
-                    <?php
-                        }
-                    ?>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 text-center">
-                    <h4 class="title">Supraespinal</h4>
-                    <?php include_once('..\..\Negocio/ClassCampo.php');
-                        $campo=new Campo();
-                        $data2=$campo->listCamposEdit(12,$data['id_ficha']);
-                        while ($row = mysqli_fetch_array($data2)){
+                        <div class="row">
+                        <?php include_once('..\..\Negocio/ClassCampo.php');
+                            $campo=new Campo();
+                            $data2=$campo->listCamposEdit(6,$data['id_ficha']);
+                            while ($row = mysqli_fetch_array($data2)){
+                            ?>
+                            <div class="form-group col-md-4">
+                                <h5><b><?php echo $row['NOMBRE'] ?>: </b><?php echo $row['VALOR'];?></h5>
+                            </div>
+                        <?php
+                            }
                         ?>
-                        <div class="form-group col-md-4">
-                            <h5><b><?php echo $row['NOMBRE'] ?>: </b><?php echo $row['VALOR'];?></h5>
                         </div>
-                    <?php
-                        }
-                    ?>
-                </div>
-                <div class="col-md-6 text-center">
-                    <h4 class="title">Abdominal</h4>
-                    <?php include_once('..\..\Negocio/ClassCampo.php');
-                        $campo=new Campo();
-                        $data2=$campo->listCamposEdit(13,$data['id_ficha']);
-                        while ($row = mysqli_fetch_array($data2)){
-                        ?>
-                        <div class="form-group col-md-4">
-                            <h5><b><?php echo $row['NOMBRE'] ?>: </b><?php echo $row['VALOR'];?></h5>
-                        </div>
-                    <?php
-                        }
-                    ?>
+                    </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6 text-center">
-                    <h4 class="title">Otra</h4>
-                    <?php include_once('..\..\Negocio/ClassCampo.php');
-                        $campo=new Campo();
-                        $data2=$campo->listCamposEdit(10,$data['id_ficha']);
-                        while ($row = mysqli_fetch_array($data2)){
-                        ?>
-                        <div class="form-group col-md-4">
-                            <h5><b><?php echo $row['NOMBRE'] ?>: </b><?php echo $row['VALOR'];?></h5>
+                    <div class="card">
+                        <div class="card-header card-header-danger">
+                            <h4 class="card-title">Alineamiento postular</h4>
                         </div>
-                    <?php
-                        }
-                    ?>
+                        <div class="row">
+                        <?php include_once('..\..\Negocio/ClassCampo.php');
+                            $campo=new Campo();
+                            $data2=$campo->listCamposEdit(7,$data['id_ficha']);
+                            while ($row = mysqli_fetch_array($data2)){
+                            ?>
+                            <div class="form-group col-md-4">
+                                <h5><b><?php echo $row['NOMBRE'] ?>: </b><?php echo $row['VALOR'];?></h5>
+                            </div>
+                        <?php
+                            }
+                        ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center">
+                    <div class="card">
+                        <div class="card-header card-header-danger">
+                            <h4 class="card-title">Cuello</h4>
+                        </div>
+                        <div class="row">
+                        <?php include_once('..\..\Negocio/ClassCampo.php');
+                            $campo=new Campo();
+                            $data2=$campo->listCamposEdit(8,$data['id_ficha']);
+                            while ($row = mysqli_fetch_array($data2)){
+                            ?>
+                            <div class="form-group col-md-4">
+                                <h5><b><?php echo $row['NOMBRE'] ?>: </b><?php echo $row['VALOR'];?></h5>
+                            </div>
+                        <?php
+                            }
+                        ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 text-center">
+                    <div class="card">
+                        <div class="card-header card-header-danger">
+                            <h4 class="card-title">Pecho</h4>
+                        </div>
+                        <div class="row">
+                        <?php include_once('..\..\Negocio/ClassCampo.php');
+                            $campo=new Campo();
+                            $data2=$campo->listCamposEdit(9,$data['id_ficha']);
+                            while ($row = mysqli_fetch_array($data2)){
+                            ?>
+                            <div class="form-group col-md-4">
+                                <h5><b><?php echo $row['NOMBRE'] ?>: </b><?php echo $row['VALOR'];?></h5>
+                            </div>
+                        <?php
+                            }
+                        ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center">
+                    <div class="card">
+                        <div class="card-header card-header-danger">
+                            <h4 class="card-title">Subescapular</h4>
+                        </div>
+                        <div class="row">
+                        <?php include_once('..\..\Negocio/ClassCampo.php');
+                            $campo=new Campo();
+                            $data2=$campo->listCamposEdit(10,$data['id_ficha']);
+                            while ($row = mysqli_fetch_array($data2)){
+                            ?>
+                            <div class="form-group col-md-4">
+                                <h5><b><?php echo $row['NOMBRE'] ?>: </b><?php echo $row['VALOR'];?></h5>
+                            </div>
+                        <?php
+                            }
+                        ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 text-center">
+                    <div class="card">
+                        <div class="card-header card-header-danger">
+                            <h4 class="card-title">Supraespinal</h4>
+                        </div>
+                        <div class="row">
+                        <?php include_once('..\..\Negocio/ClassCampo.php');
+                            $campo=new Campo();
+                            $data2=$campo->listCamposEdit(11,$data['id_ficha']);
+                            while ($row = mysqli_fetch_array($data2)){
+                            ?>
+                            <div class="form-group col-md-4">
+                                <h5><b><?php echo $row['NOMBRE'] ?>: </b><?php echo $row['VALOR'];?></h5>
+                            </div>
+                        <?php
+                            }
+                        ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center">
+                    <div class="card">
+                        <div class="card-header card-header-danger">
+                            <h4 class="card-title">Abdominal</h4>
+                        </div>
+                        <div class="row">
+                        <?php include_once('..\..\Negocio/ClassCampo.php');
+                            $campo=new Campo();
+                            $data2=$campo->listCamposEdit(12,$data['id_ficha']);
+                            while ($row = mysqli_fetch_array($data2)){
+                            ?>
+                            <div class="form-group col-md-4">
+                                <h5><b><?php echo $row['NOMBRE'] ?>: </b><?php echo $row['VALOR'];?></h5>
+                            </div>
+                        <?php
+                            }
+                        ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 text-center">
+                    <div class="card">
+                        <div class="card-header card-header-danger">
+                            <h4 class="card-title">Otra</h4>
+                        </div>
+                        <div class="row">
+                        <?php include_once('..\..\Negocio/ClassCampo.php');
+                            $campo=new Campo();
+                            $data2=$campo->listCamposEdit(13,$data['id_ficha']);
+                            while ($row = mysqli_fetch_array($data2)){
+                            ?>
+                            <div class="form-group col-md-4">
+                                <h5><b><?php echo $row['NOMBRE'] ?>: </b><?php echo $row['VALOR'];?></h5>
+                            </div>
+                        <?php
+                            }
+                        ?>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

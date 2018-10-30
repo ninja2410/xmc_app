@@ -43,7 +43,8 @@ $data=$noticia->select(-1);
                       <th>ID</th>
                       <th>Titulo</th>
                       <th>Fecha</th>
-                      <th>Acciones</th>
+                      <th>Ver noticia</th>
+                      <th>Editar</th>
                       <th>Desactivar</th>
                     </tr>
                   </thead>
@@ -62,16 +63,12 @@ $data=$noticia->select(-1);
                           <?php echo $row['fecha'];?>
                         </td>
                         <td>
-                            <div class="row">
-                                <div class="col-md-6 text-center">
-                                    <a href="..\..\vista\noticia/vernoticia.php?id=<?php echo $row['id_noticia']; ?>">
-                                    <button class="btn btn-success btn-round btn-sm"><i class="far fa-eye fa-lg"></i> Ver noticia</button>
-                                </div>
-                                <div class="col-md-6 text-center">
-                                    <a href="..\..\vista\noticia/updateNoticia.php?id=<?php echo $row['id_noticia']; ?>">
-                                    <button class="btn btn-info btn-round btn-sm"><i class="far fa-edit fa-lg"></i> Editar noticia</button>
-                                </div>
-                            </div>
+                          <a href="..\..\vista\noticia/vernoticia.php?id=<?php echo $row['id_noticia']; ?>">
+                          <button class="btn btn-success btn-round btn-sm"><i class="far fa-eye fa-lg"></i> Ver noticia</button>
+                        </td>
+                        <td>
+                          <a href="..\..\vista\noticia/updateNoticia.php?id=<?php echo $row['id_noticia']; ?>">
+                          <button class="btn btn-info btn-round btn-sm"><i class="far fa-edit fa-lg"></i> Editar noticia</button>
                         </td>
                         <td>
                           <form class="" action="..\..\vista\jugador/store.php" method="post">

@@ -196,7 +196,7 @@ $data=$fichamedica->select($_GET['id']);
             for (var i = 0; i < inputs.length; i++) {
             datos10.push({"campo": inputs[i].name, "valor":inputs[i].value, "ID":inputs[i].id});
             }
-            $('#otra').val(JSON.stringify(datos10));
+            $('#subescapular').val(JSON.stringify(datos10));
         }
         function registrarValorPill11(id){
             datos11=[];
@@ -204,7 +204,7 @@ $data=$fichamedica->select($_GET['id']);
             for (var i = 0; i < inputs.length; i++) {
             datos11.push({"campo": inputs[i].name, "valor":inputs[i].value, "ID":inputs[i].id});
             }
-            $('#subescapular').val(JSON.stringify(datos11));
+            $('#supraespinal').val(JSON.stringify(datos11));
         }
         function registrarValorPill12(id){
             datos12=[];
@@ -212,7 +212,7 @@ $data=$fichamedica->select($_GET['id']);
             for (var i = 0; i < inputs.length; i++) {
             datos12.push({"campo": inputs[i].name, "valor":inputs[i].value, "ID":inputs[i].id});
             }
-            $('#supraespinal').val(JSON.stringify(datos12));
+            $('#abdominal').val(JSON.stringify(datos12));
         }
         function registrarValorPill13(id){
             datos13=[];
@@ -220,7 +220,7 @@ $data=$fichamedica->select($_GET['id']);
             for (var i = 0; i < inputs.length; i++) {
             datos13.push({"campo": inputs[i].name, "valor":inputs[i].value, "ID":inputs[i].id});
             }
-            $('#abdominal').val(JSON.stringify(datos13));
+            $('#otra').val(JSON.stringify(datos13));
         }
     </script>
 

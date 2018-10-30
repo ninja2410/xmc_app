@@ -56,7 +56,7 @@
                 ?>
                 <div class="col-md-4">
                     <label for="peso"><?php echo $row['NOMBRE'] ?></label>
-                    <input type="text" class="form-control" onblur="registrarValorPill3(3)" name="<?php echo $row['CAMPO']; ?>">
+                    <input type="text" class="form-control" value="<?php echo $row['VALOR'];?>"  onblur="registrarValorPill3(3)" id="<?php echo $row['ID']; ?>" name="<?php echo $row['CAMPO']; ?>">
                 </div>
                 <?php
                 }
@@ -72,7 +72,7 @@
                 ?>
                 <div class="col-md-4">
                     <label for="peso"><?php echo $row['NOMBRE'] ?></label>
-                    <input type="text" class="form-control" onblur="registrarValorPill4(4)" name="<?php echo $row['CAMPO']; ?>">
+                    <input type="text" class="form-control" value="<?php echo $row['VALOR'];?>"  onblur="registrarValorPill4(4)" id="<?php echo $row['ID']; ?>" name="<?php echo $row['CAMPO']; ?>">
                 </div>
                 <?php
                 }
@@ -88,7 +88,7 @@
                 ?>
                 <div class="col-md-4">
                     <label for="peso"><?php echo $row['NOMBRE'] ?></label>
-                    <input type="text" class="form-control" onblur="registrarValorPill5(5)" name="<?php echo $row['CAMPO']; ?>">
+                    <input type="text" class="form-control" value="<?php echo $row['VALOR'];?>"  onblur="registrarValorPill5(5)" id="<?php echo $row['ID']; ?>" name="<?php echo $row['CAMPO']; ?>">
                 </div>
                 <?php
                 }
@@ -104,7 +104,7 @@
                 ?>
                 <div class="col-md-4">
                     <label for="peso"><?php echo $row['NOMBRE'] ?></label>
-                    <input type="text" class="form-control" onblur="registrarValorPill6(6)" name="<?php echo $row['CAMPO']; ?>">
+                    <input type="text" class="form-control" value="<?php echo $row['VALOR'];?>"  onblur="registrarValorPill6(6)" id="<?php echo $row['ID']; ?>" name="<?php echo $row['CAMPO']; ?>">
                 </div>
                 <?php
                 }
@@ -120,7 +120,7 @@
                 ?>
                 <div class="col-md-4">
                     <label for="peso"><?php echo $row['NOMBRE'] ?></label>
-                    <input type="text" class="form-control" onblur="registrarValorPill7(7)" name="<?php echo $row['CAMPO']; ?>">
+                    <input type="text" class="form-control" value="<?php echo $row['VALOR'];?>"  onblur="registrarValorPill7(7)" id="<?php echo $row['ID']; ?>" name="<?php echo $row['CAMPO']; ?>">
                 </div>
                 <?php
                 }
@@ -136,7 +136,7 @@
                 ?>
                 <div class="col-md-4">
                     <label for="peso"><?php echo $row['NOMBRE'] ?></label>
-                    <input type="text" class="form-control" onblur="registrarValorPill8(8)" name="<?php echo $row['CAMPO']; ?>">
+                    <input type="text" class="form-control" value="<?php echo $row['VALOR'];?>"  onblur="registrarValorPill8(8)" id="<?php echo $row['ID']; ?>" name="<?php echo $row['CAMPO']; ?>">
                 </div>
                 <?php
                 }
@@ -152,7 +152,7 @@
                 ?>
                 <div class="col-md-4">
                     <label for="peso"><?php echo $row['NOMBRE'] ?></label>
-                    <input type="text" class="form-control" onblur="registrarValorPill9(9)" name="<?php echo $row['CAMPO']; ?>">
+                    <input type="text" class="form-control" value="<?php echo $row['VALOR'];?>"  onblur="registrarValorPill9(9)" id="<?php echo $row['ID']; ?>" name="<?php echo $row['CAMPO']; ?>">
                 </div>
                 <?php
                 }
@@ -163,12 +163,12 @@
             <div class="row text-left">
                 <?php include_once('..\..\Negocio/ClassCampo.php');
                 $campo=new Campo();
-                $data2=$campo->listCamposEdit(11,$data['id_ficha']);
+                $data2=$campo->listCamposEdit(10,$data['id_ficha']);
                 while ($row = mysqli_fetch_array($data2)){
                 ?>
                 <div class="col-md-4">
                     <label for="peso"><?php echo $row['NOMBRE'] ?></label>
-                    <input type="text" class="form-control" onblur="registrarValorPill11(11)" name="<?php echo $row['CAMPO']; ?>">
+                    <input type="text" class="form-control" value="<?php echo $row['VALOR'];?>"  onblur="registrarValorPill10(10)" id="<?php echo $row['ID']; ?>" name="<?php echo $row['CAMPO']; ?>">
                 </div>
                 <?php
                 }
@@ -179,12 +179,12 @@
             <div class="row text-left">
                 <?php include_once('..\..\Negocio/ClassCampo.php');
                 $campo=new Campo();
-                $data2=$campo->listCamposEdit(12,$data['id_ficha']);
+                $data2=$campo->listCamposEdit(11,$data['id_ficha']);
                 while ($row = mysqli_fetch_array($data2)){
                 ?>
                 <div class="col-md-4">
                     <label for="peso"><?php echo $row['NOMBRE'] ?></label>
-                    <input type="text" class="form-control" onblur="registrarValorPill12(12)" name="<?php echo $row['CAMPO']; ?>">
+                    <input type="text" class="form-control" value="<?php echo $row['VALOR'];?>"  onblur="registrarValorPill11(11)" id="<?php echo $row['ID']; ?>" name="<?php echo $row['CAMPO']; ?>">
                 </div>
                 <?php
                 }
@@ -195,12 +195,12 @@
             <div class="row text-left">
                 <?php include_once('..\..\Negocio/ClassCampo.php');
                 $campo=new Campo();
-                $data2=$campo->listCamposEdit(13,$data['id_ficha']);
+                $data2=$campo->listCamposEdit(12,$data['id_ficha']);
                 while ($row = mysqli_fetch_array($data2)){
                 ?>
                 <div class="col-md-4">
                     <label for="peso"><?php echo $row['NOMBRE'] ?></label>
-                    <input type="text" class="form-control" onblur="registrarValorPill13(13)" name="<?php echo $row['CAMPO']; ?>">
+                    <input type="text" class="form-control" value="<?php echo $row['VALOR'];?>"  onblur="registrarValorPill12(12)" id="<?php echo $row['ID']; ?>" name="<?php echo $row['CAMPO']; ?>">
                 </div>
                 <?php
                 }
@@ -211,12 +211,12 @@
             <div class="row text-left">
                 <?php include_once('..\..\Negocio/ClassCampo.php');
                 $campo=new Campo();
-                $data2=$campo->listCamposEdit(10,$data['id_ficha']);
+                $data2=$campo->listCamposEdit(13,$data['id_ficha']);
                 while ($row = mysqli_fetch_array($data2)){
                 ?>
                 <div class="col-md-4">
                     <label for="peso"><?php echo $row['NOMBRE'] ?></label>
-                    <input type="text" class="form-control" onblur="registrarValorPill10(10)" name="<?php echo $row['CAMPO']; ?>">
+                    <input type="text" class="form-control" value="<?php echo $row['VALOR'];?>"  onblur="registrarValorPill13(13)" id="<?php echo $row['ID']; ?>" name="<?php echo $row['CAMPO']; ?>">
                 </div>
                 <?php
                 }
