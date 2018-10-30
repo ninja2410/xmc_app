@@ -86,8 +86,8 @@ $bit->insert('Se agrego un nuevo entrenador', $_SESSION['id']);
 $id_entrenador2=$accion->correlativo();
   $name=$_FILES['img']['name'];
   $foto='ENTRENADOR_'.$accion->correlativo().substr($name,-4);
-  move_uploaded_file($_FILES['img']['tmp_name'],'..\imagenes/'.$foto);
-  chmod('..\imagenes/'.$foto,0644);
+  move_uploaded_file($_FILES['img']['tmp_name'],'..\imagenes/entrenadores/'.$foto);
+  chmod('..\imagenes/entrenadores/'.$foto,0644);
   $accion->insert($nombre, $apellido, $fecha_nacimiento, $fecha_inicio, $fecha_fin, $telefono,
   $direccion,$foto,$nacionalidad);
   $asignacion->insert($id_categoria,$id_entrenador2);
@@ -97,8 +97,8 @@ elseif($operacion=="2") {
   $bit->insert('Modifico un entrenador', $_SESSION['id']);
   $name=$_FILES['img']['name'];
   $tmp='ENTRENADOR_'.$accion->correlativo().substr($name,-4);
-  move_uploaded_file($_FILES['img']['tmp_name'],'..\imagenes/'.$tmp);
-  chmod('..\imagenes/'.$tmp,0644);
+  move_uploaded_file($_FILES['img']['tmp_name'],'..\imagenes/entrenadores/'.$tmp);
+  chmod('..\imagenes/entrenadores/'.$tmp,0644);
   $foto=$_FILES['img']['name'];
   if ($foto=='') {
     $foto=$_POST['foto'];

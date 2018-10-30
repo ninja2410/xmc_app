@@ -20,29 +20,24 @@ $data=$documento->select(-1);
     } ?>">
     <div class="main main-raised">
       <div class="content">
+              <div class="card col-md-12">
         <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="card">
-                <div class="card-header card-header-primary">
-                  <div class="col-lg-10" style="float:left;">
-                    <h4 class="card-title ">Documentos digitales</h4>
+          
+                <div class="card-header card-header-danger row">
+                <div class="col-md-11">
+                    <h3 class="card-title ">Documentos digitales</h3>
                     <p class="card-category"> Listado de documentos almacenados en el sistema</p>
                   </div>
-                  <div class="col-lg-1" style="float:left">
-                    <a href="..\..\vista\documento_digital/insert.php">
-                      <div class="card-header card-header-success card-header-icon" style="float:left">
-                        <div class="card-icon">
-                          <i class="material-icons">add</i>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
+                  <div class="col-md-1 text-right">
+                <a href="..\..\vista\documento_digital/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar documento">
+                    <i class="material-icons">add</i>
+                  </a>
+                </div>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
-                    <table class="table" id="mytable">
-                      <thead class=" text-primary">
+                    <table class="table table-hover" id="mytable">
+                      <thead>
                         <th>
                           ID
                         </th>
@@ -85,8 +80,8 @@ $data=$documento->select(-1);
                           <td class="td-actions text-lefht">
                               <div style="float:left">
                                 <a href="..\..\vista\documento_digital/ver.php?id=<?php echo $row['ID']; ?>">
-                                  <button type="button" rel="tooltip" title="Ver Documento" class="btn btn-success btn-link btn-sm">
-                                    <i class="material-icons">pageview</i>
+                                  <button type="button" rel="tooltip" title="Ver documento" class="btn btn-success btn-link btn-sm">
+                                  <i class="fa fa-eye"></i>
                                   </button>
                                 </a>
                               </div>
@@ -115,8 +110,7 @@ $data=$documento->select(-1);
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
+            
         </div>
       </div>
     </div>
