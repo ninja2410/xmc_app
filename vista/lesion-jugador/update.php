@@ -60,12 +60,13 @@ $data_tratamiento=$tratamiento->select($_GET['id']);
   });
   </script>
     <?php include '..\layoults\barnavLogged.php'; ?>
+    <div class="main main-raised">
     <div class="content">
-      <div class="col-md-12">
-        <div class="card">
-          <div class="card-header card-header-primary">
-            <h4 class="card-title">EDITAR LESIÓN DE JUGADOR</h4>
-            <p class="card-category">Registro de lesión por jugador. </p>
+      
+        <div class="card col-md-12">
+          <div class="card-header card-header-danger">
+            <h3 class="card-title">Editar lesión del jugador</h3>
+            <p class="card-category">Registro de lesión por jugador</p>
           </div>
           <div class="card-body">
             <form method="post", action="..\lesion-jugador\store.php" id="frm_lesion">
@@ -180,16 +181,16 @@ $data_tratamiento=$tratamiento->select($_GET['id']);
                     <table class="table" id="agregados">
                       <thead class=" text-muted">
                         <th>
-                          CANTIDAD
+                          Cantidad
                         </th>
                         <th>
-                          MEDICAMENTO
+                          Medicamento
                         </th>
                         <th>
-                          PRESCRIPCIÓN
+                          Prescripción
                         </th>
                         <th>
-                          ACCION
+                          Acción
                         </th>
                       </thead>
                       <tbody>
@@ -216,7 +217,8 @@ $data_tratamiento=$tratamiento->select($_GET['id']);
             </form>
           </div>
         </div>
-      </div>
+     
+    </div>
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
@@ -367,7 +369,7 @@ $('#add').click(function(){
                 {
                     notEmpty:
                     {
-                      message: 'Debe seleccionar una lesion'
+                      message: 'Debe seleccionar una lesión'
                     }
 
                 }

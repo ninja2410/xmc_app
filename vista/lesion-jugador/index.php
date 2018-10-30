@@ -11,7 +11,7 @@ $data=$lesion->detalle();
     <title>Lesiones de jugador - Listar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
-  <body>
+  <body class="profile-page sidebar-collapse">
     <?php
     include '..\layoults\barnavLogged.php';
     ?>
@@ -19,47 +19,43 @@ $data=$lesion->detalle();
       echo $_SESSION['mensaje'];
       $_SESSION['mensaje']="";
     } ?>">
+    <div class="main main-raised">
     <div class="content">
+            <div class="card col-md-12">
       <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="card">
-              <div class="card-header card-header-primary">
-                <div class="col-lg-10" style="float:left;">
-                  <h2 class="card-title ">Lesiones</h4>
+        
+              <div class="card-header card-header-danger row">
+              <div class="col-md-11">
+                  <h3 class="card-title ">Lesiones</h3>
                   <p class="card-category">Listado de lesiones a jugadores</p>
                 </div>
-                <div class="col-lg-1" style="float:left">
-                  <a href="..\..\vista\lesion-jugador/insert.php">
-                    <div class="card-header card-header-success card-header-icon" style="float:left">
-                      <div class="card-icon">
-                        <i class="material-icons">add</i>
-                      </div>
-                    </div>
+                <div class="col-md-1 text-right">
+                <a href="..\..\vista\lesion-jugador/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar lesión">
+                    <i class="material-icons">add</i>
                   </a>
                 </div>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table table-striped table-bordered" id="table1">
-                    <thead class=" text-primary">
+                    <thead>
                       <th>
                         ID
                       </th>
                       <th>
-                        LESIÓN
+                        Lesión
                       </th>
                       <th>
-                        JUGADOR
+                        Jugador
                       </th>
                       <th>
-                        FECHA INICIO
+                        Fecha inicio
                       </th>
                       <th>
-                        COSTO
+                        Costo
                       </th>
                       <th>
-                        ACCIONES
+                        Acciones
                       </th>
                     </thead>
                     <tbody>
@@ -82,10 +78,10 @@ $data=$lesion->detalle();
                         <td>
                           Q<?php echo number_format($row['COSTO'], 2); ?>
                         </td>
-                        <td class="td-actions text-lefht">
+                        <td class="td-actions text-left">
                             <div style="float:left">
                               <a href="..\..\vista\lesion-jugador/update.php?id=<?php echo $row['ID']; ?>">
-                                <button type="button" rel="tooltip" title="Editar lesion" class="btn btn-primary btn-link btn-sm">
+                                <button type="button" rel="tooltip" title="Editar lesión" class="btn btn-primary btn-link btn-sm">
                                   <i class="material-icons">edit</i>
                                 </button>
                               </a>
@@ -94,8 +90,28 @@ $data=$lesion->detalle();
                               <form class="" action="..\..\vista\lesion-jugador/store.php" method="post">
                                 <input type="hidden" name="operation" value="3">
                                 <input type="hidden" name="id" value="<?php echo $row['ID']; ?>">
-                                <button type="submit" rel="tooltip" title="Eliminar lesion" class="btn btn-danger btn-link btn-sm">
+                               <!-- Inicio de modal -->
+                               <button type="button" data-toggle="modal" data-target="<?php echo '#Confirmacion'.$row['ID']; ?>" rel="tooltip" title="Eliminar lesión" class="btn btn-danger btn-link btn-sm">
                                   <i class="material-icons">close</i>
+                                </button>
+                                <!-- Modal -->
+                                <div class="modal fade" id="<?php echo 'Confirmacion'.$row['ID']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"  data-backdrop="false">
+                                  <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Confirmación</h5>
+                                      </div>
+                                      <div class="modal-body">
+                                      ¿Está seguro que desea eliminar esta lesión?
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                        <button type="submit" class="btn btn-primary">Eliminar</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!--  -->
                                 </button>
                               </form>
                             </div>
@@ -108,9 +124,9 @@ $data=$lesion->detalle();
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+          
       </div>
+    </div>
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
