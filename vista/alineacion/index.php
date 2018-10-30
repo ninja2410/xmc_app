@@ -18,8 +18,8 @@ $data=$alineacion->select(-1);
     } ?>">
     <div class="main main-raised">
     <div class="content">
-      <div class="container-fluid">
             <div class="card col-md-12">
+      <div class="container-fluid">
               <div class="card-header card-header-danger row">
                 <div class="col-md-11">
                   <h2 class="card-title ">Alineaciones</h4>
