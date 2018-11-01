@@ -21,10 +21,10 @@ $data=$beneficio->select(-1);
       $_SESSION['mensaje']="";
     } ?>">
     <div class="main main-raised">
+            <div class="card col-md-12">
       <div class="container-fluid">
         
-          <div class="col-md-12">
-            <div class="card">
+          
               <div class="card-header card-header-danger row">
                 <div class="col-md-11">
                   <h2 class="card-title ">Beneficios</h4>
@@ -113,7 +113,7 @@ $data=$beneficio->select(-1);
               </div>
             </div>
           </div>
-        </div>
+        
      
     </div>
     </div>
