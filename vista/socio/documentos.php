@@ -23,12 +23,12 @@ $socio=$soc->select($_GET['id']);
     } ?>">
     <div class="main main-raised">
       <div class="content">
+            <div class="card col-md-12">
         <div class="container-fluid">
-          <div class="col-md-12">
-            <div class="card">
+          
                 <div class="card-header card-header-danger row">
                   <div class="col-md-10">
-                    <h4 class="card-title ">Documentos digitales</h4>
+                    <h3 class="card-title ">Documentos digitales</h3>
                     <p class="card-category"> Listado de documentos almacenados en el sistema asignados al socio: <?php echo $socio['nombre'].' '.$socio['apellido']; ?></p>
                   </div>
                   <div class="col-md-2 text-right">
@@ -38,9 +38,9 @@ $socio=$soc->select($_GET['id']);
                   </div>
                 </div>
                 <div class="card-body">
-                  <div class="table-responsive">
+                  <div class="table-responsive table-bordered table-hover">
                     <table class="table" id="mytable">
-                      <thead class=" text-primary">
+                      <thead>
                         <th>
                           ID
                         </th>
@@ -83,14 +83,14 @@ $socio=$soc->select($_GET['id']);
                           <td class="td-actions text-lefht">
                               <div style="float:left">
                                 <a href="..\..\vista\socio/ver_doc_soc.php?id=<?php echo $row['ID']; ?>">
-                                  <button type="button" rel="tooltip" title="Ver Documento" class="btn btn-success btn-link btn-sm">
-                                    <i class="material-icons">pageview</i>
+                                  <button type="button" rel="tooltip" title="Ver documento" class="btn btn-success btn-link btn-sm">
+                                  <i class="fa fa-eye"></i>
                                   </button>
                                 </a>
                               </div>
                               <div style="float:left">
                                 <a href="..\..\vista\socio/update_doc_soc.php?id=<?php echo $row['ID']; ?>">
-                                  <button type="button" rel="tooltip" title="Editar Documento" class="btn btn-primary btn-link btn-sm">
+                                  <button type="button" rel="tooltip" title="Editar documento" class="btn btn-primary btn-link btn-sm">
                                     <i class="material-icons">edit</i>
                                   </button>
                                 </a>
@@ -100,9 +100,28 @@ $socio=$soc->select($_GET['id']);
                                   <input type="hidden" name="operation" value="3">
                                   <input type="hidden" name="id" value="<?php echo $row['ID']; ?>">
                                   <input type="hidden" name="id_socio" value="<?php echo $row['id_socio']; ?>">
-                                  <button type="submit" rel="tooltip" title="Eliminar Documento" class="btn btn-danger btn-link btn-sm">
-                                    <i class="material-icons">close</i>
-                                  </button>
+                                  <!-- Inicio de modal -->
+                                <button type="button" data-toggle="modal" data-target="<?php echo '#Confirmacion'.$row['ID']; ?>" rel="tooltip" title="Eliminar documento" class="btn btn-danger btn-link btn-sm">
+                                  <i class="material-icons">close</i>
+                                </button>
+                                <!-- Modal -->
+                                <div class="modal fade" id="<?php echo 'Confirmacion'.$row['ID']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"  data-backdrop="false">
+                                  <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Confirmación</h5>
+                                      </div>
+                                      <div class="modal-body">
+                                      ¿Está seguro que desea eliminar este documento?
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                        <button type="submit" class="btn btn-primary">Eliminar</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!--  -->
                                 </form>
                               </div>
                           </td>
@@ -115,7 +134,7 @@ $socio=$soc->select($_GET['id']);
                 </div>
               </div>
             </div>
-          </div>
+          
         </div>
       </div>
     </div>
