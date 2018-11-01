@@ -36,6 +36,10 @@ $lesiones=0;
 $documentos=0;
 $personas=0;
 $admin=0;
+$arbitro=0;
+$entrenadores=0;
+$pt=0;
+$prensa=0;
 foreach($permisos as $key => $value) 
 {
   if($value==1)
@@ -60,11 +64,28 @@ foreach($permisos as $key => $value)
   }
   if($value==6)
   {
-    $personas=1;
+    $admin=1;
+   
   }
   if($value==8)
   {
-    $admin=1;
+    $prensa=1;
+    $personas=1;
+  }
+  if($value==9)
+  {
+    $arbitro=1;
+    $personas=1;
+  }
+  if($value==10)
+  {
+    $entrenadores=1;
+    $personas=1;
+  }
+  if($value==11)
+  {
+    $pt=1;
+    $personas=1;
   }
 }
 
@@ -179,10 +200,32 @@ foreach($permisos as $key => $value)
               <i class="fas fa-address-card fa-lg"></i> Personas
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <?php
+            if($prensa==1)
+            {
+            ?>
                 <a class="dropdown-item" href="..\..\vista\prensa/index.php">Prensa</a>
+                <?php
+            }
+            if($arbitro==1)
+            {
+            ?>
                 <a class="dropdown-item" href="..\..\vista\arbitro/index.php">Árbitros</a>
+            <?php
+            }
+            if($entrenadores==1)
+            {
+            ?>
                 <a class="dropdown-item" href="..\..\vista\entrenador/index.php">Entrenadores</a>
+            <?php
+            }
+            if($pt==1)
+            {
+            ?>
                 <a class="dropdown-item" href="..\..\vista\personaltecnico/index.php">Personal técnico</a>
+            <?php
+            }
+            ?>
               </div>
             </li>
             <?php

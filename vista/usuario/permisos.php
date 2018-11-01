@@ -12,7 +12,7 @@ $usuario = $_GET['id'];
     <title>Usuario - Actualizar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
-  <body>
+  <body class="profile-page sidebar-collapse">
     <?php include '..\layoults\barnavLogged.php'; ?>
     <div class="content">
       <div class="col-md-12">
