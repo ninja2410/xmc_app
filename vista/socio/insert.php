@@ -12,13 +12,14 @@ $data=$membresia->select(-1);
     <?php include '..\layoults\headers2.php'; ?>
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
   </head>
-  <body>
+  <body class="profile-page sidebar-collapse">
     <?php include '..\layoults\barnavLogged.php'; ?>
+    <div class="main main-raised">
     <div class="content">
-      <div class="col-md-12">
-        <div class="card">
-          <div class="card-header card-header-primary">
-            <h4 class="card-title">REGISTRAR SOCIO</h4>
+      
+        <div class="card col-md-12">
+          <div class="card-header card-header-danger">
+            <h3 class="card-title">Registrar socio</h3>
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
@@ -42,19 +43,19 @@ $data=$membresia->select(-1);
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label class="bmd-label-floating">Domicilio</label>
+                    <label >Domicilio</label>
                     <input name="domicilio" type="text" class="form-control" >
                   </div>
                 </div>
                 <div class="col-md-3">
                   <div class="form-group">
-                    <label class="bmd-label-floating">Teléfono</label>
+                    <label >Teléfono</label>
                     <input name="telefono" maxlength="8" minlength="8" type="phone" class="form-control" >
                   </div>
                 </div>
                 <div class="col-md-3">
                   <div class="form-group">
-                    <label class="">Fecha de nacimiento</label>
+                    <label >Fecha de nacimiento</label>
                     <input name="fecha_nacimiento" id="datetimepicker" type="text" class="form-control datetimepicker" >
                   </div>
                 </div>
@@ -108,7 +109,8 @@ $data=$membresia->select(-1);
             </form>
           </div>
         </div>
-      </div>
+      
+    </div>
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>

@@ -10,17 +10,18 @@ $dato=$membresia->select(-1);
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Socios - Registro</title>
+    <title>Socios - Actualizar</title>
     <?php include '..\layoults\headers2.php'; ?>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
   </head>
-  <body>
+  <body class="profile-page sidebar-collapse">
     <?php include '..\layoults\barnavLogged.php'; ?>
+    <div class="main main-raised">
     <div class="content">
-      <div class="col-md-12">
-        <div class="card">
-          <div class="card-header card-header-primary">
-            <h4 class="card-title">REGISTRAR SOCIO</h4>
+     
+        <div class="card col-md-12">
+          <div class="card-header card-header-danger">
+            <h3 class="card-title">Actualizar socio</h3>
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
@@ -115,7 +116,8 @@ $dato=$membresia->select(-1);
             </form>
           </div>
         </div>
-      </div>
+      
+    </div>
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>

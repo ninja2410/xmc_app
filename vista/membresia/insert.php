@@ -13,9 +13,9 @@ $data=$be->selectBeneficio(-1);
   <body class="profile-page sidebar-collapse">
     <?php include '..\layoults\barnavLogged.php'; ?>
     <div class="main main-raised">
-    <div class="content">
-      <div class="col-md-12">
-        <div class="card">
+    <div class="content-fluid">
+     
+        <div class="card col-md-12">
           <div class="card-header card-header-danger">
             <h3 class="card-title">Insertar membresía</h3>
             <p class="card-category">Complete los campos siguientes</p>
@@ -72,7 +72,7 @@ $data=$be->selectBeneficio(-1);
             </form>
           </div>
         </div>
-      </div>
+      
     </div>
     </div>
     <?php include '..\layoults\footer.php'; ?>
@@ -101,7 +101,7 @@ $data=$be->selectBeneficio(-1);
             descripcion:{
                 validators:{
                     notEmpty:{
-                        message:'Ingrese una descripcion'
+                        message:'Ingrese una descripción'
                     },
                     regexp:{
                       regexp: /^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ\s]*$/, 
@@ -115,8 +115,8 @@ $data=$be->selectBeneficio(-1);
                         message:'Ingrese un precio'
                     },
                     regexp:{
-                      regexp: /^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ\s]*$/, 
-                      message: 'Solo se aceptan letras y números'
+                      regexp: /^[0-9.\s]*$/, 
+                      message: 'Solo se aceptan números'
                       }
                   }
               }

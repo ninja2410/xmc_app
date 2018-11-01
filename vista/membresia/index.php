@@ -18,17 +18,17 @@ $data=$membresia->select(-1);
         } ?>">
    <div class="main main-raised">
     <div class="content">
+            <div class="card col-md-12">
       <div class="container-fluid">
 
-          <div class="col-md-12">
-            <div class="card">
+          
               <div class="card-header card-header-danger row">
               <div class="col-md-11">
                   <h3 class="card-title">Membresías</h3>
                   <p class="category">Listado de membresías</p>
                 </div>
                 <div class="col-md-1 text-right">
-                <a href="..\..\vista\membresia/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar Membresias">
+                <a href="..\..\vista\membresia/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar membresía">
                     <i class="material-icons">add</i>
                   </a>
                 </div>
@@ -110,7 +110,7 @@ $data=$membresia->select(-1);
               </div>
             </div>
 
-        </div>
+        
       </div>
     </div>
    </div>
