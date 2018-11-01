@@ -13,8 +13,8 @@ $pago=new Pago();
     <?php include '..\layoults\barnavLogged.php'; ?>
     <div class="main main-raised">
     <div class="content">
-      <div class="col-md-12">
-        <div class="card">
+      
+        <div class="card col-md-12">
           <div class="card-header card-header-danger">
             <h3 class="card-title">Registrar pago</h3>
             <p class="card-category">Complete los campos siguientes</p>
@@ -27,19 +27,19 @@ $pago=new Pago();
               <div class="row">
                   <div class="col-md-3">
                     <div class="form-group">
-                      <label class="bmd-label-floating">Meses Atrasados:</label>
+                      <label>Meses atrasados:</label>
                       <input type="text" class="form-control" name="pending" value="<?php echo $pago->estado_pagos($_GET['id']);?>">
                     </div>
                   </div>
                   <div class="col-md-2">
                     <div class="form-group">
-                      <label class="bmd-label-floating">fecha ultimo pago:</label>
+                      <label>Fecha de último pago:</label>
                       <input type="text" name="" class="form-control" value="<?php echo $pago->mesSolvente($_GET['id']); ?>">
                     </div>
                   </div>
                   <div class="col-md-3">
                     <div class="form-group">
-                      <label class="bmd-label-floating">Precio por mes:</label>
+                      <label>Precio por mes:</label>
                       <input type="text" class="form-control"id="price" name="member" value="<?php echo $_GET['membresia'];?>">
                     </div>
                   </div>
@@ -47,7 +47,7 @@ $pago=new Pago();
                 <br>
                 <div class="row" style="text-align:center;">
                   <div class="col-lg-12">
-                    <label class="bmd-label-floating">Total a Pagar:</label>
+                    <label class="bmd-label-floating">Total a pagar:</label>
                     <h1 id="total">Q <?php echo $_GET['membresia']; ?></h1>
                   </div>
                 </div>
@@ -60,11 +60,11 @@ $pago=new Pago();
                         		<div class="col-xs-3 col-xs-offset-3">
                         			<div class="input-group number-spinner">
                         				<span class="input-group-btn data-dwn">
-                        					<button type="button" class="btn btn-default btn-info" data-dir="dwn"><span>-</span></button>
+                        					<button type="button" class="btn btn-info btn-info" data-dir="dwn"><span>-</span></button>
                         				</span>
                         				<input type="text" name="mounts" id="mnt" class="form-control text-center" value="1" min="1" >
                         				<span class="input-group-btn data-up">
-                        					<button type="button" class="btn btn-default btn-info" data-dir="up"><span>+</span></button>
+                        					<button type="button" class="btn btn-success btn-info" data-dir="up"><span>+</span></button>
                         				</span>
                         			</div>
                     		</div>
@@ -79,7 +79,7 @@ $pago=new Pago();
             </form>
           </div>
         </div>
-      </div>
+      
     </div>
     </div>
     <?php include '..\layoults\footer.php'; ?>

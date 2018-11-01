@@ -17,10 +17,10 @@ $data=$socio->select_pagos();
     ?>
     <div class="main main-raised">
     <div class="content">
+            <div class="card col-md-12">
       <div class="container-fluid">
        
-          <div class="col-md-12">
-            <div class="card">
+          
               <div class="card-header card-header-danger row">
                 <div class="col-lg-9" style="float:left;">
                   <h2 class="card-title ">Pagos</h4>
@@ -78,7 +78,7 @@ $data=$socio->select_pagos();
                 </div>
               </div>
             </div>
-          </div>
+         
         
       </div>
     </div>
