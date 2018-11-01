@@ -10,7 +10,7 @@ $data=$partido->select(-1);
     <title>Partidos - Listar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
-  <body class="profile-page sidebar-collapse">
+  <body c lass="profile-page sidebar-collapse">
     <?php
     include '..\layoults\barnavLogged.php';
     ?>
@@ -21,7 +21,7 @@ $data=$partido->select(-1);
     <div class="main main-raised">
     <div class="content">
       <div class="container-fluid">
-        
+
           <div class="col-md-12">
             <div class="card">
               <div class="card-header card-header-danger row">
@@ -97,14 +97,17 @@ $data=$partido->select(-1);
                           <?php echo $row['observaciones']; ?>
                         </td>
                         <td>
-                          <a href="..\..\vista\arbitro/arbitros.php?id=<?php echo $row['id_partido']; ?>">
-                          <button class="btn btn-info btn-round btn-sm"> <i class="fas fa-sitemap"></i> Arbitro</button>
-                       
-                          <a href="..\..\vista\prensa/prensa.php?id=<?php echo $row['id_partido']; ?>">
-                          <button class="btn btn-info btn-round btn-sm"> <i class="fas fa-sitemap"></i> Prensa</button>
-                       
-                          <a href="..\..\vista\alineacion/alineacion.php?id=<?php echo $row['id_partido']; ?>">
-                          <button class="btn btn-info btn-round btn-sm"> <i class="fas fa-sitemap"></i> Alineación</button>
+
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Parámetros
+                            </button>
+                            <div class="dropdown-menu">
+                              <a class="dropdown-item" href="..\..\vista\arbitro/arbitros.php?id=<?php echo $row['id_partido']; ?>">Arbitro</a>
+                              <a class="dropdown-item" href="..\..\vista\prensa/prensa.php?id=<?php echo $row['id_partido']; ?>">Prensa</a>
+                              <a class="dropdown-item" href="..\..\vista\alineacion/alineacion.php?id=<?php echo $row['id_partido']; ?>">Alineación</a>
+                            </div>
+                          </div>
                         </td>
                         <td>
                           <a href="..\..\vista\detalle_partido/index.php?id=<?php echo $row['id_partido']; ?>&id2=<?php echo $row['id_equipo']; ?>">
@@ -159,9 +162,6 @@ $data=$partido->select(-1);
           </div>
         </div>
         </div>
-      
-    
-    
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
     <script type="text/javascript">
@@ -205,7 +205,15 @@ $data=$partido->select(-1);
          },
          {
            extend:'print',
-           title:'Listado de partidos',
+           title:'<img src="../assets/img/bg.jpg" style="top:0; left:0;" /> <br> <h3>Reporte de partidos</h3>',
+           messageTop:'Club social y deportivo Xelaju Mc.',
+           customize: function ( win ) {
+            $(win.document.body)
+                .css( 'font-size', '12pt' )
+                .prepend(
+                    '<img src="../assets/img/bg.jpg" style="top:0; left:0;" />'
+                );
+            },
            exportOptions:{
              columns:[0,1,2,3,4,5,6]
            }
