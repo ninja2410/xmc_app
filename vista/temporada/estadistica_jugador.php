@@ -38,7 +38,7 @@ $estadistica=new EstadisticaJugador();
                </div>
                <div class="card-body">
                  <div class="table-responsive">
-                   <table class="table">
+                   <table class="table" id="table1">
                      <thead>
                        <th>
                          ID
@@ -98,5 +98,44 @@ $estadistica=new EstadisticaJugador();
      </div>
      <?php include '..\layoults\footer.php'; ?>
      <?php include '..\layoults\scripts2.php'; ?>
+     <script type="text/javascript">
+     $(document).ready(function(){
+       if ($('#mensaje').val()!="") {
+         alertify.success($('#mensaje').val());
+       }
+    $('#table1').DataTable({
+        dom: 'Bfrtip',
+ "language": {
+   "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"
+  },
+        buttons: [
+          {
+            extend:'copy',
+            title:'Listado de socios',
+          },
+          {
+            extend:'csv',
+            title:'Listado de socios',
+
+          },
+          {
+            extend:'excel',
+            title:'Listado de socios',
+
+          },
+          {
+            extend:'pdf',
+            title:'Listado de socios',
+
+          },
+          {
+            extend:'print',
+            title:'Listado de socios',
+
+          }
+        ],
+    }) ;
+ });
+     </script>
    </body>
  </html>

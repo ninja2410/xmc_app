@@ -1,8 +1,12 @@
 <?php
 require_once('../../Negocio/ClassDatoPartido.php');
 require_once('../../Negocio/ClassJugador.php');
+require_once('../../Negocio/ClassPartido.php');
 require_once('../../Negocio/ClassEstadisticaJugador.php');
 $datoPartido=new DatoPartido();
+$part=new Partido();
+$partido=$part->select($_GET['partido']);
+$npartido= json_encode($partido);
 $dato=$datoPartido->select(-1);
 $jugadorC=new Jugador();
 $jugadoresL=$jugadorC->selectPartido($_GET['partido']);
@@ -16,6 +20,7 @@ $estadistica=new EstadisticaJugador();
      <?php include '../layoults/headers2.php'; ?>
    </head>
    <body class="profile-page sidebar-collapse">
+     <input type="hidden" name="mensaje" id="mensaje" value="">
      <?php
      include '../layoults/barnavLogged.php';
      ?>
@@ -38,7 +43,7 @@ $estadistica=new EstadisticaJugador();
                </div>
                <div class="card-body">
                  <div class="table-responsive">
-                   <table class="table">
+                   <table class="table" id="table1">
                      <thead>
                        <th>
                          ID
@@ -101,5 +106,44 @@ $estadistica=new EstadisticaJugador();
      </div>
      <?php include '../layoults/footer.php'; ?>
      <?php include '../layoults/scripts2.php'; ?>
+     <script type="text/javascript">
+     $(document).ready(function(){
+       if ($('#mensaje').val()!="") {
+         alertify.success($('#mensaje').val());
+       }
+    $('#table1').DataTable({
+        dom: 'Bfrtip',
+ "language": {
+   "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"
+  },
+        buttons: [
+          {
+            extend:'copy',
+            title:'Estadisticas por jugador',
+          },
+          {
+            extend:'csv',
+            title:'Estadisticas por jugador',
+
+          },
+          {
+            extend:'excel',
+            title:'Estadisticas por jugador',
+
+          },
+          {
+            extend:'pdf',
+            title:'Estadisticas por jugador',
+
+          },
+          {
+            extend:'print',
+            title:'Estadisticas por jugador',
+
+          }
+        ],
+    }) ;
+ });
+     </script>
    </body>
  </html>

@@ -93,7 +93,7 @@ $data=$jugador->select($_GET['id']);
                                 <select class="form-control" name="posicion">
                                     <?php
                                         echo '<option selected value="'.$data['id_posicion'].'">'.$data['descripcion'].'</option>';
-                                        include_once('../../Negocio/classPosicion.php');
+                                        include_once('../../Negocio/ClassPosicion.php');
                                         $posicion=new Posicion();
                                         $data2=$posicion->select(-1);
                                         while ($row = mysqli_fetch_array($data2))
@@ -115,8 +115,8 @@ $data=$jugador->select($_GET['id']);
                                 <label>Categoría</label>
                                 <select class="form-control" name="categoria">
                                     <?php
-                                        echo '<option selected value="'.$data['id_categoria'].'">'.$data['categoria'].'</option>';
-                                        include_once('../../Negocio/classCategoria.php');
+                                        echo '<option selected value="'.$data['IdCat'].'">'.$data['categoria'].'</option>';
+                                        include_once('../../Negocio/ClassCategoria.php');
                                         $categoria=new Categoria();
                                         $data4=$categoria->select(-1);
                                         while ($row = mysqli_fetch_array($data4))

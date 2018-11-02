@@ -5,7 +5,7 @@ $now = time();
 
 if(isset($_SESSION['expire']))
 {
-  if($now > $_SESSION['expire']) 
+  if($now > $_SESSION['expire'])
   {
     session_destroy();
     $_SESSION['expired']=true;
@@ -24,7 +24,7 @@ if(!isset($_SESSION['iniciado']))
   $partido=new Usuario();
   $data2=$partido->selectPermisoUsuario($_SESSION['id']);
   $permisos = array();
-  while ($row=mysqli_fetch_array($data2)) 
+  while ($row=mysqli_fetch_array($data2))
   {
     array_push($permisos,$row['id_permiso']);
   }
@@ -40,7 +40,7 @@ $arbitro=0;
 $entrenadores=0;
 $pt=0;
 $prensa=0;
-foreach($permisos as $key => $value) 
+foreach($permisos as $key => $value)
 {
   if($value==1)
   {
@@ -65,7 +65,7 @@ foreach($permisos as $key => $value)
   if($value==6)
   {
     $admin=1;
-   
+
   }
   if($value==8)
   {
@@ -136,7 +136,7 @@ foreach($permisos as $key => $value)
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="../../vista/equipo/index.php">Equipos</a>
-                
+
                 <a class="dropdown-item" href="../../vista/estadio/index.php">Estadios</a>
                 <a class="dropdown-item" href="../../vista/temporada/index.php">Temporadas</a>
                 <a class="dropdown-item" href="../../vista/alineacion/index.php">Alineaciones</a>
@@ -173,6 +173,7 @@ foreach($permisos as $key => $value)
                 <a class="dropdown-item" href="../../vista/medico/index.php">Médicos</a>
                 <a class="dropdown-item" href="../../vista/ficha_medica/index.php">Ficha médica</a>
                 <a class="dropdown-item" href="../../vista/parte_cuerpo/index.php">Detalles de ficha médica</a>
+                <a class="dropdown-item" href="../../vista/lesion/index.php">Lesiones</a>
                 <a class="dropdown-item" href="../../vista/lesion-jugador/index.php">Registro de lesiones por jugador</a>
               </div>
             </li>
@@ -240,7 +241,7 @@ foreach($permisos as $key => $value)
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="../../vista/bitacora/index.php">Bitácora</a>
                 <a class="dropdown-item" href="../../vista/usuario/index.php">Usuarios</a>
-                
+
               </div>
             </li>
             <?php

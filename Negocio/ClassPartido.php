@@ -22,7 +22,7 @@ class Partido
             INNER JOIN TEMPORADA ON PARTIDO.id_temporada = TEMPORADA.id_temporada
             INNER JOIN ESTADIO ON PARTIDO.id_estadio = ESTADIO.id_estadio
             INNER JOIN EQUIPO ON PARTIDO.id_equipo = EQUIPO.id_equipo WHERE PARTIDO.estado=1 ORDER BY id_partido DESC;  ";
-            
+
             $dt=mysqli_query($conexion->objetoconexion,$query);
         }
         else

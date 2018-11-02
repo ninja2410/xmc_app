@@ -148,6 +148,7 @@ foreach($permisos as $key => $value)
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="../../vista/medico/index.php">Médicos</a>
                 <a class="dropdown-item" href="../../vista/ficha_medica/index.php">Ficha médica</a>
+                <a class="dropdown-item" href="../../vista/lesion/index.php">Lesiones</a>
                 <a class="dropdown-item" href="../../vista/parte_cuerpo/index.php">Detalles de ficha médica</a>
                 <a class="dropdown-item" href="../../vista/lesion-jugador/index.php">Registro de lesiones por jugador</a>
               </div>
