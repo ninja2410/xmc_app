@@ -117,8 +117,10 @@ $data=$prensa->selectPrensa($_GET['id']);
                     </tbody>
                   </table>
                 </div>
+                <a href="../partido/index.php"> <button type="button" class="btn btn-info pull-right btn-round"><i class="fas fa-undo-alt fa-lg"></i> Regresar</button></a>
+            
               </div>
-            </div>
+            
           </div>
       </div>
     </div>

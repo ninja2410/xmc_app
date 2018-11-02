@@ -81,7 +81,7 @@ $data=$partido->select($_GET['id']);
                  <div class="col-md-4">
                    <div class="form-group">
                      <label class="">Fecha</label>
-                     <input type="text" placeholder="YYYY/MM/DD" class="form-control" name="fecha" value="<?php echo $data['fecha']; ?>">
+                     <input type="text" placeholder="YYYY/MM/DD" class="form-control" name="fecha2" value="<?php echo $data['fecha']; ?>">
                    </div>
                  </div>
                  <div class="col-md-4">
@@ -91,8 +91,7 @@ $data=$partido->select($_GET['id']);
                      <input type="text" id="autoCategoria" name="autoCategoria"  class="form-control" value="<?php echo $data['categoria']; ?>">
                    </div>
                  </div>
-               </div>
-               <div class="row">
+
                  <div class="col-md-4">
                    <div class="form-group">
                      <label class="">Estadio</label>
@@ -118,7 +117,7 @@ $data=$partido->select($_GET['id']);
                  </div>
                </div>
                <div class="row">
-                 <div class="col-md-3">
+                 <div class="col-md-12">
                    <div class="form-group">
                      <label class="">Observaciones</label>
                      <input type="text" class="form-control" name="obs" value="<?php echo $data['observaciones']; ?>">
@@ -152,24 +151,8 @@ $data=$partido->select($_GET['id']);
                      notEmpty: 
                      {
                        message: 'La fecha del partido es necesario'
-                     },
-                     date: 
-                     {
-                         message: 'El formato de la fecha no es valida',
-                         format: 'YYYY-MM-DD'
-                     },
-                     callback: 
-                     {
-                         message: 'La fecha debe ser despues de la fecha actual',
-                         callback: function(value, validator) {
-                             var m = new moment(value, 'YYYY-MM-DD', true);
-                             fi = m;
-                             if (!m.isValid()) {
-                                 return false;
-                             }
-                             return m.isAfter(f);
-                         }
                      }
+                  }
                  }
            },
            h1: 

@@ -12,6 +12,10 @@ if(isset($_POST['fecha'])){
   $fecha=$_POST['fecha'];
 }
 
+if(isset($_POST['fecha2'])){
+  $fecha2=$_POST['fecha2'];
+}
+
 if(isset($_POST['hora'])){
   $hora=$_POST['hora'];
 
@@ -77,7 +81,7 @@ if ($operacion=="1")
 }elseif($operacion=="2")
 {
 
-  $lesion->update($id_partido, $horayfecha, $cat, $estadio,$equi,$temp,$obs);
+  $lesion->update($id_partido, $fecha2, $cat, $estadio,$equi,$temp,$obs);
   $bit->insert('Actualizo el partido '.$id_partido, $_SESSION['id']);
   $_SESSION['mensaje']="El partido se ha modificado con éxito!";
 
