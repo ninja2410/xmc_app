@@ -20,10 +20,10 @@ $data=$partido->selectResultados(-1);
     } ?>">
     <div class="main main-raised">
     <div class="content">
+          <div class="card col-md-12">
       <div class="container-fluid">
         
-          <div>
-          <div class="card col-md-12">
+          
               <div class="card-header card-header-danger row">
                 <div class="col-md-11">
                   <h3 class="card-title">Resultados de Xelajú MC por temporada</h3>
@@ -32,8 +32,8 @@ $data=$partido->selectResultados(-1);
               </div>
               <div class="card-body">
                 <div class="table-responsive">
-                  <table class="table table-striped table-bordered" id="table1">
-                    <thead>
+                  <table class="table table-bordered table-hover" id="table1">
+                    <thead class="table-primary">
                       <th>
                         Temporada
                       </th>
@@ -70,16 +70,14 @@ $data=$partido->selectResultados(-1);
                       <th>
                         Expulsiones
                       </th>
-                      <th>
-                        Faltas
-                      </th>
+                      
                     </thead>
                     <tbody>
                       <?php
                       while ($row=mysqli_fetch_array($data)) {
                        ?>
                       <tr>
-                        <td>
+                        <td >
                           <?php echo $row['descripcion']; ?>
                         </td>
                         <td>
@@ -127,7 +125,7 @@ $data=$partido->selectResultados(-1);
               </div>
             </div>
           </div>
-          </div>
+          
       </div>
     </div>
     </div>

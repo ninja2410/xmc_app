@@ -21,10 +21,10 @@ $data=$arbitro->select(-1);
     } ?>">
     <div class="main main-raised">
     <div class="content">
+            <div class="card col-md-12">
       <div class="container-fluid">
 
-          <div class="col-md-12">
-            <div class="card">
+          
               <div class="card-header card-header-danger row">
               <div class="col-md-11">
                   <h3 class="card-title">Árbitros</h3>
@@ -113,7 +113,7 @@ $data=$arbitro->select(-1);
                 </div>
               </div>
             </div>
-          </div>
+          
       </div>
     </div>
     </div>
