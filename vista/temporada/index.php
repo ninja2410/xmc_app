@@ -24,8 +24,8 @@ $data=$temporada->select(-1);
             <div class="card col-md-12">
       <div class="container-fluid">
 
-        
-          
+
+
               <div class="card-header card-header-danger row">
                 <div class="col-md-11">
                   <h3 class="card-title ">Temporadas</h4>
@@ -83,6 +83,9 @@ $data=$temporada->select(-1);
                         <td class="text-center">
                           <a href="..\..\vista\temporada/partidos.php?id=<?php echo $row['id_temporada']; ?>">
                           <button class="btn btn-warning btn-round btn-sm"><i class="fas fa-futbol fa-lg"> </i>  Resumen</button>
+
+                          <a href="..\..\vista\temporada/estadistica_jugador.php?temporada=<?php echo $row['id_temporada']; ?>">
+                          <button class="btn btn-info btn-round btn-sm"><i class="material-icons">accessibility_new</i>  Jugadores</button>
                         </td>
                         <td class="td-actions text-left">
                             <div style="float:left">
@@ -123,21 +126,21 @@ $data=$temporada->select(-1);
                         </td>
                         <td>
                         <?php if($row['estado']==1)
-                        { 
+                        {
                         ?>
                           <a>
                           <button class="btn btn-success btn-round btn-sm"><i class="fas fa-futbol fa-lg"> </i> En curso</button>
                           </a>
-                        <?php 
+                        <?php
                         }
                         ?>
                           <?php if($row['estado']==0)
-                        { 
+                        {
                         ?>
                           <a>
                           <button class="btn btn-danger btn-round btn-sm"><i class="fas fa-futbol fa-lg"> </i> Finalizado </button>
                           </a>
-                        <?php 
+                        <?php
                         }
                         ?>
                         </td>
@@ -149,8 +152,8 @@ $data=$temporada->select(-1);
                 </div>
               </div>
             </div>
-          
-        
+
+
       </div>
       </div>
     </div>
