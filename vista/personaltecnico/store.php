@@ -60,5 +60,5 @@ elseif($operacion=="2")
   $lesion->delete($id_temporada);
   $_SESSION['mensaje']="El personal técnico se ha eliminado con éxito!";
 }
-header('Location:../../partido/index.php');
+header('Location:../partido/index.php');
 ?>

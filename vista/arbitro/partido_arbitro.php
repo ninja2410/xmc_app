@@ -51,7 +51,7 @@
                 <div class="col-md-2">
                   <div class="form-group">
                     <button onclick="submitForm()" type="button" class="btn btn-success pull-right btn-round"><i class="fas fa-check fa-lg"></i> Agregar</button>
-                    <a href="../arbitro?id=<?php echo $_GET['id']; ?>"> <button type="button" class="btn btn-info pull-right btn-round"><i class="fas fa-undo-alt fa-lg"></i> Regresar</button></a>
+                    <a href="arbitros.php?id=<?php echo $_GET['id']; ?>"> <button type="button" class="btn btn-info pull-right btn-round"><i class="fas fa-undo-alt fa-lg"></i> Regresar</button></a>
 
                   </div>
                 </div>
