@@ -15,8 +15,8 @@ $data=$tipoarbitro->select(-1);
     <?php include '..\layoults\barnavLogged.php'; ?>
     <div class="main main-raised"> 
     <div class="content">
-      <div class="col-md-12">
-        <div class="card">
+      
+        <div class="card col-md-12">
           <div class="card-header card-header-danger">
             <h3 class="card-title">Insertar árbitro</h3>
             <p class="card-category">Complete los campos siguientes</p>
@@ -49,7 +49,7 @@ $data=$tipoarbitro->select(-1);
             </form>
           </div>
         </div>
-      </div>
+      
     </div>
     </div>
     <?php include '..\layoults\footer.php'; ?>

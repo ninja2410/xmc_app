@@ -7,7 +7,7 @@ $data=$personal->select(-1);
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Personal Tecnico</title>
+    <title>Personal técnico</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
@@ -18,11 +18,11 @@ $data=$personal->select(-1);
     } ?>">
     <div class="main main-raised">
     <div class="content">
-      <div class="container-fluid">
             <div class="card col-md-12">
+      <div class="container-fluid">
               <div class="card-header card-header-danger row">
                 <div class="col-md-11">
-                  <h2 class="card-title ">Personal Técnico</h4>
+                  <h3 class="card-title ">Personal técnico</h3>
                   <p class="card-category">Listado del personal</p>
                 </div>
               </div>
@@ -39,10 +39,6 @@ $data=$personal->select(-1);
                       <th>
                         Nombre
                       </th>
-                      <th>
-                        Nombre
-                      </th>
-
                     </thead>
                     <tbody>
                       <?php
@@ -57,10 +53,6 @@ $data=$personal->select(-1);
                         </td>
                         <td>
                           <?php echo $row['nombre']; ?>
-                        </td>
-                        <td>
-                          <a href="..\..\vista\detalle_partido/index.php?id=<?php echo $row['id_partido']; ?>&id2=<?php echo $row['id_equipo']; ?>">
-                          <button class="btn btn-success btn-round btn-sm"> <i class="far fa-eye"></i> Ver detalles</button>
                         </td>
                         <?php
                       } ?>
