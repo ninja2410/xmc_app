@@ -86,13 +86,13 @@
                 <div class="col-md-5">
                   <div class="form-group">
                     <label class="">Fecha</label>
-                    <input type="text" placeholder="DD/MM/YYYY" class="form-control" name="fecha">
+                    <input type="date" placeholder="DD/MM/YYYY" class="form-control" name="fecha">
                   </div>
                 </div>
                 <div class="col-md-5">
                   <div class="form-group">
                     <label class="">Hora</label>
-                    <input type="text" placeholder="" class="form-control datetimepicker" id='datetimepicker3' name="hora">
+                    <input type="time" placeholder="" class="form-control" name="hora">
                   </div>
                 </div>
                 <div class="col-md-5">
@@ -167,8 +167,14 @@ $(document).ready(function() {
           {
                 validators:
                 {
-                  notEmpty: {
-                        message: 'The email address is required and can\'t be empty'
+                  notEmpty: 
+                    {
+                        message: 'Debe seleccionar un equipo'
+                    },
+                    remote: 
+                    {
+                        message: 'Debe seleccionar un equipo',
+                        url: 'comprobar.php'
                     }
                     
 

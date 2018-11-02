@@ -19,7 +19,7 @@ class Temporada
         }
         else
         {
-            $query="SELECT * FROM TEMPORADA WHERE id_temporada=$id AND estado=1";
+            $query="SELECT * FROM TEMPORADA WHERE id_temporada=$id";
             $tmp=mysqli_query($conexion->objetoconexion,$query);
             $dt=mysqli_fetch_assoc($tmp);
         }

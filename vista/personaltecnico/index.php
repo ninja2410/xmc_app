@@ -39,10 +39,6 @@ $data=$personal->select(-1);
                       <th>
                         Nombre
                       </th>
-                      <th>
-                        Nombre
-                      </th>
-
                     </thead>
                     <tbody>
                       <?php
@@ -57,10 +53,6 @@ $data=$personal->select(-1);
                         </td>
                         <td>
                           <?php echo $row['nombre']; ?>
-                        </td>
-                        <td>
-                          <a href="..\..\vista\detalle_partido/index.php?id=<?php echo $row['id_partido']; ?>&id2=<?php echo $row['id_equipo']; ?>">
-                          <button class="btn btn-success btn-round btn-sm"> <i class="far fa-eye"></i> Ver detalles</button>
                         </td>
                         <?php
                       } ?>
