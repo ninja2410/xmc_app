@@ -59,5 +59,5 @@ elseif($operacion=="2") {
   $_SESSION['mensaje']="La estadística se ha almacenado con éxito!";
   header('Location:edit.php?partido='.$id_partido);
 }
-header('Location:index.php');
+header('Location:'.$_SERVER['HTTP_REFERER']);
  ?>
