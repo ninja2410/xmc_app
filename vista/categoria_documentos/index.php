@@ -11,7 +11,7 @@ $data=$cat_documentos->select(-1);
     <title>Categoría documentos - Listar</title>
     <?php include '..\layoults\headers2.php'; ?>
   </head>
-  <body>
+  <body class="profile-page sidebar-collapse">
     <?php
     include '..\layoults\barnavLogged.php';
     ?>
@@ -20,17 +20,24 @@ $data=$cat_documentos->select(-1);
       echo $_SESSION['mensaje'];
       $_SESSION['mensaje']="";
     } ?>">
+    <div class="main main-raised">
+            <div class="card col-md-12">
       <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="card">
-              <div class="card-header card-header-danger">
-                  <h4 class="card-title">Categoría de los documentos</h4>
+        
+              <div class="card-header card-header-danger row">
+              <div class="col-md-11">
+                  <h3 class="card-title">Categoría de documentos</h3>
                   <p class="category">Listado de las categorías de los documentos</p>
+                  </div>
+                  <div class="col-md-1 text-right">
+                <a href="..\..\vista\categoria_documentos/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar categoría">
+                    <i class="material-icons">add</i>
+                  </a>
+                </div>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
-                  <table class="table">
+                  <table class="table  table-hover">
                     <thead>
                       <tr>
                         <th>ID</th>
@@ -49,17 +56,11 @@ $data=$cat_documentos->select(-1);
                             <?php echo $row['nombre']; ?>
                           </td>
 
-                          <td class="td-actions text-lefht">
-                              <div style="float:left">
-                                <a href="..\..\vista\categoria_documentos/insert.php">
-                                  <button type="button" rel="tooltip" title="Nueva parte" class="btn btn-primary btn-link btn-sm">
-                                    <i class="material-icons">add</i>
-                                  </button>
-                                </a>
-                              </div>
+                          <td class="td-actions text-left">
+              
                               <div style="float:left">
                                 <a href="..\..\vista\categoria_documentos/update.php?id=<?php echo $row['id_categoria_documentos']; ?>">
-                                  <button type="button" rel="tooltip" title="Editar parte" class="btn btn-primary btn-link btn-sm">
+                                  <button type="button" rel="tooltip" title="Editar categoría" class="btn btn-primary btn-link btn-sm">
                                     <i class="material-icons">edit</i>
                                   </button>
                                 </a>
@@ -68,9 +69,28 @@ $data=$cat_documentos->select(-1);
                                 <form class="" action="..\..\vista\categoria_documentos/store.php" method="post">
                                   <input type="hidden" name="operation" value="3">
                                   <input type="hidden" name="id" value="<?php echo $row['id_categoria_documentos']; ?>">
-                                  <button type="submit" rel="tooltip" title="Eliminar parte" class="btn btn-danger btn-link btn-sm">
-                                    <i class="material-icons">close</i>
-                                  </button>
+                                  <!-- Inicio de modal -->
+                                <button type="button" data-toggle="modal" data-target="<?php echo '#Confirmacion'.$row['id_categoria_documentos']; ?>" rel="tooltip" title="Eliminar categoría" class="btn btn-danger btn-link btn-sm">
+                                  <i class="material-icons">close</i>
+                                </button>
+                                <!-- Modal -->
+                                <div class="modal fade" id="<?php echo 'Confirmacion'.$row['id_categoria_documentos']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"  data-backdrop="false">
+                                  <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Confirmación</h5>
+                                      </div>
+                                      <div class="modal-body">
+                                      ¿Está seguro que desea eliminar esta categoría?
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                        <button type="submit" class="btn btn-primary">Eliminar</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!--  -->
                                 </form>
                               </div>
                           </td>
@@ -83,8 +103,8 @@ $data=$cat_documentos->select(-1);
               </div>
             </div>
           </div>
-        </div>
-      </div>
+      
+    </div>
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>
