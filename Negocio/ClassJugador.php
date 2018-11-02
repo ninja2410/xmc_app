@@ -65,7 +65,7 @@ class Jugador
     }
     else{
       $query="SELECT J.id_jugador, J.nombre, J.direccion, J.fecha_nacimiento, J.estado, J.padre, J.madre, J.telefono, J.procedencia, J.apellido, J.sangre,
-      J.foto, J.id_posicion, P.descripcion, J.camisola, C.nombre as categoria, AC.fecha_inicio, AC.fecha_final, AC.id_asignacion_categoria
+      J.foto, J.id_posicion, P.descripcion, J.camisola,C.id_categoria as IdCat, C.nombre as categoria, AC.fecha_inicio, AC.fecha_final, AC.id_asignacion_categoria
       FROM ASIGNACION_CATEGORIA AC, CATEGORIA C,JUGADOR J, POSICION P
       WHERE J.id_jugador=$id AND AC.estado=1 and C.estado=1 and J.estado=1 and P.estado=1 AND J.id_posicion=P.id_posicion
       and AC.id_categoria = C.id_categoria and AC.id_jugador = J.id_jugador;";

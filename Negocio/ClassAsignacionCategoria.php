@@ -18,7 +18,7 @@ class AsignacionCategoria
   public function update($id, $fecha_inicio,$fecha_final,$id_categoria,$id_jugador,$id_equipo){
     $query="CALL SP_ASIGNACION_CATEGORIA_UPDATE($id,'$fecha_inicio','$fecha_final',$id_categoria,$id_jugador,$id_equipo);";
     $bd= new conexion();
-		$dt=$bd->execute_query($query);
+    $dt=$bd->execute_query($query);
 		return $dt;
   }
 
