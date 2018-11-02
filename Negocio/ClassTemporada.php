@@ -14,7 +14,7 @@ class Temporada
         $conexion->conectar();
         if ($id==-1)
         {
-            $query="SELECT * FROM TEMPORADA WHERE estado=1";
+            $query="SELECT * FROM TEMPORADA";
             $dt=mysqli_query($conexion->objetoconexion,$query);
         }
         else

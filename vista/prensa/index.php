@@ -21,10 +21,10 @@ $data=$prensa->select(-1);
     } ?>">
     <div class="main main-raised">
     <div class="content">
+            <div class="card col-md-12">
       <div class="container-fluid">
 
-          <div class="col-md-12">
-            <div class="card">
+          
               <div class="card-header card-header-danger row">
               <div class="col-md-11">
                   <h3 class="card-title">Prensa</h3>
@@ -53,6 +53,9 @@ $data=$prensa->select(-1);
                         Empresa
                       </th>
                       <th>
+                        Documentos
+                      </th>
+                      <th>
                         Acciones
                       </th>
                     </thead>
@@ -73,20 +76,28 @@ $data=$prensa->select(-1);
                         <td>
                           <?php echo $row['empresa']; ?>
                         </td>
-                        <td class="td-actions text-lefht">
+                        <td class="td-actions text-left">
+                        <div style="float:left"> 
+                        <a href="..\..\vista\prensa/documentos.php?id=<?php echo $row['id_prensa']; ?>">
+                          <button class="btn btn-info btn-round btn-sm"><i class="far fa-file-text fa-lg"></i> Documentos</button>
+                          </div>
+                            </td>
+                            <td class="td-actions text-left">
                             <div style="float:left">
                               <a href="..\..\vista\prensa/update.php?id=<?php echo $row['id_prensa']; ?>">
-                                <button type="button" rel="tooltip" title="Editar Prensa" class="btn btn-primary btn-link btn-sm">
+                                <button type="button" rel="tooltip" title="Editar prensa" class="btn btn-primary btn-link btn-sm">
                                   <i class="material-icons">edit</i>
                                 </button>
                               </a>
                             </div>
-                            <div  style="float:left">
+                            
+                            
+                            <div style="float:left">
                               <form class="" action="..\..\vista\prensa/store.php" method="post">
                                 <input type="hidden" name="operation" value="3">
                                 <input type="hidden" name="id" value="<?php echo $row['id_prensa']; ?>">
                                 <!-- Inicio de modal -->
-                            <button type="button" data-toggle="modal" data-target="<?php echo '#Confirmacion'.$row['id_prensa']; ?>" rel="tooltip" title="Eliminar categoría" class="btn btn-danger btn-link btn-sm">
+                            <button type="button" data-toggle="modal" data-target="<?php echo '#Confirmacion'.$row['id_prensa']; ?>" rel="tooltip" title="Eliminar prensa" class="btn btn-danger btn-link btn-sm">
                                   <i class="material-icons">close</i>
                                 </button>
                                 <!-- Modal -->
@@ -118,7 +129,7 @@ $data=$prensa->select(-1);
                 </div>
               </div>
             </div>
-          </div>
+         
       </div>
     </div>
     </div>

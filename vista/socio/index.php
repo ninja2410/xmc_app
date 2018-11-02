@@ -35,7 +35,7 @@ $data=$socio->select(-1);
                   </a>
                 </div>
               </div>
-              <div class="card-body">
+              <div class="card-body text-center">
                 <div class="table-responsive">
                   <table class="table table-striped table-bordered" id="table1">
                     <thead>
@@ -46,7 +46,10 @@ $data=$socio->select(-1);
                         Nombre
                       </th>
                       <th>
-                        Apellido
+                        Documentos
+                      </th>
+                      <th>
+                        Detalles del socio
                       </th>
                       <th>
                         Acciones
@@ -61,14 +64,21 @@ $data=$socio->select(-1);
                           <?php echo $row['id_socio']; ?>
                         </td>
                         <td>
-                          <?php echo $row['nombre']; ?>
+                        <?php echo $row['nombre']." ".$row['apellido']; ?>
                         </td>
+                  
                         <td>
-                          <?php echo $row['apellido']; ?>
-                        </td>
-                        <td class="td-actions text-lefht">
+                        
                           <a href="..\..\vista\socio/documentos.php?id=<?php echo $row['id_socio']; ?>">
                           <button class="btn btn-info btn-round btn-sm"><i class="far fa-file-text fa-lg"></i> Documentos</button>
+                          
+                          <td > 
+                          
+                          <a href="..\..\vista\socio/detalles.php?id=<?php echo $row['id_socio']; ?>">
+                          <button class="btn btn-success btn-round btn-sm"><i class="far fa-eye fa-lg"></i> Ver detalles</button>
+                         
+                          </td>
+                          <td > 
                             <div style="float:left">
                               <a href="..\..\vista\socio/update.php?id=<?php echo $row['id_socio']; ?>">
                                 <button type="button" rel="tooltip" title="Editar socio" class="btn btn-primary btn-link btn-sm">

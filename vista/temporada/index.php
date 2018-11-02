@@ -59,6 +59,9 @@ $data=$temporada->select(-1);
                       <th>
                         Acciones
                       </th>
+                      <th>
+                        Estado
+                      </th>
                     </thead>
                     <tbody>
                       <?php
@@ -79,7 +82,7 @@ $data=$temporada->select(-1);
                         </td>
                         <td class="text-center">
                           <a href="..\..\vista\temporada/partidos.php?id=<?php echo $row['id_temporada']; ?>">
-                          <button class="btn btn-success btn-round btn-sm"><i class="fas fa-futbol fa-lg"> </i>  Partidos</button>
+                          <button class="btn btn-warning btn-round btn-sm"><i class="fas fa-futbol fa-lg"> </i>  Resumen</button>
                         </td>
                         <td class="td-actions text-left">
                             <div style="float:left">
@@ -117,6 +120,26 @@ $data=$temporada->select(-1);
                                 <!--  -->
                               </form>
                             </div>
+                        </td>
+                        <td>
+                        <?php if($row['estado']==1)
+                        { 
+                        ?>
+                          <a>
+                          <button class="btn btn-success btn-round btn-sm"><i class="fas fa-futbol fa-lg"> </i> En curso</button>
+                          </a>
+                        <?php 
+                        }
+                        ?>
+                          <?php if($row['estado']==0)
+                        { 
+                        ?>
+                          <a>
+                          <button class="btn btn-danger btn-round btn-sm"><i class="fas fa-futbol fa-lg"> </i> Finalizado </button>
+                          </a>
+                        <?php 
+                        }
+                        ?>
                         </td>
                         <?php
                       } ?>
