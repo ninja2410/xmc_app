@@ -124,12 +124,13 @@ $data=$temporada->select(-1);
                               </form>
                             </div>
                         </td>
-                        <td>
+                        <td class="text-center">
                         <?php if($row['estado']==1)
                         {
                         ?>
                           <a>
-                          <button class="btn btn-success btn-round btn-sm"><i class="fas fa-futbol fa-lg"> </i> En curso</button>
+                              <!-- <button class="btn btn-success btn-round btn-sm"><i class="fas fa-futbol fa-lg"> </i> </button> -->
+                              <span class="badge badge-pill badge-success">En curso</span>
                           </a>
                         <?php
                         }
@@ -138,7 +139,8 @@ $data=$temporada->select(-1);
                         {
                         ?>
                           <a>
-                          <button class="btn btn-danger btn-round btn-sm"><i class="fas fa-futbol fa-lg"> </i> Finalizado </button>
+                          <!-- <button class="btn btn-danger btn-round btn-sm"><i class="fas fa-futbol fa-lg"> </i>  </button> -->
+                          <span class="badge badge-pill badge-danger">Finalizado</span>
                           </a>
                         <?php
                         }
