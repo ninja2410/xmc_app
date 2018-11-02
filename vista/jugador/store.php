@@ -76,15 +76,15 @@ if ($operacion=="1") {
 }
 elseif($operacion=="2") {
   $bit->insert('Actualizo la informacion del jugador'.$id_jugador, $_SESSION['id']);
-  $name=$_FILES['img']['name'];
-  $tmp='JUGADOR_'.$id_jugador.substr($name,-4);
-  move_uploaded_file($_FILES['img']['tmp_name'],'../imagenes/jugadores/'.$tmp);
-  chmod('../imagenes/jugadores/'.$tmp,0644);
   $foto=$_FILES['img']['name'];
   if ($foto=='') {
     $foto=$_POST['IMG'];
   }
   else{
+    $name=$_FILES['img']['name'];
+    $tmp='JUGADOR_'.$id_jugador.substr($name,-4);
+    move_uploaded_file($_FILES['img']['tmp_name'],'../imagenes/jugadores/'.$tmp);
+    chmod('../imagenes/jugadores/'.$tmp,0644);
     $foto=$tmp;
   }
   $id_equipo=1;

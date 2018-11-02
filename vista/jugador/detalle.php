@@ -37,7 +37,6 @@ function calculaedad($fechanacimiento){
                     <hr>
                     <h4><b>Edad: </b><?php echo calculaedad ($data['fecha_nacimiento']);?></h4>
                     <h4><b>Tipo de sangre: </b><?php echo $data['sangre']?></h4>
-                    <h4><b>Número de camisola: </b><?php echo $data['camisola']?></h4>
                     <h4><b>Fecha de nacimiento: </b><?php echo date("d/m/Y", strtotime($data['fecha_nacimiento']));?></h4>
                     <h4><b>Dirección: </b><?php echo $data['direccion']?></h4>
                     <h4><b>Nombre del padre: </b><?php echo $data['padre']?></h4>
