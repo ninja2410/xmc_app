@@ -30,13 +30,13 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label class="">Fecha de inicio de la temporada</label>
-                    <input type="text" placeholder="YYYY/MM/DD" class="form-control" name="fecha_inicio">
+                    <input type="date" placeholder="YYYY/MM/DD" class="form-control" name="fecha_inicio" id="fecha_inicio">
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label class="">Fecha de finalización</label>
-                    <input type="text" placeholder="YYYY/MM/DD" class="form-control" name="fecha_final">
+                    <input type="date" placeholder="YYYY/MM/DD" class="form-control" name="fecha_final">
                   </div>
                 </div>
               </div>
@@ -63,6 +63,17 @@
         message: 'Valor no valido',
         fields: 
         {
+          descripcion:{
+            validators:{
+                notEmpty:{
+                    message:'Ingrese el numero de la camisola del jugador'
+                },
+                regexp:{
+                  regexp: /^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ\s\-]*$/,
+                    message: 'Solo se aceptan numeros y letras'
+                    }
+                }
+            },
           fecha_inicio: 
           {
                 validators: 
@@ -93,18 +104,15 @@
                     },
                     callback: 
                     {
-                        message: 'La fecha debe ser despues de la fecha actual',
+                        message: 'La fecha debe ser despues de la fecha de inicio',
                         callback: function(value, validator) 
                         {
-                            var m = new moment(value, 'YYYY/MM/DD', true);
-                            if (!m.isValid())
-                            {
-                                return false;
-                            }else if (m<fi)
-                            {
-                              return false;
-                            }
-                            return m.isAfter(f);
+                            var m = new moment(value, 'YYYY-MM-DD', true);
+                            var d = document.getElementById("fecha_inicio").value;
+                            var m2 = new moment(d, 'YYYY-MM-DD', true);
+                            console.log(m); 
+
+                            return m.isAfter(m2);
                         }
                     }
                 }
