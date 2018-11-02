@@ -59,10 +59,10 @@ $data=$documento->select($_GET['id']);
                     </div>
                   </div>
                   <div class="col-md-6">
-                    <a class="media" href="..\imagenes\doc_ent\<?php echo $data['path']; ?>"></a>
+                    <a class="media" href="..\imagenes\doc_pren\<?php echo $data['path']; ?>"></a>
                   </div>
                   <div class="col-md-2">
-                    <a href="..\imagenes\doc_ent\<?php echo $data['path']; ?>" target="blank">
+                    <a href="..\imagenes\doc_pren\<?php echo $data['path']; ?>" target="blank">
                     <button class="btn btn-success btn-round btn-sm"><i class="fa fa-eye"></i> Abrir en pestaña</button>
                   </div>
                 </div>
