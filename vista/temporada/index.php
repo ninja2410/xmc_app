@@ -86,14 +86,14 @@ $data=$temporada->select(-1);
 
                           <a href="..\..\vista\temporada/estadistica_jugador.php?temporada=<?php echo $row['id_temporada']; ?>">
                           <button class="btn btn-info btn-round btn-sm"><i class="material-icons">accessibility_new</i>  Jugadores</button>
-                        </td>///
+                        </td>
                         <td class="td-actions text-left">
                             <div style="float:left">
                               <a href="..\..\vista\temporada/update.php?id=<?php echo $row['id_temporada']; ?>">
                                 <button type="button" rel="tooltip" title="Editar temporada" class="btn btn-primary btn-link btn-sm">
                                   <i class="material-icons">edit</i>
                                 </button>
-                              </a>///
+                              </a>
                             </div>
                             <div  style="float:left">
                               <form class="" action="..\..\vista\temporada/store.php" method="post">

@@ -22,17 +22,20 @@ class Partido
             INNER JOIN TEMPORADA ON PARTIDO.id_temporada = TEMPORADA.id_temporada
             INNER JOIN ESTADIO ON PARTIDO.id_estadio = ESTADIO.id_estadio
             INNER JOIN EQUIPO ON PARTIDO.id_equipo = EQUIPO.id_equipo WHERE PARTIDO.estado=1 ORDER BY id_partido DESC;  ";
-            
+
             $dt=mysqli_query($conexion->objetoconexion,$query);
         }
         else
         {
             $query="SELECT id_partido,fecha,EQUIPO.id_equipo,EQUIPO.nombre AS equipo,
-            partido.id_categoria,CATEGORIA.nombre as categoria,PARTIDO.id_estadio,
+            PARTIDO.id_categoria,CATEGORIA.nombre as categoria,PARTIDO.id_estadio,
             ESTADIO.nombre as estadio,PARTIDO.id_temporada,
             TEMPORADA.descripcion as temporada,observaciones from PARTIDO
-            inner join CATEGORIA INNER JOIN TEMPORADA INNER JOIN ESTADIO
-            INNER JOIN EQUIPO WHERE id_partido=$id";
+            inner join CATEGORIA on CATEGORIA.id_categoria=PARTIDO.id_categoria
+            INNER JOIN TEMPORADA ON TEMPORADA.id_temporada=PARTIDO.id_temporada
+            INNER JOIN ESTADIO ON ESTADIO.id_estadio=PARTIDO.id_estadio
+            INNER JOIN EQUIPO ON EQUIPO.id_equipo=PARTIDO.id_equipo
+            WHERE id_partido=$id;";
             $tmp=mysqli_query($conexion->objetoconexion,$query);
             $dt=mysqli_fetch_assoc($tmp);
         }

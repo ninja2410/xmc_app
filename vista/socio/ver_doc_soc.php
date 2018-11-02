@@ -20,7 +20,7 @@ $data=$documento->select($_GET['id']);
 
     <div class="main main-raised">
       <div class="content">
-       
+
           <div class="card col-md-12">
             <div class="card-header card-header-danger">
               <h3 class="card-title">Visualizar documento</h3>
@@ -62,7 +62,7 @@ $data=$documento->select($_GET['id']);
                     <a class="media" href="../imagenes/doc_soc/<?php echo $data['path']; ?>"></a>
                   </div>
                   <div class="col-md-2">
-                    <a href="../imagenes/doc_jug/<?php echo $data['path']; ?>" target="blank">
+                    <a href="../imagenes/doc_soc/<?php echo $data['path']; ?>" target="blank">
                     <button class="btn btn-success btn-round btn-sm"><i class="fa fa-eye"></i> Abrir en pestaña</button>
                   </div>
                 </div>
@@ -71,7 +71,7 @@ $data=$documento->select($_GET['id']);
                 <div class="clearfix"></div>
             </div>
           </div>
-        
+
       </div>
     </div>
 

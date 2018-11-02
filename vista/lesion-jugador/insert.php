@@ -52,7 +52,7 @@
     <?php include '../layoults/barnavLogged.php'; ?>
     <div class="main main-raised">
     <div class="content">
-      
+
         <div class="card col-md-12">
           <div class="card-header card-header-danger">
             <h3 class="card-title">Ingresar lesión del jugador</h3>
@@ -149,7 +149,6 @@
                         <div class="ripple-container"></div>
                       </button>
                     </div>
-                  </form>
                 </div>
               <div class="row">
                 <h3>Tratamiento agregado </h3>
@@ -185,7 +184,7 @@
             </form>
           </div>
         </div>
-      
+
     </div>
     </div>
     <?php include '../layoults/footer.php'; ?>

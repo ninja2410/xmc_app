@@ -30,7 +30,7 @@ function calculaedad($fechanacimiento){
             <div class="row" style="padding:20px">
                 <div class="col-md-2">
                     <?php
-                    echo '<img alt="Circle Image" class="img-circle rounded img-fluid"  src="../imagenes/sc'.$data['foto'].'" class="img-fluid">';
+                    echo '<img alt="Circle Image" class="img-circle rounded img-fluid"  src="../imagenes/sc/'.$data['foto'].'" class="img-fluid">';
                     ?>
                 </div>
                 <div class="col-md-7">
@@ -51,7 +51,7 @@ function calculaedad($fechanacimiento){
                     <input type="hidden" value="<?php echo $data['id_socio']; ?>">
                     <!-- <h4><b >Contrato: </b><a href="../../vista/documento_digital/index.php">< ?php echo $data['titulo']?></a></h4> -->
                 </div>
-                
+
                 <div class="col-md-3">
                     <ul class="nav flex-column">
                     <li class="nav-item">
