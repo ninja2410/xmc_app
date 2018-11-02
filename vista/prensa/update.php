@@ -1,5 +1,5 @@
 <?php
-require_once('..\..\Negocio/ClassPrensa.php');
+require_once('../../Negocio/ClassPrensa.php');
 $prensa=new Prensa();
 $data=$prensa->select($_GET['id']);
  ?>
@@ -8,11 +8,11 @@ $data=$prensa->select($_GET['id']);
   <head>
     <meta charset="utf-8">
     <title>Prensa - Actualizar</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
     <?php
-    include '..\layoults\barnavLogged.php';
+    include '../layoults/barnavLogged.php';
     ?>
     <div class="main main-raised"> 
     <div class="content">
@@ -23,7 +23,7 @@ $data=$prensa->select($_GET['id']);
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
-            <form method="post", action="..\prensa\store.php" id="frm_prensa">
+            <form method="post", action="../prensa/store.php" id="frm_prensa">
               <input type="hidden" name="operation" value="2">
               <input type="hidden" name="id" value="<?php echo $data['id_prensa']; ?>">
               <div class="row">
@@ -54,7 +54,7 @@ $data=$prensa->select($_GET['id']);
                   </div>
                 </div>
               </div>
-              <?php include '..\layoults\botones.php'; ?>
+              <?php include '../layoults/botones.php'; ?>
               <div class="clearfix"></div>
             </form>
           </div>
@@ -62,8 +62,8 @@ $data=$prensa->select($_GET['id']);
       </div>
     </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <script type="text/javascript">
     $(document).ready(function(){
       $('#frm_prensa').bootstrapValidator({

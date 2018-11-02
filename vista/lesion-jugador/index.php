@@ -1,5 +1,5 @@
 <?php
-require_once('..\..\Negocio/ClassLesionJugador.php');
+require_once('../../Negocio/ClassLesionJugador.php');
 $lesion=new LesionJugador();
 $data=$lesion->detalle();
 
@@ -9,11 +9,11 @@ $data=$lesion->detalle();
   <head>
     <meta charset="utf-8">
     <title>Lesiones de jugador - Listar</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
     <?php
-    include '..\layoults\barnavLogged.php';
+    include '../layoults/barnavLogged.php';
     ?>
     <input type="hidden" id="mensaje" name="secret" value="<?php if ($_SESSION['mensaje']!="") {
       echo $_SESSION['mensaje'];
@@ -30,7 +30,7 @@ $data=$lesion->detalle();
                   <p class="card-category">Listado de lesiones a jugadores</p>
                 </div>
                 <div class="col-md-1 text-right">
-                <a href="..\..\vista\lesion-jugador/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar lesión">
+                <a href="../../vista/lesion-jugador/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar lesión">
                     <i class="material-icons">add</i>
                   </a>
                 </div>
@@ -80,14 +80,14 @@ $data=$lesion->detalle();
                         </td>
                         <td class="td-actions text-left">
                             <div style="float:left">
-                              <a href="..\..\vista\lesion-jugador/update.php?id=<?php echo $row['ID']; ?>">
+                              <a href="../../vista/lesion-jugador/update.php?id=<?php echo $row['ID']; ?>">
                                 <button type="button" rel="tooltip" title="Editar lesión" class="btn btn-primary btn-link btn-sm">
                                   <i class="material-icons">edit</i>
                                 </button>
                               </a>
                             </div>
                             <div  style="float:left">
-                              <form class="" action="..\..\vista\lesion-jugador/store.php" method="post">
+                              <form class="" action="../../vista/lesion-jugador/store.php" method="post">
                                 <input type="hidden" name="operation" value="3">
                                 <input type="hidden" name="id" value="<?php echo $row['ID']; ?>">
                                <!-- Inicio de modal -->
@@ -128,8 +128,8 @@ $data=$lesion->detalle();
       </div>
     </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <script type="text/javascript">
     $(document).ready(function(){
       if ($('#mensaje').val()!="") {

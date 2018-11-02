@@ -1,9 +1,9 @@
 <?php
-require_once('..\..\Negocio/ClassDocumento.php');
+require_once('../../Negocio/ClassDocumento.php');
 $documento=new Documento();
 $data=$documento->select_prensa($_GET['id']);
 
-require_once('..\..\Negocio/ClassPrensa.php');
+require_once('../../Negocio/ClassPrensa.php');
 $prensa=new Prensa();
 $reportero=$prensa->select($_GET['id']);
 
@@ -13,11 +13,11 @@ $reportero=$prensa->select($_GET['id']);
   <head>
     <meta charset="utf-8">
     <title>Documentos - <?php echo $reportero['nombre'].' '.$reportero['apellido']; ?></title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
     <?php
-    include '..\layoults\barnavLogged.php';
+    include '../layoults/barnavLogged.php';
     ?>
     <input type="hidden" id="mensaje" name="secret" value="<?php if ($_SESSION['mensaje']!="") {
       echo $_SESSION['mensaje'];
@@ -34,7 +34,7 @@ $reportero=$prensa->select($_GET['id']);
                     <p class="card-category"> Documentos asignados al reportero: <?php echo $reportero['nombre'].' '.$reportero['apellido']; ?></p>
                   </div>
                   <div class="col-md-2 text-right">
-                    <a href="..\..\vista\prensa/create.php?id=<?php echo $_GET['id']; ?>" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar documento">
+                    <a href="../../vista/prensa/create.php?id=<?php echo $_GET['id']; ?>" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar documento">
                     <i class="material-icons">add</i>
                     </a>
                   </div>
@@ -84,21 +84,21 @@ $reportero=$prensa->select($_GET['id']);
                           </td>
                           <td class="td-actions text-lefht">
                               <div style="float:left">
-                                <a href="..\..\vista\prensa/ver_doc_prensa.php?id=<?php echo $row['ID']; ?>">
+                                <a href="../../vista/prensa/ver_doc_prensa.php?id=<?php echo $row['ID']; ?>">
                                   <button type="button" rel="tooltip" title="Ver documento" class="btn btn-success btn-link btn-sm">
                                   <i class="fa fa-eye"></i>
                                   </button>
                                 </a>
                               </div>
                               <div style="float:left">
-                                <a href="..\..\vista\prensa/update_doc_prensa.php?id=<?php echo $row['ID']; ?>">
+                                <a href="../../vista/prensa/update_doc_prensa.php?id=<?php echo $row['ID']; ?>">
                                   <button type="button" rel="tooltip" title="Editar documento" class="btn btn-primary btn-link btn-sm">
                                     <i class="material-icons">edit</i>
                                   </button>
                                 </a>
                               </div>
                               <div  style="float:left">
-                                <form class="" action="..\..\vista\prensa/store_document.php" method="post">
+                                <form class="" action="../../vista/prensa/store_document.php" method="post">
                                   <input type="hidden" name="operation" value="3">
                                   <input type="hidden" name="id" value="<?php echo $row['ID']; ?>">
                                   <input type="hidden" name="id_prensa" value="<?php echo $row['id_prensa']; ?>">
@@ -122,8 +122,8 @@ $reportero=$prensa->select($_GET['id']);
       </div>
     </div>
 
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <script>
 
        $(document).ready(function(){

@@ -1,5 +1,5 @@
 <?php
-require_once('..\..\Negocio/ClassEntrenador.php');
+require_once('../../Negocio/ClassEntrenador.php');
 $entrenador=new Entrenador();
 $data=$entrenador->select($_GET['id']);
 
@@ -15,7 +15,7 @@ function calculaedad($fechanacimiento){
 ?>
 
 <?php
-require_once('..\..\Negocio/ClassContrato.php');
+require_once('../../Negocio/ClassContrato.php');
 $contrato=new Contrato();
 $data2=$contrato->select(-1);
  ?>
@@ -25,11 +25,11 @@ $data2=$contrato->select(-1);
   <head>
     <meta charset="utf-8">
     <title>Entrenador - Detalles <?php echo $data['nombre']." ".$data['apellido'] ?></title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
     <?php
-    include '..\layoults\barnavLogged.php';
+    include '../layoults/barnavLogged.php';
     ?>
     <div class="main main-raised">
         <div class="container">
@@ -54,23 +54,23 @@ $data2=$contrato->select(-1);
                     <h4><b>Fecha de inicio de labores: </b><?php echo date("d/m/Y", strtotime($data['fecha_inicio']));?></h4>
                     <h4><b>Fecha final de labores: </b><?php echo date("d/m/Y", strtotime($data['fecha_fin']));?></h4>
                     <input type="hidden" value="<?php echo $data['id_entrenador']; ?>">
-                    <!-- <h4><b >Contrato: </b><a href="..\..\vista\documento_digital/index.php">< ?php echo $data['titulo']?></a></h4> -->
+                    <!-- <h4><b >Contrato: </b><a href="../../vista/documento_digital/index.php">< ?php echo $data['titulo']?></a></h4> -->
                 </div>
                 
                 <div class="col-md-3">
                     <ul class="nav flex-column">
                     <li class="nav-item">
-                            <a class="nav-link btnAzul" href="..\..\vista\entrenador/documentos.php?id=<?php echo $data['id_entrenador']; ?>">
+                            <a class="nav-link btnAzul" href="../../vista/entrenador/documentos.php?id=<?php echo $data['id_entrenador']; ?>">
                                 <i class="material-icons fa-2x">book</i><br> Documentos
                             </a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link btnAzul" href="..\..\vista\entrenador/update.php?id=<?php echo $data['id_entrenador']; ?>">
+                        <a class="nav-link btnAzul" href="../../vista/entrenador/update.php?id=<?php echo $data['id_entrenador']; ?>">
                                 <i class="material-icons fa-2x">edit</i><br> Actualizar información
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btnAzul" href="..\..\vista\entrenador/index.php">
+                            <a class="nav-link btnAzul" href="../../vista/entrenador/index.php">
                                 <i class="fas fa-undo-alt fa-2x"></i><br> Regresar
                             </a>
                         </li>
@@ -80,7 +80,7 @@ $data2=$contrato->select(-1);
             </div>
         </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
   </body>
 </html>

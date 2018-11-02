@@ -1,5 +1,5 @@
 <?php
-require_once('..\..\Negocio/ClassUsuario.php');
+require_once('../../Negocio/ClassUsuario.php');
 $personal=new Usuario();
 $data=$personal->selectPermiso(-1);
 ?>
@@ -8,11 +8,11 @@ $data=$personal->selectPermiso(-1);
   <head>
     <meta charset="utf-8">
     <title>Usuario - Insertar</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
   </head>
   <body class="profile-page sidebar-collapse">
-    <?php include '..\layoults\barnavLogged.php'; ?>
+    <?php include '../layoults/barnavLogged.php'; ?>
     <div class="main main-raised">
     <div class="content">
       <div class="container-fluid">
@@ -24,7 +24,7 @@ $data=$personal->selectPermiso(-1);
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
-            <form method="post" enctype="multipart/form-data" action="..\usuario\store.php" id="frm_usuario">
+            <form method="post" enctype="multipart/form-data" action="../usuario/store.php" id="frm_usuario">
               <input type="hidden" name="operation" value="1">
               <div class="row">
               <div class="col-md-6">
@@ -83,7 +83,7 @@ $data=$personal->selectPermiso(-1);
               </div>
               </div>
             </div>
-              <?php include '..\layoults\botones.php'; ?>
+              <?php include '../layoults/botones.php'; ?>
               <div class="clearfix"></div>
             </form>
           </div>
@@ -94,8 +94,8 @@ $data=$personal->selectPermiso(-1);
     </div>
     </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){

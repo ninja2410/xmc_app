@@ -1,5 +1,5 @@
 <?php
-require_once('..\..\Negocio/ClassSocio.php');
+require_once('../../Negocio/ClassSocio.php');
 $socio=new Socio();
 $data=$socio->select($_GET['id']);
 
@@ -19,11 +19,11 @@ function calculaedad($fechanacimiento){
   <head>
     <meta charset="utf-8">
     <title>Socio - Detalles <?php echo $data['nombre']." ".$data['apellido'] ?></title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
     <?php
-    include '..\layoults\barnavLogged.php';
+    include '../layoults/barnavLogged.php';
     ?>
     <div class="main main-raised">
         <div class="container">
@@ -49,23 +49,23 @@ function calculaedad($fechanacimiento){
                     <h4><b>Fecha de registro: </b><?php echo date("d/m/Y", strtotime($data['fecha_registro']));?></h4>
 
                     <input type="hidden" value="<?php echo $data['id_socio']; ?>">
-                    <!-- <h4><b >Contrato: </b><a href="..\..\vista\documento_digital/index.php">< ?php echo $data['titulo']?></a></h4> -->
+                    <!-- <h4><b >Contrato: </b><a href="../../vista/documento_digital/index.php">< ?php echo $data['titulo']?></a></h4> -->
                 </div>
                 
                 <div class="col-md-3">
                     <ul class="nav flex-column">
                     <li class="nav-item">
-                            <a class="nav-link btnAzul" href="..\..\vista\socio/documentos.php?id=<?php echo $data['id_socio']; ?>">
+                            <a class="nav-link btnAzul" href="../../vista/socio/documentos.php?id=<?php echo $data['id_socio']; ?>">
                                 <i class="material-icons fa-2x">book</i><br> Documentos
                             </a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link btnAzul" href="..\..\vista\socio/update.php?id=<?php echo $data['id_socio']; ?>">
+                        <a class="nav-link btnAzul" href="../../vista/socio/update.php?id=<?php echo $data['id_socio']; ?>">
                                 <i class="material-icons fa-2x">edit</i><br> Actualizar información
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btnAzul" href="..\..\vista\socio/index.php">
+                            <a class="nav-link btnAzul" href="../../vista/socio/index.php">
                                 <i class="fas fa-undo-alt fa-2x"></i><br> Regresar
                             </a>
                         </li>
@@ -75,7 +75,7 @@ function calculaedad($fechanacimiento){
             </div>
         </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
   </body>
 </html>

@@ -6,7 +6,7 @@ session_start();
 <head>
     <meta charset="utf-8">
     <title>Login</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
 </head>
 <body class="login-page sidebar-collapse">
 
@@ -48,7 +48,7 @@ session_start();
       <div class="row">
         <div class="col-lg-4 col-md-6 ml-auto mr-auto">
           <div class="card card-login">
-            <form class="form" method="POST" action="..\login\acceso.php">
+            <form class="form" method="POST" action="../login/acceso.php">
                 <br>
               <div class="card-header card-header-danger text-center">
                 <img src="../assets/img/logo.png" alt="Logo de Xelaju MC" class="rounded-circle img-fluid" style="height:150px; width:150px;">
@@ -80,8 +80,8 @@ session_start();
       </div>
     </div>
   </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
 </body>
 
 </html>

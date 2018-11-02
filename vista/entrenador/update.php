@@ -1,12 +1,12 @@
 
  <?php
-require_once('..\..\Negocio/ClassEntrenador.php');
+require_once('../../Negocio/ClassEntrenador.php');
 $entrenador=new Entrenador();
 $data=$entrenador->select($_GET['id']);
  ?>
 
 <!-- < ?php
-require_once('..\..\Negocio/ClassContrato.php');
+require_once('../../Negocio/ClassContrato.php');
 $contrato=new Contrato();
 $data2=$contrato->select(-1);
  ?> -->
@@ -17,11 +17,11 @@ $data2=$contrato->select(-1);
   <head>
     <meta charset="utf-8">
     <title>Entrenador - Actualizar</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
   </head>
   <body class="profile-page sidebar-collapse">
-    <?php include '..\layoults\barnavLogged.php'; ?>
+    <?php include '../layoults/barnavLogged.php'; ?>
     <div class="main main-raised"> 
     <div class="content">
         <div class="card col-md-13">
@@ -30,7 +30,7 @@ $data2=$contrato->select(-1);
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
-            <form method="post", action="..\entrenador\store.php" id="frm_entrenador" enctype="multipart/form-data">
+            <form method="post", action="../entrenador/store.php" id="frm_entrenador" enctype="multipart/form-data">
              <input type="hidden" name="operation" value="2"> 
              <input type="hidden" name="id" value="<?php echo $data['id_entrenador']; ?>">
              <input type="hidden" name="id_AE" value="<?php echo $data['id_asignacion_entrenador'] ?>">
@@ -106,7 +106,7 @@ $data2=$contrato->select(-1);
                     <select class="form-control" name="categoria">
                           <option selected value="0">Elija la categoría del entrenador...</option>
                            <?php
-                                include_once('..\..\Negocio/classCategoria.php');
+                                include_once('../../Negocio/classCategoria.php');
                                 $categoria=new Categoria();
                                 $data2=$categoria->select(-1);
                                 while ($row = mysqli_fetch_array($data2))
@@ -128,7 +128,7 @@ $data2=$contrato->select(-1);
                          
                 <div class="row">
                 <div class="col-md-4">
-                  <img src="..\imagenes\<?php echo $data['foto']; ?>" style="width: 200px; height: 150px;" alt="">
+                  <img src="../imagenes/<?php echo $data['foto']; ?>" style="width: 200px; height: 150px;" alt="">
                   <br>
                   <label><b>Imagen actual</b></label>
                 </div>
@@ -144,15 +144,15 @@ $data2=$contrato->select(-1);
                 </div>
                 </div> 
 
-              <?php include '..\layoults\botones.php'; ?>
+              <?php include '../layoults/botones.php'; ?>
               <div class="clearfix"></div>
             </form>
           </div>
         </div>
     </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
     <script type="text/javascript">
     $(document).ready(function(){

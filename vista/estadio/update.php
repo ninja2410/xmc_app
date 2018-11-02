@@ -1,5 +1,5 @@
 <?php
-require_once('..\..\Negocio/ClassEstadio.php');
+require_once('../../Negocio/ClassEstadio.php');
 $estadio=new Estadio();
 $data=$estadio->select($_GET['id']);
 ?>
@@ -9,10 +9,10 @@ $data=$estadio->select($_GET['id']);
   <head>
     <meta charset="utf-8">
     <title>Estadio - Actualizar</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
-    <?php include '..\layoults\barnavLogged.php'; ?>
+    <?php include '../layoults/barnavLogged.php'; ?>
     <div class="main main-raised" >
     <div class="content">
       
@@ -22,7 +22,7 @@ $data=$estadio->select($_GET['id']);
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
-            <form method="post", action="..\estadio\store.php" id="frm_estadio">
+            <form method="post", action="../estadio/store.php" id="frm_estadio">
               <input type="hidden" name="operation" value="2">
               <input type="hidden" name="id" value="<?php echo $data['id_estadio']; ?>">
               <div class="row">
@@ -56,7 +56,7 @@ $data=$estadio->select($_GET['id']);
                   </div>
                 </div>
                 </div>
-              <?php include '..\layoults\botones.php'; ?>
+              <?php include '../layoults/botones.php'; ?>
               <div class="clearfix"></div>
             </form>
           </div>
@@ -64,8 +64,8 @@ $data=$estadio->select($_GET['id']);
     
     </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <script type="text/javascript">
     $(document).ready(function(){
       $('#frm_estadio').bootstrapValidator({

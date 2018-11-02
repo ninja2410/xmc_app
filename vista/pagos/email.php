@@ -5,14 +5,14 @@
 <meta charset="utf-8">
 </head>
 
-<body style="margin: 0; padding: 0;" background="..\assets/img/home.png"></p>
+<body style="margin: 0; padding: 0;" background="../assets/img/home.png"></p>
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
 <tr>
 <td style="padding: 10px 0 30px 0;">
 <table align="center" border="0" cellpadding="0" cellspacing="0" width="600" style="border: 1px solid #cccccc; border-collapse: collapse;">
 <tr>
 <td align="center" bgcolor="#294482" style="padding: 40px 0 30px 0; color: #153643; font-size: 28px; font-weight: bold; font-family: Arial, sans-serif;">
-      <img src="..\assets/img/logo.png" alt="Xelaju MC" width="100px" style="display: block;" />
+      <img src="../assets/img/logo.png" alt="Xelaju MC" width="100px" style="display: block;" />
   </td>
 </tr>
 <tr>

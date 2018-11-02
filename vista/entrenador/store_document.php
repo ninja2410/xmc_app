@@ -1,6 +1,6 @@
 <?php
-require_once('..\..\Negocio/ClassDocumento.php');
-require_once('..\..\Negocio/ClassBitacora.php');
+require_once('../../Negocio/ClassDocumento.php');
+require_once('../../Negocio/ClassBitacora.php');
 session_start();
 $bit=new Bitacora();
 
@@ -38,8 +38,8 @@ if ($operacion=="1") {
     $bit->insert('Se subió un nuevo documento digital', $_SESSION['id']);
     $name=$_FILES['img']['name'];
     $path='DOC_E'.$accion->correlativo().substr($name,-4);
-    move_uploaded_file($_FILES['img']['tmp_name'],'..\imagenes\doc_ent/'.$path);
-    chmod('..\imagenes\doc_ent/'.$path,0644);
+    move_uploaded_file($_FILES['img']['tmp_name'],'../imagenes/doc_ent/'.$path);
+    chmod('../imagenes/doc_ent/'.$path,0644);
     $accion->insert_entrenador($fecha, 1, $path, $descripcion, $categoria, $titulo, $id_entrenador);
     $_SESSION['mensaje']="El documento se ha almacenado con éxito!";
   } catch (\Exception $e) {
@@ -57,8 +57,8 @@ elseif($operacion=="2") {
     }
     else{
       $tmp='DOC_E'.$accion->correlativo().substr($name,-4);
-      move_uploaded_file($_FILES['img']['tmp_name'],'..\imagenes\doc_ent/'.$tmp);
-      chmod('..\imagenes\doc_ent/'.$tmp,0644);
+      move_uploaded_file($_FILES['img']['tmp_name'],'../imagenes/doc_ent/'.$tmp);
+      chmod('../imagenes/doc_ent/'.$tmp,0644);
       $path=$tmp;
     }
     $accion->update_entrenador($id_Documento, $fecha, 1, $path, $descripcion, $categoria, $titulo, $id_entrenador);

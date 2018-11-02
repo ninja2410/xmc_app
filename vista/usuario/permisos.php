@@ -1,5 +1,5 @@
 <?php
-require_once('..\..\Negocio/ClassUsuario.php');
+require_once('../../Negocio/ClassUsuario.php');
 $personal=new Usuario();
 $data=$personal->selectPermiso(-1);
 $dataUs=$personal->select($_GET['id']);
@@ -10,10 +10,10 @@ $usuario = $_GET['id'];
   <head>
     <meta charset="utf-8">
     <title>Usuario - Actualizar</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
-    <?php include '..\layoults\barnavLogged.php'; ?>
+    <?php include '../layoults/barnavLogged.php'; ?>
     <div class="content">
       <div class="col-md-12">
         <div class="card">
@@ -22,7 +22,7 @@ $usuario = $_GET['id'];
             <p class="card-category">Marque o desmarque el permiso que desea agregar o quitar</p>
           </div>
           <div class="card-body">
-            <form method="post", action="..\usuario\store.php" id="frm_usuario">
+            <form method="post", action="../usuario/store.php" id="frm_usuario">
               <input type="hidden" name="operation" value="4">
               <input type="hidden" name="id" value="<?php echo $usuario; ?>">
               <h3>Permisos</h3>
@@ -46,15 +46,15 @@ $usuario = $_GET['id'];
               </div>
                 </div>
             
-              <?php include '..\layoults\botones.php'; ?>
+              <?php include '../layoults/botones.php'; ?>
               <div class="clearfix"></div>
             </form>
           </div>
         </div>
       </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <script type="text/javascript">
      var us=<?php echo $_GET['id']; ?>;
       $(document).ready(function(){

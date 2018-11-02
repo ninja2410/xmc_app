@@ -1,5 +1,5 @@
 <?php
-require_once('..\..\Negocio/ClassJugador.php');
+require_once('../../Negocio/ClassJugador.php');
 $jugador=new Jugador();
 $data=$jugador->select($_GET['id']);
  ?>
@@ -8,12 +8,12 @@ $data=$jugador->select($_GET['id']);
   <head>
     <meta charset="utf-8">
     <title>Jugador - Actualizar</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
   </head>
   <body class="profile-page sidebar-collapse">
     <?php
-    include '..\layoults\barnavLogged.php';
+    include '../layoults/barnavLogged.php';
     ?>
    <div class="content main main-raised">
             <div class="card col-md-12">
@@ -24,7 +24,7 @@ $data=$jugador->select($_GET['id']);
                   <p class="category">Complete los campos siguientes</p>
               </div>
               <div class="card-body">
-                <form method="post", action="..\jugador\store.php" enctype="multipart/form-data" id="frm_jugador">
+                <form method="post", action="../jugador/store.php" enctype="multipart/form-data" id="frm_jugador">
                 <input type="hidden" name="operation" value="2">
                 <input type="hidden" name="id" value="<?php echo $data['id_jugador'] ?>">
                 <input type="hidden" name="id_AC" value="<?php echo $data['id_asignacion_categoria'] ?>">
@@ -93,7 +93,7 @@ $data=$jugador->select($_GET['id']);
                                 <select class="form-control" name="posicion">
                                     <?php
                                         echo '<option selected value="'.$data['id_posicion'].'">'.$data['descripcion'].'</option>';
-                                        include_once('..\..\Negocio/classPosicion.php');
+                                        include_once('../../Negocio/classPosicion.php');
                                         $posicion=new Posicion();
                                         $data2=$posicion->select(-1);
                                         while ($row = mysqli_fetch_array($data2))
@@ -116,7 +116,7 @@ $data=$jugador->select($_GET['id']);
                                 <select class="form-control" name="categoria">
                                     <?php
                                         echo '<option selected value="'.$data['id_categoria'].'">'.$data['categoria'].'</option>';
-                                        include_once('..\..\Negocio/classCategoria.php');
+                                        include_once('../../Negocio/classCategoria.php');
                                         $categoria=new Categoria();
                                         $data4=$categoria->select(-1);
                                         while ($row = mysqli_fetch_array($data4))
@@ -162,7 +162,7 @@ $data=$jugador->select($_GET['id']);
                         </div>
                     </div>
                     <div class="text-right">
-                        <?php include '..\layoults\botones.php'; ?>
+                        <?php include '../layoults/botones.php'; ?>
                     </div>
                     <div class="clearfix"></div>
                 </form>
@@ -171,8 +171,8 @@ $data=$jugador->select($_GET['id']);
           
         </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
     <script type="text/javascript">
     $(document).ready(function(){

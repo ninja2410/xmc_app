@@ -1,5 +1,5 @@
 <?php
-require_once('..\..\Conexion\conexion.php');
+require_once('../../Conexion/conexion.php');
 $conexion=new conexion();
 $conexion->conectar();
 

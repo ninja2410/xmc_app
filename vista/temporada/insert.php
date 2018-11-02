@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <title>Temporada - Insertar</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
-    <?php include '..\layoults\barnavLogged.php'; ?>
+    <?php include '../layoults/barnavLogged.php'; ?>
     <div class="main main-raised"> 
         <div class="card col-md-12">
     <div class="content">
@@ -16,7 +16,7 @@
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
-            <form method="post", action="..\temporada\store.php" id="frm_temporada">
+            <form method="post", action="../temporada/store.php" id="frm_temporada">
               <input type="hidden" name="operation" value="1">
               <div class="row">
                 <div class="col-md-12">
@@ -40,7 +40,7 @@
                   </div>
                 </div>
               </div>
-              <?php include '..\layoults\botones.php'; ?>
+              <?php include '../layoults/botones.php'; ?>
               <div class="clearfix"></div>
             </form>
           </div>
@@ -48,8 +48,8 @@
      
     </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <script type="text/javascript">
     var f = new Date();
     var fi = new moment();

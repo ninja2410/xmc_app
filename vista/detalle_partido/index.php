@@ -1,13 +1,13 @@
 <?php
-require_once('..\..\Negocio/ClassDetallePartido.php');
+require_once('../../Negocio/ClassDetallePartido.php');
 $detalle_partido=new Detalle();
 $datadp=$detalle_partido->selectXela($_GET['id']);
 $datadpCn=$detalle_partido->selectContrario($_GET['id'],$_GET['id2']);
 
-require_once('..\..\Negocio/ClassPersonalTecnico.php');
+require_once('../../Negocio/ClassPersonalTecnico.php');
 $personal=new PersonalTecnico();
 $data=$personal->select($_GET['id']);
-$link='..\..\vista\personaltecnico/insert.php?id='.$_GET['id'];
+$link='../../vista/personaltecnico/insert.php?id='.$_GET['id'];
 $btn='Asignar personal técnico'
 ?>
 <!DOCTYPE html>
@@ -15,11 +15,11 @@ $btn='Asignar personal técnico'
   <head>
     <meta charset="utf-8">
     <title>Resultados - Xelajú MC - <?php echo $datadp['id_partido']?></title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
     <?php
-    include '..\layoults\barnavLogged.php';
+    include '../layoults/barnavLogged.php';
     ?>
     <input type="hidden" id="mensaje" name="secret" value="<?php if ($_SESSION['mensaje']!="") {
       echo $_SESSION['mensaje'];
@@ -181,15 +181,15 @@ $btn='Asignar personal técnico'
             <br>
             <div class="row text-center">
                         <div class="col-md-8">
-                            <a href="<?php echo '..\..\vista\estadisticaJugador/index.php?partido='.$_GET['id'];?>">
+                            <a href="<?php echo '../../vista/estadisticaJugador/index.php?partido='.$_GET['id'];?>">
                             <button class="btn btn-success btn-round"><i class="fas fa-notes-medical fa-lg"></i> Estadísticas por jugador</button></a>
                         </div>
                         <div class="col-md-8">
-                            <a href="..\..\vista\detalle_partido/update.php?id=<?php echo $datadp['id_partido']?>&id2=<?php echo $datadpCn['id_equipo']?>">
+                            <a href="../../vista/detalle_partido/update.php?id=<?php echo $datadp['id_partido']?>&id2=<?php echo $datadpCn['id_equipo']?>">
                             <button class="btn btn-info btn-round"><i class="fas fa-notes-medical fa-lg"></i> Modificar resultados</button></a>
                         </div>
                         <div class="col-md-7">
-                            <a href="..\..\vista\partido/index.php">
+                            <a href="../../vista/partido/index.php">
                             <button class="btn btn-default btn-round"><i class="fas fa-undo-alt fa-lg"></i> Regresar</button></a>
                         </div>
             </div>
@@ -207,7 +207,7 @@ $btn='Asignar personal técnico'
           $result = mysqli_num_rows($data);
           if($result>0)
           {
-            $link='..\..\vista\personaltecnico/update.php?id='.$_GET['id'];
+            $link='../../vista/personaltecnico/update.php?id='.$_GET['id'];
             $btn='Actualizar personal técnico'
          ?>
 
@@ -254,7 +254,7 @@ $btn='Asignar personal técnico'
                         <button class="btn btn-info btn-round"><i class="fas fa-notes-medical fa-lg"></i>  <?php echo $btn ?></button>
                     </div>
                     <div>
-                        <a href="..\..\vista\partido/index.php">
+                        <a href="../../vista/partido/index.php">
                         <button class="btn btn-default btn-round"><i class="fas fa-undo-alt fa-lg"></i> Regresar</button>
                     </div>
                 </div>
@@ -264,8 +264,8 @@ $btn='Asignar personal técnico'
     </div>
     </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <script type="text/javascript">
       $(document).ready(function(){
         if ($('#mensaje').val()!="") {

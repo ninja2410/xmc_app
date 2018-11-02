@@ -1,5 +1,5 @@
 <?php
- require_once('..\..\Negocio/ClassDetallePartido.php');
+ require_once('../../Negocio/ClassDetallePartido.php');
  $detalle_partido=new Detalle();
  $data=$detalle_partido->selectXela($_GET['id']);
  $dataCn=$detalle_partido->selectContrario($_GET['id'],$_GET['id2']);
@@ -9,14 +9,14 @@
   <head>
     <meta charset="utf-8">
     <title>Ingresar resultados</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
     <?php
-    include '..\layoults\barnavLogged.php';
+    include '../layoults/barnavLogged.php';
     ?>
     <div class="main main-raised">
-    <form method="post", action="..\detalle_partido\store.php" id="frm_detalle_partido">
+    <form method="post", action="../detalle_partido/store.php" id="frm_detalle_partido">
     <input type="hidden" name="operation" value="2">
     <input type="hidden" name="id" value="<?php echo $data['id_detalle_partido']; ?>">
     <input type="hidden" name="id2" value="<?php echo $dataCn['id_detalle_partido']; ?>">
@@ -217,8 +217,8 @@
         <br>
     </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <script type="text/javascript">
     $(document).ready(function(){
         $('#frm_detalle_partido').bootstrapValidator({

@@ -1,5 +1,5 @@
 <?php
-require_once('..\..\Negocio/ClassAlineacion.php');
+require_once('../../Negocio/ClassAlineacion.php');
 $alineacion=new Alineacion();
 $data=$alineacion->selectPartido($_GET['id']);
 ?>
@@ -8,10 +8,10 @@ $data=$alineacion->selectPartido($_GET['id']);
   <head>
     <meta charset="utf-8">
     <title>Alineaciones - Listar</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
-  <?php include '..\layoults\barnavLogged.php'; ?>
+  <?php include '../layoults/barnavLogged.php'; ?>
     <div class="main main-raised">
     <div class="content">
       <div class="container-fluid">
@@ -24,7 +24,7 @@ $data=$alineacion->selectPartido($_GET['id']);
                   <p class="card-category">Listado de alineaciones</p>
                 </div>
                 <div class="col-md-1 text-right">
-                <a href="..\..\vista\alineacion/insert_alineacion.php?id=<?php echo $_GET['id']; ?>" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar a la alineación">
+                <a href="../../vista/alineacion/insert_alineacion.php?id=<?php echo $_GET['id']; ?>" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar a la alineación">
                     <i class="material-icons">add</i>
                   </a>
                 </div>
@@ -63,14 +63,14 @@ $data=$alineacion->selectPartido($_GET['id']);
                         </td>
                         <td class="td-actions text-lefht">
                             <div style="float:left">
-                              <a href="..\..\vista\alineacion/update.php?id=<?php echo $row['id_alineacion']; ?>">
+                              <a href="../../vista/alineacion/update.php?id=<?php echo $row['id_alineacion']; ?>">
                                 <button type="button" rel="tooltip" title="Editar alineación" class="btn btn-primary btn-link btn-sm">
                                   <i class="material-icons">edit</i>
                                 </button>
                               </a>
                             </div>
                             <div  style="float:left">
-                              <form class="" action="..\..\vista\alineacion/store.php" method="post">
+                              <form class="" action="../../vista/alineacion/store.php" method="post">
                                 <input type="hidden" name="operation" value="3">
                                 <input type="hidden" name="id" value="<?php echo $row['id_alineacion']; ?>">
                                 <input type="hidden" name="partido" value="<?php echo $_GET['id'] ?>">
@@ -93,8 +93,8 @@ $data=$alineacion->selectPartido($_GET['id']);
       </div>
     </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <script type="text/javascript">
     $(document).ready(function(){
 $('#table1').DataTable({

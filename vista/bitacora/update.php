@@ -1,5 +1,5 @@
 <?php
-require_once('..\..\Negocio/ClassUsuario.php');
+require_once('../../Negocio/ClassUsuario.php');
 $usuario=new Usuario();
 $data=$usuario->select($_GET['id']);
 
@@ -9,11 +9,11 @@ $data=$usuario->select($_GET['id']);
   <head>
     <meta charset="utf-8">
     <title>Usuario - Actualizar</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body>
     <?php
-    include '..\layoults\barnavLogged.php';
+    include '../layoults/barnavLogged.php';
     ?>
     <div class="content">
       <div class="col-md-8">
@@ -23,7 +23,7 @@ $data=$usuario->select($_GET['id']);
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
-            <form method="post", action="..\usuario\store.php">
+            <form method="post", action="../usuario/store.php">
               <input type="hidden" name="operation" value="2">
               <input type="hidden" name="id" value="<?php echo $data['id_usuario']; ?>">
               <div class="row">
@@ -40,14 +40,14 @@ $data=$usuario->select($_GET['id']);
                   </div>
                 </div>
               </div>
-              <?php include '..\layoults\botones.php'; ?>
+              <?php include '../layoults/botones.php'; ?>
               <div class="clearfix"></div>
             </form>
           </div>
         </div>
       </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
   </body>
 </html>

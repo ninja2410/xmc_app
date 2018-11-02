@@ -1,5 +1,5 @@
 <?php
-require_once('..\..\Negocio/ClassCategoriaDocumentos.php');
+require_once('../../Negocio/ClassCategoriaDocumentos.php');
 $cat_documentos=new CatDocumentos();
 $data=$cat_documentos->select(-1);
 
@@ -9,11 +9,11 @@ $data=$cat_documentos->select(-1);
   <head>
     <meta charset="utf-8">
     <title>Categoría documentos - Listar</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
     <?php
-    include '..\layoults\barnavLogged.php';
+    include '../layoults/barnavLogged.php';
     ?>
     <div class="content">
       <input type="hidden" id="mensaje" name="secret" value="<?php if ($_SESSION['mensaje']!="") {
@@ -30,7 +30,7 @@ $data=$cat_documentos->select(-1);
                   <p class="category">Listado de las categorías de los documentos</p>
                   </div>
                   <div class="col-md-1 text-right">
-                <a href="..\..\vista\categoria_documentos/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar categoría">
+                <a href="../../vista/categoria_documentos/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar categoría">
                     <i class="material-icons">add</i>
                   </a>
                 </div>
@@ -59,14 +59,14 @@ $data=$cat_documentos->select(-1);
                           <td class="td-actions text-left">
               
                               <div style="float:left">
-                                <a href="..\..\vista\categoria_documentos/update.php?id=<?php echo $row['id_categoria_documentos']; ?>">
+                                <a href="../../vista/categoria_documentos/update.php?id=<?php echo $row['id_categoria_documentos']; ?>">
                                   <button type="button" rel="tooltip" title="Editar categoría" class="btn btn-primary btn-link btn-sm">
                                     <i class="material-icons">edit</i>
                                   </button>
                                 </a>
                               </div>
                               <div  style="float:left">
-                                <form class="" action="..\..\vista\categoria_documentos/store.php" method="post">
+                                <form class="" action="../../vista/categoria_documentos/store.php" method="post">
                                   <input type="hidden" name="operation" value="3">
                                   <input type="hidden" name="id" value="<?php echo $row['id_categoria_documentos']; ?>">
                                   <!-- Inicio de modal -->
@@ -106,8 +106,8 @@ $data=$cat_documentos->select(-1);
       
     </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <script type="text/javascript">
       $(document).ready(function(){
         if ($('#mensaje').val()!="") {

@@ -1,9 +1,9 @@
 <?php
-require_once('..\..\Negocio/ClassCategoriaDocumentos.php');
+require_once('../../Negocio/ClassCategoriaDocumentos.php');
 $categoria=new CatDocumentos();
 $cat=$categoria->select(-1);
 
-require_once('..\..\Negocio/ClassDocumento.php');
+require_once('../../Negocio/ClassDocumento.php');
 $documento=new Documento();
 $data=$documento->select($_GET['id']);
  ?>
@@ -12,11 +12,11 @@ $data=$documento->select($_GET['id']);
   <head>
     <meta charset="utf-8">
     <title>Documento - Visualizar</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
   </head>
   <body>
-    <?php include '..\layoults\barnavLogged.php'; ?>
+    <?php include '../layoults/barnavLogged.php'; ?>
 
     <div class="main main-raised">
       <div class="content">
@@ -59,10 +59,10 @@ $data=$documento->select($_GET['id']);
                     </div>
                   </div>
                   <div class="col-md-6">
-                    <a class="media" href="..\imagenes\<?php echo $data['path']; ?>"></a>
+                    <a class="media" href="../imagenes/<?php echo $data['path']; ?>"></a>
                   </div>
                   <div class="col-md-2">
-                    <a href="..\imagenes\<?php echo $data['path']; ?>" target="blank">
+                    <a href="../imagenes/<?php echo $data['path']; ?>" target="blank">
                     <button class="btn btn-success btn-round btn-sm"><i class="fa fa-eye"></i>Abrir en pestaña</button>
                   </div>
                 </div>
@@ -75,8 +75,8 @@ $data=$documento->select($_GET['id']);
       </div>
     </div>
 
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <script type="text/javascript">
     $('a.media').media({width:500, height:400});
     function printDiv(nombreDiv) {

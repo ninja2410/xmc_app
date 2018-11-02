@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <title>Contrato - Insertar</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
-    <?php include '..\layoults\barnavLogged.php'; ?>
+    <?php include '../layoults/barnavLogged.php'; ?>
     <div class="main main-raised"> 
     <div class="content">
       <div class="col-md-12">
@@ -16,7 +16,7 @@
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
-          <form method="post", action="..\contrato\store.php"  id="frm_contrato" enctype="multipart/form-data">
+          <form method="post", action="../contrato/store.php"  id="frm_contrato" enctype="multipart/form-data">
               <input type="hidden" name="operation" value="1">
              
              <div class="row">
@@ -57,7 +57,7 @@
                     <label for="exampleFormControlSelect1">Tipo de documento digital</label>
                     <select class="form-control" name="id_documento_digital">
                       <?php
-                      include_once('..\..\Negocio/ClassDocumento.php');
+                      include_once('../../Negocio/ClassDocumento.php');
                       $documento_digital=new Documento();
                       $data=$documento_digital->select(-1);
                       while ($row=mysqli_fetch_array($data)) {
@@ -71,7 +71,7 @@
                 </div>
                 </div>
 
-              <?php include '..\layoults\botones.php'; ?>
+              <?php include '../layoults/botones.php'; ?>
               <div class="clearfix"></div>
             </form>
           </div>
@@ -79,8 +79,8 @@
       </div>
     </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <script type="text/javascript">
     $(document).ready(function(){
       $('#frm_contrato').bootstrapValidator({

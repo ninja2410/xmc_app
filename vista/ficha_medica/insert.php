@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <title>Fichas médicas - Insertar</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
-    <?php include '..\layoults\barnavLogged.php'; ?>
+    <?php include '../layoults/barnavLogged.php'; ?>
     <div class="content main main-raised">
     <div class="card">
       <div class="container-fluid">
@@ -21,7 +21,7 @@
                     <li class="nav-item"><a class="nav-link active" href="#encabezado" data-toggle="tab">Encabezado</a></li>
                     <li class="nav-item"><a class="nav-link" href="#detalle" data-toggle="tab">Detalle</a></li>
                 </ul>
-                <form method="post", action="..\ficha_medica\store.php" id="frm_fichaMedica">
+                <form method="post", action="../ficha_medica/store.php" id="frm_fichaMedica">
                 <div class="tab-content tab-space">
                     <div class="tab-pane active" id="encabezado">
                         <input type="hidden" name="operation" value="1">
@@ -51,7 +51,7 @@
                                 <select class="form-control" name="jugador">
                                     <option selected>Elija un jugador...</option>
                                     <?php
-                                        include_once('..\..\Negocio/ClassJugador.php');
+                                        include_once('../../Negocio/ClassJugador.php');
                                         $jugador=new Jugador();
                                         $data=$jugador->select(-1);
                                         while ($row = mysqli_fetch_array($data))
@@ -86,7 +86,7 @@
                         <?php include 'detalle.php'?>
                     </div>
                 </div>
-                <?php include '..\layoults\botones.php'; ?>
+                <?php include '../layoults/botones.php'; ?>
                 <div class="clearfix"></div>
                 </form>
               </div>
@@ -94,8 +94,8 @@
           </div>
       </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <!-- Script con las funciones para convertir los campos en un JSON -->
 <script type="text/javascript">
     var datos1=[];

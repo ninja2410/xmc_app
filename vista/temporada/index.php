@@ -1,5 +1,5 @@
 <?php
-require_once('..\..\Negocio/ClassTemporada.php');
+require_once('../../Negocio/ClassTemporada.php');
 $temporada=new Temporada();
 $data=$temporada->select(-1);
 
@@ -9,11 +9,11 @@ $data=$temporada->select(-1);
   <head>
     <meta charset="utf-8">
     <title>Temporadas - Listar</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
     <?php
-    include '..\layoults\barnavLogged.php';
+    include '../layoults/barnavLogged.php';
     ?>
     <input type="hidden" id="mensaje" name="secret" value="<?php if ($_SESSION['mensaje']!="") {
       echo $_SESSION['mensaje'];
@@ -32,7 +32,7 @@ $data=$temporada->select(-1);
                   <p class="category">Listado de temporadas</p>
                 </div>
                 <div class="col-md-1 text-right">
-                <a href="..\..\vista\temporada/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar temporada">
+                <a href="../../vista/temporada/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar temporada">
                     <i class="material-icons">add</i>
                   </a>
                 </div>
@@ -81,19 +81,19 @@ $data=$temporada->select(-1);
                           <?php echo $row['fecha_final']; ?>
                         </td>
                         <td class="text-center">
-                          <a href="..\..\vista\temporada/partidos.php?id=<?php echo $row['id_temporada']; ?>">
+                          <a href="../../vista/temporada/partidos.php?id=<?php echo $row['id_temporada']; ?>">
                           <button class="btn btn-warning btn-round btn-sm"><i class="fas fa-futbol fa-lg"> </i>  Resumen</button>
 
                           <a href="..\..\vista\temporada/estadistica_jugador.php?temporada=<?php echo $row['id_temporada']; ?>">
                           <button class="btn btn-info btn-round btn-sm"><i class="material-icons">accessibility_new</i>  Jugadores</button>
-                        </td>
+                        </td>///
                         <td class="td-actions text-left">
                             <div style="float:left">
                               <a href="..\..\vista\temporada/update.php?id=<?php echo $row['id_temporada']; ?>">
                                 <button type="button" rel="tooltip" title="Editar temporada" class="btn btn-primary btn-link btn-sm">
                                   <i class="material-icons">edit</i>
                                 </button>
-                              </a>
+                              </a>///
                             </div>
                             <div  style="float:left">
                               <form class="" action="..\..\vista\temporada/store.php" method="post">
@@ -154,8 +154,8 @@ $data=$temporada->select(-1);
             </div>
 
 
-      </div>
-      </div>
+      </div>//
+      </div>//
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>

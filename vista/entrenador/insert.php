@@ -1,5 +1,5 @@
 <!-- < ?php
-require_once('..\..\Negocio/ClassContrato.php');
+require_once('../../Negocio/ClassContrato.php');
 $contrato=new Contrato();
 $data=$contrato->select(-1);
  ?> -->
@@ -9,11 +9,11 @@ $data=$contrato->select(-1);
   <head>
     <meta charset="utf-8">
     <title>Entrenador - Insertar</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
   </head>
   <body class="profile-page sidebar-collapse">
-    <?php include '..\layoults\barnavLogged.php'; ?>
+    <?php include '../layoults/barnavLogged.php'; ?>
     <div class="main main-raised"> 
     <div class="content">
       
@@ -23,7 +23,7 @@ $data=$contrato->select(-1);
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
-            <form method="post", action="..\entrenador\store.php" id="frm_entrenador" enctype="multipart/form-data">
+            <form method="post", action="../entrenador/store.php" id="frm_entrenador" enctype="multipart/form-data">
              <input type="hidden" name="operation" value="1">
              <div>
               <h3>Datos personales</h3>
@@ -94,7 +94,7 @@ $data=$contrato->select(-1);
                     <select class="form-control" name="categoria">
                           <option selected value="0">Elija la categoría del entrenador...</option>
                            <?php
-                                include_once('..\..\Negocio/classCategoria.php');
+                                include_once('../../Negocio/classCategoria.php');
                                 $categoria=new Categoria();
                                 $data=$categoria->select(-1);
                                 while ($row = mysqli_fetch_array($data))
@@ -126,7 +126,7 @@ $data=$contrato->select(-1);
                 </div>
                 </div>
 
-              <?php include '..\layoults\botones.php'; ?>
+              <?php include '../layoults/botones.php'; ?>
               <div class="clearfix"></div>
             </form>
           </div>
@@ -134,8 +134,8 @@ $data=$contrato->select(-1);
      
     </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
     <script type="text/javascript">
   

@@ -1,5 +1,5 @@
 <?php
-require_once('..\..\Negocio/ClassBeneficio.php');
+require_once('../../Negocio/ClassBeneficio.php');
 $beneficio=new Beneficio();
 $data=$beneficio->select(-1);
 
@@ -9,11 +9,11 @@ $data=$beneficio->select(-1);
   <head>
     <meta charset="utf-8">
     <title>Beneficios - Listar</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
     <?php
-    include '..\layoults\barnavLogged.php';
+    include '../layoults/barnavLogged.php';
     ?>
     <div class="content">
       <input type="hidden" id="mensaje" name="secret" value="<?php if ($_SESSION['mensaje']!="") {
@@ -31,7 +31,7 @@ $data=$beneficio->select(-1);
                   <p class="card-category">Listado de beneficios a socios del club Xelajú MC</p>
                 </div>
                 <div class="col-md-1 text-right">
-                <a href="..\..\vista\beneficio/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar beneficio">
+                <a href="../../vista/beneficio/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar beneficio">
                     <i class="material-icons">add</i>
                   </a>
                 </div>
@@ -69,14 +69,14 @@ $data=$beneficio->select(-1);
                         </td>
                         <td class="td-actions text-lefht">
                             <div style="float:left">
-                              <a href="..\..\vista\beneficio/update.php?id=<?php echo $row['id_beneficio']; ?>">
+                              <a href="../../vista/beneficio/update.php?id=<?php echo $row['id_beneficio']; ?>">
                                 <button type="button" rel="tooltip" title="Editar beneficio" class="btn btn-primary btn-link btn-sm">
                                   <i class="material-icons">edit</i>
                                 </button>
                               </a>
                             </div>
                             <div  style="float:left">
-                              <form class="" action="..\..\vista\beneficio/store.php" method="post">
+                              <form class="" action="../../vista/beneficio/store.php" method="post">
                                 <input type="hidden" name="operation" value="3">
                                 <input type="hidden" name="id" value="<?php echo $row['id_beneficio']; ?>">
                                 <!-- Inicio de modal -->
@@ -117,8 +117,8 @@ $data=$beneficio->select(-1);
      
     </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <script type="text/javascript">
     $(document).ready(function(){
       if ($('#mensaje').val()!="") {

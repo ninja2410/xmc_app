@@ -1,5 +1,5 @@
 <?php
-require_once('..\..\Negocio/ClassBitacora.php');
+require_once('../../Negocio/ClassBitacora.php');
 $usuario=new Bitacora();
 $data=$usuario->select(-1);
 
@@ -9,11 +9,11 @@ $data=$usuario->select(-1);
   <head>
     <meta charset="utf-8">
     <title>Bitácora - Listar</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
     <?php
-    include '..\layoults\barnavLogged.php';
+    include '../layoults/barnavLogged.php';
     ?>
     <div class="main main-raised">
     <div class="content">
@@ -80,8 +80,8 @@ $data=$usuario->select(-1);
       </div>
     </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <script type="text/javascript">
 $('#table1').DataTable({
    dom: 'Bfrtip',

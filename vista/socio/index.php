@@ -1,5 +1,5 @@
 <?php
-require_once('..\..\Negocio/ClassSocio.php');
+require_once('../../Negocio/ClassSocio.php');
 $socio=new Socio();
 $data=$socio->select(-1);
 
@@ -9,11 +9,11 @@ $data=$socio->select(-1);
   <head>
     <meta charset="utf-8">
     <title>Socios - Listar</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
     <?php
-    include '..\layoults\barnavLogged.php';
+    include '../layoults/barnavLogged.php';
     ?>
     <input type="hidden" id="mensaje" name="secret" value="<?php if ($_SESSION['mensaje']!="") {
       echo $_SESSION['mensaje'];
@@ -30,7 +30,7 @@ $data=$socio->select(-1);
                   <p class="card-category">Listado de socios del club Xelajú MC</p>
                 </div>
                 <div class="col-md-1 text-right">
-                <a href="..\..\vista\socio/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar socio">
+                <a href="../../vista/socio/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar socio">
                     <i class="material-icons">add</i>
                   </a>
                 </div>
@@ -69,25 +69,25 @@ $data=$socio->select(-1);
                   
                         <td>
                         
-                          <a href="..\..\vista\socio/documentos.php?id=<?php echo $row['id_socio']; ?>">
+                          <a href="../../vista/socio/documentos.php?id=<?php echo $row['id_socio']; ?>">
                           <button class="btn btn-info btn-round btn-sm"><i class="far fa-file-text fa-lg"></i> Documentos</button>
                           
                           <td > 
                           
-                          <a href="..\..\vista\socio/detalles.php?id=<?php echo $row['id_socio']; ?>">
+                          <a href="../../vista/socio/detalles.php?id=<?php echo $row['id_socio']; ?>">
                           <button class="btn btn-success btn-round btn-sm"><i class="far fa-eye fa-lg"></i> Ver detalles</button>
                          
                           </td>
                           <td > 
                             <div style="float:left">
-                              <a href="..\..\vista\socio/update.php?id=<?php echo $row['id_socio']; ?>">
+                              <a href="../../vista/socio/update.php?id=<?php echo $row['id_socio']; ?>">
                                 <button type="button" rel="tooltip" title="Editar socio" class="btn btn-primary btn-link btn-sm">
                                   <i class="material-icons">edit</i>
                                 </button>
                               </a>
                             </div>
                             <div  style="float:left">
-                              <form class="" action="..\..\vista\socio/store.php" method="post">
+                              <form class="" action="../../vista/socio/store.php" method="post">
                                 <input type="hidden" name="operation" value="3">
                                 <input type="hidden" name="id" value="<?php echo $row['id_socio']; ?>">
                                 <!-- Inicio de modal -->
@@ -127,8 +127,8 @@ $data=$socio->select(-1);
       </div>
     </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <script type="text/javascript">
     $(document).ready(function(){
       if ($('#mensaje').val()!="") {

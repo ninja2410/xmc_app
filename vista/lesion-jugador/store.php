@@ -1,7 +1,7 @@
 <?php
-require_once('..\..\Negocio/ClassLesionJugador.php');
-require_once('..\..\Negocio/ClassTratamiento.php');
-require_once('..\..\Negocio/ClassBitacora.php');
+require_once('../../Negocio/ClassLesionJugador.php');
+require_once('../../Negocio/ClassTratamiento.php');
+require_once('../../Negocio/ClassBitacora.php');
 session_start();
 $bit=new Bitacora();
 

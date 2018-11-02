@@ -1,5 +1,5 @@
 <?php
-require_once('..\..\Negocio/ClassMembresia.php');
+require_once('../../Negocio/ClassMembresia.php');
 $be=new Membresia();
 $data=$be->selectBeneficio(-1);
 ?>
@@ -8,10 +8,10 @@ $data=$be->selectBeneficio(-1);
   <head>
     <meta charset="utf-8">
     <title>Membresía - Insertar</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
-    <?php include '..\layoults\barnavLogged.php'; ?>
+    <?php include '../layoults/barnavLogged.php'; ?>
     <div class="main main-raised">
     <div class="content-fluid">
      
@@ -21,7 +21,7 @@ $data=$be->selectBeneficio(-1);
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
-            <form method="post", action="..\membresia\store.php"  id="frm_membresia">
+            <form method="post", action="../membresia/store.php"  id="frm_membresia">
               <input type="hidden" name="operation" value="1">
               <div class="row">
                 <div class="col-md-6">
@@ -67,7 +67,7 @@ $data=$be->selectBeneficio(-1);
                     ?>
               </div>
               <div>
-              <?php include '..\layoults\botones.php'; ?>
+              <?php include '../layoults/botones.php'; ?>
               <div class="clearfix"></div>
             </form>
           </div>
@@ -75,8 +75,8 @@ $data=$be->selectBeneficio(-1);
       
     </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <script type="text/javascript">
     $(document).ready(function(){
       $('#frm_membresia').bootstrapValidator({

@@ -1,5 +1,5 @@
 <?php
-require_once('..\..\Negocio/ClassPago.php');
+require_once('../../Negocio/ClassPago.php');
 $pago=new Pago();
  ?>
 <!DOCTYPE html>
@@ -7,10 +7,10 @@ $pago=new Pago();
   <head>
     <meta charset="utf-8">
     <title>Registrar pago</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
-    <?php include '..\layoults\barnavLogged.php'; ?>
+    <?php include '../layoults/barnavLogged.php'; ?>
     <div class="main main-raised">
     <div class="content">
       
@@ -20,7 +20,7 @@ $pago=new Pago();
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
-            <form method="post", action="..\pagos\store.php">
+            <form method="post", action="../pagos/store.php">
               <input type="hidden" name="operation" value="1">
               <input type="hidden" name="socio" value="<?php echo $_GET['id']; ?>">
               <input type="hidden" name="amount" id="amount" value="">
@@ -71,7 +71,7 @@ $pago=new Pago();
                     	</div>
                       </div>
                     </div>
-                    <?php include '..\layoults\botones.php'; ?>
+                    <?php include '../layoults/botones.php'; ?>
                   </div>
                 </div>
               </div>
@@ -82,8 +82,8 @@ $pago=new Pago();
       
     </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
   </body>
   <script type="text/javascript">
     $(document).ready(function(){

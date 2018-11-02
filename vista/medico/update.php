@@ -1,5 +1,5 @@
 <?php
-require_once('..\..\Negocio/ClassMedico.php');
+require_once('../../Negocio/ClassMedico.php');
 $medico=new Medico();
 $data=$medico->select($_GET['id']);
 
@@ -9,11 +9,11 @@ $data=$medico->select($_GET['id']);
   <head>
     <meta charset="utf-8">
     <title>Médico - Actualizar</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
     <?php
-    include '..\layoults\barnavLogged.php';
+    include '../layoults/barnavLogged.php';
     ?>
     <div class="main main-raised">
     <div class="content">
@@ -24,7 +24,7 @@ $data=$medico->select($_GET['id']);
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
-            <form method="post", action="..\medico\store.php">
+            <form method="post", action="../medico/store.php">
               <input type="hidden" name="operation" value="2">
               <input type="hidden" name="id" value="<?php echo $data['id_medico']; ?>">
               <div class="row">
@@ -69,7 +69,7 @@ $data=$medico->select($_GET['id']);
                   </div>
                 </div>
               </div>
-              <?php include '..\layoults\botones.php'; ?>
+              <?php include '../layoults/botones.php'; ?>
               <div class="clearfix"></div>
             </form>
           </div>
@@ -77,7 +77,7 @@ $data=$medico->select($_GET['id']);
       
     </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
   </body>
 </html>

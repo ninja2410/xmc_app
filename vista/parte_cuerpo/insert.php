@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <title>Partes del cuerpo - Insertar</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body>
-    <?php include '..\layoults\barnavLogged.php'; ?>
+    <?php include '../layoults/barnavLogged.php'; ?>
     <div class="content">
       <div class="container-fluid">
         <div class="row">
@@ -17,7 +17,7 @@
                   <p class="category">Complete los campos siguientes</p>
               </div>
               <div class="card-body">
-                <form method="post", action="..\parte_cuerpo\store.php" id="frm_parteCuerpo">
+                <form method="post", action="../parte_cuerpo/store.php" id="frm_parteCuerpo">
                 <input type="hidden" name="operation" value="1">
                     <div class="form-row"> 
                         <div class="form-group col-md-4">
@@ -37,7 +37,7 @@
                             </div>
                         </div>
                     </div>
-                    <?php include '..\layoults\botones.php'; ?>
+                    <?php include '../layoults/botones.php'; ?>
                     <div class="clearfix"></div>
                 </form>
               </div>
@@ -46,8 +46,8 @@
         </div>
       </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
 
     <script type="text/javascript">
       $(document).ready(function(){

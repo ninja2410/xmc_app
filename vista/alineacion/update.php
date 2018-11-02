@@ -1,5 +1,5 @@
 <?php
-require_once('..\..\Negocio/ClassAlineacion.php');
+require_once('../../Negocio/ClassAlineacion.php');
 $alineacion=new Alineacion();
 $data=$alineacion->select($_GET['id']);
 ?>
@@ -9,7 +9,7 @@ $data=$alineacion->select($_GET['id']);
   <head>
     <meta charset="utf-8">
     <title>Alineación - Actualizar</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 
@@ -55,7 +55,7 @@ $data=$alineacion->select($_GET['id']);
 
   });
   </script>
-    <?php include '..\layoults\barnavLogged.php'; ?>
+    <?php include '../layoults/barnavLogged.php'; ?>
     <div class="main main-raised">
     <div class="content">
       
@@ -65,7 +65,7 @@ $data=$alineacion->select($_GET['id']);
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
-            <form method="post", action="..\alineacion\store.php" id="frm_alineacion">
+            <form method="post", action="../alineacion/store.php" id="frm_alineacion">
               <input type="hidden" name="operation" value="2" >
               <input type="hidden" name="id" value="<?php echo $data['id_alineacion']; ?>">
               <div class="row">
@@ -93,7 +93,7 @@ $data=$alineacion->select($_GET['id']);
                 </div>
               </div>
 <div>
-              <?php include '..\layoults\botones.php'; ?>
+              <?php include '../layoults/botones.php'; ?>
               <div class="clearfix"></div>
               </div>
             </form>
@@ -102,8 +102,8 @@ $data=$alineacion->select($_GET['id']);
       
     </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <script type="text/javascript">
       
 

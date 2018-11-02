@@ -1,5 +1,5 @@
 <?php
-require_once('..\..\Negocio/ClassPartido.php');
+require_once('../../Negocio/ClassPartido.php');
 $partido=new Partido();
 $data=$partido->select($_GET['id']);
  ?>
@@ -8,14 +8,14 @@ $data=$partido->select($_GET['id']);
    <head>
      <meta charset="utf-8">
      <title>Partido - Actualizar</title>
-     <?php include '..\layoults\headers2.php'; ?>
+     <?php include '../layoults/headers2.php'; ?>
    </head>
    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
  
    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>  
    <body class="profile-page sidebar-collapse">
-  <?php include '..\layoults\barnavLogged.php'; ?>
+  <?php include '../layoults/barnavLogged.php'; ?>
     <div class="main main-raised">
    <script type="text/javascript">
    $(function() 
@@ -74,7 +74,7 @@ $data=$partido->select($_GET['id']);
              <p class="card-category">Complete los campos siguientes</p>
            </div>
            <div class="card-body">
-             <form method="post", action="..\partido\store.php" id="frm_partido">
+             <form method="post", action="../partido/store.php" id="frm_partido">
                <input type="hidden" name="operation" value="2">
                <input type="hidden" name="id" value="<?php echo $data['id_partido']; ?>">
                <div class="row">
@@ -125,7 +125,7 @@ $data=$partido->select($_GET['id']);
                    </div>
                  </div>
                </div>
-               <?php include '..\layoults\botones.php'; ?>
+               <?php include '../layoults/botones.php'; ?>
                <div class="clearfix"></div>
              </form>
            </div>
@@ -133,8 +133,8 @@ $data=$partido->select($_GET['id']);
        </div>
      </div>
      </div>
-     <?php include '..\layoults\footer.php'; ?>
-     <?php include '..\layoults\scripts2.php'; ?>
+     <?php include '../layoults/footer.php'; ?>
+     <?php include '../layoults/scripts2.php'; ?>
      <script type="text/javascript">
        var f = new Date();
  $(document).ready(function() {

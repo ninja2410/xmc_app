@@ -1,5 +1,5 @@
 <?php
-require_once('..\..\Negocio/ClassNoticias.php');
+require_once('../../Negocio/ClassNoticias.php');
 $noticia=new Noticia();
 $data=$noticia->select($_GET['id']);
 ?>
@@ -8,11 +8,11 @@ $data=$noticia->select($_GET['id']);
   <head>
     <meta charset="utf-8">
     <title><?php echo $data['titulo']?></title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body class="landing-page sidebar-collapse">
     <?php
-    include '..\layoults\barnav3.php';
+    include '../layoults/barnav3.php';
     ?>
    <div class="container">
         <div class="row">
@@ -40,7 +40,7 @@ $data=$noticia->select($_GET['id']);
           </div>
         </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
   </body>
 </html>

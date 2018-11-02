@@ -1,5 +1,5 @@
 <?php
-require_once('..\..\Negocio/ClassEstadisticaJugador.php');
+require_once('../../Negocio/ClassEstadisticaJugador.php');
 $estadistoca=new EstadisticaJugador();
 $data=$estadistoca->selectCampos();
  ?>
@@ -8,7 +8,7 @@ $data=$estadistoca->selectCampos();
   <head>
     <meta charset="utf-8">
     <title>Estadísticas - Insertar</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
@@ -40,7 +40,7 @@ $data=$estadistoca->selectCampos();
             });
       });
     </script>
-    <?php include '..\layoults\barnavLogged.php'; ?>
+    <?php include '../layoults/barnavLogged.php'; ?>
     <div class="main main-raised">
     <div class="content">
       <div class="col-md-12">
@@ -50,7 +50,7 @@ $data=$estadistoca->selectCampos();
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
-            <form method="post", action="..\EstadisticaJugador\store.php" id="frm_estadisticas">
+            <form method="post", action="../EstadisticaJugador/store.php" id="frm_estadisticas">
               <input type="hidden" name="operation" value="1">
               <input type="hidden" name="estadisticas" id="estadisticas">
               <div class="row">
@@ -119,7 +119,7 @@ $data=$estadistoca->selectCampos();
                   </table>
                 </div>
               </div>
-              <?php include '..\layoults\botones.php'; ?>
+              <?php include '../layoults/botones.php'; ?>
             </form>
 
           </div>
@@ -127,8 +127,8 @@ $data=$estadistoca->selectCampos();
       </div>
     </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <script type="text/javascript">
     var datos=[];
       function registrarValor(){

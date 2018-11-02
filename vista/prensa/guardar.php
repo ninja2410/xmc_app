@@ -1,7 +1,7 @@
 <?php
 
-require_once('..\..\Negocio/ClassPrensa.php');
-require_once('..\..\Negocio/ClassBitacora.php');
+require_once('../../Negocio/ClassPrensa.php');
+require_once('../../Negocio/ClassBitacora.php');
 session_start();
 $bit=new Bitacora();
 $lesion=new Prensa();

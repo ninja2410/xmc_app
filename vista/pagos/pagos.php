@@ -1,6 +1,6 @@
 <?php
-require_once('..\..\Negocio/ClassPago.php');
-require_once('..\..\Negocio/ClassSocio.php');
+require_once('../../Negocio/ClassPago.php');
+require_once('../../Negocio/ClassSocio.php');
 $pago=new Pago();
 $socio=new Socio();
 $data_pagos=$pago->est_pago($_GET['id']);
@@ -11,11 +11,11 @@ $data_socio=$socio->select($_GET['id']);
   <head>
     <meta charset="utf-8">
     <title>Pagos - Estado</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
     <?php
-    include '..\layoults\barnavLogged.php';
+    include '../layoults/barnavLogged.php';
     ?>
     <input type="hidden" id="mensaje" name="secret" value="<?php if ($_SESSION['mensaje']!="") {
       echo $_SESSION['mensaje'];
@@ -74,8 +74,8 @@ $data_socio=$socio->select($_GET['id']);
       </div>
     </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <script type="text/javascript">
     $(document).ready(function(){
       if ($('#mensaje').val()!="") {

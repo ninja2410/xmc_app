@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>Jugadores - Insertar</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
   </head>
     <body class="profile-page sidebar-collapse">
-    <?php include '..\layoults\barnavLogged.php'; ?>
+    <?php include '../layoults/barnavLogged.php'; ?>
     <div class="content main main-raised">
             <div class="card col-md-12">
       <div class="container-fluid">
@@ -17,7 +17,7 @@
                   <p class="category">Complete los campos siguientes</p>
               </div>
               <div class="card-body">
-                <form method="post", action="..\jugador\store.php" enctype="multipart/form-data" id="frm_jugador">
+                <form method="post", action="../jugador/store.php" enctype="multipart/form-data" id="frm_jugador">
                 <input type="hidden" name="operation" value="1">
                     <div>
                         <h3>Datos personales</h3>
@@ -83,7 +83,7 @@
                                 <select class="form-control" name="posicion">
                                     <option selected value="0">Elija la posicion del jugador...</option>
                                     <?php
-                                        include_once('..\..\Negocio/classPosicion.php');
+                                        include_once('../../Negocio/classPosicion.php');
                                         $posicion=new Posicion();
                                         $data=$posicion->select(-1);
                                         while ($row = mysqli_fetch_array($data))
@@ -106,7 +106,7 @@
                                 <select class="form-control" name="categoria">
                                     <option selected value="0">Elija la categoria del jugador...</option>
                                     <?php
-                                        include_once('..\..\Negocio/classCategoria.php');
+                                        include_once('../../Negocio/classCategoria.php');
                                         $categoria=new Categoria();
                                         $data=$categoria->select(-1);
                                         while ($row = mysqli_fetch_array($data))
@@ -144,7 +144,7 @@
                         </div>
                     </div>
                     <div class="text-right">
-                        <?php include '..\layoults\botones.php'; ?>
+                        <?php include '../layoults/botones.php'; ?>
                     </div>
                     <div class="clearfix"></div>
                 </form>
@@ -153,8 +153,8 @@
          
         </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
     <script type="text/javascript">
     $(document).ready(function(){

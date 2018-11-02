@@ -1,7 +1,7 @@
 <?php
-require_once('..\..\Negocio/ClassDatoPartido.php');
-require_once('..\..\Negocio/ClassJugador.php');
-require_once('..\..\Negocio/ClassEstadisticaJugador.php');
+require_once('../../Negocio/ClassDatoPartido.php');
+require_once('../../Negocio/ClassJugador.php');
+require_once('../../Negocio/ClassEstadisticaJugador.php');
 $datoPartido=new DatoPartido();
 $dato=$datoPartido->select(-1);
 $jugadorC=new Jugador();
@@ -13,11 +13,11 @@ $estadistica=new EstadisticaJugador();
   <head>
     <meta charset="utf-8">
     <title>Estadísticas por jugador - Editar</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
     <?php
-    include '..\layoults\barnavLogged.php';
+    include '../layoults/barnavLogged.php';
     ?>
     <div class="main main-raised">
     <div class="content">
@@ -34,7 +34,7 @@ $estadistica=new EstadisticaJugador();
                   <p class="card-category"> Información de estadísticas por jugador</p>
                 </div>
                 <div class="col-lg-1" style="float:left">
-                  <a href="..\..\vista\estadisticaJugador/insert.php" title="Agregar nueva estadistica">
+                  <a href="../../vista/estadisticaJugador/insert.php" title="Agregar nueva estadistica">
                     <div class="card-header card-header-success card-header-icon" style="float:right">
                       <div class="card-icon">
                         <i class="material-icons">add</i>
@@ -159,8 +159,8 @@ $estadistica=new EstadisticaJugador();
       </div>
     </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <script type="text/javascript">
     $(document).ready(function(){
       if ($('#mensaje').val()!="") {

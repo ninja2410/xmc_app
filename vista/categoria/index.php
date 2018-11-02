@@ -1,5 +1,5 @@
 <?php
-require_once('..\..\Negocio/ClassCategoria.php');
+require_once('../../Negocio/ClassCategoria.php');
 $categoria=new Categoria();
 $data=$categoria->select(-1);
  ?>
@@ -8,10 +8,10 @@ $data=$categoria->select(-1);
   <head>
     <meta charset="utf-8">
     <title>Categoría - Listar</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
-    <?php include '..\layoults\barnavLogged.php'; ?>
+    <?php include '../layoults/barnavLogged.php'; ?>
 
    <div class="main main-raised">
     <div class="content">
@@ -28,7 +28,7 @@ $data=$categoria->select(-1);
                   <p class="category">Listado de categorías</p>
                 </div>
                 <div class="col-md-1 text-right">
-                <a href="..\..\vista\categoria/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar categoría">
+                <a href="../../vista/categoria/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar categoría">
                     <i class="material-icons">add</i>
                   </a>
                 </div>
@@ -66,14 +66,14 @@ $data=$categoria->select(-1);
                         </td>
                         <td class="td-actions text-left">
                             <div style="float:left">
-                              <a href="..\..\vista\categoria/update.php?id=<?php echo $row['id_categoria']; ?>">
+                              <a href="../../vista/categoria/update.php?id=<?php echo $row['id_categoria']; ?>">
                                 <button type="button" rel="tooltip" title="Editar Categoria" class="btn btn-primary btn-link btn-sm">
                                   <i class="material-icons">edit</i>
                                 </button>
                               </a>
                             </div>
                             <div  style="float:left">
-                              <form class="" action="..\..\vista\categoria/store.php" method="post">
+                              <form class="" action="../../vista/categoria/store.php" method="post">
                                 <input type="hidden" name="operation" value="3">
                                 <input type="hidden" name="id" value="<?php echo $row['id_categoria']; ?>">
                                 <!-- Inicio de modal -->
@@ -114,8 +114,8 @@ $data=$categoria->select(-1);
       </div>
     </div>
    </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <script type="text/javascript">
       $(document).ready(function(){
         if ($('#mensaje').val()!="") {

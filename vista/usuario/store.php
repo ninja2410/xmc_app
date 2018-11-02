@@ -1,6 +1,6 @@
 <?php
-require_once('..\..\Negocio/ClassUsuario.php');
-require_once('..\..\Negocio/ClassBitacora.php');
+require_once('../../Negocio/ClassUsuario.php');
+require_once('../../Negocio/ClassBitacora.php');
 session_start();
 if(isset($_POST['operation'])){
   $operacion=$_POST['operation'];

@@ -1,5 +1,5 @@
 <?php
-require_once('..\..\Negocio/ClassNoticias.php');
+require_once('../../Negocio/ClassNoticias.php');
 $noticia=new Noticia();
 $data=$noticia->Ultimoregistro();
 $data2=$noticia->LosDemas();
@@ -10,11 +10,11 @@ $data2=$noticia->LosDemas();
 <head>
     <meta charset="utf-8">
     <title>Inicio</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
 </head>
 <body class="landing-page sidebar-collapse">
     <?php
-        include '..\layoults\barnav3.php';
+        include '../layoults/barnav3.php';
     ?>
     <style>
     #contenedor{
@@ -38,7 +38,7 @@ $data2=$noticia->LosDemas();
                             <div class="card-body">
                                 <h3 class="titulo"><?php echo $row['titulo']; ?></h3>
                                 <div class="text-center">
-                                    <a href="..\..\vista\noticia/vernoticia.php?id=<?php echo $row['id_noticia']; ?>" class="btn azul"><i class="far fa-newspaper"></i> Ver la noticia</a>
+                                    <a href="../../vista/noticia/vernoticia.php?id=<?php echo $row['id_noticia']; ?>" class="btn azul"><i class="far fa-newspaper"></i> Ver la noticia</a>
                                 </div>
                             </div>
                         </div>
@@ -53,7 +53,7 @@ $data2=$noticia->LosDemas();
                             <div class="card-body">
                                 <h3 class="titulo"><?php echo $row['titulo']; ?></h3>
                                 <div id="contenedor" class="text-center">
-                                <a href="..\..\vista\noticia/vernoticia.php?id=<?php echo $row['id_noticia']; ?>" class="btn azul"><i class="far fa-newspaper"></i> Ver la noticia</a>
+                                <a href="../../vista/noticia/vernoticia.php?id=<?php echo $row['id_noticia']; ?>" class="btn azul"><i class="far fa-newspaper"></i> Ver la noticia</a>
                                 </div>
                             </div>
                         </div>
@@ -71,8 +71,8 @@ $data2=$noticia->LosDemas();
         </div>
     </div>
     <!-- Fin de apartado de noticias -->
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <script>
         $(document).ready(function(){//ACCION CUANDO CARGUE LA PAGINA
             var altura_arr = [];//CREAMOS UN ARREGLO VACIO

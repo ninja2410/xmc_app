@@ -1,5 +1,5 @@
 <?php
-require_once('..\..\Negocio/ClassPartido.php');
+require_once('../../Negocio/ClassPartido.php');
 if(isset($_POST['operation'])){
   $operacion=$_POST['operation'];
 }

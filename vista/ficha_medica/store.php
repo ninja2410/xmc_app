@@ -1,7 +1,7 @@
 <?php
-require_once('..\..\Negocio/ClassFichaMedica.php');
-require_once('..\..\Negocio/ClassDetalleFichaMedica.php');
-require_once('..\..\Negocio/ClassBitacora.php');
+require_once('../../Negocio/ClassFichaMedica.php');
+require_once('../../Negocio/ClassDetalleFichaMedica.php');
+require_once('../../Negocio/ClassBitacora.php');
 session_start();
 $bit=new Bitacora();
 

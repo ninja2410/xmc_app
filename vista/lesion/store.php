@@ -1,6 +1,6 @@
 <?php
-require_once('..\..\Negocio/ClassLesion.php');
-require_once('..\..\Negocio/ClassBitacora.php');
+require_once('../../Negocio/ClassLesion.php');
+require_once('../../Negocio/ClassBitacora.php');
 session_start();
 $bit=new Bitacora();
 

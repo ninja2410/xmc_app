@@ -1,8 +1,8 @@
 <?php
-//require_once('..\PJ_XJMC\Negocio\ClassBeneficio.php');
+//require_once('../PJ_XJMC/Negocio/ClassBeneficio.php');
 // $beneficio=new Beneficio();
 // $beneficio->select();
-require_once('Negocio\ClassBeneficio.php');
+require_once('Negocio/ClassBeneficio.php');
  ?>
  <!DOCTYPE html>
  <html lang="en" dir="ltr">

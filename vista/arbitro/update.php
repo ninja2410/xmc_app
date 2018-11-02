@@ -1,5 +1,5 @@
 <?php
-require_once('..\..\Negocio/ClassArbitro.php');
+require_once('../../Negocio/ClassArbitro.php');
 $arbitro=new Arbitro();
 $data=$arbitro->select($_GET['id']);
 ?>
@@ -9,10 +9,10 @@ $data=$arbitro->select($_GET['id']);
   <head>
     <meta charset="utf-8">
     <title>Árbitro - Actualizar</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
-    <?php include '..\layoults\barnavLogged.php'; ?>
+    <?php include '../layoults/barnavLogged.php'; ?>
     <div class="main main-raised" >
     <div class="content">
       
@@ -22,7 +22,7 @@ $data=$arbitro->select($_GET['id']);
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
-            <form method="post", action="..\arbitro\store.php" id="frm_arbitro">
+            <form method="post", action="../arbitro/store.php" id="frm_arbitro">
               <input type="hidden" name="operation" value="2">
               <input type="hidden" name="id" value="<?php echo $data['id_arbitro']; ?>">
               <div class="row">
@@ -45,7 +45,7 @@ $data=$arbitro->select($_GET['id']);
                   </div>
                 </div>
              </div>
-              <?php include '..\layoults\botones.php'; ?>
+              <?php include '../layoults/botones.php'; ?>
               <div class="clearfix"></div>
             </form>
           </div>
@@ -53,8 +53,8 @@ $data=$arbitro->select($_GET['id']);
       
     </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <script type="text/javascript">
     $(document).ready(function(){
       $('#frm_arbitro').bootstrapValidator({

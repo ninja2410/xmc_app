@@ -1,5 +1,5 @@
 <?php
-require_once('..\..\Negocio/ClassPersonalTecnico.php');
+require_once('../../Negocio/ClassPersonalTecnico.php');
 $personal=new PersonalTecnico();
 $data=$personal->selectCargo(-1);
 ?>
@@ -8,14 +8,14 @@ $data=$personal->selectCargo(-1);
   <head>
     <meta charset="utf-8">
     <title>Personal técnico - Xelajú </title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
     <?php
-    include '..\layoults\barnavLogged.php';
+    include '../layoults/barnavLogged.php';
     ?>
     <div class="main main-raised">
-    <form method="post", action="..\personaltecnico\store.php" id="frm_personaltecnico">
+    <form method="post", action="../personaltecnico/store.php" id="frm_personaltecnico">
       <input type="hidden" name="operation" value="1">
       <input type="hidden" name="id" value="<?php echo $_GET['id'] ?>">
       <div class="container">
@@ -56,8 +56,8 @@ $data=$personal->selectCargo(-1);
         </div>
         <br>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <script type="text/javascript">
     $(document).ready(function(){
    $('#table1').DataTable({

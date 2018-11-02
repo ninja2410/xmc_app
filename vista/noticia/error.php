@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>ERROR 404</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <style type="text/css">
     html {
@@ -27,6 +27,6 @@
       <div class="centrado-porcentual text-center text-white">
         La página a la que intenta acceder no fue encontrada, regrese a <a href="index.php">inicio</a>
       </div>
-    <?php include '..\layoults\scripts.php'; ?>
+    <?php include '../layoults/scripts.php'; ?>
   </body>
 </html>

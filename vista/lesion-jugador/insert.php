@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Lesión - Insertar</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
@@ -49,7 +49,7 @@
         });
   });
   </script>
-    <?php include '..\layoults\barnavLogged.php'; ?>
+    <?php include '../layoults/barnavLogged.php'; ?>
     <div class="main main-raised">
     <div class="content">
       
@@ -59,7 +59,7 @@
             <p class="card-category">Registro de lesión por jugador</p>
           </div>
           <div class="card-body">
-            <form method="post", action="..\lesion-jugador\store.php" id="frm_lesion">
+            <form method="post", action="../lesion-jugador/store.php" id="frm_lesion">
               <input type="hidden" name="operation" value="1">
               <input type="hidden" name="cantidades" value="" id="cantidades">
               <input type="hidden" name="medicamentos" value="" id="medicamentos">
@@ -180,7 +180,7 @@
                 </div>
 
               </div>
-              <?php include '..\layoults\botones.php'; ?>
+              <?php include '../layoults/botones.php'; ?>
               <div class="clearfix"></div>
             </form>
           </div>
@@ -188,8 +188,8 @@
       
     </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <script type="text/javascript">
       var f = new Date();
       function eliminar(control){

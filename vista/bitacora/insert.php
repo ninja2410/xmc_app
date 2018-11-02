@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <title>Usuario - Insertar</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body>
-    <?php include '..\layoults\barnavLogged.php'; ?>
+    <?php include '../layoults/barnavLogged.php'; ?>
     <div class="content">
       <div class="col-md-8">
         <div class="card">
@@ -15,7 +15,7 @@
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
-            <form method="post", action="..\usuario\store.php" id="frm_usuario">
+            <form method="post", action="../usuario/store.php" id="frm_usuario">
               <input type="hidden" name="operation" value="1">
               <div class="row">
                 <div class="col-md-6">
@@ -31,15 +31,15 @@
                   </div>
                 </div>
               </div>
-              <?php include '..\layoults\botones.php'; ?>
+              <?php include '../layoults/botones.php'; ?>
               <div class="clearfix"></div>
             </form>
           </div>
         </div>
       </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <script type="text/javascript">
       $(document).ready(function(){
         $('#frm_usuario').bootstrapValidator({

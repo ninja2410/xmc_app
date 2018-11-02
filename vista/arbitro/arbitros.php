@@ -1,5 +1,5 @@
 <?php
-require_once('..\..\Negocio/ClassArbitro.php');
+require_once('../../Negocio/ClassArbitro.php');
 $arbitro=new Arbitro();
 $data=$arbitro->selectArbitros($_GET['id']);
 ?>
@@ -8,10 +8,10 @@ $data=$arbitro->selectArbitros($_GET['id']);
   <head>
     <meta charset="utf-8">
     <title>arbitro - Listar</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
-  <?php include '..\layoults\barnavLogged.php'; ?>
+  <?php include '../layoults/barnavLogged.php'; ?>
     <div class="main main-raised">
     <div class="content">
       <div class="container-fluid">
@@ -24,7 +24,7 @@ $data=$arbitro->selectArbitros($_GET['id']);
                   <p class="card-category">Listado de arbitros</p>
                 </div>
                 <div class="col-md-1 text-right">
-                <a href="..\..\vista\arbitro/partido_arbitro.php?id=<?php echo $_GET['id']; ?>" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar a la alineación">
+                <a href="../../vista/arbitro/partido_arbitro.php?id=<?php echo $_GET['id']; ?>" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar a la alineación">
                     <i class="material-icons">add</i>
                   </a>
                 </div>
@@ -57,14 +57,14 @@ $data=$arbitro->selectArbitros($_GET['id']);
                         </td>
                         <td class="td-actions text-lefht">
                             <div style="float:left">
-                              <a href="..\..\vista\arbitro/update.php?id=<?php echo $row['id_arbitro']; ?>">
+                              <a href="../../vista/arbitro/update.php?id=<?php echo $row['id_arbitro']; ?>">
                                 <button type="button" rel="tooltip" title="Editar arbitro" class="btn btn-primary btn-link btn-sm">
                                   <i class="material-icons">edit</i>
                                 </button>
                               </a>
                             </div>
                             <div  style="float:left">
-                              <form class="" action="..\..\vista\arbitro/store.php" method="post">
+                              <form class="" action="../../vista/arbitro/store.php" method="post">
                                 <input type="hidden" name="operation" value="4">
                                 <input type="hidden" name="id" value="<?php echo $row['id_asignacion_arbitro' ]; ?>">
                                 <input type="hidden" name="partido" value="<?php echo $_GET['id'] ?>">
@@ -87,8 +87,8 @@ $data=$arbitro->selectArbitros($_GET['id']);
       </div>
     </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <script type="text/javascript">
     $(document).ready(function(){
 $('#table1').DataTable({

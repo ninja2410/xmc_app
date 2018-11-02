@@ -1,5 +1,5 @@
 <?php
-require_once('..\..\Negocio/ClassMembresia.php');
+require_once('../../Negocio/ClassMembresia.php');
 $membresia=new Membresia();
 $data=$membresia->select($_GET['id']);
 $datame=$membresia->selectBeneficio(-1);
@@ -10,10 +10,10 @@ $datame=$membresia->selectBeneficio(-1);
   <head>
     <meta charset="utf-8">
     <title>Membresía - Actualizar</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
-    <?php include '..\layoults\barnavLogged.php'; ?>
+    <?php include '../layoults/barnavLogged.php'; ?>
     <div class="main main-raised">
     <div class="content">
       <div class="col-md-12">
@@ -23,7 +23,7 @@ $datame=$membresia->selectBeneficio(-1);
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
-            <form method="post", action="..\membresia\store.php" id="frm_membresia">
+            <form method="post", action="../membresia/store.php" id="frm_membresia">
               <input type="hidden" name="operation" value="2">
               <input type="hidden" name="id" value="<?php echo $data['id_membresia']; ?>">
               <div class="row">
@@ -71,7 +71,7 @@ $datame=$membresia->selectBeneficio(-1);
               </div>
               <div>
               
-              <?php include '..\layoults\botones.php'; ?>
+              <?php include '../layoults/botones.php'; ?>
               <div class="clearfix"></div>
             </form>
           </div>
@@ -79,8 +79,8 @@ $datame=$membresia->selectBeneficio(-1);
       </div>
     </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <script type="text/javascript">
 
       var me=<?php echo $_GET['id']; ?>;

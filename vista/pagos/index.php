@@ -1,5 +1,5 @@
 <?php
-require_once('..\..\Negocio/ClassSocio.php');
+require_once('../../Negocio/ClassSocio.php');
 $socio=new Socio();
 $data=$socio->select_pagos();
 
@@ -9,11 +9,11 @@ $data=$socio->select_pagos();
   <head>
     <meta charset="utf-8">
     <title>Socios - Pagos</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
     <?php
-    include '..\layoults\barnavLogged.php';
+    include '../layoults/barnavLogged.php';
     ?>
     <div class="main main-raised">
     <div class="content">
@@ -65,9 +65,9 @@ $data=$socio->select_pagos();
                           <?php echo $row['PRECIO']; ?>
                         </td>
                         <td class="td-actions text-center">
-                          <a href="..\..\vista\pagos/pagar.php?id=<?php echo $row['ID']; ?>&membresia=<?php echo $row['PRECIO']; ?>">
+                          <a href="../../vista/pagos/pagar.php?id=<?php echo $row['ID']; ?>&membresia=<?php echo $row['PRECIO']; ?>">
                           <button class="btn btn-success btn-round btn-sm"><i class="fa fa-money"></i>      Realizar pago</button>
-                          <a href="..\..\vista\pagos/pagos.php?id=<?php echo $row['ID']; ?>">
+                          <a href="../../vista/pagos/pagos.php?id=<?php echo $row['ID']; ?>">
                           <button class="btn btn-info btn-round btn-sm"><i class="fa fa-eye"></i>  Ver estado de pagos</button>
                         </td>
                         <?php
@@ -83,8 +83,8 @@ $data=$socio->select_pagos();
       </div>
     </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <script type="text/javascript">
     $(document).ready(function(){
    $('#table1').DataTable({

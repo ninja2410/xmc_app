@@ -1,5 +1,5 @@
 <?php
-require_once('..\..\Negocio/ClassParteCuerpo.php');
+require_once('../../Negocio/ClassParteCuerpo.php');
 $parte=new ParteCuerpo();
 $data=$parte->select($_GET['id']);
 
@@ -9,10 +9,10 @@ $data=$parte->select($_GET['id']);
   <head>
     <meta charset="utf-8">
     <title>Partes del cuerpo - Actualizar</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body>
-    <?php include '..\layoults\barnavLogged.php'; ?>
+    <?php include '../layoults/barnavLogged.php'; ?>
     <div class="content">
       <div class="container-fluid">
         <div class="row">
@@ -23,7 +23,7 @@ $data=$parte->select($_GET['id']);
                   <p class="category">Complete los campos siguientes.</p>
               </div>
               <div class="card-body">
-                <form method="post", action="..\parte_cuerpo\store.php" id="frm_parteCuerpo">
+                <form method="post", action="../parte_cuerpo/store.php" id="frm_parteCuerpo">
                 <input type="hidden" name="operation" value="2">
                 <input type="hidden" name="id" value="<?php echo $data['id_parte'] ?>">
                     <div class="form-row"> 
@@ -48,7 +48,7 @@ $data=$parte->select($_GET['id']);
                             </div>
                         </div>
                     </div>
-                    <?php include '..\layoults\botones.php'; ?>
+                    <?php include '../layoults/botones.php'; ?>
                     <div class="clearfix"></div>
                 </form>
               </div>
@@ -57,8 +57,8 @@ $data=$parte->select($_GET['id']);
         </div>
       </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
 
     <script type="text/javascript">
       $(document).ready(function(){

@@ -1,5 +1,5 @@
 <?php
-require_once('..\..\Negocio/ClassUsuario.php');
+require_once('../../Negocio/ClassUsuario.php');
 
 
 if(isset($_POST['operation'])){

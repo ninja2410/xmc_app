@@ -1,5 +1,5 @@
 <?php
-require_once('..\..\Negocio/ClassNoticias.php');
+require_once('../../Negocio/ClassNoticias.php');
 $noticia=new Noticia();
 $data=$noticia->select($_GET['id']);
 ?>
@@ -8,11 +8,11 @@ $data=$noticia->select($_GET['id']);
   <head>
     <meta charset="utf-8">
     <title>Actualizar noticia</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
   </head>
     <body class="profile-page sidebar-collapse">
-    <?php include '..\layoults\barnavLogged.php'; ?>
+    <?php include '../layoults/barnavLogged.php'; ?>
     <div class="content main main-raised">
         <div class="card">
             <div class="container-fluid">
@@ -22,7 +22,7 @@ $data=$noticia->select($_GET['id']);
                     <p class="category">Complete los campos siguientes</p>
                 </div>
                 <div class="card-body">
-                    <form method="post", action="..\noticia\store.php" enctype="multipart/form-data" id="frm_noticia">
+                    <form method="post", action="../noticia/store.php" enctype="multipart/form-data" id="frm_noticia">
                         <input type="hidden" name="operation" value="2">
                         <input type="hidden" name="id" value="<?php echo $data['id_noticia'] ?>">
                         <input type="hidden" name="id_IMG" value="<?php echo $data['id'] ?>">
@@ -46,7 +46,7 @@ $data=$noticia->select($_GET['id']);
                                 <div class="form-group col-md-6 row">
                                     <div class="col-md-6">
                                         <label>Imagen actual</label>
-                                        <img src="..\imagenes/noticias/<?php echo $data['path']; ?>" style="width: 200px; height: 150px;" alt="">
+                                        <img src="../imagenes/noticias/<?php echo $data['path']; ?>" style="width: 200px; height: 150px;" alt="">
                                     </div>
                                     <div class="fileinput fileinput-new col-md-6" data-provides="fileinput">
                                         <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
@@ -60,7 +60,7 @@ $data=$noticia->select($_GET['id']);
                         </div>
 
                         <div class="text-right">
-                            <?php include '..\layoults\botones.php'; ?>
+                            <?php include '../layoults/botones.php'; ?>
                         </div>
                         <div class="clearfix"></div>
                     </form>
@@ -69,8 +69,8 @@ $data=$noticia->select($_GET['id']);
             </div>
           </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
     <script type="text/javascript">
     $(document).ready(function(){

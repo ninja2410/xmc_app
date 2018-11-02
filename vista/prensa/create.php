@@ -1,8 +1,8 @@
 <?php
-require_once('..\..\Negocio/ClassCategoriaDocumentos.php');
+require_once('../../Negocio/ClassCategoriaDocumentos.php');
 $categoria=new CatDocumentos();
 $data=$categoria->select(-1);
-require_once('..\..\Negocio/ClassPrensa.php');
+require_once('../../Negocio/ClassPrensa.php');
 $prensa=new Prensa();
 $player=$prensa->select($_GET['id']);
  ?>
@@ -11,11 +11,11 @@ $player=$prensa->select($_GET['id']);
   <head>
     <meta charset="utf-8">
     <title>Documento - Insertar</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
   </head>
   <body class="profile-page sidebar-collapse">
-    <?php include '..\layoults\barnavLogged.php'; ?>
+    <?php include '../layoults/barnavLogged.php'; ?>
     <div class="main main-raised"> 
     <div class="content">
       <div class="col-md-13">
@@ -25,7 +25,7 @@ $player=$prensa->select($_GET['id']);
             <p class="card-category">Asignar documento a: <?php echo $player['nombre'].' '.$player['apellido']; ?></p>
           </div>
           <div class="card-body">
-            <form method="post", action="..\prensa\store_document.php" enctype="multipart/form-data" id="frm_document">
+            <form method="post", action="../prensa/store_document.php" enctype="multipart/form-data" id="frm_document">
               <input type="hidden" name="operation" value="1">
               <input type="hidden" name="id_prensa" value="<?php echo $player['id_prensa']; ?>">
               <h3>Datos del documento</h3>
@@ -80,7 +80,7 @@ $player=$prensa->select($_GET['id']);
                   </div>
                 </div>
                 </div>
-              <?php include '..\layoults\botones.php'; ?>
+              <?php include '../layoults/botones.php'; ?>
               <div class="clearfix"></div>
             </form>
           </div>
@@ -88,8 +88,8 @@ $player=$prensa->select($_GET['id']);
       </div>
     </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
     <script type="text/javascript">
         $('.datetimepicker').datetimepicker({

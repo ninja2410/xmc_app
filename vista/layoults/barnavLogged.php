@@ -20,7 +20,7 @@ if(!isset($_SESSION['iniciado']))
    $jugadores=0;
 }else
 {
-  require_once('..\..\Negocio/ClassUsuario.php');
+  require_once('../../Negocio/ClassUsuario.php');
   $partido=new Usuario();
   $data2=$partido->selectPermisoUsuario($_SESSION['id']);
   $permisos = array();
@@ -121,8 +121,8 @@ foreach($permisos as $key => $value)
               <i class="fas fa-users fa-lg"></i> Jugadores
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="..\..\vista\jugador/index.php">Jugadores</a>
-                <a class="dropdown-item" href="..\..\vista\categoria/index.php">Categorías</a>
+                <a class="dropdown-item" href="../../vista/jugador/index.php">Jugadores</a>
+                <a class="dropdown-item" href="../../vista/categoria/index.php">Categorías</a>
               </div>
             </li>
             <?php
@@ -135,12 +135,12 @@ foreach($permisos as $key => $value)
               <i class="fas fa-futbol fa-lg"></i> Partidos
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="..\..\vista\equipo/index.php">Equipos</a>
+                <a class="dropdown-item" href="../../vista/equipo/index.php">Equipos</a>
                 
-                <a class="dropdown-item" href="..\..\vista\estadio/index.php">Estadios</a>
-                <a class="dropdown-item" href="..\..\vista\temporada/index.php">Temporadas</a>
-                <a class="dropdown-item" href="..\..\vista\alineacion/index.php">Alineaciones</a>
-                <a class="dropdown-item" href="..\..\vista\partido/index.php">Registro de partidos</a>
+                <a class="dropdown-item" href="../../vista/estadio/index.php">Estadios</a>
+                <a class="dropdown-item" href="../../vista/temporada/index.php">Temporadas</a>
+                <a class="dropdown-item" href="../../vista/alineacion/index.php">Alineaciones</a>
+                <a class="dropdown-item" href="../../vista/partido/index.php">Registro de partidos</a>
               </div>
             </li>
             <?php
@@ -153,11 +153,11 @@ foreach($permisos as $key => $value)
               <i class="fas fa-user-lock fa-lg"></i> Socios
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="..\..\vista\pagos/index.php">Pagos</a>
-                <a class="dropdown-item" href="..\..\vista\beneficio/index.php">Beneficios</a>
-                <a class="dropdown-item" href="..\..\vista\membresia/index.php">Membresías</a>
-                <a class="dropdown-item" href="..\..\vista\pagos/rpt_socios.php">Estado de pagos</a>
-                <a class="dropdown-item" href="..\..\vista\socio/index.php">Registro de socios</a>
+                <a class="dropdown-item" href="../../vista/pagos/index.php">Pagos</a>
+                <a class="dropdown-item" href="../../vista/beneficio/index.php">Beneficios</a>
+                <a class="dropdown-item" href="../../vista/membresia/index.php">Membresías</a>
+                <a class="dropdown-item" href="../../vista/pagos/rpt_socios.php">Estado de pagos</a>
+                <a class="dropdown-item" href="../../vista/socio/index.php">Registro de socios</a>
               </div>
             </li>
             <?php
@@ -170,10 +170,10 @@ foreach($permisos as $key => $value)
               <i class="fas fa-briefcase-medical fa-lg"></i> Lesiones
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="..\..\vista\medico/index.php">Médicos</a>
-                <a class="dropdown-item" href="..\..\vista\ficha_medica/index.php">Ficha médica</a>
-                <a class="dropdown-item" href="..\..\vista\parte_cuerpo/index.php">Detalles de ficha médica</a>
-                <a class="dropdown-item" href="..\..\vista\lesion-jugador/index.php">Registro de lesiones por jugador</a>
+                <a class="dropdown-item" href="../../vista/medico/index.php">Médicos</a>
+                <a class="dropdown-item" href="../../vista/ficha_medica/index.php">Ficha médica</a>
+                <a class="dropdown-item" href="../../vista/parte_cuerpo/index.php">Detalles de ficha médica</a>
+                <a class="dropdown-item" href="../../vista/lesion-jugador/index.php">Registro de lesiones por jugador</a>
               </div>
             </li>
             <?php
@@ -186,8 +186,8 @@ foreach($permisos as $key => $value)
               <i class="fas fa-file-alt fa-lg"></i> Documentos
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="..\..\vista\documento_digital/index.php">Documentos digitales</a>
-                <a class="dropdown-item" href="..\..\vista\categoria_documentos/index.php">Categoría documentos</a>
+                <a class="dropdown-item" href="../../vista/documento_digital/index.php">Documentos digitales</a>
+                <a class="dropdown-item" href="../../vista/categoria_documentos/index.php">Categoría documentos</a>
               </div>
             </li>
             <?php
@@ -204,25 +204,25 @@ foreach($permisos as $key => $value)
             if($prensa==1)
             {
             ?>
-                <a class="dropdown-item" href="..\..\vista\prensa/index.php">Prensa</a>
+                <a class="dropdown-item" href="../../vista/prensa/index.php">Prensa</a>
                 <?php
             }
             if($arbitro==1)
             {
             ?>
-                <a class="dropdown-item" href="..\..\vista\arbitro/index.php">Árbitros</a>
+                <a class="dropdown-item" href="../../vista/arbitro/index.php">Árbitros</a>
             <?php
             }
             if($entrenadores==1)
             {
             ?>
-                <a class="dropdown-item" href="..\..\vista\entrenador/index.php">Entrenadores</a>
+                <a class="dropdown-item" href="../../vista/entrenador/index.php">Entrenadores</a>
             <?php
             }
             if($pt==1)
             {
             ?>
-                <a class="dropdown-item" href="..\..\vista\personaltecnico/index.php">Personal técnico</a>
+                <a class="dropdown-item" href="../../vista/personaltecnico/index.php">Personal técnico</a>
             <?php
             }
             ?>
@@ -238,8 +238,8 @@ foreach($permisos as $key => $value)
               <i class="fas fa-user-circle fa-lg"></i> Administrador
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="..\..\vista\bitacora/index.php">Bitácora</a>
-                <a class="dropdown-item" href="..\..\vista\usuario/index.php">Usuarios</a>
+                <a class="dropdown-item" href="../../vista/bitacora/index.php">Bitácora</a>
+                <a class="dropdown-item" href="../../vista/usuario/index.php">Usuarios</a>
                 
               </div>
             </li>
@@ -251,7 +251,7 @@ foreach($permisos as $key => $value)
               <i class="far fa-newspaper fa-lg"></i> Noticias
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="..\..\vista\noticia/index.php">Noticias</a>
+                <a class="dropdown-item" href="../../vista/noticia/index.php">Noticias</a>
               </div>
             </li>
             <li class="dropdown nav-item">
@@ -262,8 +262,8 @@ foreach($permisos as $key => $value)
               </a>
               <div class="dropdown-menu dropdown-menu-right">
                 <h6 class="dropdown-header"><?php echo $_SESSION['foto'] ?></h6>
-                <a class="dropdown-item" href="..\..\vista\acerca/index.php">Acerca de</a>
-                <a href="..\..\vista\login/salida.php" class="dropdown-item"><i class="fas fa-sign-out-alt"></i>  Cerrar sesión</a>
+                <a class="dropdown-item" href="../../vista/acerca/index.php">Acerca de</a>
+                <a href="../../vista/login/salida.php" class="dropdown-item"><i class="fas fa-sign-out-alt"></i>  Cerrar sesión</a>
               </div>
             </li>
           </ul>

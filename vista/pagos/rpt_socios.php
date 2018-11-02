@@ -1,6 +1,6 @@
 <?php
-require_once('..\..\Negocio/ClassPago.php');
-require_once('..\..\Negocio/ClassSocio.php');
+require_once('../../Negocio/ClassPago.php');
+require_once('../../Negocio/ClassSocio.php');
 $pago=new Pago();
 $data_pagos=$pago->est_Socios();
  ?>
@@ -9,11 +9,11 @@ $data_pagos=$pago->est_Socios();
   <head>
     <meta charset="utf-8">
     <title>Pagos - Socios</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
     <?php
-    include '..\layoults\barnavLogged.php';
+    include '../layoults/barnavLogged.php';
     ?>
     <div class="main main-raised">
     <div class="content">
@@ -88,8 +88,8 @@ $data_pagos=$pago->est_Socios();
       </div>
     </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <script type="text/javascript">
     $(document).ready(function(){
     $('#table1').DataTable({

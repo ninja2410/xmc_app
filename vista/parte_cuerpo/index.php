@@ -1,5 +1,5 @@
 <?php
-require_once('..\..\Negocio/ClassParteCuerpo.php');
+require_once('../../Negocio/ClassParteCuerpo.php');
 $partecuerpo=new ParteCuerpo();
 $data=$partecuerpo->select(-1);
 
@@ -9,11 +9,11 @@ $data=$partecuerpo->select(-1);
   <head>
     <meta charset="utf-8">
     <title>Partes del cuerpo - Listar</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
     <?php
-    include '..\layoults\barnavLogged.php';
+    include '../layoults/barnavLogged.php';
     ?>
     <div class="main main-raised">
       <div class="content">
@@ -25,7 +25,7 @@ $data=$partecuerpo->select(-1);
                   <p class="category">Listado de examenes que se pueden incluir en ficha medica</p>
                 </div>
                 <div class="col-md-2 text-right">
-                    <a href="..\..\vista\parte_cuerpo/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar detalle">
+                    <a href="../../vista/parte_cuerpo/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar detalle">
                     <i class="material-icons">add</i>
                   </a>
                 </div>
@@ -53,14 +53,14 @@ $data=$partecuerpo->select(-1);
                           </td>
                           <td class="td-actions text-lefht">
                               <div style="float:left">
-                                <a href="..\..\vista\parte_cuerpo/update.php?id=<?php echo $row['id_parte']; ?>">
+                                <a href="../../vista/parte_cuerpo/update.php?id=<?php echo $row['id_parte']; ?>">
                                   <button type="button" rel="tooltip" title="Editar parte" class="btn btn-primary btn-link btn-sm">
                                     <i class="material-icons">edit</i>
                                   </button>
                                 </a>
                               </div>
                               <div  style="float:left">
-                                <form class="" action="..\..\vista\parte_cuerpo/store.php" method="post">
+                                <form class="" action="../../vista/parte_cuerpo/store.php" method="post">
                                   <input type="hidden" name="operation" value="3">
                                   <input type="hidden" name="id" value="<?php echo $row['id_parte']; ?>">
                                   <button type="submit" rel="tooltip" title="Eliminar parte" class="btn btn-danger btn-link btn-sm">
@@ -81,7 +81,7 @@ $data=$partecuerpo->select(-1);
       </div>
     </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
   </body>
 </html>

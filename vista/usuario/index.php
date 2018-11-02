@@ -1,5 +1,5 @@
 <?php
-require_once('..\..\Negocio/ClassUsuario.php');
+require_once('../../Negocio/ClassUsuario.php');
 $usuario=new Usuario();
 $data=$usuario->select(-1);
 
@@ -9,11 +9,11 @@ $data=$usuario->select(-1);
   <head>
     <meta charset="utf-8">
     <title>Usuarios - Listar</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
     <?php
-    include '..\layoults\barnavLogged.php';
+    include '../layoults/barnavLogged.php';
     ?>
     <input type="hidden" id="mensaje" name="secret" value="<?php if ($_SESSION['mensaje']!="") {
       echo $_SESSION['mensaje'];
@@ -32,7 +32,7 @@ $data=$usuario->select(-1);
                   <p class="category">Usuarios registrados</p>
                 </div>
                 <div class="col-md-2 text-right">
-                  <a href="..\..\vista\usuario/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" rel="tooltip" title="Agregar usuario" aria-disabled="true">
+                  <a href="../../vista/usuario/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" rel="tooltip" title="Agregar usuario" aria-disabled="true">
                     <i class="material-icons">add</i>
                   </a>
                 </div>
@@ -70,14 +70,14 @@ $data=$usuario->select(-1);
                         </td>
                         <td class="td-actions">
                             <div style="float:left">
-                              <a href="..\..\vista\usuario/update.php?id=<?php echo $row['id_usuario']; ?>">
+                              <a href="../../vista/usuario/update.php?id=<?php echo $row['id_usuario']; ?>">
                                 <button type="button" rel="tooltip" title="Editar Usuario" class="btn btn-primary btn-link btn-sm">
                                   <i class="material-icons">edit</i>
                                 </button>
                               </a>
                             </div>
                             <div  style="float:left">
-                              <form class="" action="..\..\vista\usuario/store.php" method="post">
+                              <form class="" action="../../vista/usuario/store.php" method="post">
                                 <input type="hidden" name="operation" value="3">
                                 <input type="hidden" name="id" value="<?php echo $row['id_usuario']; ?>">
                                 <!-- Inicio de modal -->
@@ -119,8 +119,8 @@ $data=$usuario->select(-1);
     </div>
     </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <script type="text/javascript">
     $(document).ready(function(){
       if ($('#mensaje').val()!="") {

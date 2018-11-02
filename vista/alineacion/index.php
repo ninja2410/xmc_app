@@ -1,5 +1,5 @@
 <?php
-require_once('..\..\Negocio/ClassAlineacion.php');
+require_once('../../Negocio/ClassAlineacion.php');
 $alineacion=new Alineacion();
 $data=$alineacion->select(-1);
 ?>
@@ -8,10 +8,10 @@ $data=$alineacion->select(-1);
   <head>
     <meta charset="utf-8">
     <title>Alineaciones - Listar</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
-  <?php include '..\layoults\barnavLogged.php'; ?>
+  <?php include '../layoults/barnavLogged.php'; ?>
   <input type="hidden" id="mensaje" name="secret" value="<?php if ($_SESSION['mensaje']!="") {
       echo $_SESSION['mensaje'];
       $_SESSION['mensaje']="";
@@ -26,7 +26,7 @@ $data=$alineacion->select(-1);
                   <p class="card-category">Listado de alineaciones</p>
                 </div>
                 <div class="col-md-1 text-right">
-                <a href="..\..\vista\alineacion/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar alineación">
+                <a href="../../vista/alineacion/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar alineación">
                     <i class="material-icons">add</i>
                   </a>
                 </div>
@@ -63,7 +63,7 @@ $data=$alineacion->select(-1);
                           <?php echo $row['descripcion']; ?>
                         </td>
                         <td>
-                          <a href="..\..\vista\detalle_partido/index.php?id=<?php echo $row['id_partido']; ?>&id2=<?php echo $row['id_equipo']; ?>">
+                          <a href="../../vista/detalle_partido/index.php?id=<?php echo $row['id_partido']; ?>&id2=<?php echo $row['id_equipo']; ?>">
                           <button class="btn btn-success btn-round btn-sm"> <i class="far fa-eye"></i> Ver detalles</button>
                         </td>
                         <?php
@@ -79,8 +79,8 @@ $data=$alineacion->select(-1);
       </div>
     </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <script type="text/javascript">
     $(document).ready(function(){
 

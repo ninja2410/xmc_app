@@ -1,5 +1,5 @@
 <?php
-require_once('..\..\Negocio/ClassPersonalTecnico.php');
+require_once('../../Negocio/ClassPersonalTecnico.php');
 $personal=new PersonalTecnico();
 $data=$personal->select(-1);
 ?>
@@ -8,10 +8,10 @@ $data=$personal->select(-1);
   <head>
     <meta charset="utf-8">
     <title>Personal técnico</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
-  <?php include '..\layoults\barnavLogged.php'; ?>
+  <?php include '../layoults/barnavLogged.php'; ?>
   <input type="hidden" id="mensaje" name="secret" value="<?php if ($_SESSION['mensaje']!="") {
       echo $_SESSION['mensaje'];
       $_SESSION['mensaje']="";
@@ -67,8 +67,8 @@ $data=$personal->select(-1);
       </div>
     </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <script type="text/javascript">
     $(document).ready(function(){
 

@@ -1,10 +1,10 @@
 <?php
-require_once('..\..\Negocio/ClassContrato.php');
+require_once('../../Negocio/ClassContrato.php');
 $contrato=new Contrato();
 $data=$contrato->select($_GET['id']);
  ?>
 <?php
-require_once('..\..\Negocio/ClassDocumento.php');
+require_once('../../Negocio/ClassDocumento.php');
 $documento=new Documento();
 $data2=$documento->select(-1);
  ?>
@@ -15,10 +15,10 @@ $data2=$documento->select(-1);
   <head>
     <meta charset="utf-8">
     <title>Contrato - Actualizar</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
-    <?php include '..\layoults\barnavLogged.php'; ?>
+    <?php include '../layoults/barnavLogged.php'; ?>
     <div class="main main-raised"> 
     <div class="content">
       <div class="col-md-12">
@@ -28,7 +28,7 @@ $data2=$documento->select(-1);
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
-          <form method="post", action="..\contrato\store.php"  id="frm_contrato">
+          <form method="post", action="../contrato/store.php"  id="frm_contrato">
               <input type="hidden" name="operation" value="2">
               <input type="hidden" name="id" value="<?php echo $data['id_contrato']; ?>">
              <div class="row">
@@ -80,7 +80,7 @@ $data2=$documento->select(-1);
                 </div>
               </div>
 
-              <?php include '..\layoults\botones.php'; ?>
+              <?php include '../layoults/botones.php'; ?>
               <div class="clearfix"></div>
             </form>
           </div>
@@ -88,8 +88,8 @@ $data2=$documento->select(-1);
       </div>
     </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <script type="text/javascript">
     $(document).ready(function(){
       $('#frm_contrato').bootstrapValidator({

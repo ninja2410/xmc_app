@@ -1,5 +1,5 @@
 <?php
-require_once('..\..\Negocio/ClassJugador.php');
+require_once('../../Negocio/ClassJugador.php');
 $jugador=new Jugador();
 $data=$jugador->select($_GET['id']);
 
@@ -19,11 +19,11 @@ function calculaedad($fechanacimiento){
   <head>
     <meta charset="utf-8">
     <title>Jugador - <?php echo $data['nombre']." ".$data['apellido'] ?></title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
     <?php
-    include '..\layoults\barnavLogged.php';
+    include '../layoults/barnavLogged.php';
     ?>
     <div class="main main-raised">
         <div class="container">
@@ -55,27 +55,27 @@ function calculaedad($fechanacimiento){
                 <div class="col-md-3">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link btnAzul" href="..\..\vista\jugador/index.php">
+                            <a class="nav-link btnAzul" href="../../vista/jugador/index.php">
                                 <i class="fas fa-portrait fa-2x"></i><br> Ver estadísticas del jugador
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btnAzul" href="..\..\vista\ficha_medica/index.php">
+                            <a class="nav-link btnAzul" href="../../vista/ficha_medica/index.php">
                                 <i class="fas fa-notes-medical fa-2x"></i><br> Ver información médica
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btnAzul" href="..\..\vista\jugador/update.php?id=<?php echo $data['id_jugador']; ?>">
+                            <a class="nav-link btnAzul" href="../../vista/jugador/update.php?id=<?php echo $data['id_jugador']; ?>">
                                 <i class="material-icons fa-2x">edit</i><br> Actualizar información
                             </a>
                         </li>
 												<li class="nav-item">
-                            <a class="nav-link btnAzul" href="..\..\vista\jugador/documentos.php?id=<?php echo $data['id_jugador']; ?>">
+                            <a class="nav-link btnAzul" href="../../vista/jugador/documentos.php?id=<?php echo $data['id_jugador']; ?>">
                                 <i class="material-icons fa-2x">book</i><br> Documentos
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btnAzul" href="..\..\vista\jugador/index.php">
+                            <a class="nav-link btnAzul" href="../../vista/jugador/index.php">
                                 <i class="fas fa-undo-alt fa-2x"></i><br> Regresar
                             </a>
                         </li>
@@ -85,7 +85,7 @@ function calculaedad($fechanacimiento){
             </div>
         </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
   </body>
 </html>

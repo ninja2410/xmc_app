@@ -1,5 +1,5 @@
 <?php
-require_once('..\..\Negocio/ClassLesion.php');
+require_once('../../Negocio/ClassLesion.php');
 $lesion=new Lesion();
 $data=$lesion->select($_GET['id']);
 
@@ -9,11 +9,11 @@ $data=$lesion->select($_GET['id']);
   <head>
     <meta charset="utf-8">
     <title>Lesiones - Actualizar</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body>
     <?php
-    include '..\layoults\barnavLogged.php';
+    include '../layoults/barnavLogged.php';
     ?>
     <div class="content">
       <div class="col-md-12">
@@ -23,7 +23,7 @@ $data=$lesion->select($_GET['id']);
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
-            <form method="post", action="..\lesion\store.php" id="frm_lesion">
+            <form method="post", action="../lesion/store.php" id="frm_lesion">
               <input type="hidden" name="operation" value="2">
               <input type="hidden" name="id" value="<?php echo $data['id_lesion'] ?>">
               <div class="row">
@@ -45,15 +45,15 @@ $data=$lesion->select($_GET['id']);
                   </div>
                 </div>
               </div>
-              <?php include '..\layoults\botones.php'; ?>
+              <?php include '../layoults/botones.php'; ?>
               <div class="clearfix"></div>
             </form>
           </div>
         </div>
       </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <script type="text/javascript">
       $(document).ready(function(){
         $('#frm_lesion').bootstrapValidator({

@@ -1,6 +1,6 @@
 <?php
-require_once('..\..\Negocio/ClassSocio.php');
-require_once('..\..\Negocio/ClassBitacora.php');
+require_once('../../Negocio/ClassSocio.php');
+require_once('../../Negocio/ClassBitacora.php');
 session_start();
 $bit=new Bitacora();
 
@@ -46,8 +46,8 @@ if ($operacion=="1") {
   $bit->insert('Agrego una nuevo socio ', $_SESSION['id']);
   $name=$_FILES['img']['name'];
   $path='SOC_'.$beneficio->correlativo().substr($name,-4);
-  move_uploaded_file($_FILES['img']['tmp_name'],'..\imagenes\sc/'.$path);
-  chmod('..\imagenes\sc/'.$path,0644);
+  move_uploaded_file($_FILES['img']['tmp_name'],'../imagenes/sc/'.$path);
+  chmod('../imagenes/sc/'.$path,0644);
   $beneficio->insert($nombre, $apellido, $dir_dom, $telefono, $fnac, date('Y-m-d'), $dpi, $dir_cob, $id_membresia,
                       $email, $path);
                       $_SESSION['mensaje']="El socio se ha almacenado con éxito!";
@@ -56,8 +56,8 @@ elseif($operacion=="2") {
   $bit->insert('Actualizo la infromacion del socio'.$id_socio, $_SESSION['id']);
   $name=$_FILES['img']['name'];
   $tmp='SOC_'.$beneficio->correlativo().substr($name,-4);
-  move_uploaded_file($_FILES['img']['tmp_name'],'..\imagenes\sc/'.$tmp);
-  chmod('..\imagenes\sc/'.$tmp,0644);
+  move_uploaded_file($_FILES['img']['tmp_name'],'../imagenes/sc/'.$tmp);
+  chmod('../imagenes/sc/'.$tmp,0644);
   $path=$_FILES['img']['name'];
   if ($path=='') {
     $path=$_POST['foto'];

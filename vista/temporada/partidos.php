@@ -1,5 +1,5 @@
 <?php
-require_once('..\..\Negocio/ClassDetallePartido.php');
+require_once('../../Negocio/ClassDetallePartido.php');
 $detalle_partido=new Detalle();
 $datadpCn=$detalle_partido->selectTemporada($_GET['id']);
 
@@ -9,11 +9,11 @@ $datadpCn=$detalle_partido->selectTemporada($_GET['id']);
   <head>
     <meta charset="utf-8">
     <title>Partidos -  <?php echo $datadpCn['descripcion']?></title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
     <?php
-    include '..\layoults\barnavLogged.php';
+    include '../layoults/barnavLogged.php';
     ?>
     <div class="main main-raised">
     <br>
@@ -133,7 +133,7 @@ $datadpCn=$detalle_partido->selectTemporada($_GET['id']);
         </div>
     </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
   </body>
 </html>

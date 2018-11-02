@@ -1,7 +1,7 @@
 <?php
-require_once('..\..\Negocio/ClassNoticias.php');
-require_once('..\..\Negocio/ClassImagenesNoticias.php');
-require_once('..\..\Negocio/ClassBitacora.php');
+require_once('../../Negocio/ClassNoticias.php');
+require_once('../../Negocio/ClassImagenesNoticias.php');
+require_once('../../Negocio/ClassBitacora.php');
 session_start();
 $bit=new Bitacora();
 

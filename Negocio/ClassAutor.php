@@ -1,6 +1,6 @@
 <?php
 
-require_once('..\Biblioteca\Conexion\conexion.php');
+require_once('../Biblioteca/Conexion/conexion.php');
 
 class autor
 {

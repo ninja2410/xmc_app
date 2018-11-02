@@ -17,7 +17,7 @@
     <div class="tab-content tab-space">
         <div class="tab-pane active" id="pill1">
             <div class="row text-left">
-                <?php include_once('..\..\Negocio/ClassCampo.php');
+                <?php include_once('../../Negocio/ClassCampo.php');
                 $campo=new Campo();
                 $data=$campo->listCampos(1);
                 while ($row = mysqli_fetch_array($data)){
@@ -33,7 +33,7 @@
         </div>
         <div class="tab-pane" id="pill2">
             <div class="row text-left">
-                <?php include_once('..\..\Negocio/ClassCampo.php');
+                <?php include_once('../../Negocio/ClassCampo.php');
                 $campo=new Campo();
                 $data=$campo->listCampos(2);
                 while ($row = mysqli_fetch_array($data)){
@@ -49,7 +49,7 @@
         </div>
         <div class="tab-pane" id="pill3">
             <div class="row text-left">
-                <?php include_once('..\..\Negocio/ClassCampo.php');
+                <?php include_once('../../Negocio/ClassCampo.php');
                 $campo=new Campo();
                 $data=$campo->listCampos(3);
                 while ($row = mysqli_fetch_array($data)){
@@ -65,7 +65,7 @@
         </div>
         <div class="tab-pane" id="pill4">
             <div class="row text-left">
-                <?php include_once('..\..\Negocio/ClassCampo.php');
+                <?php include_once('../../Negocio/ClassCampo.php');
                 $campo=new Campo();
                 $data=$campo->listCampos(4);
                 while ($row = mysqli_fetch_array($data)){
@@ -81,7 +81,7 @@
         </div>
         <div class="tab-pane" id="pill5">
             <div class="row text-left">
-                <?php include_once('..\..\Negocio/ClassCampo.php');
+                <?php include_once('../../Negocio/ClassCampo.php');
                 $campo=new Campo();
                 $data=$campo->listCampos(5);
                 while ($row = mysqli_fetch_array($data)){
@@ -97,7 +97,7 @@
         </div>
         <div class="tab-pane" id="pill6">
             <div class="row text-left">
-                <?php include_once('..\..\Negocio/ClassCampo.php');
+                <?php include_once('../../Negocio/ClassCampo.php');
                 $campo=new Campo();
                 $data=$campo->listCampos(6);
                 while ($row = mysqli_fetch_array($data)){
@@ -113,7 +113,7 @@
         </div>
         <div class="tab-pane" id="pill7">
             <div class="row text-left">
-                <?php include_once('..\..\Negocio/ClassCampo.php');
+                <?php include_once('../../Negocio/ClassCampo.php');
                 $campo=new Campo();
                 $data=$campo->listCampos(7);
                 while ($row = mysqli_fetch_array($data)){
@@ -129,7 +129,7 @@
         </div>
         <div class="tab-pane" id="pill8">
             <div class="row text-left">
-                <?php include_once('..\..\Negocio/ClassCampo.php');
+                <?php include_once('../../Negocio/ClassCampo.php');
                 $campo=new Campo();
                 $data=$campo->listCampos(8);
                 while ($row = mysqli_fetch_array($data)){
@@ -145,7 +145,7 @@
         </div>
         <div class="tab-pane" id="pill9">
             <div class="row text-left">
-                <?php include_once('..\..\Negocio/ClassCampo.php');
+                <?php include_once('../../Negocio/ClassCampo.php');
                 $campo=new Campo();
                 $data=$campo->listCampos(9);
                 while ($row = mysqli_fetch_array($data)){
@@ -161,7 +161,7 @@
         </div>
         <div class="tab-pane" id="pill10">
             <div class="row text-left">
-                <?php include_once('..\..\Negocio/ClassCampo.php');
+                <?php include_once('../../Negocio/ClassCampo.php');
                 $campo=new Campo();
                 $data=$campo->listCampos(10);
                 while ($row = mysqli_fetch_array($data)){
@@ -177,7 +177,7 @@
         </div>
         <div class="tab-pane" id="pill11">
             <div class="row text-left">
-                <?php include_once('..\..\Negocio/ClassCampo.php');
+                <?php include_once('../../Negocio/ClassCampo.php');
                 $campo=new Campo();
                 $data=$campo->listCampos(11);
                 while ($row = mysqli_fetch_array($data)){
@@ -193,7 +193,7 @@
         </div>
         <div class="tab-pane" id="pill12">
             <div class="row text-left">
-                <?php include_once('..\..\Negocio/ClassCampo.php');
+                <?php include_once('../../Negocio/ClassCampo.php');
                 $campo=new Campo();
                 $data=$campo->listCampos(12);
                 while ($row = mysqli_fetch_array($data)){
@@ -209,7 +209,7 @@
         </div>
         <div class="tab-pane" id="pill13">
             <div class="row text-left">
-                <?php include_once('..\..\Negocio/ClassCampo.php');
+                <?php include_once('../../Negocio/ClassCampo.php');
                 $campo=new Campo();
                 $data=$campo->listCampos(13);
                 while ($row = mysqli_fetch_array($data)){

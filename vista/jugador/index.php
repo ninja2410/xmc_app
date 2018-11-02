@@ -1,5 +1,5 @@
 <?php
-require_once('..\..\Negocio/ClassJugador.php');
+require_once('../../Negocio/ClassJugador.php');
 $jugador=new Jugador();
 $data=$jugador->select(-1);
 
@@ -9,10 +9,10 @@ $data=$jugador->select(-1);
   <head>
     <meta charset="utf-8">
     <title>Jugadores - Listar</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
-    <?php include '..\layoults\barnavLogged.php'; ?>
+    <?php include '../layoults/barnavLogged.php'; ?>
     <input type="hidden" id="mensaje" name="secret" value="<?php if ($_SESSION['mensaje']!="") {
       echo $_SESSION['mensaje'];
       $_SESSION['mensaje']="";
@@ -29,7 +29,7 @@ $data=$jugador->select(-1);
                   <p class="category">Listado de jugadores</p>
                 </div>
                 <div class="col-md-2 text-right">
-                    <a href="..\..\vista\jugador/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar jugador">
+                    <a href="../../vista/jugador/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar jugador">
                     <i class="material-icons">add</i>
                   </a>
                 </div>
@@ -60,11 +60,11 @@ $data=$jugador->select(-1);
                           <?php echo $row['nombre'];?>
                         </td>
                         <td>
-                          <a href="..\..\vista\jugador/detalle.php?id=<?php echo $row['id_jugador']; ?>">
+                          <a href="../../vista/jugador/detalle.php?id=<?php echo $row['id_jugador']; ?>">
                           <button class="btn btn-success btn-round btn-sm"><i class="far fa-eye fa-lg"></i> Ver detalles</button>
                         </td>
                         <td>
-                          <form class="" action="..\..\vista\jugador/store.php" method="post">
+                          <form class="" action="../../vista/jugador/store.php" method="post">
                               <input type="hidden" name="operation" value="3">
                               <input type="hidden" name="id" value="<?php echo $row['id_jugador']; ?>">
                           
@@ -103,8 +103,8 @@ $data=$jugador->select(-1);
         </div>
       </div> 
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <script type="text/javascript">
     $(document).ready(function(){
       if ($('#mensaje').val()!="") {

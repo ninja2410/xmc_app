@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>Ingresar nueva noticia</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
   </head>
     <body class="profile-page sidebar-collapse">
-    <?php include '..\layoults\barnavLogged.php'; ?>
+    <?php include '../layoults/barnavLogged.php'; ?>
     <div class="content main main-raised">
     <div class="card">
         <div class="container-fluid">
@@ -18,7 +18,7 @@
                     <p class="category">Complete los campos siguientes</p>
                 </div>
                 <div class="card-body">
-                    <form method="post", action="..\noticia\store.php" enctype="multipart/form-data" id="frm_noticia">
+                    <form method="post", action="../noticia/store.php" enctype="multipart/form-data" id="frm_noticia">
                         <input type="hidden" name="operation" value="1">
                         <div>
                             <div class="form-row">
@@ -50,7 +50,7 @@
                         </div>
 
                         <div class="text-right">
-                            <?php include '..\layoults\botones.php'; ?>
+                            <?php include '../layoults/botones.php'; ?>
                         </div>
                         <div class="clearfix"></div>
                     </form>
@@ -59,8 +59,8 @@
             </div>
           </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
     <script type="text/javascript">
     $(document).ready(function(){

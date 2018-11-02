@@ -1,7 +1,7 @@
 <?php
 
-require_once('..\..\Negocio/ClassArbitro.php');
-require_once('..\..\Negocio/ClassBitacora.php');
+require_once('../../Negocio/ClassArbitro.php');
+require_once('../../Negocio/ClassBitacora.php');
 session_start();
 $bit=new Bitacora();
 $lesion=new Arbitro();

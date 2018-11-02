@@ -1,8 +1,8 @@
 <?php
 session_start();
-require_once('..\..\Negocio/ClassPago.php');
-require_once('..\..\Negocio/ClassSocio.php');
-require_once('..\..\Negocio/ClassBitacora.php');
+require_once('../../Negocio/ClassPago.php');
+require_once('../../Negocio/ClassSocio.php');
+require_once('../../Negocio/ClassBitacora.php');
 session_start();
 $bit=new Bitacora();
 
@@ -36,7 +36,7 @@ if ($operation==1) {
 // <meta charset="utf-8">
 // </head>
 //
-// <body style="margin: 0; padding: 0;" background="..\assets/img/home.png"></p>
+// <body style="margin: 0; padding: 0;" background="../assets/img/home.png"></p>
 // <table border="0" cellpadding="0" cellspacing="0" width="100%">
 // <tr>
 // <td style="padding: 10px 0 30px 0;">

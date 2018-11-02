@@ -1,5 +1,5 @@
 <?php
-require_once('..\..\Negocio/ClassCategoriaDocumentos.php');
+require_once('../../Negocio/ClassCategoriaDocumentos.php');
 $catDocumentos=new CatDocumentos();
 $data=$catDocumentos->select($_GET['id']);
 
@@ -9,10 +9,10 @@ $data=$catDocumentos->select($_GET['id']);
   <head>
     <meta charset="utf-8">
     <title>Categoría documentos - Actualizar</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
-    <?php include '..\layoults\barnavLogged.php'; ?>
+    <?php include '../layoults/barnavLogged.php'; ?>
     <div class="main main-raised">
     <div class="content">
             <div class="card col-md-12">
@@ -23,7 +23,7 @@ $data=$catDocumentos->select($_GET['id']);
                   <p class="category">Complete los campos siguientes</p>
               </div>
               <div class="card-body">
-                <form method="post", action="..\categoria_documentos\store.php" id="frm_catDocumentos">
+                <form method="post", action="../categoria_documentos/store.php" id="frm_catDocumentos">
                 <input type="hidden" name="operation" value="2">
                 <input type="hidden" name="id" value="<?php echo $data['id_categoria_documentos'] ?>">
                     <div class="form-row"> 
@@ -48,7 +48,7 @@ $data=$catDocumentos->select($_GET['id']);
                             </div>
                         </div>
                     </div>
-                    <?php include '..\layoults\botones.php'; ?>
+                    <?php include '../layoults/botones.php'; ?>
                     <div class="clearfix"></div>
                 </form>
               </div>
@@ -57,8 +57,8 @@ $data=$catDocumentos->select($_GET['id']);
       </div>
     </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
 
     <script type="text/javascript">
       $(document).ready(function(){

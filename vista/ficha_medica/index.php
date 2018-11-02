@@ -1,5 +1,5 @@
 <?php
-require_once('..\..\Negocio/ClassFichaMedica.php');
+require_once('../../Negocio/ClassFichaMedica.php');
 $fichamedica=new FichaMedica();
 $data=$fichamedica->select(-1);
 
@@ -9,11 +9,11 @@ $data=$fichamedica->select(-1);
   <head>
     <meta charset="utf-8">
     <title>Fichas médicas - Listar</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
     <?php
-    include '..\layoults\barnavLogged.php';
+    include '../layoults/barnavLogged.php';
     ?>
     <input type="hidden" id="mensaje" name="secret" value="<?php if ($_SESSION['mensaje']!="") {
       echo $_SESSION['mensaje'];
@@ -30,7 +30,7 @@ $data=$fichamedica->select(-1);
                   <p class="category">Listado de fichas médicas de los jugadores.</p>
                 </div>
                 <div class="col-md-2 text-right">
-                    <a href="..\..\vista\ficha_medica/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar ficha medica">
+                    <a href="../../vista/ficha_medica/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar ficha medica">
                     <i class="material-icons">add</i>
                   </a>
                 </div>
@@ -61,19 +61,19 @@ $data=$fichamedica->select(-1);
                           </td>
                           <td class="td-actions text-lefht">
                               <div style="float:left">
-                                  <a href="..\..\vista\ficha_medica/verDetalle.php?id=<?php echo $row['id_ficha']; ?>">
+                                  <a href="../../vista/ficha_medica/verDetalle.php?id=<?php echo $row['id_ficha']; ?>">
                                   <button class="btn btn-success btn-round btn-sm"><i class="far fa-eye fa-lg"></i> Ver detalles</button>
                                 </a>
                               </div>
                               <div style="float:left">
-                                <a href="..\..\vista\ficha_medica/update.php?id=<?php echo $row['id_ficha']; ?>">
+                                <a href="../../vista/ficha_medica/update.php?id=<?php echo $row['id_ficha']; ?>">
                                   <button type="button" rel="tooltip" title="Editar ficha" class="btn btn-danger btn-link btn-sm">
                                     <i class="material-icons">edit</i>
                                   </button>
                                 </a>
                               </div>
                               <div  style="float:left">
-                                <form class="" action="..\..\vista\ficha_medica/store.php" method="post">
+                                <form class="" action="../../vista/ficha_medica/store.php" method="post">
                                   <input type="hidden" name="operation" value="3">
                                   <input type="hidden" name="id" value="<?php echo $row['id_ficha']; ?>">
                                   <!-- Inicio de modal -->
@@ -111,8 +111,8 @@ $data=$fichamedica->select(-1);
           </div>
       </div>
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <script type="text/javascript">
     $(document).ready(function(){
       if ($('#mensaje').val()!="") {

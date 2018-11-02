@@ -1,5 +1,5 @@
 <?php
-require_once('..\Biblioteca\Conexion\conexion.php');
+require_once('../Biblioteca/Conexion/conexion.php');
 class Libro
 {
 	public function get()
