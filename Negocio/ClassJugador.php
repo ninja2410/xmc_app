@@ -45,6 +45,17 @@ class Jugador
     return $dt;
   }
 
+  public function selectTemporada(){
+    $query="SELECT J.id_jugador, CONCAT(J.nombre,' ' ,J.apellido) nombre, P.descripcion ,CC.nombre CAT FROM JUGADOR J
+      INNER JOIN ASIGNACION_CATEGORIA C ON J.id_jugador=C.id_jugador
+      INNER JOIN CATEGORIA CC ON CC.id_categoria=C.id_categoria
+      INNER JOIN POSICION P ON J.id_posicion=P.id_posicion
+      WHERE J.estado=1;";
+    $bd= new conexion();
+		$dt=$bd->execute_query($query);
+    return $dt;
+  }
+
   public function select($id){
     $conexion=new conexion();
     $conexion->conectar();
