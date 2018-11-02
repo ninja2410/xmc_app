@@ -1,5 +1,5 @@
 <?php
-require_once('..\..\Negocio/ClassNoticias.php');
+require_once('../../Negocio/ClassNoticias.php');
 $noticia=new Noticia();
 $data=$noticia->select(-1);
 ?>
@@ -8,11 +8,11 @@ $data=$noticia->select(-1);
   <head>
     <meta charset="utf-8">
     <title>Noticias - Listar</title>
-    <?php include '..\layoults\headers2.php'; ?>
+    <?php include '../layoults/headers2.php'; ?>
   </head>
   <body class="profile-page sidebar-collapse">
     <?php
-    include '..\layoults\barnavLogged.php';
+    include '../layoults/barnavLogged.php';
     ?>
     <input type="hidden" id="mensaje" name="secret" value="<?php if ($_SESSION['mensaje']!="") {
       echo $_SESSION['mensaje'];
@@ -31,7 +31,7 @@ $data=$noticia->select(-1);
                   <p class="category">Listado de noticias publicadas</p>
                 </div>
                 <div class="col-md-2 text-right">
-                    <a href="..\..\vista\noticia/insertNoticia.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar noticia">
+                    <a href="../../vista/noticia/insertNoticia.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar noticia">
                     <i class="material-icons">add</i>
                   </a>
                 </div>
@@ -63,15 +63,15 @@ $data=$noticia->select(-1);
                           <?php echo $row['fecha'];?>
                         </td>
                         <td>
-                          <a href="..\..\vista\noticia/vernoticia.php?id=<?php echo $row['id_noticia']; ?>">
+                          <a href="../../vista/noticia/vernoticia.php?id=<?php echo $row['id_noticia']; ?>">
                           <button class="btn btn-success btn-round btn-sm"><i class="far fa-eye fa-lg"></i> Ver noticia</button>
                         </td>
                         <td>
-                          <a href="..\..\vista\noticia/updateNoticia.php?id=<?php echo $row['id_noticia']; ?>">
+                          <a href="../../vista/noticia/updateNoticia.php?id=<?php echo $row['id_noticia']; ?>">
                           <button class="btn btn-info btn-round btn-sm"><i class="far fa-edit fa-lg"></i> Editar noticia</button>
                         </td>
                         <td>
-                          <form class="" action="..\..\vista\jugador/store.php" method="post">
+                          <form class="" action="../../vista/noticia/store.php" method="post">
                               <input type="hidden" name="operation" value="3">
                               <input type="hidden" name="id" value="<?php echo $row['id_noticia']; ?>">
                               
@@ -87,7 +87,7 @@ $data=$noticia->select(-1);
                                       <h5 class="modal-title" id="exampleModalLabel">Confirmación</h5>
                                     </div>
                                     <div class="modal-body">
-                                    ¿Está seguro que desea desactivar a este jugador?
+                                    ¿Está seguro que desea desactivar esta noticia?
                                     </div>
                                     <div class="modal-footer">
                                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -110,57 +110,59 @@ $data=$noticia->select(-1);
         </div>
       </div> 
     </div>
-    <?php include '..\layoults\footer.php'; ?>
-    <?php include '..\layoults\scripts2.php'; ?>
+    <?php include '../layoults/footer.php'; ?>
+    <?php include '../layoults/scripts2.php'; ?>
     <script type="text/javascript">
     $(document).ready(function(){
       if ($('#mensaje').val()!="") {
         alertify.success($('#mensaje').val());
       }
-$('#table1').DataTable({
-   dom: 'Bfrtip',
-"language": {
-  "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"
- },
-   buttons: [
-     {
-       extend:'copy',
-       title:'Listado de jugadores',
-       exportOptions:{
-        columns:[0,1,2]
-       }
-     },
-     {
-       extend:'csv',
-       title:'Listado de jugadores',
-       exportOptions:{
-        columns:[0,1,2]
-       }
-     },
-     {
-       extend:'excel',
-       title:'Listado de jugadores',
-       exportOptions:{
-        columns:[0,1,2]
-       }
-     },
-     {
-       extend:'pdf',
-       title:'Listado de jugadores',
-       exportOptions:{
-        columns:[0,1,2]
-       }
-     },
-     {
-       extend:'print',
-       title:'Listado de jugadores',
-       exportOptions:{
-         columns:[0,1,2]
-       }
-     }
-   ],
-}) ;
-});
+    $('#table1').DataTable({
+      "order": [[ 0, "desc" ]],
+      dom: 'Bfrtip',
+    "language": {
+      "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"
+    },
+    
+      buttons: [
+        {
+          extend:'copy',
+          title:'Listado de jugadores',
+          exportOptions:{
+            columns:[0,1,2]
+          }
+        },
+        {
+          extend:'csv',
+          title:'Listado de jugadores',
+          exportOptions:{
+            columns:[0,1,2]
+          }
+        },
+        {
+          extend:'excel',
+          title:'Listado de jugadores',
+          exportOptions:{
+            columns:[0,1,2]
+          }
+        },
+        {
+          extend:'pdf',
+          title:'Listado de jugadores',
+          exportOptions:{
+            columns:[0,1,2]
+          }
+        },
+        {
+          extend:'print',
+          title:'Listado de jugadores',
+          exportOptions:{
+            columns:[0,1,2]
+          }
+        }
+      ],
+    }) ;
+    });
     </script>
   </body>
 </html>
