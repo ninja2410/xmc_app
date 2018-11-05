@@ -26,6 +26,7 @@ $data=$equipo->select($_GET['id']);
             <form method="post", action="../equipo/store.php" id="frm_equipo" enctype="multipart/form-data">
               <input type="hidden" name="operation" value="2">
               <input type="hidden" name="id" value="<?php echo $data['id_equipo']; ?>">
+              <input type="hidden" name="IMG" value="<?php echo $data['foto'] ?>">
               <div class="row">
                 <div class="col-md-5">
                   <div class="form-group">

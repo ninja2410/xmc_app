@@ -36,19 +36,25 @@ if ($operacion=="1") {
 }
 
 elseif($operacion=="2") {
-  $name=$_FILES['img']['name'];
-  $tmp='ESCUDO_'.$accion->correlativo().substr($name,-4);
-  move_uploaded_file($_FILES['img']['tmp_name'],'../imagenes/equipos/'.$tmp);
-  chmod('../imagenes/equipos/'.$tmp,0644);
+  // $name=$_FILES['img']['name'];
+  // $tmp='ESCUDO_'.$accion->correlativo().substr($name,-4);
+  // move_uploaded_file($_FILES['img']['tmp_name'],'../imagenes/equipos/'.$tmp);
+  // chmod('../imagenes/equipos/'.$tmp,0644);
   $foto=$_FILES['img']['name'];
   if ($foto=='') {
-    $foto=$_POST['foto'];
+    $foto=$_POST['IMG'];
   }
   else{
+     $name=$_FILES['img']['name'];
+     $tmp='ESCUDO_'.$accion->correlativo().substr($name,-4);
+    move_uploaded_file($_FILES['img']['tmp_name'],'../imagenes/equipos/'.$tmp);
+    chmod('../imagenes/equipos/'.$tmp,0644);
     $foto=$tmp;
   }
   $accion->update($id_equipo, $nombre, $procedencia, $foto);
   $_SESSION['mensaje']="El equipo se ha actualizado con éxito!";
+
+
 } elseif ($operacion=="3") {
   $accion->delete($id_equipo);
   $_SESSION['mensaje']="El equipo se ha eliminado con éxito!";
