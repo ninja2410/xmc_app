@@ -97,7 +97,7 @@ foreach($permisos as $key => $value)
 <nav class="navbar navbar-color-on-scroll navbar-transparent fixed-top navbar-expand-lg"  color-on-scroll="100">
   <div class="container">
       <div class="navbar-translate">
-        <a class="navbar-brand" href="Index.php">
+        <a class="navbar-brand" href="../../vista/home/index.php">
           <img src="../assets/img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
           Xelajú MC
         </a>
@@ -123,6 +123,7 @@ foreach($permisos as $key => $value)
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="../../vista/jugador/index.php">Jugadores</a>
                 <a class="dropdown-item" href="../../vista/categoria/index.php">Categorías</a>
+                <a class="dropdown-item" href="../../vista/fallas/index.php">Multas</a>
               </div>
             </li>
             <?php
@@ -262,7 +263,7 @@ foreach($permisos as $key => $value)
                 </div>
               </a>
               <div class="dropdown-menu dropdown-menu-right">
-                <h6 class="dropdown-header"><?php echo $_SESSION['foto'] ?></h6>
+                <h6 class="dropdown-header">Opciones de usuario</h6>
                 <a class="dropdown-item" href="../../vista/acerca/index.php">Acerca de</a>
                 <a href="../../vista/login/salida.php" class="dropdown-item"><i class="fas fa-sign-out-alt"></i>  Cerrar sesión</a>
               </div>
