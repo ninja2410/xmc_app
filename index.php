@@ -1,3 +1,3 @@
 <?php
-header('Location:vista/login/login.php');
+header('Location:vista/usuario/');
  ?>

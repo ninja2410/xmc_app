@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 ?>
 <!DOCTYPE html>
@@ -10,7 +10,7 @@ session_start();
 </head>
 <body class="login-page sidebar-collapse">
 
-  <div class="page-header header-filter" style="background-image: url('../assets/img/login.jpg'); background-size: cover; background-position: top center;">
+  <div class="page-header header-filter" style="background-image: url('../assets/img/login.JPG'); background-size: cover; background-position: top center;">
     <div class="container">
     <?php
     if(isset($_SESSION['error']) && $_SESSION['error'])
@@ -23,10 +23,10 @@ session_start();
           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true"><i class="material-icons">clear</i></span>
           </button>
-          <b>ERROR AL INICIAR SESIÓN:</b> Verifique el nombre de usuario y la contraseña, si sigue teniendo problemas 
+          <b>ERROR AL INICIAR SESIÓN:</b> Verifique el nombre de usuario y la contraseña, si sigue teniendo problemas
           contacte con el administrador.
     </div>
-    <?php 
+    <?php
     }
     ?>
     <?php
@@ -42,7 +42,7 @@ session_start();
           </button>
           <b>SESION EXPIRADA:</b> El tiempo de la sesion a expirado porfavor ingrese de nuevo
     </div>
-    <?php 
+    <?php
     }
     ?>
       <div class="row">
