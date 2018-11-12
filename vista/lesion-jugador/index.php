@@ -23,7 +23,7 @@ $data=$lesion->detalle();
     <div class="content">
             <div class="card col-md-12">
       <div class="container-fluid">
-        
+
               <div class="card-header card-header-danger row">
               <div class="col-md-11">
                   <h3 class="card-title ">Lesiones</h3>
@@ -80,6 +80,11 @@ $data=$lesion->detalle();
                         </td>
                         <td class="td-actions text-left">
                             <div style="float:left">
+                              <a href="../../vista/lesion-jugador/ver_lesion.php?id=<?php echo $row['ID']; ?>">
+                                <button type="button" rel="tooltip" title="Ver lesión" class="btn btn-primary btn-link btn-sm">
+                                  <i class="material-icons">info</i>
+                                </button>
+                              </a>
                               <a href="../../vista/lesion-jugador/update.php?id=<?php echo $row['ID']; ?>">
                                 <button type="button" rel="tooltip" title="Editar lesión" class="btn btn-primary btn-link btn-sm">
                                   <i class="material-icons">edit</i>
@@ -124,7 +129,7 @@ $data=$lesion->detalle();
                 </div>
               </div>
             </div>
-          
+
       </div>
     </div>
     </div>
