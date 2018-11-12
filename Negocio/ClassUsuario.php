@@ -27,6 +27,16 @@ class Usuario
         return $dt;
     }
 
+    public function selectCategoria($id)
+    {
+        $conexion=new conexion();
+        $conexion->conectar();
+            $query="SELECT * FROM CATEGORIA WHERE estado=1";
+            $dt=mysqli_query($conexion->objetoconexion,$query);
+        $conexion->desconectar();
+        return $dt;
+    }
+
     public function Loggin($username,$password)
     {
         $conexion=new conexion();
@@ -86,9 +96,9 @@ class Usuario
 
     
 
-    public function insert($usuario, $pass,$nombre,$apellido,$foto,$email)
+    public function insert($usuario, $pass,$nombre,$apellido,$foto,$email,$cat)
     {
-        $query="CALL SP_USUARIO_INSERT('$usuario','$pass','$nombre','$apellido','$foto','$email');";
+        $query="CALL SP_USUARIO_INSERT('$usuario','$pass','$nombre','$apellido','$foto','$email','$cat');";
         $bd= new conexion();
 		$dt=$bd->execute_query($query);
 		return $dt;
@@ -118,9 +128,9 @@ class Usuario
 		return $dt;
     }
 
-    public function update($id, $usuario, $pass,$nombre,$apellido,$foto,$email)
+    public function update($id, $usuario, $pass,$nombre,$apellido,$foto,$email,$cat)
     {
-        $query="CALL SP_USUARIO_UPDATE('$id','$usuario','$pass','$nombre','$apellido','$foto','$email');";
+        $query="CALL SP_USUARIO_UPDATE('$id','$usuario','$pass','$nombre','$apellido','$foto','$email','$cat');";
         $bd= new conexion();
 		$dt=$bd->execute_query($query);
 		return $dt;

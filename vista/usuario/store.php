@@ -33,6 +33,10 @@ if(isset($_POST['pass'])){
   $pass=$_POST['pass'];
 }
 
+if(isset($_POST['categoria'])){
+  $cat=$_POST['categoria'];
+}
+
 if (isset($_POST['id'])) {
   $id_usuario=$_POST['id'];
 }
@@ -46,7 +50,7 @@ if ($operacion=="1")
   $name=$_FILES['img']['name'];
   move_uploaded_file($_FILES['img']['tmp_name'],'../imagenes/'.$usuario.'.png');
   chmod('../imagenes/'.$usuario.'.png',0644);
-  $lesion->insert($usuario, $pass,$nombre,$apellido,$usuario.'.png',$email);
+  $lesion->insert($usuario, $pass,$nombre,$apellido,$usuario.'.png',$email,$cat);
   $bit->insert('Agrego un nuevo usuario', $_SESSION['id']);
 
   foreach($_POST as $key => $value)
@@ -71,7 +75,7 @@ $_SESSION['mensaje']="El usuario se ha almacenado con éxito!";
   move_uploaded_file($_FILES['img']['tmp_name'],'../imagenes/'.$usuario.'.png');
   chmod('../imagenes/'.$usuario.'.png',0644);
 
-  $lesion->update($id_usuario, $usuario, $pass,$nombre,$apellido,$usuario.'.png',$email);
+  $lesion->update($id_usuario, $usuario, $pass,$nombre,$apellido,$usuario.'.png',$email,$cat);
   $bit->insert('Actualizo el usuario '.$id_usuario, $_SESSION['id']);
 
   foreach($_POST as $key => $value)

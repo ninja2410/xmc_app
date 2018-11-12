@@ -2,6 +2,8 @@
 require_once('../../Negocio/ClassUsuario.php');
 $personal=new Usuario();
 $data=$personal->selectPermiso(-1);
+$cat=$personal->selectCategoria(-1);
+
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -50,10 +52,22 @@ $data=$personal->selectPermiso(-1);
                     <label class="bmd-label-floating">Contraseña</label>
                     <input type="password" class="form-control" name="pass">
                   </div>
+                  
+
                   <div class="form-group">
                     <label class="bmd-label-floating">Confirmar la contraseña</label>
                     <input type="password" class="form-control" name="pass2">
                   </div>
+
+                <div class="form-group">
+                    <label class="bmd-label-floating">Categoria</label>
+                    <select class="form-control" name="categoria">
+                      <?php while ($row=mysqli_fetch_array($cat)) { ?>
+                      <option value="<?php echo $row['id_categoria'] ?>"><?php echo $row['nombre']?></option>
+                    <?php } ?>
+                    </select>
+                </div>
+
                   <div class="col-md-4">
                           <div class="fileinput fileinput-new" data-provides="fileinput">
                             <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
@@ -63,6 +77,7 @@ $data=$personal->selectPermiso(-1);
                             </div>
                           </div>
                   </div>
+                  
                   <h3>Permisos</h3>
                   <br>
               <div class="col-md-6">
