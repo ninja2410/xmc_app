@@ -46,7 +46,7 @@
                   </div>
                 </div>
                 </div>
-                  
+                
               <?php include '../layoults/botones.php'; ?>
               <div class="clearfix"></div>
             </form>
