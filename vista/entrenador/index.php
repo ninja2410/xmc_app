@@ -53,9 +53,7 @@ $data2=$asignacion->select(-1);
                       <th>
                         Categoría
                       </th>
-                      <th>
-                        Foto
-                      </th>
+                     
                       <th>
                         Documentos
                       </th>
@@ -80,11 +78,7 @@ $data2=$asignacion->select(-1);
                         <td>
                         <?php echo $row['CATEGORIA']; ?>
                         </td>
-                        <td>
-                        <?php
-                         echo '<img style="height:40px;width:40px"  src="../imagenes/'.$row['foto'].'"  alt="Circle Image" class="img-raised rounded-circle img-fluid">';
-                        ?>
-                        </td>
+                        
                         <td class="td-actions text-left">
                         <div style="float:left"> 
                         <a href="../../vista/entrenador/documentos.php?id=<?php echo $row['id_entrenador']; ?>">

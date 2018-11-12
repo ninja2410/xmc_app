@@ -34,6 +34,7 @@ $data2=$contrato->select(-1);
              <input type="hidden" name="operation" value="2"> 
              <input type="hidden" name="id" value="<?php echo $data['id_entrenador']; ?>">
              <input type="hidden" name="id_AE" value="<?php echo $data['id_asignacion_entrenador'] ?>">
+             <input type="hidden" name="IMG" value="<?php echo $data['foto'] ?>">
              
              <div>
              <h3>Datos personales</h3>
@@ -128,7 +129,7 @@ $data2=$contrato->select(-1);
                          
                 <div class="row">
                 <div class="col-md-4">
-                  <img src="../imagenes/<?php echo $data['foto']; ?>" style="width: 200px; height: 150px;" alt="">
+                  <img src="../imagenes/entrenadores/<?php echo $data['foto']; ?>" style="width: 200px; height: 150px;" alt="">
                   <br>
                   <label><b>Imagen actual</b></label>
                 </div>
