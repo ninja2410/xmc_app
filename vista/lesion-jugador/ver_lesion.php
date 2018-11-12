@@ -23,7 +23,7 @@ $data_tratamiento=$tratamiento->select($_GET['id']);
             <h3 class="card-title">Ver detalles de  lesión del jugador</h3>
             <p class="card-category">Registro de lesión por jugador</p>
           </div>
-          <div class="card-body">
+          <div class="card-body" id="ficha">
               <div class="row">
                 <div class="col-md-4">
                   <div class="form-group">
@@ -123,6 +123,7 @@ $data_tratamiento=$tratamiento->select($_GET['id']);
                   </div>
                 </div>
                 <a href="javascript:history.back(-1);"> <button type="button" class="btn btn-info pull-right btn-round"><i class="fas fa-undo-alt fa-lg"></i> Regresar</button></a>
+                <button type="button" class="btn btn-warning pull-right btn-round" onclick="printDiv()"><i class="fas fa-print fa-lg"></i> Imprimir</button>
               </div>
               <div class="clearfix"></div>
           </div>
@@ -131,5 +132,14 @@ $data_tratamiento=$tratamiento->select($_GET['id']);
     </div>
     <?php include '../layoults/footer.php'; ?>
     <?php include '../layoults/scripts2.php'; ?>
+    <script type="text/javascript">
+    function printDiv() {
+       var contenido= document.getElementById("ficha").innerHTML;
+       var contenidoOriginal= document.body.innerHTML;
+       document.body.innerHTML = contenido;
+       window.print();
+       document.body.innerHTML = contenidoOriginal;
+    }
+    </script>
   </body>
 </html>
