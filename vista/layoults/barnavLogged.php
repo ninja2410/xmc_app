@@ -29,6 +29,7 @@ if(!isset($_SESSION['iniciado']))
     array_push($permisos,$row['id_permiso']);
   }
 }
+
 $DJugadores=0;
 $DPartidos=0;
 $DLesiones=0;
@@ -37,10 +38,12 @@ $PAdmin=0;
 $DSocios=0;
 $jugadores=0;
 $categorias=0;
+$multas=0;
 $Equipos=0;
 $Estadios=0;
 $Temporadas=0;
 $Alineacion=0;
+$reg_partidos=0;
 $Pagos=0;
 $beneficios=0;
 $membresias=0;
@@ -68,131 +71,183 @@ foreach($permisos as $key => $value)
   {
     $jugadores=1;
     $DJugadores=1;
+    $_SESSION['jugadores']=true;
   }
   if($value==2)
   {
     $categorias=1;
     $DJugadores=1;
+    $_SESSION['jugadores']=true;
+  }
+  if($value==27)
+  {
+    $multas=1;
+    $DJugadores=1;
+    $_SESSION['jugadores']=true;
   }
   if($value==3)
   {
     $Equipos=1;
     $DPartidos=1;
+    $_SESSION['partidos']=true;
   }
   if($value==4)
   {
     $Estadios=1;
     $DJugadores=1;
+    $_SESSION['partidos']=true;
+
   }
   if($value==5)
   {
     $Temporadas=1;
     $DJugadores=1;
+    $_SESSION['partidos']=true;
+
   }
   if($value==6)
   {
     $Alineacion=1;
     $DJugadores=1;
+    $_SESSION['partidos']=true;
+
   }
   if($value==8)
   {
-    $partido=1;
+    $reg_partidos=1;
     $DJugadores=1;
+    $_SESSION['partidos8']=true;
+
   }
   if($value==9)
   {
     $Pagos=1;
     $DSocios=1;
+    $_SESSION['socios']=true;
+
   }
   if($value==10)
   {
     $beneficios=1;
     $DSocios=1;
+    $_SESSION['socios']=true;
+
   }
   if($value==11)
   {
     $membresias=1;
     $DSocios=1;
+    $_SESSION['socios']=true;
+
   }
   if($value==12)
   {
     $estado_pagos=1;
     $DSocios=1;
+    $_SESSION['socios']=true;
+
   }
   if($value==13)
   {
     $socios=1;
     $DSocios=1;
+    $_SESSION['socios']=true;
+
   }
   if($value==14)
   {
     $medicos=1;
     $DLesiones=1;
+    $_SESSION['medicos']=true;
   }
   if($value==15)
   {
     $ficha_medica=1;
     $DLesiones=1;
+    $_SESSION['medicos']=true;
+
     
   }
   if($value==16)
   {
     $detallles_ficha=1;
     $DLesiones=1;
+    $_SESSION['medicos']=true;
+
 
   }
   if($value==17)
   {
     $lesiones=1;
     $DLesiones=1;
+    $_SESSION['medicos']=true;
+
 
   }
   if($value==18)
   {
     $lesiones_jugador=1;
     $DLesiones=1;
+    $_SESSION['medicos']=true;
+
 
   }
   if($value==19)
   {
     $doc_digitales=1;
     $DDoc=1;
+    $_SESSION['doc']=true;
+    
   }
   if($value==20)
   {
     $cat_digitales=1;
     $DDoc=1;
+    $_SESSION['doc']=true;
+
   }
   if($value==21)
   {
     $prensa=1;
     $personas=1;
+    $_SESSION['personas']=true;
+
   }
   if($value==22)
   {
     $arbitro=1;
     $personas=1;
+    $_SESSION['personas']=true;
+
   }
   if($value==23)
   {
     $entrenadores=1;
     $personas=1;
+    $_SESSION['personas']=true;
+
   }
   if($value==24)
   {
     $pt=1;
     $personas=1;
+    $_SESSION['personas']=true;
+
   }
   if($value==25)
   {
     $bitacora=1;
     $PAdmin=1;
+    $_SESSION['admin']=true;
+
 
   }
   if($value==26)
   {
     $usuarios=1;
     $PAdmin=1;
+    $_SESSION['admin']=true;
+
 
 
   }
@@ -243,6 +298,12 @@ foreach($permisos as $key => $value)
                 <a class="dropdown-item" href="../../vista/categoria/index.php">Categorías</a>
             <?php
             }
+            if($multas==1)
+            {
+            ?>
+            <a class="dropdown-item" href="../../vista/fallas/index.php">Multas</a>
+            <?php
+            }
             ?>
               </div>
             </li>
@@ -259,7 +320,7 @@ foreach($permisos as $key => $value)
                 
               <?php
             
-            if($partido==1)
+            if($Equipos==1)
             {
             ?>
                 <a class="dropdown-item" href="../../vista/equipo/index.php">Equipos</a>
@@ -283,7 +344,7 @@ foreach($permisos as $key => $value)
                 <a class="dropdown-item" href="../../vista/alineacion/index.php">Alineaciones</a>
                 <?php
             }
-            if($partido==1)
+            if($reg_partidos==1)
             {
             ?>
                 <a class="dropdown-item" href="../../vista/partido/index.php">Registro de partidos</a>
