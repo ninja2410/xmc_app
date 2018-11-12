@@ -53,7 +53,7 @@ class Usuario
         $conexion->conectar();
         if ($id==-1)
         {
-            $query="SELECT * FROM PERMISO WHERE estado=1";
+            $query="SELECT * FROM PERMISO order by id_permiso;";
             $dt=mysqli_query($conexion->objetoconexion,$query);
         }
         else
