@@ -69,15 +69,47 @@ $data=$personal->selectPermiso(-1);
               <?php
                     while ($row=mysqli_fetch_array($data))
                     {
-                    ?>
-                  
-                  <div class="checkbox col-md-6">
+  
+              ?>
+
+                  <div class="col-md-12">
+                  <?php
+                      if($row['id_permiso']==1)
+                    {
+                    echo '<h3>Jugadores</h3>';
+                    }
+                      if($row['id_permiso']==3)
+                    {
+                    echo '<h3>Partidos</h3>';
+                    }
+                    if($row['id_permiso']==9)
+                    {
+                    echo '<h3>Socios</h3>';
+                    }
+                    if($row['id_permiso']==14)
+                    {
+                    echo '<h3>Medico</h3>';
+                    }
+                    if($row['id_permiso']==19)
+                    {
+                    echo '<h3>Documentos</h3>';
+                    }
+                    if($row['id_permiso']==21)
+                    {
+                    echo '<h3>Personas</h3>';
+                    }
+                    if($row['id_permiso']==25)
+                    {
+                    echo '<h3>Administrador</h3>';
+                    }
+                  ?>
+                  <div class="checkbox">
                     <label>
-                      <input type="checkbox" name="<?php echo $row['id_permiso']; ?>"> <?php echo $row['descripcion']?>
+                      <input type="checkbox" id="<?php echo $row['id_permiso']; ?>" name="<?php echo $row['id_permiso']; ?>"> <?php echo $row['descripcion']?>
                     </label>
                   </div>
-
-                    <?php
+                  </div>
+                    <?php         
                     }
                     ?>
               </div>
