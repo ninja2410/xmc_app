@@ -74,13 +74,36 @@ $data=$partido->select(-1);
                     <tbody>
                       <?php
                       while ($row=mysqli_fetch_array($data)) {
+                        $fecha_actual = date_parse(date("Y-m-d"));
+                        $fecha_entrada = date_parse($row['fecha']);
                        ?>
                       <tr>
                         <td>
                           <?php echo $row['id_partido']; ?>
                         </td>
-                        <td>
-                          <?php echo $row['fecha']; ?>
+                        <td >
+                        <?php if($fecha_entrada>$fecha_actual)
+                        {
+                        ?>
+                          <a>
+                              <!-- <button class="btn btn-success btn-round btn-sm"><i class="fas fa-futbol fa-lg"> </i> </button> -->
+                              <span class="badge badge-pill badge-success">Proximo </span>
+                              <?php echo $row['fecha']?>
+                          </a>
+                        <?php
+                        }
+                        ?>
+                          <?php if($fecha_entrada<$fecha_actual)
+                        {
+                        ?>
+                          <a>
+                          <!-- <button class="btn btn-danger btn-round btn-sm"><i class="fas fa-futbol fa-lg"> </i>  </button> -->
+                          <span class="badge badge-pill badge-danger">Jugado </span>
+                          <?php echo $row['fecha']?>
+                          </a>
+                        <?php
+                        }
+                        ?>
                         </td>
                         <td>
                           <?php echo $row['categoria']; ?>
@@ -105,7 +128,7 @@ $data=$partido->select(-1);
                             </button>
                             <div class="dropdown-menu">
                               <a class="dropdown-item" href="../../vista/arbitro/arbitros.php?id=<?php echo $row['id_partido']; ?>">Árbitros</a>
-                              <a class="dropdown-item" href="../../vista/alineacion/alineacion.php?id=<?php echo $row['id_partido']; ?>">Alineación</a>
+                              <a class="dropdown-item" href="../../vista/estadisticaJugador/index.php?partido=<?php echo $row['id_partido']; ?>">Alineación</a>
                             </div>
                           </div>
                         </td>

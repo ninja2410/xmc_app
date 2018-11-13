@@ -342,12 +342,6 @@ foreach($permisos as $key => $value)
                 <a class="dropdown-item" href="../../vista/temporada/index.php">Temporadas</a>
                 <?php
             }
-            if($Alineacion==1)
-            {
-            ?>
-                <a class="dropdown-item" href="../../vista/alineacion/index.php">Alineaciones</a>
-                <?php
-            }
             if($reg_partidos==1)
             {
             ?>
@@ -567,12 +561,6 @@ foreach($permisos as $key => $value)
 <!-- Fin de barra de navegacion -->
 <div class="page-header header-filter" data-parallax="true" style="background-image: url('../assets/img/home.png')">
   <div class="container">
-    <div class="row">
-      <div class="col-md-8 ml-auto mr-auto">
-        <div class="brand text-center">
-          <h2 class="title">Bienvenido <?php echo $_SESSION['usuario']?></h2>
-        </div>
-      </div>
-    </div>
+    
   </div>
 </div>

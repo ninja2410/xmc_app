@@ -33,15 +33,6 @@ $estadistica=new EstadisticaJugador();
                   <h3 class="card-title ">Estadísticas</h3>
                   <p class="card-category"> Información de estadísticas por jugador</p>
                 </div>
-                <div class="col-lg-1" style="float:left">
-                  <a href="../../vista/estadisticaJugador/insert.php" title="Agregar nueva estadistica">
-                    <div class="card-header card-header-success card-header-icon" style="float:right">
-                      <div class="card-icon">
-                        <i class="material-icons">add</i>
-                      </div>
-                    </div>
-                  </a>
-                </div>
               </div>
               <div class="card-body">
                 <div class="table-responsive">

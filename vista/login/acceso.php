@@ -21,7 +21,7 @@ if($result>0)
         $_SESSION['iniciado'] = true;
         $_SESSION['id'] = $fila['id_usuario'];
         $_SESSION['foto'] = $fila['foto'];
-        $_SESSION['usuario'] = $username;
+        $_SESSION['usuario'] = $fila['nombre'];
         $_SESSION['start'] = time();
         $_SESSION['expire'] = $_SESSION['start'] + (120 * 60);
         $_SESSION['cat'] = $fila['categoria'];

@@ -93,17 +93,6 @@ $data=$partido->select(-1);
                         <?php
                         }
                         ?>
-                        <?php if($fecha_entrada==$fecha_actual)
-                        {
-                        ?>
-                          <a>
-                          <!-- <button class="btn btn-danger btn-round btn-sm"><i class="fas fa-futbol fa-lg"> </i>  </button> -->
-                          <span class="badge badge-pill badge-succes">HOY</span>
-                          <?php echo $row['fecha']?>
-                          </a>
-                        <?php
-                        }
-                        ?>
                         </td>
                         <td>
                           <?php echo $row['categoria']; ?>
