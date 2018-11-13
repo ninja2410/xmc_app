@@ -62,6 +62,7 @@ $cat=$personal->selectCategoria(-1);
                 <div class="form-group">
                     <label class="bmd-label-floating">Categoria</label>
                     <select class="form-control" name="categoria">
+                      <option value="0">Admin</option>
                       <?php while ($row=mysqli_fetch_array($cat)) { ?>
                       <option value="<?php echo $row['id_categoria'] ?>"><?php echo $row['nombre']?></option>
                     <?php } ?>

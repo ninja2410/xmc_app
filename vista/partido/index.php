@@ -1,9 +1,7 @@
 <?php
-session_start();
 require_once('../../Negocio/ClassPartido.php');
 $partido=new Partido();
-$CAT=$_SESSION['cat'];
-$data=$partido->select(-1,$CAT);
+$data=$partido->select(-1);
 
 ?>
 <!DOCTYPE html>
