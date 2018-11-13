@@ -2,7 +2,6 @@
 require_once('../../Negocio/ClassPartido.php');
 $partido=new Partido();
 $data=$partido->select(-1);
-
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -29,11 +28,6 @@ $data=$partido->select(-1);
                 <div class="col-md-11">
                   <h3 class="card-title">Partidos</h3>
                   <p class="category">Listado de partidos</p>
-                </div>
-                <div class="col-md-1 text-right">
-                  <a href="../../vista/partido/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar partido">
-                    <i class="material-icons">add</i>
-                  </a>
                 </div>
               </div>
               <div class="card-body">
@@ -62,26 +56,21 @@ $data=$partido->select(-1);
                         Observaciones
                       </th>
                       <th>
-                        Listados
-                      </th>
-                      <th>
-                        Resultados
-                      </th>
-                      <th>
-                        Acciones
+                        Asignación
                       </th>
                     </thead>
                     <tbody>
                       <?php
                       while ($row=mysqli_fetch_array($data)) {
-                        $fecha_actual = date_parse(date("Y-m-d"));
-                        $fecha_entrada = date_parse($row['fecha']);
+
+                        $fecha_actual = strtotime(date("Y-m-d"));
+                        $fecha_entrada = strtotime($row['fecha']);
                        ?>
                       <tr>
                         <td>
                           <?php echo $row['id_partido']; ?>
                         </td>
-                        <td >
+                        <td class="text-center">
                         <?php if($fecha_entrada>$fecha_actual)
                         {
                         ?>
@@ -121,57 +110,8 @@ $data=$partido->select(-1);
                           <?php echo $row['observaciones']; ?>
                         </td>
                         <td>
-
-                          <div class="btn-group">
-                            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-list-ul"></i>
-                              Parámetros
-                            </button>
-                            <div class="dropdown-menu">
-                              <a class="dropdown-item" href="../../vista/arbitro/arbitros.php?id=<?php echo $row['id_partido']; ?>">Árbitros</a>
-                              <a class="dropdown-item" href="../../vista/estadisticaJugador/index.php?partido=<?php echo $row['id_partido']; ?>">Alineación</a>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <a href="../../vista/detalle_partido/index.php?id=<?php echo $row['id_partido']; ?>&id2=<?php echo $row['id_equipo']; ?>">
-                          <button class="btn btn-success btn-round btn-sm"> <i class="far fa-eye fa-lg"></i> Ver detalles</button>
-                        </td>
-                        <td class="td-actions text-left">
-                            <div style="float:left">
-                              <a href="../../vista/partido/update.php?id=<?php echo $row['id_partido']; ?>">
-                                <button type="button" rel="tooltip" title="Editar partido" class="btn btn-primary btn-link btn-sm">
-                                  <i class="material-icons">edit</i>
-                                </button>
-                              </a>
-                            </div>
-                            <div  style="float:left">
-                              <form class="" action="../../vista/partido/store.php" method="post">
-                                <input type="hidden" name="operation" value="3">
-                                <input type="hidden" name="id" value="<?php echo $row['id_partido']; ?>">
-                                <!-- Inicio de modal -->
-                                <button type="button" data-toggle="modal" data-target="<?php echo '#Confirmacion'.$row['id_partido']; ?>" rel="tooltip" title="Eliminar partido" class="btn btn-danger btn-link btn-sm">
-                                  <i class="material-icons">close</i>
-                                </button>
-                                <!-- Modal -->
-                                <div class="modal fade" id="<?php echo 'Confirmacion'.$row['id_partido']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"  data-backdrop="false">
-                                  <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                      <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Confirmación</h5>
-                                      </div>
-                                      <div class="modal-body">
-                                      ¿Está seguro que desea eliminar este partido?
-                                      </div>
-                                      <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                                        <button type="submit" class="btn btn-primary">Eliminar</button>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <!--  -->
-                              </form>
-                            </div>
+                          <a href="../../vista/prensa/prensa.php?id=<?php echo $row['id_partido']; ?>">
+                          <button class="btn btn-warning btn-round btn-sm"> <i class="far fa-eye fa-lg"></i> Prensa</button>
                         </td>
                         <?php
                       } ?>
@@ -179,9 +119,7 @@ $data=$partido->select(-1);
                     </tbody>
                   </table>
                 </div>
-                <a href="temporada.php"> <button type="button" class="btn btn-warning pull-right"> <i class="fas fa-chart-bar"></i> Resumen de Temporadas</button></a>
               </div>
-              
           </div>
         </div>
         </div>

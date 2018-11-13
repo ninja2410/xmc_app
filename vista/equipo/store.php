@@ -28,7 +28,7 @@ if (isset($_POST['id'])) {
 $accion=new Equipo();
 if ($operacion=="1") {
   $name=$_FILES['img']['name'];
-  $foto='ESCUDO_'.$accion->correlativo().substr($name,-4);
+  $foto='ESC_'.$accion->correlativo().substr($name,-4);
   move_uploaded_file($_FILES['img']['tmp_name'],'../imagenes/equipos/'.$foto);
   chmod('../imagenes/equipos/'.$foto,0644);
   $accion->insert($nombre, $procedencia,$foto);
@@ -46,7 +46,7 @@ elseif($operacion=="2") {
   }
   else{
      $name=$_FILES['img']['name'];
-     $tmp='ESCUDO_'.$accion->correlativo().substr($name,-4);
+     $tmp='ESC_'.$accion->correlativo().substr($name,-4);
     move_uploaded_file($_FILES['img']['tmp_name'],'../imagenes/equipos/'.$tmp);
     chmod('../imagenes/equipos/'.$tmp,0644);
     $foto=$tmp;

@@ -184,7 +184,7 @@ $data=$contrato->select(-1);
               direccion:{
                 validators:{
                     regexp:{
-                      regexp: /^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ_-\s]*$/, 
+                      regexp: /^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ_-.\s]*$/, 
                         message: 'Solo se aceptan letras, números, espacios, guión y guión bajo'
                       }
                   }

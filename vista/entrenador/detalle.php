@@ -36,7 +36,7 @@ $data2=$contrato->select(-1);
             <div class="row" style="padding:20px">
                 <div class="col-md-2">
                     <?php
-                    echo '<img alt="Circle Image" class="img-circle rounded img-fluid"  src="../imagenes/'.$data['foto'].'" class="img-fluid">';
+                    echo '<img alt="Circle Image" class="img-circle rounded img-fluid"  src="../imagenes/entrenadores/'.$data['foto'].'" class="img-fluid">';
                     ?>
                 </div>
                 <div class="col-md-7">

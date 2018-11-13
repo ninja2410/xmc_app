@@ -154,6 +154,8 @@ $data=$temporada->select(-1);
                 </div>
               </div>
             </div>
+      </div>
+      </div>
     </div>
     <?php include '..\layoults\footer.php'; ?>
     <?php include '..\layoults\scripts2.php'; ?>

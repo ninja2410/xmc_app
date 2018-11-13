@@ -95,15 +95,19 @@ $id_entrenador2=$accion->correlativo();
 }
 elseif($operacion=="2") {
   $bit->insert('Modifico un entrenador', $_SESSION['id']);
-  $name=$_FILES['img']['name'];
-  $tmp='ENTRENADOR_'.$accion->correlativo().substr($name,-4);
-  move_uploaded_file($_FILES['img']['tmp_name'],'../imagenes/entrenadores/'.$tmp);
-  chmod('../imagenes/entrenadores/'.$tmp,0644);
+  //$name=$_FILES['img']['name'];
+  //$tmp='ENTRENADOR_'.$accion->correlativo().substr($name,-4);
+  //move_uploaded_file($_FILES['img']['tmp_name'],'../imagenes/entrenadores/'.$tmp);
+  //chmod('../imagenes/entrenadores/'.$tmp,0644);
   $foto=$_FILES['img']['name'];
   if ($foto=='') {
-    $foto=$_POST['foto'];
+    $foto=$_POST['IMG'];
   }
   else{
+    $name=$_FILES['img']['name'];
+     $tmp='ENT_'.$accion->correlativo().substr($name,-4);
+    move_uploaded_file($_FILES['img']['tmp_name'],'../imagenes/entrenadores/'.$tmp);
+    chmod('../imagenes/entrenadores/'.$tmp,0644);
     $foto=$tmp;
   }
   $accion->update($id_entrenador, $nombre, $apellido, $fecha_nacimiento, $fecha_inicio, $fecha_fin,$telefono,

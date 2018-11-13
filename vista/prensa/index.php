@@ -127,6 +127,7 @@ $data=$prensa->select(-1);
                     </tbody>
                   </table>
                 </div>
+                <a href="prensa_partidos.php"> <button type="button" class="btn btn-warning pull-right"> <i class="fas fa-chart-bar"></i>Partidos</button></a>
               </div>
             </div>
          

@@ -32,11 +32,11 @@ $estadistica=new EstadisticaJugador();
              <div class="card">
                <div class="card-header card-header-danger row">
                  <div class="col-lg-10" style="float:left;">
-                   <h3 class="card-title ">Estadísticas</h3>
+                   <h3 class="card-title ">Alineacion y estadísticas</h3>
                    <p class="card-category"> Información de estadísticas por jugador</p>
                  </div>
                  <div class="col-md-1 text-right">
-                <a href="../../vista/estadisticaJugador/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar estadísticas">
+                <a href="../../vista/alineacion/insert_alineacion.php?id=<?php echo $_GET['partido']; ?>" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar jugador">
                     <i class="material-icons">add</i>
                   </a>
                 </div>

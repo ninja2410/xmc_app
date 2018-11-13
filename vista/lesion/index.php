@@ -11,7 +11,7 @@ $data=$beneficio->select(-1);
     <title>Lesiones - Listar</title>
     <?php include '../layoults/headers2.php'; ?>
   </head>
-  <body>
+  <body class="profile-page sidebar-collapse">
     <?php
     include '../layoults/barnavLogged.php';
     ?>
@@ -19,30 +19,26 @@ $data=$beneficio->select(-1);
       echo $_SESSION['mensaje'];
       $_SESSION['mensaje']="";
     } ?>">
+    <div class="main main-raised">
     <div class="content">
+          <div class="card col-md-12">
       <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="card">
-              <div class="card-header card-header-primary">
+   
+              <div class="card-header card-header-danger row">
                 <div class="col-lg-10" style="float:left;">
                   <h2 class="card-title ">Lesiones</h4>
                   <p class="card-category"> Listado de lesiones</p>
                 </div>
-                <div class="col-lg-1" style="float:left">
-                  <a href="../../vista/lesion/insert.php">
-                    <div class="card-header card-header-success card-header-icon" style="float:left">
-                      <div class="card-icon">
-                        <i class="material-icons">add</i>
-                      </div>
-                    </div>
+                <div class="col-md-1 text-right">
+                <a href="../../vista/lesion/insert.php" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar lesión">
+                    <i class="material-icons">add</i>
                   </a>
                 </div>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
-                  <table class="table table-striped table-bordered" id="table1">
-                    <thead class=" text-primary">
+                  <table class="table  table-hover table-bordered" id="table1">
+                    <thead>
                       <th>
                         ID
                       </th>
@@ -73,7 +69,7 @@ $data=$beneficio->select(-1);
                         <td class="td-actions text-lefht">
                             <div style="float:left">
                               <a href="../../vista/lesion/update.php?id=<?php echo $row['id_lesion']; ?>">
-                                <button type="button" rel="tooltip" title="Editar Lesion" class="btn btn-primary btn-link btn-sm">
+                                <button type="button" rel="tooltip" title="Editar lesión" class="btn btn-primary btn-link btn-sm">
                                   <i class="material-icons">edit</i>
                                 </button>
                               </a>
@@ -82,9 +78,28 @@ $data=$beneficio->select(-1);
                               <form class="" action="../../vista/lesion/store.php" method="post">
                                 <input type="hidden" name="operation" value="3">
                                 <input type="hidden" name="id" value="<?php echo $row['id_lesion']; ?>">
-                                <button type="submit" rel="tooltip" title="Eliminar Lesion" class="btn btn-danger btn-link btn-sm">
+                                <!-- Inicio de modal -->
+                                <button type="button" data-toggle="modal" data-target="<?php echo '#Confirmacion'.$row['id_lesion']; ?>" rel="tooltip" title="Eliminar lesión" class="btn btn-danger btn-link btn-sm">
                                   <i class="material-icons">close</i>
                                 </button>
+                                <!-- Modal -->
+                                <div class="modal fade" id="<?php echo 'Confirmacion'.$row['id_lesion']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"  data-backdrop="false">
+                                  <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Confirmación</h5>
+                                      </div>
+                                      <div class="modal-body">
+                                      ¿Está seguro que desea eliminar esta lesión?
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                        <button type="submit" class="btn btn-primary">Eliminar</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!--  -->
                               </form>
                             </div>
                         </td>
@@ -95,10 +110,11 @@ $data=$beneficio->select(-1);
                   </table>
                 </div>
               </div>
-            </div>
+            
           </div>
-        </div>
+        
       </div>
+    </div>
     </div>
     <?php include '../layoults/footer.php'; ?>
     <?php include '../layoults/scripts2.php'; ?>
