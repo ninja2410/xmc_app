@@ -1,6 +1,6 @@
 <?php
 
-if (session_status() == PHP_SESSION_NONE) 
+if (session_status() == PHP_SESSION_NONE)
 {
   session_start();
 }
@@ -170,7 +170,7 @@ foreach($permisos as $key => $value)
     $DLesiones=1;
     $_SESSION['medicos']=true;
 
-    
+
   }
   if($value==16)
   {
@@ -201,7 +201,7 @@ foreach($permisos as $key => $value)
     $doc_digitales=1;
     $DDoc=1;
     $_SESSION['doc']=true;
-    
+
   }
   if($value==20)
   {
@@ -321,9 +321,9 @@ foreach($permisos as $key => $value)
               <i class="fas fa-futbol fa-lg"></i> Partidos
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                
+
               <?php
-            
+
             if($Equipos==1)
             {
             ?>
@@ -364,7 +364,7 @@ foreach($permisos as $key => $value)
               <?php
             if($Pagos==1)
             {
-            ?> 
+            ?>
                 <a class="dropdown-item" href="../../vista/pagos/index.php">Pagos</a>
                 <?php
             }
@@ -406,7 +406,7 @@ foreach($permisos as $key => $value)
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <?php
-            
+
             if($medicos==1)
             {
             ?>
@@ -514,8 +514,9 @@ foreach($permisos as $key => $value)
               <i class="fas fa-user-circle fa-lg"></i> Administrador
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="../../vista/noticia/index.php">Noticias</a>
               <?php
-            
+
             if($bitacora==1)
             {
             ?>
@@ -536,10 +537,13 @@ foreach($permisos as $key => $value)
             ?>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="far fa-newspaper fa-lg"></i> Noticias
+              <i class="far fa-newspaper fa-lg"></i> Reportes
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="../../vista/noticia/index.php">Noticias</a>
+                <a class="dropdown-item" href="../../vista/jugador/index.php">Jugadores</a>
+                <a class="dropdown-item" href="../../vista/temporada/index.php">Temporadas</a>
+                <a class="dropdown-item" href="../../vista/prensa/index.php">Noticias</a>
+                <a class="dropdown-item" href="../../vista/pagos/rpt_socios.php">Pagos y socios</a>
               </div>
             </li>
             <li class="dropdown nav-item">
@@ -561,6 +565,6 @@ foreach($permisos as $key => $value)
 <!-- Fin de barra de navegacion -->
 <div class="page-header header-filter" data-parallax="true" style="background-image: url('../assets/img/home.png')">
   <div class="container">
-    
+
   </div>
 </div>

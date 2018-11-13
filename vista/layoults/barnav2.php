@@ -193,6 +193,17 @@ foreach($permisos as $key => $value)
                 <a class="dropdown-item" href="../../vista/bitacora/index.php">Bitacora</a>
               </div>
             </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="far fa-newspaper fa-lg"></i> Reportes
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="../../vista/jugador/index.php">Jugadores</a>
+                <a class="dropdown-item" href="../../vista/temporada/index.php">Temporadas</a>
+                <a class="dropdown-item" href="../../vista/prensa/index.php">Noticias</a>
+                <a class="dropdown-item" href="../../vista/pagos/rpt_socios.php">Pagos y socios</a>
+              </div>
+            </li>
             <li class="dropdown nav-item">
               <a href="#pablo" class="profile-photo dropdown-toggle nav-link" data-toggle="dropdown">
                 <div class="profile-photo-small">
