@@ -22,7 +22,8 @@ class LesionJugador
     }
 
     public function detalle(){
-      $query="SELECT id_lesion_jugador ID, L.nombre LESION, concat(J.nombre, ' ', apellido) JUGADOR, fecha_inicio FECHA, costo COSTO FROM LESION_JUGADOR
+      $query="SELECT id_lesion_jugador ID, L.nombre LESION, concat(J.nombre, ' ', apellido) JUGADOR, fecha_inicio FECHA, costo COSTO, motivo MOTIVO,
+      observacion  FROM LESION_JUGADOR
       INNER JOIN JUGADOR J on LESION_JUGADOR.id_jugador = J.id_jugador
       INNER JOIN LESION L on LESION_JUGADOR.id_lesion = L.id_lesion WHERE LESION_JUGADOR.estado=1;";
       $bd= new conexion();

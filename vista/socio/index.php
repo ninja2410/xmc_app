@@ -23,7 +23,7 @@ $data=$socio->select(-1);
     <div class="content">
             <div class="card col-md-12">
       <div class="container-fluid">
-       
+
               <div class="card-header card-header-danger row">
               <div class="col-md-11">
                   <h3 class="card-title ">Socios</h3>
@@ -66,19 +66,19 @@ $data=$socio->select(-1);
                         <td>
                         <?php echo $row['nombre']." ".$row['apellido']; ?>
                         </td>
-                  
+
                         <td>
-                        
+
                           <a href="../../vista/socio/documentos.php?id=<?php echo $row['id_socio']; ?>">
                           <button class="btn btn-info btn-round btn-sm"><i class="far fa-file-text fa-lg"></i> Documentos</button>
-                          
-                          <td > 
-                          
+
+                          <td >
+
                           <a href="../../vista/socio/detalles.php?id=<?php echo $row['id_socio']; ?>">
                           <button class="btn btn-success btn-round btn-sm"><i class="far fa-eye fa-lg"></i> Ver detalles</button>
-                         
+
                           </td>
-                          <td > 
+                          <td >
                             <div style="float:left">
                               <a href="../../vista/socio/update.php?id=<?php echo $row['id_socio']; ?>">
                                 <button type="button" rel="tooltip" title="Editar socio" class="btn btn-primary btn-link btn-sm">
@@ -123,7 +123,7 @@ $data=$socio->select(-1);
                 </div>
               </div>
             </div>
-         
+
       </div>
     </div>
     </div>

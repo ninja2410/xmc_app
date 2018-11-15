@@ -35,6 +35,21 @@ class Socio
   		return mysqli_fetch_assoc($dt);
     }
 
+    public function reporte(){
+      $conexion=new conexion();
+      $conexion->conectar();
+      $query="SELECT SOCIO.id_socio, concat(SOCIO.nombre,' ', apellido) nombre, direccion_cobro DOMISCILIO,
+                telefono, fecha_nacimiento, SOCIO.fecha_registro,
+                DPI, email, MEMBRESIA.nombre membresia
+              FROM SOCIO
+              inner join REGISTRO_SOCIO on SOCIO.id_socio=REGISTRO_SOCIO.id_socio
+              inner join MEMBRESIA ON REGISTRO_SOCIO.id_membresia=MEMBRESIA.id_membresia
+              WHERE SOCIO.estado=true;";
+      $dt=mysqli_query($conexion->objetoconexion,$query);
+      $conexion->desconectar();
+      return $dt;
+    }
+
     public function update($id, $nombre, $apellido, $dir_dom, $telefono, $fnac, $freg, $dpi, $dir_cob, $membresia, $email, $foto){
       $query="CALL SP_SOCIO_UPDATE($id,'$nombre', '$apellido', '$dir_dom', '$telefono', '$fnac', '$freg',1, '$dpi', '$dir_cob', '$email', '$foto');";
       $bd= new conexion();
