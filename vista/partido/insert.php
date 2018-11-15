@@ -65,10 +65,10 @@
   });
   </script>
     <div class="content">
-      <div class="col-md-12">
-        <div class="card">
-          <div class="card-header card-header-primary">
-            <h4 class="card-title">INGRESAR UN NUEVO PARTIDO</h4>
+      <div class="card col-md-12">
+        
+          <div class="card-header card-header-danger">
+            <h3 class="card-title">Ingresar un nuevo partido</h3>
             <p class="card-category">Complete los campos siguientes</p>
           </div>
           <div class="card-body">
@@ -97,7 +97,7 @@
                 </div>
                 <div class="col-md-5">
                   <div class="form-group">
-                    <label class="">Categoria</label>
+                    <label class="">Categoría</label>
                     <input type="hidden" name="cat" id="cat" >
                     <input type="text" id="autoCategoria"  class="form-control">
                   </div>
@@ -132,7 +132,7 @@
             </form>
           </div>
         </div>
-      </div>
+      
     </div>
     </div>
     <?php include '../layoults/footer.php'; ?>

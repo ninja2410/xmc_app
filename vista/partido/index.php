@@ -87,7 +87,7 @@ $data=$partido->select(-1);
                         ?>
                           <a>
                               <!-- <button class="btn btn-success btn-round btn-sm"><i class="fas fa-futbol fa-lg"> </i> </button> -->
-                              <span class="badge badge-pill badge-success">Proximo </span>
+                              <span class="badge badge-pill badge-success">Próximo </span>
                               <?php echo $row['fecha']?>
                           </a>
                         <?php
