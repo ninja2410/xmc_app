@@ -7,6 +7,7 @@ $data=$personal->selectCargo(-1);
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
     <title>Personal técnico - Xelajú </title>
     <?php include '../layoults/headers2.php'; ?>
   </head>
@@ -36,7 +37,7 @@ $data=$personal->selectCargo(-1);
                     ?>
                     <tr>
                         <td>
-                        <h4><b><?php echo $row['cargo']?></b></h4>
+                        <h4><b><?php echo utf8_encode($row['cargo'])?></b></h4>
                         </td>
                         <td>
                         <h4><input type="text" class="form-control" name="<?php echo $row['id_cargo_tecnico']; ?>"  ></h4>
