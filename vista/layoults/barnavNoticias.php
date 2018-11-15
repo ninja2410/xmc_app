@@ -1,8 +1,8 @@
 <nav class="navbar navbar-default navbar-expand-lg">
  <div class="container">
        <div class="navbar-translate">
-         <a class="navbar-brand" href="Index.php">
-           <img src="../assets/img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+         <a class="navbar-brand" href="index.php">
+           <img src="vista/assets/img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
            Xelajú MC
          </a>
  
