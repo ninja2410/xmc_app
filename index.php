@@ -1,10 +1,32 @@
 <?php
-require_once('Negocio/ClassNoticias.php');
+require_once('Negocio/ClassNoticias2.php');
 $noticia=new Noticia();
 $data=$noticia->Ultimoregistro();
 $data2=$noticia->LosDemas();
+$num_total_registros = mysqli_num_rows($data2);
 
- ?>
+if ($num_total_registros > 0) {
+    //Limito la busqueda
+    $TAMANO_PAGINA = 5;
+        $pagina = false;
+
+    //examino la pagina a mostrar y el inicio del registro a mostrar
+    if (isset($_GET["pagina"]))
+        $pagina = $_GET["pagina"];
+        
+    if (!$pagina) {
+        $inicio = 0;
+        $pagina = 1;
+    }
+    else {
+        $inicio = ($pagina - 1) * $TAMANO_PAGINA;
+    }
+    //calculo el total de paginas
+    $total_paginas = ceil($num_total_registros / $TAMANO_PAGINA);
+    $res=$noticia->paginacion($inicio,$TAMANO_PAGINA);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -79,7 +101,7 @@ $data2=$noticia->LosDemas();
                     </div>
                     <?php
                         }
-                        while ($row=mysqli_fetch_array($data2)) {
+                        while ($row=mysqli_fetch_array($res)) {
                     ?>
                     <div class="col-md-4">
                         <div class="card carta">
@@ -96,6 +118,32 @@ $data2=$noticia->LosDemas();
                         }
                     ?>
                 </div>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+                <?php 
+                    if ($total_paginas > 1) {
+                        if ($pagina != 1)
+                            echo '<li class="page-item">
+                                    <a class="page-link" href="index.php?pagina='.($pagina-1).'" tabindex="'.($pagina-1).'">Anterior</a>
+                                </li>';
+                            for ($i=1;$i<=$total_paginas;$i++) {
+                                if ($pagina == $i)
+                                    //si muestro el �ndice de la p�gina actual, no coloco enlace
+                                    echo '<li class="page-item active"><a class="page-link" href="index.php?pagina='.($pagina).'">'.$pagina.'</a></li>';
+                                else
+                                //si el �ndice no corresponde con la p�gina mostrada actualmente,
+                                //coloco el enlace para ir a esa p�gina
+                                echo '<li class="page-item"><a class="page-link" href="index.php?pagina='.$i.'">'.$i.'</a></li>';
+                            }
+                            if ($pagina != $total_paginas)
+                            echo '<li class="page-item">
+                                    <a class="page-link" href="index.php?pagina='.($pagina+1).'">Siguiente</a>
+                                </li>';
+                        }
+                    }
+                ?>
+                    </ul>
+                </nav>
             </div>
             <div class="col-md-3">
                 <div class="card">

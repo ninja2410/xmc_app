@@ -63,7 +63,7 @@ $data=$noticia->select(-1);
                           <?php echo $row['fecha'];?>
                         </td>
                         <td>
-                          <a href="../../vista/noticia/vernoticia.php?id=<?php echo $row['id_noticia']; ?>">
+                          <a href="../../vernoticia.php?id=<?php echo $row['id_noticia']; ?>">
                           <button class="btn btn-success btn-round btn-sm"><i class="far fa-eye fa-lg"></i> Ver noticia</button>
                         </td>
                         <td>

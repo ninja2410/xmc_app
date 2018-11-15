@@ -1,5 +1,5 @@
 <?php
-require_once('Negocio/ClassNoticias.php');
+require_once('Negocio/ClassNoticias2.php');
 $noticia=new Noticia();
 $data=$noticia->select($_GET['id']);
 ?>
