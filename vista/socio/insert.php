@@ -145,7 +145,7 @@ $data=$membresia->select(-1);
                       message:'Ingrese un nombre'
                   },
                   regexp:{
-                    regexp: /^[a-zA-Z\s]*$/,
+                    regexp: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]*$/,
                       message: 'Solo se aceptan letras'
                     }
                 }
@@ -156,7 +156,7 @@ $data=$membresia->select(-1);
                         message:'Ingrese un apellido'
                     },
                     regexp:{
-                      regexp: /^[a-zA-Z\s]*$/,
+                      regexp: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]*$/,
                         message: 'Solo se aceptan letras'
                       }
                   }
