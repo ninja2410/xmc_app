@@ -12,7 +12,7 @@ $data=$noticia->select($_GET['id']);
   </head>
   <body class="landing-page sidebar-collapse">
     <?php
-    include '../layoults/barnav3.php';
+    include '../layoults/barnavNoticias.php';
     ?>
    <div class="container">
         <div class="row">

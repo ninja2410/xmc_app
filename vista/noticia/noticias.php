@@ -14,7 +14,7 @@ $data2=$noticia->LosDemas();
 </head>
 <body class="landing-page sidebar-collapse">
     <?php
-        include '../layoults/barnav3.php';
+        include '../layoults/barnavNoticias.php';
     ?>
     <style>
     #contenedor{
