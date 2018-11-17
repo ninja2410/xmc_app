@@ -66,7 +66,8 @@ $estadistica=new EstadisticaJugador();
                          ?>
                          <tr>
                            <td><?php echo $val['id_jugador']; ?></td>
-                           <td><?php echo $val['nombre']; ?></td>
+                           <td> <a href="ver_detalles.php?id=<?php echo $val['id_jugador']; ?>&partido=<?php echo $_GET['partido']; ?>
+                             ""> <?php echo $val['nombre']; ?> </a></td>
                            <?php
                            foreach ($dato as $key => $dt) {
                              $row=$estadistica->buscarDato($dt['id_dato_partido'], $_GET['partido'], $val['id_jugador']);

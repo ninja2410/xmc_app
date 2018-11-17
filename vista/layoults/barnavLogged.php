@@ -541,8 +541,9 @@ foreach($permisos as $key => $value)
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="../../vista/jugador/index.php">Jugadores</a>
+                <a class="dropdown-item" href="../../vista/lesion-jugador/reporte.php">Lesiones por jugador</a>
                 <a class="dropdown-item" href="../../vista/temporada/index.php">Temporadas</a>
-                <a class="dropdown-item" href="../../vista/prensa/index.php">Noticias</a>
+                <a class="dropdown-item" href="../../vista/socio/reporte.php">Socios</a>
                 <a class="dropdown-item" href="../../vista/pagos/rpt_socios.php">Pagos y socios</a>
               </div>
             </li>
