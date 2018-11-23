@@ -23,9 +23,6 @@ $data=$temporada->select(-1);
     <div class="content">
             <div class="card col-md-12">
       <div class="container-fluid">
-
-
-
               <div class="card-header card-header-danger row">
                 <div class="col-md-11">
                   <h3 class="card-title ">Temporadas</h4>
@@ -161,9 +158,11 @@ $data=$temporada->select(-1);
     <?php include '../layoults/scripts2.php'; ?>
     <script type="text/javascript">
     $(document).ready(function(){
+
       if ($('#mensaje').val()!="") {
         alertify.success($('#mensaje').val());
       }
+
    $('#table1').DataTable({
        dom: 'Bfrtip',
 "language": {
@@ -205,7 +204,7 @@ $data=$temporada->select(-1);
              columns:[0,1,2,3]
            }
          }
-       ],
+       ]
    }) ;
 });
     </script>
