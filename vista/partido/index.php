@@ -134,7 +134,7 @@ $data=$partido->select(-1);
                         </td>
                         <td>
                           <a href="../../vista/detalle_partido/index.php?id=<?php echo $row['id_partido']; ?>&id2=<?php echo $row['id_equipo']; ?>">
-                          <button class="btn btn-success btn-round btn-sm"> <i class="far fa-eye fa-lg"></i> Ver detalles</button>
+                          <button class="btn btn-success btn-round btn-sm"> <i class="far fa-eye fa-lg"></i> Ver resultados</button>
                         </td>
                         <td class="td-actions text-left">
                             <div style="float:left">
