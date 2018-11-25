@@ -30,6 +30,11 @@ $result = mysqli_num_rows($data);
                   <h3 class="card-title ">Entrenamientos</h3>
                   <p class="card-category"> Asistencia</p>
                 </div>
+                <div class="col-md-1 text-right">
+                <a href="../../vista/asistencia/jugadores.php?id= <?php echo $_GET['id']; ?>" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar entrenamiento">
+                    <i class="material-icons">add</i>
+                  </a>
+                </div>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
@@ -43,6 +48,9 @@ $result = mysqli_num_rows($data);
                       </th>
                       <th>
                         Observacion/Motivo
+                      </th>
+                      <th>
+                        Multas
                       </th>
                     </thead>
                     <tbody>
@@ -114,16 +122,20 @@ $result = mysqli_num_rows($data);
                         <td>
                           <?php echo $row['motivo']; ?>
                         </td>
-
+                        <td>
+                          <a href="../../vista/fallas/index.php?id=<?php echo $row['id_jugador']; ?>">
+                          <button class="btn btn-danger btn-round btn-sm"> <i class="far fa-eye fa-lg"></i> multa</button>
+                        </td>
                         <?php
-
                         } 
-                        
                         ?>
                       </tr>
                     </tbody>
                   </table>
                 </div>
+                <a href="../../vista/fallas/index.php">
+              <button class="btn btn-danger btn-round btn-sm"> <i class="far fa-eye fa-lg"></i> Multas</button></a>
+              
               </div>
             </div>
         

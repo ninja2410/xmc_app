@@ -1,7 +1,16 @@
 <?php
 require_once('../../Negocio/ClassDetalleFalla.php');
 $falla=new DetFalla();
-$data=$falla->select(-1);
+
+if(!isset($_GET['id']))
+{
+  $data=$falla->select(-1);
+}
+else
+{
+  $data=$falla->selectFalla($_GET['id']);
+}
+
  ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">

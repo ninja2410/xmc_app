@@ -265,7 +265,7 @@ $socios=0;
             if($multas==1)
             {
             ?>
-            <a class="dropdown-item" href="../../vista/fallas/index.php">Entrenos</a>
+            <a class="dropdown-item" href="../../vista/entrenamiento/index.php">Entrenos</a>
             <?php
             }
             ?>

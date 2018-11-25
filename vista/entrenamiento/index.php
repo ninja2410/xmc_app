@@ -114,7 +114,36 @@ $data=$entreno->select(-1);
                             </div>
                         </td>
                         <td>
-                          <?php echo $row['estado']; ?>
+                        <?php if($row['estado']==1)
+                        {
+                        ?>
+                          <a>
+                              <!-- <button class="btn btn-success btn-round btn-sm"><i class="fas fa-futbol fa-lg"> </i> </button> -->
+                              <span class="badge badge-pill badge-success">Ejecutado</span>
+                          </a>
+                        <?php
+                        }
+                        ?>
+                          <?php if($row['estado']==0)
+                        {
+                        ?>
+                          <a>
+                          <!-- <button class="btn btn-danger btn-round btn-sm"><i class="fas fa-futbol fa-lg"> </i>  </button> -->
+                          <span class="badge badge-pill badge-danger">Suspendido</span>
+                          </a>
+                        <?php
+                        }
+                        ?>
+                        <?php if($row['estado']==3)
+                        {
+                        ?>
+                          <a>
+                          <!-- <button class="btn btn-danger btn-round btn-sm"><i class="fas fa-futbol fa-lg"> </i>  </button> -->
+                          <span class="badge badge-pill badge-warning">Pendiente</span>
+                          </a>
+                        <?php
+                        }
+                        ?>
                         </td>
                         <?php
                       } ?>

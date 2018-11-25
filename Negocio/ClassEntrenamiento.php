@@ -31,6 +31,18 @@ class Entrenamiento
         return $dt;
     }
 
+    public function Asistencia($jug,$ent)
+    {
+        $conexion=new conexion();
+        $conexion->conectar();
+
+            $query="SELECT * FROM DETALLE_ENTRENAMIENTO WHERE id_jugador=$jug and id_entrenamiento = $ent ;";
+            $dt=mysqli_query($conexion->objetoconexion,$query);
+
+        $conexion->desconectar();
+        return $dt;
+    }
+    
 
     public function selectAsistencia($id)
     {
@@ -76,6 +88,23 @@ class Entrenamiento
 		return $dt;
     }
 
+    public function insertAsistencia($e, $j, $ej,$p,$a,$r,$f,$m)
+    {
+        $query="CALL SP_DETALLE_ENTRENAMIENTO_INSERT ('$e','$j','$ej','$p','$a','$r','$f','$m');";
+        $bd= new conexion();
+		$dt=$bd->execute_query($query);
+		return $dt;
+    }
+
+    public function updateAsistencia($e, $j, $ej,$p,$a,$r,$f,$m)
+    {
+        $query="CALL SP_DETALLE_ENTRENAMIENTO_UPDATE ('$e','$e','$j','$ej','$p','$a','$r','$f','$m');";
+        $bd= new conexion();
+		$dt=$bd->execute_query($query);
+		return $dt;
+    }
+
+
     public function update($id, $horayfecha, $categoria, $temporada)
     {
         $query="CALL SP_ENTRENAMIENTO_UPDATE('$id' ,'$horayfecha','$categoria','$temporada');";
@@ -87,6 +116,14 @@ class Entrenamiento
     public function delete($id)
     {
         $query="UPDATE ENTRENAMIENTO SET estado=0 where id_entrenamiento=$id";
+        $bd= new conexion();
+            $dt=$bd->execute_query($query);
+            return $dt;
+    }
+
+    public function ejecutado($id)
+    {
+        $query="UPDATE ENTRENAMIENTO SET estado=1 where id_entrenamiento=$id";
         $bd= new conexion();
             $dt=$bd->execute_query($query);
             return $dt;

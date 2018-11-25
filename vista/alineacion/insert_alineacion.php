@@ -105,7 +105,7 @@ var alineacion = [ ];
 document.getElementById('guardar').style.visibility = 'hidden';
 function submitForm(){
 
-  var jugador = document.getElementById('jugador').value;
+    var jugador = document.getElementById('jugador').value;
     var posicion = document.getElementById('posicion').value;
     var partido = document.getElementById('partido').value;
     

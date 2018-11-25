@@ -53,5 +53,22 @@ class DetFalla
     $conexion->desconectar();
     return $dt;
   }
+
+  public function selectFalla($id){
+    $conexion=new conexion();
+    $conexion->conectar();
+    if ($id==-1) {
+      $query="SELECT F.id_falla, F.descripcion, DF.id_descripcion_falla, DF.sancion, DF.fecha, J.id_jugador, CONCAT(J.nombre,' ', J.apellido) AS jugador
+      FROM DESCRIPCION_FALLA DF, FALLA F, JUGADOR J where DF.estado=1 AND J.estado=1 AND F.estado=1 AND DF.id_falla=F.id_falla AND DF.id_jugador=J.id_jugador;";
+      $dt=mysqli_query($conexion->objetoconexion,$query);
+    }
+    else{
+      $query="SELECT F.id_falla, F.descripcion, DF.id_descripcion_falla, DF.sancion, DF.fecha, J.id_jugador, CONCAT(J.nombre,' ', J.apellido) AS jugador
+      FROM DESCRIPCION_FALLA DF, FALLA F, JUGADOR J where DF.estado=1 AND J.estado=1 AND F.estado=1 AND DF.id_falla=F.id_falla AND DF.id_jugador=J.id_jugador AND J.id_jugador=$id;";
+      $dt=mysqli_query($conexion->objetoconexion,$query);
+    }
+    $conexion->desconectar();
+    return $dt;
+  }
 }
  ?>
