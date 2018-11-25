@@ -35,7 +35,7 @@ if($result>0)
 }else
 {
     $_SESSION['error'] = true;
-    header('Location:/PJ_XJMC/vista/login/login.php');
+    header('Location:../login/login.php');
 }
 
 ?>
