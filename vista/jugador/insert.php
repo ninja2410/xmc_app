@@ -11,7 +11,7 @@
     <div class="content main main-raised">
             <div class="card col-md-12">
       <div class="container-fluid">
-       
+
               <div class="card-header card-header-danger">
                   <h3 class="card-title">Ingresar nuevo jugador</h3>
                   <p class="category">Complete los campos siguientes</p>
@@ -83,7 +83,7 @@
                                 <select class="form-control" name="posicion">
                                     <option selected value="0">Elija la posicion del jugador...</option>
                                     <?php
-                                        include_once('../../Negocio/classPosicion.php');
+                                        include_once('../../Negocio/ClassPosicion.php');
                                         $posicion=new Posicion();
                                         $data=$posicion->select(-1);
                                         while ($row = mysqli_fetch_array($data))
@@ -106,7 +106,7 @@
                                 <select class="form-control" name="categoria">
                                     <option selected value="0">Elija la categoria del jugador...</option>
                                     <?php
-                                        include_once('../../Negocio/classCategoria.php');
+                                        include_once('../../Negocio/ClassCategoria.php');
                                         $categoria=new Categoria();
                                         $data=$categoria->select(-1);
                                         while ($row = mysqli_fetch_array($data))
@@ -140,7 +140,7 @@
                                     <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Eliminar</a>
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
                         </div>
                     </div>
                     <div class="text-right">
@@ -150,7 +150,7 @@
                 </form>
               </div>
             </div>
-         
+
         </div>
     </div>
     <?php include '../layoults/footer.php'; ?>
