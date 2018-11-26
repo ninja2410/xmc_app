@@ -21,7 +21,7 @@ $data=$partecuerpo->select(-1);
           <div class="container-fluid">
               <div class="card-header card-header-danger row">
                 <div class="col-md-10">
-                  <h3 class="card-title">Detalles de ficha medica</h3>
+                  <h3 class="card-title">Detalles de ficha médica</h3>
                   <p class="category">Listado de examenes que se pueden incluir en ficha medica</p>
                 </div>
                 <div class="col-md-2 text-right">
@@ -49,7 +49,7 @@ $data=$partecuerpo->select(-1);
                             <?php echo $row['id_parte']; ?>
                           </td>
                           <td>
-                            <?php echo $row['nombre']; ?>
+                            <?php echo utf8_encode($row['nombre']); ?>
                           </td>
                           <td class="td-actions text-lefht">
                               <div style="float:left">

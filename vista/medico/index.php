@@ -70,7 +70,7 @@ $data=$medico->select(-1);
                           <?php echo $row['id_medico']; ?>
                         </td>
                         <td>
-                        <?php echo $row['nombre']." ".$row['apellido']; ?>
+                        <?php echo utf8_encode($row['nombre']." ".$row['apellido']); ?>
                         </td>
                         <td>
                           <?php echo $row['fecha_nacimiento']; ?>
