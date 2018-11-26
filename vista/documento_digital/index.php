@@ -87,7 +87,7 @@ $data=$documento->select(-1);
                               </div>
                               <div style="float:left">
                                 <a href="../../vista/documento_digital/update.php?id=<?php echo $row['ID']; ?>">
-                                  <button type="button" rel="tooltip" title="Editar Documento" class="btn btn-primary btn-link btn-sm">
+                                  <button type="button" rel="tooltip" title="Editar documento" class="btn btn-primary btn-link btn-sm">
                                     <i class="material-icons">edit</i>
                                   </button>
                                 </a>
@@ -96,7 +96,7 @@ $data=$documento->select(-1);
                                 <form class="" action="../../vista/documento_digital/store.php" method="post">
                                   <input type="hidden" name="operation" value="3">
                                   <input type="hidden" name="id" value="<?php echo $row['ID']; ?>">
-                                  <button type="submit" rel="tooltip" title="Eliminar Documento" class="btn btn-danger btn-link btn-sm">
+                                  <button type="submit" rel="tooltip" title="Eliminar documento" class="btn btn-danger btn-link btn-sm">
                                     <i class="material-icons">close</i>
                                   </button>
                                 </form>

@@ -82,14 +82,14 @@ $player=$jugador->select($_GET['id']);
                           <td class="td-actions text-lefht">
                               <div style="float:left">
                                 <a href="../../vista/jugador/ver_doc_jugador.php?id=<?php echo $row['ID']; ?>">
-                                  <button type="button" rel="tooltip" title="Ver Documento" class="btn btn-success btn-link btn-sm">
+                                  <button type="button" rel="tooltip" title="Ver documento" class="btn btn-success btn-link btn-sm">
                                   <i class="fa fa-eye"></i>
                                   </button>
                                 </a>
                               </div>
                               <div style="float:left">
                                 <a href="../../vista/jugador/update_doc_jugador.php?id=<?php echo $row['ID']; ?>">
-                                  <button type="button" rel="tooltip" title="Editar Documento" class="btn btn-primary btn-link btn-sm">
+                                  <button type="button" rel="tooltip" title="Editar documento" class="btn btn-primary btn-link btn-sm">
                                     <i class="material-icons">edit</i>
                                   </button>
                                 </a>

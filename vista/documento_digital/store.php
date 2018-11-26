@@ -34,8 +34,8 @@ if ($operacion=="1") {
   $bit->insert('Se subio un nuevo documento digital', $_SESSION['id']);
   $name=$_FILES['img']['name'];
   $path='DOC_'.$accion->correlativo().substr($name,-4);
-  move_uploaded_file($_FILES['img']['tmp_name'],'../imagenes/'.$path);
-  chmod('../imagenes/'.$path,0644);
+  move_uploaded_file($_FILES['img']['tmp_name'],'../imagenes/docs/'.$path);
+  chmod('../imagenes/docs/'.$path,0644);
   $accion->insert($fecha, 1, $path, $descripcion, $categoria, $titulo);
   $_SESSION['mensaje']="El documento se ha almacenado con éxito!";
 }
@@ -43,8 +43,8 @@ elseif($operacion=="2") {
   $bit->insert('Se modifico el documento digital'.$id_Documento, $_SESSION['id']);
   $name=$_FILES['img']['name'];
   $tmp='DOC_'.$accion->correlativo().substr($name,-4);
-  move_uploaded_file($_FILES['img']['tmp_name'],'../imagenes/'.$tmp);
-  chmod('../imagenes/'.$tmp,0644);
+  move_uploaded_file($_FILES['img']['tmp_name'],'../imagenes/docs/'.$tmp);
+  chmod('../imagenes/docs/'.$tmp,0644);
   $path=$_FILES['img']['name'];
   if ($path=='') {
     $path=$_POST['path'];

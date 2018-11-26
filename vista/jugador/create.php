@@ -14,46 +14,37 @@ $player=$jugador->select($_GET['id']);
     <?php include '../layoults/headers2.php'; ?>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
   </head>
-  <body>
+  <body class="profile-page sidebar-collapse">
     <?php include '../layoults/barnavLogged.php'; ?>
+    <div class="main main-raised"> 
     <div class="content">
-      <div class="col-md-12">
+      <div class="col-md-13">
         <div class="card">
-          <div class="card-header card-header-primary">
-            <h4 class="card-title">INGRESAR DOCUMENTOS</h4>
-            <p class="card-category">Resignar documento a: <?php echo $player['nombre'].' '.$player['apellido']; ?></p>
+          <div class="card-header card-header-danger">
+            <h3 class="card-title">Ingresar documentos</h3>
+            <p class="card-category">Asignar documento a: <?php echo $player['nombre'].' '.$player['apellido']; ?></p>
           </div>
           <div class="card-body">
             <form method="post", action="../jugador/store_document.php" enctype="multipart/form-data" id="frm_document">
               <input type="hidden" name="operation" value="1">
               <input type="hidden" name="id_jugador" value="<?php echo $player['id_jugador']; ?>">
+              <h3>Datos del documento</h3>
+              <hr>
               <div class="row">
                 <div class="col-md-4">
                   <div class="form-group">
-                    <label class="bmd-label-floating">Titulo</label>
+                    <label>Título</label>
                     <input type="text" class="form-control" name="title">
                   </div>
                 </div>
                 <div class="col-md-8">
                   <div class="form-group">
-                    <label class="bmd-label-floating">Descripción</label>
+                    <label>Descripción</label>
                     <input type="text" class="form-control" name="descripcion">
                   </div>
                 </div>
-              </div>
-              <div class="row">
-                <div class="col-md-1">
-                </div>
-                <div class="col-md-4">
-                  <div class="fileinput fileinput-new" data-provides="fileinput">
-                    <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
-                    <div>
-                      <span class="btn btn-default btn-file"><span class="fileinput-new">Buscar imagen</span><span class="fileinput-exists">Cambiar</span><input type="file" name="img"></span>
-                      <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Eliminar</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3">
+
+                 <div class="col-md-4">
                   <div class="form-group">
                     <label for="exampleFormControlSelect1">Categorías</label>
                     <select class="form-control" name="categoria">
@@ -67,19 +58,40 @@ $player=$jugador->select($_GET['id']);
                     </select>
                   </div>
                 </div>
+
+
                 <div class="col-md-3">
-                    <label class="">Fecha</label>
                     <div class="form-group">
+                    <label >Fecha</label>
                     <input type="text" class="form-control datetimepicker" name="fecha">
                   </div>
                 </div>
               </div>
+              
+               
+              
+              <h3>Archivo</h3>
+              <hr>
+
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="fileinput fileinput-new" data-provides="fileinput">
+                    <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
+                    <div>
+                      <span class="btn btn-default btn-file"><span class="fileinput-new">Buscar imagen</span><span class="fileinput-exists">Cambiar</span><input type="file" name="img"></span>
+                      <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Eliminar</a>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              
               <?php include '../layoults/botones.php'; ?>
               <div class="clearfix"></div>
             </form>
           </div>
         </div>
       </div>
+    </div>
     </div>
     <?php include '../layoults/footer.php'; ?>
     <?php include '../layoults/scripts2.php'; ?>
