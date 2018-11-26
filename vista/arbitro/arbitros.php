@@ -14,17 +14,17 @@ $data=$arbitro->selectArbitros($_GET['id']);
   <?php include '../layoults/barnavLogged.php'; ?>
     <div class="main main-raised">
     <div class="content">
+          <div class="card col-md-12">
       <div class="container-fluid">
         
-          <div class="col-md-12">
-            <div class="card">
+            
               <div class="card-header card-header-danger row">
                 <div class="col-md-11">
-                  <h2 class="card-title ">ARBITROS</h4>
-                  <p class="card-category">Listado de arbitros</p>
+                  <h3 class="card-title ">Árbitros</h3>
+                  <p class="card-category">Listado de árbitros</p>
                 </div>
                 <div class="col-md-1 text-right">
-                <a href="../../vista/arbitro/partido_arbitro.php?id=<?php echo $_GET['id']; ?>" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Agregar a la alineación">
+                <a href="../../vista/arbitro/partido_arbitro.php?id=<?php echo $_GET['id']; ?>" class="btn btn-success btn-fab btn-fab-mini btn-round btn-lg" role="button" aria-disabled="true" rel="tooltip" title="Asignar al partido">
                     <i class="material-icons">add</i>
                   </a>
                 </div>
@@ -35,7 +35,7 @@ $data=$arbitro->selectArbitros($_GET['id']);
                   <table class="table table-striped table-bordered" id="table1">
                     <thead>
                       <th>
-                        Arbitro
+                        Árbitro
                       </th>
                       <th>
                         Tipo
@@ -82,7 +82,7 @@ $data=$arbitro->selectArbitros($_GET['id']);
                 </div>
                 <a href="../partido/index.php"> <button type="button" class="btn btn-info pull-right btn-round"><i class="fas fa-undo-alt fa-lg"></i> Regresar</button></a>
 
-              </div>
+             
           </div>
         
       </div>

@@ -14,10 +14,10 @@ $data=$alineacion->selectPartido($_GET['id']);
   <?php include '../layoults/barnavLogged.php'; ?>
     <div class="main main-raised">
     <div class="content">
+          <div class="card col-md-12">
       <div class="container-fluid">
         
-          <div class="col-md-12">
-            <div class="card">
+            
               <div class="card-header card-header-danger row">
                 <div class="col-md-11">
                   <h2 class="card-title ">Alineaciones</h4>
@@ -88,7 +88,7 @@ $data=$alineacion->selectPartido($_GET['id']);
                 </div>
             <a href="../partido/index.php"> <button type="button" class="btn btn-info pull-right btn-round"><i class="fas fa-undo-alt fa-lg"></i> Regresar</button></a>
 
-              </div>
+             
 
             </div>          
           
