@@ -126,35 +126,35 @@ $('#table1').DataTable({
    buttons: [
      {
        extend:'copy',
-       title:'Listado de fichas medicas',
+       title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de fichas medicas',
        exportOptions:{
          columns:[0,1,2,3,4,5]
        }
      },
      {
        extend:'csv',
-       title:'Listado de fichas medicas',
+       title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de fichas medicas',
        exportOptions:{
          columns:[0,1,2,3,4,5]
        }
      },
      {
        extend:'excel',
-       title:'Listado de fichas medicas',
+       title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de fichas medicas',
        exportOptions:{
          columns:[0,1,2,3,4,5]
        }
      },
      {
        extend:'pdf',
-       title:'Listado de fichas medicas',
+       title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de fichas medicas',
        exportOptions:{
          columns:[0,1,2,3,4,5]
        }
      },
      {
        extend:'print',
-       title:'Listado de fichas medicas',
+       title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de fichas medicas',
        exportOptions:{
          columns:[0,1,2,3,4,5]
        }

@@ -89,35 +89,35 @@ $data_socio=$socio->select($_GET['id']);
    buttons: [
      {
        extend:'copy',
-       title:'Listado de pagos: <?php echo $data_socio['nombre'].' '.$data_socio['apellido']; ?>',
+       title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de pagos: <?php echo $data_socio['nombre'].' '.$data_socio['apellido']; ?>',
        exportOptions:{
          columns:[0,1,2]
        }
      },
      {
        extend:'csv',
-       title:'Listado de pagos: <?php echo $data_socio['nombre'].' '.$data_socio['apellido']; ?>',
+       title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de pagos: <?php echo $data_socio['nombre'].' '.$data_socio['apellido']; ?>',
        exportOptions:{
          columns:[0,1,2]
        }
      },
      {
        extend:'excel',
-       title:'Listado de pagos: <?php echo $data_socio['nombre'].' '.$data_socio['apellido']; ?>',
+       title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de pagos: <?php echo $data_socio['nombre'].' '.$data_socio['apellido']; ?>',
        exportOptions:{
          columns:[0,1,2]
        }
      },
      {
        extend:'pdf',
-       title:'Listado de pagos: <?php echo $data_socio['nombre'].' '.$data_socio['apellido']; ?>',
+       title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de pagos: <?php echo $data_socio['nombre'].' '.$data_socio['apellido']; ?>',
        exportOptions:{
          columns:[0,1,2]
        }
      },
      {
        extend:'print',
-       title:'Listado de pagos <?php echo $data_socio['nombre'].' '.$data_socio['apellido']; ?>',
+       title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de pagos <?php echo $data_socio['nombre'].' '.$data_socio['apellido']; ?>',
        exportOptions:{
          columns:[0,1,2]
        }

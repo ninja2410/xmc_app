@@ -69,35 +69,35 @@ $data=$personal->selectCargo(-1);
        buttons: [
          {
            extend:'copy',
-           title:'Listado de personal tecnico',
+           title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de personal tecnico',
            exportOptions:{
              columns:[0,1,2,3]
            }
          },
          {
            extend:'csv',
-           title:'Listado de personal tecnico',
+           title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de personal tecnico',
            exportOptions:{
              columns:[0,1,2,3]
            }
          },
          {
            extend:'excel',
-           title:'Listado de personal tecnico',
+           title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de personal tecnico',
            exportOptions:{
              columns:[0,1,2,3]
            }
          },
          {
            extend:'pdf',
-           title:'Listado de personal tecnico',
+           title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de personal tecnico',
            exportOptions:{
              columns:[0,1,2,3]
            }
          },
          {
            extend:'print',
-           title:'Listado de personal tecnico',
+           title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de personal tecnico',
            exportOptions:{
              columns:[0,1,2,3]
            }

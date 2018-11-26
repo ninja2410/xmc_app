@@ -497,7 +497,7 @@ $socios=0;
             <?php
             }
             ?>
-            <li class="nav-item dropdown">
+            <!-- <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="far fa-newspaper fa-lg"></i> Reportes
               </a>
@@ -507,7 +507,7 @@ $socios=0;
                 <a class="dropdown-item" href="../../vista/prensa/index.php">Noticias</a>
                 <a class="dropdown-item" href="../../vista/pagos/rpt_socios.php">Pagos y socios</a>
               </div>
-            </li>
+            </li> -->
             <li class="dropdown nav-item">
               <a href="#pablo" class="profile-photo dropdown-toggle nav-link" data-toggle="dropdown">
                 <div class="profile-photo-small">

@@ -149,35 +149,35 @@ $data=$prensa->select(-1);
        buttons: [
          {
            extend:'copy',
-           title:'Listado de prensa',
+           title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de prensa',
            exportOptions:{
              columns:[0,1,2,3,4]
            }
          },
          {
            extend:'csv',
-           title:'Listado de prensa',
+           title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de prensa',
            exportOptions:{
              columns:[0,1,2,3,4]
            }
          },
          {
            extend:'excel',
-           title:'Listado de prensa',
+           title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de prensa',
            exportOptions:{
              columns:[0,1,2,3,4]
            }
          },
          {
            extend:'pdf',
-           title:'Listado de prensa',
+           title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de prensa',
            exportOptions:{
              columns:[0,1,2,3,4]
            }
          },
          {
            extend:'print',
-           title:'Listado de prensa',
+           title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de prensa',
            exportOptions:{
              columns:[0,1,2,3,4]
            }

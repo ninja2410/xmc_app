@@ -54,11 +54,6 @@ function calculaedad($fechanacimiento){
                 <div class="col-md-3">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link btnAzul" href="../../vista/jugador/index.php">
-                                <i class="fas fa-portrait fa-2x"></i><br> Ver estadísticas del jugador
-                            </a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link btnAzul" href="../../vista/ficha_medica/index.php">
                                 <i class="fas fa-notes-medical fa-2x"></i><br> Ver información médica
                             </a>

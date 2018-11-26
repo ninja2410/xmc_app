@@ -24,7 +24,7 @@ $data=$partido->select(-1);
             <div class="card col-md-12">
       <div class="container-fluid">
 
-         
+
               <div class="card-header card-header-danger row">
                 <div class="col-md-11">
                   <h3 class="card-title">Partidos</h3>
@@ -181,7 +181,7 @@ $data=$partido->select(-1);
                 </div>
                 <a href="temporada.php"> <button type="button" class="btn btn-warning pull-right"> <i class="fas fa-chart-bar"></i> Resumen de Temporadas</button></a>
               </div>
-              
+
           </div>
         </div>
         </div>
@@ -200,43 +200,35 @@ $data=$partido->select(-1);
        buttons: [
          {
            extend:'copy',
-           title:'Listado de partidos',
+           title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de partidos',
            exportOptions:{
              columns:[0,1,2,3,4,5,6]
            }
          },
          {
            extend:'csv',
-           title:'Listado de partidos',
+           title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de partidos',
            exportOptions:{
              columns:[0,1,2,3,4,5,6]
            }
          },
          {
            extend:'excel',
-           title:'Listado de partidos',
+           title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de partidos',
            exportOptions:{
              columns:[0,1,2,3,4,5,6]
            }
          },
          {
            extend:'pdf',
-           title:'Listado de partidos',
+           title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de partidos',
            exportOptions:{
              columns:[0,1,2,3,4,5,6]
            }
          },
          {
            extend:'print',
-           title:'<img src="../assets/img/bg.jpg" style="top:0; left:0;" /> <br> <h3>Reporte de partidos</h3>',
-           messageTop:'Club social y deportivo Xelaju Mc.',
-           customize: function ( win ) {
-            $(win.document.body)
-                .css( 'font-size', '12pt' )
-                .prepend(
-                    '<img src="../assets/img/bg.jpg" style="top:0; left:0;" />'
-                );
-            },
+           title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;"> <h3>Reporte de partidos</h3>',
            exportOptions:{
              columns:[0,1,2,3,4,5,6]
            }

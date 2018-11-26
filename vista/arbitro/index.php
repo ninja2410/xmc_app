@@ -133,35 +133,35 @@ $('#table1').DataTable({
    buttons: [
      {
        extend:'copy',
-       title:'Listado de arbitros',
+       title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de arbitros',
        exportOptions:{
          columns:[0,1,2]
        }
      },
      {
        extend:'csv',
-       title:'Listado de arbitros',
+       title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de arbitros',
        exportOptions:{
          columns:[0,1,2]
        }
      },
      {
        extend:'excel',
-       title:'Listado de arbitros',
+       title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de arbitros',
        exportOptions:{
          columns:[0,1,2]
        }
      },
      {
        extend:'pdf',
-       title:'Listado de arbitros',
+       title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de arbitros',
        exportOptions:{
          columns:[0,1,2]
        }
      },
      {
        extend:'print',
-       title:'Listado de arbitros',
+       title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de arbitros',
        exportOptions:{
          columns:[0,1,2]
        }

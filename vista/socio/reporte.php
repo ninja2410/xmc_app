@@ -123,35 +123,35 @@ $data=$socio->reporte();
        buttons: [
          {
            extend:'copy',
-           title:'Listado de socios',
+           title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de socios',
            exportOptions:{
              columns:[0,1,2,3,4,5,6,7,8]
            }
          },
          {
            extend:'csv',
-           title:'Listado de socios',
+           title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de socios',
            exportOptions:{
              columns:[0,1,2,3,4,5,6,7,8]
            }
          },
          {
            extend:'excel',
-           title:'Listado de socios',
+           title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de socios',
            exportOptions:{
              columns:[0,1,2,3,4,5,6,7,8]
            }
          },
          {
            extend:'pdf',
-           title:'Listado de socios',
+           title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de socios',
            exportOptions:{
              columns:[0,1,2,3,4,5,6,7,8]
            }
          },
          {
            extend:'print',
-           title:'Listado de socios',
+           title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de socios',
            exportOptions:{
              columns:[0,1,2,3,4,5,6,7,8]
            }

@@ -23,7 +23,7 @@ $data=$beneficio->select(-1);
     <div class="content">
           <div class="card col-md-12">
       <div class="container-fluid">
-   
+
               <div class="card-header card-header-danger row">
                 <div class="col-lg-10" style="float:left;">
                   <h2 class="card-title ">Lesiones</h4>
@@ -74,6 +74,7 @@ $data=$beneficio->select(-1);
                                 </button>
                               </a>
                             </div>
+
                             <div  style="float:left">
                               <form class="" action="../../vista/lesion/store.php" method="post">
                                 <input type="hidden" name="operation" value="3">
@@ -110,9 +111,9 @@ $data=$beneficio->select(-1);
                   </table>
                 </div>
               </div>
-            
+
           </div>
-        
+
       </div>
     </div>
     </div>
@@ -131,35 +132,35 @@ $data=$beneficio->select(-1);
        buttons: [
          {
            extend:'copy',
-           title:'Listado de lesiones',
+           title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de lesiones',
            exportOptions:{
              columns:[0,1,2]
            }
          },
          {
            extend:'csv',
-           title:'Listado de lesiones',
+           title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de lesiones',
            exportOptions:{
              columns:[0,1,2]
            }
          },
          {
            extend:'excel',
-           title:'Listado de lesiones',
+           title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de lesiones',
            exportOptions:{
              columns:[0,1,2]
            }
          },
          {
            extend:'pdf',
-           title:'Listado de lesiones',
+           title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de lesiones',
            exportOptions:{
              columns:[0,1,2]
            }
          },
          {
            extend:'print',
-           title:'Listado de lesiones',
+           title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de lesiones',
            exportOptions:{
              columns:[0,1,2]
            }

@@ -134,35 +134,35 @@ $data=$usuario->select(-1);
        buttons: [
          {
            extend:'copy',
-           title:'Listado de usuarios',
+           title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de usuarios',
            exportOptions:{
              columns:[0,1]
            }
          },
          {
            extend:'csv',
-           title:'Listado de usuarios',
+           title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de usuarios',
            exportOptions:{
              columns:[0,1]
            }
          },
          {
            extend:'excel',
-           title:'Listado de usuarios',
+           title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de usuarios',
            exportOptions:{
              columns:[0,1]
            }
          },
          {
            extend:'pdf',
-           title:'Listado de usuarios',
+           title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de usuarios',
            exportOptions:{
              columns:[0,1]
            }
          },
          {
            extend:'print',
-           title:'Listado de usuarios',
+           title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de usuarios',
            exportOptions:{
              columns:[0,1]
            }

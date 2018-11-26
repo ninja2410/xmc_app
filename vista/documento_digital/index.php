@@ -132,35 +132,35 @@ if ($('#mensaje').val()!="") {
              buttons: [
                {
                  extend:'copy',
-                 title:'Listado de documentos',
+                 title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de documentos',
                  exportOptions:{
                    columns:[0,1,2,3]
                  }
                },
                {
                  extend:'csv',
-                 title:'Listado de documentos',
+                 title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de documentos',
                  exportOptions:{
                    columns:[0,1,2,3]
                  }
                },
                {
                  extend:'excel',
-                 title:'Listado de documentos',
+                 title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de documentos',
                  exportOptions:{
                    columns:[0,1,2,3]
                  }
                },
                {
                  extend:'pdf',
-                 title:'Listado de documentos',
+                 title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de documentos',
                  exportOptions:{
                    columns:[0,1,2,3]
                  }
                },
                {
                  extend:'print',
-                 title:'Listado de documentos',
+                 title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de documentos',
                  exportOptions:{
                    columns:[0,1,2,3]
                  }

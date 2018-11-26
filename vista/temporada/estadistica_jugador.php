@@ -111,26 +111,26 @@ $estadistica=new EstadisticaJugador();
         buttons: [
           {
             extend:'copy',
-            title:'Listado de socios',
+            title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de socios',
           },
           {
             extend:'csv',
-            title:'Listado de socios',
+            title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de socios',
 
           },
           {
             extend:'excel',
-            title:'Listado de socios',
+            title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de socios',
 
           },
           {
             extend:'pdf',
-            title:'Listado de socios',
+            title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de socios',
 
           },
           {
             extend:'print',
-            title:'Listado de socios',
+            title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de socios',
 
           }
         ],

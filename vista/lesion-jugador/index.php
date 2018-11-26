@@ -148,35 +148,35 @@ $data=$lesion->detalle();
        buttons: [
          {
            extend:'copy',
-           title:'Listado de lesiones de jugadores',
+           title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de lesiones de jugadores',
            exportOptions:{
              columns:[0,1,2,3]
            }
          },
          {
            extend:'csv',
-           title:'Listado de lesiones de jugadores',
+           title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de lesiones de jugadores',
            exportOptions:{
              columns:[0,1,2,3]
            }
          },
          {
            extend:'excel',
-           title:'Listado de lesiones de jugadores',
+           title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de lesiones de jugadores',
            exportOptions:{
              columns:[0,1,2,3]
            }
          },
          {
            extend:'pdf',
-           title:'Listado de lesiones de jugadores',
+           title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de lesiones de jugadores',
            exportOptions:{
              columns:[0,1,2,3]
            }
          },
          {
            extend:'print',
-           title:'Listado de lesiones de jugadores',
+           title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de lesiones de jugadores',
            exportOptions:{
              columns:[0,1,2,3]
            }

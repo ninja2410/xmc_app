@@ -129,35 +129,35 @@ $data=$medico->select(-1);
        buttons: [
          {
            extend:'copy',
-           title:'Listado de medicos',
+           title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de medicos',
            exportOptions:{
              columns:[0,1,2,3,4,5,6]
            }
          },
          {
            extend:'csv',
-           title:'Listado de medicos',
+           title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de medicos',
            exportOptions:{
              columns:[0,1,2,3,4,5,6]
            }
          },
          {
            extend:'excel',
-           title:'Listado de medicos',
+           title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de medicos',
            exportOptions:{
              columns:[0,1,2,3,4,5,6]
            }
          },
          {
            extend:'pdf',
-           title:'Listado de medicos',
+           title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de medicos',
            exportOptions:{
              columns:[0,1,2,3,4,5,6]
            }
          },
          {
            extend:'print',
-           title:'Listado de medicos',
+           title:'<img src="../../vista/imagenes/encaezado.jpg" style="width:100%;">Listado de medicos',
            exportOptions:{
              columns:[0,1,2,3,4,5,6]
            }
