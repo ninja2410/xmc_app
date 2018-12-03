@@ -83,7 +83,7 @@ $data=$jugador->select(-1);
               </div>
               <a href="../../vista/fallas/insert.php?id=<?php echo $row['id_jugador']; ?>">
                           <button class="btn btn-danger pull-right  btn-round "> <i class="far fa-eye fa-lg"></i> Multar Jugador</button>
-                <a href="../asistencia/index.php"> <button type="button" class="btn btn-info pull-right btn-round"><i class="fas fa-undo-alt fa-lg"></i> Regresar</button></a>
+                <a href="../asistencia/index.php?id=<?php echo $_GET['id'] ?>"> <button type="button" class="btn btn-info pull-right btn-round"><i class="fas fa-undo-alt fa-lg"></i> Regresar</button></a>
             </div>
           </div>
         </div>
@@ -105,7 +105,7 @@ $data=$jugador->select(-1);
        };
        if(accion=='2')
        {
-        var jug =[{id_entreno:id_entreno,id_jugador:id_jugador,Eje:1,Permiso:0,Atraso:1,Retiro:0, Falta:0, Motivo:motivo}] 
+        var jug =[{id_entreno:id_entreno,id_jugador:id_jugador,Eje:0,Permiso:0,Atraso:1,Retiro:0, Falta:0, Motivo:motivo}] 
         console.log(jug);
        };
        if(accion=='3')

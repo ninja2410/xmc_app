@@ -63,11 +63,18 @@ function calculaedad($fechanacimiento){
                                 <i class="material-icons fa-2x">edit</i><br> Actualizar información
                             </a>
                         </li>
-												<li class="nav-item">
+                        <?php 
+                        if($DDoc==1)
+                        {
+                        ?>
+                        <li class="nav-item">
                             <a class="nav-link btnAzul" href="../../vista/jugador/documentos.php?id=<?php echo $data['id_jugador']; ?>">
                                 <i class="material-icons fa-2x">book</i><br> Documentos
                             </a>
                         </li>
+                        <?php 
+                        } 
+                        ?>
                         <li class="nav-item">
                             <a class="nav-link btnAzul" href="../../vista/jugador/index.php">
                                 <i class="fas fa-undo-alt fa-2x"></i><br> Regresar

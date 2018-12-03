@@ -67,6 +67,65 @@ class Entrenamiento
         return $dt;
     }
 
+    public function selectAsistenciaTotal($id)
+    {
+        $conexion=new conexion();
+        $conexion->conectar();
+        if ($id==-1) 
+        {
+            $query="select sum(DT.ejecutado) as ejecutados
+            ,sum(DT.permiso) as permisos
+            ,sum(DT.atraso) as atrasos
+            ,sum(DT.retiro) as retiros
+            ,sum(DT.falta) as faltas from DETALLE_ENTRENAMIENTO DT 
+            where DT.id_jugador = $id";
+            $dt=mysqli_query($conexion->objetoconexion,$query);
+        }
+        else
+        {
+            $query="select  CONCAT(J.nombre,concat(' ',J.apellido)) as Nombre, sum(DT.ejecutado) as ejecutados
+            ,sum(DT.permiso) as permisos
+            ,sum(DT.atraso) as atrasos
+            ,sum(DT.retiro) as retiros
+            ,sum(DT.falta) as faltas from DETALLE_ENTRENAMIENTO DT 
+            INNER JOIN JUGADOR J ON DT.id_jugador = J.id_jugador
+            where DT.id_jugador = $id";
+            $tmp=mysqli_query($conexion->objetoconexion,$query);
+            $dt=mysqli_fetch_assoc($tmp);
+        }
+        $conexion->desconectar();
+        return $dt;
+    }
+
+    public function selectAsistenciaDetalle($id)
+    {
+        $conexion=new conexion();
+        $conexion->conectar();
+        if ($id==-1) 
+        {
+            $query="select  CONCAT(J.nombre,concat(' ',J.apellido)) as Nombre, sum(DT.ejecutado) as ejecutados
+            ,sum(DT.permiso) as permisos
+            ,sum(DT.atraso) as atrasos
+            ,sum(DT.retiro) as retiros
+            ,sum(DT.falta) as faltas from DETALLE_ENTRENAMIENTO DT 
+            INNER JOIN JUGADOR J ON DT.id_jugador = J.id_jugador
+            where DT.id_jugador = 1;";
+            $dt=mysqli_query($conexion->objetoconexion,$query);
+        }
+        else
+        {
+            $query="SELECT CONCAT(J.nombre,concat(' ',J.apellido)) as Nombre,DT.id_entrenamiento,E.fecha, DT.id_jugador, 
+			DT.ejecutado,DT.permiso,
+            DT.atraso,DT.retiro,DT.falta,DT.motivo FROM DETALLE_ENTRENAMIENTO DT
+            INNER JOIN JUGADOR J ON DT.id_jugador = J.id_jugador
+            INNER JOIN ENTRENAMIENTO E ON E.id_entrenamiento = DT.id_entrenamiento
+            where DT.id_jugador = $id";
+           $dt=mysqli_query($conexion->objetoconexion,$query);
+        }
+        $conexion->desconectar();
+        return $dt;
+    }
+
     public function selectPartido($id)
     {
         $conexion=new conexion();

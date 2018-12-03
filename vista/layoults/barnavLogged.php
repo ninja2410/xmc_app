@@ -83,7 +83,7 @@ foreach($permisos as $key => $value)
     $DJugadores=1;
     $_SESSION['jugadores']=true;
   }
-  if($value==27)
+  if($value==3)
   {
     $multas=1;
     $DJugadores=1;
@@ -418,6 +418,7 @@ foreach($permisos as $key => $value)
             ?>
                 <a class="dropdown-item" href="../../vista/ficha_medica/index.php">Ficha médica</a>
             <?php
+            }
             if($detallles_ficha==1)
             {
             ?>
@@ -450,23 +451,20 @@ foreach($permisos as $key => $value)
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <?php
-            }
-            if($doc_digitales==1)
-            {
-            ?>
-                <a class="dropdown-item" href="../../vista/documento_digital/index.php">Documentos digitales</a>
-            <?php
-            }
-            if($doc_digitales==1)
-            {
-            ?>
-                <a class="dropdown-item" href="../../vista/categoria_documentos/index.php">Categoría documentos</a>
-            <?php
-            }
-            ?>
-              </div>
-            </li>
-            <?php
+                if($doc_digitales==1)
+                {
+                ?>
+                    <a class="dropdown-item" href="../../vista/documento_digital/index.php">Documentos digitales</a>
+                <?php
+                }
+                if($cat_digitales==1)
+                {
+                ?>
+                    <a class="dropdown-item" href="../../vista/categoria_documentos/index.php">Categoría documentos</a>
+                  </div>
+                </li>
+                <?php
+                }
             }
             if($personas==1)
             {

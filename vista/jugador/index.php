@@ -64,6 +64,10 @@ $data=$jugador->select(-1);
                           <button class="btn btn-success btn-round btn-sm"><i class="far fa-eye fa-lg"></i> Ver detalles</button>
                         </td>
                         <td>
+                          <a href="../../vista/asistencia/entrenos.php?id=<?php echo $row['id_jugador']; ?>">
+                          <button class="btn btn-primary btn-round btn-sm"><i class="far fa-eye fa-lg"></i> Entrenos</button>
+                        </td>
+                        <td>
                           <form class="" action="../../vista/jugador/store.php" method="post">
                               <input type="hidden" name="operation" value="3">
                               <input type="hidden" name="id" value="<?php echo $row['id_jugador']; ?>">

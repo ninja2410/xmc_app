@@ -40,7 +40,7 @@ $usuario = $_GET['id'];
                     {
                     echo '<h3>Jugadores</h3>';
                     }
-                      if($row['id_permiso']==3)
+                      if($row['id_permiso']==4)
                     {
                     echo '<h3>Partidos</h3>';
                     }

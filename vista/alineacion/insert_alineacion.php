@@ -194,7 +194,7 @@ function Guardar()
            success: function(data)
            {             
              console.log(data);
-             window.location.replace("http://localhost/PJ_XJMC/vista/alineacion/alineacion.php?id="+pa);
+             window.location.replace("../alineacion/alineacion.php?id="+pa);
            },
            error: function(data) {
             console.log(data);
