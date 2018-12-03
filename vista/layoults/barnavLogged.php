@@ -555,7 +555,7 @@ foreach($permisos as $key => $value)
               </a>
               <div class="dropdown-menu dropdown-menu-right">
                 <h6 class="dropdown-header">Opciones de usuario</h6>
-                <a class="dropdown-item" href="../../vista/acerca/index.php">Acerca de</a>
+                <a class="dropdown-item" href="../../vista/acercaDe/index.php">Acerca de</a>
                 <a href="../../vista/login/salida.php" class="dropdown-item"><i class="fas fa-sign-out-alt"></i>  Cerrar sesión</a>
               </div>
             </li>
