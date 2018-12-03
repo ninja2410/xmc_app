@@ -45,9 +45,14 @@ $data=$socio->select(-1);
                       <th>
                         Nombre
                       </th>
+                      <?php 
+                        if($DDoc==1)
+                        {
+                        ?>
                       <th>
                         Documentos
                       </th>
+                        <?php } ?>
                       <th>
                         Detalles del socio
                       </th>
@@ -67,11 +72,18 @@ $data=$socio->select(-1);
                         <?php echo $row['nombre']." ".$row['apellido']; ?>
                         </td>
 
+                        <?php 
+                        if($DDoc==1)
+                        {
+                        ?>
                         <td>
 
                           <a href="../../vista/socio/documentos.php?id=<?php echo $row['id_socio']; ?>">
                           <button class="btn btn-info btn-round btn-sm"><i class="far fa-file-text fa-lg"></i> Documentos</button>
-
+                          <?php 
+                        }
+                        ?>
+                          </td>
                           <td >
 
                           <a href="../../vista/socio/detalles.php?id=<?php echo $row['id_socio']; ?>">

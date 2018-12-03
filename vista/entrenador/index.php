@@ -53,10 +53,14 @@ $data2=$asignacion->select(-1);
                       <th>
                         Categoría
                       </th>
-                     
+                      <?php 
+                        if($DDoc==1)
+                        {
+                        ?>
                       <th>
                         Documentos
                       </th>
+                        <?php } ?>
                       <th>
                         Detalles
                       </th>
@@ -78,13 +82,17 @@ $data2=$asignacion->select(-1);
                         <td>
                         <?php echo $row['CATEGORIA']; ?>
                         </td>
-                        
+                        <?php 
+                        if($DDoc==1)
+                        {
+                        ?>
                         <td class="td-actions text-left">
                         <div style="float:left"> 
                         <a href="../../vista/entrenador/documentos.php?id=<?php echo $row['id_entrenador']; ?>">
                           <button class="btn btn-info btn-round btn-sm"><i class="far fa-file-text fa-lg"></i> Documentos</button>
                           </div>
                             </td>
+                        <?php } ?>
                             <td class="td-actions text-left">
                             <div style="float:left">
                             <a href="../../vista/entrenador/detalle.php?id=<?php echo $row['id_entrenador']; ?>">
